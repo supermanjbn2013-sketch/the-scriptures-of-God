@@ -30,14 +30,30 @@
         "Not a complete manuscript apparatus",
         "Do not attribute its readings to P46, P52, P66, P75, Vaticanus, or Sinaiticus without passage-level verification"
       ]
+    },
+    {
+      "id": "dss-metadata-register",
+      "name": "Selected Dead Sea Scrolls manuscript metadata register",
+      "language": "Hebrew and Aramaic",
+      "coverage": "Four selected Qumran Cave 1 manuscripts: 1QIsaᵃ, 1QpHab, 1QapGen, and 1QS",
+      "record_type": "institution-sourced manuscript metadata; not transcription",
+      "license": "Metadata descriptions are independently summarized with source attribution. IAA and Israel Museum manuscript images and site text are not bundled or republished.",
+      "repository": "https://www.deadseascrolls.org.il/",
+      "limitations": [
+        "Selective metadata catalogue only; not a complete DSS catalogue",
+        "No DSS transcription is bundled in this dataset",
+        "Images remain on institutional viewers because reproduction permissions are restricted",
+        "Dates are approximate and tied to cited institutional descriptions",
+        "IAA imaging-plate fragment numbers must not be confused with published DJD manuscript and fragment identifiers without a verified concordance"
+      ]
     }
   ],
   "not_yet_integrated": [
-    "Dead Sea Scrolls transcriptions and images",
     "Septuagint",
     "Samaritan Pentateuch",
     "Codex-specific transcriptions",
     "Manuscript variants apparatus",
-    "Historical and multilingual translation corpus"
+    "Historical and multilingual translation corpus",
+    "Dead Sea Scrolls transcriptions and licensed facsimile images (metadata register is present; transcription and image rights are not integrated)"
   ]
 }
