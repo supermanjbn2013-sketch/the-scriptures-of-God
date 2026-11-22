@@ -158,15 +158,15 @@ public class MainActivity extends Activity {
             }
             org.json.JSONObject groupIndex=match.optJSONObject("fragment_group_index");
             if(groupIndex!=null){
-                detail.append("\\nDigital fragment-group index: ").append(groupIndex.optInt("display_group_count")).append(" groups\\n");
+                detail.append("\nDigital fragment-group index: ").append(groupIndex.optInt("display_group_count")).append(" groups\n");
                 org.json.JSONArray groupNames=groupIndex.optJSONArray("groups");
-                if(groupNames!=null)for(int i=0;i<groupNames.length();i++)detail.append("• ").append(groupNames.optString(i)).append(i==groupNames.length()-1?"\\n":"; ");
-                detail.append("Index source: ").append(groupIndex.optString("source")).append("\\n");
+                if(groupNames!=null)for(int i=0;i<groupNames.length();i++)detail.append("• ").append(groupNames.optString(i)).append(i==groupNames.length()-1?"\n":"; ");
+                detail.append("Index source: ").append(groupIndex.optString("source")).append("\n");
             }
             detail.append("\nStatus: ").append(match.optString("status")).append("\n");
             org.json.JSONObject transcription=match.optJSONObject("transcription_source");
             if(transcription!=null){
-                detail.append("\nHebrew transcription source:\n").append(transcription.optString("title")).append("\\n");
+                detail.append("\nHebrew transcription source:\n").append(transcription.optString("title")).append("\n");
                 detail.append("Provider: ").append(transcription.optString("provider")).append("\n");
                 detail.append("Version: ").append(transcription.optString("version")).append("\n");
                 detail.append("License: ").append(transcription.optString("license")).append("\n");
