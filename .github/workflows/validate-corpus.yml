@@ -35,7 +35,7 @@ jobs:
           dss_path = Path("app/src/main/assets/catalog/dead_sea_scrolls_register.json")
           dss = json.loads(dss_path.read_text(encoding="utf-8"))
           assert dss["record_type"] == "dead_sea_scrolls_manuscript_metadata_catalog"
-          assert len(dss["records"]) >= 4
+          assert len(dss["records"]) >= 6
           ids = [r["id"] for r in dss["records"]]
           assert len(ids) == len(set(ids)), "Duplicate DSS catalogue IDs"
           for record in dss["records"]:
@@ -46,6 +46,9 @@ jobs:
           source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
           assert "void openDssCatalogEntry(String item)" in source
           assert "openDssCatalogEntry(item)" in source
+          assert "Temple Scroll (11Q19)" in source and "War Scroll (1QM)" in source
+          assert "11Q19" in ids and "1QM" in ids
+          assert len(dss["archive_browse_index"]["qumran_sites"]) >= 9
           print("Validated Android DSS catalogue navigation")
           print("No APK is built or uploaded by this workflow.")
           PY
