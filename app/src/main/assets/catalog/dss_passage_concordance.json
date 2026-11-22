@@ -53,7 +53,7 @@
         "caution": "Digital transcription display-line numbering is not a manuscript column/line coordinate. Preserve brackets, dots and editorial signs. The transcription is not a manuscript image and should be checked against the published edition and images."
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "Qumran-Digital transcription linked; frg. 1–2 mapped line by line (Lev 14:27–29; 14:33–36); indexed groups frg. 3–4 await line-by-line mapping.",
+      "status": "Qumran-Digital transcription linked; frg. 1–3 mapped line by line (Lev 14:27–29; 14:33–36; 15:20–24); frg. 4 remains to be mapped.",
       "caution": "Published concordance assigns fragments 1–4 to Leviticus 14:27–29; 14:33–36; 15:20–24; and 17:2–11. Fragments 5–11 are listed with unknown contents in the Study Edition. The earlier PAM 40.967 inventory association to Leviticus 22:12–18 is a separate preliminary inventory record and must not be merged with the verified fragment map. Qumran-Digital line maps are being recorded separately from comparison witnesses. 4Q23, 11QpapLev and Samaritan Pentateuch text shown on the source page are not 4Q26 readings.",
       "fragment_coverage": [
         {
@@ -79,8 +79,9 @@
           "passages": [
             "Leviticus 15:20–24"
           ],
-          "basis": "E. Tov, DJD XII, 193–195, plate XXXVI; also linked in Qumran-Digital 4Q26 transcription.",
-          "condition": "fragmentary; editorial signs retained"
+          "basis": "Qumran-Digital 4Q26 frg. 3, displayed lines 1–4, annotated with Leviticus 15:20–24.",
+          "condition": "Fragmentary Hebrew transcription; verse references are editorial comparison anchors. Cross-referenced readings from 4Q23 and other witnesses are not part of 4Q26.",
+          "digital_transcription_line_labels": "1–4"
         },
         {
           "fragment": "4",
@@ -205,6 +206,50 @@
           "transcription_text": "[הכהן לראות את הבית ]",
           "source_reference": "Qumran-Digital 4Q26, frg. 2, displayed line 5",
           "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23 and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "frg. 3",
+          "digital_line": 1,
+          "passages": [
+            "Leviticus 15:20",
+            "Leviticus 15:21"
+          ],
+          "transcription_text": "[יטמא וכול ]א֯ש֯[ר תשב עליו יטמא וכול הנגע במשכבה יכבס בגדיו]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 3, displayed line 1",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, other Qumran fragments and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "frg. 3",
+          "digital_line": 2,
+          "passages": [
+            "Leviticus 15:21",
+            "Leviticus 15:22"
+          ],
+          "transcription_text": "[ורחץ במים וט]מא עד הערב וכול הנ֯ג֯[ע בכול כלי אשר תשב עליו]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 3, displayed line 2",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, other Qumran fragments and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "frg. 3",
+          "digital_line": 3,
+          "passages": [
+            "Leviticus 15:22",
+            "Leviticus 15:23"
+          ],
+          "transcription_text": "[יכבס בג]ד֯[יו ורחץ ]במ[ים ]ו֯ט֯מ֯א עד הע֯[רב ואם על המשכב הוא או על]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 3, displayed line 3",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, other Qumran fragments and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "frg. 3",
+          "digital_line": 4,
+          "passages": [
+            "Leviticus 15:23",
+            "Leviticus 15:24"
+          ],
+          "transcription_text": "[הכלי אשר הוא ישבת עליו בנגעו בו יטמא עד הער]ב֯ ו֯[א]ם ש[כב ישכב]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 3, displayed line 4",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, other Qumran fragments and Samaritan Pentateuch comparisons are separate witnesses."
         }
       ]
     },
