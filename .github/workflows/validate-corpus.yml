@@ -1,0 +1,32 @@
+name: Validate Offline Scripture Corpus
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Fetch and prepare licensed source texts
+        run: python tools/prepare_corpus.py
+      - name: Validate book coverage, references, and metadata
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path("app/src/main/assets/corpus/verses.jsonl")
+          rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+          assert len(rows) >= 30000, f"Unexpected corpus size: {len(rows)}"
+          assert all(r.get("ref") and r.get("text") and r.get("source") for r in rows)
+          assert any(r["language"] == "he" for r in rows)
+          assert any(r["language"] == "grc" for r in rows)
+          assert all(r.get("source_url") and r.get("transcription_type") for r in rows)
+          print(f"Validated {len(rows)} verse records")
+          print("Hebrew records:", sum(r["language"] == "he" for r in rows))
+          print("Greek records:", sum(r["language"] == "grc" for r in rows))
+          print("No APK is built or uploaded by this workflow.")
+          PY
