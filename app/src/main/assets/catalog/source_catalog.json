@@ -8,12 +8,13 @@
       "language": "Hebrew",
       "coverage": "39-book Hebrew Scripture collection",
       "record_type": "edition text / transcription",
-      "license": "CC BY 4.0",
+      "license": "WLC base text: Public Domain; OSHB lemma and morphology annotations: CC BY 4.0",
       "repository": "https://github.com/openscriptures/morphhb",
       "limitations": [
+        "The underlying Westminster Leningrad Codex base text is public domain; OSHB lemma and morphology annotations are CC BY 4.0 and require attribution",
         "Not a Dead Sea Scrolls transcription",
         "Not a photographic facsimile",
-        "Differences between witnesses are not represented by this text alone"
+        "Does not itself provide a full comparison of all Hebrew witnesses"
       ]
     },
     {
