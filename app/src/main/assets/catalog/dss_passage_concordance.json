@@ -230,137 +230,191 @@
       "column_coverage": [
         {
           "column": "I",
-          "passages": "Numbers 11:31–12:11",
+          "passages": [
+            "Numbers 11:31–12:11"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "II",
-          "passages": "Numbers 13:7–24",
+          "passages": [
+            "Numbers 13:7–24"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "VI",
-          "passages": "Numbers 15:41–16:11; 16:14–16",
+          "passages": [
+            "Numbers 15:41–16:11; 16:14–16"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "VIII",
-          "passages": "Numbers 17:12–17",
+          "passages": [
+            "Numbers 17:12–17"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "X",
-          "passages": "Numbers 18:25–19:6",
+          "passages": [
+            "Numbers 18:25–19:6"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XI",
-          "passages": "Numbers 20:12–13",
+          "passages": [
+            "Numbers 20:12–13"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XII",
-          "passages": "Numbers 20:16–21:2",
+          "passages": [
+            "Numbers 20:16–21:2"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XIII",
-          "passages": "Numbers 21:12–13; 21:20–21",
+          "passages": [
+            "Numbers 21:12–13; 21:20–21"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XIV",
-          "passages": "Numbers 22:5–7",
+          "passages": [
+            "Numbers 22:5–7"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XV",
-          "passages": "Numbers 22:7–21; 22:31–34",
+          "passages": [
+            "Numbers 22:7–21; 22:31–34"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XVI",
-          "passages": "Numbers 22:37–38; 22:41–23:6; 23:13–15",
+          "passages": [
+            "Numbers 22:37–38; 22:41–23:6; 23:13–15"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XVII",
-          "passages": "Numbers 23:21–22; 23:27–24:10",
+          "passages": [
+            "Numbers 23:21–22; 23:27–24:10"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XVIII",
-          "passages": "Numbers 25:4–8; 25:16–26:3",
+          "passages": [
+            "Numbers 25:4–8; 25:16–26:3"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XIX",
-          "passages": "Numbers 26:4–34",
+          "passages": [
+            "Numbers 26:4–34"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XX",
-          "passages": "Numbers 26:62–64",
+          "passages": [
+            "Numbers 26:62–64"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXI",
-          "passages": "Numbers 26:64–27:10; 27:18–19; 27:21–23",
+          "passages": [
+            "Numbers 26:64–27:10; 27:18–19; 27:21–23"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXII",
-          "passages": "Numbers 28:13–17",
+          "passages": [
+            "Numbers 28:13–17"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXIII",
-          "passages": "Numbers 28:28–31; 29:10–13; 29:16–18",
+          "passages": [
+            "Numbers 28:28–31; 29:10–13; 29:16–18"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXIV",
-          "passages": "Numbers 29:26–30; 30:1–3; 30:5–9",
+          "passages": [
+            "Numbers 29:26–30; 30:1–3; 30:5–9"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXV",
-          "passages": "Numbers 30:15–31:6",
+          "passages": [
+            "Numbers 30:15–31:6"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXVI",
-          "passages": "Numbers 31:21–25; 31:30–38; 31:43–47",
+          "passages": [
+            "Numbers 31:21–25; 31:30–38; 31:43–47"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXVII",
-          "passages": "Numbers 31:48–32:1; 32:4–10; 32:13–19",
+          "passages": [
+            "Numbers 31:48–32:1; 32:4–10; 32:13–19"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXVIII",
-          "passages": "Numbers 32:21–30; 32:35–39; 32:41–33:4",
+          "passages": [
+            "Numbers 32:21–30; 32:35–39; 32:41–33:4"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXIX",
-          "passages": "Numbers 33:23–31; 33:45–48; 33:50–52",
+          "passages": [
+            "Numbers 33:23–31; 33:45–48; 33:50–52"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXX",
-          "passages": "Numbers 34:4–9; 34:19–23; 35:3–5",
+          "passages": [
+            "Numbers 34:4–9; 34:19–23; 35:3–5"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXXI",
-          "passages": "Numbers 35:11–15; 35:18–25; 35:27–28; 35:33–36:2",
+          "passages": [
+            "Numbers 35:11–15; 35:18–25; 35:27–28; 35:33–36:2"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         },
         {
           "column": "XXXII",
-          "passages": "Numbers 36:4–7",
+          "passages": [
+            "Numbers 36:4–7"
+          ],
           "basis": "N. Jastram, DJD XII, 205–267, plates XXXVIII–LIX; concordance reproduced in The Dead Sea Scrolls Study Edition, p. 252."
         }
       ],
