@@ -156,7 +156,7 @@
       },
       "image_source": "https://www.deadseascrolls.org.il/",
       "status": "Qumran-Digital transcription and 52-group navigation index linked; published concordance for 27 preserved columns added; fragments 85–109 remain unassigned in the Study Edition",
-      "caution": "The 27 published column assignments are reproduced from The Dead Sea Scrolls Study Edition, p. 252, which cites N. Jastram, DJD XII, 205–267. This column map is not a fragment-group map. The Qumran-Digital page's 52 display groups represent fragment numbers 1–109, but only frg. 1–4 has been individually mapped here; the Study Edition explicitly leaves fragments 85–109 without a passage assignment. Masoretic and Samaritan comparison lines on Qumran-Digital are not 4Q27 readings.",
+      "caution": "The 27 published column assignments are reproduced from The Dead Sea Scrolls Study Edition, p. 252, which cites N. Jastram, DJD XII, 205–267. This column map is not a fragment-group map. The Qumran-Digital page's 52 display groups represent fragment numbers 1–109, but only frg. 1–4 has been individually mapped here; the Study Edition explicitly leaves fragments 85–109 without a passage assignment. Masoretic and Samaritan comparison lines on Qumran-Digital are not 4Q27 readings. A verse-by-verse digital line map is now recorded for the first group (frg. 1–4), based on Qumran-Digital's own line annotations. Its comparison text is not part of 4Q27.",
       "fragment_coverage": [
         {
           "fragment": "1–4",
@@ -425,7 +425,148 @@
         "bibliography": "N. Jastram, “The Text of 4QNumᵇ,” The Madrid Qumran Congress, vol. I, pp. 177–198.",
         "study_edition": "Florentino García Martínez and Eibert J. C. Tigchelaar, The Dead Sea Scrolls Study Edition, p. 252.",
         "caution": "The published column-to-passage concordance is separate from the Qumran-Digital fragment-group navigation index. The Study Edition lists fragments 85–109 with no passage assignment. Do not map every digital fragment group to a column without checking DJD plates and fragment placements."
-      }
+      },
+      "transcription_line_map": [
+        {
+          "group": "frg. 1–4",
+          "digital_line": 1,
+          "passages": [
+            "Numbers 11:31–32"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 1",
+          "note": "Manuscript text is displayed beside MT and Samaritan Pentateuch comparison lines."
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 2,
+          "passages": [
+            "Numbers 11:32"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 2"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 3,
+          "passages": [
+            "Numbers 11:32–33"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 3"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 4,
+          "passages": [
+            "Numbers 11:33–34"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 4"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 5,
+          "passages": [
+            "Numbers 11:34–35"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 5"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 6,
+          "passages": [
+            "Numbers 11:35"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 6"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 7,
+          "passages": [
+            "Numbers 12:1"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 7"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 8,
+          "passages": [
+            "Numbers 12:1–2"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 8"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 9,
+          "passages": [
+            "Numbers 12:2–3"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 9",
+          "note": "The page also cites a parallel reading from 4Q23; that is a separate manuscript witness."
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 10,
+          "passages": [
+            "Numbers 12:4"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 10"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 11,
+          "passages": [
+            "Numbers 12:4–5"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 11"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 12,
+          "passages": [
+            "Numbers 12:5–6"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 12"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 13,
+          "passages": [
+            "Numbers 12:6"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 13"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 14,
+          "passages": [
+            "Numbers 12:7–8"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 14"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 15,
+          "passages": [
+            "Numbers 12:8–9"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 15"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 16,
+          "passages": [
+            "Numbers 12:9–10"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 16"
+        },
+        {
+          "group": "frg. 1–4",
+          "digital_line": 17,
+          "passages": [
+            "Numbers 12:10–11"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, transcription line 17"
+        }
+      ],
+      "line_map_policy": "Passage ranges above are the verse references attached to each digital transcription line by Qumran-Digital. They are navigational comparisons, not claims that every word in the cited verses is preserved. The Hebrew manuscript transcription is the manuscript witness; MT and Samaritan Pentateuch lines are separate comparison witnesses."
     },
     {
       "id": "4Q31-Deut-d",
