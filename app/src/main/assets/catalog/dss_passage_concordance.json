@@ -53,8 +53,8 @@
         "caution": "Digital transcription display-line numbering is not a manuscript column/line coordinate. Preserve brackets, dots and editorial signs. The transcription is not a manuscript image and should be checked against the published edition and images."
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "Qumran-Digital transcription linked; frg. 1–3 mapped line by line (Lev 14:27–29; 14:33–36; 15:20–24); frg. 4 remains to be mapped.",
-      "caution": "Published concordance assigns fragments 1–4 to Leviticus 14:27–29; 14:33–36; 15:20–24; and 17:2–11. Fragments 5–11 are listed with unknown contents in the Study Edition. The earlier PAM 40.967 inventory association to Leviticus 22:12–18 is a separate preliminary inventory record and must not be merged with the verified fragment map. Qumran-Digital line maps are being recorded separately from comparison witnesses. 4Q23, 11QpapLev and Samaritan Pentateuch text shown on the source page are not 4Q26 readings.",
+      "status": "Qumran-Digital transcription linked; indexed groups frg. 1–4 mapped line by line. Frg. 1: Lev 14:27–29; frg. 2: Lev 14:33–36; frg. 3: Lev 15:20–24; frg. 4: Lev 17:2–11. Lines without explicit verse annotations remain unassigned.",
+      "caution": "Published concordance assigns fragments 1–4 to Leviticus 14:27–29; 14:33–36; 15:20–24; and 17:2–11. Fragments 5–11 are listed with unknown contents in the Study Edition. The earlier PAM 40.967 inventory association to Leviticus 22:12–18 is a separate preliminary inventory record and must not be merged with the verified fragment map. Qumran-Digital line maps are being recorded separately from comparison witnesses. 4Q23, 11QpapLev and Samaritan Pentateuch text shown on the source page are not 4Q26 readings. 4Q26 frg. 4 lines 4–5 are retained as Hebrew transcription without passage assignments because the Qumran-Digital display supplies no explicit verse citation for those lines. All parallel witnesses are kept distinct.",
       "fragment_coverage": [
         {
           "fragment": "1",
@@ -88,8 +88,9 @@
           "passages": [
             "Leviticus 17:2–11"
           ],
-          "basis": "E. Tov, DJD XII, 193–195, plate XXXVI; passage assignment listed in The Dead Sea Scrolls Study Edition, p. 251.",
-          "condition": "fragmentary; editorial signs retained"
+          "basis": "Qumran-Digital 4Q26 frg. 4, displayed lines 0–17. Explicit verse annotations map lines 0–3 and 6–17 to Leviticus 17:2–11.",
+          "condition": "Lines 4–5 are preserved as displayed Hebrew transcription but have no explicit verse citation on the source page; they remain unassigned. Other Qumran witnesses and Samaritan Pentateuch comparisons are kept separate.",
+          "digital_transcription_line_labels": "0–17"
         }
       ],
       "transcription_line_map": [
@@ -250,6 +251,189 @@
           "transcription_text": "[הכלי אשר הוא ישבת עליו בנגעו בו יטמא עד הער]ב֯ ו֯[א]ם ש[כב ישכב]",
           "source_reference": "Qumran-Digital 4Q26, frg. 3, displayed line 4",
           "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, other Qumran fragments and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 0,
+          "passages": [
+            "Leviticus 17:2"
+          ],
+          "transcription_text": "-- דבר אל אהרון ואל בני]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 0",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 1,
+          "passages": [
+            "Leviticus 17:2",
+            "Leviticus 17:3"
+          ],
+          "transcription_text": "[ישראל ואמרת ]אל֯י֯ה֯ם֯ זה הד֯ב֯ר֯ [א]ש֯ר֯ צ֯ו֯ה֯[ י]ה֯[וה לאמור איש איש]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 1",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 2,
+          "passages": [
+            "Leviticus 17:3"
+          ],
+          "transcription_text": "[מבית ישראל והגר ה]גר בישר֯א֯ל אשר יש֯[חט שור או כשב או עז]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 2",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 3,
+          "passages": [
+            "Leviticus 17:3",
+            "Leviticus 17:4"
+          ],
+          "transcription_text": "[במחנה או אשר ישח]ט֯ מחוצה למחנה ו[א]ל פ֯ת֯[ח אוהל מועד לא הביאו]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 3",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 4,
+          "passages": [],
+          "transcription_text": "[לעשות אתו עלה ]א֯ו֯ שלמים ליהוה לרצו֯נ֯כ֯ם֯ ל֯[ריח ניחח וישחטהו]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 4",
+          "note": "The source displays this Hebrew line without an explicit verse citation; retained as text without assigning a passage by inference."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 5,
+          "passages": [],
+          "transcription_text": "[בחוץ ואל פתח אוהל מו]ע֯ד֯ לוא יביאנו להקריבו ק֯[רבן ליהוה לפני משכן]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 5",
+          "note": "The source displays this Hebrew line without an explicit verse citation; retained as text without assigning a passage by inference."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 6,
+          "passages": [
+            "Leviticus 17:4"
+          ],
+          "transcription_text": "[יהוה דם יחשב לאיש ה]ה֯ו֯[א] ד֯ם שפך ונכרת[ האיש ההוא מקרב עמו ]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 6",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 7,
+          "passages": [
+            "Leviticus 17:5"
+          ],
+          "transcription_text": "[למען אשר יביאו בני י]ש֯ר֯א֯ל א֯ת זבחי֯הם֯ א֯[שר הם זבחים על פני]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 7",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 8,
+          "passages": [
+            "Leviticus 17:5"
+          ],
+          "transcription_text": "[השדה והביאם ליהוה א]ל֯ פתח אוהל מוע֯ד֯ [אל הכהן וזבחו זבחי שלמים]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 8",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 9,
+          "passages": [
+            "Leviticus 17:5",
+            "Leviticus 17:6"
+          ],
+          "transcription_text": "[ליהוה אותם וזרק הכהן ]א֯ת הדם על מז֯ב֯ח֯[ יהוה פתח אוהל מועד]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 9",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 10,
+          "passages": [
+            "Leviticus 17:6",
+            "Leviticus 17:7"
+          ],
+          "transcription_text": "[והקטיר החלב לריח ניחח] ל[י]ה֯וה ולוא יזבחו ע[וד את זבחיהם לשעירם]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 10",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 11,
+          "passages": [
+            "Leviticus 17:7"
+          ],
+          "transcription_text": "[אשר הם זנים אחריהם חקת עולם תהיה זאת להם לדרתם ]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 11",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 12,
+          "passages": [
+            "Leviticus 17:8"
+          ],
+          "transcription_text": "[ואלהם תאמר איש איש מבית ישראל ו]מן[ הגר אשר יגור בתוכם אשר]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 12",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 13,
+          "passages": [
+            "Leviticus 17:8",
+            "Leviticus 17:9"
+          ],
+          "transcription_text": "[יעלה עלה או זבח ואל פ]ת֯ח֯ א֯[ו]ה֯ל מו֯ע֯ד֯ לא י֯ב֯י[אנו לעשות אתו ליהוה]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 13",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 14,
+          "passages": [
+            "Leviticus 17:9",
+            "Leviticus 17:10"
+          ],
+          "transcription_text": "[ונכרת האיש ההוא מעמי]ו ואיש איש מבית ישרא֯[ל ומן הגר הגר בתוכם]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 14",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 15,
+          "passages": [
+            "Leviticus 17:10"
+          ],
+          "transcription_text": "[אשר יאכל כול ד]ם֯ ונתתי את פנ֯י֯ ב֯נפש ה֯[אכלת את הדם והכרתי אתה]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 15",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 16,
+          "passages": [
+            "Leviticus 17:10",
+            "Leviticus 17:11"
+          ],
+          "transcription_text": "[מקרב עמה כי ]נ֯פש כול בשר בדמו היא (ה֯ו֯א֯) ו֯א֯[ני נתתיו לכם על המזבח]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 16",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 17,
+          "passages": [
+            "Leviticus 17:11"
+          ],
+          "transcription_text": "[לכפר על נפשתיכם כי הדם הוא בנפש יכפר ]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 17",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 11Q1, 11Q2, 11Q30, 4Q23, 4Q26 cross-references and Samaritan Pentateuch are separate witnesses."
         }
       ]
     },
