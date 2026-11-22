@@ -139,11 +139,21 @@
           "type": "PAM photographic inventory",
           "identifier": "42.273",
           "note": "Further entry repeats the C33a,b association and passage ranges."
+        },
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "43.057",
+          "note": "PAM photograph associated with 4Q47 4QJosha; DSS Study Edition identifies this alongside PAM 43.060."
+        },
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "43.060",
+          "note": "PAM photograph associated with 4Q47 4QJosha; DSS Study Edition identifies this alongside PAM 43.057."
         }
       ],
-      "djd_reference": null,
+      "djd_reference": "E. Ulrich, Qumran Cave 4.IX: Deuteronomy, Joshua, Judges, Kings (DJD XIV, 1995), pp. 143–152, plates XXXII–XXXIV.",
       "iaa_identifier": "ISF_TXT_06767",
-      "iaa_cross_reference": "ROC 1092; C33a",
+      "iaa_cross_reference": "ROC 1092, 1093 (Rockefeller Museum inventory references; not IAA image-plate identifiers)",
       "passage_coverage": [
         {
           "reference": "Joshua 6:5-10",
@@ -179,8 +189,60 @@
       "column_line": null,
       "transcription_source": null,
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "partial concordance; requires DJD and image-level verification",
-      "caution": "The inventory's 'and following' notation is retained as an open-ended note; no additional verse range has been invented."
+      "status": "published DJD XIV fragment-to-passage concordance added; exact IAA image-plate crosswalk and line-level readings pending",
+      "caution": "Fragment and passage assignments follow the published DSS Study Edition's summary of Ulrich's DJD XIV edition. Joshua 8:18 is marked uncertain in that summary. Fragment groups are not column/line coordinates; do not infer continuous text between fragments. PAM and ROC identifiers are historical photographic/museum references, not automatically interchangeable with current IAA image identifiers.",
+      "fragment_coverage": [
+        {
+          "fragment": "1–2",
+          "passages": [
+            "Joshua 8:34–35",
+            "Joshua 5:2–7"
+          ],
+          "basis": "DSS Study Edition, 4Q47 entry; cites Ulrich, DJD XIV, 143–152.",
+          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection"
+        },
+        {
+          "fragment": "3–8",
+          "passages": [
+            "Joshua 6:5–10"
+          ],
+          "basis": "DSS Study Edition, 4Q47 entry.",
+          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection"
+        },
+        {
+          "fragment": "9 i–12",
+          "passages": [
+            "Joshua 7:12–17"
+          ],
+          "basis": "DSS Study Edition, 4Q47 entry.",
+          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection"
+        },
+        {
+          "fragment": "9 ii, 13–16",
+          "passages": [
+            "Joshua 8:3–14",
+            "Joshua 8:18 (uncertain identification)"
+          ],
+          "basis": "DSS Study Edition, 4Q47 entry; Joshua 8:18 is explicitly marked with a question mark.",
+          "condition": "fragment-level coverage reported; passage placement includes scholarly uncertainty"
+        },
+        {
+          "fragment": "17–18",
+          "passages": [
+            "Joshua 10:2–5"
+          ],
+          "basis": "DSS Study Edition, 4Q47 entry.",
+          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection"
+        },
+        {
+          "fragment": "19–22",
+          "passages": [
+            "Joshua 10:8–11"
+          ],
+          "basis": "DSS Study Edition, 4Q47 entry.",
+          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection"
+        }
+      ]
     },
     {
       "id": "4Q53-Sam-c",
@@ -261,6 +323,13 @@
       "url": "https://www.deadseascrolls.org.il/",
       "use": "Current institutional manuscript catalogue and image access.",
       "limitation": "IAA imaging-plate fragment numbering must not be conflated with DJD fragment numbering without a direct concordance."
+    },
+    {
+      "title": "The Dead Sea Scrolls Study Edition, 2nd edition",
+      "institution": "Florentino García Martínez and Eibert J. C. Tigchelaar, Brill",
+      "url": "https://ancientmodern.org/wp-content/uploads/2016/02/the_dead_sea_scrolls_study_edition_brill_1999.pdf",
+      "use": "4Q47 (4QJoshᵃ) entry: editor and DJD XIV reference, PAM and ROC identifiers, and fragment-to-passage table.",
+      "limitation": "The editors state that their Study Edition does not replace the DJD editio princeps; the original DJD plates, transcription and commentary remain the basis for detailed work."
     }
   ],
   "next_verification_tasks": [
