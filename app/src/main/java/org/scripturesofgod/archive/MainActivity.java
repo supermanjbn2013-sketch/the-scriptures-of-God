@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
     LinearLayout root, content;
     String section="Home";
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
-    String[] sections={"Home","Hebrew Scriptures","Prophets","Apostolic Writings","Ancient Referenced Books","Other Ancient Writings","Manuscript Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History"};
+    String[] sections={"Home","Hebrew Scriptures","Prophets","Apostolic Writings","Ancient Referenced Books","Other Ancient Writings","Manuscript Archive","DSS Passage Concordance","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History"};
     @Override public void onCreate(Bundle b){super.onCreate(b); seed(); show();}
     void seed(){
         entries.put("Hebrew Scriptures",new ArrayList<>(Arrays.asList("Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Songs","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi")));
@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
         entries.put("Ancient Referenced Books",new ArrayList<>(Arrays.asList("Book of Jasher — referenced in Joshua 10:13 and 2 Samuel 1:18","Book of the Wars of the LORD — Numbers 21:14","Records of Samuel, Nathan and Gad — 1 Chronicles 29:29","Acts of Solomon — 1 Kings 11:41","Book of the Sayings of Iddo — 2 Chronicles 13:22","Earlier letter to Corinth — referenced in 1 Corinthians 5:9")));
         entries.put("Other Ancient Writings",new ArrayList<>(Arrays.asList("1 Enoch","Jubilees","Didache","Shepherd of Hermas","Gospel of Thomas")));
         entries.put("Manuscript Archive",new ArrayList<>(Arrays.asList("Dead Sea Scrolls (DSS)","Great Isaiah Scroll (1QIsaᵃ)","Pesher Habakkuk (1QpHab)","Genesis Apocryphon (1QapGen)","Community Rule (1QS)","Temple Scroll (11Q19)","War Scroll (1QM)","Masoretic Text","Septuagint","Samaritan Pentateuch","Papyrus 46 (P46)","Papyrus 52 (P52)","Papyrus 66 (P66)","Papyrus 75 (P75)","Codex Vaticanus","Codex Sinaiticus","Codex Alexandrinus")));
-        entries.put("Translation Center",new ArrayList<>(Arrays.asList("English","Filipino / Tagalog","Spanish","Portuguese","French","German","Italian","Arabic","Hebrew","Greek","Aramaic","Chinese","Japanese","Korean","Indonesian","Latin")));
+        entries.put("DSS Passage Concordance",new ArrayList<>(Arrays.asList("4Q26 Lev d — Leviticus","4Q27 Num b — Numbers","4Q31 Deut d — Deuteronomy","4Q47 Josh a — Joshua","4Q53 Sam c — Samuel")));\n        entries.put("Translation Center",new ArrayList<>(Arrays.asList("English","Filipino / Tagalog","Spanish","Portuguese","French","German","Italian","Arabic","Hebrew","Greek","Aramaic","Chinese","Japanese","Korean","Indonesian","Latin")));
         entries.put("Manuscript Comparison",new ArrayList<>(Arrays.asList("Compare witness transcriptions","Review additions and omissions","Inspect textual variants","Trace quotations and parallels")));
         entries.put("Research Archive",new ArrayList<>(Arrays.asList("Source metadata","Authorship assessments","Composition dates","Language and provenance","Fragment and witness records","Research notes")));
         entries.put("Favorites",new ArrayList<>()); entries.put("Reading History",new ArrayList<>());
@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
             return;
         }
         ArrayList<String> data=entries.get(section); if(data==null)data=new ArrayList<>();
-        int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
+        int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {if(section.equals("DSS Passage Concordance"))openDssConcordanceEntry(item);else if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
         if(count==0)content.addView(text("No matching entries. This archive does not fabricate missing manuscript contents or readings.",14,muted,false));
         if(section.equals("Manuscript Archive")||section.equals("Research Archive")||section.equals("Manuscript Comparison"))content.addView(text("Records are catalog placeholders until a source, transcription, date and provenance are verified and attached.",12,gold,false));
     }
@@ -117,6 +117,39 @@ public class MainActivity extends Activity {
             ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
             new android.app.AlertDialog.Builder(this).setTitle(match.optString("name")).setView(sv).setPositiveButton("Close",null).show();
         }catch(Exception e){new android.app.AlertDialog.Builder(this).setTitle("DSS catalogue unavailable").setMessage("The Dead Sea Scrolls metadata register is not present in this build.").setPositiveButton("Close",null).show();}
+    }
+
+
+    void openDssConcordanceEntry(String item){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/dss_passage_concordance.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray records=new org.json.JSONObject(raw.toString()).getJSONArray("records");
+            String key=item.substring(0,item.indexOf(" — ")).trim();
+            org.json.JSONObject match=null;
+            for(int i=0;i<records.length();i++){org.json.JSONObject r=records.getJSONObject(i);if(r.optString("manuscript_id").equals(key)){match=r;break;}}
+            if(match==null){new android.app.AlertDialog.Builder(this).setTitle(item).setMessage("No concordance record is available.").setPositiveButton("Close",null).show();return;}
+            StringBuilder detail=new StringBuilder();
+            detail.append("Manuscript: ").append(match.optString("manuscript_id")).append("\\n");
+            detail.append("Work: ").append(match.optString("work")).append("\\n");
+            detail.append("Cave: ").append(match.optString("cave")).append("\\n");
+            detail.append("Language: ").append(match.optString("language")).append("\\n");
+            detail.append("IAA catalogue ID: ").append(match.optString("iaa_identifier")).append("\\n");
+            detail.append("IAA cross-reference: ").append(match.optString("iaa_cross_reference")).append("\\n");
+            detail.append("DJD reference: ").append(match.isNull("djd_reference")?"Not yet verified":match.optString("djd_reference")).append("\\n\\n");
+            detail.append("Inventory references:\\n");
+            org.json.JSONArray inventory=match.optJSONArray("inventory_references");
+            if(inventory!=null)for(int i=0;i<inventory.length();i++){org.json.JSONObject ref=inventory.getJSONObject(i);detail.append("• ").append(ref.optString("identifier")).append(" — ").append(ref.optString("note")).append("\\n");}
+            detail.append("\\nReported passage coverage:\\n");
+            org.json.JSONArray passages=match.optJSONArray("passage_coverage");
+            if(passages==null||passages.length()==0)detail.append("No passage range has been verified or recorded.\\n");
+            else for(int i=0;i<passages.length();i++){org.json.JSONObject p=passages.getJSONObject(i);detail.append("• ").append(p.optString("reference")).append("\\n  Status: ").append(p.optString("coverage_status")).append("\\n  Basis: ").append(p.optString("basis")).append("\\n");}
+            detail.append("\\nStatus: ").append(match.optString("status")).append("\\n");
+            detail.append("Caution: ").append(match.optString("caution")).append("\\n");
+            TextView view=text(detail.toString(),14,ink,false);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+            ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
+            new android.app.AlertDialog.Builder(this).setTitle(match.optString("manuscript_id")).setView(sv).setPositiveButton("Close",null).show();
+        }catch(Exception e){new android.app.AlertDialog.Builder(this).setTitle("Concordance unavailable").setMessage("The DSS passage concordance is not present in this build.").setPositiveButton("Close",null).show();}
     }
 
     void openCatalogEntry(String item){
