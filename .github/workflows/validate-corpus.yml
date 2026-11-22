@@ -43,8 +43,26 @@ jobs:
               assert record["source_urls"] and record["status"] == "metadata catalogued; transcription not imported"
           print("Validated DSS metadata records:", len(dss["records"]))
 
+          concordance_path = Path("app/src/main/assets/catalog/dss_passage_concordance.json")
+          concordance = json.loads(concordance_path.read_text(encoding="utf-8"))
+          assert concordance["record_type"] == "dss_manuscript_passage_concordance"
+          assert len(concordance["records"]) >= 5
+          concordance_ids = [r["manuscript_id"] for r in concordance["records"]]
+          assert len(concordance_ids) == len(set(concordance_ids))
+          assert {"4Q26 Lev d", "4Q27 Num b", "4Q31 Deut d", "4Q47 Josh a", "4Q53 Sam c"}.issubset(set(concordance_ids))
+          for record in concordance["records"]:
+              assert record["status"] and record["caution"] and record["inventory_references"] is not None
+              assert record["djd_reference"] is None, "Unverified DJD references must remain null"
+              for passage in record["passage_coverage"]:
+                  assert passage["reference"] and passage["basis"] and passage["coverage_status"]
+          print("Validated DSS passage concordance records:", len(concordance["records"]))
+
+
           source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
           assert "void openDssCatalogEntry(String item)" in source
+          assert "void openDssConcordanceEntry(String item)" in source
+          assert "DSS Passage Concordance" in source
+          assert "openDssConcordanceEntry(item)" in source
           assert "openDssCatalogEntry(item)" in source
           assert "Temple Scroll (11Q19)" in source and "War Scroll (1QM)" in source
           assert "11Q19" in ids and "1QM" in ids
