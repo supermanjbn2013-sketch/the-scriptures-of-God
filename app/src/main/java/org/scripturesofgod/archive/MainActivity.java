@@ -165,6 +165,7 @@ public class MainActivity extends Activity {
                 detail.append("License: ").append(transcription.optString("license")).append("\\n");
                 detail.append("Attribution: ").append(transcription.optString("attribution")).append("\\n");
                 detail.append("Source URL: ").append(transcription.optString("url")).append("\\n");
+                detail.append("Use: ").append(transcription.optString("use")).append("\\n");
                 detail.append("Transcription caution: ").append(transcription.optString("caution")).append("\\n");
             }
             detail.append("Caution: ").append(match.optString("caution")).append("\n");
