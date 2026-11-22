@@ -53,16 +53,17 @@
         "caution": "Digital transcription display-line numbering is not a manuscript column/line coordinate. Preserve brackets, dots and editorial signs. The transcription is not a manuscript image and should be checked against the published edition and images."
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "Qumran-Digital transcription linked; fragments 1–4 mapped against published DJD XII / Study Edition references; fragments 5–11 remain unassigned in the cited concordance",
-      "caution": "Published concordance assigns fragments 1–4 to Leviticus 14:27–29; 14:33–36; 15:20–24; and 17:2–11. Fragments 5–11 are listed with unknown contents in the Study Edition. The earlier PAM 40.967 inventory association to Leviticus 22:12–18 is a separate preliminary inventory record and must not be merged with the verified fragment map.",
+      "status": "Qumran-Digital transcription linked; frg. 1 mapped line by line (Lev 14:27–29); remaining indexed groups frg. 2–4 await line-by-line mapping.",
+      "caution": "Published concordance assigns fragments 1–4 to Leviticus 14:27–29; 14:33–36; 15:20–24; and 17:2–11. Fragments 5–11 are listed with unknown contents in the Study Edition. The earlier PAM 40.967 inventory association to Leviticus 22:12–18 is a separate preliminary inventory record and must not be merged with the verified fragment map. Qumran-Digital line maps are being recorded separately from comparison witnesses. 4Q23, 11QpapLev and Samaritan Pentateuch text shown on the source page are not 4Q26 readings.",
       "fragment_coverage": [
         {
           "fragment": "1",
           "passages": [
             "Leviticus 14:27–29"
           ],
-          "basis": "E. Tov, DJD XII, 193–195, plate XXXVI; also linked in Qumran-Digital 4Q26 transcription.",
-          "condition": "fragmentary; editorial signs retained"
+          "basis": "Qumran-Digital 4Q26 frg. 1, displayed lines 1–6, annotated with Leviticus 14:27–29.",
+          "condition": "Fragmentary Hebrew transcription; the verse references are editorial comparison anchors, not a claim that every word of the cited verses survives.",
+          "digital_transcription_line_labels": "1–6"
         },
         {
           "fragment": "2",
@@ -87,6 +88,69 @@
           ],
           "basis": "E. Tov, DJD XII, 193–195, plate XXXVI; passage assignment listed in The Dead Sea Scrolls Study Edition, p. 251.",
           "condition": "fragmentary; editorial signs retained"
+        }
+      ],
+      "transcription_line_map": [
+        {
+          "group": "frg. 1",
+          "digital_line": 1,
+          "passages": [
+            "Leviticus 14:27"
+          ],
+          "transcription_text": "-- והזה הכהן באצבעו הימנית]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 1, displayed line 1",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, 11QpapLev and Samaritan Pentateuch comparisons are separate witnesses and are not merged into 4Q26."
+        },
+        {
+          "group": "frg. 1",
+          "digital_line": 2,
+          "passages": [
+            "Leviticus 14:27"
+          ],
+          "transcription_text": "[מ]ן השמן א֯[שר על כפו השמאלית שבע פעמים לפני יהוה ]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 1, displayed line 2",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, 11QpapLev and Samaritan Pentateuch comparisons are separate witnesses and are not merged into 4Q26."
+        },
+        {
+          "group": "frg. 1",
+          "digital_line": 3,
+          "passages": [
+            "Leviticus 14:28"
+          ],
+          "transcription_text": "[ונתן הכהן מן השמ]ן אשר על כפו ע[ל תנוך אזן המטהר הימנית]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 1, displayed line 3",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, 11QpapLev and Samaritan Pentateuch comparisons are separate witnesses and are not merged into 4Q26."
+        },
+        {
+          "group": "frg. 1",
+          "digital_line": 4,
+          "passages": [
+            "Leviticus 14:28"
+          ],
+          "transcription_text": "[ועל בוהן ]ידו הימנית ועל בוה[ן] רג[לו הימנית על מקום דם]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 1, displayed line 4",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, 11QpapLev and Samaritan Pentateuch comparisons are separate witnesses and are not merged into 4Q26."
+        },
+        {
+          "group": "frg. 1",
+          "digital_line": 5,
+          "passages": [
+            "Leviticus 14:28",
+            "Leviticus 14:29"
+          ],
+          "transcription_text": "[האשם וה]נ֯ו֯ת֯ר֯ מ֯ן השמן אשר ע[ל כף הכהן יתן על ראש המטהר]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 1, displayed line 5",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, 11QpapLev and Samaritan Pentateuch comparisons are separate witnesses and are not merged into 4Q26."
+        },
+        {
+          "group": "frg. 1",
+          "digital_line": 6,
+          "passages": [
+            "Leviticus 14:29"
+          ],
+          "transcription_text": "[לכפר עליו לפני יהוה ]",
+          "source_reference": "Qumran-Digital 4Q26, frg. 1, displayed line 6",
+          "note": "Hebrew transcription copied from the Qumran-Digital display. 4Q23, 11QpapLev and Samaritan Pentateuch comparisons are separate witnesses and are not merged into 4Q26."
         }
       ]
     },
