@@ -1,0 +1,11 @@
+RESEARCH DATA POLICY
+
+1. Every text record must identify its source, edition or witness, language, licence, and transcription type.
+2. An edited text must never be labelled as a direct manuscript transcription.
+3. A manuscript must not be described as containing a passage unless that witness actually preserves the passage.
+4. Dead Sea Scrolls are Hebrew/Aramaic witnesses. They are not witnesses to the Apostolic Writings.
+5. Reconstructed, damaged, supplied, or uncertain readings must be marked explicitly.
+6. Lost works may be catalogued from surviving references, but their missing contents must never be fabricated.
+7. Translation output must identify its source or engine, date, and human-review status.
+8. Public-domain or compatible licensed data only. Preserve attribution and licence notices in the app.
+9. The present bundled Hebrew and Greek texts are research starting editions, not a complete manuscript archive or critical apparatus.
