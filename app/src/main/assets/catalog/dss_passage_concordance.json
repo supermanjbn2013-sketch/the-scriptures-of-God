@@ -155,7 +155,7 @@
         "caution": "The displayed line numbers are digital transcription navigation lines, not manuscript column/line coordinates. The transcription juxtaposes the manuscript text with Masoretic and Samaritan Pentateuch readings; those comparison texts must not be mistaken for 4Q27."
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "Qumran-Digital transcription and 52-group index linked; line-by-line passage maps completed for groups frg. 1–4, frg. 3 ii+5, and frg. 6–10; other groups await verification.",
+      "status": "Qumran-Digital transcription and 52-group index linked; line-by-line passage maps completed for groups frg. 1–4, frg. 3 ii+5, frg. 6–10, and frg. 11; other groups await verification.",
       "caution": "The 27 published column assignments are reproduced from The Dead Sea Scrolls Study Edition, p. 252, which cites N. Jastram, DJD XII, 205–267. This column map is not a fragment-group map. The Qumran-Digital page's 52 display groups represent fragment numbers 1–109, but only frg. 1–4 has been individually mapped here; the Study Edition explicitly leaves fragments 85–109 without a passage assignment. Masoretic and Samaritan comparison lines on Qumran-Digital are not 4Q27 readings. A verse-by-verse digital line map is now recorded for the first group (frg. 1–4), based on Qumran-Digital's own line annotations. Its comparison text is not part of 4Q27.",
       "fragment_coverage": [
         {
@@ -186,6 +186,15 @@
           "digital_transcription_line_labels": "11–19, 21–24, 28–30",
           "basis": "Qumran-Digital 4Q27, third displayed group frg. 6–10. Its indexed display lines link individually to the listed Numbers passages.",
           "condition": "Fragmentary and discontinuous; the displayed group omits lines 20 and 25–27. The surviving Numbers 15:41 line is separated from the Numbers 16 passage blocks; do not infer continuous text."
+        },
+        {
+          "fragment": "11",
+          "passages": [
+            "Numbers 17:12–17"
+          ],
+          "digital_transcription_line_range": "6–12",
+          "basis": "Qumran-Digital 4Q27 transcription, displayed group frg. 11, lines 6–12; the digital lines link to Numbers 17:12–17.",
+          "condition": "Fragmentary Hebrew text with editorial restorations and uncertainty marks. The digital group begins at Numbers 17:12; it does not represent the whole chapter."
         }
       ],
       "fragment_group_index": {
@@ -842,9 +851,72 @@
             "Numbers 16:16"
           ],
           "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 30"
+        },
+        {
+          "group": "frg. 11",
+          "digital_line": 6,
+          "passages": [
+            "Numbers 17:12"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 11, displayed line 6",
+          "note": "The comparison text is labelled separately as the Masoretic Text and Samaritan Pentateuch; neither is part of the 4Q27 transcription."
+        },
+        {
+          "group": "frg. 11",
+          "digital_line": 7,
+          "passages": [
+            "Numbers 17:12–13"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 11, displayed line 7",
+          "note": "The comparison text is labelled separately as the Masoretic Text and Samaritan Pentateuch; neither is part of the 4Q27 transcription."
+        },
+        {
+          "group": "frg. 11",
+          "digital_line": 8,
+          "passages": [
+            "Numbers 17:13–14"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 11, displayed line 8",
+          "note": "The comparison text is labelled separately as the Masoretic Text and Samaritan Pentateuch; neither is part of the 4Q27 transcription."
+        },
+        {
+          "group": "frg. 11",
+          "digital_line": 9,
+          "passages": [
+            "Numbers 17:14–15"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 11, displayed line 9",
+          "note": "The comparison text is labelled separately as the Masoretic Text and Samaritan Pentateuch; neither is part of the 4Q27 transcription."
+        },
+        {
+          "group": "frg. 11",
+          "digital_line": 10,
+          "passages": [
+            "Numbers 17:15"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 11, displayed line 10",
+          "note": "The comparison text is labelled separately as the Masoretic Text and Samaritan Pentateuch; neither is part of the 4Q27 transcription."
+        },
+        {
+          "group": "frg. 11",
+          "digital_line": 11,
+          "passages": [
+            "Numbers 17:16–17"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 11, displayed line 11",
+          "note": "The comparison text is labelled separately as the Masoretic Text and Samaritan Pentateuch; neither is part of the 4Q27 transcription."
+        },
+        {
+          "group": "frg. 11",
+          "digital_line": 12,
+          "passages": [
+            "Numbers 17:17"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 11, displayed line 12",
+          "note": "The comparison text is labelled separately as the Masoretic Text and Samaritan Pentateuch; neither is part of the 4Q27 transcription."
         }
       ],
-      "line_map_policy": "Passage ranges above are the verse references attached to each digital transcription line by Qumran-Digital. They are navigational comparisons, not claims that every word in the cited verses is preserved. The Hebrew manuscript transcription is the manuscript witness; MT and Samaritan Pentateuch lines are separate comparison witnesses. The second mapped group frg. 3 ii+5 is individually indexed to Numbers 13:7–24. Its cross-manuscript parallels (including 4Q365) remain distinct witnesses. The third mapped group frg. 6–10 preserves the digital page's discontinuous line labels (11–19, 21–24, 28–30); omitted labels are not reconstructed."
+      "line_map_policy": "Passage ranges above are the verse references attached to each digital transcription line by Qumran-Digital. They are navigational comparisons, not claims that every word in the cited verses is preserved. The Hebrew manuscript transcription is the manuscript witness; MT and Samaritan Pentateuch lines are separate comparison witnesses. The second mapped group frg. 3 ii+5 is individually indexed to Numbers 13:7–24. Its cross-manuscript parallels (including 4Q365) remain distinct witnesses. The third mapped group frg. 6–10 preserves the digital page's discontinuous line labels (11–19, 21–24, 28–30); omitted labels are not reconstructed. The fourth mapped group frg. 11 is recorded using its actual displayed line labels 6–12 and maps to Numbers 17:12–17; it is not conflated with the preceding group frg. 6–10."
     },
     {
       "id": "4Q31-Deut-d",
