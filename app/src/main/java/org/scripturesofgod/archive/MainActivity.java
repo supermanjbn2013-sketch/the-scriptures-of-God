@@ -124,4 +124,5 @@ public class MainActivity extends Activity {
             new android.app.AlertDialog.Builder(this).setTitle("Manuscript catalogue unavailable").setMessage("The metadata register is not present in this build yet.").setPositiveButton("Close",null).show();
         }
     }
-\n}
+
+}
