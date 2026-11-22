@@ -153,7 +153,7 @@ public class MainActivity extends Activity {
                     detail.append("• Fragment ").append(group.optString("fragment")).append(": ");
                     org.json.JSONArray refs=group.optJSONArray("passages");
                     if(refs!=null)for(int j=0;j<refs.length();j++){if(j>0)detail.append("; ");detail.append(refs.optString(j));}
-                    detail.append("\n  Condition: ").append(group.optString("condition")).append("\n  Basis: ").append(group.optString("basis")).append("\n");
+                    detail.append("\n  Condition: ").append(group.optString("condition")).append("\n  Digital transcription display lines: ").append(group.optString("digital_transcription_line_range", "not recorded")).append(" (not manuscript column/line coordinates)\n  Basis: ").append(group.optString("basis")).append("\n");
                 }
             }
             detail.append("\nStatus: ").append(match.optString("status")).append("\n");
