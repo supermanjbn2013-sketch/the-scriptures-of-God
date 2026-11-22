@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "record_type": "dss_manuscript_passage_concordance",
+  "policy": "This file is a research concordance, not a DSS transcription. Passage ranges are inventory-reported coverage and do not imply that every word in the cited range is extant. No DJD fragment number, IAA imaging-plate number, column/line, or textual reading is asserted unless individually verified. Preliminary inventory data must be checked against published editions and current institutional catalogues before textual comparison.",
+  "field_guide": {
+    "manuscript_id": "Published Qumran manuscript designation.",
+    "inventory_reference": "Photographic inventory or museum plate identifier; not automatically a DJD fragment number.",
+    "djd_reference": "Discoveries in the Judaean Desert volume and fragment designation; null until verified.",
+    "iaa_identifier": "IAA catalogue identifier; null until directly correlated.",
+    "passage_coverage": "Scriptural passage ranges reported by the cited inventory; exact surviving wording and completeness require edition-level inspection.",
+    "condition": "Extant status of the precise passage; use unknown when not established."
+  },
+  "records": [
+    {
+      "id": "4Q26-Lev-d",
+      "manuscript_id": "4Q26 Lev d",
+      "work": "Leviticus",
+      "cave": "Qumran Cave 4",
+      "language": "Hebrew",
+      "inventory_references": [
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "40.967",
+          "note": "Inventory entry associates 4Q26 Levd with the right-center of this photograph."
+        }
+      ],
+      "djd_reference": null,
+      "iaa_identifier": "ISF_TXT_06763",
+      "iaa_cross_reference": "C15b",
+      "passage_coverage": [
+        {
+          "reference": "Leviticus 22:12-18",
+          "basis": "Preliminary photographic inventory association at PAM 40.967; fragment-level reading not yet checked.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        }
+      ],
+      "column_line": null,
+      "transcription_source": null,
+      "image_source": "https://www.deadseascrolls.org.il/",
+      "status": "partial concordance; requires DJD and image-level verification",
+      "caution": "Do not treat PAM 40.967 as a DJD fragment number or assume the whole cited range is preserved."
+    },
+    {
+      "id": "4Q27-Num-b",
+      "manuscript_id": "4Q27 Num b",
+      "work": "Numbers",
+      "cave": "Qumran Cave 4",
+      "language": "Hebrew",
+      "inventory_references": [
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "41.198",
+          "note": "Inventory associates C19 with Numbers 11-13, 16, 18 and 20."
+        },
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "41.517",
+          "note": "Separate entry associates 4Q27 Numb with Numbers 26:62-64."
+        }
+      ],
+      "djd_reference": null,
+      "iaa_identifier": "ISF_TXT_06764",
+      "iaa_cross_reference": "ROC 1085A",
+      "passage_coverage": [
+        {
+          "reference": "Numbers 11-13",
+          "basis": "Preliminary inventory entry 41.198.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        },
+        {
+          "reference": "Numbers 16",
+          "basis": "Preliminary inventory entry 41.198.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        },
+        {
+          "reference": "Numbers 18",
+          "basis": "Preliminary inventory entry 41.198.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        },
+        {
+          "reference": "Numbers 20",
+          "basis": "Preliminary inventory entry 41.198.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        },
+        {
+          "reference": "Numbers 26:62-64",
+          "basis": "Preliminary inventory entry 41.517.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        }
+      ],
+      "column_line": null,
+      "transcription_source": null,
+      "image_source": "https://www.deadseascrolls.org.il/",
+      "status": "partial concordance; requires DJD and image-level verification",
+      "caution": "The listed chapters are inventory-level coverage notes, not a claim that every verse or every word survives."
+    },
+    {
+      "id": "4Q31-Deut-d",
+      "manuscript_id": "4Q31 Deut d",
+      "work": "Deuteronomy",
+      "cave": "Qumran Cave 4",
+      "language": "Hebrew",
+      "inventory_references": [
+        {
+          "type": "PAM / museum plate cross-reference",
+          "identifier": "C26",
+          "note": "The preliminary inventory associates 4Q31 Deut d with C26; no passage range is supplied in the cited entry."
+        }
+      ],
+      "djd_reference": null,
+      "iaa_identifier": "ISF_TXT_06765",
+      "iaa_cross_reference": "C26",
+      "passage_coverage": [],
+      "column_line": null,
+      "transcription_source": null,
+      "image_source": "https://www.deadseascrolls.org.il/",
+      "status": "manuscript identity cross-referenced; passage coverage pending",
+      "caution": "Do not infer Deuteronomy chapter or verse coverage from the manuscript title alone."
+    },
+    {
+      "id": "4Q47-Josh-a",
+      "manuscript_id": "4Q47 Josh a",
+      "work": "Joshua",
+      "cave": "Qumran Cave 4",
+      "language": "Hebrew",
+      "inventory_references": [
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "41.199",
+          "note": "C33a,b; two grouped portions are listed."
+        },
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "42.273",
+          "note": "Further entry repeats the C33a,b association and passage ranges."
+        }
+      ],
+      "djd_reference": null,
+      "iaa_identifier": "ISF_TXT_06767",
+      "iaa_cross_reference": "ROC 1092; C33a",
+      "passage_coverage": [
+        {
+          "reference": "Joshua 6:5-10",
+          "basis": "Preliminary inventory entry 41.199 / 42.273, portion a.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        },
+        {
+          "reference": "Joshua 7:12-16",
+          "basis": "Preliminary inventory entry 41.199 / 42.273, portion a.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        },
+        {
+          "reference": "Joshua 8:3-5",
+          "basis": "Preliminary inventory entry 41.199 / 42.273, portion a.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        },
+        {
+          "reference": "Joshua 8:34-35 and following fragmentary material",
+          "basis": "Preliminary inventory entry 41.199 / 42.273, portion b.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; exact continuation unspecified"
+        },
+        {
+          "reference": "Joshua 10:2-5, 8-11",
+          "basis": "Preliminary inventory entry 41.199 / 42.273, portion b.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        }
+      ],
+      "column_line": null,
+      "transcription_source": null,
+      "image_source": "https://www.deadseascrolls.org.il/",
+      "status": "partial concordance; requires DJD and image-level verification",
+      "caution": "The inventory's 'and following' notation is retained as an open-ended note; no additional verse range has been invented."
+    },
+    {
+      "id": "4Q53-Sam-c",
+      "manuscript_id": "4Q53 Sam c",
+      "work": "Samuel",
+      "cave": "Qumran Cave 4",
+      "language": "Hebrew",
+      "inventory_references": [
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "42.278",
+          "note": "Inventory identifies 4Q53 Sam c with 2 Samuel chapters 14 and 15."
+        },
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "42.637",
+          "note": "Separate entry identifies minor fragments on the same photograph series."
+        }
+      ],
+      "djd_reference": null,
+      "iaa_identifier": "ISF_TXT_06768",
+      "iaa_cross_reference": "ROC 406; C46b",
+      "passage_coverage": [
+        {
+          "reference": "2 Samuel 14-15",
+          "basis": "Preliminary inventory entry 42.278.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; extant wording not verified"
+        }
+      ],
+      "column_line": null,
+      "transcription_source": null,
+      "image_source": "https://www.deadseascrolls.org.il/",
+      "status": "partial concordance; requires DJD and image-level verification",
+      "caution": "The passage coverage is an inventory-level chapter reference. Exact verse boundaries and column/line locations remain unverified."
+    }
+  ],
+  "sources": [
+    {
+      "title": "Dead Sea Scroll Inventory Project, Fascicle 7",
+      "institution": "Inventory project associated with the West Semitic Research / Ancient Biblical Manuscript Center photographic collections",
+      "url": "https://lyingpen.uia.no/dssinventoryproject/fascicle7/",
+      "use": "PAM photographic inventory associations and passage coverage notes for 4Q26, 4Q27, 4Q47 and 4Q53.",
+      "limitation": "The fascicle itself describes its lists as preliminary and warns that errors and updates are possible."
+    },
+    {
+      "title": "Dead Sea Scrolls catalogue dataset",
+      "institution": "West Semitic Research Project, University of Southern California",
+      "url": "https://dornsife.usc.edu/wsrp/wp-content/uploads/sites/155/2023/05/Dead-Sea-Scrolls.pdf",
+      "use": "Catalogue identifiers and cross-references for 4Q26, 4Q27, 4Q31, 4Q36, 4Q47 and 4Q53.",
+      "limitation": "Catalogue records do not by themselves provide a full transcription or exact verse-by-verse state of preservation."
+    },
+    {
+      "title": "Leon Levy Dead Sea Scrolls Digital Library",
+      "institution": "Israel Antiquities Authority",
+      "url": "https://www.deadseascrolls.org.il/",
+      "use": "Current institutional manuscript catalogue and image access.",
+      "limitation": "IAA imaging-plate fragment numbering must not be conflated with DJD fragment numbering without a direct concordance."
+    }
+  ],
+  "next_verification_tasks": [
+    "Correlate each PAM inventory number with the current IAA image-plate record.",
+    "Locate the published DJD volume, plate, fragment, column and line references.",
+    "Inspect the actual manuscript image and scholarly transcription for each cited passage.",
+    "Record preserved, partially preserved, reconstructed, editorially restored, illegible and missing text separately.",
+    "Do not import a transcription until the edition and image permissions are documented."
+  ]
+}
