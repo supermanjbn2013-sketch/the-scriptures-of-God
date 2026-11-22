@@ -187,9 +187,18 @@
         }
       ],
       "column_line": null,
-      "transcription_source": null,
+      "transcription_source": {
+        "title": "Qumran-Digital: 4Q47 transcription",
+        "url": "https://lexicon.qumran-digital.org/transcriptions/4Q47/2026-10-06/index.html?v=2026-10-06",
+        "version": "2026-10-06",
+        "provider": "DFG project 465277421, Qumran-Digital: Text und Lexikon",
+        "attribution": "Based on a text of the earlier Qumran-Wörterbuch project of the Göttingen Academy of Sciences and Humanities, itself based on a precursor text by Martin Abegg.",
+        "license": "CC BY-SA 4.0",
+        "use": "Online Hebrew transcription with fragment groupings and line-by-line links to corresponding scriptural passages.",
+        "caution": "The page's numbered lines are digital transcription display lines, not independently verified manuscript column-and-line coordinates. Brackets, dots and other editorial signs must be preserved; this digital transcription is not a photograph and does not replace inspection of manuscript images or the DJD edition."
+      },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "published DJD XIV fragment-to-passage concordance added; exact IAA image-plate crosswalk and line-level readings pending",
+      "status": "DJD XIV fragment-to-passage concordance and linked Qumran-Digital Hebrew transcription added; independent plate verification and exact manuscript column/line coordinates pending",
       "caution": "Fragment and passage assignments follow the published DSS Study Edition's summary of Ulrich's DJD XIV edition. Joshua 8:18 is marked uncertain in that summary. Fragment groups are not column/line coordinates; do not infer continuous text between fragments. PAM and ROC identifiers are historical photographic/museum references, not automatically interchangeable with current IAA image identifiers.",
       "fragment_coverage": [
         {
@@ -199,7 +208,9 @@
             "Joshua 5:2–7"
           ],
           "basis": "DSS Study Edition, 4Q47 entry; cites Ulrich, DJD XIV, 143–152.",
-          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection"
+          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection",
+          "digital_transcription_line_range": "1–11",
+          "line_range_note": "Digital page display-line numbering only; not manuscript column/line coordinates."
         },
         {
           "fragment": "3–8",
@@ -207,7 +218,9 @@
             "Joshua 6:5–10"
           ],
           "basis": "DSS Study Edition, 4Q47 entry.",
-          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection"
+          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection",
+          "digital_transcription_line_range": "1–9",
+          "line_range_note": "Digital page display-line numbering only; not manuscript column/line coordinates."
         },
         {
           "fragment": "9 i–12",
@@ -215,7 +228,9 @@
             "Joshua 7:12–17"
           ],
           "basis": "DSS Study Edition, 4Q47 entry.",
-          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection"
+          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection",
+          "digital_transcription_line_range": "1–11",
+          "line_range_note": "Digital page display-line numbering only; not manuscript column/line coordinates."
         },
         {
           "fragment": "9 ii, 13–16",
@@ -224,7 +239,9 @@
             "Joshua 8:18 (uncertain identification)"
           ],
           "basis": "DSS Study Edition, 4Q47 entry; Joshua 8:18 is explicitly marked with a question mark.",
-          "condition": "fragment-level coverage reported; passage placement includes scholarly uncertainty"
+          "condition": "fragment-level coverage reported; passage placement includes scholarly uncertainty",
+          "digital_transcription_line_range": "1–14",
+          "line_range_note": "Digital page display-line numbering only; not manuscript column/line coordinates."
         },
         {
           "fragment": "17–18",
@@ -232,7 +249,9 @@
             "Joshua 10:2–5"
           ],
           "basis": "DSS Study Edition, 4Q47 entry.",
-          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection"
+          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection",
+          "digital_transcription_line_range": "1–5",
+          "line_range_note": "Digital page display-line numbering only; not manuscript column/line coordinates."
         },
         {
           "fragment": "19–22",
@@ -240,7 +259,9 @@
             "Joshua 10:8–11"
           ],
           "basis": "DSS Study Edition, 4Q47 entry.",
-          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection"
+          "condition": "fragment-level coverage reported; wording and preservation require direct edition/image inspection",
+          "digital_transcription_line_range": "0–6",
+          "line_range_note": "Digital page display-line numbering only; not manuscript column/line coordinates."
         }
       ]
     },
