@@ -43,12 +43,12 @@
         "provider": "DFG project 465277421, Qumran-Digital: Text und Lexikon",
         "attribution": "Based on a text of the earlier Qumran-Wörterbuch project of the Göttingen Academy of Sciences and Humanities, itself based on a precursor text by Martin Abegg.",
         "license": "CC BY-SA 4.0",
-        "use": "Online Hebrew transcription with fragment headings and links to corresponding Leviticus readings.",
+        "use": "Online Hebrew transcription with four displayed fragment groups and linked comparison passages in Leviticus. The linked comparison text is not the manuscript transcription.",
         "caution": "Digital transcription display-line numbering is not a manuscript column/line coordinate. Preserve brackets, dots and editorial signs. The transcription is not a manuscript image and should be checked against the published edition and images."
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "Qumran-Digital Hebrew transcription linked; fragment-level passage mapping added for frg. 1–2; complete manuscript concordance remains pending",
-      "caution": "The linked transcription shows 4Q26 frg. 1 corresponding to Leviticus 14:27–29 and frg. 2 to Leviticus 14:33–35. Square brackets and dotted letters indicate editorial restoration/uncertainty; do not treat the displayed biblical comparison line as the manuscript's own complete wording.",
+      "status": "Qumran-Digital transcription linked; all four displayed fragment groups mapped to passage references; additional inventory associations remain separately identified",
+      "caution": "Qumran-Digital displays four groups (frg. 1–4). Its passage links identify comparison locations, not proof that every word of the corresponding verses survives. A separate preliminary PAM 40.967 inventory association reports Leviticus 22:12–18; that inventory-level association is not represented as a verified reading in these four transcription groups.",
       "fragment_coverage": [
         {
           "fragment": "1",
@@ -56,17 +56,35 @@
             "Leviticus 14:27–29"
           ],
           "digital_transcription_line_range": "1–6",
-          "basis": "Qumran-Digital 4Q26 transcription, frg. 1, lines 1–6.",
-          "condition": "transcribed fragment with editorially supplied/restored portions; inspect notation and image"
+          "basis": "Qumran-Digital 4Q26 transcription, frg. 1, lines 1–6; compared there with Leviticus 14:27–29.",
+          "condition": "Fragmentary transcription; preserve brackets and editorial signs."
         },
         {
           "fragment": "2",
           "passages": [
-            "Leviticus 14:33–35"
+            "Leviticus 14:33–36"
           ],
-          "digital_transcription_line_range": "1–2",
-          "basis": "Qumran-Digital 4Q26 transcription, frg. 2, lines 1–2.",
-          "condition": "transcribed fragment with editorially supplied/restored portions; inspect notation and image"
+          "digital_transcription_line_range": "1–5",
+          "basis": "Qumran-Digital 4Q26 transcription, frg. 2, lines 1–5; compared there with Leviticus 14:33–36.",
+          "condition": "Fragmentary transcription; preserve brackets and editorial signs."
+        },
+        {
+          "fragment": "3",
+          "passages": [
+            "Leviticus 15:20–24"
+          ],
+          "digital_transcription_line_range": "1–4",
+          "basis": "Qumran-Digital 4Q26 transcription, frg. 3, lines 1–4; compared there with Leviticus 15:20–24.",
+          "condition": "Fragmentary transcription; preserve brackets and editorial signs."
+        },
+        {
+          "fragment": "4",
+          "passages": [
+            "Leviticus 17:2–4"
+          ],
+          "digital_transcription_line_range": "0–5",
+          "basis": "Qumran-Digital 4Q26 transcription, frg. 4, digital lines 0–5; compared there with Leviticus 17:2–4.",
+          "condition": "Fragmentary transcription; preserve brackets and editorial signs. Digital line numbering begins at 0 for this group."
         }
       ]
     },
@@ -131,24 +149,82 @@
         "provider": "DFG project 465277421, Qumran-Digital: Text und Lexikon",
         "attribution": "Based on a text of the earlier Qumran-Wörterbuch project of the Göttingen Academy of Sciences and Humanities, itself based on a precursor text by Martin Abegg.",
         "license": "CC BY-SA 4.0",
-        "use": "Online Hebrew transcription with 109 fragment groups and links to corresponding Numbers readings.",
+        "use": "Online Hebrew transcription with 52 digital display groups representing fragment numbers 1–109; only the first group has been mapped to passage references in this record. The linked comparison texts are not the manuscript transcription.",
         "caution": "The displayed line numbers are digital transcription navigation lines, not manuscript column/line coordinates. The transcription juxtaposes the manuscript text with Masoretic and Samaritan Pentateuch readings; those comparison texts must not be mistaken for 4Q27."
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "Qumran-Digital Hebrew transcription linked; first displayed fragment group mapped to Numbers 11:31–12:8; additional fragment groups remain to be mapped",
-      "caution": "The online transcription index lists many separate fragment groups. The initial mapping records only the displayed group frg. 1–4 and does not imply that the manuscript preserves the full cited verses continuously. Samaritan Pentateuch and Masoretic comparison lines are editorial comparanda, not 4Q27 text.",
+      "status": "Qumran-Digital Hebrew transcription linked; full 52-group navigation index recorded (fragment numbers 1–109); first group mapped to Numbers 11:31–12:8; remaining groups await verse-by-verse mapping",
+      "caution": "The transcription navigation index contains 52 display groups representing fragment numbers 1–109, including overlapping and separately labelled subgroups. Only the first group frg. 1–4 has been mapped here to Numbers 11:31–12:8. Do not infer verse coverage for the other groups from inventory references alone. Masoretic and Samaritan Pentateuch lines on the page are comparison texts, not 4Q27 itself.",
       "fragment_coverage": [
         {
           "fragment": "1–4",
           "passages": [
-            "Numbers 11:31–35",
-            "Numbers 12:1–8"
+            "Numbers 11:31–12:8"
           ],
           "digital_transcription_line_range": "1–17",
-          "basis": "Qumran-Digital 4Q27 transcription, group frg. 1–4; manuscript lines 1–17 link to Numbers 11:31–12:8.",
-          "condition": "fragmentary Hebrew text; brackets and dotted letters show damaged/restored or uncertain text"
+          "basis": "Qumran-Digital 4Q27 transcription, first displayed group frg. 1–4, lines 1–17; linked comparison passages run from Numbers 11:31 through 12:8.",
+          "condition": "Fragmentary Hebrew text with editorial restorations/uncertainties; this is the first of 52 digital display groups."
         }
-      ]
+      ],
+      "fragment_group_index": {
+        "source": "Qumran-Digital 4Q27 transcription navigation index, version 2026-10-06",
+        "display_group_count": 52,
+        "fragment_numbers_represented": "1–109 (including separately labelled subgroups)",
+        "groups": [
+          "frg. 1-4",
+          "frg. 3 ii+5",
+          "frg. 6-10",
+          "frg. 11",
+          "frg. 12",
+          "frg. 13 i-14",
+          "frg. 13 ii+15-17 i",
+          "frg. 17 ii-18",
+          "frg. 19",
+          "frg. 20-22",
+          "frg. 23-26",
+          "frg. 24 ii+27-30",
+          "frg. 31-33 i",
+          "frg. 33 ii-40",
+          "frg. 41",
+          "frg. 42-47",
+          "frg. 46 ii",
+          "frg. 48-50",
+          "frg. 51-54",
+          "frg. 55 i-56",
+          "frg. 55 ii+57-59",
+          "frg. 60-64",
+          "frg. 65-71",
+          "frg. 72-74",
+          "frg. 75-79",
+          "frg. 80-84",
+          "frg. 81 ii",
+          "frg. 85",
+          "frg. 86",
+          "frg. 87",
+          "frg. 88",
+          "frg. 89",
+          "frg. 90",
+          "frg. 91",
+          "frg. 92",
+          "frg. 93",
+          "frg. 94",
+          "frg. 95",
+          "frg. 96",
+          "frg. 97",
+          "frg. 98",
+          "frg. 99",
+          "frg. 100",
+          "frg. 101",
+          "frg. 102",
+          "frg. 103",
+          "frg. 104",
+          "frg. 105",
+          "frg. 106",
+          "frg. 107",
+          "frg. 108",
+          "frg. 109"
+        ]
+      }
     },
     {
       "id": "4Q31-Deut-d",
