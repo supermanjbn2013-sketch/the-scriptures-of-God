@@ -156,7 +156,7 @@
       },
       "image_source": "https://www.deadseascrolls.org.il/",
       "status": "Qumran-Digital transcription and 52-group index linked; line-by-line maps completed for frg. 1–4, 3 ii+5, 6–10, 11, 12, 13 ii+15–17 i, 19, 20–22, 23–26, 24 ii+27–30, 31–33 i, 33 ii–40, and 42–47; frg. 17 ii–18 lines 13–17 recorded with proposed parallels only (no explicit verse tags); frg. 13 i–14 remains partial (lines 24–25 mapped, 26–30 pending); remaining groups await verification.",
-      "caution": "The 27 published column assignments are reproduced from The Dead Sea Scrolls Study Edition, p. 252, which cites N. Jastram, DJD XII, 205–267. This column map is not a fragment-group map. The Qumran-Digital page's 52 display groups represent fragment numbers 1–109, but only frg. 1–4 has been individually mapped here; the Study Edition explicitly leaves fragments 85–109 without a passage assignment. Masoretic and Samaritan comparison lines on Qumran-Digital are not 4Q27 readings. A verse-by-verse digital line map is now recorded for the first group (frg. 1–4), based on Qumran-Digital's own line annotations. Its comparison text is not part of 4Q27. The fifth displayed group (frg. 12) is now mapped line by line to Numbers 18:25–32 and 19:1–6. Parallel references to 4Q23 and 5/6Hev1a are separate manuscript witnesses and are not part of 4Q27. For frg. 13 i–14, only displayed lines 24–25 have been mapped to Numbers 20:12–13. Lines 26–30 contain text whose passage alignment is not established by the displayed comparison annotations and remain unmapped pending further source verification. The seventh displayed group (frg. 13 ii+15–17 i) is now mapped across digital lines 13–30 to Numbers 20:16–29 and 21:1–2. Qumran-Digital cross-references to 4Q364 are separate witness material; MT and SP comparison lines are also not 4Q27. The frg. 24 ii+27–30 group has explicit verse-tagged lines 1–2 and 9–22 only; lines 3–8 are absent from the displayed group and must remain a gap. The frg. 31–33 i group maps displayed lines 10–16 and 25–31 only. Lines 17–23 are absent and line 24 is a dash without manuscript wording; Numbers 25:9–15 is not claimed as preserved in this group. The frg. 33 ii–40 mapping includes only explicitly verse-tagged lines 1–19, 22–24 and 27–30. Lines 20–21 and 25–26 are absent; line 31 has no explicit Numbers verse annotation and remains unmapped. The frg. 42–47 group maps only explicitly annotated lines 1–13, 22–24 and 27–30. Lines 14–21 and 25–26 are absent; line 31 has no explicit verse annotation and remains unmapped. XHev/Se 2 comparisons are not 4Q27.",
+      "caution": "The 27 published column assignments are reproduced from The Dead Sea Scrolls Study Edition, p. 252, which cites N. Jastram, DJD XII, 205–267. This column map is not a fragment-group map. The Qumran-Digital page's 52 display groups represent fragment numbers 1–109, but only frg. 1–4 has been individually mapped here; the Study Edition explicitly leaves fragments 85–109 without a passage assignment. Masoretic and Samaritan comparison lines on Qumran-Digital are not 4Q27 readings. A verse-by-verse digital line map is now recorded for the first group (frg. 1–4), based on Qumran-Digital's own line annotations. Its comparison text is not part of 4Q27. The fifth displayed group (frg. 12) is now mapped line by line to Numbers 18:25–32 and 19:1–6. Parallel references to 4Q23 and 5/6Hev1a are separate manuscript witnesses and are not part of 4Q27. For frg. 13 i–14, only displayed lines 24–25 have been mapped to Numbers 20:12–13. Lines 26–30 contain text whose passage alignment is not established by the displayed comparison annotations and remain unmapped pending further source verification. The seventh displayed group (frg. 13 ii+15–17 i) is now mapped across digital lines 13–30 to Numbers 20:16–29 and 21:1–2. Qumran-Digital cross-references to 4Q364 are separate witness material; MT and SP comparison lines are also not 4Q27. The frg. 24 ii+27–30 group has explicit verse-tagged lines 1–2 and 9–22 only; lines 3–8 are absent from the displayed group and must remain a gap. The frg. 31–33 i group maps displayed lines 10–16 and 25–31 only. Lines 17–23 are absent and line 24 is a dash without manuscript wording; Numbers 25:9–15 is not claimed as preserved in this group. The frg. 33 ii–40 mapping includes only explicitly verse-tagged lines 1–19, 22–24 and 27–30. Lines 20–21 and 25–26 are absent; line 31 has no explicit Numbers verse annotation and remains unmapped. The frg. 42–47 group maps only explicitly annotated lines 1–13, 22–24 and 27–30. Lines 14–21 and 25–26 are absent; line 31 has no explicit verse annotation and remains unmapped. XHev/Se 2 comparisons are not 4Q27. Correction: the digital display's actual manuscript line labels for the latter blocks are 22–24 and 27–30, not ordinal positions 14–20. Displayed line 31 remains unmapped.",
       "fragment_coverage": [
         {
           "fragment": "1–4",
@@ -303,9 +303,9 @@
             "Numbers 27:21–23",
             "Numbers 28:1"
           ],
-          "digital_transcription_line_labels": "1–13 and 22–31 (only 22–24 and 27–31 carry explicit verse tags in this group)",
-          "basis": "Qumran-Digital displayed group frg. 42–47. Lines 1–13 carry explicit annotations for Numbers 26:64–65 and 27:1–10. Lines 22–24 and 27–30 carry explicit annotations for Numbers 27:18–19 and 27:21–23; line 31 begins an additional passage but lacks an explicit verse annotation in this displayed group and is not mapped.",
-          "condition": "Discontinuous fragmentary Hebrew transcription. Lines 14–21 and 25–26 are absent in this displayed group. Lines 22–24 and 27–30 are retained as separate text blocks; no missing passages are inferred. XHev/Se 2 and Samaritan Pentateuch comparisons are separate witnesses."
+          "digital_transcription_line_labels": "1–13, 22–24, and 27–30",
+          "basis": "Qumran-Digital displayed group frg. 42–47. Lines 1–13 carry explicit annotations for Numbers 26:64–65 and 27:1–10. Lines 22–24 and 27–30 carry explicit annotations for Numbers 27:18–19 and 27:21–23; line 31 is not mapped because it has no explicit verse annotation.",
+          "condition": "Discontinuous fragmentary Hebrew transcription. Displayed lines 14–21 and 25–26 are absent in this group. Displayed line 31 begins additional text but has no explicit verse annotation and is not mapped. XHev/Se 2 and Samaritan Pentateuch comparisons are separate witnesses."
         }
       ],
       "fragment_group_index": {
@@ -2461,7 +2461,7 @@
         },
         {
           "group": "frg. 42–47",
-          "digital_line": 14,
+          "digital_line": 22,
           "passages": [
             "Numbers 27:18"
           ],
@@ -2470,7 +2470,7 @@
         },
         {
           "group": "frg. 42–47",
-          "digital_line": 15,
+          "digital_line": 23,
           "passages": [
             "Numbers 27:18",
             "Numbers 27:19"
@@ -2480,7 +2480,7 @@
         },
         {
           "group": "frg. 42–47",
-          "digital_line": 16,
+          "digital_line": 24,
           "passages": [
             "Numbers 27:21"
           ],
@@ -2489,7 +2489,7 @@
         },
         {
           "group": "frg. 42–47",
-          "digital_line": 17,
+          "digital_line": 27,
           "passages": [
             "Numbers 27:21",
             "Numbers 27:22"
@@ -2499,7 +2499,7 @@
         },
         {
           "group": "frg. 42–47",
-          "digital_line": 18,
+          "digital_line": 28,
           "passages": [
             "Numbers 27:22"
           ],
@@ -2508,7 +2508,7 @@
         },
         {
           "group": "frg. 42–47",
-          "digital_line": 19,
+          "digital_line": 29,
           "passages": [
             "Numbers 27:22",
             "Numbers 27:23"
@@ -2518,21 +2518,12 @@
         },
         {
           "group": "frg. 42–47",
-          "digital_line": 20,
+          "digital_line": 30,
           "passages": [
             "Numbers 27:23",
             "Numbers 28:1"
           ],
           "source_reference": "Qumran-Digital 4Q27, frg. 42–47, displayed line 20",
-          "note": "Passage references follow the explicit verse annotations attached to the manuscript transcription. XHev/Se and Samaritan Pentateuch comparison text are separate witnesses, not part of 4Q27."
-        },
-        {
-          "group": "frg. 42–47",
-          "digital_line": 21,
-          "passages": [
-            "Numbers 28:1"
-          ],
-          "source_reference": "Qumran-Digital 4Q27, frg. 42–47, displayed line 21",
           "note": "Passage references follow the explicit verse annotations attached to the manuscript transcription. XHev/Se and Samaritan Pentateuch comparison text are separate witnesses, not part of 4Q27."
         }
       ],
