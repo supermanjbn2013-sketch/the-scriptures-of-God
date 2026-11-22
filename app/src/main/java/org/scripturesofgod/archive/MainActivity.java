@@ -97,20 +97,20 @@ public class MainActivity extends Activity {
             for(int i=0;i<records.length();i++){org.json.JSONObject r=records.getJSONObject(i);if(r.optString("id").equals(id)){match=r;break;}}
             if(match==null){new android.app.AlertDialog.Builder(this).setTitle(item).setMessage("No verified DSS metadata record is available.").setPositiveButton("Close",null).show();return;}
             StringBuilder detail=new StringBuilder();
-            detail.append("Cave: ").append(match.optString("cave")).append("\\n");
-            detail.append("Language: ").append(match.optString("language")).append("\\n");
-            detail.append("Material: ").append(match.optString("material")).append("\\n");
-            detail.append("Date: ").append(match.optString("date_estimate")).append("\\n");
-            detail.append("Dating basis: ").append(match.optString("date_basis")).append("\\n");
-            detail.append("Contents: ").append(match.optString("contents")).append("\\n");
-            detail.append("Condition: ").append(match.optString("condition")).append("\\n");
-            detail.append("Holding: ").append(match.optString("holding_institution")).append("\\n");
-            detail.append("Shelfmark: ").append(match.optString("shelfmark")).append("\\n\\n");
-            detail.append("Status: ").append(match.optString("status")).append("\\n\\n");
-            detail.append("Caution: ").append(match.optString("caution")).append("\\n\\n");
-            detail.append("Image access: ").append(match.optString("image_access")).append("\\n\\n");
-            detail.append("Sources:\\n");org.json.JSONArray urls=match.optJSONArray("source_urls");
-            if(urls!=null)for(int i=0;i<urls.length();i++)detail.append(urls.optString(i)).append("\\n");
+            detail.append("Cave: ").append(match.optString("cave")).append("\n");
+            detail.append("Language: ").append(match.optString("language")).append("\n");
+            detail.append("Material: ").append(match.optString("material")).append("\n");
+            detail.append("Date: ").append(match.optString("date_estimate")).append("\n");
+            detail.append("Dating basis: ").append(match.optString("date_basis")).append("\n");
+            detail.append("Contents: ").append(match.optString("contents")).append("\n");
+            detail.append("Condition: ").append(match.optString("condition")).append("\n");
+            detail.append("Holding: ").append(match.optString("holding_institution")).append("\n");
+            detail.append("Shelfmark: ").append(match.optString("shelfmark")).append("\n\n");
+            detail.append("Status: ").append(match.optString("status")).append("\n\n");
+            detail.append("Caution: ").append(match.optString("caution")).append("\n\n");
+            detail.append("Image access: ").append(match.optString("image_access")).append("\n\n");
+            detail.append("Sources:\n");org.json.JSONArray urls=match.optJSONArray("source_urls");
+            if(urls!=null)for(int i=0;i<urls.length();i++)detail.append(urls.optString(i)).append("\n");
             TextView view=text(detail.toString(),14,ink,false);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
             ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
             new android.app.AlertDialog.Builder(this).setTitle(match.optString("name")).setView(sv).setPositiveButton("Close",null).show();
