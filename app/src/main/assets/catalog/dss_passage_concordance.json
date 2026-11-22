@@ -5226,7 +5226,8 @@
       "iaa_identifier": "ISF_TXT_06765",
       "iaa_cross_reference": "C26",
       "passage_coverage": [
-        "Deuteronomy 2:24–36 (Qumran-Digital group 1, lines 5–17; line-level annotations recorded individually)"
+        "Deuteronomy 2:24–36 (group 1, lines 5–17)",
+        "Deuteronomy 3:14–20 (group 2, lines 1–8; remaining group 2 lines pending)"
       ],
       "column_line": null,
       "transcription_source": {
@@ -5240,7 +5241,7 @@
         "share_alike_required": true
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "Qumran-Digital transcription linked; group 1 lines 5–17 mapped line by line to Deuteronomy 2:24–36. Group 2 remains to be mapped.",
+      "status": "Qumran-Digital transcription linked; group 1 lines 5–17 and group 2 lines 1–8 mapped line by line. Group 2 lines 9–21 remain to be mapped.",
       "caution": "Do not infer Deuteronomy chapter or verse coverage from the manuscript title alone. Qumran-Digital line mapping distinguishes 4Q31 from parallel witnesses 4Q35, 11Q3, 4Q364 and the Samaritan Pentateuch. Added PAM-41.585-X text is not silently merged with the main transcription.",
       "transcription_line_map": [
         {
@@ -5383,6 +5384,91 @@
           "transcription_text": "[אשר לכדנו מערער אשר על שפת נחל ארנן והע]יר אשר בנחל ועד הגלעד[ ל]א֯ הי֯ת֯ה",
           "source_reference": "Qumran-Digital 4Q31, group 1, displayed line 17",
           "note": "Hebrew transcription copied from Qumran-Digital. 4Q35, 11Q3, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses. Added PAM-41.585-X text is identified as an added transcription source."
+        },
+        {
+          "group": "2",
+          "digital_line": 1,
+          "passages": [
+            "Deuteronomy 3:14"
+          ],
+          "transcription_text": "[גבול הגשורי והמעכתי ויקרא אתם על שמו את הבשן ח]ו֯ת[ יאיר ע]ד֯ הי֯[ום הזה]",
+          "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 1",
+          "note": "Hebrew transcription copied from Qumran-Digital. 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "2",
+          "digital_line": 2,
+          "passages": [
+            "Deuteronomy 3:15",
+            "Deuteronomy 3:16"
+          ],
+          "transcription_text": "[ולמכיר נתתי את הגלעד ולראובני ולגד]י֯[ נת]ת֯י מן הגלעד עד נח[ל ארנן]",
+          "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 2",
+          "note": "Hebrew transcription copied from Qumran-Digital. 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "2",
+          "digital_line": 3,
+          "passages": [
+            "Deuteronomy 3:16",
+            "Deuteronomy 3:17"
+          ],
+          "transcription_text": "[תוך הנחל וגבל ועד יבק הנח]ל֯ גבול בני עמון והערבה וה[ירדן וגבול]",
+          "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 3",
+          "note": "Hebrew transcription copied from Qumran-Digital. 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "2",
+          "digital_line": 4,
+          "passages": [
+            "Deuteronomy 3:17",
+            "Deuteronomy 3:18"
+          ],
+          "transcription_text": "[מ]כנרת ועד[ ים הערבה ים ]המלח תחת אשדת הפסגה מזר֯[חה ]ואצו אתכם",
+          "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 4",
+          "note": "Hebrew transcription copied from Qumran-Digital. 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "2",
+          "digital_line": 5,
+          "passages": [
+            "Deuteronomy 3:18"
+          ],
+          "transcription_text": "[בע]ת[ ההיא לאמר יהו]ה֯ אלהיכם נתן לכם את הארץ֯ הז֯את לרשתה חלצים",
+          "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 5",
+          "note": "Hebrew transcription copied from Qumran-Digital. 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "2",
+          "digital_line": 6,
+          "passages": [
+            "Deuteronomy 3:18",
+            "Deuteronomy 3:19"
+          ],
+          "transcription_text": "[תעברו לפני א]ח֯י֯כ֯ם בני ישראל כל בני חיל רק֯ נ֯ש֯[יכ]ם טפ֯[כם] ומקנכם ידעת֯י֯",
+          "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 6",
+          "note": "Hebrew transcription copied from Qumran-Digital. 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "2",
+          "digital_line": 7,
+          "passages": [
+            "Deuteronomy 3:19",
+            "Deuteronomy 3:20"
+          ],
+          "transcription_text": "[כי מ]קנה רב לכם ישבו בעריכם אשר נתתי לכם֯[ עד ]א֯שר יני֯ח י֯הוה ל[אחיכם]",
+          "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 7",
+          "note": "Hebrew transcription copied from Qumran-Digital. 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+        },
+        {
+          "group": "2",
+          "digital_line": 8,
+          "passages": [
+            "Deuteronomy 3:20"
+          ],
+          "transcription_text": "[ככם] וירשו גם הם את הארץ אשר יהוה אל֯ה֯[י]כ֯ם נתן להם בעב֯[ר הירדן]",
+          "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 8",
+          "note": "Hebrew transcription copied from Qumran-Digital. 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
         }
       ]
     },
