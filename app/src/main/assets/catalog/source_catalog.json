@@ -84,5 +84,17 @@
     "Manuscript variants apparatus",
     "Historical and multilingual translation corpus",
     "Additional Dead Sea Scrolls transcription files from The Way to Yahuweh; files are being evaluated and integrated individually under CC BY-SA 4.0"
-  ]
+  ],
+  "development_priority": {
+    "order": [
+      "manuscript transcription text",
+      "passage and fragment/column/line mapping",
+      "witness comparison and variants",
+      "exact-word and exact-phrase search",
+      "text coverage audit and gap register",
+      "manuscript photographs and facsimiles in a later update"
+    ],
+    "image_policy": "Defer manuscript photographs and facsimiles until a later app update after the searchable text corpus is substantially complete. Text work must continue without waiting for images.",
+    "completion_rule": "Do not declare the text archive complete until corpus coverage, source attribution, licences, unverified readings, and missing-text gaps have been audited."
+  }
 }
