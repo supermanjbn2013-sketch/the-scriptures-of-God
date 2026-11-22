@@ -72,7 +72,7 @@ public class MainActivity extends Activity {
             while((line=reader.readLine())!=null){
                 org.json.JSONObject obj=new org.json.JSONObject(line); String ref=obj.optString("ref");
                 if(ref.startsWith(code+"." ) || ref.startsWith(code+" ")){
-                    body.append(ref.substring(code.length()).trim()).append("  ").append(obj.optString("text")).append("\\n\\n"); found++;
+                    body.append(ref.substring(code.length()).trim()).append("  ").append(obj.optString("text")).append("\n\n"); found++;
                 }
             } reader.close();
             if(found==0){new android.app.AlertDialog.Builder(this).setMessage("No bundled text record was found for "+name+".").setPositiveButton("OK",null).show();return;}
