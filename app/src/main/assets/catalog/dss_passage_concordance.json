@@ -198,6 +198,16 @@
           "type": "PAM photographic inventory",
           "identifier": "42.637",
           "note": "Separate entry identifies minor fragments on the same photograph series."
+        },
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "43.071",
+          "note": "Fascicle 7 lists C46 and 2 Samuel 14:7–15:4; published reference noted there as Ulrich, BASOR 235 (1979), p. 5."
+        },
+        {
+          "type": "PAM photographic inventory",
+          "identifier": "43.077",
+          "note": "Fascicle 7 lists C46 and 1 Samuel 25:30–32 and 2 Samuel 15:4–15; published reference noted there as Ulrich, BASOR 235 (1979), p. 5."
         }
       ],
       "djd_reference": null,
@@ -205,17 +215,29 @@
       "iaa_cross_reference": "ROC 406; C46b",
       "passage_coverage": [
         {
-          "reference": "2 Samuel 14-15",
-          "basis": "Preliminary inventory entry 42.278.",
+          "reference": "1 Samuel 25:30-32",
+          "basis": "Preliminary inventory entry 43.077; cites Ulrich, BASOR 235 (1979), p. 5.",
           "condition": "unknown",
-          "coverage_status": "inventory-reported; extant wording not verified"
+          "coverage_status": "inventory-reported; exact fragment and extant wording require edition/image verification"
+        },
+        {
+          "reference": "2 Samuel 14:7-15:4",
+          "basis": "Preliminary inventory entry 43.071; cites Ulrich, BASOR 235 (1979), p. 5.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; exact fragment and extant wording require edition/image verification"
+        },
+        {
+          "reference": "2 Samuel 15:4-15",
+          "basis": "Preliminary inventory entry 43.077; cites Ulrich, BASOR 235 (1979), p. 5.",
+          "condition": "unknown",
+          "coverage_status": "inventory-reported; exact fragment and extant wording require edition/image verification"
         }
       ],
       "column_line": null,
       "transcription_source": null,
       "image_source": "https://www.deadseascrolls.org.il/",
       "status": "partial concordance; requires DJD and image-level verification",
-      "caution": "The passage coverage is an inventory-level chapter reference. Exact verse boundaries and column/line locations remain unverified."
+      "caution": "The inventory reports overlapping 2 Samuel ranges across separate entries. These are retained as reported and are not merged into a claim of continuous text. Exact fragment boundaries, column/line positions and preserved wording remain unverified."
     }
   ],
   "sources": [
@@ -223,7 +245,7 @@
       "title": "Dead Sea Scroll Inventory Project, Fascicle 7",
       "institution": "Inventory project associated with the West Semitic Research / Ancient Biblical Manuscript Center photographic collections",
       "url": "https://lyingpen.uia.no/dssinventoryproject/fascicle7/",
-      "use": "PAM photographic inventory associations and passage coverage notes for 4Q26, 4Q27, 4Q47 and 4Q53.",
+      "use": "PAM photographic inventory associations and passage coverage notes for 4Q26, 4Q27, 4Q47 and 4Q53. More specific inventory references for 4Q53 Sam c include 43.071 and 43.077, which cite Ulrich, BASOR 235 (1979), p. 5.",
       "limitation": "The fascicle itself describes its lists as preliminary and warns that errors and updates are possible."
     },
     {
