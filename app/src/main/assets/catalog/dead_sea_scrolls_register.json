@@ -86,6 +86,46 @@
       "image_access": "Use the institutional digital viewer; reproduction rights must be checked with the holding institution.",
       "status": "metadata catalogued; transcription not imported",
       "caution": "This is a community rule document, not a copy of one of the Hebrew Scripture books."
+    },
+    {
+      "id": "11Q19",
+      "name": "Temple Scroll (11Q19)",
+      "cave": "Qumran Cave 11",
+      "language": "Hebrew",
+      "material": "Parchment",
+      "date_estimate": "Not assigned in this initial record; consult the manuscript edition and current institutional catalogue",
+      "date_basis": "No date copied into this record without a directly verified dating statement",
+      "contents": "A long legal-religious composition concerning the Temple and related laws; the Israel Museum identifies it as the longest Dead Sea Scroll and describes it as rewriting material from Deuteronomy",
+      "condition": "Surviving manuscript; exact fragment and column coverage must be checked in the digital catalogue",
+      "holding_institution": "Israel Museum, Shrine of the Book",
+      "shelfmark": "11Q19",
+      "source_urls": [
+        "https://dss.collections.imj.org.il/",
+        "https://www.deadseascrolls.org.il/explore-the-archive"
+      ],
+      "image_access": "Use the institutional viewer. Check current reproduction rights before copying images.",
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "Do not treat this composition as a manuscript copy of Deuteronomy. It is a distinct composition that reworks legal material. Exact coverage and readings require column-level verification."
+    },
+    {
+      "id": "1QM",
+      "name": "War Scroll (1QM)",
+      "cave": "Qumran Cave 1",
+      "language": "Hebrew",
+      "material": "Parchment",
+      "date_estimate": "Not assigned in this initial record; consult the manuscript edition and current institutional catalogue",
+      "date_basis": "No date copied into this record without a directly verified dating statement",
+      "contents": "A sectarian war composition also known by the descriptive title War of the Sons of Light Against the Sons of Darkness; listed by the Israel Museum among the original seven scrolls discovered in 1947",
+      "condition": "Surviving scroll; exact column and fragment condition should be checked in the institutional viewer",
+      "holding_institution": "Israel Museum, Shrine of the Book",
+      "shelfmark": "1QM",
+      "source_urls": [
+        "https://dss.collections.imj.org.il/",
+        "https://www.deadseascrolls.org.il/explore-the-archive"
+      ],
+      "image_access": "Use the institutional viewer. Check current reproduction rights before copying images.",
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "This is a sectarian composition, not a book of the Hebrew Scriptures. Do not confuse its title with a historical account of a specific war without evaluating the text."
     }
   ],
   "collection_sources": [
@@ -109,5 +149,82 @@
     "The IAA uses imaging-plate fragment numbers that may differ from the published manuscript and fragment numbering used in the Discoveries in the Judaean Desert series; do not treat them as interchangeable without a verified concordance.",
     "A manuscript title or book name does not prove that every chapter or verse survives in that witness.",
     "No Dead Sea Scrolls transcription is bundled by this metadata file."
-  ]
+  ],
+  "archive_browse_index": {
+    "source": "Leon Levy Dead Sea Scrolls Digital Library, Explore the Archive",
+    "url": "https://www.deadseascrolls.org.il/explore-the-archive",
+    "note": "These are browse-result counts displayed by the IAA archive, not counts of distinct manuscripts, scrolls, or compositions. Counts can change as catalogue records are revised.",
+    "qumran_sites": [
+      {
+        "site": "Qumran Cave 1",
+        "archive_items": 80
+      },
+      {
+        "site": "Qumran Cave 2",
+        "archive_items": 33
+      },
+      {
+        "site": "Qumran Cave 3",
+        "archive_items": 15
+      },
+      {
+        "site": "Qumran Cave 4",
+        "archive_items": 666
+      },
+      {
+        "site": "Qumran Cave 5",
+        "archive_items": 26
+      },
+      {
+        "site": "Qumran Cave 6",
+        "archive_items": 31
+      },
+      {
+        "site": "Qumran Cave 7",
+        "archive_items": 24
+      },
+      {
+        "site": "Qumran Cave 8",
+        "archive_items": 5
+      },
+      {
+        "site": "Qumran Cave 9",
+        "archive_items": 1
+      },
+      {
+        "site": "Qumran Cave 11",
+        "archive_items": 32
+      }
+    ],
+    "language_browse_counts": [
+      {
+        "language": "Hebrew",
+        "archive_items": 778
+      },
+      {
+        "language": "Aramaic",
+        "archive_items": 219
+      },
+      {
+        "language": "Greek",
+        "archive_items": 140
+      },
+      {
+        "language": "Latin",
+        "archive_items": 27
+      },
+      {
+        "language": "Unidentified",
+        "archive_items": 26
+      },
+      {
+        "language": "Nabatean",
+        "archive_items": 13
+      },
+      {
+        "language": "Arabic",
+        "archive_items": 5
+      }
+    ]
+  }
 }
