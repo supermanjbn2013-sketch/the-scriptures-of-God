@@ -55,7 +55,7 @@ public class MainActivity extends Activity {
             return;
         }
         ArrayList<String> data=entries.get(section); if(data==null)data=new ArrayList<>();
-        int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> openBook(item)); count++;}}
+        int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {if(codeFor(item)!=null)openBook(item);else openCatalogEntry(item);}); count++;}}
         if(count==0)content.addView(text("No matching entries. This archive does not fabricate missing manuscript contents or readings.",14,muted,false));
         if(section.equals("Manuscript Archive")||section.equals("Research Archive")||section.equals("Manuscript Comparison"))content.addView(text("Records are catalog placeholders until a source, transcription, date and provenance are verified and attached.",12,gold,false));
     }
@@ -82,4 +82,46 @@ public class MainActivity extends Activity {
         }catch(Exception e){new android.app.AlertDialog.Builder(this).setTitle("Text data not available").setMessage("The offline corpus is not present in this build.").setPositiveButton("OK",null).show();}
     }
 
-}
+
+    void openCatalogEntry(String item){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/greek_manuscript_register.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray records=new org.json.JSONObject(raw.toString()).getJSONArray("records");
+            org.json.JSONObject match=null;
+            String key=item.toLowerCase();
+            if(key.contains("sinaiticus"))key="sinaiticus";
+            else if(key.contains("vaticanus"))key="vaticanus";
+            else if(key.contains("p52"))key="p52";
+            else if(key.contains("p46"))key="p46";
+            else if(key.contains("p66"))key="p66";
+            else if(key.contains("p75"))key="p75";
+            for(int i=0;i<records.length();i++){
+                org.json.JSONObject r=records.getJSONObject(i);
+                if(r.optString("id").equalsIgnoreCase(key)){match=r;break;}
+            }
+            if(match==null){new android.app.AlertDialog.Builder(this).setTitle(item).setMessage("No verified manuscript metadata record is available yet. No transcription or manuscript reading is being claimed.").setPositiveButton("Close",null).show();return;}
+            StringBuilder detail=new StringBuilder();
+            detail.append("Material: ").append(match.optString("material")).append("\n");
+            detail.append("Language: ").append(match.optString("language")).append("\n");
+            detail.append("Date: ").append(match.optString("date_estimate")).append("\n");
+            detail.append("Dating basis: ").append(match.optString("date_basis")).append("\n");
+            detail.append("Surviving contents: ").append(match.optString("contents")).append("\n");
+            detail.append("Condition: ").append(match.optString("condition")).append("\n");
+            detail.append("Holding: ").append(match.optString("holding_institution")).append("\n");
+            detail.append("Shelfmark: ").append(match.optString("shelfmark")).append("\n\n");
+            detail.append("Status: ").append(match.optString("status")).append("\n\n");
+            detail.append("Research caution: ").append(match.optString("caution")).append("\n\n");
+            detail.append("Sources:\n");
+            org.json.JSONArray urls=match.optJSONArray("source_urls");
+            if(urls!=null)for(int i=0;i<urls.length();i++)detail.append(urls.optString(i)).append("\n");
+            TextView view=text(detail.toString(),14,ink,false);
+            view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);
+            view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+            ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
+            new android.app.AlertDialog.Builder(this).setTitle(match.optString("name")).setView(sv).setPositiveButton("Close",null).show();
+        }catch(Exception e){
+            new android.app.AlertDialog.Builder(this).setTitle("Manuscript catalogue unavailable").setMessage("The metadata register is not present in this build yet.").setPositiveButton("Close",null).show();
+        }
+    }
+\n}
