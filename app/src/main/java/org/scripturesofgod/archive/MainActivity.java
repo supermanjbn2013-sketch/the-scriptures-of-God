@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
     String[] sections={"Home","Hebrew Scriptures","Prophets","Apostolic Writings","Ancient Referenced Books","Other Ancient Writings","Manuscript Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History"};
     @Override public void onCreate(Bundle b){super.onCreate(b); seed(); show();}
     void seed(){
-        entries.put("Hebrew Scriptures",new ArrayList<>(Arrays.asList("Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Psalms","Proverbs","Isaiah","Jeremiah","Ezekiel","Daniel")));
+        entries.put("Hebrew Scriptures",new ArrayList<>(Arrays.asList("Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Songs","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi")));
         entries.put("Prophets",new ArrayList<>(Arrays.asList("Isaiah","Jeremiah","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi")));
         entries.put("Apostolic Writings",new ArrayList<>(Arrays.asList("Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation")));
         entries.put("Ancient Referenced Books",new ArrayList<>(Arrays.asList("Book of Jasher — referenced in Joshua 10:13 and 2 Samuel 1:18","Book of the Wars of the LORD — Numbers 21:14","Records of Samuel, Nathan and Gad — 1 Chronicles 29:29","Acts of Solomon — 1 Kings 11:41","Book of the Sayings of Iddo — 2 Chronicles 13:22","Earlier letter to Corinth — referenced in 1 Corinthians 5:9")));
@@ -59,4 +59,27 @@ public class MainActivity extends Activity {
         if(count==0)content.addView(text("No matching entries. This archive does not fabricate missing manuscript contents or readings.",14,muted,false));
         if(section.equals("Manuscript Archive")||section.equals("Research Archive")||section.equals("Manuscript Comparison"))content.addView(text("Records are catalog placeholders until a source, transcription, date and provenance are verified and attached.",12,gold,false));
     }
+
+    String codeFor(String name){
+        String[][] pairs={{"Genesis","Gen"},{"Exodus","Exod"},{"Leviticus","Lev"},{"Numbers","Num"},{"Deuteronomy","Deut"},{"Joshua","Josh"},{"Judges","Judg"},{"Ruth","Ruth"},{"1 Samuel","1Sam"},{"2 Samuel","2Sam"},{"1 Kings","1Kgs"},{"2 Kings","2Kgs"},{"1 Chronicles","1Chr"},{"2 Chronicles","2Chr"},{"Ezra","Ezra"},{"Nehemiah","Neh"},{"Esther","Esth"},{"Job","Job"},{"Psalms","Ps"},{"Proverbs","Prov"},{"Ecclesiastes","Eccl"},{"Song of Songs","Song"},{"Isaiah","Isa"},{"Jeremiah","Jer"},{"Lamentations","Lam"},{"Ezekiel","Ezek"},{"Daniel","Dan"},{"Hosea","Hos"},{"Joel","Joel"},{"Amos","Amos"},{"Obadiah","Obad"},{"Jonah","Jonah"},{"Micah","Mic"},{"Nahum","Nah"},{"Habakkuk","Hab"},{"Zephaniah","Zeph"},{"Haggai","Hag"},{"Zechariah","Zech"},{"Malachi","Mal"},{"Matthew","Matt"},{"Mark","Mark"},{"Luke","Luke"},{"John","John"},{"Acts","Acts"},{"Romans","Rom"},{"1 Corinthians","1Cor"},{"2 Corinthians","2Cor"},{"Galatians","Gal"},{"Ephesians","Eph"},{"Philippians","Phil"},{"Colossians","Col"},{"1 Thessalonians","1Thess"},{"2 Thessalonians","2Thess"},{"1 Timothy","1Tim"},{"2 Timothy","2Tim"},{"Titus","Titus"},{"Philemon","Phlm"},{"Hebrews","Heb"},{"James","Jas"},{"1 Peter","1Pet"},{"2 Peter","2Pet"},{"1 John","1John"},{"2 John","2John"},{"3 John","3John"},{"Jude","Jude"},{"Revelation","Rev"}};
+        for(String[] p:pairs) if(p[0].equals(name)) return p[1]; return null;
+    }
+    void openBook(String name){
+        String code=codeFor(name); if(code==null)return;
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/verses.jsonl"),"UTF-8"));
+            StringBuilder body=new StringBuilder(); String line; int found=0;
+            while((line=reader.readLine())!=null){
+                org.json.JSONObject obj=new org.json.JSONObject(line); String ref=obj.optString("ref");
+                if(ref.startsWith(code+"." ) || ref.startsWith(code+" ")){
+                    body.append(ref.substring(code.length()).trim()).append("  ").append(obj.optString("text")).append("\\n\\n"); found++;
+                }
+            } reader.close();
+            if(found==0){new android.app.AlertDialog.Builder(this).setMessage("No bundled text record was found for "+name+".").setPositiveButton("OK",null).show();return;}
+            TextView view=text(body.toString(),16,ink,false); view.setTextIsSelectable(true);
+            ScrollView sv=new ScrollView(this);sv.setPadding(16,12,16,12);sv.addView(view);
+            new android.app.AlertDialog.Builder(this).setTitle(name+" — source text").setView(sv).setPositiveButton("Close",null).show();
+        }catch(Exception e){new android.app.AlertDialog.Builder(this).setTitle("Text data not available").setMessage("The offline corpus is not present in this build.").setPositiveButton("OK",null).show();}
+    }
+
 }
