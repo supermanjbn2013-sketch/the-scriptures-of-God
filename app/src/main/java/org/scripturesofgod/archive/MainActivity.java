@@ -26,7 +26,8 @@ public class MainActivity extends Activity {
         entries.put("Ancient Referenced Books",new ArrayList<>(Arrays.asList("Book of Jasher — referenced in Joshua 10:13 and 2 Samuel 1:18","Book of the Wars of the LORD — Numbers 21:14","Records of Samuel, Nathan and Gad — 1 Chronicles 29:29","Acts of Solomon — 1 Kings 11:41","Book of the Sayings of Iddo — 2 Chronicles 13:22","Earlier letter to Corinth — referenced in 1 Corinthians 5:9")));
         entries.put("Other Ancient Writings",new ArrayList<>(Arrays.asList("1 Enoch","Jubilees","Didache","Shepherd of Hermas","Gospel of Thomas")));
         entries.put("Manuscript Archive",new ArrayList<>(Arrays.asList("Dead Sea Scrolls (DSS)","Great Isaiah Scroll (1QIsaᵃ)","Pesher Habakkuk (1QpHab)","Genesis Apocryphon (1QapGen)","Community Rule (1QS)","Temple Scroll (11Q19)","War Scroll (1QM)","Masoretic Text","Septuagint","Samaritan Pentateuch","Papyrus 46 (P46)","Papyrus 52 (P52)","Papyrus 66 (P66)","Papyrus 75 (P75)","Codex Vaticanus","Codex Sinaiticus","Codex Alexandrinus")));
-        entries.put("DSS Passage Concordance",new ArrayList<>(Arrays.asList("4Q26 Lev d — Leviticus","4Q27 Num b — Numbers","4Q31 Deut d — Deuteronomy","4Q47 Josh a — Joshua","4Q53 Sam c — Samuel")));\n        entries.put("Translation Center",new ArrayList<>(Arrays.asList("English","Filipino / Tagalog","Spanish","Portuguese","French","German","Italian","Arabic","Hebrew","Greek","Aramaic","Chinese","Japanese","Korean","Indonesian","Latin")));
+        entries.put("DSS Passage Concordance",new ArrayList<>(Arrays.asList("4Q26 Lev d — Leviticus","4Q27 Num b — Numbers","4Q31 Deut d — Deuteronomy","4Q47 Josh a — Joshua","4Q53 Sam c — Samuel")));
+        entries.put("Translation Center",new ArrayList<>(Arrays.asList("English","Filipino / Tagalog","Spanish","Portuguese","French","German","Italian","Arabic","Hebrew","Greek","Aramaic","Chinese","Japanese","Korean","Indonesian","Latin")));
         entries.put("Manuscript Comparison",new ArrayList<>(Arrays.asList("Compare witness transcriptions","Review additions and omissions","Inspect textual variants","Trace quotations and parallels")));
         entries.put("Research Archive",new ArrayList<>(Arrays.asList("Source metadata","Authorship assessments","Composition dates","Language and provenance","Fragment and witness records","Research notes")));
         entries.put("Favorites",new ArrayList<>()); entries.put("Reading History",new ArrayList<>());
@@ -130,7 +131,7 @@ public class MainActivity extends Activity {
             for(int i=0;i<records.length();i++){org.json.JSONObject r=records.getJSONObject(i);if(r.optString("manuscript_id").equals(key)){match=r;break;}}
             if(match==null){new android.app.AlertDialog.Builder(this).setTitle(item).setMessage("No concordance record is available.").setPositiveButton("Close",null).show();return;}
             StringBuilder detail=new StringBuilder();
-            detail.append("Manuscript: ").append(match.optString("manuscript_id")).append("\\n");
+            detail.append("Manuscript: ").append(match.optString("manuscript_id")).append("\n");
             detail.append("Work: ").append(match.optString("work")).append("\\n");
             detail.append("Cave: ").append(match.optString("cave")).append("\\n");
             detail.append("Language: ").append(match.optString("language")).append("\\n");
