@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "record_type": "dead_sea_scrolls_manuscript_metadata_catalog",
+  "catalog_policy": "These are metadata records, not imported transcriptions. Dates are approximate institutional descriptions, not exact calendar dates. No text is represented as a DSS reading until a manuscript passage, fragment/column, transcription edition, and reading are individually verified. Digital images remain at the rights holder's site; no image files are bundled.",
+  "records": [
+    {
+      "id": "1QIsa-a",
+      "name": "Great Isaiah Scroll (1QIsaᵃ)",
+      "cave": "Qumran Cave 1",
+      "language": "Hebrew",
+      "material": "Parchment",
+      "date_estimate": "Approximately 120–100 BCE in the cited Israel Museum educational publication",
+      "date_basis": "Institutional publication's approximate dating; not an exact date",
+      "contents": "A substantially complete copy of Isaiah; the Israel Museum describes it as the only biblical scroll preserved in its entirety",
+      "condition": "Exceptionally well preserved relative to most DSS manuscripts",
+      "holding_institution": "Israel Museum, Shrine of the Book",
+      "shelfmark": "1QIsaᵃ",
+      "source_urls": [
+        "https://dss.collections.imj.org.il/",
+        "https://museum.imj.org.il/pdf/dss-english.pdf",
+        "https://www.deadseascrolls.org.il/"
+      ],
+      "image_access": "View images through the Israel Museum Digital Dead Sea Scrolls or the IAA Leon Levy Digital Library. Do not copy images into this app without permission.",
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "This is a manuscript witness to Isaiah, not a source for every wording in a modern edition. Any comparison must identify the exact column and line and distinguish preserved letters from reconstruction."
+    },
+    {
+      "id": "1QpHab",
+      "name": "Pesher Habakkuk / Commentary on Habakkuk (1QpHab)",
+      "cave": "Qumran Cave 1",
+      "language": "Hebrew",
+      "material": "Parchment",
+      "date_estimate": "Approximately 50 BCE in the cited Israel Museum educational publication",
+      "date_basis": "Institutional publication's approximate dating",
+      "contents": "A commentary on the first two chapters of Habakkuk; the Israel Museum publication describes it as the only known copy of this commentary",
+      "condition": "Relatively complete scroll compared with many fragmentary DSS witnesses",
+      "holding_institution": "Israel Museum, Shrine of the Book",
+      "shelfmark": "1QpHab",
+      "source_urls": [
+        "https://dss.collections.imj.org.il/",
+        "https://museum.imj.org.il/pdf/dss-english.pdf",
+        "https://www.deadseascrolls.org.il/"
+      ],
+      "image_access": "Use the institutional digital viewer; reproduction rights must be checked with the holding institution.",
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "This is an ancient interpretive commentary, not a manuscript copy of the full book of Habakkuk."
+    },
+    {
+      "id": "1QapGen",
+      "name": "Genesis Apocryphon (1QapGen)",
+      "cave": "Qumran Cave 1",
+      "language": "Aramaic",
+      "material": "Parchment",
+      "date_estimate": "Approximately 25 BCE–50 CE in the cited Israel Museum educational publication",
+      "date_basis": "Institutional publication's approximate dating",
+      "contents": "An Aramaic retelling or expansion of portions of Genesis; the cited publication describes surviving material as a reworking of part of Genesis",
+      "condition": "Fragmentary; not a complete copy of Genesis",
+      "holding_institution": "Israel Museum, Shrine of the Book",
+      "shelfmark": "1QapGen",
+      "source_urls": [
+        "https://dss.collections.imj.org.il/",
+        "https://museum.imj.org.il/pdf/dss-english.pdf",
+        "https://www.deadseascrolls.org.il/"
+      ],
+      "image_access": "Use the institutional digital viewer; reproduction rights must be checked with the holding institution.",
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "Do not label this as a direct copy of the canonical book of Genesis. It is a distinct Aramaic composition that retells and expands Genesis material."
+    },
+    {
+      "id": "1QS",
+      "name": "Community Rule (1QS)",
+      "cave": "Qumran Cave 1",
+      "language": "Hebrew",
+      "material": "Parchment",
+      "date_estimate": "Approximately 100–75 BCE in the cited Israel Museum educational publication",
+      "date_basis": "Institutional publication's approximate dating",
+      "contents": "A community rule text; the cited publication describes it as the most complete copy of the Community Rule",
+      "condition": "Relatively substantial surviving manuscript",
+      "holding_institution": "Israel Museum, Shrine of the Book",
+      "shelfmark": "1QS",
+      "source_urls": [
+        "https://dss.collections.imj.org.il/",
+        "https://museum.imj.org.il/pdf/dss-english.pdf",
+        "https://www.deadseascrolls.org.il/"
+      ],
+      "image_access": "Use the institutional digital viewer; reproduction rights must be checked with the holding institution.",
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "This is a community rule document, not a copy of one of the Hebrew Scripture books."
+    }
+  ],
+  "collection_sources": [
+    {
+      "name": "Leon Levy Dead Sea Scrolls Digital Library",
+      "institution": "Israel Antiquities Authority",
+      "url": "https://www.deadseascrolls.org.il/",
+      "use": "Institutional catalogue and digitized fragment images",
+      "rights": "The IAA terms prohibit reproduction, display, modification, or distribution of website text and images without prior written permission, except a single copy for private use. Link to the source rather than bundling images."
+    },
+    {
+      "name": "Digital Dead Sea Scrolls",
+      "institution": "Israel Museum",
+      "url": "https://dss.collections.imj.org.il/",
+      "use": "Digital presentations and images of selected major scrolls",
+      "rights": "Check the institution's current image and reproduction conditions before reuse."
+    }
+  ],
+  "catalog_limitations": [
+    "This initial register is selective, not a complete catalogue of the Dead Sea Scrolls.",
+    "The IAA uses imaging-plate fragment numbers that may differ from the published manuscript and fragment numbering used in the Discoveries in the Judaean Desert series; do not treat them as interchangeable without a verified concordance.",
+    "A manuscript title or book name does not prove that every chapter or verse survives in that witness.",
+    "No Dead Sea Scrolls transcription is bundled by this metadata file."
+  ]
+}
