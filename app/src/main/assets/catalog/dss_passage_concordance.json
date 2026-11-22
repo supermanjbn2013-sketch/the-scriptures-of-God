@@ -36,10 +36,39 @@
         }
       ],
       "column_line": null,
-      "transcription_source": null,
+      "transcription_source": {
+        "title": "Qumran-Digital: 4Q26 transcription",
+        "url": "https://lexicon.qumran-digital.org/transcriptions/4Q26/2026-10-06/index.html?v=2026-10-06",
+        "version": "2026-10-06",
+        "provider": "DFG project 465277421, Qumran-Digital: Text und Lexikon",
+        "attribution": "Based on a text of the earlier Qumran-Wörterbuch project of the Göttingen Academy of Sciences and Humanities, itself based on a precursor text by Martin Abegg.",
+        "license": "CC BY-SA 4.0",
+        "use": "Online Hebrew transcription with fragment headings and links to corresponding Leviticus readings.",
+        "caution": "Digital transcription display-line numbering is not a manuscript column/line coordinate. Preserve brackets, dots and editorial signs. The transcription is not a manuscript image and should be checked against the published edition and images."
+      },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "partial concordance; requires DJD and image-level verification",
-      "caution": "Do not treat PAM 40.967 as a DJD fragment number or assume the whole cited range is preserved."
+      "status": "Qumran-Digital Hebrew transcription linked; fragment-level passage mapping added for frg. 1–2; complete manuscript concordance remains pending",
+      "caution": "The linked transcription shows 4Q26 frg. 1 corresponding to Leviticus 14:27–29 and frg. 2 to Leviticus 14:33–35. Square brackets and dotted letters indicate editorial restoration/uncertainty; do not treat the displayed biblical comparison line as the manuscript's own complete wording.",
+      "fragment_coverage": [
+        {
+          "fragment": "1",
+          "passages": [
+            "Leviticus 14:27–29"
+          ],
+          "digital_transcription_line_range": "1–6",
+          "basis": "Qumran-Digital 4Q26 transcription, frg. 1, lines 1–6.",
+          "condition": "transcribed fragment with editorially supplied/restored portions; inspect notation and image"
+        },
+        {
+          "fragment": "2",
+          "passages": [
+            "Leviticus 14:33–35"
+          ],
+          "digital_transcription_line_range": "1–2",
+          "basis": "Qumran-Digital 4Q26 transcription, frg. 2, lines 1–2.",
+          "condition": "transcribed fragment with editorially supplied/restored portions; inspect notation and image"
+        }
+      ]
     },
     {
       "id": "4Q27-Num-b",
@@ -95,10 +124,31 @@
         }
       ],
       "column_line": null,
-      "transcription_source": null,
+      "transcription_source": {
+        "title": "Qumran-Digital: 4Q27 transcription",
+        "url": "https://lexicon.qumran-digital.org/transcriptions/4Q27/2026-10-06/index.html?v=2026-10-06",
+        "version": "2026-10-06",
+        "provider": "DFG project 465277421, Qumran-Digital: Text und Lexikon",
+        "attribution": "Based on a text of the earlier Qumran-Wörterbuch project of the Göttingen Academy of Sciences and Humanities, itself based on a precursor text by Martin Abegg.",
+        "license": "CC BY-SA 4.0",
+        "use": "Online Hebrew transcription with 109 fragment groups and links to corresponding Numbers readings.",
+        "caution": "The displayed line numbers are digital transcription navigation lines, not manuscript column/line coordinates. The transcription juxtaposes the manuscript text with Masoretic and Samaritan Pentateuch readings; those comparison texts must not be mistaken for 4Q27."
+      },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "partial concordance; requires DJD and image-level verification",
-      "caution": "The listed chapters are inventory-level coverage notes, not a claim that every verse or every word survives."
+      "status": "Qumran-Digital Hebrew transcription linked; first displayed fragment group mapped to Numbers 11:31–12:8; additional fragment groups remain to be mapped",
+      "caution": "The online transcription index lists many separate fragment groups. The initial mapping records only the displayed group frg. 1–4 and does not imply that the manuscript preserves the full cited verses continuously. Samaritan Pentateuch and Masoretic comparison lines are editorial comparanda, not 4Q27 text.",
+      "fragment_coverage": [
+        {
+          "fragment": "1–4",
+          "passages": [
+            "Numbers 11:31–35",
+            "Numbers 12:1–8"
+          ],
+          "digital_transcription_line_range": "1–17",
+          "basis": "Qumran-Digital 4Q27 transcription, group frg. 1–4; manuscript lines 1–17 link to Numbers 11:31–12:8.",
+          "condition": "fragmentary Hebrew text; brackets and dotted letters show damaged/restored or uncertain text"
+        }
+      ]
     },
     {
       "id": "4Q31-Deut-d",
