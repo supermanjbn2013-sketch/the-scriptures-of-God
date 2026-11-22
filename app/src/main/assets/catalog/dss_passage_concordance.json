@@ -155,7 +155,7 @@
         "caution": "The displayed line numbers are digital transcription navigation lines, not manuscript column/line coordinates. The transcription juxtaposes the manuscript text with Masoretic and Samaritan Pentateuch readings; those comparison texts must not be mistaken for 4Q27."
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "Qumran-Digital transcription and 52-group navigation index linked; published concordance for 27 preserved columns added; fragments 85–109 remain unassigned in the Study Edition",
+      "status": "Qumran-Digital transcription and 52-group index linked; line-by-line passage maps completed for groups frg. 1–4 and frg. 3 ii+5; other groups await verification.",
       "caution": "The 27 published column assignments are reproduced from The Dead Sea Scrolls Study Edition, p. 252, which cites N. Jastram, DJD XII, 205–267. This column map is not a fragment-group map. The Qumran-Digital page's 52 display groups represent fragment numbers 1–109, but only frg. 1–4 has been individually mapped here; the Study Edition explicitly leaves fragments 85–109 without a passage assignment. Masoretic and Samaritan comparison lines on Qumran-Digital are not 4Q27 readings. A verse-by-verse digital line map is now recorded for the first group (frg. 1–4), based on Qumran-Digital's own line annotations. Its comparison text is not part of 4Q27.",
       "fragment_coverage": [
         {
@@ -166,6 +166,15 @@
           "digital_transcription_line_range": "1–17",
           "basis": "Qumran-Digital frg. 1–4 lines 1–17 display manuscript text through Numbers 12:11; the published column concordance identifies Col. I as Numbers 11:31–12:11.",
           "condition": "Fragmentary Hebrew text with editorial restorations/uncertainties; this is the first of 52 digital display groups."
+        },
+        {
+          "fragment": "3 ii+5",
+          "passages": [
+            "Numbers 13:7–24"
+          ],
+          "digital_transcription_line_range": "1–16",
+          "basis": "Qumran-Digital 4Q27 transcription, second displayed group frg. 3 ii+5, digital lines 1–16; each line links to Numbers 13:7–24.",
+          "condition": "Fragmentary Hebrew text with editorial restorations and uncertainty marks; comparison lines from the Masoretic Text, Samaritan Pentateuch and 4Q365 are separate witnesses."
         }
       ],
       "fragment_group_index": {
@@ -564,9 +573,138 @@
             "Numbers 12:10–11"
           ],
           "source_reference": "Qumran-Digital 4Q27, transcription line 17"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 1,
+          "passages": [
+            "Numbers 13:7–8"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 1"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 2,
+          "passages": [
+            "Numbers 13:8–10"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 2"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 3,
+          "passages": [
+            "Numbers 13:10–13"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 3",
+          "note": "The transcription also cites 4Q365 frg. 32 as a parallel manuscript witness; it is not part of 4Q27."
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 4,
+          "passages": [
+            "Numbers 13:13–16"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 4"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 5,
+          "passages": [
+            "Numbers 13:16"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 5"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 6,
+          "passages": [
+            "Numbers 13:17"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 6"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 7,
+          "passages": [
+            "Numbers 13:17–18"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 7"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 8,
+          "passages": [
+            "Numbers 13:18–19"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 8"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 9,
+          "passages": [
+            "Numbers 13:19"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 9"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 10,
+          "passages": [
+            "Numbers 13:19–20"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 10"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 11,
+          "passages": [
+            "Numbers 13:20"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 11"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 12,
+          "passages": [
+            "Numbers 13:21–22"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 12"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 13,
+          "passages": [
+            "Numbers 13:22"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 13"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 14,
+          "passages": [
+            "Numbers 13:22–23"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 14"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 15,
+          "passages": [
+            "Numbers 13:23–24"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 15"
+        },
+        {
+          "group": "frg. 3 ii+5",
+          "digital_line": 16,
+          "passages": [
+            "Numbers 13:24"
+          ],
+          "source_reference": "Qumran-Digital 4Q27, frg. 3 ii+5, line 16"
         }
       ],
-      "line_map_policy": "Passage ranges above are the verse references attached to each digital transcription line by Qumran-Digital. They are navigational comparisons, not claims that every word in the cited verses is preserved. The Hebrew manuscript transcription is the manuscript witness; MT and Samaritan Pentateuch lines are separate comparison witnesses."
+      "line_map_policy": "Passage ranges above are the verse references attached to each digital transcription line by Qumran-Digital. They are navigational comparisons, not claims that every word in the cited verses is preserved. The Hebrew manuscript transcription is the manuscript witness; MT and Samaritan Pentateuch lines are separate comparison witnesses. The second mapped group frg. 3 ii+5 is individually indexed to Numbers 13:7–24. Its cross-manuscript parallels (including 4Q365) remain distinct witnesses."
     },
     {
       "id": "4Q31-Deut-d",
