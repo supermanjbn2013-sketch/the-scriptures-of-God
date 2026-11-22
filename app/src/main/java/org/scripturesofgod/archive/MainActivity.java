@@ -132,21 +132,21 @@ public class MainActivity extends Activity {
             if(match==null){new android.app.AlertDialog.Builder(this).setTitle(item).setMessage("No concordance record is available.").setPositiveButton("Close",null).show();return;}
             StringBuilder detail=new StringBuilder();
             detail.append("Manuscript: ").append(match.optString("manuscript_id")).append("\n");
-            detail.append("Work: ").append(match.optString("work")).append("\\n");
-            detail.append("Cave: ").append(match.optString("cave")).append("\\n");
-            detail.append("Language: ").append(match.optString("language")).append("\\n");
-            detail.append("IAA catalogue ID: ").append(match.optString("iaa_identifier")).append("\\n");
-            detail.append("IAA cross-reference: ").append(match.optString("iaa_cross_reference")).append("\\n");
-            detail.append("DJD reference: ").append(match.isNull("djd_reference")?"Not yet verified":match.optString("djd_reference")).append("\\n\\n");
-            detail.append("Inventory references:\\n");
+            detail.append("Work: ").append(match.optString("work")).append("\n");
+            detail.append("Cave: ").append(match.optString("cave")).append("\n");
+            detail.append("Language: ").append(match.optString("language")).append("\n");
+            detail.append("IAA catalogue ID: ").append(match.optString("iaa_identifier")).append("\n");
+            detail.append("IAA cross-reference: ").append(match.optString("iaa_cross_reference")).append("\n");
+            detail.append("DJD reference: ").append(match.isNull("djd_reference")?"Not yet verified":match.optString("djd_reference")).append("\n\n");
+            detail.append("Inventory references:\n");
             org.json.JSONArray inventory=match.optJSONArray("inventory_references");
-            if(inventory!=null)for(int i=0;i<inventory.length();i++){org.json.JSONObject ref=inventory.getJSONObject(i);detail.append("• ").append(ref.optString("identifier")).append(" — ").append(ref.optString("note")).append("\\n");}
-            detail.append("\\nReported passage coverage:\\n");
+            if(inventory!=null)for(int i=0;i<inventory.length();i++){org.json.JSONObject ref=inventory.getJSONObject(i);detail.append("• ").append(ref.optString("identifier")).append(" — ").append(ref.optString("note")).append("\n");}
+            detail.append("\nReported passage coverage:\n");
             org.json.JSONArray passages=match.optJSONArray("passage_coverage");
-            if(passages==null||passages.length()==0)detail.append("No passage range has been verified or recorded.\\n");
-            else for(int i=0;i<passages.length();i++){org.json.JSONObject p=passages.getJSONObject(i);detail.append("• ").append(p.optString("reference")).append("\\n  Status: ").append(p.optString("coverage_status")).append("\\n  Basis: ").append(p.optString("basis")).append("\\n");}
-            detail.append("\\nStatus: ").append(match.optString("status")).append("\\n");
-            detail.append("Caution: ").append(match.optString("caution")).append("\\n");
+            if(passages==null||passages.length()==0)detail.append("No passage range has been verified or recorded.\n");
+            else for(int i=0;i<passages.length();i++){org.json.JSONObject p=passages.getJSONObject(i);detail.append("• ").append(p.optString("reference")).append("\n  Status: ").append(p.optString("coverage_status")).append("\n  Basis: ").append(p.optString("basis")).append("\n");}
+            detail.append("\nStatus: ").append(match.optString("status")).append("\n");
+            detail.append("Caution: ").append(match.optString("caution")).append("\n");
             TextView view=text(detail.toString(),14,ink,false);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
             ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
             new android.app.AlertDialog.Builder(this).setTitle(match.optString("manuscript_id")).setView(sv).setPositiveButton("Close",null).show();
