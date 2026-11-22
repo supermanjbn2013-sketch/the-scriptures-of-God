@@ -13,11 +13,12 @@ jobs:
           python-version: '3.12'
       - name: Fetch and prepare licensed source texts
         run: python tools/prepare_corpus.py
-      - name: Validate book coverage, references, and metadata
+      - name: Validate verse corpus, DSS metadata, and Android navigation
         run: |
           python - <<'PY'
           import json
           from pathlib import Path
+
           path = Path("app/src/main/assets/corpus/verses.jsonl")
           rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
           assert len(rows) >= 30000, f"Unexpected corpus size: {len(rows)}"
@@ -25,8 +26,26 @@ jobs:
           assert any(r["language"] == "he" for r in rows)
           assert any(r["language"] == "grc" for r in rows)
           assert all(r.get("source_url") and r.get("transcription_type") for r in rows)
+          refs = [(r["language"], r["ref"]) for r in rows]
+          assert len(refs) == len(set(refs)), "Duplicate verse references detected within a language"
           print(f"Validated {len(rows)} verse records")
           print("Hebrew records:", sum(r["language"] == "he" for r in rows))
           print("Greek records:", sum(r["language"] == "grc" for r in rows))
+
+          dss_path = Path("app/src/main/assets/catalog/dead_sea_scrolls_register.json")
+          dss = json.loads(dss_path.read_text(encoding="utf-8"))
+          assert dss["record_type"] == "dead_sea_scrolls_manuscript_metadata_catalog"
+          assert len(dss["records"]) >= 4
+          ids = [r["id"] for r in dss["records"]]
+          assert len(ids) == len(set(ids)), "Duplicate DSS catalogue IDs"
+          for record in dss["records"]:
+              assert record["name"] and record["language"] and record["date_estimate"]
+              assert record["source_urls"] and record["status"] == "metadata catalogued; transcription not imported"
+          print("Validated DSS metadata records:", len(dss["records"]))
+
+          source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
+          assert "void openDssCatalogEntry(String item)" in source
+          assert "openDssCatalogEntry(item)" in source
+          print("Validated Android DSS catalogue navigation")
           print("No APK is built or uploaded by this workflow.")
           PY
