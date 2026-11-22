@@ -9,3 +9,11 @@ RESEARCH DATA POLICY
 7. Translation output must identify its source or engine, date, and human-review status.
 8. Public-domain or compatible licensed data only. Preserve attribution and licence notices in the app.
 9. The present bundled Hebrew and Greek texts are research starting editions, not a complete manuscript archive or critical apparatus.
+
+10. TEXT-FIRST DEVELOPMENT PRIORITY
+    Complete the searchable text corpus before undertaking manuscript-photo or facsimile integration.
+    Prioritize original-language transcriptions, manuscript identifiers, passage coverage, fragment/column/line coordinates, editorial marks, and source/licence metadata.
+    Build exact-word and exact-phrase search over the integrated text, with witness filters and clear separation of manuscript text, editorial reconstruction, and comparison witnesses.
+    Photographs and facsimiles are deferred until a later app update after the text archive is substantially complete. Their absence must not block text ingestion, verification, indexing, or search.
+    Do not describe the text archive as complete until coverage has been inventoried and gaps, unavailable texts, and unverified readings are explicitly recorded.
+
