@@ -156,6 +156,19 @@ public class MainActivity extends Activity {
                     detail.append("\n  Condition: ").append(group.optString("condition")).append("\n  Digital transcription display lines: ").append(group.optString("digital_transcription_line_range", "not recorded")).append(" (not manuscript column/line coordinates)\n  Basis: ").append(group.optString("basis")).append("\n");
                 }
             }
+            org.json.JSONArray lineMap=match.optJSONArray("transcription_line_map");
+            if(lineMap!=null&&lineMap.length()>0){
+                detail.append("\nDigital transcription line-by-line passage map:\n");
+                for(int i=0;i<lineMap.length();i++){
+                    org.json.JSONObject line=lineMap.getJSONObject(i);
+                    detail.append("• ").append(line.optString("group")).append(", digital line ").append(line.optInt("digital_line")).append(": ");
+                    org.json.JSONArray refs=line.optJSONArray("passages");
+                    if(refs!=null)for(int j=0;j<refs.length();j++){if(j>0)detail.append("; ");detail.append(refs.optString(j));}
+                    if(line.has("note"))detail.append(" (").append(line.optString("note")).append(")");
+                    detail.append("\n");
+                }
+                detail.append("Mapping policy: ").append(match.optString("line_map_policy")).append("\n");
+            }
             org.json.JSONArray columns=match.optJSONArray("column_coverage");
             if(columns!=null&&columns.length()>0){
                 detail.append("\nPublished column-to-passage concordance:\n");
