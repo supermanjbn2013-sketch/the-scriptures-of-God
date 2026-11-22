@@ -145,6 +145,17 @@ public class MainActivity extends Activity {
             org.json.JSONArray passages=match.optJSONArray("passage_coverage");
             if(passages==null||passages.length()==0)detail.append("No passage range has been verified or recorded.\n");
             else for(int i=0;i<passages.length();i++){org.json.JSONObject p=passages.getJSONObject(i);detail.append("• ").append(p.optString("reference")).append("\n  Status: ").append(p.optString("coverage_status")).append("\n  Basis: ").append(p.optString("basis")).append("\n");}
+            org.json.JSONArray fragmentGroups=match.optJSONArray("fragment_coverage");
+            if(fragmentGroups!=null&&fragmentGroups.length()>0){
+                detail.append("\nPublished fragment-to-passage mapping:\n");
+                for(int i=0;i<fragmentGroups.length();i++){
+                    org.json.JSONObject group=fragmentGroups.getJSONObject(i);
+                    detail.append("• Fragment ").append(group.optString("fragment")).append(": ");
+                    org.json.JSONArray refs=group.optJSONArray("passages");
+                    if(refs!=null)for(int j=0;j<refs.length();j++){if(j>0)detail.append("; ");detail.append(refs.optString(j));}
+                    detail.append("\n  Condition: ").append(group.optString("condition")).append("\n  Basis: ").append(group.optString("basis")).append("\n");
+                }
+            }
             detail.append("\nStatus: ").append(match.optString("status")).append("\n");
             detail.append("Caution: ").append(match.optString("caution")).append("\n");
             TextView view=text(detail.toString(),14,ink,false);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
