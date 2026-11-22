@@ -46,6 +46,35 @@
         "Dates are approximate and tied to cited institutional descriptions",
         "IAA imaging-plate fragment numbers must not be confused with published DJD manuscript and fragment identifiers without a verified concordance"
       ]
+    },
+    {
+      "id": "the-way-to-yahuweh-downloads",
+      "name": "The Way to Yahuweh downloadable manuscript and research documents",
+      "language": "Hebrew, Aramaic, Koine Greek, and related languages as represented by individual files",
+      "coverage": "Selected Dead Sea Scrolls transcriptions, ancient papyrus transcriptions, Septuagint manuscript transcriptions, and research documents",
+      "record_type": "third-party transcription and research-document collection; each file must be catalogued individually",
+      "license": "The site's About page states that all downloadable documents are released under CC BY-SA 4.0. Preserve attribution, license notices, and share-alike terms for adapted material.",
+      "repository": "https://downloads.thewaytoyahuweh.com/",
+      "source_policy": {
+        "attribution": "The Way to Yahuweh; identify the individual document and its cited underlying edition or manuscript source.",
+        "handling": "Use as an additional transcription or comparison source, not as an automatic substitute for institutional manuscript images or critical editions.",
+        "required_metadata": [
+          "document title",
+          "manuscript identifier",
+          "coverage",
+          "transcription or editorial basis",
+          "underlying edition and page/plate references where supplied",
+          "download URL",
+          "license",
+          "access date"
+        ],
+        "limitations": [
+          "The downloadable documents are editorial transcriptions or research documents, not photographic facsimiles.",
+          "A file's manuscript label does not by itself establish that every displayed reading is independently verified against the original manuscript.",
+          "Separate manuscript witnesses and comparison texts must remain distinguished.",
+          "The site owner's editorial interpretations must not be presented as institutional consensus or as the manuscript's unmediated wording."
+        ]
+      }
     }
   ],
   "not_yet_integrated": [
@@ -54,6 +83,6 @@
     "Codex-specific transcriptions",
     "Manuscript variants apparatus",
     "Historical and multilingual translation corpus",
-    "Dead Sea Scrolls transcriptions and licensed facsimile images (metadata register is present; transcription and image rights are not integrated)"
+    "Additional Dead Sea Scrolls transcription files from The Way to Yahuweh; files are being evaluated and integrated individually under CC BY-SA 4.0"
   ]
 }
