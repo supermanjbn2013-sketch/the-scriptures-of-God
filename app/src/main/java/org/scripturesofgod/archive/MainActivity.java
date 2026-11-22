@@ -156,6 +156,25 @@ public class MainActivity extends Activity {
                     detail.append("\n  Condition: ").append(group.optString("condition")).append("\n  Digital transcription display lines: ").append(group.optString("digital_transcription_line_range", "not recorded")).append(" (not manuscript column/line coordinates)\n  Basis: ").append(group.optString("basis")).append("\n");
                 }
             }
+            org.json.JSONArray columns=match.optJSONArray("column_coverage");
+            if(columns!=null&&columns.length()>0){
+                detail.append("\nPublished column-to-passage concordance:\n");
+                for(int i=0;i<columns.length();i++){
+                    org.json.JSONObject col=columns.getJSONObject(i);
+                    detail.append("• Column ").append(col.optString("column")).append(": ");
+                    org.json.JSONArray refs=col.optJSONArray("passages");
+                    if(refs!=null)for(int j=0;j<refs.length();j++){if(j>0)detail.append("; ");detail.append(refs.optString(j));}
+                    detail.append("\n");
+                }
+                detail.append("Basis: ").append(columns.getJSONObject(0).optString("basis")).append("\n");
+            }
+            org.json.JSONObject edition=match.optJSONObject("published_edition");
+            if(edition!=null){
+                detail.append("\nPublished edition: ").append(edition.optString("reference")).append("\n");
+                detail.append("Editor: ").append(edition.optString("editor")).append("\n");
+                detail.append("Bibliography: ").append(edition.optString("bibliography")).append("\n");
+                detail.append("Edition caution: ").append(edition.optString("caution")).append("\n");
+            }
             org.json.JSONObject groupIndex=match.optJSONObject("fragment_group_index");
             if(groupIndex!=null){
                 detail.append("\nDigital fragment-group index: ").append(groupIndex.optInt("display_group_count")).append(" groups\n");
