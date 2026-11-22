@@ -83,6 +83,40 @@ public class MainActivity extends Activity {
     }
 
 
+    void openDssCatalogEntry(String item){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/dead_sea_scrolls_register.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray records=new org.json.JSONObject(raw.toString()).getJSONArray("records");
+            String key=item.toLowerCase();String id="";
+            if(key.contains("isaiah"))id="1QIsa-a";
+            else if(key.contains("habakkuk"))id="1QpHab";
+            else if(key.contains("genesis apocryphon"))id="1QapGen";
+            else if(key.contains("community rule"))id="1QS";
+            org.json.JSONObject match=null;
+            for(int i=0;i<records.length();i++){org.json.JSONObject r=records.getJSONObject(i);if(r.optString("id").equals(id)){match=r;break;}}
+            if(match==null){new android.app.AlertDialog.Builder(this).setTitle(item).setMessage("No verified DSS metadata record is available.").setPositiveButton("Close",null).show();return;}
+            StringBuilder detail=new StringBuilder();
+            detail.append("Cave: ").append(match.optString("cave")).append("\\n");
+            detail.append("Language: ").append(match.optString("language")).append("\\n");
+            detail.append("Material: ").append(match.optString("material")).append("\\n");
+            detail.append("Date: ").append(match.optString("date_estimate")).append("\\n");
+            detail.append("Dating basis: ").append(match.optString("date_basis")).append("\\n");
+            detail.append("Contents: ").append(match.optString("contents")).append("\\n");
+            detail.append("Condition: ").append(match.optString("condition")).append("\\n");
+            detail.append("Holding: ").append(match.optString("holding_institution")).append("\\n");
+            detail.append("Shelfmark: ").append(match.optString("shelfmark")).append("\\n\\n");
+            detail.append("Status: ").append(match.optString("status")).append("\\n\\n");
+            detail.append("Caution: ").append(match.optString("caution")).append("\\n\\n");
+            detail.append("Image access: ").append(match.optString("image_access")).append("\\n\\n");
+            detail.append("Sources:\\n");org.json.JSONArray urls=match.optJSONArray("source_urls");
+            if(urls!=null)for(int i=0;i<urls.length();i++)detail.append(urls.optString(i)).append("\\n");
+            TextView view=text(detail.toString(),14,ink,false);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+            ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
+            new android.app.AlertDialog.Builder(this).setTitle(match.optString("name")).setView(sv).setPositiveButton("Close",null).show();
+        }catch(Exception e){new android.app.AlertDialog.Builder(this).setTitle("DSS catalogue unavailable").setMessage("The Dead Sea Scrolls metadata register is not present in this build.").setPositiveButton("Close",null).show();}
+    }
+
     void openCatalogEntry(String item){
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/greek_manuscript_register.json"),"UTF-8"));
