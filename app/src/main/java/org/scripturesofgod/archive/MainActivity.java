@@ -157,6 +157,16 @@ public class MainActivity extends Activity {
                 }
             }
             detail.append("\nStatus: ").append(match.optString("status")).append("\n");
+            org.json.JSONObject transcription=match.optJSONObject("transcription_source");
+            if(transcription!=null){
+                detail.append("\\nHebrew transcription source:\\n").append(transcription.optString("title")).append("\\n");
+                detail.append("Provider: ").append(transcription.optString("provider")).append("\\n");
+                detail.append("Version: ").append(transcription.optString("version")).append("\\n");
+                detail.append("License: ").append(transcription.optString("license")).append("\\n");
+                detail.append("Attribution: ").append(transcription.optString("attribution")).append("\\n");
+                detail.append("Source URL: ").append(transcription.optString("url")).append("\\n");
+                detail.append("Transcription caution: ").append(transcription.optString("caution")).append("\\n");
+            }
             detail.append("Caution: ").append(match.optString("caution")).append("\n");
             TextView view=text(detail.toString(),14,ink,false);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
             ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
