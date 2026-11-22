@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "record_type": "manuscript_metadata_catalog",
+  "records": [
+    {
+      "id": "P52",
+      "name": "Papyrus 52 (P52)",
+      "material": "Papyrus",
+      "language": "Koine Greek",
+      "date_estimate": "2nd century CE; the exact dating is debated and proposals extend into the 3rd century",
+      "date_basis": "Palaeography; not an exact calendar date",
+      "contents": "John 18:31–33 and 18:37–38",
+      "condition": "One fragment; incomplete",
+      "holding_institution": "John Rylands Research Institute and Library, Manchester",
+      "shelfmark": "Gr. P. 457",
+      "source_urls": [
+        "https://manuscripts.csntm.org/manuscript/View/GA_P52",
+        "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/palaeography-precision-and-publicity-further-thoughts-on-pryliii457-p52/1D4E56BF0E9D4DDDA313D0C2754E2F28"
+      ],
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "Do not call it definitively the earliest manuscript without explaining dating uncertainty."
+    },
+    {
+      "id": "P46",
+      "name": "Papyrus 46 (P46)",
+      "material": "Papyrus",
+      "language": "Koine Greek",
+      "date_estimate": "Late 2nd to early 3rd century CE (approximate)",
+      "date_basis": "Palaeographical estimate",
+      "contents": "Pauline writings; surviving manuscript is incomplete",
+      "condition": "Fragmentary codex; surviving leaves",
+      "holding_institution": "Chester Beatty Library, Dublin, with additional leaves at University of Michigan",
+      "source_urls": [
+        "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+      ],
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "Do not imply that every Pauline writing or every verse survives in this codex."
+    },
+    {
+      "id": "P66",
+      "name": "Papyrus 66 (P66)",
+      "material": "Papyrus",
+      "language": "Koine Greek",
+      "date_estimate": "Late 2nd to early 3rd century CE (approximate)",
+      "date_basis": "Palaeographical estimate",
+      "contents": "Gospel according to John",
+      "condition": "Approximately 75 identifiable papyrus folios and numerous fragments",
+      "holding_institution": "Foundation Martin Bodmer, Geneva",
+      "shelfmark": "P. Bodmer II",
+      "source_urls": [
+        "https://manuscripts.csntm.org/manuscript/View/GA_P66_Bodmer"
+      ],
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "The catalogue describes a fragmentary surviving manuscript, not a complete copy."
+    },
+    {
+      "id": "P75",
+      "name": "Papyrus 75 (P75) / Papyrus Bodmer XIV–XV",
+      "material": "Papyrus",
+      "language": "Koine Greek",
+      "date_estimate": "Often placed around the early 3rd century; dating discussions vary",
+      "date_basis": "Palaeographical and codicological assessment",
+      "contents": "Substantial portions of Luke and John",
+      "condition": "Incomplete; about half the text of each Gospel survives in satisfactory condition according to the cited Vatican study",
+      "holding_institution": "Biblioteca Apostolica Vaticana",
+      "shelfmark": "Hanna Papyrus 1 (Mater Verbi)",
+      "source_urls": [
+        "https://bav.vatican.va/moduli/BodmerVoicu_ing.pdf",
+        "https://codex.mf.no/codex_show/1058"
+      ],
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "The date is an estimate, not a precise year; discovery and provenance details are not fully certain."
+    },
+    {
+      "id": "Sinaiticus",
+      "name": "Codex Sinaiticus",
+      "material": "Parchment codex",
+      "language": "Greek",
+      "date_estimate": "Generally dated to the 4th century; a published reassessment argues a possible range from early 4th to early 5th century",
+      "date_basis": "Palaeographical and codicological assessment",
+      "contents": "Extensive portions of the Hebrew Scriptures in Greek and Apostolic Writings; surviving leaves are distributed among four institutions",
+      "condition": "Incomplete and dispersed",
+      "holding_institution": "British Library; Leipzig University Library; National Library of Russia; Saint Catherine's Monastery",
+      "source_urls": [
+        "https://codexsinaiticus.org/en/codex/date.aspx",
+        "https://academic.oup.com/jts/article/73/2/516/6652265",
+        "https://codexsinaiticus.org/en/project/history.aspx"
+      ],
+      "status": "metadata catalogued; transcription and images not imported",
+      "caution": "Do not present the middle of the 4th century as an exact date; portions are held by multiple institutions."
+    },
+    {
+      "id": "Vaticanus",
+      "name": "Codex Vaticanus (Vat.gr.1209)",
+      "material": "Parchment codex",
+      "language": "Greek",
+      "date_estimate": "4th century CE according to the Vatican Library catalogue",
+      "date_basis": "Institutional catalogue dating",
+      "contents": "The Vatican Library catalogue lists extensive Hebrew Scripture and Apostolic Writings contents, including the four Gospels, Acts, letters, and Revelation",
+      "condition": "Surviving codex; catalogue pagination and contents must be checked passage by passage",
+      "holding_institution": "Biblioteca Apostolica Vaticana",
+      "shelfmark": "Vat.gr.1209",
+      "source_urls": [
+        "https://digi.vatlib.it/view/MSS_Vat.gr.1209/1378",
+        "https://digi.vatlib.it/mss/detail/Vat.gr.1209"
+      ],
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "Vatican digital images are stated to be for personal use or study; publication rights require permission from the Library."
+    }
+  ],
+  "catalog_policy": "Metadata records are not transcriptions. A manuscript passage is not available in-app until the exact folio/page, image rights, transcription source, and reading have been verified. Dates are estimates and must retain uncertainty."
+}
