@@ -15,6 +15,14 @@ import org.json.JSONObject;
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.security.KeyStore;
+import javax.crypto.Cipher;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.GCMParameterSpec;
+import android.security.keystore.KeyGenParameterSpec;
+import android.security.keystore.KeyProperties;
+import android.util.Base64;
 
 public class AiTranslatorActivity extends Activity {
     private final int bg=Color.rgb(15,19,24), panel=Color.rgb(26,33,41), gold=Color.rgb(205,174,112), ink=Color.rgb(232,228,217), muted=Color.rgb(160,166,170);
@@ -27,7 +35,7 @@ public class AiTranslatorActivity extends Activity {
     @Override public void onCreate(Bundle state){
         super.onCreate(state);
         build();
-        if(getPreferences(0).getString("api_key","").trim().isEmpty()) showKeyDialog();
+        if(getSavedKey().trim().isEmpty()) showKeyDialog();
     }
     private GradientDrawable shape(int color){GradientDrawable d=new GradientDrawable();d.setColor(color);d.setCornerRadius(16);return d;}
     private TextView label(String value,int size,int color,boolean bold){TextView t=new TextView(this);t.setText(value);t.setTextSize(size);t.setTextColor(color);if(bold)t.setTypeface(Typeface.DEFAULT,Typeface.BOLD);t.setPadding(4,9,4,7);return t;}
@@ -58,12 +66,12 @@ public class AiTranslatorActivity extends Activity {
     }
     private void showKeyDialog(){
         LinearLayout box=new LinearLayout(this);box.setOrientation(1);box.setPadding(18,8,18,4);
-        EditText key=new EditText(this);key.setSingleLine(true);key.setHint("Paste your Gemini API key");key.setInputType(129);key.setText(getPreferences(0).getString("api_key",""));box.addView(key);
+        EditText key=new EditText(this);key.setSingleLine(true);key.setHint("Paste your Gemini API key");key.setInputType(129);key.setText(getSavedKey());box.addView(key);
         TextView note=label("The app does not include a shared key. Each user connects their own free-tier key. Requests send the text you submit to Google Gemini. Google's free tier may use submitted content to improve its products. Do not submit private material.",12,muted,false);box.addView(note);
         new AlertDialog.Builder(this).setTitle("Connect AI translation").setView(box)
             .setNeutralButton("Get free API key",(d,w)->{startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse("https://aistudio.google.com/app/apikey")));})
             .setNegativeButton("Cancel",null)
-            .setPositiveButton("Save key",(d,w)->{getPreferences(0).edit().putString("api_key",key.getText().toString().trim()).apply();Toast.makeText(this,"AI connection saved on this device",Toast.LENGTH_SHORT).show();}).show();
+            .setPositiveButton("Save key",(d,w)->{try{saveApiKey(key.getText().toString().trim());Toast.makeText(this,"AI connection saved securely on this device",Toast.LENGTH_SHORT).show();}catch(Exception ex){Toast.makeText(this,"Could not secure the API key: "+ex.getMessage(),Toast.LENGTH_LONG).show();}}).show();
     }
     private String makePrompt(String text){
         String selectedMode=mode.getSelectedItem().toString();
@@ -81,10 +89,42 @@ public class AiTranslatorActivity extends Activity {
         p.append("\nUse headings: RESULT, LITERAL SENSE, LANGUAGE NOTES, UNCERTAINTIES. Omit sections that do not apply.\n\nTEXT:\n").append(text);
         return p.toString();
     }
+
+    private String getSavedKey(){
+        try{
+            String packed=getPreferences(0).getString("api_key_encrypted","");
+            if(packed.isEmpty())return "";
+            byte[] all=Base64.decode(packed,Base64.NO_WRAP);
+            byte[] iv=java.util.Arrays.copyOfRange(all,0,12);
+            byte[] encrypted=java.util.Arrays.copyOfRange(all,12,all.length);
+            Cipher cipher=Cipher.getInstance("AES/GCM/NoPadding");
+            cipher.init(Cipher.DECRYPT_MODE,getSecretKey(),new GCMParameterSpec(128,iv));
+            return new String(cipher.doFinal(encrypted),"UTF-8");
+        }catch(Exception e){return "";}
+    }
+    private void saveApiKey(String value)throws Exception{
+        if(value.isEmpty()){getPreferences(0).edit().remove("api_key_encrypted").apply();return;}
+        Cipher cipher=Cipher.getInstance("AES/GCM/NoPadding");
+        cipher.init(Cipher.ENCRYPT_MODE,getSecretKey());
+        byte[] encrypted=cipher.doFinal(value.getBytes("UTF-8"));
+        byte[] iv=cipher.getIV();byte[] packed=new byte[iv.length+encrypted.length];
+        System.arraycopy(iv,0,packed,0,iv.length);System.arraycopy(encrypted,0,packed,iv.length,encrypted.length);
+        getPreferences(0).edit().putString("api_key_encrypted",Base64.encodeToString(packed,Base64.NO_WRAP)).apply();
+    }
+    private SecretKey getSecretKey()throws Exception{
+        KeyStore store=KeyStore.getInstance("AndroidKeyStore");store.load(null);
+        String alias="scriptures_of_god_ai_key";
+        if(store.containsAlias(alias))return (SecretKey)store.getKey(alias,null);
+        KeyGenerator generator=KeyGenerator.getInstance(KeyProperties.KEY_ALGORITHM_AES,"AndroidKeyStore");
+        generator.init(new KeyGenParameterSpec.Builder(alias,KeyProperties.PURPOSE_ENCRYPT|KeyProperties.PURPOSE_DECRYPT)
+            .setBlockModes(KeyProperties.BLOCK_MODE_GCM).setEncryptionPaddings(KeyProperties.ENCRYPTION_PADDING_NONE).setRandomizedEncryptionRequired(true).build());
+        return generator.generateKey();
+    }
+
     private void runTranslation(){
         String text=source.getText().toString().trim();
         if(text.isEmpty()){source.setError("Enter text first");return;}
-        String key=getPreferences(0).getString("api_key","").trim();
+        String key=getSavedKey().trim();
         if(key.isEmpty()){showKeyDialog();return;}
         translate.setEnabled(false);translate.setText("Working…");result.setText("The AI is analyzing the supplied text…");
         final String prompt=makePrompt(text), apiKey=key;
@@ -96,7 +136,7 @@ public class AiTranslatorActivity extends Activity {
                 connection.setRequestProperty("Content-Type","application/json");connection.setRequestProperty("x-goog-api-key",apiKey);
                 JSONObject part=new JSONObject().put("text",prompt);
                 JSONObject body=new JSONObject().put("contents",new JSONArray().put(new JSONObject().put("parts",new JSONArray().put(part))))
-                    .put("generationConfig",new JSONObject().put("temperature",0.2).put("maxOutputTokens",4096));
+                    .put("generationConfig",new JSONObject().put("maxOutputTokens",4096));
                 try(OutputStream out=connection.getOutputStream()){out.write(body.toString().getBytes("UTF-8"));}
                 int status=connection.getResponseCode();InputStream stream=status>=200&&status<300?connection.getInputStream():connection.getErrorStream();
                 StringBuilder raw=new StringBuilder();try(BufferedReader reader=new BufferedReader(new InputStreamReader(stream,"UTF-8"))){String line;while((line=reader.readLine())!=null)raw.append(line);}
