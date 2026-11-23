@@ -203,7 +203,7 @@ public class MainActivity extends Activity {
                             }
                             metadata.append("\n");
                         }
-                    }catch(Exception ignored){}
+                    }catch(Exception coverageError){}
                     body.insert(0,metadata.toString());
                     return body.toString();
                 }catch(Exception e){
