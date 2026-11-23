@@ -42,6 +42,19 @@ def validate_apocrypha():
         assert any(r["book"] == book and r["text"].strip() for r in records), f"Empty text: {book}"
     report = json.loads((ROOT / "corpus/apocrypha_import_report.json").read_text(encoding="utf-8"))
     assert (REQUIRED_GREEK | REQUIRED_LATIN).issubset(set(report)), "Apocrypha import report is incomplete"
+    coverage = json.loads((ROOT / "corpus/apocrypha_coverage.json").read_text(encoding="utf-8"))
+    assert set(report).issubset(set(coverage)), "Apocrypha chapter coverage inventory is incomplete"
+    for book, summary in coverage.items():
+        book_rows = [r for r in records if r["book"] == book]
+        assert summary["record_count"] == len(book_rows) == report[book], f"Record count mismatch: {book}"
+        assert summary["chapter_count"] == len(summary["chapters"]) > 0, f"Chapter coverage missing: {book}"
+        assert summary["source_url"] and summary["edition"] and summary["witness_basis"] and summary["scope_note"]
+        source_refs = [r.get("source_reference") for r in book_rows]
+        assert all(source_refs) and len(source_refs) == len(set(source_refs)), f"Missing or duplicate source coordinates: {book}"
+        for chapter, details in summary["chapters"].items():
+            verses = details["source_verse_numbers"]
+            assert verses == sorted(set(verses)) and len(verses) == details["verse_count"]
+            assert verses[0] == details["first_source_verse"] and verses[-1] == details["last_source_verse"]
     assert len(greek) >= 1000, f"Greek Apocrypha corpus unexpectedly small: {len(greek)}"
     assert len(latin) >= 150, f"Latin Apocrypha corpus unexpectedly small: {len(latin)}"
     assert any(r["ref"] == "2 Esdras / 4 Ezra (Latin) 7:139" for r in latin), "2 Esdras chapter 7 is incomplete"
