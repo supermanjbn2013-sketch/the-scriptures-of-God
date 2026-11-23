@@ -216,7 +216,9 @@ public class MainActivity extends Activity {
                     detail.append("• ").append(line.optString("group")).append(", digital line ").append(line.optInt("digital_line")).append(": ");
                     org.json.JSONArray refs=line.optJSONArray("passages");
                     if(refs!=null)for(int j=0;j<refs.length();j++){if(j>0)detail.append("; ");detail.append(refs.optString(j));}
-                    if(line.has("note"))detail.append(" (").append(line.optString("note")).append(")");
+                    detail.append("\n  Hebrew transcription: ").append(line.optString("transcription_text", "not imported"));
+                    detail.append("\n  Source: ").append(line.optString("source_reference", "not recorded"));
+                    if(line.has("note"))detail.append("\n  Note: ").append(line.optString("note"));
                     detail.append("\n");
                 }
                 detail.append("Mapping policy: ").append(match.optString("line_map_policy")).append("\n");
