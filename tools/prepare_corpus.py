@@ -118,8 +118,8 @@ def extract_swete(filename, title, book_code, witness_note):
     # First1KGreek's Swete files encode each word as book.chapter.verse + token.
     # Group by the complete source reference; preserve the printed word order and marks.
     grouped = {}
-    for line_no, line in enumerate(raw.splitlines(), 1):
-        match = re.match(r"^([0-9]+\.[A-Za-z0-9]+\.[0-9]+)\s+(.+?)\s*$", line)
+    for line in raw.splitlines():
+        match = re.match(r"^([0-9]+\\.[A-Za-z0-9]+\\.[0-9]+)\\s+(.+?)\\s*$", line)
         if not match:
             continue
         ref, token = match.groups()
@@ -127,8 +127,9 @@ def extract_swete(filename, title, book_code, witness_note):
     out = []
     for ref, tokens in grouped.items():
         text = clean(tokens)
-        if text:
-            parts = ref.split(".")
+        if not text:
+            continue
+        parts = ref.split(".")
         display_ref = ref
         if len(parts) == 3:
             chapter, verse = parts[1], parts[2]
@@ -139,13 +140,13 @@ def extract_swete(filename, title, book_code, witness_note):
                     chapter = "1"
                 display_ref = f"{title} {chapter}:{verse}"
         out.append({"ref": display_ref, "source_reference": ref, "book": title, "book_code": book_code,
-                "language": "grc", "text": text, "source": "Swete Septuagint (First1KGreek digital transcription)",
-                "edition": "Henry Barclay Swete, The Old Testament in Greek according to the Septuagint",
-                "witness_basis": "Edited Septuagint text; not a diplomatic transcription of one manuscript",
-                "textual_form": witness_note, "transcription_type": "digitized edited Greek edition",
-                "source_url": url, "repository": SWETE_REPO, "license": SWETE_LICENSE,
-                "attribution": SWETE_ATTRIBUTION,
-                "text_status": "Complete text as represented by this source file; source edition and textual form are identified separately from ancient manuscript witnesses."})
+            "language": "grc", "text": text, "source": "Swete Septuagint (First1KGreek digital transcription)",
+            "edition": "Henry Barclay Swete, The Old Testament in Greek according to the Septuagint",
+            "witness_basis": "Edited Septuagint text; not a diplomatic transcription of one manuscript",
+            "textual_form": witness_note, "transcription_type": "digitized edited Greek edition",
+            "source_url": url, "repository": SWETE_REPO, "license": SWETE_LICENSE,
+            "attribution": SWETE_ATTRIBUTION,
+            "text_status": "Complete text as represented by this source file; source edition and textual form are identified separately from ancient manuscript witnesses."})
     if not out:
         raise RuntimeError(f"No verse records extracted for {title} from {url}")
     return out
