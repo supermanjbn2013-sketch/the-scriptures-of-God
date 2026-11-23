@@ -41,6 +41,12 @@ LATIN_APOCRYPHA = [
     ("manasses.txt", "Prayer of Manasseh (Latin)", "Prayer of Manasseh (Latin)",
      "Latin Prayer of Manasseh as transmitted in the Vulgate appendix; not a claim that Latin is the original composition language.")
 ]
+APOCRYPHA_EXTRACTS = [
+    (8, "Prayer of Manasseh (Greek)", "Prayer of Manasseh (Greek)",
+     "Greek Prayer of Manasseh, separately indexed from Odes 8 in the Swete Odes collection."),
+    (9, "Prayer of Azariah and Song of Three (Greek)", "Prayer of Azariah and Song of Three (Greek)",
+     "Greek Prayer of Azariah and Song of the Three, separately indexed from Odes 9 in the Swete Odes collection.")
+]
 LATIN_LIBRARY_BASE = "https://raw.githubusercontent.com/cltk/lat_text_latin_library/master/bible/"
 LATIN_LIBRARY_REPO = "https://github.com/cltk/lat_text_latin_library"
 SWETE_BASE = "https://raw.githubusercontent.com/nathans/lxx-swete/master/data/"
@@ -195,10 +201,23 @@ for filename, title, code, note in LATIN_APOCRYPHA:
     rows = extract_latin_library(filename, title, code, note)
     records.extend(rows)
     apocrypha_counts[title] = len(rows)
+for source_chapter, title, code, note in APOCRYPHA_EXTRACTS:
+    source_rows = extract_swete("28.Odae.txt", title, code, note)
+    rows = []
+    for row in source_rows:
+        parts = row["ref"].split(".")
+        if len(parts) == 3 and parts[1] == str(source_chapter):
+            row["source_reference"] = row["ref"]
+            row["ref"] = f"{code} 1:{parts[2]}"
+            rows.append(row)
+    if not rows:
+        raise RuntimeError(f"Could not extract complete Odes chapter {source_chapter} for {title}")
+    records.extend(rows)
+    apocrypha_counts[title] = len(rows)
 
 if len(records) < 30000:
     raise RuntimeError(f"Corpus unexpectedly small ({len(records)} records); refusing to build an incomplete release.")
-if len(apocrypha_counts) != len(APOCRYPHA) + len(LATIN_APOCRYPHA) or any(v == 0 for v in apocrypha_counts.values()):
+if len(apocrypha_counts) != len(APOCRYPHA) + len(LATIN_APOCRYPHA) + len(APOCRYPHA_EXTRACTS) or any(v == 0 for v in apocrypha_counts.values()):
     raise RuntimeError("One or more Apocrypha source books are missing or empty; refusing to build.")
 
 out = ROOT / "verses.jsonl"
@@ -219,7 +238,7 @@ Digital transcription: Open Greek and Latin First1KGreek, distributed through na
 License: CC BY-SA 4.0. Preserve attribution and share-alike terms.
 Source: https://github.com/nathans/lxx-swete
 The imported texts are edited Greek editions, not diplomatic transcriptions of one ancient codex. Old Greek and Theodotionic forms of Daniel, Susanna, and Bel and the Dragon remain separate. Tobit's distinct Greek textual forms must not be conflated. The Greek text does not replace surviving Hebrew or Aramaic witnesses, including Dead Sea Scroll fragments.
-The Odes file is a collection; its internal composition numbering is preserved. Psalm 151 is imported separately from the Greek Psalter only when the source explicitly supplies chapter 151.
+The Odes file is a collection; its internal composition numbering is preserved. The Prayer of Manasseh (Odes 8) and the Prayer of Azariah and Song of Three (Odes 9) are also separately indexed as complete compositions while retaining their source references. Psalm 151 is imported separately from the Greek Psalter only when the source explicitly supplies chapter 151.
 2 Esdras / 4 Ezra and the Prayer of Manasseh are also included from Latin Library digital texts collected by CLTK. The Latin text is a transmitted version, not the lost Greek or hypothesized Semitic original. 2 Esdras is a composite: 5 Ezra (chapters 1–2), 4 Ezra (chapters 3–14), and 6 Ezra (chapters 15–16). The source is checked for sequential chapter/verse numbering; it is not a critical edition or manuscript facsimile.\nSource: https://github.com/cltk/lat_text_latin_library (public-domain status stated by the Latin Library source).
 
 APOSTOLIC WRITINGS
