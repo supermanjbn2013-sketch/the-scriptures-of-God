@@ -318,7 +318,8 @@ public class MainActivity extends Activity {
         TextView result=text("Translating automatically with AI…",14,ink,false);result.setBackground(shape(panel));box.addView(result);
         Button settings=new Button(this);settings.setText("AI connection settings");settings.setOnClickListener(v->showAiConnectionSettings());box.addView(settings);
         Button external=new Button(this);external.setText("Open Google Translate");external.setOnClickListener(v->openGoogleTranslate(sourceText,targetLanguage()));box.addView(external);
-        ScrollView scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.addView(box);\n        android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle(reference+" — AI Translation").setView(scroll).setNegativeButton("Close",null).create();
+        ScrollView scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.addView(box);
+        android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle(reference+" — AI Translation").setView(scroll).setNegativeButton("Close",null).create();
         dialog.show();
         mode.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener(){
             boolean first=true;
