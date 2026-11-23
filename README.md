@@ -38,6 +38,9 @@ The Way to Yahuweh downloads are evaluated file by file. Each transcription must
 - Search results are capped at 100 per query.
 - Book readers load text in a background task and show source, edition, witness basis, textual form, transcription type, licence, attribution, and source links.
 - Apocrypha readers display the source-file chapter coverage audit.
+- Each imported verse is individually selectable; tapping it opens an automatic translation into the user's saved target language.
+- The user can change the target language at any time. Translation models download on first use and are then available offline on the device.
+- Translation is a machine-generated study aid, not a manuscript reading or a critical translation. Ancient Greek is processed with the modern Greek model; Latin source text is not yet supported by the on-device translation engine.
 
 ## Data sources and licences
 
