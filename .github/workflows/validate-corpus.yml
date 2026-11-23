@@ -1,5 +1,11 @@
 name: Validate Offline Scripture Corpus
 on:
+  push:
+    paths:
+      - "tools/prepare_corpus.py"
+      - "app/src/main/java/org/scripturesofgod/archive/MainActivity.java"
+      - "app/src/main/assets/catalog/**"
+      - ".github/workflows/validate-corpus.yml"
   workflow_dispatch:
 permissions:
   contents: read
