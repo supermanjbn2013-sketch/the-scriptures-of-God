@@ -119,7 +119,7 @@ def extract_swete(filename, title, book_code, witness_note):
     # Group by the complete source reference; preserve the printed word order and marks.
     grouped = {}
     for line in raw.splitlines():
-        match = re.match(r"^([0-9]+\\.[A-Za-z0-9]+\\.[0-9]+)\\s+(.+?)\\s*$", line)
+        match = re.match(r"^([0-9]+\.[A-Za-z0-9]+\.[0-9]+)\s+(.+?)\s*$", line)
         if not match:
             continue
         ref, token = match.groups()
