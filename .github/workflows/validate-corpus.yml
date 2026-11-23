@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "tools/prepare_corpus.py"
+      - "tools/validate_corpus.py"
       - "app/src/main/java/org/scripturesofgod/archive/MainActivity.java"
       - "app/src/main/assets/catalog/**"
       - ".github/workflows/validate-corpus.yml"
@@ -19,102 +20,13 @@ jobs:
           python-version: '3.12'
       - name: Fetch and prepare licensed source texts
         run: python tools/prepare_corpus.py
-      - name: Validate verse corpus, DSS metadata, and Android navigation
-        run: |
-          python - <<'PY'
-          import json
-          from pathlib import Path
-
-          path = Path("app/src/main/assets/corpus/verses.jsonl")
-          rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
-          assert len(rows) >= 30000, f"Unexpected corpus size: {len(rows)}"
-          assert all(r.get("ref") and r.get("text") and r.get("source") for r in rows)
-          assert any(r["language"] == "he" for r in rows)
-          assert any(r["language"] == "grc" for r in rows)
-          assert all(r.get("source_url") and r.get("transcription_type") for r in rows)
-          refs = [(r["language"], r["ref"]) for r in rows]
-          assert len(refs) == len(set(refs)), "Duplicate verse references detected within a language"
-          print(f"Validated {len(rows)} verse records")
-          print("Hebrew records:", sum(r["language"] == "he" for r in rows))
-          print("Greek records:", sum(r["language"] == "grc" for r in rows))
-
-          apocrypha = [r for r in rows if r.get("book")]
-          apocrypha_books = {r["book"] for r in apocrypha}
-          required_books = {
-              "1 Esdras", "Tobit", "Judith", "Esther (Greek)", "Wisdom of Solomon",
-              "Sirach", "Baruch", "Letter of Jeremiah", "1 Maccabees", "2 Maccabees",
-              "3 Maccabees", "4 Maccabees", "Susanna (Old Greek)", "Susanna (Theodotion)",
-              "Daniel (Old Greek)", "Daniel (Theodotion)",
-              "Bel and the Dragon (Old Greek)", "Bel and the Dragon (Theodotion)",
-              "Odes", "Prayer of Manasseh (Greek)", "Psalm 151"
-          }
-          assert required_books.issubset(apocrypha_books), f"Missing Apocrypha books: {required_books - apocrypha_books}"
-          greek_apocrypha = [r for r in apocrypha if r["language"] == "grc"]
-          latin_apocrypha = [r for r in apocrypha if r["language"] == "la"]
-          latin_books = {"2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)"}
-          assert latin_books.issubset(apocrypha_books), f"Missing Latin Apocrypha texts: {latin_books - apocrypha_books}"
-          assert all(r.get("license") == "CC BY-SA 4.0" and r.get("textual_form") for r in greek_apocrypha)
-          assert all(r.get("license", "").startswith("Public Domain") and r.get("textual_form") for r in latin_apocrypha)
-          assert all(r.get("source_url") and r.get("attribution") for r in apocrypha)
-          for book in required_books | latin_books:
-              assert any(r["book"] == book and r["text"].strip() for r in apocrypha), f"Empty Apocrypha book: {book}"
-          report_path = Path("app/src/main/assets/corpus/apocrypha_import_report.json")
-          report = json.loads(report_path.read_text(encoding="utf-8"))
-          assert (required_books | latin_books).issubset(set(report)), "Apocrypha import report is incomplete"
-          assert len(greek_apocrypha) >= 1000, f"Greek Apocrypha text corpus unexpectedly small: {len(greek_apocrypha)}"
-          assert len(latin_apocrypha) >= 150, f"Latin Apocrypha text corpus unexpectedly small: {len(latin_apocrypha)}"
-          assert any(r["ref"] == "2 Esdras / 4 Ezra (Latin) 7:139" for r in latin_apocrypha), "2 Esdras chapter 7 is incomplete"
-          print("Validated complete Greek and Latin Apocrypha texts:", len(required_books | latin_books), "books/forms;", len(apocrypha), "verse records")
-
-          dss_path = Path("app/src/main/assets/catalog/dead_sea_scrolls_register.json")
-          dss = json.loads(dss_path.read_text(encoding="utf-8"))
-          assert dss["record_type"] == "dead_sea_scrolls_manuscript_metadata_catalog"
-          assert len(dss["records"]) >= 6
-          ids = [r["id"] for r in dss["records"]]
-          assert len(ids) == len(set(ids)), "Duplicate DSS catalogue IDs"
-          for record in dss["records"]:
-              assert record["name"] and record["language"] and record["date_estimate"]
-              assert record["source_urls"] and record["status"] == "metadata catalogued; transcription not imported"
-          print("Validated DSS metadata records:", len(dss["records"]))
-
-          concordance_path = Path("app/src/main/assets/catalog/dss_passage_concordance.json")
-          concordance = json.loads(concordance_path.read_text(encoding="utf-8"))
-          assert concordance["record_type"] == "dss_manuscript_passage_concordance"
-          assert len(concordance["records"]) >= 5
-          concordance_ids = [r["manuscript_id"] for r in concordance["records"]]
-          assert len(concordance_ids) == len(set(concordance_ids))
-          assert {"4Q26 Lev d", "4Q27 Num b", "4Q31 Deut d", "4Q47 Josh a", "4Q53 Sam c"}.issubset(set(concordance_ids))
-          for record in concordance["records"]:
-              assert record["status"] and record["caution"] and record["inventory_references"] is not None
-              if record["djd_reference"] is not None:
-                  assert record.get("published_edition") or record.get("djd_basis"), "A populated DJD reference requires a supporting edition record"
-              line_map = record.get("transcription_line_map", [])
-              line_keys = [(item.get("group"), item.get("digital_line")) for item in line_map]
-              assert len(line_keys) == len(set(line_keys)), f"Duplicate digital line mapping in {record['manuscript_id']}"
-              for item in line_map:
-                  assert item.get("group") and item.get("digital_line") is not None
-                  assert item.get("source_reference"), f"Missing line source in {record['manuscript_id']}"
-                  assert isinstance(item.get("passages", []), list)
-              for passage in record["passage_coverage"]:
-                  assert passage["reference"] and passage["basis"] and passage["coverage_status"]
-          print("Validated DSS passage concordance records:", len(concordance["records"]))
-
-
-          source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
-          assert "void openDssCatalogEntry(String item)" in source
-          assert "void openDssConcordanceEntry(String item)" in source
-          assert "Apocrypha and Deuterocanonical Writings" in source\n          assert "Psalm 151" in source\n          assert "Odes" in source\n          assert "Prayer of Manasseh (Greek)" in source\n          assert "2 Esdras / 4 Ezra (Latin)" in source\n          assert "Prayer of Manasseh (Latin)" in source
-          assert all(f'"{book}"' in source for book in required_books | latin_books), "An imported Apocrypha book is missing from Android navigation"
-          assert "source_reference" in source, "Reader does not display original Odes references for separately indexed compositions"
-          assert "openDssConcordanceEntry(item)" in source
-          assert "openDssCatalogEntry(item)" in source
-          assert "void searchCorpus(String query)" in source
-          assert "Search complete text corpus" in source
-          assert "catalog/dss_passage_concordance.json" in source
-          assert "transcription_text" in source
-          assert "Temple Scroll (11Q19)" in source and "War Scroll (1QM)" in source
-          assert "11Q19" in ids and "1QM" in ids
-          assert len(dss["archive_browse_index"]["qumran_sites"]) >= 9
-          print("Validated Android DSS catalogue navigation")
-          print("No APK is built or uploaded by this workflow.")
-          PY
+      - name: Validate base Hebrew and Greek corpus
+        run: python tools/validate_corpus.py base
+      - name: Validate complete Apocrypha texts
+        run: python tools/validate_corpus.py apocrypha
+      - name: Validate Dead Sea Scrolls catalogue and concordance
+        run: python tools/validate_corpus.py dss
+      - name: Validate Android book navigation and search
+        run: python tools/validate_corpus.py android
+      - name: Confirm validation did not build an APK
+        run: echo "Corpus validation complete; no APK was built or uploaded."
