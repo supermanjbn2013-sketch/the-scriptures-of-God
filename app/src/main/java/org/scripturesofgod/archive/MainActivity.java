@@ -353,6 +353,31 @@ public class MainActivity extends Activity {
                 }
                 detail.append("Mapping policy: ").append(match.optString("line_map_policy")).append("\n");
             }
+            org.json.JSONArray additionalSources=match.optJSONArray("additional_transcription_sources");
+            if(additionalSources!=null)for(int sourceIndex=0;sourceIndex<additionalSources.length();sourceIndex++){
+                org.json.JSONObject source=additionalSources.getJSONObject(sourceIndex);
+                detail.append("\\nAdditional transcription source (kept separate):\\n");
+                detail.append(source.optString("title")).append("\\n");
+                detail.append("Provider: ").append(source.optString("provider")).append("\\n");
+                detail.append("Version: ").append(source.optString("version")).append("\\n");
+                detail.append("Format: ").append(source.optString("format")).append("\\n");
+                detail.append("Licence: ").append(source.optString("license")).append("\\n");
+                detail.append("Attribution: ").append(source.optString("attribution")).append("\\n");
+                detail.append("Source URL: ").append(source.optString("url")).append("\\n");
+                detail.append("Use: ").append(source.optString("use")).append("\\n");
+                detail.append("Caution: ").append(source.optString("caution")).append("\\n");
+                org.json.JSONArray sourceSections=source.optJSONArray("sections");
+                if(sourceSections!=null)for(int sectionIndex=0;sectionIndex<sourceSections.length();sectionIndex++){
+                    org.json.JSONObject section=sourceSections.getJSONObject(sectionIndex);
+                    detail.append("\\nFragment group: ").append(section.optString("fragment_group")).append("\\n");
+                    detail.append("PDF heading: ").append(section.optString("pdf_heading")).append("\\n");
+                    detail.append("Passage references: ");
+                    org.json.JSONArray refs=section.optJSONArray("passage_refs");
+                    if(refs!=null)for(int refIndex=0;refIndex<refs.length();refIndex++){if(refIndex>0)detail.append("; ");detail.append(refs.optString(refIndex));}
+                    detail.append("\\nTranscription text (PDF text layer):\\n").append(section.optString("pdf_text_lines")).append("\\n");
+                    detail.append("Section caution: ").append(section.optString("caution")).append("\\n");
+                }
+            }
             org.json.JSONArray columns=match.optJSONArray("column_coverage");
             if(columns!=null&&columns.length()>0){
                 detail.append("\nPublished column-to-passage concordance:\n");
