@@ -19,6 +19,9 @@ public class MainActivity extends Activity {
     String section="Home";
     boolean lightMode=false;
     String returnSection="Home";
+    String previousSection="Home";
+    void navigateTo(String destination){if(destination==null||destination.isEmpty())destination="Home";if(!destination.equals(section)){previousSection=section;section=destination;}show();}
+    @Override public void onBackPressed(){if(!"Home".equals(section)){String destination=previousSection;previousSection="Home";section=destination;show();}else{super.onBackPressed();}}
     String[] translationNames={"Afrikaans","Arabic","Belarusian","Bulgarian","Bengali","Catalan","Czech","Welsh","Danish","German","Greek","English","Esperanto","Spanish","Estonian","Persian","Finnish","French","Irish","Galician","Gujarati","Hebrew","Hindi","Croatian","Haitian Creole","Hungarian","Indonesian","Icelandic","Italian","Japanese","Georgian","Kannada","Korean","Lithuanian","Latvian","Macedonian","Marathi","Malay","Maltese","Dutch","Norwegian","Polish","Portuguese","Romanian","Russian","Slovak","Slovenian","Albanian","Swedish","Swahili","Tamil","Telugu","Thai","Filipino / Tagalog","Turkish","Ukrainian","Urdu","Vietnamese","Chinese"};
     String[] translationCodes={"af","ar","be","bg","bn","ca","cs","cy","da","de","el","en","eo","es","et","fa","fi","fr","ga","gl","gu","he","hi","hr","ht","hu","id","is","it","ja","ka","kn","ko","lt","lv","mk","mr","ms","mt","nl","no","pl","pt","ro","ru","sk","sl","sq","sv","sw","ta","te","th","tl","tr","uk","ur","vi","zh"};
     String targetLanguage(){return getSharedPreferences("archive_settings",MODE_PRIVATE).getString("target_language","en");}
@@ -56,7 +59,7 @@ public class MainActivity extends Activity {
     void show(){
         root=new LinearLayout(this);root.setOrientation(1);root.setBackgroundColor(bg);
         ScrollView scroll=new ScrollView(this); LinearLayout page=new LinearLayout(this);page.setOrientation(1);page.setPadding(16,18,16,24);scroll.addView(page);
-        LinearLayout brandRow=new LinearLayout(this);brandRow.setGravity(Gravity.CENTER_VERTICAL);TextView brand=text("THE SCRIPTURES OF GOD",20,gold,true);brandRow.addView(brand,new LinearLayout.LayoutParams(0,-2,1));TextView settings=text("⚙",24,ink,true);settings.setOnClickListener(v->openSettings());brandRow.addView(settings);page.addView(brandRow);
+        LinearLayout brandRow=new LinearLayout(this);brandRow.setGravity(Gravity.CENTER_VERTICAL);if(!"Home".equals(section)){TextView back=text("‹ Back",16,gold,true);back.setOnClickListener(v->onBackPressed());brandRow.addView(back);}TextView brand=text("THE SCRIPTURES OF GOD",20,gold,true);brandRow.addView(brand,new LinearLayout.LayoutParams(0,-2,1));TextView settings=text("⚙",24,ink,true);settings.setOnClickListener(v->openSettings());brandRow.addView(settings);page.addView(brandRow);
         page.addView(text("Ancient Manuscript Archive  ·  Scripture Research",12,muted,false));
         EditText search=new EditText(this);search.setSingleLine(true);search.setTextColor(ink);search.setHintTextColor(muted);search.setHint("Search exact word or phrase, reference, manuscript…");search.setPadding(16,10,16,10);search.setBackground(shape(panel));LinearLayout.LayoutParams sp=new LinearLayout.LayoutParams(-1,-2);sp.setMargins(0,18,0,14);page.addView(search,sp);
         Button corpusSearch=new Button(this);corpusSearch.setText("Search complete text corpus");corpusSearch.setTextColor(ink);corpusSearch.setBackground(shape(panel));page.addView(corpusSearch,new LinearLayout.LayoutParams(-1,-2));
@@ -66,7 +69,7 @@ public class MainActivity extends Activity {
         search.addTextChangedListener(new TextWatcher(){public void beforeTextChanged(CharSequence s,int st,int c,int a){} public void onTextChanged(CharSequence s,int st,int before,int count){render(s.toString());}public void afterTextChanged(Editable e){}});
         render("");root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
         HorizontalScrollView navScroll=new HorizontalScrollView(this);LinearLayout nav=new LinearLayout(this);nav.setPadding(8,8,8,8);nav.setBackgroundColor(panel);
-        for(String s:sections){TextView b=text(s,12,s.equals(section)?gold:ink,true);b.setOnClickListener(v->{section=s;show();});nav.addView(b);}navScroll.addView(nav);root.addView(navScroll,new LinearLayout.LayoutParams(-1,-2));
+        for(String s:sections){TextView b=text(s,12,s.equals(section)?gold:ink,true);b.setOnClickListener(v->navigateTo(s));nav.addView(b);}navScroll.addView(nav);root.addView(navScroll,new LinearLayout.LayoutParams(-1,-2));
         setContentView(root);
     }
     void addHomeTile(String title,String subtitle,Runnable action){LinearLayout tile=new LinearLayout(this);tile.setOrientation(1);tile.setPadding(14,8,14,8);tile.setBackground(shape(panel));TextView heading=text(title,16,ink,true);heading.setPadding(2,4,2,2);TextView sub=text(subtitle,12,muted,false);sub.setPadding(2,0,2,4);tile.addView(heading);tile.addView(sub);LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,6,0,6);content.addView(tile,p);tile.setOnClickListener(v->action.run());}
@@ -77,19 +80,19 @@ public class MainActivity extends Activity {
             content.addView(text("READ  •  SEARCH  •  COMPARE",12,gold,true));
             TextView hero=text("Return to the words.\nExplore the witnesses.",25,ink,true);hero.setBackground(shape(panel));content.addView(hero);
             String last=getSharedPreferences("archive_library",MODE_PRIVATE).getString("last_book","");
-            TextView resume=text(last.isEmpty()?"Begin reading":"Continue reading  ·  "+last,16,ink,true);resume.setBackground(shape(panel));LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,10,0,10);content.addView(resume,rp);resume.setOnClickListener(v->{if(!last.isEmpty()){returnSection="Home";openBook(last);}else{section="Hebrew Scriptures";show();}});
-            TextView searchTile=text("⌕   Search the Scriptures and manuscript records",15,ink,true);searchTile.setBackground(shape(panel));content.addView(searchTile);searchTile.setOnClickListener(v->{section="Search";show();});
+            TextView resume=text(last.isEmpty()?"Begin reading":"Continue reading  ·  "+last,16,ink,true);resume.setBackground(shape(panel));LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,10,0,10);content.addView(resume,rp);resume.setOnClickListener(v->{if(!last.isEmpty()){returnSection="Home";openBook(last);}else{navigateTo("Hebrew Scriptures");}});
+            TextView searchTile=text("⌕   Search the Scriptures and manuscript records",15,ink,true);searchTile.setBackground(shape(panel));content.addView(searchTile);searchTile.setOnClickListener(v->navigateTo("Search"));
             content.addView(text("SCRIPTURE COLLECTIONS",12,gold,true));
-            addHomeTile("Hebrew Scriptures","39 writings",()->{section="Hebrew Scriptures";show();});
-            addHomeTile("Apostolic Writings","27 writings",()->{section="Apostolic Writings";show();});
-            addHomeTile("Apocrypha and Deuterocanonical Writings","Greek and Latin textual forms",()->{section="Apocrypha and Deuterocanonical Writings";show();});
+            addHomeTile("Hebrew Scriptures","39 writings",() -> navigateTo("Hebrew Scriptures"));
+            addHomeTile("Apostolic Writings","27 writings",() -> navigateTo("Apostolic Writings"));
+            addHomeTile("Apocrypha and Deuterocanonical Writings","Greek and Latin textual forms",() -> navigateTo("Apocrypha and Deuterocanonical Writings"));
             content.addView(text("MANUSCRIPT RESEARCH",12,gold,true));
-            addHomeTile("Dead Sea Scrolls Archive","Catalogue and passage concordance",()->{section="Manuscript Archive";show();});
+            addHomeTile("Dead Sea Scrolls Archive","Catalogue and passage concordance",() -> navigateTo("Manuscript Archive"));
             addHomeTile("Greek Manuscripts","Papyrus and codex registers",()->{section="Manuscript Archive";show();});
             addHomeTile("Latin Manuscripts","Latin transmission records",()->{section="Manuscript Archive";show();});
-            addHomeTile("Manuscript Research Library","Sources, provenance and textual forms",()->{section="Research Archive";show();});
+            addHomeTile("Manuscript Research Library","Sources, provenance and textual forms",() -> navigateTo("Research Archive"));
             content.addView(text("PERSONAL LIBRARY",12,gold,true));
-            addHomeTile("Bookmarks and Reading History","Your saved passages on this device",()->{section="Personal Library";show();});
+            addHomeTile("Bookmarks and Reading History","Your saved passages on this device",() -> navigateTo("Personal Library"));
             return;
         }
         if(section.equals("Settings")){content.addView(text("Appearance, reading and privacy",14,muted,false));addHomeTile("Appearance and reading settings","Theme, font size and language",()->openSettings());return;}
@@ -196,7 +199,7 @@ public class MainActivity extends Activity {
                 if(hits.size()==100)result.append("Results capped at 100. Refine the phrase to narrow the search.");
                 TextView view=text(result.toString(),14,ink,false);view.setTextIsSelectable(true);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(14,8,14,8);sv.addView(view);
-                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Exact text search: "+exact).setView(sv).setNegativeButton("Back to "+returnSection,(d,w)->{}).setNeutralButton("Home",(d,w)->{section="Home";show();}).setPositiveButton("Close",null).show();
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Exact text search: "+exact).setView(sv).setNegativeButton("Back to "+returnSection,(d,w)->{navigateTo(returnSection);}).setNeutralButton("Home",(d,w)->{previousSection="Home";section="Home";show();}).setPositiveButton("Close",null).show();
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
