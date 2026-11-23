@@ -147,7 +147,7 @@ def validate_android():
     manifest = Path("app/src/main/AndroidManifest.xml").read_text(encoding="utf-8")
     assert '.AiTranslatorActivity' not in manifest and '.MainActivity' in manifest, "AI translation must be integrated into the main Scripture reader, not a separate activity"
     gradle = Path("app/build.gradle").read_text(encoding="utf-8")
-    assert "versionCode 2" in gradle and "versionName '1.1.0'" in gradle, "App update version was not incremented"
+    assert "versionCode 3" in gradle and "versionName '1.2.0'" in gradle, "App update version was not incremented"
 
     mapping = re.search(r'String\[\]\[\] pairs=\{\{(.*?)\}\};', source, re.S)
     assert mapping, "Reader book-code mapping could not be inspected"
