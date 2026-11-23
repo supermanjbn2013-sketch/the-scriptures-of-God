@@ -37,6 +37,7 @@ def validate_apocrypha():
     assert all(r.get("license") == "CC BY-SA 4.0" and r.get("textual_form") for r in greek)
     assert all(r.get("license", "").startswith("Public Domain") and r.get("textual_form") for r in latin)
     assert all(r.get("source_url") and r.get("attribution") for r in records)
+    assert all(r.get("source_reference") for r in greek), "A Greek Apocrypha record is missing its original source coordinate"
     for book in REQUIRED_GREEK | REQUIRED_LATIN:
         assert any(r["book"] == book and r["text"].strip() for r in records), f"Empty text: {book}"
     report = json.loads((ROOT / "corpus/apocrypha_import_report.json").read_text(encoding="utf-8"))
