@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
     String targetLanguageName(){String code=targetLanguage();for(int i=0;i<translationCodes.length;i++)if(translationCodes[i].equals(code))return translationNames[i];return "English";}
     void chooseTranslationLanguage(){
         int selected=0;for(int i=0;i<translationCodes.length;i++)if(translationCodes[i].equals(targetLanguage()))selected=i;
-        new android.app.AlertDialog.Builder(this).setTitle("Automatic verse translation").setMessage("The first use of a language downloads its model (about 30 MB). After downloading, translation works offline.").setSingleChoiceItems(translationNames,selected,(dialog,which)->{
+        new android.app.AlertDialog.Builder(this).setTitle("Translation status").setMessage("Machine translation of ancient Hebrew and Koine Greek is disabled because modern-language models produce unreliable results. Verified translations will be added only with clearly identified sources.").setSingleChoiceItems(translationNames,selected,(dialog,which)->{
             getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("target_language",translationCodes[which]).apply();
             dialog.dismiss();show();
         }).setNegativeButton("Cancel",null).show();
@@ -60,7 +60,7 @@ public class MainActivity extends Activity {
         EditText search=new EditText(this);search.setSingleLine(true);search.setTextColor(ink);search.setHintTextColor(muted);search.setHint("Search exact word or phrase, reference, manuscript…");search.setPadding(16,10,16,10);search.setBackground(shape(panel));LinearLayout.LayoutParams sp=new LinearLayout.LayoutParams(-1,-2);sp.setMargins(0,18,0,14);page.addView(search,sp);
         Button corpusSearch=new Button(this);corpusSearch.setText("Search complete text corpus");corpusSearch.setTextColor(ink);corpusSearch.setBackground(shape(panel));page.addView(corpusSearch,new LinearLayout.LayoutParams(-1,-2));
         corpusSearch.setOnClickListener(v->{String query=search.getText().toString().trim();if(query.length()>0)searchCorpus(query);});
-        Button languageButton=new Button(this);languageButton.setText("Automatic verse translation: "+targetLanguageName());languageButton.setTextColor(gold);languageButton.setBackground(shape(panel));LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.setMargins(0,8,0,12);page.addView(languageButton,lp);languageButton.setOnClickListener(v->chooseTranslationLanguage());
+        Button languageButton=new Button(this);languageButton.setText("Translation status: verified sources only");languageButton.setTextColor(gold);languageButton.setBackground(shape(panel));LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.setMargins(0,8,0,12);page.addView(languageButton,lp);languageButton.setOnClickListener(v->chooseTranslationLanguage());
         content=new LinearLayout(this);content.setOrientation(1);page.addView(content);
         search.addTextChangedListener(new TextWatcher(){public void beforeTextChanged(CharSequence s,int st,int c,int a){} public void onTextChanged(CharSequence s,int st,int before,int count){render(s.toString());}public void afterTextChanged(Editable e){}});
         render("");root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
