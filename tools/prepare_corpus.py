@@ -133,6 +133,8 @@ def extract_swete(filename, title, book_code, witness_note):
         display_ref = ref
         if len(parts) == 3:
             chapter, verse = parts[1], parts[2]
+            if title == "Letter of Jeremiah" and chapter == "0" and verse == "0":
+                continue
             if title == "Psalm 151":
                 display_ref = f"{title}:{verse}"
             else:
