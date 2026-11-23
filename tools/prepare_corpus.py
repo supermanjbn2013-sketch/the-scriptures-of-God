@@ -292,7 +292,7 @@ for title in apocrypha_counts:
                 "last_source_verse": max(verses),
                 "source_verse_numbers": sorted(verses)
             }
-            for chapter, verses in sorted(chapters.items(), key=lambda item: int(item[0]))
+            for chapter, verses in sorted(chapters.items(), key=lambda item: (0, int(item[0])) if item[0].isdigit() else (1, item[0]))
         },
         "language": first["language"],
         "source": first["source"],
