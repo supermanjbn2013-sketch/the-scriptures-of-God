@@ -115,17 +115,41 @@
         "Odes is a collection of scriptural canticles; its internal numbering is retained and individual compositions must not be silently treated as separate books.",
         "Psalm 151 is separately indexed from the Greek Psalter only when explicitly present in the source file."
       ]
+    },
+    {
+      "id": "latin-library-apocrypha",
+      "name": "Latin Library Apocrypha texts collected by CLTK",
+      "language": "Latin",
+      "coverage": [
+        "2 Esdras / 4 Ezra (16 chapters; composite 5 Ezra, 4 Ezra, and 6 Ezra)",
+        "Prayer of Manasseh"
+      ],
+      "record_type": "public-domain digital Latin text; not a diplomatic manuscript transcription",
+      "edition": "Latin Library source files collected in cltk/lat_text_latin_library",
+      "license": "Public Domain as stated by the Latin Library source; repository README directs users to its public-domain notice",
+      "repository": "https://github.com/cltk/lat_text_latin_library",
+      "source_files": [
+        "https://raw.githubusercontent.com/cltk/lat_text_latin_library/master/bible/esdras2.txt",
+        "https://raw.githubusercontent.com/cltk/lat_text_latin_library/master/bible/manasses.txt"
+      ],
+      "attribution": "The Latin Library; collected in the Classical Language Toolkit (CLTK)",
+      "limitations": [
+        "The supplied Latin is a transmission text, not the lost Greek or hypothesized Semitic original of 4 Ezra.",
+        "2 Esdras is a composite collection: 5 Ezra (chapters 1–2), 4 Ezra proper (chapters 3–14), and 6 Ezra (chapters 15–16).",
+        "The digital source does not identify a modern critical edition; compare with Bensly/James and other manuscript editions before making manuscript-level claims.",
+        "The Prayer of Manasseh is preserved in multiple traditions; this Latin text is one transmitted form and is not presented as the original language."
+      ]
     }
   ],
   "not_yet_integrated": [
-    "2 Esdras / 4 Ezra (not present in the selected Swete source collection; requires a separate verified complete source)",
     "Hebrew and Aramaic manuscript witnesses for Tobit and Sirach where surviving",
     "Additional original-language witnesses and critical apparatus for each Apocrypha book",
     "Samaritan Pentateuch",
     "Codex-specific transcriptions",
     "Manuscript variants apparatus",
     "Historical and multilingual translation corpus",
-    "Additional Dead Sea Scrolls transcription files from The Way to Yahuweh; files are being evaluated and integrated individually under CC BY-SA 4.0"
+    "Additional Dead Sea Scrolls transcription files from The Way to Yahuweh; files are being evaluated and integrated individually under CC BY-SA 4.0",
+    "Additional Hebrew, Aramaic, Syriac, Ethiopic, Armenian, and Greek witnesses for Apocrypha writings, including manuscript-level collation of 2 Esdras / 4 Ezra"
   ],
   "development_priority": {
     "order": [
