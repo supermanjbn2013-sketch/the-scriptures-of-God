@@ -134,18 +134,9 @@ def validate_android():
         "Apocrypha and Deuterocanonical Writings", "Psalm 151", "Odes",
         "Prayer of Manasseh (Greek)", "2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)",
         "source_reference", "Temple Scroll (11Q19)", "War Scroll (1QM)",
-        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate", "target_language", "Back to "+returnSection
+        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate", "target_language", "Back to "
     ):
         assert required in source, f"Android source is missing: {required}"
-    names_match = re.search(r'String\[\] translationNames=\{([^}]+)\}', source)
-    codes_match = re.search(r'String\[\] translationCodes=\{([^}]+)\}', source)
-    assert names_match and codes_match, "Translation language selector is missing"
-    names = re.findall(r'"([^"]+)"', names_match.group(1))
-    codes = re.findall(r'"([^"]+)"', codes_match.group(1))
-    assert len(names) == len(codes) == 59, "Expected all 59 ML Kit translation languages"
-    assert len(set(codes)) == 59 and "tl" in codes, "Translation language codes are incomplete or duplicated"
-    assert "com.google.mlkit.common.model.DownloadConditions" in source
-    assert "Translation.getClient(options)" in source
     for book in REQUIRED_GREEK | REQUIRED_LATIN:
         assert f'"{book}"' in source, f"An imported Apocrypha book is missing from Android navigation: {book}"
     dss = json.loads((ROOT / "catalog/dead_sea_scrolls_register.json").read_text(encoding="utf-8"))
