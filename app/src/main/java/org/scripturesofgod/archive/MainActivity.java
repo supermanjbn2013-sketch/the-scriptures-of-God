@@ -137,7 +137,7 @@ public class MainActivity extends Activity {
                         metadata.append("Source URL: ").append(obj.optString("source_url")).append("\n\n");
                         metadataAdded=true;
                     }
-                    String displayRef=name.equals(obj.optString("book"))?ref:ref.substring(code.length()).trim(); body.append(displayRef).append("  ").append(obj.optString("text")).append("\n\n"); found++;
+                    String displayRef=name.equals(obj.optString("book"))?ref:ref.substring(code.length()).trim(); if(obj.has("source_reference"))displayRef+=" [source reference: "+obj.optString("source_reference")+"]"; body.append(displayRef).append("  ").append(obj.optString("text")).append("\n\n"); found++;
                 }
             } reader.close();
             if(found==0){new android.app.AlertDialog.Builder(this).setMessage("No bundled text record was found for "+name+".").setPositiveButton("OK",null).show();return;}
