@@ -271,48 +271,11 @@ public class MainActivity extends Activity {
     }
 
     void translateVerse(String reference,String sourceText,String sourceLanguage){
-        String source;
-        if("he".equals(sourceLanguage))source="he";
-        else if("grc".equals(sourceLanguage))source="el";
-        else if("la".equals(sourceLanguage)){new android.app.AlertDialog.Builder(this).setTitle("Translation unavailable").setMessage("The on-device translation model does not support Latin source text yet.").setPositiveButton("Close",null).show();return;}
-        else {new android.app.AlertDialog.Builder(this).setTitle("Translation unavailable").setMessage("No supported source-language mapping is registered for this text.").setPositiveButton("Close",null).show();return;}
-        String target=targetLanguage();
-        if(source.equals(target)){new android.app.AlertDialog.Builder(this).setTitle(reference).setMessage("This verse is already in your selected language.\n\n"+sourceText).setPositiveButton("Close",null).show();return;}
-        String supportedSource=TranslateLanguage.fromLanguageTag(source);
-        String supportedTarget=TranslateLanguage.fromLanguageTag(target);
-        if(supportedSource==null||supportedTarget==null){new android.app.AlertDialog.Builder(this).setTitle("Language unavailable").setMessage("The selected language is not supported by the on-device translation engine.").setPositiveButton("Close",null).show();return;}
-        String cacheKey=supportedSource+"_"+supportedTarget;
-        Translator translator=translatorCache.get(cacheKey);
-        if(translator==null){
-            TranslatorOptions options=new TranslatorOptions.Builder().setSourceLanguage(supportedSource).setTargetLanguage(supportedTarget).build();
-            translator=Translation.getClient(options);
-            translatorCache.put(cacheKey,translator);
-        }
-        final Translator activeTranslator=translator;
-        android.app.ProgressDialog progress=new android.app.ProgressDialog(this);
-        progress.setMessage(translationModelsReady.contains(cacheKey)?"Translating into "+targetLanguageName()+"…":"Preparing "+targetLanguageName()+" translation…");
-        progress.setCancelable(false);progress.show();
-        if(translationModelsReady.contains(cacheKey)){
-            performVerseTranslation(activeTranslator,reference,sourceText,progress);
-        }else{
-            activeTranslator.downloadModelIfNeeded(new DownloadConditions.Builder().build())
-                .addOnSuccessListener(unused->{translationModelsReady.add(cacheKey);performVerseTranslation(activeTranslator,reference,sourceText,progress);})
-                .addOnFailureListener(error->{if(progress.isShowing())progress.dismiss();new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Translation model unavailable").setMessage("Connect to the internet once to download the language model, then retry.").setPositiveButton("Close",null).show();});
-        }
-    }
-
-    void performVerseTranslation(Translator translator,String reference,String sourceText,android.app.ProgressDialog progress){
-        translator.translate(sourceText)
-            .addOnSuccessListener(translated->{
-                if(progress.isShowing())progress.dismiss();
-                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(reference+" — "+targetLanguageName())
-                    .setMessage("SOURCE TEXT\n"+sourceText+"\n\n"+targetLanguageName().toUpperCase()+" TRANSLATION\n"+translated+"\n\nMachine translation for study assistance only. The model is designed for modern-language translation, so its output from ancient Hebrew or Koine Greek may be inaccurate. It is not a manuscript reading, a critical translation, or a substitute for checking the source text.")
-                    .setPositiveButton("Close",null).show();
-            })
-            .addOnFailureListener(error->{
-                if(progress.isShowing())progress.dismiss();
-                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Translation failed").setMessage("The verse could not be translated. Check your connection and try again.").setPositiveButton("Close",null).show();
-            });
+        String languageName="he".equals(sourceLanguage)?"Ancient Hebrew":("grc".equals(sourceLanguage)?"Koine Greek":("la".equals(sourceLanguage)?"Latin":"this source language"));
+        new android.app.AlertDialog.Builder(this)
+            .setTitle("Verified translation unavailable")
+            .setMessage("The source text for "+reference+" is preserved exactly as displayed.\n\nThe previous automatic translation used a modern-language machine-translation model. It cannot reliably translate "+languageName+" and may produce incorrect wording. That output has been disabled.\n\nA translation will only be shown here when a properly identified, reviewable translation source is integrated. No machine-generated wording will be presented as a reliable Scripture translation.")
+            .setPositiveButton("Close",null).show();
     }
 
     @Override protected void onDestroy(){
