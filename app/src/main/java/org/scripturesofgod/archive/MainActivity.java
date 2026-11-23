@@ -272,6 +272,7 @@ public class MainActivity extends Activity {
     private String getAiKey(){
         try{
             String packed=getSharedPreferences("archive_ai",MODE_PRIVATE).getString("api_key_encrypted","");
+            if(packed.isEmpty()){packed=getSharedPreferences("AiTranslatorActivity",MODE_PRIVATE).getString("api_key_encrypted","");if(!packed.isEmpty())getSharedPreferences("archive_ai",MODE_PRIVATE).edit().putString("api_key_encrypted",packed).apply();}
             if(packed.isEmpty())return "";
             byte[] all=android.util.Base64.decode(packed,android.util.Base64.NO_WRAP);
             byte[] iv=java.util.Arrays.copyOfRange(all,0,12), encrypted=java.util.Arrays.copyOfRange(all,12,all.length);
