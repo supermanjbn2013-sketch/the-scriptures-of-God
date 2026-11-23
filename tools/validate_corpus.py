@@ -123,7 +123,8 @@ def validate_android():
         "catalog/dss_passage_concordance.json", "transcription_text",
         "Apocrypha and Deuterocanonical Writings", "Psalm 151", "Odes",
         "Prayer of Manasseh (Greek)", "2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)",
-        "source_reference", "apocrypha_coverage.json", "Source-file coverage audit", "Temple Scroll (11Q19)", "War Scroll (1QM)"
+        "source_reference", "apocrypha_coverage.json", "Source-file coverage audit", "Temple Scroll (11Q19)", "War Scroll (1QM)",
+        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "chooseTranslationLanguage()", "downloadModelIfNeeded", "TranslateLanguage.fromLanguageTag", "Tap to translate", "target_language"
     ):
         assert required in source, f"Android source is missing: {required}"
     for book in REQUIRED_GREEK | REQUIRED_LATIN:
