@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
         entries.put("Other Ancient Writings",new ArrayList<>(Arrays.asList("1 Enoch","Jubilees","Didache","Shepherd of Hermas","Gospel of Thomas")));
         entries.put("Manuscript Archive",new ArrayList<>(Arrays.asList("Dead Sea Scrolls (DSS)","Great Isaiah Scroll (1QIsaᵃ)","Pesher Habakkuk (1QpHab)","Genesis Apocryphon (1QapGen)","Community Rule (1QS)","Temple Scroll (11Q19)","War Scroll (1QM)","Masoretic Text","Septuagint","Samaritan Pentateuch","Papyrus 46 (P46)","Papyrus 52 (P52)","Papyrus 66 (P66)","Papyrus 75 (P75)","Codex Vaticanus","Codex Sinaiticus","Codex Alexandrinus")));
         entries.put("DSS Passage Concordance",new ArrayList<>(Arrays.asList("4Q26 Lev d — Leviticus","4Q27 Num b — Numbers","4Q31 Deut d — Deuteronomy","4Q47 Josh a — Joshua","4Q53 Sam c — Samuel")));
-        entries.put("Translation Center",new ArrayList<>(Arrays.asList("AI Translation Workspace")));
+        entries.put("Translation Center",new ArrayList<>(Arrays.asList("AI translation is integrated into every Scripture passage","Preferred translation language","AI connection settings")));
         entries.put("Manuscript Comparison",new ArrayList<>(Arrays.asList("Compare witness transcriptions","Review additions and omissions","Inspect textual variants","Trace quotations and parallels")));
         entries.put("Research Archive",new ArrayList<>(Arrays.asList("Source metadata","Authorship assessments","Composition dates","Language and provenance","Fragment and witness records","Research notes")));
         entries.put("Favorites",new ArrayList<>()); entries.put("Reading History",new ArrayList<>());
@@ -72,7 +72,7 @@ public class MainActivity extends Activity {
             return;
         }
         ArrayList<String> data=entries.get(section); if(data==null)data=new ArrayList<>();
-        int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {returnSection=section;if(section.equals("Translation Center"))openAiTranslator();else if(section.equals("DSS Passage Concordance"))openDssConcordanceEntry(item);else if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
+        int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {returnSection=section;if(section.equals("Translation Center")){if(item.equals("Preferred translation language"))chooseTranslationLanguage();else showAiConnectionSettings();}else if(section.equals("DSS Passage Concordance"))openDssConcordanceEntry(item);else if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
         if(count==0)content.addView(text("No matching entries. This archive does not fabricate missing manuscript contents or readings.",14,muted,false));
         if(section.equals("Manuscript Archive")||section.equals("Research Archive")||section.equals("Manuscript Comparison"))content.addView(text("Records are catalog placeholders until a source, transcription, date and provenance are verified and attached.",12,gold,false));
     }
@@ -267,16 +267,97 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    private static final String AI_MODEL="gemini-3.1-flash-lite";
+    private static final String[] AI_MODES={"Modern English translation","Older English style (Early Modern)","Literal translation","Word-for-word analysis","Grammar and meaning explanation"};
+    private String getAiKey(){
+        try{
+            String packed=getSharedPreferences("archive_ai",MODE_PRIVATE).getString("api_key_encrypted","");
+            if(packed.isEmpty())return "";
+            byte[] all=android.util.Base64.decode(packed,android.util.Base64.NO_WRAP);
+            byte[] iv=java.util.Arrays.copyOfRange(all,0,12), encrypted=java.util.Arrays.copyOfRange(all,12,all.length);
+            javax.crypto.Cipher cipher=javax.crypto.Cipher.getInstance("AES/GCM/NoPadding");
+            cipher.init(javax.crypto.Cipher.DECRYPT_MODE,getAiSecretKey(),new javax.crypto.spec.GCMParameterSpec(128,iv));
+            return new String(cipher.doFinal(encrypted),"UTF-8");
+        }catch(Exception e){return "";}
+    }
+    private javax.crypto.SecretKey getAiSecretKey()throws Exception{
+        java.security.KeyStore store=java.security.KeyStore.getInstance("AndroidKeyStore");store.load(null);
+        String alias="scriptures_of_god_ai_key";
+        if(store.containsAlias(alias))return (javax.crypto.SecretKey)store.getKey(alias,null);
+        javax.crypto.KeyGenerator generator=javax.crypto.KeyGenerator.getInstance(android.security.keystore.KeyProperties.KEY_ALGORITHM_AES,"AndroidKeyStore");
+        generator.init(new android.security.keystore.KeyGenParameterSpec.Builder(alias,android.security.keystore.KeyProperties.PURPOSE_ENCRYPT|android.security.keystore.KeyProperties.PURPOSE_DECRYPT)
+            .setBlockModes(android.security.keystore.KeyProperties.BLOCK_MODE_GCM).setEncryptionPaddings(android.security.keystore.KeyProperties.ENCRYPTION_PADDING_NONE).setRandomizedEncryptionRequired(true).build());
+        return generator.generateKey();
+    }
+    private void saveAiKey(String value)throws Exception{
+        if(value.isEmpty()){getSharedPreferences("archive_ai",MODE_PRIVATE).edit().remove("api_key_encrypted").apply();return;}
+        javax.crypto.Cipher cipher=javax.crypto.Cipher.getInstance("AES/GCM/NoPadding");
+        cipher.init(javax.crypto.Cipher.ENCRYPT_MODE,getAiSecretKey());
+        byte[] encrypted=cipher.doFinal(value.getBytes("UTF-8")),iv=cipher.getIV(),packed=new byte[iv.length+encrypted.length];
+        System.arraycopy(iv,0,packed,0,iv.length);System.arraycopy(encrypted,0,packed,iv.length,encrypted.length);
+        getSharedPreferences("archive_ai",MODE_PRIVATE).edit().putString("api_key_encrypted",android.util.Base64.encodeToString(packed,android.util.Base64.NO_WRAP)).apply();
+    }
+    void showAiConnectionSettings(){
+        LinearLayout box=new LinearLayout(this);box.setOrientation(1);box.setPadding(18,8,18,4);
+        EditText key=new EditText(this);key.setSingleLine(true);key.setHint("Paste your Gemini API key");key.setInputType(129);key.setText(getAiKey());box.addView(key);
+        box.addView(text("Your key is encrypted on this device. AI translation sends submitted text to Google Gemini. Free-tier limits and Google's data-use terms apply.",12,muted,false));
+        new android.app.AlertDialog.Builder(this).setTitle("AI connection settings").setView(box)
+            .setNeutralButton("Get free key",(d,w)->startActivity(new Intent(Intent.ACTION_VIEW,android.net.Uri.parse("https://aistudio.google.com/app/apikey"))))
+            .setNegativeButton("Cancel",null)
+            .setPositiveButton("Save key",(d,w)->{try{saveAiKey(key.getText().toString().trim());Toast.makeText(this,"AI key saved securely",Toast.LENGTH_SHORT).show();}catch(Exception e){Toast.makeText(this,"Could not save key: "+e.getMessage(),Toast.LENGTH_LONG).show();}}).show();
+    }
     void translateVerse(String reference,String sourceText,String sourceLanguage){
-        String languageName="he".equals(sourceLanguage)?"Ancient Hebrew":("grc".equals(sourceLanguage)?"Koine Greek":("la".equals(sourceLanguage)?"Latin":"this source language"));
-        String target=targetLanguage();
-        String message="Original source text ("+languageName+") is preserved below.\n\n"+sourceText+"\n\nExternal machine translation may not recognize ancient language forms and may be inaccurate. It is not a verified manuscript translation.";
-        new android.app.AlertDialog.Builder(this)
-            .setTitle(reference+" — Translation tools")
-            .setMessage(message)
-            .setNeutralButton("Share / phone translator",(dialog,which)->shareVerseForTranslation(reference,sourceText))
-            .setNegativeButton("Google Translate",(dialog,which)->openGoogleTranslate(sourceText,target))
-            .setPositiveButton("Close",null).show();
+        LinearLayout box=new LinearLayout(this);box.setOrientation(1);box.setPadding(18,8,18,8);
+        String languageName="he".equals(sourceLanguage)?"Ancient Hebrew":("grc".equals(sourceLanguage)?"Koine Greek":("la".equals(sourceLanguage)?"Latin":("en".equals(sourceLanguage)?"English":"source language")));
+        box.addView(text(reference+"  ·  "+languageName,13,gold,true));
+        TextView original=text(sourceText,16,ink,false);original.setTextIsSelectable(true);box.addView(original);
+        Spinner mode=new Spinner(this);
+        ArrayAdapter<String> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,AI_MODES);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);mode.setAdapter(adapter);box.addView(mode);
+        TextView result=text("Translating automatically with AI…",14,ink,false);result.setBackground(shape(panel));box.addView(result);
+        Button settings=new Button(this);settings.setText("AI connection settings");settings.setOnClickListener(v->showAiConnectionSettings());box.addView(settings);
+        Button external=new Button(this);external.setText("Open Google Translate");external.setOnClickListener(v->openGoogleTranslate(sourceText,targetLanguage()));box.addView(external);
+        android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle(reference+" — AI Translation").setView(box).setNegativeButton("Close",null).create();
+        dialog.show();
+        mode.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener(){
+            boolean first=true;
+            public void onNothingSelected(android.widget.AdapterView<?> parent){}
+            public void onItemSelected(android.widget.AdapterView<?> parent,View view,int position,long id){
+                if(first){first=false;return;}
+                requestAiTranslation(reference,sourceText,sourceLanguage,AI_MODES[position],result);
+            }
+        });
+        requestAiTranslation(reference,sourceText,sourceLanguage,AI_MODES[0],result);
+    }
+    private void requestAiTranslation(String reference,String sourceText,String sourceLanguage,String selectedMode,TextView output){
+        String key=getAiKey().trim();
+        if(key.isEmpty()){
+            output.setText("Add your free Gemini API key in AI connection settings, then tap this passage again.");
+            return;
+        }
+        output.setText("AI is translating…");
+        String lang="he".equals(sourceLanguage)?"Ancient Hebrew":("grc".equals(sourceLanguage)?"Koine Greek":("la".equals(sourceLanguage)?"Latin":"automatically detected"));
+        String target=targetLanguageName();
+        String prompt="You are a cautious scholarly translation assistant. Translate the supplied passage into "+target+". Mode: "+selectedMode+". Source language: "+lang+". Preserve the supplied text; never invent missing words, clauses, manuscript readings, witnesses or citations. Distinguish translation from interpretation and reconstruction. Mark uncertain readings and explain ambiguity. Do not claim manuscript attestation without evidence supplied. For Hebrew or Koine Greek, explain morphology and syntax only when supportable. For Older English style, use restrained Early Modern English, not Anglo-Saxon Old English. For word-for-word analysis, give source form, transliteration, lemma if identifiable, morphology, lexical range and contextual sense. Separate observed linguistic facts from interpretation. Include a clear result and concise language notes. Reference: "+reference+"\nTEXT:\n"+sourceText;
+        new Thread(()->{
+            String answer=null,error=null;java.net.HttpURLConnection connection=null;
+            try{
+                java.net.URL url=new java.net.URL("https://generativelanguage.googleapis.com/v1beta/models/"+AI_MODEL+":generateContent");
+                connection=(java.net.HttpURLConnection)url.openConnection();connection.setRequestMethod("POST");connection.setConnectTimeout(20000);connection.setReadTimeout(90000);connection.setDoOutput(true);
+                connection.setRequestProperty("Content-Type","application/json");connection.setRequestProperty("x-goog-api-key",key);
+                org.json.JSONObject part=new org.json.JSONObject().put("text",prompt);
+                org.json.JSONObject payload=new org.json.JSONObject().put("contents",new org.json.JSONArray().put(new org.json.JSONObject().put("parts",new org.json.JSONArray().put(part)))).put("generationConfig",new org.json.JSONObject().put("maxOutputTokens",4096));
+                try(java.io.OutputStream out=connection.getOutputStream()){out.write(payload.toString().getBytes("UTF-8"));}
+                int status=connection.getResponseCode();java.io.InputStream stream=status>=200&&status<300?connection.getInputStream():connection.getErrorStream();
+                StringBuilder raw=new StringBuilder();try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(stream,"UTF-8"))){String line;while((line=reader.readLine())!=null)raw.append(line);}
+                org.json.JSONObject response=new org.json.JSONObject(raw.toString());
+                if(status<200||status>=300){org.json.JSONObject e=response.optJSONObject("error");error=e==null?"AI service returned HTTP "+status:e.optString("message","AI request failed");}
+                else{org.json.JSONArray candidates=response.optJSONArray("candidates");if(candidates==null||candidates.length()==0)error="AI returned no translation.";else{org.json.JSONArray parts=candidates.getJSONObject(0).optJSONObject("content").optJSONArray("parts");StringBuilder text=new StringBuilder();if(parts!=null)for(int i=0;i<parts.length();i++)text.append(parts.getJSONObject(i).optString("text",""));answer=text.toString().trim();if(answer.isEmpty())error="AI returned an empty response.";}}
+            }catch(Exception e){error=e.getMessage()==null?e.getClass().getSimpleName():e.getMessage();}
+            finally{if(connection!=null)connection.disconnect();}
+            final String a=answer,e=error;
+            runOnUiThread(()->output.setText(a!=null?a:"Translation unavailable: "+e));
+        }).start();
     }
 
     void openGoogleTranslate(String sourceText,String targetLanguageCode){
