@@ -5726,8 +5726,8 @@
         "caution": "The page's numbered lines are digital transcription display lines, not independently verified manuscript column-and-line coordinates. Brackets, dots and other editorial signs must be preserved; this digital transcription is not a photograph and does not replace inspection of manuscript images or the DJD edition."
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "DJD XIV fragment-to-passage concordance and linked Qumran-Digital Hebrew transcription added; independent plate verification and exact manuscript column/line coordinates pending",
-      "caution": "Fragment and passage assignments follow the published DSS Study Edition's summary of Ulrich's DJD XIV edition. Joshua 8:18 is marked uncertain in that summary. Fragment groups are not column/line coordinates; do not infer continuous text between fragments. PAM and ROC identifiers are historical photographic/museum references, not automatically interchangeable with current IAA image identifiers.",
+      "status": "DJD XIV fragment-to-passage concordance and Qumran-Digital Hebrew transcription imported for frg. 1–2 (11 lines) and frg. 3–8 (9 lines); remaining groups await line-level transcription import and verification.",
+      "caution": "Fragment and passage assignments follow the published DSS Study Edition's summary of Ulrich's DJD XIV edition. Joshua 8:18 is marked uncertain in that summary. Fragment groups are not column/line coordinates; do not infer continuous text between fragments. PAM and ROC identifiers are historical photographic/museum references, not automatically interchangeable with current IAA image identifiers. Line-level transcription currently covers only the first two digital display groups. Digital line numbers are not manuscript column/line coordinates; do not treat this partial import as full 4Q47 coverage.",
       "fragment_coverage": [
         {
           "fragment": "1–2",
@@ -5791,7 +5791,215 @@
           "digital_transcription_line_range": "0–6",
           "line_range_note": "Digital page display-line numbering only; not manuscript column/line coordinates."
         }
-      ]
+      ],
+      "transcription_line_map": [
+        {
+          "group": "frg. 1–2",
+          "digital_line": 1,
+          "transcription_text": "[בספר ]הת֯ורה לא היה דבר מכל צוה משה[ את יה]ושוע אשר לא קרא יהשע נגד כל",
+          "passages": [
+            "Joshua 8:34",
+            "Joshua 8:35"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 1",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 1–2",
+          "digital_line": 2,
+          "transcription_text": "[ישראל בעברו ]את הירד[ן ]ו֯הנשים והטף והג[ר] ההולך בקרבם אחר אשר נתקו[",
+          "passages": [
+            "Joshua 8:35"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 2",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 1–2",
+          "digital_line": 3,
+          "transcription_text": "-- ]ל[ -- ]א֯ת ספר התורה אחר כן [ ]ל○ נושאי הארון[ -- ]",
+          "passages": [],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 3",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 1–2",
+          "digital_line": 4,
+          "transcription_text": "-- בעת ]ה֯היא אמר יהוה אל יהש[ע ע]ש[ה לך חרבות צרים]",
+          "passages": [
+            "Joshua 5:2"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 4",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 1–2",
+          "digital_line": 5,
+          "transcription_text": "[ושוב מל את בני ישראל ויעש ]ל[ו י]השע ח[רבות צ]ר֯[ים וימל את בני ישראל אל]",
+          "passages": [
+            "Joshua 5:2",
+            "Joshua 5:3"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 5",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 1–2",
+          "digital_line": 6,
+          "transcription_text": "[גבעת הערלות וזה הדבר אשר מל יהושע כ]ל[ ]ה֯ע֯ם֯ ה֯י֯צ֯[א ממצרים הזכרים כל]",
+          "passages": [
+            "Joshua 5:3",
+            "Joshua 5:4"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 6",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 1–2",
+          "digital_line": 7,
+          "transcription_text": "[אנשי המלחמה מתו במדבר בדרך בצאתם ]מ֯מצ֯רים כי֯[ מלים היו כל העם היצאים]",
+          "passages": [
+            "Joshua 5:4",
+            "Joshua 5:5"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 7",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 1–2",
+          "digital_line": 8,
+          "transcription_text": "[וכל העם הילדים במדבר בדרך בצ]א֯תם ממצ֯[רים לא מלו כי ארבעים שנה הלכו]",
+          "passages": [
+            "Joshua 5:5",
+            "Joshua 5:6"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 8",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 1–2",
+          "digital_line": 9,
+          "transcription_text": "[בני ישראל במדבר עד תם כל הגוי ]א֯נשי המלח֯[מה היצאים ממצרים אשר לא שמעו]",
+          "passages": [
+            "Joshua 5:6"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 9",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 1–2",
+          "digital_line": 10,
+          "transcription_text": "[בקול יהוה אשר נשבע יהוה להם לב]לתי ראות את ה֯[ארץ אשר נשבע יהוה לאבותם]",
+          "passages": [
+            "Joshua 5:6"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 10",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 1–2",
+          "digital_line": 11,
+          "transcription_text": "[לתת לנו ארץ זבת חלב ודבש ואת בני]ה֯ם הק֯[ים תחתם אתם מל יהושע כי ערלים]",
+          "passages": [
+            "Joshua 5:6",
+            "Joshua 5:7"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 11",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 3–8",
+          "digital_line": 1,
+          "transcription_text": "גדולה ונפלה חמת֯[ העיר תחתיה ]ועלה העם֯[ א]יש [נ]גדו [ויקרא]",
+          "passages": [
+            "Joshua 6:5"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 3–8, displayed line 1",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 3–8",
+          "digital_line": 2,
+          "transcription_text": "יהושע בן נון אל הכ֯[הנים ויאמ]ר֯ אל֯[יהם] שאו א[ת ארון הברית]",
+          "passages": [
+            "Joshua 6:6"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 3–8, displayed line 2",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 3–8",
+          "digital_line": 3,
+          "transcription_text": "ושבעה כהנים ישא[ו שבעה שופרות יוב]ל֯ים לפני א֯[רון יהוה ויאמר]",
+          "passages": [
+            "Joshua 6:6"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 3–8, displayed line 3",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 3–8",
+          "digital_line": 4,
+          "transcription_text": "יהושוע אל העם[ עברו וסבו את העיר והח]ל֯[וץ יעבר לפ]נ֯י֯ [ארו]ן֯ [יהוה]",
+          "passages": [
+            "Joshua 6:7"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 3–8, displayed line 4",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 3–8",
+          "digital_line": 5,
+          "transcription_text": "[ויהי כ]א֯מ֯ר י[הושע אל העם ושבעה הכהנים נשאים שב]ע֯ה שופר֯[ות]",
+          "passages": [
+            "Joshua 6:8"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 3–8, displayed line 5",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 3–8",
+          "digital_line": 6,
+          "transcription_text": "[היובלים ]ל֯[פני יהוה עברו ותקעו בשופרו]ת וארון ב֯רית יה֯ו֯ה הולך[ אחריהם]",
+          "passages": [
+            "Joshua 6:8"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 3–8, displayed line 6",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 3–8",
+          "digital_line": 7,
+          "transcription_text": "[והחלוץ הלך לפני הכהנים תקעו] השפ֯רות והמא֯[ס]ף הולך [אחרי]",
+          "passages": [
+            "Joshua 6:9"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 3–8, displayed line 7",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 3–8",
+          "digital_line": 8,
+          "transcription_text": "[הארון הלוך ותקוע בשופרות ואת העם צוה יה]ושוע לא[מר ]ל֯[א]",
+          "passages": [
+            "Joshua 6:9",
+            "Joshua 6:10"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 3–8, displayed line 8",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        },
+        {
+          "group": "frg. 3–8",
+          "digital_line": 9,
+          "transcription_text": "[תריעו ולא תשמיעו את קולכם ולא יצא מפיכם דבר ]עד י[ום אמרי]",
+          "passages": [
+            "Joshua 6:10"
+          ],
+          "source_reference": "Qumran-Digital 4Q47, frg. 3–8, displayed line 9",
+          "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
+        }
+      ],
+      "line_map_policy": "Only the displayed Hebrew transcription and explicit verse annotations on Qumran-Digital are entered. Digital display line numbers are not manuscript line coordinates. Unannotated lines remain unassigned; no gap-filling or witness merging."
     },
     {
       "id": "4Q53-Sam-c",
