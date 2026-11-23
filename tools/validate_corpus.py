@@ -134,7 +134,7 @@ def validate_android():
         "Apocrypha and Deuterocanonical Writings", "Psalm 151", "Odes",
         "Prayer of Manasseh (Greek)", "2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)",
         "source_reference", "apocrypha_coverage.json", "Source-file coverage audit", "Temple Scroll (11Q19)", "War Scroll (1QM)",
-        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "chooseTranslationLanguage()", "downloadModelIfNeeded", "TranslateLanguage.fromLanguageTag", "Tap to translate", "target_language"
+        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "chooseTranslationLanguage()", "downloadModelIfNeeded", "TranslateLanguage.fromLanguageTag", "Tap to translate", "target_language"
     ):
         assert required in source, f"Android source is missing: {required}"
     names_match = re.search(r'String\[\] translationNames=\{([^}]+)\}', source)
