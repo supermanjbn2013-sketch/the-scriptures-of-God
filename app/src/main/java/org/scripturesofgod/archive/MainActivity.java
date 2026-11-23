@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
     String targetLanguageName(){String code=targetLanguage();for(int i=0;i<translationCodes.length;i++)if(translationCodes[i].equals(code))return translationNames[i];return "English";}
     void chooseTranslationLanguage(){
         int selected=0;for(int i=0;i<translationCodes.length;i++)if(translationCodes[i].equals(targetLanguage()))selected=i;
-        new android.app.AlertDialog.Builder(this).setTitle("Translation status").setMessage("Machine translation of ancient Hebrew and Koine Greek is disabled because modern-language models produce unreliable results. Verified translations will be added only with clearly identified sources.").setSingleChoiceItems(translationNames,selected,(dialog,which)->{
+        new android.app.AlertDialog.Builder(this).setTitle("Preferred translation language").setMessage("Choose the target language for external translation tools. Google Translate and other phone translators may still produce inaccurate results for ancient Hebrew and Koine Greek.").setSingleChoiceItems(translationNames,selected,(dialog,which)->{
             getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("target_language",translationCodes[which]).apply();
             dialog.dismiss();show();
         }).setNegativeButton("Cancel",null).show();
@@ -272,10 +272,37 @@ public class MainActivity extends Activity {
 
     void translateVerse(String reference,String sourceText,String sourceLanguage){
         String languageName="he".equals(sourceLanguage)?"Ancient Hebrew":("grc".equals(sourceLanguage)?"Koine Greek":("la".equals(sourceLanguage)?"Latin":"this source language"));
+        String target=targetLanguage();
+        String message="Original source text ("+languageName+") is preserved below.\n\n"+sourceText+"\n\nExternal machine translation may not recognize ancient language forms and may be inaccurate. It is not a verified manuscript translation.";
         new android.app.AlertDialog.Builder(this)
-            .setTitle("Verified translation unavailable")
-            .setMessage("The source text for "+reference+" is preserved exactly as displayed.\n\nThe previous automatic translation used a modern-language machine-translation model. It cannot reliably translate "+languageName+" and may produce incorrect wording. That output has been disabled.\n\nA translation will only be shown here when a properly identified, reviewable translation source is integrated. No machine-generated wording will be presented as a reliable Scripture translation.")
+            .setTitle(reference+" — Translation tools")
+            .setMessage(message)
+            .setNeutralButton("Share / phone translator",(dialog,which)->shareVerseForTranslation(reference,sourceText))
+            .setNegativeButton("Google Translate",(dialog,which)->openGoogleTranslate(sourceText,target))
             .setPositiveButton("Close",null).show();
+    }
+
+    void openGoogleTranslate(String sourceText,String targetLanguageCode){
+        try{
+            String target=targetLanguageCode==null||targetLanguageCode.trim().isEmpty()?"en":targetLanguageCode;
+            String url="https://translate.google.com/?sl=auto&tl="+android.net.Uri.encode(target)+"&text="+android.net.Uri.encode(sourceText)+"&op=translate";
+            Intent intent=new Intent(Intent.ACTION_VIEW,android.net.Uri.parse(url));
+            startActivity(intent);
+        }catch(Exception e){
+            new android.app.AlertDialog.Builder(this).setMessage("Google Translate could not be opened.").setPositiveButton("Close",null).show();
+        }
+    }
+
+    void shareVerseForTranslation(String reference,String sourceText){
+        try{
+            Intent intent=new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.putExtra(Intent.EXTRA_SUBJECT,reference);
+            intent.putExtra(Intent.EXTRA_TEXT,reference+"\n"+sourceText);
+            startActivity(Intent.createChooser(intent,"Open with a translator"));
+        }catch(Exception e){
+            new android.app.AlertDialog.Builder(this).setMessage("No compatible sharing or translation app is available.").setPositiveButton("Close",null).show();
+        }
     }
 
     @Override protected void onDestroy(){
