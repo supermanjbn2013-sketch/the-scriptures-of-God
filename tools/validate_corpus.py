@@ -113,7 +113,13 @@ def validate_android():
     dss = json.loads((ROOT / "catalog/dead_sea_scrolls_register.json").read_text(encoding="utf-8"))
     ids = {r["id"] for r in dss["records"]}
     assert "11Q19" in ids and "1QM" in ids
-    print("Validated Android navigation and text search")
+    greek = json.loads((ROOT / "catalog/greek_manuscript_register.json").read_text(encoding="utf-8"))
+    sinaiticus = next(r for r in greek["records"] if r["id"] == "Sinaiticus")
+    digital = sinaiticus["digital_transcription_source"]
+    assert digital["license"] == "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"
+    assert digital["source_url"] and digital["repository_url"] and digital["status"]
+    assert "digital_transcription_source" in source
+    print("Validated Android navigation, text search and manuscript source metadata")
 
 sections = {"base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
