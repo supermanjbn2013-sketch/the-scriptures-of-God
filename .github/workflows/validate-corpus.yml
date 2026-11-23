@@ -40,7 +40,7 @@ jobs:
               "3 Maccabees", "4 Maccabees", "Susanna (Old Greek)", "Susanna (Theodotion)",
               "Daniel (Old Greek)", "Daniel (Theodotion)",
               "Bel and the Dragon (Old Greek)", "Bel and the Dragon (Theodotion)",
-              "Odes", "Psalm 151"
+              "Odes", "Prayer of Manasseh (Greek)", "Prayer of Azariah and Song of Three (Greek)", "Psalm 151"
           }
           assert required_books.issubset(apocrypha_books), f"Missing Apocrypha books: {required_books - apocrypha_books}"
           greek_apocrypha = [r for r in apocrypha if r["language"] == "grc"]
