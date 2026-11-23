@@ -39,6 +39,7 @@ The Way to Yahuweh downloads are evaluated file by file. Each transcription must
 - Book readers load text in a background task and show source, edition, witness basis, textual form, transcription type, licence, attribution, and source links.
 - Apocrypha readers display the source-file chapter coverage audit.
 - The DSS passage concordance keeps transcription editions separate. The 4Q47 Joshuaᵃ entry now includes later fragment-group transcription blocks from The Way to Yahuweh alongside, but not merged with, the Qumran-Digital line map. The source blocks retain fragment headings, passage cautions, attribution, and CC BY-SA 4.0 terms.
+- Hebrew transcription lines in the DSS concordance are selectable for the same target-language translation aid. The displayed text remains labelled by its manuscript/transcription source; translation does not replace or normalize the source reading.
 - Each imported Hebrew- or Greek-language verse is individually selectable; tapping it automatically translates the verse into the saved target language.
 - The target-language selector includes all 59 languages listed by the ML Kit on-device translation engine, including Filipino/Tagalog.
 - Models download on first use (approximately 30 MB per language model) and remain available offline on the device. Model downloads require an initial internet connection.
