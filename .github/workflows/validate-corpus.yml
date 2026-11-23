@@ -52,7 +52,15 @@ jobs:
           assert {"4Q26 Lev d", "4Q27 Num b", "4Q31 Deut d", "4Q47 Josh a", "4Q53 Sam c"}.issubset(set(concordance_ids))
           for record in concordance["records"]:
               assert record["status"] and record["caution"] and record["inventory_references"] is not None
-              assert record["djd_reference"] is None, "Unverified DJD references must remain null"
+              if record["djd_reference"] is not None:
+                  assert record.get("published_edition") or record.get("djd_basis"), "A populated DJD reference requires a supporting edition record"
+              line_map = record.get("transcription_line_map", [])
+              line_keys = [(item.get("group"), item.get("digital_line")) for item in line_map]
+              assert len(line_keys) == len(set(line_keys)), f"Duplicate digital line mapping in {record['manuscript_id']}"
+              for item in line_map:
+                  assert item.get("group") and item.get("digital_line") is not None
+                  assert item.get("source_reference"), f"Missing line source in {record['manuscript_id']}"
+                  assert isinstance(item.get("passages", []), list)
               for passage in record["passage_coverage"]:
                   assert passage["reference"] and passage["basis"] and passage["coverage_status"]
           print("Validated DSS passage concordance records:", len(concordance["records"]))
@@ -64,6 +72,10 @@ jobs:
           assert "DSS Passage Concordance" in source
           assert "openDssConcordanceEntry(item)" in source
           assert "openDssCatalogEntry(item)" in source
+          assert "void searchCorpus(String query)" in source
+          assert "Search complete text corpus" in source
+          assert "catalog/dss_passage_concordance.json" in source
+          assert "transcription_text" in source
           assert "Temple Scroll (11Q19)" in source and "War Scroll (1QM)" in source
           assert "11Q19" in ids and "1QM" in ids
           assert len(dss["archive_browse_index"]["qumran_sites"]) >= 9
