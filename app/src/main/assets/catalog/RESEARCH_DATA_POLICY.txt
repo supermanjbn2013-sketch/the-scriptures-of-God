@@ -17,3 +17,10 @@ RESEARCH DATA POLICY
     Photographs and facsimiles are deferred until a later app update after the text archive is substantially complete. Their absence must not block text ingestion, verification, indexing, or search.
     Do not describe the text archive as complete until coverage has been inventoried and gaps, unavailable texts, and unverified readings are explicitly recorded.
 
+11. COMPLETE APOCRYPHA BOOK TEXTS
+    Import complete available Greek editions of the Apocrypha and Deuterocanonical writings as whole readable books before expanding individual fragment concordances.
+    The current Greek collection is Henry Barclay Swete's Septuagint as digitally transcribed by Open Greek and Latin First1KGreek and distributed through nathans/lxx-swete under CC BY-SA 4.0. Preserve attribution and share-alike terms.
+    Label these records as edited Greek edition texts, not diplomatic transcriptions of one ancient manuscript. Keep Old Greek and Theodotionic forms of Daniel, Susanna, and Bel and the Dragon separate.
+    Do not substitute Greek editions for surviving Hebrew or Aramaic witnesses. Add DSS and other ancient-language witnesses as distinct records and compare them only after passage-level verification.
+    The present source does not contain 2 Esdras / 4 Ezra. Record it as a missing source, not as imported text. Do not fabricate missing portions or imply the current imported collection exhausts every canon or manuscript tradition.
+    Retain collection boundaries and original numbering for Odes and Psalm 151.
