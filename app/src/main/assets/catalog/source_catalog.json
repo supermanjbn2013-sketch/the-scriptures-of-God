@@ -75,10 +75,52 @@
           "The site owner's editorial interpretations must not be presented as institutional consensus or as the manuscript's unmediated wording."
         ]
       }
+    },
+    {
+      "id": "swete-lxx-apocrypha",
+      "name": "Swete Septuagint — Greek Apocrypha and Deuterocanonical Writings",
+      "language": "Ancient Greek",
+      "coverage": [
+        "1 Esdras",
+        "Tobit",
+        "Judith",
+        "Greek Esther",
+        "Wisdom of Solomon",
+        "Sirach",
+        "Baruch",
+        "Letter of Jeremiah",
+        "1 Maccabees",
+        "2 Maccabees",
+        "3 Maccabees",
+        "4 Maccabees",
+        "Susanna (Old Greek)",
+        "Susanna (Theodotion)",
+        "Daniel (Old Greek)",
+        "Daniel (Theodotion)",
+        "Bel and the Dragon (Old Greek)",
+        "Bel and the Dragon (Theodotion)",
+        "Odes",
+        "Psalm 151"
+      ],
+      "record_type": "digitized Greek edition text with per-verse references; not diplomatic manuscript transcription",
+      "edition": "Henry Barclay Swete, The Old Testament in Greek according to the Septuagint; digital text from Open Greek and Latin First1KGreek",
+      "license": "CC BY-SA 4.0 for the First1KGreek digital transcription; preserve attribution and share-alike terms",
+      "repository": "https://github.com/nathans/lxx-swete",
+      "attribution": "Henry Barclay Swete, ed.; Open Greek and Latin First1KGreek digital transcription distributed by nathans/lxx-swete",
+      "limitations": [
+        "Swete is an edited Septuagint text and must not be described as the unmediated reading of one ancient codex.",
+        "Old Greek and Theodotionic forms of Daniel, Susanna, and Bel and the Dragon are stored separately.",
+        "The Greek text does not replace Hebrew or Aramaic witnesses, including Dead Sea Scroll fragments.",
+        "The source collection does not contain 2 Esdras / 4 Ezra; that work remains explicitly unintegrated until a compatible complete source is verified.",
+        "Odes is a collection of scriptural canticles; its internal numbering is retained and individual compositions must not be silently treated as separate books.",
+        "Psalm 151 is separately indexed from the Greek Psalter only when explicitly present in the source file."
+      ]
     }
   ],
   "not_yet_integrated": [
-    "Septuagint",
+    "2 Esdras / 4 Ezra (not present in the selected Swete source collection; requires a separate verified complete source)",
+    "Hebrew and Aramaic manuscript witnesses for Tobit and Sirach where surviving",
+    "Additional original-language witnesses and critical apparatus for each Apocrypha book",
     "Samaritan Pentateuch",
     "Codex-specific transcriptions",
     "Manuscript variants apparatus",
@@ -87,6 +129,8 @@
   ],
   "development_priority": {
     "order": [
+      "complete Greek Apocrypha and Deuterocanonical book texts",
+      "original-language manuscript witnesses and text variants for Apocrypha books",
       "manuscript transcription text",
       "passage and fragment/column/line mapping",
       "witness comparison and variants",
