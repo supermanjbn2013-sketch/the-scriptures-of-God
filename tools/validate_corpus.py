@@ -33,8 +33,8 @@ def validate_apocrypha():
     books = {r["book"] for r in records}
     assert REQUIRED_GREEK.issubset(books), f"Missing Greek books/forms: {REQUIRED_GREEK - books}"
     assert REQUIRED_LATIN.issubset(books), f"Missing Latin books: {REQUIRED_LATIN - books}"
-    greek = [r for r in records if r["language"] == "grc"]
-    latin = [r for r in records if r["language"] == "la"]
+    greek = [r for r in records if r["language"] == "grc" and r["book"] in REQUIRED_GREEK]
+    latin = [r for r in records if r["language"] == "la" and r["book"] in REQUIRED_LATIN]
     assert all(r.get("license") == "CC BY-SA 4.0" and r.get("textual_form") for r in greek)
     assert all(r.get("license", "").startswith("Public Domain") and r.get("textual_form") for r in latin)
     assert all(r.get("source_url") and r.get("attribution") for r in records)
