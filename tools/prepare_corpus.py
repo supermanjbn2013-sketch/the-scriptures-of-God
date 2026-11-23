@@ -35,6 +35,14 @@ APOCRYPHA = [
     ("27.Psalmi.txt", "Psalm 151", "Psalm 151 (Greek)", "Greek Septuagint Psalter; Psalm 151 is an additional psalm, not part of the Hebrew WLC Psalter"),
 ]
 
+LATIN_APOCRYPHA = [
+    ("esdras2.txt", "2 Esdras / 4 Ezra (Latin)", "2 Esdras / 4 Ezra (Latin)",
+     "Latin transmission of the composite 2 Esdras: 5 Ezra (chapters 1–2), 4 Ezra (chapters 3–14), and 6 Ezra (chapters 15–16). The source file includes 16 chapters; chapter 7 is checked for continuous verse numbering."),
+    ("manasses.txt", "Prayer of Manasseh (Latin)", "Prayer of Manasseh (Latin)",
+     "Latin Prayer of Manasseh as transmitted in the Vulgate appendix; not a claim that Latin is the original composition language.")
+]
+LATIN_LIBRARY_BASE = "https://raw.githubusercontent.com/cltk/lat_text_latin_library/master/bible/"
+LATIN_LIBRARY_REPO = "https://github.com/cltk/lat_text_latin_library"
 SWETE_BASE = "https://raw.githubusercontent.com/nathans/lxx-swete/master/data/"
 SWETE_REPO = "https://github.com/nathans/lxx-swete"
 SWETE_LICENSE = "CC BY-SA 4.0"
@@ -128,6 +136,46 @@ def extract_swete(filename, title, book_code, witness_note):
         raise RuntimeError(f"No verse records extracted for {title} from {url}")
     return out
 
+def extract_latin_library(filename, title, book_code, textual_form):
+    url = LATIN_LIBRARY_BASE + filename
+    raw = fetch(url).decode("utf-8-sig")
+    chapters = list(re.finditer(r"(?im)^\\s*CAPUT\\s+(\\d+)\\b", raw))
+    if not chapters:
+        raise RuntimeError(f"No chapter headings found for {title} from {url}")
+    out = []
+    chapter_numbers = []
+    for index, chapter_match in enumerate(chapters):
+        chapter = int(chapter_match.group(1))
+        chapter_numbers.append(chapter)
+        start = chapter_match.end()
+        end = chapters[index + 1].start() if index + 1 < len(chapters) else len(raw)
+        body = raw[start:end]
+        verse_matches = list(re.finditer(r"(?<!\\S)(\\d{1,3})(?=\\s)", body))
+        verse_numbers = [int(m.group(1)) for m in verse_matches]
+        if not verse_numbers or verse_numbers != list(range(1, max(verse_numbers) + 1)):
+            raise RuntimeError(f"Missing or irregular verse numbering in {title} chapter {chapter}: {verse_numbers[:5]} ... {verse_numbers[-5:]}")
+        for verse_index, verse_match in enumerate(verse_matches):
+            verse_start = verse_match.end()
+            verse_end = verse_matches[verse_index + 1].start() if verse_index + 1 < len(verse_matches) else len(body)
+            text = clean([body[verse_start:verse_end]])
+            if not text:
+                raise RuntimeError(f"Empty verse in {title} {chapter}:{verse_numbers[verse_index]}")
+            out.append({"ref": f"{book_code} {chapter}:{verse_numbers[verse_index]}",
+                "book": title, "book_code": book_code, "language": "la", "text": text,
+                "source": "The Latin Library text collected by the Classical Language Toolkit (CLTK)",
+                "edition": "Latin Library digital text; the source file does not identify a modern critical edition",
+                "witness_basis": "Latin textual transmission; not an ancient manuscript transcription",
+                "textual_form": textual_form, "transcription_type": "digital Latin edition text",
+                "source_url": url, "repository": LATIN_LIBRARY_REPO,
+                "license": "Public Domain (as stated by the Latin Library source; CLTK repository README directs users to its public-domain notice)",
+                "attribution": "The Latin Library; collected in cltk/lat_text_latin_library. https://github.com/cltk/lat_text_latin_library",
+                "text_status": "Complete chapter and verse text as represented by the source file; verify against a critical Latin edition before using it as a manuscript-level witness."})
+    if chapter_numbers != list(range(1, max(chapter_numbers) + 1)):
+        raise RuntimeError(f"Missing chapters in {title}: {chapter_numbers}")
+    if title.startswith("2 Esdras") and not any(r["ref"] == f"{book_code} 7:139" for r in out):
+        raise RuntimeError("The supplied 2 Esdras Latin text does not include chapter 7 through verse 139.")
+    return out
+
 records = []
 for book in HEBREW:
     records.extend(extract_hebrew(book))
@@ -143,10 +191,14 @@ for filename, title, code, note in APOCRYPHA:
             raise RuntimeError("Psalm 151 was not found in the Swete Psalms source; do not add a placeholder as text.")
     records.extend(rows)
     apocrypha_counts[title] = len(rows)
+for filename, title, code, note in LATIN_APOCRYPHA:
+    rows = extract_latin_library(filename, title, code, note)
+    records.extend(rows)
+    apocrypha_counts[title] = len(rows)
 
 if len(records) < 30000:
     raise RuntimeError(f"Corpus unexpectedly small ({len(records)} records); refusing to build an incomplete release.")
-if len(apocrypha_counts) != len(APOCRYPHA) or any(v == 0 for v in apocrypha_counts.values()):
+if len(apocrypha_counts) != len(APOCRYPHA) + len(LATIN_APOCRYPHA) or any(v == 0 for v in apocrypha_counts.values()):
     raise RuntimeError("One or more Apocrypha source books are missing or empty; refusing to build.")
 
 out = ROOT / "verses.jsonl"
@@ -180,4 +232,4 @@ This corpus is a research text collection, not a complete manuscript archive, fa
 """
 (ROOT / "SOURCE_NOTICES.txt").write_text(notice, encoding="utf-8")
 (ROOT / "apocrypha_import_report.json").write_text(json.dumps(apocrypha_counts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-print(f"Created {len(records)} attributed text records, including {sum(apocrypha_counts.values())} Apocrypha/Greek-edition records across {len(apocrypha_counts)} source files.")
+print(f"Created {len(records)} attributed text records, including {sum(apocrypha_counts.values())} Apocrypha/Deuterocanonical records across {len(apocrypha_counts)} source files.")
