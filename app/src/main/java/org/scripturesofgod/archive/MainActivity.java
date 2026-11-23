@@ -177,7 +177,7 @@ public class MainActivity extends Activity {
                 if(hits.size()==100)result.append("Results capped at 100. Refine the phrase to narrow the search.");
                 TextView view=text(result.toString(),14,ink,false);view.setTextIsSelectable(true);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(14,8,14,8);sv.addView(view);
-                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Exact text search: "+exact).setView(sv).setPositiveButton("Close",null).show();
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Exact text search: "+exact).setView(sv).setNegativeButton("Back to "+returnSection,(d,w)->{}).setNeutralButton("Home",(d,w)->{section="Home";show();}).setPositiveButton("Close",null).show();
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
