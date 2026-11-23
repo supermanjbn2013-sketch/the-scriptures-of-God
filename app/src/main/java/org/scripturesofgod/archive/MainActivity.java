@@ -17,6 +17,7 @@ public class MainActivity extends Activity {
     int bg=Color.rgb(15,19,24), panel=Color.rgb(26,33,41), gold=Color.rgb(205,174,112), ink=Color.rgb(232,228,217), muted=Color.rgb(160,166,170);
     LinearLayout root, content;
     String section="Home";
+    boolean lightMode=false;
     String returnSection="Home";
     String[] translationNames={"Afrikaans","Arabic","Belarusian","Bulgarian","Bengali","Catalan","Czech","Welsh","Danish","German","Greek","English","Esperanto","Spanish","Estonian","Persian","Finnish","French","Irish","Galician","Gujarati","Hebrew","Hindi","Croatian","Haitian Creole","Hungarian","Indonesian","Icelandic","Italian","Japanese","Georgian","Kannada","Korean","Lithuanian","Latvian","Macedonian","Marathi","Malay","Maltese","Dutch","Norwegian","Polish","Portuguese","Romanian","Russian","Slovak","Slovenian","Albanian","Swedish","Swahili","Tamil","Telugu","Thai","Filipino / Tagalog","Turkish","Ukrainian","Urdu","Vietnamese","Chinese"};
     String[] translationCodes={"af","ar","be","bg","bn","ca","cs","cy","da","de","el","en","eo","es","et","fa","fi","fr","ga","gl","gu","he","hi","hr","ht","hu","id","is","it","ja","ka","kn","ko","lt","lv","mk","mr","ms","mt","nl","no","pl","pt","ro","ru","sk","sl","sq","sv","sw","ta","te","th","tl","tr","uk","ur","vi","zh"};
@@ -30,8 +31,13 @@ public class MainActivity extends Activity {
         }).setNegativeButton("Cancel",null).show();
     }
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
-    String[] sections={"Home","Hebrew Scriptures","Prophets","Apostolic Writings","Apocrypha and Deuterocanonical Writings","Ancient Referenced Books","Other Ancient Writings","Manuscript Archive","DSS Passage Concordance","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History"};
-    @Override public void onCreate(Bundle b){super.onCreate(b); seed(); show();}
+    String[] sections={"Home","Hebrew Scriptures","Prophets","Apostolic Writings","Apocrypha and Deuterocanonical Writings","Ancient Referenced Books","Other Ancient Writings","Manuscript Archive","DSS Passage Concordance","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
+    @Override public void onCreate(Bundle b){super.onCreate(b); applyTheme(); seed(); show();}
+    void applyTheme(){String mode=getSharedPreferences("archive_settings",MODE_PRIVATE).getString("theme","dark");lightMode=mode.equals("light")||(mode.equals("system")&&((getResources().getConfiguration().uiMode&android.content.res.Configuration.UI_MODE_NIGHT_MASK)==android.content.res.Configuration.UI_MODE_NIGHT_NO));if(lightMode){bg=Color.rgb(247,245,239);panel=Color.rgb(255,255,255);gold=Color.rgb(133,94,38);ink=Color.rgb(35,39,42);muted=Color.rgb(105,110,113);}else{bg=Color.rgb(15,19,24);panel=Color.rgb(26,33,41);gold=Color.rgb(205,174,112);ink=Color.rgb(232,228,217);muted=Color.rgb(160,166,170);}}
+    void saveTheme(String mode){getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("theme",mode).apply();applyTheme();show();}
+    void openSettings(){String[] items={"System default","Light","Dark","Reading font size","Preferred translation language","About this application","Privacy information"};new android.app.AlertDialog.Builder(this).setTitle("Settings").setItems(items,(d,w)->{if(w==0)saveTheme("system");else if(w==1)saveTheme("light");else if(w==2)saveTheme("dark");else if(w==3)chooseFontSize();else if(w==4)chooseTranslationLanguage();else if(w==5)showInfo("About","The Scriptures of God is an offline-first Scripture and manuscript research archive. Texts are displayed with source and edition attribution.");else showInfo("Privacy","Reading history, bookmarks, notes and preferences are stored locally on this device. AI translation sends the selected passage to the configured external AI service.");}).show();}
+    void chooseFontSize(){int size=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",16);final SeekBar bar=new SeekBar(this);bar.setMax(16);bar.setProgress(Math.max(0,Math.min(16,size-12)));new android.app.AlertDialog.Builder(this).setTitle("Reading font size").setMessage("Adjust passage text size").setView(bar).setPositiveButton("Save",(d,w)->getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putInt("font_size",12+bar.getProgress()).apply()).setNegativeButton("Cancel",null).show();}
+    void showInfo(String title,String message){new android.app.AlertDialog.Builder(this).setTitle(title).setMessage(message).setPositiveButton("Close",null).show();}
     void seed(){
         entries.put("Hebrew Scriptures",new ArrayList<>(Arrays.asList("Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Songs","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi")));
         entries.put("Prophets",new ArrayList<>(Arrays.asList("Isaiah","Jeremiah","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi")));
@@ -50,7 +56,7 @@ public class MainActivity extends Activity {
     void show(){
         root=new LinearLayout(this);root.setOrientation(1);root.setBackgroundColor(bg);
         ScrollView scroll=new ScrollView(this); LinearLayout page=new LinearLayout(this);page.setOrientation(1);page.setPadding(16,18,16,24);scroll.addView(page);
-        TextView brand=text("THE SCRIPTURES OF GOD",20,gold,true);page.addView(brand);
+        LinearLayout brandRow=new LinearLayout(this);brandRow.setGravity(Gravity.CENTER_VERTICAL);TextView brand=text("THE SCRIPTURES OF GOD",20,gold,true);brandRow.addView(brand,new LinearLayout.LayoutParams(0,-2,1));TextView settings=text("⚙",24,ink,true);settings.setOnClickListener(v->openSettings());brandRow.addView(settings);page.addView(brandRow);
         page.addView(text("Ancient Manuscript Archive  ·  Scripture Research",12,muted,false));
         EditText search=new EditText(this);search.setSingleLine(true);search.setTextColor(ink);search.setHintTextColor(muted);search.setHint("Search exact word or phrase, reference, manuscript…");search.setPadding(16,10,16,10);search.setBackground(shape(panel));LinearLayout.LayoutParams sp=new LinearLayout.LayoutParams(-1,-2);sp.setMargins(0,18,0,14);page.addView(search,sp);
         Button corpusSearch=new Button(this);corpusSearch.setText("Search complete text corpus");corpusSearch.setTextColor(ink);corpusSearch.setBackground(shape(panel));page.addView(corpusSearch,new LinearLayout.LayoutParams(-1,-2));
@@ -63,14 +69,32 @@ public class MainActivity extends Activity {
         for(String s:sections){TextView b=text(s,12,s.equals(section)?gold:ink,true);b.setOnClickListener(v->{section=s;show();});nav.addView(b);}navScroll.addView(nav);root.addView(navScroll,new LinearLayout.LayoutParams(-1,-2));
         setContentView(root);
     }
+    void addHomeTile(String title,String subtitle,Runnable action){LinearLayout tile=new LinearLayout(this);tile.setOrientation(1);tile.setPadding(14,8,14,8);tile.setBackground(shape(panel));TextView heading=text(title,16,ink,true);heading.setPadding(2,4,2,2);TextView sub=text(subtitle,12,muted,false);sub.setPadding(2,0,2,4);tile.addView(heading);tile.addView(sub);LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,6,0,6);content.addView(tile,p);tile.setOnClickListener(v->action.run());}
     void render(String q){
         content.removeAllViews();
         content.addView(text(section,22,ink,true));
         if(section.equals("Home")){
-            content.addView(text("A research archive for ancient witnesses, original languages, textual variants and translation comparison.",15,muted,false));
-            for(String s:sections){if(!s.equals("Home")){TextView tile=text("›  "+s,16,ink,true);tile.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,7,0,7);content.addView(tile,p);tile.setOnClickListener(v->{section=s;show();});}}
+            content.addView(text("READ  •  SEARCH  •  COMPARE",12,gold,true));
+            TextView hero=text("Return to the words.\nExplore the witnesses.",25,ink,true);hero.setBackground(shape(panel));content.addView(hero);
+            String last=getSharedPreferences("archive_library",MODE_PRIVATE).getString("last_book","");
+            TextView resume=text(last.isEmpty()?"Begin reading":"Continue reading  ·  "+last,16,ink,true);resume.setBackground(shape(panel));LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,10,0,10);content.addView(resume,rp);resume.setOnClickListener(v->{if(!last.isEmpty()){returnSection="Home";openBook(last);}else{section="Hebrew Scriptures";show();}});
+            TextView searchTile=text("⌕   Search the Scriptures and manuscript records",15,ink,true);searchTile.setBackground(shape(panel));content.addView(searchTile);searchTile.setOnClickListener(v->{section="Search";show();});
+            content.addView(text("SCRIPTURE COLLECTIONS",12,gold,true));
+            addHomeTile("Hebrew Scriptures","39 writings",()->{section="Hebrew Scriptures";show();});
+            addHomeTile("Apostolic Writings","27 writings",()->{section="Apostolic Writings";show();});
+            addHomeTile("Apocrypha and Deuterocanonical Writings","Greek and Latin textual forms",()->{section="Apocrypha and Deuterocanonical Writings";show();});
+            content.addView(text("MANUSCRIPT RESEARCH",12,gold,true));
+            addHomeTile("Dead Sea Scrolls Archive","Catalogue and passage concordance",()->{section="Manuscript Archive";show();});
+            addHomeTile("Greek Manuscripts","Papyrus and codex registers",()->{section="Manuscript Archive";show();});
+            addHomeTile("Latin Manuscripts","Latin transmission records",()->{section="Manuscript Archive";show();});
+            addHomeTile("Manuscript Research Library","Sources, provenance and textual forms",()->{section="Research Archive";show();});
+            content.addView(text("PERSONAL LIBRARY",12,gold,true));
+            addHomeTile("Bookmarks and Reading History","Your saved passages on this device",()->{section="Personal Library";show();});
             return;
         }
+        if(section.equals("Settings")){content.addView(text("Appearance, reading and privacy",14,muted,false));addHomeTile("Appearance and reading settings","Theme, font size and language",()->openSettings());return;}
+        if(section.equals("Personal Library")||section.equals("Favorites")||section.equals("Reading History")){String saved=getSharedPreferences("archive_library",MODE_PRIVATE).getString(section.equals("Reading History")?"history":"bookmarks","");if(saved.isEmpty())content.addView(text("Nothing saved here yet. Open a passage and use its save controls.",14,muted,false));else content.addView(text(saved,15,ink,false));return;}
+        if(section.equals("Search")){EditText query=new EditText(this);query.setSingleLine(true);query.setHint("Exact word or phrase");content.addView(query);Button go=new Button(this);go.setText("Search offline corpus");content.addView(go);go.setOnClickListener(v->{String q=query.getText().toString().trim();if(!q.isEmpty())searchCorpus(q);});return;}
         ArrayList<String> data=entries.get(section); if(data==null)data=new ArrayList<>();
         int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {returnSection=section;if(section.equals("Translation Center")){if(item.equals("Preferred translation language"))chooseTranslationLanguage();else showAiConnectionSettings();}else if(section.equals("DSS Passage Concordance"))openDssConcordanceEntry(item);else if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
         if(count==0)content.addView(text("No matching entries. This archive does not fabricate missing manuscript contents or readings.",14,muted,false));
