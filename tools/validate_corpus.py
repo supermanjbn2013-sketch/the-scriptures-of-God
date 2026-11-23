@@ -153,8 +153,10 @@ def validate_android():
     assert "11Q19" in ids and "1QM" in ids
     catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
     datasets = {item["id"]: item for item in catalog["datasets"]}
-    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml"}.issubset(datasets)
+    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "4q47-joshua-direct-transcription"}.issubset(datasets)
     assert "current complete 16-chapter import is a Latin transmission text" in " ".join(datasets["swete-lxx-apocrypha"]["limitations"])
+    assert datasets["4q47-joshua-direct-transcription"]["license"] == "CC BY-SA 4.0"
+    assert datasets["4q47-joshua-direct-transcription"]["source_url"]
     assert "2 Esdras / 4 Ezra" in " ".join(catalog["not_yet_integrated"])
     greek = json.loads((ROOT / "catalog/greek_manuscript_register.json").read_text(encoding="utf-8"))
     sinaiticus = next(r for r in greek["records"] if r["id"] == "Sinaiticus")
