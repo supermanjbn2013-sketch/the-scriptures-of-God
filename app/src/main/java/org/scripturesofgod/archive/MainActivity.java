@@ -193,6 +193,8 @@ public class MainActivity extends Activity {
                 }
                 TextView view=text(result,16,ink,false);
                 view.setTextIsSelectable(true);
+                view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);
+                view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
                 ScrollView sv=new ScrollView(MainActivity.this);
                 sv.setPadding(16,12,16,12);
                 sv.addView(view);
