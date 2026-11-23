@@ -72,21 +72,39 @@ public class MainActivity extends Activity {
         new android.os.AsyncTask<Void,Void,ArrayList<String>>(){
             protected ArrayList<String> doInBackground(Void... ignored){
                 ArrayList<String> hits=new ArrayList<>();
+                String needle=exact.toLowerCase(java.util.Locale.ROOT);
                 try{
                     java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/verses.jsonl"),"UTF-8"));
-                    String line;String needle=exact.toLowerCase(java.util.Locale.ROOT);
+                    String line;
                     while((line=reader.readLine())!=null && hits.size()<100){
                         org.json.JSONObject obj=new org.json.JSONObject(line);
                         String body=obj.optString("text");
-                        if(body.toLowerCase(java.util.Locale.ROOT).contains(needle))hits.add(obj.optString("ref")+"  "+body);
+                        if(body.toLowerCase(java.util.Locale.ROOT).contains(needle))hits.add("[Verse corpus] "+obj.optString("ref")+"  "+body);
                     }
                     reader.close();
-                }catch(Exception e){hits.add("Corpus unavailable: "+e.getMessage());}
+                    if(hits.size()<100){
+                        java.io.BufferedReader catalogReader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/dss_passage_concordance.json"),"UTF-8"));
+                        StringBuilder raw=new StringBuilder();while((line=catalogReader.readLine())!=null)raw.append(line);catalogReader.close();
+                        org.json.JSONArray records=new org.json.JSONObject(raw.toString()).optJSONArray("records");
+                        if(records!=null)for(int i=0;i<records.length()&&hits.size()<100;i++){
+                            org.json.JSONObject record=records.getJSONObject(i);
+                            org.json.JSONArray lines=record.optJSONArray("transcription_line_map");
+                            if(lines==null)continue;
+                            for(int k=0;k<lines.length()&&hits.size()<100;k++){
+                                org.json.JSONObject entry=lines.getJSONObject(k);
+                                String body=entry.optString("transcription_text");
+                                if(body.length()>0&&body.toLowerCase(java.util.Locale.ROOT).contains(needle)){
+                                    hits.add("[DSS "+record.optString("manuscript_id")+"] "+entry.optString("group")+" line "+entry.optInt("digital_line")+"  "+body);
+                                }
+                            }
+                        }
+                    }
+                }catch(Exception e){hits.add("Search data unavailable: "+e.getMessage());}
                 return hits;
             }
             protected void onPostExecute(ArrayList<String> hits){
                 if(hits.isEmpty()){
-                    new android.app.AlertDialog.Builder(MainActivity.this).setTitle("No exact text matches").setMessage("No occurrence of ["+exact+"] was found in the bundled corpus.").setPositiveButton("Close",null).show();
+                    new android.app.AlertDialog.Builder(MainActivity.this).setTitle("No exact text matches").setMessage("No occurrence of ["+exact+"] was found in the imported verse corpus or indexed DSS transcriptions.").setPositiveButton("Close",null).show();
                     return;
                 }
                 StringBuilder result=new StringBuilder();
