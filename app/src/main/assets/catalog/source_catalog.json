@@ -100,7 +100,9 @@
         "Bel and the Dragon (Old Greek)",
         "Bel and the Dragon (Theodotion)",
         "Odes",
-        "Psalm 151"
+        "Psalm 151",
+        "Prayer of Manasseh (Greek; Odes 8)",
+        "Prayer of Azariah and Song of Three (Greek; Odes 9)"
       ],
       "record_type": "digitized Greek edition text with per-verse references; not diplomatic manuscript transcription",
       "edition": "Henry Barclay Swete, The Old Testament in Greek according to the Septuagint; digital text from Open Greek and Latin First1KGreek",
@@ -113,7 +115,8 @@
         "The Greek text does not replace Hebrew or Aramaic witnesses, including Dead Sea Scroll fragments.",
         "The source collection does not contain 2 Esdras / 4 Ezra; that work remains explicitly unintegrated until a compatible complete source is verified.",
         "Odes is a collection of scriptural canticles; its internal numbering is retained and individual compositions must not be silently treated as separate books.",
-        "Psalm 151 is separately indexed from the Greek Psalter only when explicitly present in the source file."
+        "Psalm 151 is separately indexed from the Greek Psalter only when explicitly present in the source file.",
+        "The Prayer of Manasseh and Prayer of Azariah are separately indexed from the Odes collection while retaining their original Odes references."
       ]
     },
     {
