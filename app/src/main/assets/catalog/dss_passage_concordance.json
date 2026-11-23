@@ -5281,8 +5281,8 @@
         "share_alike_required": true
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "Qumran-Digital transcription linked; group 1 lines 5–17 and group 2 lines 1–21 mapped line by line. Recorded passage coverage: Deuteronomy 2:24–36; 3:14–29; 4:1.",
-      "caution": "Do not infer Deuteronomy chapter or verse coverage from the manuscript title alone. Qumran-Digital line mapping distinguishes 4Q31 from parallel witnesses 4Q35, 11Q3, 4Q364 and the Samaritan Pentateuch. Added PAM-41.585-X text is not silently merged with the main transcription.",
+      "status": "Qumran-Digital transcription linked; group 1 lines 5–17 and group 2 lines 1–21 mapped line by line. Group 2 lines 9–21 have been corrected against the actual displayed Hebrew transcription and verse annotations.",
+      "caution": "Do not infer Deuteronomy chapter or verse coverage from the manuscript title alone. Qumran-Digital line mapping distinguishes 4Q31 from parallel witnesses 4Q35, 11Q3, 4Q364 and the Samaritan Pentateuch. Added PAM-41.585-X text is not silently merged with the main transcription. Group 2 lines 9–21 were audited against the Qumran-Digital source and corrected; earlier inaccurate line text has been replaced. Parallel witness text remains separate.",
       "transcription_line_map": [
         {
           "group": "1",
@@ -5519,7 +5519,7 @@
           ],
           "transcription_text": "ושבתם איש לירשתו אשר נתתי לכם ואת יהושע צויתי בעת[ ההיא]",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 9",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5529,7 +5529,7 @@
           ],
           "transcription_text": "לאמר עיניך הראת את כל אשר עשה י[הוה א]ל֯היכם לשני המלכים֯ הא֯[לה]",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 10",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5540,7 +5540,7 @@
           ],
           "transcription_text": "כן יעשה יהוה לכל הממלכת אשר אתה[ עבר שמה ]ל֯א תיראם כי יהוה",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 11",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5552,7 +5552,7 @@
           ],
           "transcription_text": "אלהי֯כ֯ם֯ ה֯ו֯א הנלחם לכם ואתחנן א[ל יהוה בעת הה]י֯א לאמר אדני",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 12",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5562,7 +5562,7 @@
           ],
           "transcription_text": "יהוה אתה החלת להראת את[ עבדך את גדלך ואת ]ידך החזקה אשר",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 13",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5573,7 +5573,7 @@
           ],
           "transcription_text": "מי אל בשמים ^{ו}ב֯א֯[ר]ץ֯[ אשר יעשה כמעשיך וכגבורתך א]ע֯ברה נא ואראה",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 14",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5584,7 +5584,7 @@
           ],
           "transcription_text": "את הארץ הטבה אשר בעב[ר הירדן ההר הטוב ]הזה והלבנון ויתעבד (ויתעבר)",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 15",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5594,7 +5594,7 @@
           ],
           "transcription_text": "יהוה בי למענכם ולא שמע[ אלי ויאמר יהוה אלי ר]ב֯ לך אל תסף דבר",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 16",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5605,7 +5605,7 @@
           ],
           "transcription_text": "אלי עוד ב֯ד֯ב֯[ר הזה ע]לה֯ על ראש הפסגה[ וש]א עיניך֯ ים וצפנה תימנה",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 17",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5616,7 +5616,7 @@
           ],
           "transcription_text": "ומזרחה֯[ וראה בעי]נ֯י֯ך֯ כי לא֯ תעבר את הירדן הזה וצ֯[ו א]ת֯ יהושע וחזקהו",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 18",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5626,7 +5626,7 @@
           ],
           "transcription_text": "[ואמצהו כי ]הוא יעבר לפני֯ העם הזה והוא ינ֯ח֯ל אתם את[ האר]ץ֯[ אשר]",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 19",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5637,7 +5637,7 @@
           ],
           "transcription_text": "[תראה ונשב] ב֯גיא מול בית פעור",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 20",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         },
         {
           "group": "2",
@@ -5647,7 +5647,7 @@
           ],
           "transcription_text": "[ועתה ישראל שמע ]אל ה֯[חקים ו]אל המשפטים֯[ אשר אנכי מלמד אתכם לעשות]",
           "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 21",
-          "note": "Hebrew transcription copied from Qumran-Digital. 4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch comparisons are separate witnesses."
+          "note": "Corrected against the displayed Hebrew transcription at Qumran-Digital. Passage references follow the explicit Dtn annotations on the source page; parallel witnesses (4Q30, 4Q32, 4Q40, 4Q364 and Samaritan Pentateuch) are not merged into 4Q31."
         }
       ]
     },
