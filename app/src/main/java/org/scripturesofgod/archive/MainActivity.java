@@ -67,6 +67,26 @@ public class MainActivity extends Activity {
         String[][] pairs={{"Genesis","Gen"},{"Exodus","Exod"},{"Leviticus","Lev"},{"Numbers","Num"},{"Deuteronomy","Deut"},{"Joshua","Josh"},{"Judges","Judg"},{"Ruth","Ruth"},{"1 Samuel","1Sam"},{"2 Samuel","2Sam"},{"1 Kings","1Kgs"},{"2 Kings","2Kgs"},{"1 Chronicles","1Chr"},{"2 Chronicles","2Chr"},{"Ezra","Ezra"},{"Nehemiah","Neh"},{"Esther","Esth"},{"Job","Job"},{"Psalms","Ps"},{"Proverbs","Prov"},{"Ecclesiastes","Eccl"},{"Song of Songs","Song"},{"Isaiah","Isa"},{"Jeremiah","Jer"},{"Lamentations","Lam"},{"Ezekiel","Ezek"},{"Daniel","Dan"},{"Hosea","Hos"},{"Joel","Joel"},{"Amos","Amos"},{"Obadiah","Obad"},{"Jonah","Jonah"},{"Micah","Mic"},{"Nahum","Nah"},{"Habakkuk","Hab"},{"Zephaniah","Zeph"},{"Haggai","Hag"},{"Zechariah","Zech"},{"Malachi","Mal"},{"Matthew","Matt"},{"Mark","Mark"},{"Luke","Luke"},{"John","John"},{"Acts","Acts"},{"Romans","Rom"},{"1 Corinthians","1Cor"},{"2 Corinthians","2Cor"},{"Galatians","Gal"},{"Ephesians","Eph"},{"Philippians","Phil"},{"Colossians","Col"},{"1 Thessalonians","1Thess"},{"2 Thessalonians","2Thess"},{"1 Timothy","1Tim"},{"2 Timothy","2Tim"},{"Titus","Titus"},{"Philemon","Phlm"},{"Hebrews","Heb"},{"James","Jas"},{"1 Peter","1Pet"},{"2 Peter","2Pet"},{"1 John","1John"},{"2 John","2John"},{"3 John","3John"},{"Jude","Jude"},{"Revelation","Rev"}};
         String[][] apocrypha={{"1 Esdras","1 Esdras"},{"Tobit","Tobit"},{"Judith","Judith"},{"Esther (Greek)","Esther (Greek)"},{"Wisdom of Solomon","Wisdom of Solomon"},{"Sirach","Sirach"},{"Baruch","Baruch"},{"Letter of Jeremiah","Letter of Jeremiah"},{"1 Maccabees","1 Maccabees"},{"2 Maccabees","2 Maccabees"},{"3 Maccabees","3 Maccabees"},{"4 Maccabees","4 Maccabees"},{"Susanna (Old Greek)","Susanna (Old Greek)"},{"Susanna (Theodotion)","Susanna (Theodotion)"},{"Daniel (Old Greek)","Daniel (Old Greek)"},{"Daniel (Theodotion)","Daniel (Theodotion)"},{"Bel and the Dragon (Old Greek)","Bel and the Dragon (Old Greek)"},{"Bel and the Dragon (Theodotion)","Bel and the Dragon (Theodotion)"},{"Odes","Odes"},{"Prayer of Manasseh (Greek)","Prayer of Manasseh (Greek)"},{"Psalm 151","Psalm 151"},{"2 Esdras / 4 Ezra (Latin)","2 Esdras / 4 Ezra (Latin)"},{"Prayer of Manasseh (Latin)","Prayer of Manasseh (Latin)"}};\n        for(String[] p:apocrypha) if(p[0].equals(name)) return p[1];\n        for(String[] p:pairs) if(p[0].equals(name)) return p[1]; return null;
     }
+    boolean matchesExact(String text, String needle){
+        if(needle==null||needle.length()==0)return false;
+        String lower=text.toLowerCase(java.util.Locale.ROOT);
+        String term=needle.toLowerCase(java.util.Locale.ROOT);
+        int position=0;
+        while((position=lower.indexOf(term,position))>=0){
+            int end=position+term.length();
+            boolean left=position==0||!isWordCharacter(lower.charAt(position-1));
+            boolean right=end==lower.length()||!isWordCharacter(lower.charAt(end));
+            if(left&&right)return true;
+            position++;
+        }
+        return false;
+    }
+    boolean isWordCharacter(char value){
+        int type=Character.getType(value);
+        return Character.isLetterOrDigit(value)||type==Character.NON_SPACING_MARK||
+            type==Character.COMBINING_SPACING_MARK||type==Character.ENCLOSING_MARK;
+    }
+
     void searchCorpus(String query){
         final String exact=query;
         new android.os.AsyncTask<Void,Void,ArrayList<String>>(){
@@ -79,7 +99,7 @@ public class MainActivity extends Activity {
                     while((line=reader.readLine())!=null && hits.size()<100){
                         org.json.JSONObject obj=new org.json.JSONObject(line);
                         String body=obj.optString("text");
-                        if(body.toLowerCase(java.util.Locale.ROOT).contains(needle))hits.add("[Verse corpus] "+(obj.optString("book").length()>0?obj.optString("book")+" — ":"")+obj.optString("ref")+"  "+body);
+                        if(matchesExact(body,needle))hits.add("[Verse corpus] "+(obj.optString("book").length()>0?obj.optString("book")+" — ":"")+obj.optString("ref")+"  "+body);
                     }
                     reader.close();
                     if(hits.size()<100){
@@ -93,7 +113,7 @@ public class MainActivity extends Activity {
                             for(int k=0;k<lines.length()&&hits.size()<100;k++){
                                 org.json.JSONObject entry=lines.getJSONObject(k);
                                 String body=entry.optString("transcription_text");
-                                if(body.length()>0&&body.toLowerCase(java.util.Locale.ROOT).contains(needle)){
+                                if(body.length()>0&&matchesExact(body,needle)){
                                     hits.add("[DSS "+record.optString("manuscript_id")+"] "+entry.optString("group")+" line "+entry.optInt("digital_line")+"  "+body);
                                 }
                             }
