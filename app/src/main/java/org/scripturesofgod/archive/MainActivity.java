@@ -40,7 +40,7 @@ public class MainActivity extends Activity {
         entries.put("Other Ancient Writings",new ArrayList<>(Arrays.asList("1 Enoch","Jubilees","Didache","Shepherd of Hermas","Gospel of Thomas")));
         entries.put("Manuscript Archive",new ArrayList<>(Arrays.asList("Dead Sea Scrolls (DSS)","Great Isaiah Scroll (1QIsaᵃ)","Pesher Habakkuk (1QpHab)","Genesis Apocryphon (1QapGen)","Community Rule (1QS)","Temple Scroll (11Q19)","War Scroll (1QM)","Masoretic Text","Septuagint","Samaritan Pentateuch","Papyrus 46 (P46)","Papyrus 52 (P52)","Papyrus 66 (P66)","Papyrus 75 (P75)","Codex Vaticanus","Codex Sinaiticus","Codex Alexandrinus")));
         entries.put("DSS Passage Concordance",new ArrayList<>(Arrays.asList("4Q26 Lev d — Leviticus","4Q27 Num b — Numbers","4Q31 Deut d — Deuteronomy","4Q47 Josh a — Joshua","4Q53 Sam c — Samuel")));
-        entries.put("Translation Center",new ArrayList<>(Arrays.asList("AI translation is integrated into every Scripture passage","Preferred translation language","AI connection settings")));
+        entries.put("Translation Center",new ArrayList<>(Arrays.asList("Preferred translation language","AI connection settings")));
         entries.put("Manuscript Comparison",new ArrayList<>(Arrays.asList("Compare witness transcriptions","Review additions and omissions","Inspect textual variants","Trace quotations and parallels")));
         entries.put("Research Archive",new ArrayList<>(Arrays.asList("Source metadata","Authorship assessments","Composition dates","Language and provenance","Fragment and witness records","Research notes")));
         entries.put("Favorites",new ArrayList<>()); entries.put("Reading History",new ArrayList<>());
@@ -318,7 +318,7 @@ public class MainActivity extends Activity {
         TextView result=text("Translating automatically with AI…",14,ink,false);result.setBackground(shape(panel));box.addView(result);
         Button settings=new Button(this);settings.setText("AI connection settings");settings.setOnClickListener(v->showAiConnectionSettings());box.addView(settings);
         Button external=new Button(this);external.setText("Open Google Translate");external.setOnClickListener(v->openGoogleTranslate(sourceText,targetLanguage()));box.addView(external);
-        android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle(reference+" — AI Translation").setView(box).setNegativeButton("Close",null).create();
+        ScrollView scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.addView(box);\n        android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle(reference+" — AI Translation").setView(scroll).setNegativeButton("Close",null).create();
         dialog.show();
         mode.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener(){
             boolean first=true;
