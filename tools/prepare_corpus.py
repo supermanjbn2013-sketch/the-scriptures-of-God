@@ -261,4 +261,48 @@ This corpus is a research text collection, not a complete manuscript archive, fa
 """
 (ROOT / "SOURCE_NOTICES.txt").write_text(notice, encoding="utf-8")
 (ROOT / "apocrypha_import_report.json").write_text(json.dumps(apocrypha_counts, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+# Record the exact source-file coverage for every imported book/form. This is an
+# inventory of the supplied edition, not a claim that every ancient witness survives.
+coverage = {}
+for title in apocrypha_counts:
+    book_rows = [row for row in records if row.get("book") == title]
+    chapters = {}
+    for row in book_rows:
+        source_ref = row.get("source_reference", "")
+        if "." in source_ref:
+            parts = source_ref.split(".")
+            if len(parts) != 3:
+                raise RuntimeError(f"Unrecognized Greek source coordinate for {title}: {source_ref}")
+            chapter, verse = parts[1], parts[2]
+        elif ":" in source_ref:
+            chapter, verse = source_ref.rsplit(":", 1)
+        else:
+            raise RuntimeError(f"Missing source chapter/verse coordinate for {title}: {source_ref}")
+        chapters.setdefault(chapter, set()).add(int(verse))
+    first = book_rows[0]
+    coverage[title] = {
+        "record_count": len(book_rows),
+        "chapter_count": len(chapters),
+        "chapters": {
+            chapter: {
+                "verse_count": len(verses),
+                "first_source_verse": min(verses),
+                "last_source_verse": max(verses),
+                "source_verse_numbers": sorted(verses)
+            }
+            for chapter, verses in sorted(chapters.items(), key=lambda item: int(item[0]))
+        },
+        "language": first["language"],
+        "source": first["source"],
+        "edition": first["edition"],
+        "witness_basis": first["witness_basis"],
+        "textual_form": first.get("textual_form", ""),
+        "transcription_type": first["transcription_type"],
+        "source_url": first["source_url"],
+        "license": first.get("license", ""),
+        "attribution": first["attribution"],
+        "scope_note": "Coverage of this named digital source file only; not a claim of universal canonical status or complete survival in ancient manuscripts."
+    }
+(ROOT / "apocrypha_coverage.json").write_text(json.dumps(coverage, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"Created {len(records)} attributed text records, including {sum(apocrypha_counts.values())} Apocrypha/Deuterocanonical records across {len(apocrypha_counts)} source files.")
