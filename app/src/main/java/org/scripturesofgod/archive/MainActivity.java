@@ -255,7 +255,7 @@ public class MainActivity extends Activity {
                         currentChapter=chapter;
                         list.addView(text("Chapter "+chapter,18,gold,true));
                     }
-                    TextView row=text(reference+"\n"+body+"\n\nTap to translate",16,ink,false);
+                    TextView row=text(reference+"\n"+body+"\n\nTap for automatic AI translation",16,ink,false);
                     row.setBackground(shape(panel));
                     LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);
                     p.setMargins(0,4,0,4);list.addView(row,p);
