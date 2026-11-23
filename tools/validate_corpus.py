@@ -17,16 +17,34 @@ REQUIRED_GREEK = {
 }
 REQUIRED_LATIN = {"2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)"}
 
+HEBREW_BOOK_CODES = {
+    "Gen","Exod","Lev","Num","Deut","Josh","Judg","Ruth","1Sam","2Sam","1Kgs","2Kgs",
+    "1Chr","2Chr","Ezra","Neh","Esth","Job","Ps","Prov","Eccl","Song","Isa","Jer","Lam",
+    "Ezek","Dan","Hos","Joel","Amos","Obad","Jonah","Mic","Nah","Hab","Zeph","Hag","Zech","Mal"
+}
+GREEK_BOOK_CODES = {
+    "Matt","Mark","Luke","John","Acts","Rom","1Cor","2Cor","Gal","Eph","Phil","Col",
+    "1Thess","2Thess","1Tim","2Tim","Titus","Phlm","Heb","Jas","1Pet","2Pet",
+    "1John","2John","3John","Jude","Rev"
+}
+
 def validate_base():
     assert len(rows) >= 30000, f"Unexpected corpus size: {len(rows)}"
-    assert all(r.get("ref") and r.get("text") and r.get("source") for r in rows)
-    assert any(r["language"] == "he" for r in rows)
-    assert any(r["language"] == "grc" for r in rows)
-    assert all(r.get("book") and r.get("book_code") for r in rows if r["language"] == "grc")
-    assert all(r.get("source_url") and r.get("transcription_type") for r in rows)
+    assert all(r.get("ref") and r.get("text", "").strip() and r.get("source") for r in rows)
+    hebrew = [r for r in rows if r["language"] == "he"]
+    greek = [r for r in rows if r["language"] == "grc"]
+    latin = [r for r in rows if r["language"] == "la"]
+    assert hebrew and greek and latin
+    assert all(r.get("source_url") and r.get("transcription_type") and r.get("edition") and r.get("witness_basis") for r in rows)
+    assert all(r.get("book") and r.get("book_code") for r in greek + latin)
+    hebrew_codes = {r["ref"].split(".", 1)[0] for r in hebrew}
+    greek_codes = {r["book_code"] for r in greek if r["book_code"] in GREEK_BOOK_CODES}
+    assert hebrew_codes == HEBREW_BOOK_CODES, f"Hebrew source book coverage mismatch: missing={HEBREW_BOOK_CODES - hebrew_codes}, unexpected={hebrew_codes - HEBREW_BOOK_CODES}"
+    assert greek_codes == GREEK_BOOK_CODES, f"SBLGNT book coverage mismatch: missing={GREEK_BOOK_CODES - greek_codes}, unexpected={greek_codes - GREEK_BOOK_CODES}"
+    assert all(r.get("attribution") for r in hebrew + greek + latin)
     refs = [(r["language"], r["ref"]) for r in rows]
     assert len(refs) == len(set(refs)), "Duplicate verse references detected within a language"
-    print(f"Validated {len(rows)} text records; Hebrew {sum(r['language']=='he' for r in rows)}, Greek {sum(r['language']=='grc' for r in rows)}, Latin {sum(r['language']=='la' for r in rows)}")
+    print(f"Validated {len(rows)} text records; Hebrew {len(hebrew)} across {len(hebrew_codes)} books, Greek {len(greek)} across {len(greek_codes)} SBLGNT books, Latin {len(latin)}")
 
 def validate_apocrypha():
     records = [r for r in rows if r.get("book")]
