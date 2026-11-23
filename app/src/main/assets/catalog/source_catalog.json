@@ -170,6 +170,30 @@
         "Codex Sinaiticus is incomplete and dispersed; the source's book index does not mean every chapter of every listed book survives.",
         "This is one manuscript witness, not a modern critical edition or a universal canonical table."
       ]
+    },
+    {
+      "id": "4q47-joshua-direct-transcription",
+      "name": "4Q47 Joshuaᵃ direct transcription",
+      "language": "Hebrew",
+      "coverage": [
+        "Fragments 1–2",
+        "Fragments 3–8",
+        "Fragments 9 i–12",
+        "Fragments 9 ii and 13–16",
+        "Fragments 17–18",
+        "Fragments 19–22"
+      ],
+      "record_type": "separate third-party PDF transcription; not merged with Qumran-Digital",
+      "edition": "The Way to Yahuweh, 4Q47 Joshuaᵃ (4QJoshᵃ), Direct Transcription",
+      "license": "CC BY-SA 4.0",
+      "attribution": "The Way to Yahuweh, 4Q47 Joshuaᵃ (4QJoshᵃ), Direct Transcription.",
+      "source_url": "https://downloads.thewaytoyahuweh.com/pdf/dead_sea_scrolls/DSS_-_4Q47Joshuaa.pdf",
+      "limitations": [
+        "PDF text extraction may contain transcription or extraction artifacts; verify individual readings against the PDF rendering and DJD XIV plates.",
+        "The PDF headings and line breaks are retained as provider labels, not asserted manuscript column/line coordinates.",
+        "Do not merge this transcription with Qumran-Digital or the published DJD edition; preserve source distinctions."
+      ],
+      "status": "Later fragment-group text blocks imported separately in the DSS passage concordance."
     }
   ],
   "not_yet_integrated": [
