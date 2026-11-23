@@ -220,7 +220,7 @@ License: CC BY-SA 4.0. Preserve attribution and share-alike terms.
 Source: https://github.com/nathans/lxx-swete
 The imported texts are edited Greek editions, not diplomatic transcriptions of one ancient codex. Old Greek and Theodotionic forms of Daniel, Susanna, and Bel and the Dragon remain separate. Tobit's distinct Greek textual forms must not be conflated. The Greek text does not replace surviving Hebrew or Aramaic witnesses, including Dead Sea Scroll fragments.
 The Odes file is a collection; its internal composition numbering is preserved. Psalm 151 is imported separately from the Greek Psalter only when the source explicitly supplies chapter 151.
-2 Esdras / 4 Ezra is not present in this Swete source collection and is not fabricated or silently replaced.
+2 Esdras / 4 Ezra and the Prayer of Manasseh are also included from Latin Library digital texts collected by CLTK. The Latin text is a transmitted version, not the lost Greek or hypothesized Semitic original. 2 Esdras is a composite: 5 Ezra (chapters 1–2), 4 Ezra (chapters 3–14), and 6 Ezra (chapters 15–16). The source is checked for sequential chapter/verse numbering; it is not a critical edition or manuscript facsimile.\nSource: https://github.com/cltk/lat_text_latin_library (public-domain status stated by the Latin Library source).
 
 APOSTOLIC WRITINGS
 SBL Greek New Testament v1.2, CC BY 4.0.
