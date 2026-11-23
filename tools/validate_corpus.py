@@ -134,11 +134,20 @@ def validate_android():
         "Apocrypha and Deuterocanonical Writings", "Psalm 151", "Odes",
         "Prayer of Manasseh (Greek)", "2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)",
         "source_reference", "Temple Scroll (11Q19)", "War Scroll (1QM)",
-        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate", "target_language", "Back to "
+        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate", "target_language", "Back to ", "openAiTranslator()", "AiTranslatorActivity"
     ):
         assert required in source, f"Android source is missing: {required}"
     for book in REQUIRED_GREEK | REQUIRED_LATIN:
         assert f'"{book}"' in source, f"An imported Apocrypha book is missing from Android navigation: {book}"
+
+    ai_source = Path("app/src/main/java/org/scripturesofgod/archive/AiTranslatorActivity.java").read_text(encoding="utf-8")
+    for required in ("Modern English translation", "Older English style (Early Modern)", "Literal translation", "Word-for-word analysis", "Grammar and meaning explanation", "gemini-3.1-flash-lite", "x-goog-api-key", "AndroidKeyStore", "AES/GCM/NoPadding", "aistudio.google.com/app/apikey", "Do not invent words"):
+        assert required in ai_source, f"AI translator is missing: {required}"
+    assert "com.google.mlkit" not in source, "Obsolete ML Kit translation must not be used for ancient-language translation"
+    manifest = Path("app/src/main/AndroidManifest.xml").read_text(encoding="utf-8")
+    assert '.AiTranslatorActivity' in manifest, "AI translator activity is not registered"
+    gradle = Path("app/build.gradle").read_text(encoding="utf-8")
+    assert "versionCode 2" in gradle and "versionName '1.1.0'" in gradle, "App update version was not incremented"
     dss = json.loads((ROOT / "catalog/dead_sea_scrolls_register.json").read_text(encoding="utf-8"))
     ids = {r["id"] for r in dss["records"]}
     assert "11Q19" in ids and "1QM" in ids
