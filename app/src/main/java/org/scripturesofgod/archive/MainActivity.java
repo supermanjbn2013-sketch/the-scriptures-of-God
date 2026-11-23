@@ -11,11 +11,27 @@ import android.widget.*;
 import android.text.TextWatcher;
 import android.text.Editable;
 import java.util.*;
+import com.google.mlkit.nl.translate.TranslateLanguage;
+import com.google.mlkit.nl.translate.Translation;
+import com.google.mlkit.nl.translate.Translator;
+import com.google.mlkit.nl.translate.TranslatorOptions;
+import com.google.mlkit.nl.translate.DownloadConditions;
 
 public class MainActivity extends Activity {
     int bg=Color.rgb(15,19,24), panel=Color.rgb(26,33,41), gold=Color.rgb(205,174,112), ink=Color.rgb(232,228,217), muted=Color.rgb(160,166,170);
     LinearLayout root, content;
     String section="Home";
+    String[] translationNames={"English","Filipino / Tagalog","Spanish","Portuguese","French","German","Italian","Arabic","Hebrew","Greek","Chinese","Japanese","Korean","Indonesian","Russian","Dutch","Thai","Vietnamese"};
+    String[] translationCodes={"en","tl","es","pt","fr","de","it","ar","he","el","zh","ja","ko","id","ru","nl","th","vi"};
+    String targetLanguage(){return getSharedPreferences("archive_settings",MODE_PRIVATE).getString("target_language","en");}
+    String targetLanguageName(){String code=targetLanguage();for(int i=0;i<translationCodes.length;i++)if(translationCodes[i].equals(code))return translationNames[i];return "English";}
+    void chooseTranslationLanguage(){
+        int selected=0;for(int i=0;i<translationCodes.length;i++)if(translationCodes[i].equals(targetLanguage()))selected=i;
+        new android.app.AlertDialog.Builder(this).setTitle("Automatic verse translation").setSingleChoiceItems(translationNames,selected,(dialog,which)->{
+            getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("target_language",translationCodes[which]).apply();
+            dialog.dismiss();show();
+        }).setNegativeButton("Cancel",null).show();
+    }
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
     String[] sections={"Home","Hebrew Scriptures","Prophets","Apostolic Writings","Apocrypha and Deuterocanonical Writings","Ancient Referenced Books","Other Ancient Writings","Manuscript Archive","DSS Passage Concordance","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History"};
     @Override public void onCreate(Bundle b){super.onCreate(b); seed(); show();}
@@ -42,6 +58,7 @@ public class MainActivity extends Activity {
         EditText search=new EditText(this);search.setSingleLine(true);search.setTextColor(ink);search.setHintTextColor(muted);search.setHint("Search exact word or phrase, reference, manuscript…");search.setPadding(16,10,16,10);search.setBackground(shape(panel));LinearLayout.LayoutParams sp=new LinearLayout.LayoutParams(-1,-2);sp.setMargins(0,18,0,14);page.addView(search,sp);
         Button corpusSearch=new Button(this);corpusSearch.setText("Search complete text corpus");corpusSearch.setTextColor(ink);corpusSearch.setBackground(shape(panel));page.addView(corpusSearch,new LinearLayout.LayoutParams(-1,-2));
         corpusSearch.setOnClickListener(v->{String query=search.getText().toString().trim();if(query.length()>0)searchCorpus(query);});
+        Button languageButton=new Button(this);languageButton.setText("Automatic verse translation: "+targetLanguageName());languageButton.setTextColor(gold);languageButton.setBackground(shape(panel));LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.setMargins(0,8,0,12);page.addView(languageButton,lp);languageButton.setOnClickListener(v->chooseTranslationLanguage());
         content=new LinearLayout(this);content.setOrientation(1);page.addView(content);
         search.addTextChangedListener(new TextWatcher(){public void beforeTextChanged(CharSequence s,int st,int c,int a){} public void onTextChanged(CharSequence s,int st,int before,int count){render(s.toString());}public void afterTextChanged(Editable e){}});
         render("");root.addView(scroll,new LinearLayout.LayoutParams(-1,0,1));
@@ -150,87 +167,80 @@ public class MainActivity extends Activity {
         final String bookName=name;
         final String code=codeFor(bookName);
         if(code==null)return;
-        new android.os.AsyncTask<Void,Void,String>(){
-            protected String doInBackground(Void... ignored){
+        new android.os.AsyncTask<Void,Void,org.json.JSONObject>(){
+            protected org.json.JSONObject doInBackground(Void... ignored){
                 try{
                     java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/verses.jsonl"),"UTF-8"));
-                    StringBuilder body=new StringBuilder();
-                    StringBuilder metadata=new StringBuilder();
-                    String line;
-                    int found=0;
-                    boolean metadataAdded=false;
+                    org.json.JSONObject result=new org.json.JSONObject();
+                    org.json.JSONArray verses=new org.json.JSONArray();
+                    StringBuilder metadata=new StringBuilder();String line;boolean metadataAdded=false;
                     while((line=reader.readLine())!=null){
                         org.json.JSONObject obj=new org.json.JSONObject(line);
                         String ref=obj.optString("ref");
                         if(bookName.equals(obj.optString("book"))||ref.startsWith(bookName+" ")||ref.startsWith(code+".")||ref.startsWith(code+" ")){
                             if(!metadataAdded){
-                                metadata.append("Language: ").append(obj.optString("language")).append("\n");
                                 metadata.append("Source: ").append(obj.optString("source")).append("\n");
                                 metadata.append("Edition: ").append(obj.optString("edition")).append("\n");
                                 metadata.append("Witness basis: ").append(obj.optString("witness_basis")).append("\n");
-                                if(obj.has("textual_form"))metadata.append("Textual form: ").append(obj.optString("textual_form")).append("\n");
                                 metadata.append("Text type: ").append(obj.optString("transcription_type")).append("\n");
-                                metadata.append("License: ").append(obj.optString("license",obj.optString("text_status"))).append("\n");
+                                metadata.append("Licence: ").append(obj.optString("license",obj.optString("text_status"))).append("\n");
                                 metadata.append("Attribution: ").append(obj.optString("attribution")).append("\n");
                                 metadata.append("Source URL: ").append(obj.optString("source_url")).append("\n\n");
                                 metadataAdded=true;
                             }
                             String displayRef=bookName.equals(obj.optString("book"))?ref:(ref.startsWith(bookName+" ")?ref.substring(bookName.length()).trim():ref.substring(code.length()).trim());
-                            if(obj.has("source_reference"))displayRef+=" [source reference: "+obj.optString("source_reference")+"]";
-                            body.append(displayRef).append("  ").append(obj.optString("text")).append("\n\n");
-                            found++;
+                            org.json.JSONObject verse=new org.json.JSONObject();
+                            verse.put("reference",displayRef);verse.put("text",obj.optString("text"));verse.put("language",obj.optString("language"));
+                            verses.put(verse);
                         }
                     }
                     reader.close();
-                    if(found==0)return null;
-                    try{
-                        java.io.BufferedReader coverageReader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/apocrypha_coverage.json"),"UTF-8"));
-                        StringBuilder coverageRaw=new StringBuilder();String coverageLine;
-                        while((coverageLine=coverageReader.readLine())!=null)coverageRaw.append(coverageLine);
-                        coverageReader.close();
-                        org.json.JSONObject coverage=new org.json.JSONObject(coverageRaw.toString()).optJSONObject(bookName);
-                        if(coverage!=null){
-                            metadata.append("Source-file coverage audit: ").append(coverage.optInt("record_count")).append(" verse records across ").append(coverage.optInt("chapter_count")).append(" source chapters.\n");
-                            metadata.append(coverage.optString("scope_note")).append("\n");
-                            org.json.JSONObject chapters=coverage.optJSONObject("chapters");
-                            if(chapters!=null){
-                                metadata.append("Chapter coverage:\n");
-                                java.util.Iterator<String> keys=chapters.keys();
-                                while(keys.hasNext()){
-                                    String chapter=keys.next();org.json.JSONObject detail=chapters.optJSONObject(chapter);
-                                    if(detail!=null)metadata.append("Chapter ").append(chapter).append(": ").append(detail.optInt("verse_count")).append(" source verses (").append(detail.optInt("first_source_verse")).append("–").append(detail.optInt("last_source_verse")).append(")\n");
-                                }
-                            }
-                            metadata.append("\n");
-                        }
-                    }catch(Exception coverageError){}
-                    body.insert(0,metadata.toString());
-                    return body.toString();
-                }catch(Exception e){
-                    return "__CORPUS_ERROR__:"+e.getMessage();
-                }
+                    if(verses.length()==0)return null;
+                    result.put("metadata",metadata.toString());result.put("verses",verses);return result;
+                }catch(Exception e){return null;}
             }
-            protected void onPostExecute(String result){
+            protected void onPostExecute(org.json.JSONObject result){
                 if(result==null){
-                    new android.app.AlertDialog.Builder(MainActivity.this).setMessage("No bundled text record was found for "+bookName+".").setPositiveButton("OK",null).show();
-                    return;
+                    new android.app.AlertDialog.Builder(MainActivity.this).setMessage("No bundled text record was found for "+bookName+".").setPositiveButton("OK",null).show();return;
                 }
-                if(result.startsWith("__CORPUS_ERROR__:")){
-                    new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Text data not available").setMessage("The offline corpus could not be read.").setPositiveButton("OK",null).show();
-                    return;
+                LinearLayout list=new LinearLayout(MainActivity.this);list.setOrientation(1);list.setPadding(12,8,12,8);
+                TextView meta=text(result.optString("metadata"),12,muted,false);meta.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);meta.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());list.addView(meta);
+                org.json.JSONArray verses=result.optJSONArray("verses");
+                if(verses!=null)for(int i=0;i<verses.length();i++){
+                    org.json.JSONObject verse=verses.optJSONObject(i);if(verse==null)continue;
+                    String reference=verse.optString("reference"),body=verse.optString("text"),language=verse.optString("language");
+                    TextView row=text(reference+"\n"+body+"\n\nTap to translate",15,ink,false);
+                    row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);list.addView(row,p);
+                    row.setOnClickListener(v->translateVerse(reference,body,language));
                 }
-                TextView view=text(result,16,ink,false);
-                view.setTextIsSelectable(true);
-                view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);
-                view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
-                ScrollView sv=new ScrollView(MainActivity.this);
-                sv.setPadding(16,12,16,12);
-                sv.addView(view);
-                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — source text").setView(sv).setPositiveButton("Close",null).show();
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(8,8,8,8);sv.addView(list);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — tap any verse to translate").setView(sv).setPositiveButton("Close",null).show();
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void translateVerse(String reference,String sourceText,String sourceLanguage){
+        String source;
+        if("he".equals(sourceLanguage))source="he";
+        else if("grc".equals(sourceLanguage))source="el";
+        else if("la".equals(sourceLanguage)){new android.app.AlertDialog.Builder(this).setTitle("Translation unavailable").setMessage("The on-device translation model does not support Latin source text yet.").setPositiveButton("Close",null).show();return;}
+        else {new android.app.AlertDialog.Builder(this).setTitle("Translation unavailable").setMessage("No supported source-language mapping is registered for this text.").setPositiveButton("Close",null).show();return;}
+        String target=targetLanguage();
+        if(source.equals(target)){new android.app.AlertDialog.Builder(this).setTitle(reference).setMessage("This verse is already in your selected language.\n\n"+sourceText).setPositiveButton("Close",null).show();return;}
+        TranslatorOptions options=new TranslatorOptions.Builder().setSourceLanguage(source).setTargetLanguage(target).build();
+        Translator translator=Translation.getClient(options);
+        android.app.ProgressDialog progress=new android.app.ProgressDialog(this);progress.setMessage("Preparing "+targetLanguageName()+" translation…");progress.setCancelable(false);progress.show();
+        translator.downloadModelIfNeeded(new DownloadConditions.Builder().build())
+            .addOnSuccessListener(unused->translator.translate(sourceText)
+                .addOnSuccessListener(translated->{
+                    if(progress.isShowing())progress.dismiss();
+                    new android.app.AlertDialog.Builder(MainActivity.this).setTitle(reference+" — "+targetLanguageName())
+                        .setMessage(translated+"\n\nMachine translation for study assistance. It is not a manuscript reading or a substitute for checking the source text.")
+                        .setPositiveButton("Close",null).show();translator.close();
+                })
+                .addOnFailureListener(error->{if(progress.isShowing())progress.dismiss();translator.close();new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Translation failed").setMessage("The verse could not be translated. Check your connection and try again.").setPositiveButton("Close",null).show();}))
+            .addOnFailureListener(error->{if(progress.isShowing())progress.dismiss();translator.close();new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Translation model unavailable").setMessage("Connect to the internet once to download the language model, then retry.").setPositiveButton("Close",null).show();});
+    }
 
     void openDssCatalogEntry(String item){
         try{
