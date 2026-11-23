@@ -23,7 +23,7 @@ RESEARCH DATA POLICY
     Label these records as edited Greek edition texts, not diplomatic transcriptions of one ancient manuscript. Keep Old Greek and Theodotionic forms of Daniel, Susanna, and Bel and the Dragon separate.
     Do not substitute Greek editions for surviving Hebrew or Aramaic witnesses. Add DSS and other ancient-language witnesses as distinct records and compare them only after passage-level verification.
     The Swete Greek source does not contain 2 Esdras / 4 Ezra; the archive imports a separate Latin transmission text under section 12. Do not imply that a Greek original is extant or imported. Do not fabricate missing portions or imply the current imported collection exhausts every canon or manuscript tradition.
-    Retain collection boundaries and original numbering for Odes and Psalm 151. The Prayer of Manasseh (Odes 8) and Prayer of Azariah and Song of Three (Odes 9) may be separately indexed for navigation, but their original Odes references must remain attached.
+    Retain collection boundaries and original numbering for Odes and Psalm 151. The Prayer of Manasseh (Odes 8) may be separately indexed for navigation, but its original Odes references must remain attached. The Greek additions to Daniel remain represented within the separate Daniel textual forms.
 12. LATIN TRANSMISSION TEXTS
     The archive includes 2 Esdras / 4 Ezra and the Prayer of Manasseh in Latin forms from the Latin Library digital collection, collected by CLTK and identified as public domain by the source.
     The 16-chapter 2 Esdras text is composite: 5 Ezra (chapters 1–2), 4 Ezra proper (chapters 3–14), and 6 Ezra (chapters 15–16). Keep these literary divisions visible in research notes.
