@@ -134,7 +134,7 @@ def validate_android():
         "Apocrypha and Deuterocanonical Writings", "Psalm 151", "Odes",
         "Prayer of Manasseh (Greek)", "2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)",
         "source_reference", "Temple Scroll (11Q19)", "War Scroll (1QM)",
-        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate", "target_language", "Back to ", "openAiTranslator()", "AiTranslatorActivity"
+        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap for automatic AI translation", "target_language", "Back to ", "requestAiTranslation(", "archive_ai", "AI Translation"
     ):
         assert required in source, f"Android source is missing: {required}"
     for book in REQUIRED_GREEK | REQUIRED_LATIN:
@@ -145,7 +145,7 @@ def validate_android():
         assert required in ai_source, f"AI translator is missing: {required}"
     assert "com.google.mlkit" not in source, "Obsolete ML Kit translation must not be used for ancient-language translation"
     manifest = Path("app/src/main/AndroidManifest.xml").read_text(encoding="utf-8")
-    assert '.AiTranslatorActivity' in manifest, "AI translator activity is not registered"
+    assert '.AiTranslatorActivity' not in manifest and '.MainActivity' in manifest, "AI translation must be integrated into the main Scripture reader, not a separate activity"
     gradle = Path("app/build.gradle").read_text(encoding="utf-8")
     assert "versionCode 2" in gradle and "versionName '1.1.0'" in gradle, "App update version was not incremented"
 
