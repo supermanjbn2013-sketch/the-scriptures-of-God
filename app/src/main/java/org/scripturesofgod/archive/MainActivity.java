@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
     String targetLanguageName(){String code=targetLanguage();for(int i=0;i<translationCodes.length;i++)if(translationCodes[i].equals(code))return translationNames[i];return "English";}
     void chooseTranslationLanguage(){
         int selected=0;for(int i=0;i<translationCodes.length;i++)if(translationCodes[i].equals(targetLanguage()))selected=i;
-        new android.app.AlertDialog.Builder(this).setTitle("Automatic verse translation").setSingleChoiceItems(translationNames,selected,(dialog,which)->{
+        new android.app.AlertDialog.Builder(this).setTitle("Automatic verse translation").setMessage("The first use of a language downloads its model (about 30 MB). After downloading, translation works offline.").setSingleChoiceItems(translationNames,selected,(dialog,which)->{
             getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("target_language",translationCodes[which]).apply();
             dialog.dismiss();show();
         }).setNegativeButton("Cancel",null).show();
@@ -259,7 +259,7 @@ public class MainActivity extends Activity {
                 .addOnSuccessListener(translated->{
                     if(progress.isShowing())progress.dismiss();
                     new android.app.AlertDialog.Builder(MainActivity.this).setTitle(reference+" — "+targetLanguageName())
-                        .setMessage(translated+"\n\nMachine translation for study assistance only. The model is designed for modern-language translation, so its output from ancient Hebrew or Koine Greek may be inaccurate. It is not a manuscript reading, a critical translation, or a substitute for checking the source text.")
+                        .setMessage("SOURCE TEXT\n"+sourceText+"\n\n"+targetLanguageName().toUpperCase()+" TRANSLATION\n"+translated+"\n\nMachine translation for study assistance only. The model is designed for modern-language translation, so its output from ancient Hebrew or Koine Greek may be inaccurate. It is not a manuscript reading, a critical translation, or a substitute for checking the source text.")
                         .setPositiveButton("Close",null).show();translator.close();
                 })
                 .addOnFailureListener(error->{if(progress.isShowing())progress.dismiss();translator.close();new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Translation failed").setMessage("The verse could not be translated. Check your connection and try again.").setPositiveButton("Close",null).show();}))
