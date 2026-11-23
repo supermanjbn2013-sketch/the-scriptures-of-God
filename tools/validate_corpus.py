@@ -149,9 +149,9 @@ def validate_android():
     gradle = Path("app/build.gradle").read_text(encoding="utf-8")
     assert "versionCode 2" in gradle and "versionName '1.1.0'" in gradle, "App update version was not incremented"
 
-    mapping = re.search(r'String\\[\\]\\[\\] pairs=\\{\\{(.*?)\\}\\};', source, re.S)
+    mapping = re.search(r'String\[\]\[\] pairs=\{\{(.*?)\}\};', source, re.S)
     assert mapping, "Reader book-code mapping could not be inspected"
-    book_pairs = re.findall(r'\\{"([^"]+)","([^"]+)"\\}', mapping.group(1))
+    book_pairs = re.findall(r'\{"([^"]+)","([^"]+)"\}', mapping.group(1))
     assert len(book_pairs) >= 60, f"Unexpected reader book mapping count: {len(book_pairs)}"
     for display_name, code in book_pairs:
         matches = [r for r in rows if r.get("book") == display_name or r.get("book_code") == code or r.get("ref", "").startswith(code + ".") or r.get("ref", "").startswith(code + " ") or r.get("ref", "").startswith(display_name + " ") or r.get("ref", "").startswith(display_name + ":")]
