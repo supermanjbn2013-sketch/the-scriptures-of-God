@@ -202,8 +202,7 @@ public class MainActivity extends Activity {
     }
 
     void openBook(String name){
-        android.content.SharedPreferences library=getSharedPreferences("archive_library",MODE_PRIVATE);String history=library.getString("history","");String updated=name.equals(history.split("\n",2)[0])?history:name+(history.isEmpty()?"":"
-"+history);library.edit().putString("last_book",name).putString("history",updated).apply();
+        android.content.SharedPreferences library=getSharedPreferences("archive_library",MODE_PRIVATE);String history=library.getString("history","");String updated=history.isEmpty()?name:(name.equals(history.split("\n",2)[0])?history:name+"\n"+history);library.edit().putString("last_book",name).putString("history",updated).apply();
         final String bookName=name;
         final String code=codeFor(bookName);
         if(code==null){new android.app.AlertDialog.Builder(this).setMessage("No text mapping is registered for "+bookName+".").setPositiveButton("Close",null).show();return;}
@@ -281,11 +280,13 @@ public class MainActivity extends Activity {
                         currentChapter=chapter;
                         list.addView(text("Chapter "+chapter,18,gold,true));
                     }
-                    int readingSize=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",16);\n                    TextView row=text(reference+"\n"+body+"\n\nTap to translate  ·  Long press for passage tools",readingSize,ink,false);
+                    int readingSize=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",16);
+                    TextView row=text(reference+"\n"+body+"\n\nTap to translate  ·  Long press for passage tools",readingSize,ink,false);
                     row.setBackground(shape(panel));
                     LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);
                     p.setMargins(0,4,0,4);list.addView(row,p);
-                    row.setOnClickListener(v->translateVerse(reference,body,language));\n                    row.setOnLongClickListener(v->{showPassageActions(reference,body);return true;});
+                    row.setOnClickListener(v->translateVerse(reference,body,language));
+                    row.setOnLongClickListener(v->{showPassageActions(reference,body);return true;});
                 }
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setFillViewport(true);sv.setPadding(8,8,8,8);sv.addView(list);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — "+count+" verses").setView(sv).setNegativeButton("Back to "+returnSection,(d,w)->{}).setNeutralButton("Home",(d,w)->{section="Home";show();}).setPositiveButton("Close",null).show();
