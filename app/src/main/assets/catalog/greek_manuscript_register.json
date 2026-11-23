@@ -78,7 +78,7 @@
       "language": "Greek",
       "date_estimate": "Generally dated to the 4th century; a published reassessment argues a possible range from early 4th to early 5th century",
       "date_basis": "Palaeographical and codicological assessment",
-      "contents": "Extensive portions of the Hebrew Scriptures in Greek and Apostolic Writings; surviving leaves are distributed among four institutions",
+      "contents": "Extensive portions of Greek Hebrew Scriptures and Apostolic Writings; the project index lists surviving material from 2 Esdras, Esther, Tobit, Judith, 1 Maccabees, 4 Maccabees, Wisdom of Solomon, and Sirach among other books. Individual coverage is incomplete.",
       "condition": "Incomplete and dispersed",
       "holding_institution": "British Library; Leipzig University Library; National Library of Russia; Saint Catherine's Monastery",
       "source_urls": [
@@ -88,7 +88,7 @@
         "https://www.codexsinaiticus.org/en/project/transcription_download.aspx",
         "https://github.com/itsee-birmingham/codex-sinaiticus"
       ],
-      "status": "metadata catalogued; transcription and images not imported",
+      "status": "metadata catalogued; electronic transcription source located; transcription and images not yet imported",
       "caution": "Do not present the middle of the 4th century as an exact date; portions are held by multiple institutions. The project's electronic transcription has a separate CC BY-NC-SA 3.0 licence and is not yet bundled in this archive.",
       "digital_transcription_source": {
         "title": "Codex Sinaiticus Project electronic transcription",
