@@ -112,6 +112,15 @@ def validate_dss():
         for passage in record["passage_coverage"]:
             assert isinstance(passage, dict), f"Passage coverage must be structured in {record['manuscript_id']}"
             assert passage["reference"] and passage["basis"] and passage["coverage_status"]
+    fourq47 = next(r for r in concordance["records"] if r["manuscript_id"] == "4Q47 Josh a")
+    extra_sources = fourq47.get("additional_transcription_sources", [])
+    assert len(extra_sources) >= 1, "4Q47 later-fragment transcription source is missing"
+    twty = next((item for item in extra_sources if "The Way to Yahuweh" in item.get("title", "")), None)
+    assert twty and twty.get("license") == "CC BY-SA 4.0" and twty.get("url")
+    groups = {item["fragment_group"] for item in twty.get("sections", [])}
+    assert {"9 i–12", "9 ii, 13–16", "17–18", "19–22"}.issubset(groups)
+    assert all(item.get("pdf_text_lines") and item.get("passage_refs") for item in twty["sections"])
+    assert "kept separate" in twty.get("caution", "") or "separate" in twty.get("caution", "")
     assert len(dss["archive_browse_index"]["qumran_sites"]) >= 9
     print("Validated DSS metadata and passage concordance:", len(dss["records"]), len(concordance["records"]))
 
@@ -121,7 +130,7 @@ def validate_android():
         "void openDssCatalogEntry(String item)", "void openDssConcordanceEntry(String item)",
         "DSS Passage Concordance", "openDssConcordanceEntry(item)", "openDssCatalogEntry(item)",
         "void searchCorpus(String query)", "void openBook(String name)", "ref.startsWith(bookName+\" \")", "boolean matchesExact(String text, String needle)", "matchesExact(body,needle)", "matchesExact(reference,needle)", "matchesExact(sourceReference,needle)", "passageRefs", "executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR)", "Search complete text corpus",
-        "catalog/dss_passage_concordance.json", "transcription_text",
+        "catalog/dss_passage_concordance.json", "transcription_text", "additional_transcription_sources", "PDF text layer",
         "Apocrypha and Deuterocanonical Writings", "Psalm 151", "Odes",
         "Prayer of Manasseh (Greek)", "2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)",
         "source_reference", "apocrypha_coverage.json", "Source-file coverage audit", "Temple Scroll (11Q19)", "War Scroll (1QM)",
