@@ -203,18 +203,18 @@ public class MainActivity extends Activity {
                         coverageReader.close();
                         org.json.JSONObject coverage=new org.json.JSONObject(coverageRaw.toString()).optJSONObject(bookName);
                         if(coverage!=null){
-                            metadata.append("Source-file coverage audit: ").append(coverage.optInt("record_count")).append(" verse records across ").append(coverage.optInt("chapter_count")).append(" source chapters.\\n");
-                            metadata.append(coverage.optString("scope_note")).append("\\n");
+                            metadata.append("Source-file coverage audit: ").append(coverage.optInt("record_count")).append(" verse records across ").append(coverage.optInt("chapter_count")).append(" source chapters.\n");
+                            metadata.append(coverage.optString("scope_note")).append("\n");
                             org.json.JSONObject chapters=coverage.optJSONObject("chapters");
                             if(chapters!=null){
-                                metadata.append("Chapter coverage:\\n");
+                                metadata.append("Chapter coverage:\n");
                                 java.util.Iterator<String> keys=chapters.keys();
                                 while(keys.hasNext()){
                                     String chapter=keys.next();org.json.JSONObject detail=chapters.optJSONObject(chapter);
-                                    if(detail!=null)metadata.append("Chapter ").append(chapter).append(": ").append(detail.optInt("verse_count")).append(" source verses (").append(detail.optInt("first_source_verse")).append("–").append(detail.optInt("last_source_verse")).append(")\\n");
+                                    if(detail!=null)metadata.append("Chapter ").append(chapter).append(": ").append(detail.optInt("verse_count")).append(" source verses (").append(detail.optInt("first_source_verse")).append("–").append(detail.optInt("last_source_verse")).append(")\n");
                                 }
                             }
-                            metadata.append("\\n");
+                            metadata.append("\n");
                         }
                     }catch(Exception coverageError){}
                     result.put("metadata",metadata.toString());result.put("verses",verses);return result;
