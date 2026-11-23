@@ -279,11 +279,11 @@ public class MainActivity extends Activity {
                         currentChapter=chapter;
                         list.addView(text("Chapter "+chapter,18,gold,true));
                     }
-                    TextView row=text(reference+"\n"+body+"\n\nTap for automatic AI translation",16,ink,false);
+                    int readingSize=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",16);\n                    TextView row=text(reference+"\n"+body+"\n\nTap to translate  ·  Long press for passage tools",readingSize,ink,false);
                     row.setBackground(shape(panel));
                     LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);
                     p.setMargins(0,4,0,4);list.addView(row,p);
-                    row.setOnClickListener(v->translateVerse(reference,body,language));
+                    row.setOnClickListener(v->translateVerse(reference,body,language));\n                    row.setOnLongClickListener(v->{showPassageActions(reference,body);return true;});
                 }
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setFillViewport(true);sv.setPadding(8,8,8,8);sv.addView(list);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — "+count+" verses").setView(sv).setNegativeButton("Back to "+returnSection,(d,w)->{}).setNeutralButton("Home",(d,w)->{section="Home";show();}).setPositiveButton("Close",null).show();
@@ -291,6 +291,8 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    private void appendLibraryEntry(String key,String entry){android.content.SharedPreferences p=getSharedPreferences("archive_library",MODE_PRIVATE);String old=p.getString(key,"");for(String line:old.split("\\n"))if(line.equals(entry))return;p.edit().putString(key,entry+(old.isEmpty()?"":"\\n"+old)).apply();}
+    private void showPassageActions(String reference,String body){String[] actions={"Bookmark passage","Highlight passage","Add or edit personal note","Copy passage","Share passage"};new android.app.AlertDialog.Builder(this).setTitle(reference).setItems(actions,(d,w)->{if(w==0){appendLibraryEntry("bookmarks",reference+"  "+body);showInfo("Bookmark saved",reference+" was saved to your personal library.");}else if(w==1){appendLibraryEntry("highlights",reference+"  "+body);showInfo("Highlight saved",reference+" was added to your highlights.");}else if(w==2){android.content.SharedPreferences p=getSharedPreferences("archive_library",MODE_PRIVATE);EditText note=new EditText(this);note.setMinLines(3);note.setText(p.getString("note:"+reference,""));new android.app.AlertDialog.Builder(this).setTitle("Personal note · "+reference).setView(note).setNegativeButton("Cancel",null).setPositiveButton("Save",(a,b)->p.edit().putString("note:"+reference,note.getText().toString()).apply()).show();}else if(w==3){((android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(android.content.ClipData.newPlainText(reference,reference+" "+body));showInfo("Copied",reference+" copied to clipboard.");}else{android.content.Intent intent=new android.content.Intent(android.content.Intent.ACTION_SEND);intent.setType("text/plain");intent.putExtra(android.content.Intent.EXTRA_TEXT,reference+"\\n"+body);startActivity(android.content.Intent.createChooser(intent,"Share passage"));}}).show();}
     private static final String AI_MODEL="gemini-3.1-flash-lite";
     private static final String[] AI_MODES={"Modern English translation","Older English style (Early Modern)","Literal translation","Word-for-word analysis","Grammar and meaning explanation"};
     private String getAiKey(){
