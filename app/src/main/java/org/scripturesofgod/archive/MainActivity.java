@@ -15,7 +15,7 @@ import com.google.mlkit.nl.translate.TranslateLanguage;
 import com.google.mlkit.nl.translate.Translation;
 import com.google.mlkit.nl.translate.Translator;
 import com.google.mlkit.nl.translate.TranslatorOptions;
-import com.google.mlkit.nl.translate.DownloadConditions;
+import com.google.mlkit.common.model.DownloadConditions;
 
 public class MainActivity extends Activity {
     int bg=Color.rgb(15,19,24), panel=Color.rgb(26,33,41), gold=Color.rgb(205,174,112), ink=Color.rgb(232,228,217), muted=Color.rgb(160,166,170);
@@ -196,6 +196,27 @@ public class MainActivity extends Activity {
                     }
                     reader.close();
                     if(verses.length()==0)return null;
+                    try{
+                        java.io.BufferedReader coverageReader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/apocrypha_coverage.json"),"UTF-8"));
+                        StringBuilder coverageRaw=new StringBuilder();String coverageLine;
+                        while((coverageLine=coverageReader.readLine())!=null)coverageRaw.append(coverageLine);
+                        coverageReader.close();
+                        org.json.JSONObject coverage=new org.json.JSONObject(coverageRaw.toString()).optJSONObject(bookName);
+                        if(coverage!=null){
+                            metadata.append("Source-file coverage audit: ").append(coverage.optInt("record_count")).append(" verse records across ").append(coverage.optInt("chapter_count")).append(" source chapters.\\n");
+                            metadata.append(coverage.optString("scope_note")).append("\\n");
+                            org.json.JSONObject chapters=coverage.optJSONObject("chapters");
+                            if(chapters!=null){
+                                metadata.append("Chapter coverage:\\n");
+                                java.util.Iterator<String> keys=chapters.keys();
+                                while(keys.hasNext()){
+                                    String chapter=keys.next();org.json.JSONObject detail=chapters.optJSONObject(chapter);
+                                    if(detail!=null)metadata.append("Chapter ").append(chapter).append(": ").append(detail.optInt("verse_count")).append(" source verses (").append(detail.optInt("first_source_verse")).append("–").append(detail.optInt("last_source_verse")).append(")\\n");
+                                }
+                            }
+                            metadata.append("\\n");
+                        }
+                    }catch(Exception coverageError){}
                     result.put("metadata",metadata.toString());result.put("verses",verses);return result;
                 }catch(Exception e){return null;}
             }
@@ -227,7 +248,7 @@ public class MainActivity extends Activity {
         else {new android.app.AlertDialog.Builder(this).setTitle("Translation unavailable").setMessage("No supported source-language mapping is registered for this text.").setPositiveButton("Close",null).show();return;}
         String target=targetLanguage();
         if(source.equals(target)){new android.app.AlertDialog.Builder(this).setTitle(reference).setMessage("This verse is already in your selected language.\n\n"+sourceText).setPositiveButton("Close",null).show();return;}
-        TranslatorOptions options=new TranslatorOptions.Builder().setSourceLanguage(source).setTargetLanguage(target).build();
+        String supportedSource=TranslateLanguage.fromLanguageTag(source);\n        String supportedTarget=TranslateLanguage.fromLanguageTag(target);\n        if(supportedSource==null||supportedTarget==null){new android.app.AlertDialog.Builder(this).setTitle("Language unavailable").setMessage("The selected language is not supported by the on-device translation engine.").setPositiveButton("Close",null).show();return;}\n        TranslatorOptions options=new TranslatorOptions.Builder().setSourceLanguage(supportedSource).setTargetLanguage(supportedTarget).build();
         Translator translator=Translation.getClient(options);
         android.app.ProgressDialog progress=new android.app.ProgressDialog(this);progress.setMessage("Preparing "+targetLanguageName()+" translation…");progress.setCancelable(false);progress.show();
         translator.downloadModelIfNeeded(new DownloadConditions.Builder().build())
