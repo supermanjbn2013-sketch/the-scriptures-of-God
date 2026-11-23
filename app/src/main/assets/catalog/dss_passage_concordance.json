@@ -5266,8 +5266,18 @@
       "iaa_identifier": "ISF_TXT_06765",
       "iaa_cross_reference": "C26",
       "passage_coverage": [
-        "Deuteronomy 2:24–36 (group 1, lines 5–17)",
-        "Deuteronomy 3:14–29 and 4:1 (group 2, lines 1–21)"
+        {
+          "reference": "Deuteronomy 2:24–36",
+          "basis": "Qumran-Digital 4Q31 transcription, version 2026-10-06, group 1, displayed lines 5–17; individual line references are retained in transcription_line_map.",
+          "condition": "fragmentary",
+          "coverage_status": "digital transcription lines mapped to passage range; not a claim of continuous scroll coverage"
+        },
+        {
+          "reference": "Deuteronomy 3:14–29 and 4:1",
+          "basis": "Qumran-Digital 4Q31 transcription, version 2026-10-06, group 2, displayed lines 1–21; individual line references are retained in transcription_line_map.",
+          "condition": "fragmentary",
+          "coverage_status": "digital transcription lines mapped to passage range; not a claim of continuous scroll coverage"
+        }
       ],
       "column_line": null,
       "transcription_source": {
@@ -5999,7 +6009,14 @@
           "note": "Hebrew transcription reproduced with editorial brackets and uncertainty marks as displayed by Qumran-Digital; displayed line number is not a manuscript column/line coordinate."
         }
       ],
-      "line_map_policy": "Only the displayed Hebrew transcription and explicit verse annotations on Qumran-Digital are entered. Digital display line numbers are not manuscript line coordinates. Unannotated lines remain unassigned; no gap-filling or witness merging."
+      "line_map_policy": "Only the displayed Hebrew transcription and explicit verse annotations on Qumran-Digital are entered. Digital display line numbers are not manuscript line coordinates. Unannotated lines remain unassigned; no gap-filling or witness merging.",
+      "published_edition": {
+        "editor": "Eugene Ulrich",
+        "reference": "Eugene Ulrich, Qumran Cave 4.IX: Deuteronomy, Joshua, Judges, Kings (DJD XIV, 1995), pp. 143–152, plates XXXII–XXXIV",
+        "bibliography": "E. Ulrich, Qumran Cave 4.IX: Deuteronomy, Joshua, Judges, Kings, Discoveries in the Judaean Desert XIV (Oxford: Clarendon Press, 1995), pp. 143–152.",
+        "study_edition": "Florentino García Martínez and Eibert J. C. Tigchelaar, The Dead Sea Scrolls Study Edition, Joshua passage concordance.",
+        "caution": "Published DJD edition reference is recorded separately from digital Qumran-Digital transcription and inventory associations. Fragment-to-passage assignments must retain their own basis; no unlisted passage or continuous scroll coverage is inferred."
+      }
     },
     {
       "id": "4Q53-Sam-c",
