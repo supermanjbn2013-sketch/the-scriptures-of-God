@@ -153,7 +153,7 @@ public class MainActivity extends Activity {
                     while((line=reader.readLine())!=null){
                         org.json.JSONObject obj=new org.json.JSONObject(line);
                         String ref=obj.optString("ref");
-                        if(bookName.equals(obj.optString("book"))||ref.startsWith(code+".")||ref.startsWith(code+" ")){
+                        if(bookName.equals(obj.optString("book"))||ref.startsWith(bookName+" ")||ref.startsWith(code+".")||ref.startsWith(code+" ")){
                             if(!metadataAdded){
                                 metadata.append("Language: ").append(obj.optString("language")).append("\n");
                                 metadata.append("Source: ").append(obj.optString("source")).append("\n");
@@ -166,7 +166,7 @@ public class MainActivity extends Activity {
                                 metadata.append("Source URL: ").append(obj.optString("source_url")).append("\n\n");
                                 metadataAdded=true;
                             }
-                            String displayRef=bookName.equals(obj.optString("book"))?ref:ref.substring(code.length()).trim();
+                            String displayRef=bookName.equals(obj.optString("book"))?ref:(ref.startsWith(bookName+" ")?ref.substring(bookName.length()).trim():ref.substring(code.length()).trim());
                             if(obj.has("source_reference"))displayRef+=" [source reference: "+obj.optString("source_reference")+"]";
                             body.append(displayRef).append("  ").append(obj.optString("text")).append("\n\n");
                             found++;
