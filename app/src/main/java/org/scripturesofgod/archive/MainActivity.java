@@ -183,76 +183,89 @@ public class MainActivity extends Activity {
     void openBook(String name){
         final String bookName=name;
         final String code=codeFor(bookName);
-        if(code==null)return;
+        if(code==null){new android.app.AlertDialog.Builder(this).setMessage("No text mapping is registered for "+bookName+".").setPositiveButton("Close",null).show();return;}
         new android.os.AsyncTask<Void,Void,org.json.JSONObject>(){
             protected org.json.JSONObject doInBackground(Void... ignored){
+                org.json.JSONObject result=new org.json.JSONObject();
+                org.json.JSONArray verses=new org.json.JSONArray();
+                StringBuilder metadata=new StringBuilder();
+                int scanned=0;
                 try{
-                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/verses.jsonl"),"UTF-8"));
-                    org.json.JSONObject result=new org.json.JSONObject();
-                    org.json.JSONArray verses=new org.json.JSONArray();
-                    StringBuilder metadata=new StringBuilder();String line;boolean metadataAdded=false;
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/verses.jsonl"),"UTF-8"),65536);
+                    String line;
                     while((line=reader.readLine())!=null){
+                        scanned++;
                         org.json.JSONObject obj=new org.json.JSONObject(line);
                         String ref=obj.optString("ref");
-                        if(bookName.equals(obj.optString("book"))||ref.startsWith(bookName+" ")||ref.startsWith(code+".")||ref.startsWith(code+" ")){
-                            if(!metadataAdded){
-                                metadata.append("Source: ").append(obj.optString("source")).append("\n");
-                                metadata.append("Edition: ").append(obj.optString("edition")).append("\n");
-                                metadata.append("Witness basis: ").append(obj.optString("witness_basis")).append("\n");
-                                metadata.append("Text type: ").append(obj.optString("transcription_type")).append("\n");
-                                metadata.append("Licence: ").append(obj.optString("license",obj.optString("text_status"))).append("\n");
-                                metadata.append("Attribution: ").append(obj.optString("attribution")).append("\n");
-                                metadata.append("Source URL: ").append(obj.optString("source_url")).append("\n\n");
-                                metadataAdded=true;
-                            }
-                            String displayRef=bookName.equals(obj.optString("book"))?ref:(ref.startsWith(bookName+" ")?ref.substring(bookName.length()).trim():ref.substring(code.length()).trim());
-                            org.json.JSONObject verse=new org.json.JSONObject();
-                            verse.put("reference",displayRef);verse.put("text",obj.optString("text"));verse.put("language",obj.optString("language"));
-                            verses.put(verse);
+                        String recordBook=obj.optString("book");
+                        String recordCode=obj.optString("book_code");
+                        boolean match=bookName.equals(recordBook)||bookName.equals(recordCode)||
+                            code.equals(recordCode)||ref.startsWith(code+".")||ref.startsWith(code+" ")||
+                            ref.startsWith(bookName+" ")||ref.startsWith(bookName+":");
+                        if(!match)continue;
+                        if(verses.length()==0){
+                            metadata.append("Source: ").append(obj.optString("source")).append("\n");
+                            metadata.append("Edition: ").append(obj.optString("edition")).append("\n");
+                            metadata.append("Witness basis: ").append(obj.optString("witness_basis")).append("\n");
+                            metadata.append("Text type: ").append(obj.optString("transcription_type")).append("\n");
+                            metadata.append("Licence: ").append(obj.optString("license",obj.optString("text_status"))).append("\n");
+                            metadata.append("Attribution: ").append(obj.optString("attribution")).append("\n");
+                            metadata.append("Source URL: ").append(obj.optString("source_url")).append("\n\n");
                         }
+                        String displayRef=ref;
+                        if(ref.startsWith(code+"."))displayRef=ref.substring(code.length()+1).replace('.',':');
+                        else if(ref.startsWith(code+" "))displayRef=ref.substring(code.length()).trim();
+                        else if(ref.startsWith(bookName+" "))displayRef=ref.substring(bookName.length()).trim();
+                        org.json.JSONObject verse=new org.json.JSONObject();
+                        verse.put("reference",displayRef);
+                        verse.put("text",obj.optString("text"));
+                        verse.put("language",obj.optString("language"));
+                        verses.put(verse);
                     }
                     reader.close();
-                    if(verses.length()==0)return null;
-                    try{
-                        java.io.BufferedReader coverageReader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/apocrypha_coverage.json"),"UTF-8"));
-                        StringBuilder coverageRaw=new StringBuilder();String coverageLine;
-                        while((coverageLine=coverageReader.readLine())!=null)coverageRaw.append(coverageLine);
-                        coverageReader.close();
-                        org.json.JSONObject coverage=new org.json.JSONObject(coverageRaw.toString()).optJSONObject(bookName);
-                        if(coverage!=null){
-                            metadata.append("Source-file coverage audit: ").append(coverage.optInt("record_count")).append(" verse records across ").append(coverage.optInt("chapter_count")).append(" source chapters.\n");
-                            metadata.append(coverage.optString("scope_note")).append("\n");
-                            org.json.JSONObject chapters=coverage.optJSONObject("chapters");
-                            if(chapters!=null){
-                                metadata.append("Chapter coverage:\n");
-                                java.util.Iterator<String> keys=chapters.keys();
-                                while(keys.hasNext()){
-                                    String chapter=keys.next();org.json.JSONObject detail=chapters.optJSONObject(chapter);
-                                    if(detail!=null)metadata.append("Chapter ").append(chapter).append(": ").append(detail.optInt("verse_count")).append(" source verses (").append(detail.optInt("first_source_verse")).append("–").append(detail.optInt("last_source_verse")).append(")\n");
-                                }
-                            }
-                            metadata.append("\n");
-                        }
-                    }catch(Exception coverageError){}
-                    result.put("metadata",metadata.toString());result.put("verses",verses);return result;
-                }catch(Exception e){return null;}
+                    result.put("metadata",metadata.toString());
+                    result.put("verses",verses);
+                    result.put("scanned",scanned);
+                    result.put("book",bookName);
+                    return result;
+                }catch(Exception e){
+                    try{result.put("error",e.getClass().getSimpleName()+": "+e.getMessage());result.put("scanned",scanned);result.put("verses",verses);}catch(Exception ignoredError){}
+                    return result;
+                }
             }
             protected void onPostExecute(org.json.JSONObject result){
                 if(result==null){
-                    new android.app.AlertDialog.Builder(MainActivity.this).setMessage("No bundled text record was found for "+bookName+".").setPositiveButton("OK",null).show();return;
+                    new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName).setMessage("The bundled corpus could not be opened.").setPositiveButton("Close",null).show();return;
+                }
+                org.json.JSONArray verses=result.optJSONArray("verses");
+                int count=verses==null?0:verses.length();
+                if(count==0){
+                    String detail=result.optString("error","No matching records. Scanned "+result.optInt("scanned")+" bundled lines. Book code: "+code);
+                    new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — no verses loaded").setMessage(detail).setPositiveButton("Close",null).show();return;
                 }
                 LinearLayout list=new LinearLayout(MainActivity.this);list.setOrientation(1);list.setPadding(12,8,12,8);
-                TextView meta=text(result.optString("metadata"),12,muted,false);meta.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);meta.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());list.addView(meta);
-                org.json.JSONArray verses=result.optJSONArray("verses");
-                if(verses!=null)for(int i=0;i<verses.length();i++){
+                list.addView(text(count+" verses loaded from the offline corpus",13,gold,true));
+                TextView meta=text(result.optString("metadata"),12,muted,false);
+                meta.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);
+                meta.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+                list.addView(meta);
+                String currentChapter="";
+                for(int i=0;i<count;i++){
                     org.json.JSONObject verse=verses.optJSONObject(i);if(verse==null)continue;
                     String reference=verse.optString("reference"),body=verse.optString("text"),language=verse.optString("language");
-                    TextView row=text(reference+"\n"+body+"\n\nTap to translate",15,ink,false);
-                    row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);list.addView(row,p);
+                    String chapter=reference.contains(":")?reference.substring(0,reference.indexOf(':')):"";
+                    if(!chapter.equals(currentChapter)&&chapter.length()>0){
+                        currentChapter=chapter;
+                        list.addView(text("Chapter "+chapter,18,gold,true));
+                    }
+                    TextView row=text(reference+"\n"+body+"\n\nTap to translate",16,ink,false);
+                    row.setBackground(shape(panel));
+                    LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);
+                    p.setMargins(0,4,0,4);list.addView(row,p);
                     row.setOnClickListener(v->translateVerse(reference,body,language));
                 }
-                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(8,8,8,8);sv.addView(list);
-                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — tap any verse to translate").setView(sv).setPositiveButton("Close",null).show();
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setFillViewport(true);sv.setPadding(8,8,8,8);sv.addView(list);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — "+count+" verses").setView(sv).setPositiveButton("Close",null).show();
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
