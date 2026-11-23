@@ -139,7 +139,7 @@ def extract_swete(filename, title, book_code, witness_note):
 def extract_latin_library(filename, title, book_code, textual_form):
     url = LATIN_LIBRARY_BASE + filename
     raw = fetch(url).decode("utf-8-sig")
-    chapters = list(re.finditer(r"(?im)^\\s*CAPUT\\s+(\\d+)\\b", raw))
+    chapters = list(re.finditer(r"(?im)^\s*CAPUT\s+(\d+)\b", raw))
     if not chapters:
         raise RuntimeError(f"No chapter headings found for {title} from {url}")
     out = []
@@ -150,7 +150,7 @@ def extract_latin_library(filename, title, book_code, textual_form):
         start = chapter_match.end()
         end = chapters[index + 1].start() if index + 1 < len(chapters) else len(raw)
         body = raw[start:end]
-        verse_matches = list(re.finditer(r"(?<!\\S)(\\d{1,3})(?=\\s)", body))
+        verse_matches = list(re.finditer(r"(?<!\S)(\d{1,3})(?=\s)", body))
         verse_numbers = [int(m.group(1)) for m in verse_matches]
         if not verse_numbers or verse_numbers != list(range(1, max(verse_numbers) + 1)):
             raise RuntimeError(f"Missing or irregular verse numbering in {title} chapter {chapter}: {verse_numbers[:5]} ... {verse_numbers[-5:]}")
