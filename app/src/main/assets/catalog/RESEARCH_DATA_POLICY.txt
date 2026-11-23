@@ -28,4 +28,4 @@ RESEARCH DATA POLICY
     The archive includes 2 Esdras / 4 Ezra and the Prayer of Manasseh in Latin forms from the Latin Library digital collection, collected by CLTK and identified as public domain by the source.
     The 16-chapter 2 Esdras text is composite: 5 Ezra (chapters 1–2), 4 Ezra proper (chapters 3–14), and 6 Ezra (chapters 15–16). Keep these literary divisions visible in research notes.
     The Latin text is a transmitted version, not the lost Greek original or a direct manuscript transcription. Preserve source wording and numbering, and compare against critical editions and manuscript witnesses before making textual claims.
-    The Prayer of Manasseh is represented as one Latin transmitted form. Do not label it as the original language or conflate it with the Greek Odes collection.
+    The Prayer of Manasseh is represented in both the Greek form separately indexed from Odes 8 and a Latin transmitted form. Keep these as distinct textual forms; do not assume either is the original language or conflate them.
