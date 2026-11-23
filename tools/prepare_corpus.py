@@ -178,6 +178,7 @@ def extract_latin_library(filename, title, book_code, textual_form):
             if not text:
                 raise RuntimeError(f"Empty verse in {title} {chapter}:{verse_numbers[verse_index]}")
             out.append({"ref": f"{book_code} {chapter}:{verse_numbers[verse_index]}",
+                "source_reference": f"{chapter}:{verse_numbers[verse_index]}",
                 "book": title, "book_code": book_code, "language": "la", "text": text,
                 "source": "The Latin Library text collected by the Classical Language Toolkit (CLTK)",
                 "edition": "Latin Library digital text; the source file does not identify a modern critical edition",
