@@ -393,6 +393,18 @@ public class MainActivity extends Activity {
             detail.append("Shelfmark: ").append(match.optString("shelfmark")).append("\n\n");
             detail.append("Status: ").append(match.optString("status")).append("\n\n");
             detail.append("Research caution: ").append(match.optString("caution")).append("\n\n");
+            org.json.JSONObject digital=match.optJSONObject("digital_transcription_source");
+            if(digital!=null){
+                detail.append("Digital transcription source:\n");
+                detail.append(digital.optString("title")).append("\n");
+                detail.append("Version: ").append(digital.optString("version")).append("\n");
+                detail.append("Format: ").append(digital.optString("format")).append("\n");
+                detail.append("Licence: ").append(digital.optString("license")).append("\n");
+                detail.append("Status: ").append(digital.optString("status")).append("\n");
+                detail.append("Caution: ").append(digital.optString("caution")).append("\n");
+                detail.append("Transcription source: ").append(digital.optString("source_url")).append("\n");
+                detail.append("Repository: ").append(digital.optString("repository_url")).append("\n\n");
+            }
             detail.append("Sources:\n");
             org.json.JSONArray urls=match.optJSONArray("source_urls");
             if(urls!=null)for(int i=0;i<urls.length();i++)detail.append(urls.optString(i)).append("\n");
