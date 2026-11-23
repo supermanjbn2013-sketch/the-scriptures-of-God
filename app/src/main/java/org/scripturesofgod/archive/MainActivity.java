@@ -264,7 +264,7 @@ public class MainActivity extends Activity {
         else if("la".equals(sourceLanguage)){new android.app.AlertDialog.Builder(this).setTitle("Translation unavailable").setMessage("The on-device translation model does not support Latin source text yet.").setPositiveButton("Close",null).show();return;}
         else {new android.app.AlertDialog.Builder(this).setTitle("Translation unavailable").setMessage("No supported source-language mapping is registered for this text.").setPositiveButton("Close",null).show();return;}
         String target=targetLanguage();
-        if(source.equals(target)){new android.app.AlertDialog.Builder(this).setTitle(reference).setMessage("This verse is already in your selected language.\\n\\n"+sourceText).setPositiveButton("Close",null).show();return;}
+        if(source.equals(target)){new android.app.AlertDialog.Builder(this).setTitle(reference).setMessage("This verse is already in your selected language.\n\n"+sourceText).setPositiveButton("Close",null).show();return;}
         String supportedSource=TranslateLanguage.fromLanguageTag(source);
         String supportedTarget=TranslateLanguage.fromLanguageTag(target);
         if(supportedSource==null||supportedTarget==null){new android.app.AlertDialog.Builder(this).setTitle("Language unavailable").setMessage("The selected language is not supported by the on-device translation engine.").setPositiveButton("Close",null).show();return;}
@@ -283,7 +283,7 @@ public class MainActivity extends Activity {
             performVerseTranslation(activeTranslator,reference,sourceText,progress);
         }else{
             activeTranslator.downloadModelIfNeeded(new DownloadConditions.Builder().build())
-                .addOnSuccessListener(unused->{translationModelsReady.add(cacheKey);performVerseTranslation(translator,reference,sourceText,progress);})
+                .addOnSuccessListener(unused->{translationModelsReady.add(cacheKey);performVerseTranslation(activeTranslator,reference,sourceText,progress);})
                 .addOnFailureListener(error->{if(progress.isShowing())progress.dismiss();new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Translation model unavailable").setMessage("Connect to the internet once to download the language model, then retry.").setPositiveButton("Close",null).show();});
         }
     }
@@ -293,7 +293,7 @@ public class MainActivity extends Activity {
             .addOnSuccessListener(translated->{
                 if(progress.isShowing())progress.dismiss();
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(reference+" — "+targetLanguageName())
-                    .setMessage("SOURCE TEXT\\n"+sourceText+"\\n\\n"+targetLanguageName().toUpperCase()+" TRANSLATION\\n"+translated+"\\n\\nMachine translation for study assistance only. The model is designed for modern-language translation, so its output from ancient Hebrew or Koine Greek may be inaccurate. It is not a manuscript reading, a critical translation, or a substitute for checking the source text.")
+                    .setMessage("SOURCE TEXT\n"+sourceText+"\n\n"+targetLanguageName().toUpperCase()+" TRANSLATION\n"+translated+"\n\nMachine translation for study assistance only. The model is designed for modern-language translation, so its output from ancient Hebrew or Koine Greek may be inaccurate. It is not a manuscript reading, a critical translation, or a substitute for checking the source text.")
                     .setPositiveButton("Close",null).show();
             })
             .addOnFailureListener(error->{
