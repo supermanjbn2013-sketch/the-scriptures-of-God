@@ -177,7 +177,7 @@ public class MainActivity extends Activity {
                     body.insert(0,metadata.toString());
                     return body.toString();
                 }catch(Exception e){
-                    return "\u0000"+e.getMessage();
+                    return "__CORPUS_ERROR__:"+e.getMessage();
                 }
             }
             protected void onPostExecute(String result){
@@ -185,7 +185,7 @@ public class MainActivity extends Activity {
                     new android.app.AlertDialog.Builder(MainActivity.this).setMessage("No bundled text record was found for "+bookName+".").setPositiveButton("OK",null).show();
                     return;
                 }
-                if(result.startsWith("\u0000")){
+                if(result.startsWith("__CORPUS_ERROR__:")){
                     new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Text data not available").setMessage("The offline corpus could not be read.").setPositiveButton("OK",null).show();
                     return;
                 }
