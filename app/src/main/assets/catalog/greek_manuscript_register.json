@@ -84,10 +84,23 @@
       "source_urls": [
         "https://codexsinaiticus.org/en/codex/date.aspx",
         "https://academic.oup.com/jts/article/73/2/516/6652265",
-        "https://codexsinaiticus.org/en/project/history.aspx"
+        "https://codexsinaiticus.org/en/project/history.aspx",
+        "https://www.codexsinaiticus.org/en/project/transcription_download.aspx",
+        "https://github.com/itsee-birmingham/codex-sinaiticus"
       ],
       "status": "metadata catalogued; transcription and images not imported",
-      "caution": "Do not present the middle of the 4th century as an exact date; portions are held by multiple institutions."
+      "caution": "Do not present the middle of the 4th century as an exact date; portions are held by multiple institutions. The project's electronic transcription has a separate CC BY-NC-SA 3.0 licence and is not yet bundled in this archive.",
+      "digital_transcription_source": {
+        "title": "Codex Sinaiticus Project electronic transcription",
+        "version": "Project website v1.05; repository also provides a later v1.94 XML file",
+        "format": "TEI-based XML with page, column, line, verse, correction and marginal-text markup",
+        "license": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)",
+        "attribution": "The Codex Sinaiticus Project, www.codexsinaiticus.org; XML transcription maintained in the itsee-birmingham/codex-sinaiticus repository",
+        "source_url": "https://www.codexsinaiticus.org/en/project/transcription_download.aspx",
+        "repository_url": "https://github.com/itsee-birmingham/codex-sinaiticus",
+        "status": "source located; text not yet imported into this archive",
+        "caution": "Non-commercial and share-alike terms apply to the transcription. Preserve the manuscript's corrections, page/column/line coordinates and editorial markup when importing. Do not treat the transcription as a modern critical edition."
+      }
     },
     {
       "id": "Vaticanus",
