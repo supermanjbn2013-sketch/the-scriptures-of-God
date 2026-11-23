@@ -34,7 +34,7 @@ The Way to Yahuweh downloads are evaluated file by file. Each transcription must
 
 ## Search and reader
 
-- Exact word and exact phrase search across the imported verse text, book names, references, original source coordinates, and indexed DSS transcription lines.
+- Exact word and exact phrase search across imported verse text, book names, references, original source coordinates, Qumran-Digital DSS transcription lines, and separately attributed additional DSS transcription blocks.
 - Search results are capped at 100 per query.
 - Book readers load text in a background task and show source, edition, witness basis, textual form, transcription type, licence, attribution, and source links.
 - Apocrypha readers display the source-file chapter coverage audit.
