@@ -94,7 +94,8 @@ def extract_greek(book):
         if current_ref and parts:
             verse_text = clean(parts)
             if verse_text:
-                out.append({"ref": current_ref, "language": "grc", "text": verse_text,
+                out.append({"ref": current_ref, "book": current_ref.rsplit(" ", 1)[0] if " " in current_ref else book,
+                    "book_code": book, "language": "grc", "text": verse_text,
                     "source": "SBL Greek New Testament v1.2", "edition": "SBLGNT v1.2",
                     "witness_basis": "Critically edited Greek text; not a single manuscript transcription",
                     "transcription_type": "edited Greek text", "source_url": url, "license": "CC BY 4.0",
