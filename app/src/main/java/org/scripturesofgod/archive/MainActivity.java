@@ -296,18 +296,7 @@ public class MainActivity extends Activity {
             detail.append("Image access: ").append(match.optString("image_access")).append("\n\n");
             detail.append("Sources:\n");org.json.JSONArray urls=match.optJSONArray("source_urls");
             if(urls!=null)for(int i=0;i<urls.length();i++)detail.append(urls.optString(i)).append("\n");
-            TextView view=text(detail.toString(),14,ink,false);
-            android.text.SpannableString clickableText=new android.text.SpannableString(detail.toString());
-            for(int spanIndex=0;spanIndex<translationRanges.size();spanIndex++){
-                final String selectedText=translationTexts.get(spanIndex);
-                final String selectedReference=translationRefs.get(spanIndex);
-                int[] range=translationRanges.get(spanIndex);
-                clickableText.setSpan(new android.text.style.ClickableSpan(){
-                    @Override public void onClick(View widget){translateVerse(selectedReference,selectedText,"he");}
-                    @Override public void updateDrawState(android.text.TextPaint paint){paint.setColor(gold);paint.setUnderlineText(true);}
-                },range[0],range[1],android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-            }
-            view.setText(clickableText);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+            TextView view=text(detail.toString(),14,ink,false);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
             ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
             new android.app.AlertDialog.Builder(this).setTitle(match.optString("name")).setView(sv).setPositiveButton("Close",null).show();
         }catch(Exception e){new android.app.AlertDialog.Builder(this).setTitle("DSS catalogue unavailable").setMessage("The Dead Sea Scrolls metadata register is not present in this build.").setPositiveButton("Close",null).show();}
@@ -448,7 +437,18 @@ public class MainActivity extends Activity {
                 detail.append("Transcription caution: ").append(transcription.optString("caution")).append("\n");
             }
             detail.append("Caution: ").append(match.optString("caution")).append("\n");
-            TextView view=text(detail.toString(),14,ink,false);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+            TextView view=text(detail.toString(),14,ink,false);
+            android.text.SpannableString clickableText=new android.text.SpannableString(detail.toString());
+            for(int spanIndex=0;spanIndex<translationRanges.size();spanIndex++){
+                final String selectedText=translationTexts.get(spanIndex);
+                final String selectedReference=translationRefs.get(spanIndex);
+                int[] range=translationRanges.get(spanIndex);
+                clickableText.setSpan(new android.text.style.ClickableSpan(){
+                    @Override public void onClick(View widget){translateVerse(selectedReference,selectedText,"he");}
+                    @Override public void updateDrawState(android.text.TextPaint paint){paint.setColor(gold);paint.setUnderlineText(true);}
+                },range[0],range[1],android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            }
+            view.setText(clickableText);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
             ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
             new android.app.AlertDialog.Builder(this).setTitle(match.optString("manuscript_id")).setView(sv).setPositiveButton("Close",null).show();
         }catch(Exception e){new android.app.AlertDialog.Builder(this).setTitle("Concordance unavailable").setMessage("The DSS passage concordance is not present in this build.").setPositiveButton("Close",null).show();}
