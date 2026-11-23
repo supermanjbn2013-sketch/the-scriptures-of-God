@@ -32,6 +32,27 @@ jobs:
           print("Hebrew records:", sum(r["language"] == "he" for r in rows))
           print("Greek records:", sum(r["language"] == "grc" for r in rows))
 
+          apocrypha = [r for r in rows if r.get("book")]
+          apocrypha_books = {r["book"] for r in apocrypha}
+          required_books = {
+              "1 Esdras", "Tobit", "Judith", "Esther (Greek)", "Wisdom of Solomon",
+              "Sirach", "Baruch", "Letter of Jeremiah", "1 Maccabees", "2 Maccabees",
+              "3 Maccabees", "4 Maccabees", "Susanna (Old Greek)", "Susanna (Theodotion)",
+              "Daniel (Old Greek)", "Daniel (Theodotion)",
+              "Bel and the Dragon (Old Greek)", "Bel and the Dragon (Theodotion)",
+              "Odes", "Psalm 151"
+          }
+          assert required_books.issubset(apocrypha_books), f"Missing Apocrypha books: {required_books - apocrypha_books}"
+          assert all(r["language"] == "grc" and r.get("license") == "CC BY-SA 4.0" for r in apocrypha)
+          assert all(r.get("source_url") and r.get("attribution") and r.get("textual_form") for r in apocrypha)
+          for book in required_books:
+              assert any(r["book"] == book and r["text"].strip() for r in apocrypha), f"Empty Apocrypha book: {book}"
+          report_path = Path("app/src/main/assets/corpus/apocrypha_import_report.json")
+          report = json.loads(report_path.read_text(encoding="utf-8"))
+          assert required_books.issubset(set(report)), "Apocrypha import report is incomplete"
+          assert len(apocrypha) >= 1000, f"Apocrypha text corpus unexpectedly small: {len(apocrypha)}"
+          print("Validated complete Greek-edition Apocrypha texts:", len(required_books), "books/forms;", len(apocrypha), "verse records")
+
           dss_path = Path("app/src/main/assets/catalog/dead_sea_scrolls_register.json")
           dss = json.loads(dss_path.read_text(encoding="utf-8"))
           assert dss["record_type"] == "dead_sea_scrolls_manuscript_metadata_catalog"
@@ -69,7 +90,7 @@ jobs:
           source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
           assert "void openDssCatalogEntry(String item)" in source
           assert "void openDssConcordanceEntry(String item)" in source
-          assert "DSS Passage Concordance" in source
+          assert "Apocrypha and Deuterocanonical Writings" in source\n          assert "Psalm 151 (Greek)" in source\n          assert "Apocrypha and Deuterocanonical Writings" in source
           assert "openDssConcordanceEntry(item)" in source
           assert "openDssCatalogEntry(item)" in source
           assert "void searchCorpus(String query)" in source
