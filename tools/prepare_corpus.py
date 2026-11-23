@@ -128,7 +128,17 @@ def extract_swete(filename, title, book_code, witness_note):
     for ref, tokens in grouped.items():
         text = clean(tokens)
         if text:
-            out.append({"ref": ref, "book": title, "book_code": book_code,
+            parts = ref.split(".")
+        display_ref = ref
+        if len(parts) == 3:
+            chapter, verse = parts[1], parts[2]
+            if title == "Psalm 151":
+                display_ref = f"{title}:{verse}"
+            else:
+                if title == "Letter of Jeremiah" and chapter == "0":
+                    chapter = "1"
+                display_ref = f"{title} {chapter}:{verse}"
+        out.append({"ref": display_ref, "source_reference": ref, "book": title, "book_code": book_code,
                 "language": "grc", "text": text, "source": "Swete Septuagint (First1KGreek digital transcription)",
                 "edition": "Henry Barclay Swete, The Old Testament in Greek according to the Septuagint",
                 "witness_basis": "Edited Septuagint text; not a diplomatic transcription of one manuscript",
@@ -190,7 +200,7 @@ for filename, title, code, note in APOCRYPHA:
     rows = extract_swete(filename, title, code, note)
     # Psalm 151 is a single extra psalm; reject the file if its chapter is not represented.
     if code == "Psalm 151 (Greek)":
-        rows = [r for r in rows if r["ref"].split(".")[-2] == "151"]
+        rows = [r for r in rows if r.get("source_reference", "").split(".")[-2:-1] == ["151"]]
         if not rows:
             raise RuntimeError("Psalm 151 was not found in the Swete Psalms source; do not add a placeholder as text.")
     records.extend(rows)
@@ -203,9 +213,8 @@ for source_chapter, first_verse, last_verse, title, code, note in APOCRYPHA_EXTR
     source_rows = extract_swete("28.Odae.txt", title, code, note)
     rows = []
     for row in source_rows:
-        parts = row["ref"].split(".")
+        parts = row["source_reference"].split(".")
         if len(parts) == 3 and parts[1] == str(source_chapter) and first_verse <= int(parts[2]) <= last_verse:
-            row["source_reference"] = row["ref"]
             row["ref"] = f"{code} 1:{int(parts[2]) - first_verse + 1}"
             rows.append(row)
     if not rows:
