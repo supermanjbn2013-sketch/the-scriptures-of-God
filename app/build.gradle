@@ -1,5 +1,9 @@
 plugins { id 'com.android.application' }
 
+dependencies {
+    implementation 'com.google.mlkit:translate:17.0.3'
+}
+
 android {
     namespace 'org.scripturesofgod.archive'
     compileSdk 35
