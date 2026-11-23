@@ -141,7 +141,7 @@ def validate_android():
         assert f'"{book}"' in source, f"An imported Apocrypha book is missing from Android navigation: {book}"
 
     ai_source = Path("app/src/main/java/org/scripturesofgod/archive/AiTranslatorActivity.java").read_text(encoding="utf-8")
-    for required in ("Modern English translation", "Older English style (Early Modern)", "Literal translation", "Word-for-word analysis", "Grammar and meaning explanation", "gemini-3.1-flash-lite", "x-goog-api-key", "AndroidKeyStore", "AES/GCM/NoPadding", "aistudio.google.com/app/apikey", "Do not invent words"):
+    for required in ("Modern English translation", "Older English style (Early Modern)", "Literal translation", "Word-for-word analysis", "Grammar and meaning explanation", "gemini-3.1-flash-lite", "x-goog-api-key", "AndroidKeyStore", "AES/GCM/NoPadding", "aistudio.google.com/app/apikey", "do not invent words"):
         assert required in ai_source, f"AI translator is missing: {required}"
     assert "com.google.mlkit" not in source, "Obsolete ML Kit translation must not be used for ancient-language translation"
     manifest = Path("app/src/main/AndroidManifest.xml").read_text(encoding="utf-8")
