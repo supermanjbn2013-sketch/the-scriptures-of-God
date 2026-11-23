@@ -101,7 +101,11 @@ public class MainActivity extends Activity {
                     while((line=reader.readLine())!=null && hits.size()<100){
                         org.json.JSONObject obj=new org.json.JSONObject(line);
                         String body=obj.optString("text");
-                        if(matchesExact(body,needle))hits.add("[Verse corpus] "+(obj.optString("book").length()>0?obj.optString("book")+" — ":"")+obj.optString("ref")+"  "+body);
+                        String reference=obj.optString("ref");
+                        String book=obj.optString("book");
+                        String sourceReference=obj.optString("source_reference");
+                        if(matchesExact(body,needle)||matchesExact(reference,needle)||matchesExact(book,needle)||matchesExact(sourceReference,needle))
+                            hits.add("[Verse corpus] "+(book.length()>0?book+" — ":"")+reference+"  "+body);
                     }
                     reader.close();
                     if(hits.size()<100){
@@ -115,8 +119,11 @@ public class MainActivity extends Activity {
                             for(int k=0;k<lines.length()&&hits.size()<100;k++){
                                 org.json.JSONObject entry=lines.getJSONObject(k);
                                 String body=entry.optString("transcription_text");
-                                if(body.length()>0&&matchesExact(body,needle)){
-                                    hits.add("[DSS "+record.optString("manuscript_id")+"] "+entry.optString("group")+" line "+entry.optInt("digital_line")+"  "+body);
+                                String group=entry.optString("group");
+                                String sourceReference=entry.optString("source_reference");
+                                String passageRefs=entry.optJSONArray("passages")==null?"":entry.optJSONArray("passages").toString();
+                                if(matchesExact(body,needle)||matchesExact(group,needle)||matchesExact(sourceReference,needle)||matchesExact(passageRefs,needle)){
+                                    hits.add("[DSS "+record.optString("manuscript_id")+"] "+group+" line "+entry.optInt("digital_line")+"  "+body);
                                 }
                             }
                         }
