@@ -278,13 +278,13 @@ public class MainActivity extends Activity {
             if(lineMap!=null&&lineMap.length()>0){
                 detail.append("\nDigital transcription line-by-line passage map:\n");
                 for(int i=0;i<lineMap.length();i++){
-                    org.json.JSONObject line=lineMap.getJSONObject(i);
-                    detail.append("• ").append(line.optString("group")).append(", digital line ").append(line.optInt("digital_line")).append(": ");
-                    org.json.JSONArray refs=line.optJSONArray("passages");
+                    org.json.JSONObject lineEntry=lineMap.getJSONObject(i);
+                    detail.append("• ").append(lineEntry.optString("group")).append(", digital line ").append(lineEntry.optInt("digital_line")).append(": ");
+                    org.json.JSONArray refs=lineEntry.optJSONArray("passages");
                     if(refs!=null)for(int j=0;j<refs.length();j++){if(j>0)detail.append("; ");detail.append(refs.optString(j));}
-                    detail.append("\n  Hebrew transcription: ").append(line.optString("transcription_text", "not imported"));
-                    detail.append("\n  Source: ").append(line.optString("source_reference", "not recorded"));
-                    if(line.has("note"))detail.append("\n  Note: ").append(line.optString("note"));
+                    detail.append("\n  Hebrew transcription: ").append(lineEntry.optString("transcription_text", "not imported"));
+                    detail.append("\n  Source: ").append(lineEntry.optString("source_reference", "not recorded"));
+                    if(lineEntry.has("note"))detail.append("\n  Note: ").append(lineEntry.optString("note"));
                     detail.append("\n");
                 }
                 detail.append("Mapping policy: ").append(match.optString("line_map_policy")).append("\n");
