@@ -97,7 +97,7 @@ jobs:
           source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
           assert "void openDssCatalogEntry(String item)" in source
           assert "void openDssConcordanceEntry(String item)" in source
-          assert "Apocrypha and Deuterocanonical Writings" in source\n          assert "Psalm 151 (Greek)" in source\n          assert "2 Esdras / 4 Ezra (Latin)" in source\n          assert "Prayer of Manasseh (Latin)" in source
+          assert "Apocrypha and Deuterocanonical Writings" in source\n          assert "Psalm 151" in source\n          assert "Odes" in source\n          assert "2 Esdras / 4 Ezra (Latin)" in source\n          assert "Prayer of Manasseh (Latin)" in source
           assert "openDssConcordanceEntry(item)" in source
           assert "openDssCatalogEntry(item)" in source
           assert "void searchCorpus(String query)" in source
