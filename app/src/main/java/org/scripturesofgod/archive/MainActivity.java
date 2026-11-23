@@ -121,14 +121,27 @@ public class MainActivity extends Activity {
         String code=codeFor(name); if(code==null)return;
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/verses.jsonl"),"UTF-8"));
-            StringBuilder body=new StringBuilder(); String line; int found=0;
+            StringBuilder body=new StringBuilder(); StringBuilder metadata=new StringBuilder(); String line; int found=0; boolean metadataAdded=false;
             while((line=reader.readLine())!=null){
                 org.json.JSONObject obj=new org.json.JSONObject(line); String ref=obj.optString("ref");
                 if(name.equals(obj.optString("book")) || ref.startsWith(code+"." ) || ref.startsWith(code+" ")){
+                    if(!metadataAdded){
+                        metadata.append("Language: ").append(obj.optString("language")).append("\n");
+                        metadata.append("Source: ").append(obj.optString("source")).append("\n");
+                        metadata.append("Edition: ").append(obj.optString("edition")).append("\n");
+                        metadata.append("Witness basis: ").append(obj.optString("witness_basis")).append("\n");
+                        if(obj.has("textual_form"))metadata.append("Textual form: ").append(obj.optString("textual_form")).append("\n");
+                        metadata.append("Text type: ").append(obj.optString("transcription_type")).append("\n");
+                        metadata.append("License: ").append(obj.optString("license", obj.optString("text_status"))).append("\n");
+                        metadata.append("Attribution: ").append(obj.optString("attribution")).append("\n");
+                        metadata.append("Source URL: ").append(obj.optString("source_url")).append("\n\n");
+                        metadataAdded=true;
+                    }
                     String displayRef=name.equals(obj.optString("book"))?ref:ref.substring(code.length()).trim(); body.append(displayRef).append("  ").append(obj.optString("text")).append("\n\n"); found++;
                 }
             } reader.close();
             if(found==0){new android.app.AlertDialog.Builder(this).setMessage("No bundled text record was found for "+name+".").setPositiveButton("OK",null).show();return;}
+            body.insert(0,metadata.toString());
             TextView view=text(body.toString(),16,ink,false); view.setTextIsSelectable(true);
             ScrollView sv=new ScrollView(this);sv.setPadding(16,12,16,12);sv.addView(view);
             new android.app.AlertDialog.Builder(this).setTitle(name+" — source text").setView(sv).setPositiveButton("Close",null).show();
