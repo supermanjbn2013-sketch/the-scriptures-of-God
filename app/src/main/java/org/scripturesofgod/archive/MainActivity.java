@@ -132,8 +132,7 @@ public class MainActivity extends Activity {
                         if(records!=null)for(int i=0;i<records.length()&&hits.size()<100;i++){
                             org.json.JSONObject record=records.getJSONObject(i);
                             org.json.JSONArray lines=record.optJSONArray("transcription_line_map");
-                            if(lines==null)continue;
-                            for(int k=0;k<lines.length()&&hits.size()<100;k++){
+                            if(lines!=null)for(int k=0;k<lines.length()&&hits.size()<100;k++){
                                 org.json.JSONObject entry=lines.getJSONObject(k);
                                 String body=entry.optString("transcription_text");
                                 String group=entry.optString("group");
@@ -141,6 +140,22 @@ public class MainActivity extends Activity {
                                 String passageRefs=entry.optJSONArray("passages")==null?"":entry.optJSONArray("passages").toString();
                                 if(matchesExact(body,needle)||matchesExact(group,needle)||matchesExact(sourceReference,needle)||matchesExact(passageRefs,needle)){
                                     hits.add("[DSS "+record.optString("manuscript_id")+"] "+group+" line "+entry.optInt("digital_line")+"  "+body);
+                                }
+                            }
+                            org.json.JSONArray additionalSources=record.optJSONArray("additional_transcription_sources");
+                            if(additionalSources!=null)for(int sourceIndex=0;sourceIndex<additionalSources.length()&&hits.size()<100;sourceIndex++){
+                                org.json.JSONObject source=additionalSources.getJSONObject(sourceIndex);
+                                org.json.JSONArray sourceSections=source.optJSONArray("sections");
+                                if(sourceSections==null)continue;
+                                for(int sectionIndex=0;sectionIndex<sourceSections.length()&&hits.size()<100;sectionIndex++){
+                                    org.json.JSONObject section=sourceSections.getJSONObject(sectionIndex);
+                                    String body=section.optString("pdf_text_lines");
+                                    String group=section.optString("fragment_group");
+                                    String sourceTitle=source.optString("title");
+                                    String passageRefs=section.optJSONArray("passage_refs")==null?"":section.optJSONArray("passage_refs").toString();
+                                    if(matchesExact(body,needle)||matchesExact(group,needle)||matchesExact(sourceTitle,needle)||matchesExact(passageRefs,needle)){
+                                        hits.add("[DSS "+record.optString("manuscript_id")+" — "+sourceTitle+"] "+group+"  "+body);
+                                    }
                                 }
                             }
                         }
