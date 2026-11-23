@@ -296,7 +296,18 @@ public class MainActivity extends Activity {
             detail.append("Image access: ").append(match.optString("image_access")).append("\n\n");
             detail.append("Sources:\n");org.json.JSONArray urls=match.optJSONArray("source_urls");
             if(urls!=null)for(int i=0;i<urls.length();i++)detail.append(urls.optString(i)).append("\n");
-            TextView view=text(detail.toString(),14,ink,false);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+            TextView view=text(detail.toString(),14,ink,false);
+            android.text.SpannableString clickableText=new android.text.SpannableString(detail.toString());
+            for(int spanIndex=0;spanIndex<translationRanges.size();spanIndex++){
+                final String selectedText=translationTexts.get(spanIndex);
+                final String selectedReference=translationRefs.get(spanIndex);
+                int[] range=translationRanges.get(spanIndex);
+                clickableText.setSpan(new android.text.style.ClickableSpan(){
+                    @Override public void onClick(View widget){translateVerse(selectedReference,selectedText,"he");}
+                    @Override public void updateDrawState(android.text.TextPaint paint){paint.setColor(gold);paint.setUnderlineText(true);}
+                },range[0],range[1],android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+            }
+            view.setText(clickableText);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
             ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
             new android.app.AlertDialog.Builder(this).setTitle(match.optString("name")).setView(sv).setPositiveButton("Close",null).show();
         }catch(Exception e){new android.app.AlertDialog.Builder(this).setTitle("DSS catalogue unavailable").setMessage("The Dead Sea Scrolls metadata register is not present in this build.").setPositiveButton("Close",null).show();}
@@ -313,6 +324,9 @@ public class MainActivity extends Activity {
             for(int i=0;i<records.length();i++){org.json.JSONObject r=records.getJSONObject(i);if(r.optString("manuscript_id").equals(key)){match=r;break;}}
             if(match==null){new android.app.AlertDialog.Builder(this).setTitle(item).setMessage("No concordance record is available.").setPositiveButton("Close",null).show();return;}
             StringBuilder detail=new StringBuilder();
+            ArrayList<int[]> translationRanges=new ArrayList<>();
+            ArrayList<String> translationTexts=new ArrayList<>();
+            ArrayList<String> translationRefs=new ArrayList<>();
             detail.append("Manuscript: ").append(match.optString("manuscript_id")).append("\n");
             detail.append("Work: ").append(match.optString("work")).append("\n");
             detail.append("Cave: ").append(match.optString("cave")).append("\n");
@@ -346,7 +360,15 @@ public class MainActivity extends Activity {
                     detail.append("• ").append(lineEntry.optString("group")).append(", digital line ").append(lineEntry.optInt("digital_line")).append(": ");
                     org.json.JSONArray refs=lineEntry.optJSONArray("passages");
                     if(refs!=null)for(int j=0;j<refs.length();j++){if(j>0)detail.append("; ");detail.append(refs.optString(j));}
-                    detail.append("\n  Hebrew transcription: ").append(lineEntry.optString("transcription_text", "not imported"));
+                    detail.append("\n  Hebrew transcription: ");
+                    String lineText=lineEntry.optString("transcription_text", "");
+                    int lineStart=detail.length();detail.append(lineText);int lineEnd=detail.length();
+                    if(!lineText.isEmpty()){
+                        translationRanges.add(new int[]{lineStart,lineEnd});translationTexts.add(lineText);
+                        StringBuilder passageLabel=new StringBuilder();
+                        if(refs!=null)for(int j=0;j<refs.length();j++){if(j>0)passageLabel.append("; ");passageLabel.append(refs.optString(j));}
+                        translationRefs.add(passageLabel.length()>0?passageLabel.toString():lineEntry.optString("group")+" line "+lineEntry.optInt("digital_line"));
+                    }
                     detail.append("\n  Source: ").append(lineEntry.optString("source_reference", "not recorded"));
                     if(lineEntry.has("note"))detail.append("\n  Note: ").append(lineEntry.optString("note"));
                     detail.append("\n");
@@ -374,7 +396,16 @@ public class MainActivity extends Activity {
                     detail.append("Passage references: ");
                     org.json.JSONArray refs=section.optJSONArray("passage_refs");
                     if(refs!=null)for(int refIndex=0;refIndex<refs.length();refIndex++){if(refIndex>0)detail.append("; ");detail.append(refs.optString(refIndex));}
-                    detail.append("\nTranscription text (PDF text layer):\n").append(section.optString("pdf_text_lines")).append("\n");
+                    detail.append("\nTranscription text (PDF text layer):\n");
+                    String sectionText=section.optString("pdf_text_lines", "");
+                    int sectionStart=detail.length();detail.append(sectionText);int sectionEnd=detail.length();
+                    if(!sectionText.isEmpty()){
+                        translationRanges.add(new int[]{sectionStart,sectionEnd});translationTexts.add(sectionText);
+                        StringBuilder passageLabel=new StringBuilder();
+                        if(refs!=null)for(int j=0;j<refs.length();j++){if(j>0)passageLabel.append("; ");passageLabel.append(refs.optString(j));}
+                        translationRefs.add(passageLabel.length()>0?passageLabel.toString():section.optString("fragment_group"));
+                    }
+                    detail.append("\n");
                     detail.append("Section caution: ").append(section.optString("caution")).append("\n");
                 }
             }
