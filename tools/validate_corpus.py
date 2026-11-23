@@ -86,7 +86,7 @@ def validate_android():
     for required in (
         "void openDssCatalogEntry(String item)", "void openDssConcordanceEntry(String item)",
         "DSS Passage Concordance", "openDssConcordanceEntry(item)", "openDssCatalogEntry(item)",
-        "void searchCorpus(String query)", "Search complete text corpus",
+        "void searchCorpus(String query)", "boolean matchesExact(String text, String needle)", "matchesExact(body,needle)", "Search complete text corpus",
         "catalog/dss_passage_concordance.json", "transcription_text",
         "Apocrypha and Deuterocanonical Writings", "Psalm 151", "Odes",
         "Prayer of Manasseh (Greek)", "2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)",
