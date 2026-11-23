@@ -43,15 +43,22 @@ jobs:
               "Odes", "Psalm 151"
           }
           assert required_books.issubset(apocrypha_books), f"Missing Apocrypha books: {required_books - apocrypha_books}"
-          assert all(r["language"] == "grc" and r.get("license") == "CC BY-SA 4.0" for r in apocrypha)
-          assert all(r.get("source_url") and r.get("attribution") and r.get("textual_form") for r in apocrypha)
-          for book in required_books:
+          greek_apocrypha = [r for r in apocrypha if r["language"] == "grc"]
+          latin_apocrypha = [r for r in apocrypha if r["language"] == "la"]
+          latin_books = {"2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)"}
+          assert latin_books.issubset(apocrypha_books), f"Missing Latin Apocrypha texts: {latin_books - apocrypha_books}"
+          assert all(r.get("license") == "CC BY-SA 4.0" and r.get("textual_form") for r in greek_apocrypha)
+          assert all(r.get("license", "").startswith("Public Domain") and r.get("textual_form") for r in latin_apocrypha)
+          assert all(r.get("source_url") and r.get("attribution") for r in apocrypha)
+          for book in required_books | latin_books:
               assert any(r["book"] == book and r["text"].strip() for r in apocrypha), f"Empty Apocrypha book: {book}"
           report_path = Path("app/src/main/assets/corpus/apocrypha_import_report.json")
           report = json.loads(report_path.read_text(encoding="utf-8"))
-          assert required_books.issubset(set(report)), "Apocrypha import report is incomplete"
-          assert len(apocrypha) >= 1000, f"Apocrypha text corpus unexpectedly small: {len(apocrypha)}"
-          print("Validated complete Greek-edition Apocrypha texts:", len(required_books), "books/forms;", len(apocrypha), "verse records")
+          assert (required_books | latin_books).issubset(set(report)), "Apocrypha import report is incomplete"
+          assert len(greek_apocrypha) >= 1000, f"Greek Apocrypha text corpus unexpectedly small: {len(greek_apocrypha)}"
+          assert len(latin_apocrypha) >= 150, f"Latin Apocrypha text corpus unexpectedly small: {len(latin_apocrypha)}"
+          assert any(r["ref"] == "2 Esdras / 4 Ezra (Latin) 7:139" for r in latin_apocrypha), "2 Esdras chapter 7 is incomplete"
+          print("Validated complete Greek and Latin Apocrypha texts:", len(required_books | latin_books), "books/forms;", len(apocrypha), "verse records")
 
           dss_path = Path("app/src/main/assets/catalog/dead_sea_scrolls_register.json")
           dss = json.loads(dss_path.read_text(encoding="utf-8"))
@@ -90,7 +97,7 @@ jobs:
           source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
           assert "void openDssCatalogEntry(String item)" in source
           assert "void openDssConcordanceEntry(String item)" in source
-          assert "Apocrypha and Deuterocanonical Writings" in source\n          assert "Psalm 151 (Greek)" in source\n          assert "Apocrypha and Deuterocanonical Writings" in source
+          assert "Apocrypha and Deuterocanonical Writings" in source\n          assert "Psalm 151 (Greek)" in source\n          assert "2 Esdras / 4 Ezra (Latin)" in source\n          assert "Prayer of Manasseh (Latin)" in source
           assert "openDssConcordanceEntry(item)" in source
           assert "openDssCatalogEntry(item)" in source
           assert "void searchCorpus(String query)" in source
