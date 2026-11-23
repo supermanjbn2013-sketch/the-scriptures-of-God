@@ -275,13 +275,14 @@ public class MainActivity extends Activity {
             translator=Translation.getClient(options);
             translatorCache.put(cacheKey,translator);
         }
+        final Translator activeTranslator=translator;
         android.app.ProgressDialog progress=new android.app.ProgressDialog(this);
         progress.setMessage(translationModelsReady.contains(cacheKey)?"Translating into "+targetLanguageName()+"…":"Preparing "+targetLanguageName()+" translation…");
         progress.setCancelable(false);progress.show();
         if(translationModelsReady.contains(cacheKey)){
-            performVerseTranslation(translator,reference,sourceText,progress);
+            performVerseTranslation(activeTranslator,reference,sourceText,progress);
         }else{
-            translator.downloadModelIfNeeded(new DownloadConditions.Builder().build())
+            activeTranslator.downloadModelIfNeeded(new DownloadConditions.Builder().build())
                 .addOnSuccessListener(unused->{translationModelsReady.add(cacheKey);performVerseTranslation(translator,reference,sourceText,progress);})
                 .addOnFailureListener(error->{if(progress.isShowing())progress.dismiss();new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Translation model unavailable").setMessage("Connect to the internet once to download the language model, then retry.").setPositiveButton("Close",null).show();});
         }
