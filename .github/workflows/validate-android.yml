@@ -1,0 +1,41 @@
+name: Validate Android Source Without Building APK
+on:
+  push:
+    paths:
+      - "app/src/main/java/**"
+      - "app/src/main/res/**"
+      - "app/src/main/AndroidManifest.xml"
+      - "app/build.gradle"
+      - "build.gradle"
+      - "settings.gradle"
+      - "gradle.properties"
+      - ".github/workflows/validate-android.yml"
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  compile:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: 'platform-tools'
+      - name: Install Android SDK
+        run: sdkmanager "platforms;android-35" "build-tools;35.0.0"
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+      - name: Compile Android application source only
+        run: gradle --no-daemon compileDebugJavaWithJavac
+      - name: Confirm no APK was built
+        run: |
+          if [ -f app/build/outputs/apk/debug/app-debug.apk ]; then
+            echo "Unexpected APK output."
+            exit 1
+          fi
+          echo "Android source compiled; no APK was built."
