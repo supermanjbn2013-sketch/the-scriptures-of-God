@@ -112,7 +112,7 @@
         "Swete is an edited Septuagint text and must not be described as the unmediated reading of one ancient codex.",
         "Old Greek and Theodotionic forms of Daniel, Susanna, and Bel and the Dragon are stored separately.",
         "The Greek text does not replace Hebrew or Aramaic witnesses, including Dead Sea Scroll fragments.",
-        "The source collection does not contain 2 Esdras / 4 Ezra; that work remains explicitly unintegrated until a compatible complete source is verified.",
+        "The Greek Swete source does not contain 2 Esdras / 4 Ezra; the current complete 16-chapter import is a Latin transmission text, not a Greek manuscript witness.",
         "Odes is a collection of scriptural canticles; its internal numbering is retained and individual compositions must not be silently treated as separate books.",
         "Psalm 151 is separately indexed from the Greek Psalter only when explicitly present in the source file.",
         "The Prayer of Manasseh is separately indexed from Odes 8 while retaining its source reference; the full Daniel text retains the other Greek additions."
@@ -141,6 +141,35 @@
         "The digital source does not identify a modern critical edition; compare with Bensly/James and other manuscript editions before making manuscript-level claims.",
         "The Prayer of Manasseh is preserved in multiple traditions; this Latin text is one transmitted form and is not presented as the original language."
       ]
+    },
+    {
+      "id": "codex-sinaiticus-xml",
+      "name": "Codex Sinaiticus electronic transcription",
+      "language": "Ancient Greek",
+      "coverage": [
+        "2 Esdras",
+        "Esther",
+        "Tobit",
+        "Judith",
+        "1 Maccabees",
+        "4 Maccabees",
+        "Wisdom of Solomon",
+        "Sirach",
+        "plus other surviving Hebrew Scripture and Apostolic Writings books listed by the project"
+      ],
+      "record_type": "manuscript-based diplomatic electronic transcription in TEI-based XML",
+      "edition": "Codex Sinaiticus Project electronic transcription; website v1.05 and repository v1.94/v1.95",
+      "license": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)",
+      "repository": "https://github.com/itsee-birmingham/codex-sinaiticus",
+      "source_url": "https://www.codexsinaiticus.org/en/project/transcription_download.aspx",
+      "attribution": "The Codex Sinaiticus Project, www.codexsinaiticus.org; XML transcription maintained by ITSEE, University of Birmingham.",
+      "status": "source located; not yet imported into the offline corpus",
+      "limitations": [
+        "Non-commercial and share-alike terms apply to the transcription; any derivative redistribution must preserve these terms.",
+        "Preserve the XML's page, column, line, verse, correction, marginal and paratextual markup when importing.",
+        "Codex Sinaiticus is incomplete and dispersed; the source's book index does not mean every chapter of every listed book survives.",
+        "This is one manuscript witness, not a modern critical edition or a universal canonical table."
+      ]
     }
   ],
   "not_yet_integrated": [
@@ -151,7 +180,7 @@
     "Manuscript variants apparatus",
     "Historical and multilingual translation corpus",
     "Additional Dead Sea Scrolls transcription files from The Way to Yahuweh; files are being evaluated and integrated individually under CC BY-SA 4.0",
-    "Additional Hebrew, Aramaic, Syriac, Ethiopic, Armenian, and Greek witnesses for Apocrypha writings, including manuscript-level collation of 2 Esdras / 4 Ezra"
+    "Additional Greek, Hebrew, Aramaic, Syriac, Ethiopic and Armenian witnesses and manuscript-level collation for 2 Esdras / 4 Ezra; the current 16-chapter import is Latin only."
   ],
   "development_priority": {
     "order": [
