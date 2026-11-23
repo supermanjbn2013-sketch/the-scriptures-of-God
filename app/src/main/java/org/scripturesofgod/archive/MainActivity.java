@@ -249,7 +249,9 @@ public class MainActivity extends Activity {
         String target=targetLanguage();
         if(source.equals(target)){new android.app.AlertDialog.Builder(this).setTitle(reference).setMessage("This verse is already in your selected language.\n\n"+sourceText).setPositiveButton("Close",null).show();return;}
         String supportedSource=TranslateLanguage.fromLanguageTag(source);
-        String supportedTarget=TranslateLanguage.fromLanguageTag(target);\n        if(supportedSource==null||supportedTarget==null){new android.app.AlertDialog.Builder(this).setTitle("Language unavailable").setMessage("The selected language is not supported by the on-device translation engine.").setPositiveButton("Close",null).show();return;}\n        TranslatorOptions options=new TranslatorOptions.Builder().setSourceLanguage(supportedSource).setTargetLanguage(supportedTarget).build();
+        String supportedTarget=TranslateLanguage.fromLanguageTag(target);
+        if(supportedSource==null||supportedTarget==null){new android.app.AlertDialog.Builder(this).setTitle("Language unavailable").setMessage("The selected language is not supported by the on-device translation engine.").setPositiveButton("Close",null).show();return;}
+        TranslatorOptions options=new TranslatorOptions.Builder().setSourceLanguage(supportedSource).setTargetLanguage(supportedTarget).build();
         Translator translator=Translation.getClient(options);
         android.app.ProgressDialog progress=new android.app.ProgressDialog(this);progress.setMessage("Preparing "+targetLanguageName()+" translation…");progress.setCancelable(false);progress.show();
         translator.downloadModelIfNeeded(new DownloadConditions.Builder().build())
