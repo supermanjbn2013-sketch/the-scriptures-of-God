@@ -148,6 +148,17 @@ def validate_android():
     assert '.AiTranslatorActivity' in manifest, "AI translator activity is not registered"
     gradle = Path("app/build.gradle").read_text(encoding="utf-8")
     assert "versionCode 2" in gradle and "versionName '1.1.0'" in gradle, "App update version was not incremented"
+
+    mapping = re.search(r'String\\[\\]\\[\\] pairs=\\{\\{(.*?)\\}\\};', source, re.S)
+    assert mapping, "Reader book-code mapping could not be inspected"
+    book_pairs = re.findall(r'\\{"([^"]+)","([^"]+)"\\}', mapping.group(1))
+    assert len(book_pairs) >= 60, f"Unexpected reader book mapping count: {len(book_pairs)}"
+    for display_name, code in book_pairs:
+        matches = [r for r in rows if r.get("book") == display_name or r.get("book_code") == code or r.get("ref", "").startswith(code + ".") or r.get("ref", "").startswith(code + " ") or r.get("ref", "").startswith(display_name + " ") or r.get("ref", "").startswith(display_name + ":")]
+        assert matches, f"Book reader would show no records for {display_name} ({code})"
+    for book in REQUIRED_GREEK | REQUIRED_LATIN:
+        assert any(r.get("book") == book and r.get("text", "").strip() for r in rows), f"Reader has no text records for {book}"
+    print(f"Validated reader record matching for {len(book_pairs)} standard books and {len(REQUIRED_GREEK | REQUIRED_LATIN)} Apocrypha forms")
     dss = json.loads((ROOT / "catalog/dead_sea_scrolls_register.json").read_text(encoding="utf-8"))
     ids = {r["id"] for r in dss["records"]}
     assert "11Q19" in ids and "1QM" in ids
