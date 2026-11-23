@@ -22,6 +22,7 @@ def validate_base():
     assert all(r.get("ref") and r.get("text") and r.get("source") for r in rows)
     assert any(r["language"] == "he" for r in rows)
     assert any(r["language"] == "grc" for r in rows)
+    assert all(r.get("book") and r.get("book_code") for r in rows if r["language"] == "grc")
     assert all(r.get("source_url") and r.get("transcription_type") for r in rows)
     refs = [(r["language"], r["ref"]) for r in rows]
     assert len(refs) == len(set(refs)), "Duplicate verse references detected within a language"
