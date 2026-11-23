@@ -5736,8 +5736,8 @@
         "caution": "The page's numbered lines are digital transcription display lines, not independently verified manuscript column-and-line coordinates. Brackets, dots and other editorial signs must be preserved; this digital transcription is not a photograph and does not replace inspection of manuscript images or the DJD edition."
       },
       "image_source": "https://www.deadseascrolls.org.il/",
-      "status": "DJD XIV fragment-to-passage concordance and Qumran-Digital Hebrew transcription imported for frg. 1–2 (11 lines) and frg. 3–8 (9 lines); remaining groups await line-level transcription import and verification.",
-      "caution": "Fragment and passage assignments follow the published DSS Study Edition's summary of Ulrich's DJD XIV edition. Joshua 8:18 is marked uncertain in that summary. Fragment groups are not column/line coordinates; do not infer continuous text between fragments. PAM and ROC identifiers are historical photographic/museum references, not automatically interchangeable with current IAA image identifiers. Line-level transcription currently covers only the first two digital display groups. Digital line numbers are not manuscript column/line coordinates; do not treat this partial import as full 4Q47 coverage.",
+      "status": "Qumran-Digital line transcription imported for frg. 1–2 and frg. 3–8 (20 displayed lines); a separate The Way to Yahuweh PDF transcription now adds source blocks for frg. 9 i–12, 9 ii and 13–16, 17–18, and 19–22. These sources remain separate; later groups are not represented as Qumran-Digital line imports.",
+      "caution": "Fragment and passage assignments follow the published DSS Study Edition's summary of Ulrich's DJD XIV edition. Joshua 8:18 is marked uncertain in that summary. Fragment groups are not column/line coordinates; do not infer continuous text between fragments. PAM and ROC identifiers are historical photographic/museum references, not automatically interchangeable with current IAA image identifiers. Line-level transcription currently covers only the first two digital display groups. Digital line numbers are not manuscript column/line coordinates; do not treat this partial import as full 4Q47 coverage. A second transcription from The Way to Yahuweh is stored in separate source blocks for later fragment groups. It is not merged with the Qumran-Digital line map; the PDF text layer may contain transcription or extraction artifacts.",
       "fragment_coverage": [
         {
           "fragment": "1–2",
@@ -6016,7 +6016,59 @@
         "bibliography": "E. Ulrich, Qumran Cave 4.IX: Deuteronomy, Joshua, Judges, Kings, Discoveries in the Judaean Desert XIV (Oxford: Clarendon Press, 1995), pp. 143–152.",
         "study_edition": "Florentino García Martínez and Eibert J. C. Tigchelaar, The Dead Sea Scrolls Study Edition, Joshua passage concordance.",
         "caution": "Published DJD edition reference is recorded separately from digital Qumran-Digital transcription and inventory associations. Fragment-to-passage assignments must retain their own basis; no unlisted passage or continuous scroll coverage is inferred."
-      }
+      },
+      "additional_transcription_sources": [
+        {
+          "title": "The Way to Yahuweh: 4Q47 Joshuaᵃ direct transcription",
+          "provider": "The Way to Yahuweh",
+          "version": "PDF published approximately 2012; current hosted copy accessed 2026-11-23",
+          "format": "PDF; direct Hebrew transcription with fragment/column headings",
+          "url": "https://downloads.thewaytoyahuweh.com/pdf/dead_sea_scrolls/DSS_-_4Q47Joshuaa.pdf",
+          "license": "CC BY-SA 4.0",
+          "attribution": "The Way to Yahuweh, 4Q47 Joshuaᵃ (4QJoshᵃ), Direct Transcription. All downloadable documents on the provider's site are released under CC BY-SA 4.0.",
+          "use": "Separate additional transcription source. Imported blocks cover the later groups for which the PDF supplies direct transcription headings.",
+          "caution": "This transcription is kept separate from Qumran-Digital and from the DJD edition. The PDF's text extraction contains irregular spacing and possible transcription or OCR artifacts. Its headings are retained; line breaks below follow the PDF text layer, not manuscript column/line coordinates. Check the PDF itself and the DJD plates before relying on individual readings.",
+          "sections": [
+            {
+              "fragment_group": "9 i–12",
+              "pdf_heading": "Column 4: Fragment 9 Column 1, Fragments 10–12",
+              "pdf_text_lines": "[כנו ל[פ] [ ] אביו ולא פנים כי היו לחרם ולא אוסיף להיות\n[עמכם אם] לא תשמידו החורם מקרבכם 13 קום קדש את העם ואמרת\n[התקדשו] למחר כי כה אמר יהוה אלהי ישראל חרם בקרבכם\n[ישראל ל]א תוכל לקום לפני אויביכם עד הסירכם החרם מקרבכם\n[ונקרבתם] בבקר לשבט [יכב ר] אשר ילכדו יהוה תקריבו\n[ל]בתים [והבית] א[שר ילקדנו יהו] ה יקב לגברים 15 והיה הנלכד בהם\nישרך [באש אתו ואת כל אשר לו כי] עבר את ברית יהוה כי עשה\n[נבלה בישראל\n]\n[וישכם יהושע בבקר ויקרב את ישראל ל]שבטיו וילכד את [שבט]\n[יהודה וי] קרב [את משפחות יהודה וילכד את] משפחת [ח]הוזרי ויקרב את\n[משפחת] הז [חי לגברים וילך דברי ויקרא את בנותיו לגברים וילך ענך] 11",
+              "passage_refs": [
+                "Joshua 7:12–17"
+              ],
+              "caution": "The PDF heading associates the text with fragment 9 column 1 and fragments 10–12. The block includes editorial verse numerals; the passage range is not a claim that every word survives."
+            },
+            {
+              "fragment_group": "9 ii, 13–16",
+              "pdf_heading": "Column 5: Fragment 9 Column 2, Fragments 13–16",
+              "pdf_text_lines": "1. ירושע וכל עם המלחמה [לעולת העיר ויבחר יהושע שלשים אלף איש] 8:3\n2. גבורי החיל וישלחם ל[ילה 4] יצו אתם לאמר ראו אתם ארבים לעיר\n3. אל העיר מאת[רי העיר אל תרחקו מן העיר מאז והייתם כלכם נכנים]\n4. ויאני וכל [העם אשר אתי נקרב אל העיר והיה כי יצאו לקראתנו כאשר]\n5. בראש[נה ונסנו לפניהם ויצאו] אחרינו עד [התקינו אותם מן העיר כי]\n6. [אמרו נסים לפנינו כאשר בראשנה ונסנו לפניהם 7 אתם תקמו מהאורב]\n7. [והורשתם] את הזן [ו]נתנה יהוה אלהיכם בידכם והיה ככפשכם את העיר 8\n8. [חציתו את העיר] יר באש [כדבר יהוה תעשו ראו צויתי אתכם יהושע 9 וישלחהו]\n9. [וילך] אל [המערב וישבו בין בית אל ובין העי מים לעי וילן יהושע בלילה]\n10. [הוא בתוך העם] ויישכם יהושע בבקר ויפקד את העם ויעל הוא [הזקנים]\n11. [לפני העם העי] וכל העם המלחמה אשר אתו [ן וישובו]\n12. [נגד] העי [ר ויתנו מצפון לעי והגי ביניו ובין העי 14] כראות\n13. [מלך העי] ימהר [ויראו אנשי העיר הוא וכל עמו למועד לק]\n14. [למלחמה] ויאמר יהוה אל יהושע נטה בכידון אשר ב[ידך אל העיר]",
+              "passage_refs": [
+                "Joshua 8:3–14",
+                "Joshua 8:18 (uncertain identification in the published concordance)"
+              ],
+              "caution": "PDF heading and passage numerals retained. Joshua 8:18 is uncertain in the published concordance; do not silently normalize this transcription to a later edition."
+            },
+            {
+              "fragment_group": "17–18",
+              "pdf_heading": "Fragments 17–18",
+              "pdf_text_lines": "1. עַרֵי הַכֹּהֵן [מַלְכָּה וְכִי הָיָה גְדוֹלָה מִן הָעִיר וְכָל אֲנָשִׁים גְּבָרִים] [יְשׁוּלָה אֲדֹנָי]\n2. צַרְק מֶלֶךְ [יְרוּשָׁלַם אֶל הַנּוֹהַ] [מֶלֶךְ [ה]בְּרִית] [וְאֶל כְּרָאֵם מֶלֶךְ יְרוֹמוֹת וְאֶל יְפִיעַ]\n3. מֶלֶךְ לְכִישׁ וְאֶל [בִּיר] מִלְ[ךְ] עַנְגְלוֹן לֵאמֹר עַזְרוּ אֵלַי וְ[רִי וְנָכָה אֶת גְּבַעון]\n4. [כִּי] הַשְׁלִימָה אֶת יְ[הו] שׁוּעַ וְאֶת יִשְׂרָאֵל וְ[חֲמֵשׁ מַלְכֵי הָאֱמֹרִי מֶלֶךְ]\n5. [יְרוּשָׁלַם] [דְּבַרְיוֹן] [מַלְכֵי מ] [רָמוֹת מ] [לְכִי] [שׁ מֶלֶךְ עַזְרוּ הֵם וְכָל מַחֲנֵיהֶם]",
+              "passage_refs": [
+                "Joshua 10:2–5"
+              ],
+              "caution": "The PDF heading is retained. This is the provider's transcription, not a verified manuscript column/line edition."
+            },
+            {
+              "fragment_group": "19–22",
+              "pdf_heading": "Fragments 19–22",
+              "pdf_text_lines": "1. [וַיֹּאמֶר יְהוָה אֶל [הוֹשֻׁעַ אֶל תִּירָא מֵהֶם] כִּי בְּיָד נְתַתִּי [בָּם לֹא יַעֲמֹד אִישׁ]\n2. [מֵהֶם בְּפָנִיר יִבְבוּ אֶל [ה]ם כָּל הַלִּילָה הַלֵּל [וְד מִן הַגִּלְגָּל וְיָהֵם]\n3. [ו]הוּא לְפָנִי [י] שְׂרָאֵל וִיכְּם מְכָה גְדוֹלָה בְּגִבְעוֹן וַיִּרְדְּפָם דֶּרֶךְ מַעֲלֵה בֵּית חוֹרֹן וַיִּכְם\n4. עַד עֲזֵקָה וְעַד מַקֵּדָה וַיֵּתִן [ב] נָס [מִפְנֵי יִשְׂרָאֵל הֵם בְּמוֹרַד בֵּית חוֹרֹן]\n5. וַיְהוָה הִשְׁלִיךְ עֲלֵיהֶם אֲבָנִים מִן הַשָּׁמַיִם [רִם עַד עֲזֵקָה וַיָּמֻתוּ רַבִּים אֲשֶׁר מֵתוּן]\n6. בְּאֲבָנֵי הַבֶּרֶד מֵאֲשֶׁר הָרְגוּ [בְּנֵי יִשְׂרָאֵל בַּחֶרֶב אֶת דְּבַר יְהוָה לִהְיוֹת בַּיּוֹם]",
+              "passage_refs": [
+                "Joshua 10:8–11"
+              ],
+              "caution": "The PDF heading is retained. Hebrew vocalization and spacing are reproduced as extracted from the PDF text layer and require visual verification."
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "4Q53-Sam-c",
