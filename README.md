@@ -38,9 +38,12 @@ The Way to Yahuweh downloads are evaluated file by file. Each transcription must
 - Search results are capped at 100 per query.
 - Book readers load text in a background task and show source, edition, witness basis, textual form, transcription type, licence, attribution, and source links.
 - Apocrypha readers display the source-file chapter coverage audit.
-- Each imported verse is individually selectable; tapping it opens an automatic translation into the user's saved target language.
-- The user can change the target language at any time. Translation models download on first use and are then available offline on the device.
-- Translation is a machine-generated study aid, not a manuscript reading or a critical translation. Ancient Greek is processed with the modern Greek model; Latin source text is not yet supported by the on-device translation engine.
+- Each imported Hebrew- or Greek-language verse is individually selectable; tapping it automatically translates the verse into the saved target language.
+- The target-language selector includes all 59 languages listed by the ML Kit on-device translation engine, including Filipino/Tagalog.
+- Models download on first use (approximately 30 MB per language model) and remain available offline on the device. Model downloads require an initial internet connection.
+- Translation is a machine-generated study aid, not a manuscript reading or a critical translation. The models are designed for modern-language translation, so results from ancient Hebrew or Koine Greek may be inaccurate. Non-English language pairs may use English as an intermediate language.
+- Latin source text is not yet supported by the on-device translation engine.
+- Translation engine documentation: https://developers.google.com/ml-kit/language/translation/android
 
 ## Data sources and licences
 
