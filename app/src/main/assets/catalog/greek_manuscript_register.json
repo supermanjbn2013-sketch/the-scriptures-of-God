@@ -212,20 +212,26 @@
       "date_basis": "Published palaeographical assessment; approximate",
       "contents": "Matthew 23:30–39",
       "condition": "One leaf represented by two fragments; one column, approximately 13 surviving lines",
-      "holding_institution": "Sackler Library, Oxford, United Kingdom",
+      "holding_institution": "Bodleian Art, Archaeology and Ancient World Library (formerly Sackler Library), University of Oxford, Oxford, United Kingdom",
       "shelfmark": "P. Oxy. 2683, re-edited with P. Oxy. 4405",
       "source_urls": [
         "https://manuscripts.csntm.org/Manuscript/Group/GA_P77",
         "https://www.greeklab.org/manuscript_image.php?image=P77_0001a.jpg&man=GA_P77&text=809",
-        "https://www.greeklab.org/manuscript_image.php?image=P77_0001b.jpg&man=GA_P77&text=809"
+        "https://www.greeklab.org/manuscript_image.php?image=P77_0001b.jpg&man=GA_P77&text=809",
+        "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10077"
       ],
-      "status": "Witness metadata catalogued; diplomatic transcription not yet imported",
+      "status": "INTF NTVMR TEI diplomatic transcription importer integrated; offline page-indexed records generated during APK build",
       "caution": "The two Oxyrhynchus papyrus pieces are treated together as P77. Only Matthew 23:30–39 survives; do not reconstruct missing text.",
       "digital_transcription_source": {
-        "title": "No verified public diplomatic transcription identified in the sources checked",
-        "format": "Digital manuscript images and published edition references; transcription import pending",
-        "status": "Not imported; Greek transcription and image-to-line coordinates still require verification",
-        "caution": "Do not treat a modern printed or normalized Greek text as a diplomatic transcription of P77."
+        "title": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room — Papyrus 77 (GA P77)",
+        "document_id": 10077,
+        "format": "TEI XML diplomatic transcription; imported as compressed offline page records",
+        "version": "Published NTVMR transcription retrieved at build time",
+        "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10077&pageID=ALL&format=teiraw",
+        "repository_url": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10077",
+        "status": "Importer integrated; exact page and record counts generated in papyri/p77/p77_index.json during APK build",
+        "caution": "One leaf represented by two fragments, preserving Matthew 23:30–39. Preserve source page, column, line and correction markup where encoded. Missing text is not reconstructed."
       }
     },
     {
