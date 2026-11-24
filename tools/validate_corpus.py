@@ -263,7 +263,7 @@ def validate_android():
     p76_source = p76.get("digital_transcription_source", {})
     assert "Source details and restriction notice are bundled offline" in p76_source.get("status", "")
     assert "PERSONAL STUDY ONLY" in p76_source.get("use_restriction", "")
-    assert "transcription text is not embedded" in p76_source.get("status", "")
+    assert "transcription text is not embedded" in p76.get("status", "")
     assert "use_restriction" in source and "bundle_status" in source
 
     ai_source = Path("app/src/main/java/org/scripturesofgod/archive/AiTranslatorActivity.java").read_text(encoding="utf-8")
