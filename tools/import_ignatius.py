@@ -174,8 +174,8 @@ def main():
         ],
         "asset_file": "other_reference/ignatius/ignatius_greek.jsonl"
     }
-    (ROOT / "ignatius_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
-    (ROOT / "SOURCE_NOTICE.txt").write_text(ATTRIBUTION + "\\nLicense: " + LICENSE + "\\nSource: " + SOURCE_URL + "\\n", encoding="utf-8")
+    (ROOT / "ignatius_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "SOURCE_NOTICE.txt").write_text(ATTRIBUTION + "\nLicense: " + LICENSE + "\nSource: " + SOURCE_URL + "\n", encoding="utf-8")
     print(f"Imported Ignatius Greek text: {len(letters)} letters, {index['chapter_count']} chapter divisions, {len(records)} sections.")
 
 
