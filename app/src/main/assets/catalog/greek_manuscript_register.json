@@ -198,7 +198,7 @@
         "https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml",
         "http://www.iohannes.com/XML/transcriptions/greek/04_P76.xml"
       ],
-      "status": "IGNTP TEI transcription publicly listed in the University of Birmingham ePapers repository; import pending verification of the XML header license and TEI structure",
+      "status": "Online searchable IGNTP TEI transcription linked from the app; not imported offline because the individual file licence and TEI structure remain unverified",
       "caution": "Only a small fragment of John survives. Do not infer or reconstruct surrounding verses.",
       "digital_transcription_source": {
         "title": "International Greek New Testament Project (IGNTP), A transcription of P76",
@@ -206,7 +206,7 @@
         "format": "TEI XML, downloadable file 04_P76.xml (6 kB)",
         "source_url": "https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml",
         "online_edition_url": "http://www.iohannes.com/XML/transcriptions/greek/04_P76.xml",
-        "status": "Publicly listed as an unpublished research transcription; the repository states that the reuse license is specified in the transcription header. Import is pending verification of the exact license and XML structure.",
+        "status": "Online source link available in the app; open the XML in a browser and use Find in page. The repository states that reuse terms are specified in the transcription header; offline import remains pending verification.",
         "caution": "Do not describe the transcription as unavailable. Do not import until the header's exact license and encoding are verified. Distinguish the transcription from the manuscript images and preserve only source-attested readings."
       }
     },
