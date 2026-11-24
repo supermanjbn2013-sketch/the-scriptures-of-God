@@ -1025,6 +1025,56 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void openTwelvePatriarchsArchive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/twelve_patriarchs/twelve_patriarchs_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray testaments=new org.json.JSONObject(raw.toString()).getJSONArray("testaments");
+            String[] names=new String[testaments.length()];String[] labels=new String[testaments.length()];
+            for(int i=0;i<testaments.length();i++){org.json.JSONObject t=testaments.getJSONObject(i);names[i]=t.optString("name");labels[i]=t.optString("label")+" · "+t.optInt("chapter_count")+" chapters";}
+            new android.app.AlertDialog.Builder(this).setTitle("Testaments of the Twelve Patriarchs · Greek")
+                .setItems(labels,(d,w)->openTwelvePatriarchsTestament(names[w])).setNegativeButton("Close",null).show();
+        }catch(Exception e){showInfo("Greek text unavailable","The offline Greek base text was not generated in this build. "+e.getMessage());}
+    }
+    void openTwelvePatriarchsTestament(String testament){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/twelve_patriarchs/twelve_patriarchs_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray testaments=new org.json.JSONObject(raw.toString()).getJSONArray("testaments");org.json.JSONObject selected=null;
+            for(int i=0;i<testaments.length();i++){org.json.JSONObject t=testaments.getJSONObject(i);if(testament.equals(t.optString("name"))){selected=t;break;}}
+            if(selected==null)throw new Exception("Testament not found in index.");
+            org.json.JSONArray chapters=selected.getJSONArray("chapters");String[] nums=new String[chapters.length()];String[] labels=new String[chapters.length()];
+            for(int i=0;i<chapters.length();i++){nums[i]=chapters.getString(i);labels[i]="Chapter "+nums[i];}
+            new android.app.AlertDialog.Builder(this).setTitle("Testament of "+testament+" · Chapters")
+                .setItems(labels,(d,w)->openTwelvePatriarchsChapter(testament,nums[w]))
+                .setNegativeButton("Back to testaments",(d,w)->openTwelvePatriarchsArchive()).show();
+        }catch(Exception e){showInfo("Chapter index unavailable","Unable to open this testament. "+e.getMessage());}
+    }
+    void openTwelvePatriarchsChapter(String testament,String chapter){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/twelve_patriarchs/twelve_patriarchs_greek.jsonl"),"UTF-8"),8192);
+                    String raw;while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(!testament.equals(record.optString("testament"))||!chapter.equals(record.optString("chapter")))continue;
+                        if(count==0)out.append("Language: Ancient Greek\nLicense: CC BY 4.0\n")
+                            .append("Source: Online Critical Pseudepigrapha, Greek Wikisource base text\n")
+                            .append("Textual status: provisional single-witness base text; not yet collated against R. H. Charles (1908), as stated by the source. Not a diplomatic transcription of a named ancient codex.\n\n");
+                        out.append(record.optString("reference")).append("\n").append(record.optString("text")).append("\n\n");count++;
+                    }reader.close();return count==0?"No Greek verse records found for this chapter.":count+" Greek verse records\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline Greek text: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Testament of "+testament+" · "+chapter).setView(sv)
+                    .setNegativeButton("Back to chapters",(d,w)->openTwelvePatriarchsTestament(testament)).setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     void openThreeBaruchArchive(){
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/3_baruch/3bar_greek_index.json"),"UTF-8"));
@@ -1364,13 +1414,14 @@ public class MainActivity extends Activity {
         else if(item.equals("Odes of Solomon")){category="Ancient hymn collection";preservation="Survives in Syriac, with Greek and Coptic fragments.";witnesses="Syriac manuscripts and Greek/Coptic fragments.";}
         else if(item.equals("Pseudo-Philo: Biblical Antiquities")){category="Jewish rewritten-Scripture history";preservation="Survives principally in Latin manuscripts; the original language and form remain debated.";witnesses="Latin manuscript tradition.";}
         else if(item.equals("Zohar")){category="Medieval Jewish mystical literature";preservation="A medieval Aramaic literary corpus associated with the Zoharic tradition, transmitted in manuscripts and printed editions; it is not an ancient Second Temple writing.";witnesses="Medieval Aramaic manuscript tradition and later printed editions. Its historical composition and attribution are subjects of scholarship.";}
-        String textStatus=item.equals("Gospel of Thomas")?"Sahidic Coptic text from Nag Hammadi Codex II is available offline, indexed by manuscript page, column and line. The digital edition is based on examination of the facsimile; it is not a new independent transcription.":item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("1 Enoch")?"Aramaic Qumran fragments and a separate Greek fragment text from the Flemming 1901 edition are available offline. Neither dataset is a complete Ethiopic or Greek copy; no continuous book is reconstructed.":item.equals("Jubilees")?"Fragmentary Hebrew Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Testament of Abraham")?"Both Greek recensions are available offline as separate editions. Manuscript-variant notes, source page markers and editorial deletions are retained. These are edition-derived texts, not direct diplomatic transcriptions of one codex.":item.equals("Ascension of Isaiah")?"Ge'ez edition text is available offline by numbered section. The source is a Unicode transcription, not a new diplomatic transcription of one manuscript; its underlying text is licensed for non-commercial use only.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
+        String textStatus=item.equals("Gospel of Thomas")?"Sahidic Coptic text from Nag Hammadi Codex II is available offline, indexed by manuscript page, column and line. The digital edition is based on examination of the facsimile; it is not a new independent transcription.":item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("1 Enoch")?"Aramaic Qumran fragments and a separate Greek fragment text from the Flemming 1901 edition are available offline. Neither dataset is a complete Ethiopic or Greek copy; no continuous book is reconstructed.":item.equals("Jubilees")?"Fragmentary Hebrew Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Testament of Abraham")?"Both Greek recensions are available offline as separate editions. Manuscript-variant notes, source page markers and editorial deletions are retained. These are edition-derived texts, not direct diplomatic transcriptions of one codex.":item.equals("Testament of the Twelve Patriarchs")?"A provisional Greek base text is available offline, organized by patriarch and chapter. The OCP source identifies its single base witness as Wikisource and explicitly says it has not yet been collated against Charles (1908); it is not a diplomatic transcription of a named ancient codex.":item.equals("Ascension of Isaiah")?"Ge'ez edition text is available offline by numbered section. The source is a Unicode transcription, not a new diplomatic transcription of one manuscript; its underlying text is licensed for non-commercial use only.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
         String detail=category+"\n\nPreservation: "+preservation+"\n\nKnown witnesses: "+witnesses+"\n\nText status in this app: "+textStatus+" Different languages and recensions remain separate. This archive is for reference and historical study; inclusion here does not automatically make a work part of the Scripture collections.";
         android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(item).setMessage(detail).setPositiveButton("Close",null);
         if(item.equals("Gospel of Thomas"))builder.setNeutralButton("Open Coptic text",(d,w)->openThomasArchive());
         if(item.equals("Didache"))builder.setNeutralButton("Open Greek text",(d,w)->openDidacheArchive());
         if(item.equals("2 Baruch"))builder.setNeutralButton("Open Syriac text",(d,w)->openTwoBaruchArchive());
         if(item.equals("3 Baruch"))builder.setNeutralButton("Open Greek text",(d,w)->openThreeBaruchArchive());
+        if(item.equals("Testament of the Twelve Patriarchs"))builder.setNeutralButton("Open Greek text",(d,w)->openTwelvePatriarchsArchive());
         if(item.equals("Shepherd of Hermas"))builder.setNeutralButton("Open Greek text",(d,w)->openHermasArchive());
         if(item.equals("1 Enoch"))builder.setNeutralButton("Open Aramaic fragments",(d,w)->openQumranReferenceFragments("1 Enoch",new String[]{"4Q201","4Q202","4Q204","4Q205","4Q206","4Q207","4Q208","4Q209","4Q210","4Q211","4Q212"}));
         if(item.equals("1 Enoch"))builder.setNegativeButton("Open Greek fragments",(d,w)->openGreekEnochArchive());
