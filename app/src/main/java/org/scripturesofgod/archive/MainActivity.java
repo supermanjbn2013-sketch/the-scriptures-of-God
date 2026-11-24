@@ -980,6 +980,62 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void openTwoBaruchArchive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/2_baruch/2_baruch_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray witnesses=new org.json.JSONObject(raw.toString()).getJSONArray("witnesses");
+            String[] labels=new String[witnesses.length()];String[] ids=new String[witnesses.length()];
+            for(int i=0;i<witnesses.length();i++){org.json.JSONObject w=witnesses.getJSONObject(i);ids[i]=w.optString("witness");labels[i]=w.optString("title")+" · "+w.optInt("chapter_count")+" chapters";}
+            new android.app.AlertDialog.Builder(this).setTitle("2 Baruch · Syriac witnesses")
+                .setItems(labels,(d,w)->openTwoBaruchWitness(ids[w]))
+                .setNegativeButton("Close",null).show();
+        }catch(Exception e){showInfo("2 Baruch unavailable","The offline Syriac text was not generated in this build. "+e.getMessage());}
+    }
+
+    void openTwoBaruchWitness(String witness){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/2_baruch/2_baruch_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray groups=new org.json.JSONObject(raw.toString()).getJSONArray("witnesses");
+            org.json.JSONObject selected=null;for(int i=0;i<groups.length();i++)if(witness.equals(groups.getJSONObject(i).optString("witness")))selected=groups.getJSONObject(i);
+            if(selected==null)return;
+            org.json.JSONArray chapters=selected.getJSONArray("chapters");int[] nums=new int[chapters.length()];String[] labels=new String[chapters.length()];
+            for(int i=0;i<chapters.length();i++){nums[i]=chapters.getInt(i);labels[i]="Chapter "+nums[i];}
+            new android.app.AlertDialog.Builder(this).setTitle(selected.optString("title"))
+                .setItems(labels,(d,w)->openTwoBaruchChapter(witness,nums[w]))
+                .setNegativeButton("Back to witnesses",(d,w)->openTwoBaruchArchive()).show();
+        }catch(Exception e){showInfo("2 Baruch index unavailable",e.getMessage());}
+    }
+
+    void openTwoBaruchChapter(String witness,int chapter){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/2_baruch/2_baruch_syriac.jsonl"),"UTF-8"),8192);
+                    String raw;while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(!witness.equals(record.optString("witness"))||record.optInt("chapter")!=chapter)continue;
+                        if(count==0)out.append("Source: ETCBC electronic Peshitta, version 0.2\n")
+                            .append("Language: Classical Syriac\nLicence: CC BY-NC 4.0; non-commercial use only\n")
+                            .append("Text basis: OCR-derived from the printed Vetus Testamentum Syriace edition; critical apparatus omitted.\n")
+                            .append("This is not a fresh diplomatic transcription of Codex Ambrosianus. The two Epistle forms remain separate.\n\n");
+                        out.append(record.optString("reference")).append("\n").append(record.optString("text")).append("\n\n");count++;
+                    }reader.close();
+                    return count==0?"No Syriac records found for this chapter.":count+" numbered text records\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline Syriac text: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("2 Baruch · Chapter "+chapter)
+                    .setView(sv).setNegativeButton("Back to chapters",(d,w)->openTwoBaruchWitness(witness))
+                    .setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     void openAscensionIsaiahArchive(){
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/ascension_isaiah/ascension_isaiah_index.json"),"UTF-8"));
@@ -1233,6 +1289,7 @@ public class MainActivity extends Activity {
         android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(item).setMessage(detail).setPositiveButton("Close",null);
         if(item.equals("Gospel of Thomas"))builder.setNeutralButton("Open Coptic text",(d,w)->openThomasArchive());
         if(item.equals("Didache"))builder.setNeutralButton("Open Greek text",(d,w)->openDidacheArchive());
+        if(item.equals("2 Baruch"))builder.setNeutralButton("Open Syriac text",(d,w)->openTwoBaruchArchive());
         if(item.equals("Shepherd of Hermas"))builder.setNeutralButton("Open Greek text",(d,w)->openHermasArchive());
         if(item.equals("1 Enoch"))builder.setNeutralButton("Open Aramaic fragments",(d,w)->openQumranReferenceFragments("1 Enoch",new String[]{"4Q201","4Q202","4Q204","4Q205","4Q206","4Q207","4Q208","4Q209","4Q210","4Q211","4Q212"}));
         if(item.equals("1 Enoch"))builder.setNegativeButton("Open Greek fragments",(d,w)->openGreekEnochArchive());
