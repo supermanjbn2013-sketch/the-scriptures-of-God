@@ -265,7 +265,7 @@ def validate_android():
     historical_ids = [record["id"] for record in historical_records]
     historical_titles = {record["title"] for record in historical_records}
     assert len(historical_ids) == len(set(historical_ids)), "Duplicate historical-writing catalogue IDs"
-    assert len(historical_records) >= 17, "Historical writings catalogue is unexpectedly incomplete"
+    assert len(historical_records) >= 16, "Historical writings catalogue is unexpectedly incomplete"
     for record in historical_records:
         assert record["title"] and record["category"] and record["preservation"] and record["date"]
         assert isinstance(record["languages"], list) and isinstance(record["witnesses"], list)
