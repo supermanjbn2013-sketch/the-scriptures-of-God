@@ -261,7 +261,7 @@ def validate_android():
     p76 = next((record for record in manuscript_register["records"] if record.get("id") == "P76"), None)
     assert p76 is not None, "P76 offline catalogue record is missing"
     p76_source = p76.get("digital_transcription_source", {})
-    assert "Offline metadata and restriction notice only" in p76_source.get("status", "")
+    assert "Source details and restriction notice are bundled offline" in p76_source.get("status", "")
     assert "PERSONAL STUDY ONLY" in p76_source.get("use_restriction", "")
     assert "not included in the app" in p76_source.get("status", "")
     assert "use_restriction" in source and "bundle_status" in source
