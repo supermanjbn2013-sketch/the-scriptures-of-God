@@ -702,6 +702,18 @@ def validate_witness_registers():
     print(f"Validated {len(traditions['records'])} comparison-tradition records; none is automatically reconstruction-ready.")
     print(f"Validated {len(catalog['records'])} writing identities, {len(witnesses['records'])} DSS witnesses, and {len(coverage['records'])} passage locators.")
 
+    unified_path = ROOT / "catalog/unified_apostolic_disciple_writings.json"
+    assert unified_path.exists(), "Unified apostolic and disciple writings catalogue is missing"
+    unified = json.loads(unified_path.read_text(encoding="utf-8"))
+    assert unified["record_type"] == "unified_apostolic_and_disciple_writings_catalog"
+    unified_ids = [x["id"] for x in unified["records"]]
+    assert len(unified_ids) == len(set(unified_ids)), "Duplicate unified writing identities"
+    assert len(unified["records"]) > 27, "Unified collection must extend beyond the 27-item source dataset"
+    assert unified["records"] == sorted(unified["records"], key=lambda x: (x["composition_date_start_ce"], x["title"]))
+    assert all(x["composition_date_start_ce"] <= x["composition_date_end_ce"] for x in unified["records"])
+    assert all(x["attribution_status"] and x["textual_status"] and x["chronology_basis"] for x in unified["records"])
+    print(f"Validated unified chronological writings collection: {len(unified['records'])} entries; not restricted to 27.")
+
 sections = {"witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
     raise SystemExit("Usage: python tools/validate_corpus.py witnesses|reconstruction|base|apocrypha|dss|papyri|android")

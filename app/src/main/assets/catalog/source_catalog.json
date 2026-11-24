@@ -23,14 +23,15 @@
       "id": "sblgnt",
       "name": "SBL Greek New Testament v1.2",
       "language": "Koine Greek",
-      "coverage": "27 writings associated with the disciples and apostles",
+      "coverage": "Edited Greek text for 27 writings in this particular source edition; this is a source dataset boundary, not the archive's writing list or scope.",
       "record_type": "edited Greek text",
       "license": "CC BY 4.0",
       "repository": "https://github.com/Faithlife/SBLGNT",
       "limitations": [
         "An edited Greek text, not a diplomatic transcription of one codex",
         "Not a complete manuscript apparatus",
-        "Do not attribute its readings to P46, P52, P66, P75, Vaticanus, or Sinaiticus without passage-level verification"
+        "Do not attribute its readings to P46, P52, P66, P75, Vaticanus, or Sinaiticus without passage-level verification",
+        "The archive's unified writings collection is not limited to these 27 texts. Additional apostolic-era and disciple-associated writings are catalogued independently, regardless of later canonical classification."
       ]
     },
     {
