@@ -375,7 +375,21 @@ def validate_android():
         assert all(r["language"] == "grc" and r["text"].strip() and r["reference"] and r["license"] == "CC BY-SA 4.0" for r in records)
         assert all("printed greek edition" in r["textual_basis"].lower() for r in records)
         assert all(isinstance(r["editorial_notes_and_variants"], list) for r in records)
-    thomas_path = ROOT / "other_reference/thomas/thomas_index.json"
+    ignatius_path = ROOT / "other_reference/ignatius/ignatius_index.json"
+    assert ignatius_path.exists(), "Offline Greek Ignatius index was not generated"
+    ignatius_index = json.loads(ignatius_path.read_text(encoding="utf-8"))
+    assert ignatius_index["source_revision"] == "03776b39f4047c5cff06f5296fae4b2bae4b08fb"
+    assert ignatius_index["license"] == "CC BY-SA 4.0" and ignatius_index["language_code"] == "grc"
+    assert ignatius_index["letter_count"] == 7 and ignatius_index["section_count"] >= 150
+    assert [item["number"] for item in ignatius_index["letters"]] == ["1","2","3","4","5","6","7"]
+    ignatius_records = [json.loads(line) for line in (ROOT / "other_reference/ignatius/ignatius_greek.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(ignatius_records) == ignatius_index["section_count"]
+    assert {r["letter"] for r in ignatius_records} == {"1","2","3","4","5","6","7"}
+    assert all(r["language"] == "grc" and r["text"].strip() and r["license"] == "CC BY-SA 4.0" for r in ignatius_records)
+    assert all(r["source_revision"] == ignatius_index["source_revision"] and isinstance(r["editorial_notes"], list) for r in ignatius_records)
+    assert all("printed greek edition" in r["textual_basis"].lower() for r in ignatius_records)
+    assert "void openIgnatiusArchive()" in source and "void openIgnatiusChapter(String letterNo,String chapter)" in source
+        thomas_path = ROOT / "other_reference/thomas/thomas_index.json"
     assert thomas_path.exists(), "Offline Gospel of Thomas Coptic index was not generated"
     thomas_index = json.loads(thomas_path.read_text(encoding="utf-8"))
     assert 17 <= thomas_index["page_count"] <= 20 and thomas_index["line_record_count"] >= 500
