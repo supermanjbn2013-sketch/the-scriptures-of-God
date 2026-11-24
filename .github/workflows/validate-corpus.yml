@@ -5,6 +5,7 @@ on:
       - "tools/prepare_corpus.py"
       - "tools/import_etcbc_dss.py"
       - "tools/import_codex_sinaiticus.py"
+      - "tools/import_codex_vaticanus.py"
       - "tools/validate_corpus.py"
       - "app/src/main/java/org/scripturesofgod/archive/MainActivity.java"
       - "app/src/main/assets/catalog/**"
@@ -26,6 +27,8 @@ jobs:
         run: python tools/import_etcbc_dss.py
       - name: Import Codex Sinaiticus manuscript transcription
         run: python tools/import_codex_sinaiticus.py
+      - name: Import Codex Vaticanus manuscript transcription
+        run: python tools/import_codex_vaticanus.py
       - name: Validate base Hebrew and Greek corpus
         run: python tools/validate_corpus.py base
       - name: Validate complete Apocrypha texts
