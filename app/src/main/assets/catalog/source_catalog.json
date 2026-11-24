@@ -213,6 +213,27 @@
         "Do not convert digital display-line labels into physical column/line coordinates unless the source explicitly establishes that equivalence.",
         "CC BY-SA 4.0 attribution and share-alike terms must accompany imported and adapted text."
       ]
+    },
+    {
+      "id": "etcbc-abegg-dss-transcriptions",
+      "name": "ETCBC/CACCHT Dead Sea Scrolls diplomatic transcriptions (Martin Abegg data)",
+      "language": "Hebrew and Aramaic",
+      "coverage": "Imported line-level text from the biblical and non-biblical scroll datasets; exact scroll/fragment/line coverage is generated in dss/etcbc_scroll_index.json during the build.",
+      "record_type": "diplomatic manuscript transcription dataset with normalized token stream and separately retained textual parallels",
+      "edition": "Martin G. Abegg Jr. transcriptions, distributed through ETCBC/CACCHT and the Qumran Digital Reader structured export; pinned upstream revision f54f38464e18409eed8286fe24dd24f88d4735dd",
+      "license": "CC BY-NC 4.0",
+      "repository": "https://github.com/ETCBC/dss",
+      "source_url": "https://github.com/evenderekh/QDR/tree/f54f38464e18409eed8286fe24dd24f88d4735dd/data",
+      "attribution": "Martin G. Abegg Jr.; ETCBC/CACCHT Dead Sea Scrolls corpus; structured export by Qumran Digital Reader (QDR). See https://github.com/ETCBC/dss and https://github.com/evenderekh/QDR.",
+      "status": "Imported at build time as offline line-level text; coverage and counts validated in the generated scroll index.",
+      "limitations": [
+        "CC BY-NC 4.0: no commercial use or commercial redistribution without separate permission from the rights holder.",
+        "The underlying transcriptions are Abegg-derived and must not be described as fresh independent readings of every manuscript image.",
+        "The first diplomatic display form is retained separately from the normalized token stream; brackets, lacuna indicators and editorial signs are not silently removed.",
+        "Textual parallel references are retained as separate metadata and are not merged into the manuscript's own transcription.",
+        "The corpus is not a photographic facsimile; manuscript images and their reproduction rights are separate.",
+        "The QDR structured export includes word-level lexical and morphological source data, but this app import focuses on line-level text and coordinates."
+      ]
     }
   ],
   "not_yet_integrated": [
