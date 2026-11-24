@@ -2109,12 +2109,23 @@ public class MainActivity extends Activity {
             if("P66".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus66Archive());
             if("P75".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus75Archive());
             if("P77".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus77Archive());
-            if("P76".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Download P76 XML",(d,w)->downloadP76Transcription());
+            if("P76".equalsIgnoreCase(match.optString("id"))){
+                builder.setNegativeButton("View transcription online",(d,w)->openP76Online());
+                builder.setNeutralButton("Download P76 XML",(d,w)->downloadP76Transcription());
+            }
             if("P72".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus72Archive());
             builder.show();
         }catch(Exception e){
             new android.app.AlertDialog.Builder(this).setTitle("Manuscript catalogue unavailable").setMessage("The metadata register is not present in this build yet.").setPositiveButton("Close",null).show();
         }
+    }
+
+    void openP76Online(){
+        String url="https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml";
+        try{
+            Intent intent=new Intent(Intent.ACTION_VIEW,android.net.Uri.parse(url));
+            startActivity(intent);
+        }catch(Exception ex){showInfo("P76 online source unavailable","Open the IGNTP transcription directly: "+url);}
     }
 
     void downloadP76Transcription(){
