@@ -194,6 +194,25 @@
         "Do not merge this transcription with Qumran-Digital or the published DJD edition; preserve source distinctions."
       ],
       "status": "Later fragment-group text blocks imported separately in the DSS passage concordance."
+    },
+    {
+      "id": "qumran-digital-transcription-index",
+      "name": "Qumran-Digital: Text und Lexikon — manuscript transcription collection",
+      "language": "Hebrew and Aramaic",
+      "coverage": "The project's current transcription index lists more than one thousand manuscript transcription pages, including 1QS, 1QpHab, 1QM, 1QHᵃ and numerous biblical and non-biblical Qumran manuscripts.",
+      "record_type": "manuscript-based digital transcriptions with fragment/line layout and separately displayed textual parallels",
+      "edition": "Qumran-Digital project; based on earlier Qumran-Wörterbuch and Martin Abegg precursor transcriptions, with subsequent editorial and palaeographic revisions",
+      "license": "CC BY-SA 4.0",
+      "repository": "https://lexicon.qumran-digital.org/transcription-index/latest/index.html",
+      "attribution": "DFG-Projekt 465277421, Qumran-Digital: Text und Lexikon; based on earlier Qumran-Wörterbuch project and precursor text by Martin Abegg.",
+      "status": "source index verified; additional individual manuscript transcriptions require passage/line-level import and validation before being marked available offline",
+      "limitations": [
+        "A transcription index entry is not itself an imported transcription in this app.",
+        "The project's main text, manuscript parallels and biblical comparison texts must remain separate witnesses.",
+        "Preserve brackets, uncertain letters, corrections, lacunae, editorial signs, manuscript identifiers and displayed line labels.",
+        "Do not convert digital display-line labels into physical column/line coordinates unless the source explicitly establishes that equivalence.",
+        "CC BY-SA 4.0 attribution and share-alike terms must accompany imported and adapted text."
+      ]
     }
   ],
   "not_yet_integrated": [
@@ -204,7 +223,8 @@
     "Manuscript variants apparatus",
     "Historical and multilingual translation corpus",
     "Additional Dead Sea Scrolls transcription files from The Way to Yahuweh; files are being evaluated and integrated individually under CC BY-SA 4.0",
-    "Additional Greek, Hebrew, Aramaic, Syriac, Ethiopic and Armenian witnesses and manuscript-level collation for 2 Esdras / 4 Ezra; the current 16-chapter import is Latin only."
+    "Additional Greek, Hebrew, Aramaic, Syriac, Ethiopic and Armenian witnesses and manuscript-level collation for 2 Esdras / 4 Ezra; the current 16-chapter import is Latin only.",
+    "Additional Qumran-Digital manuscript transcriptions, prioritized by complete/large witnesses and texts already represented in the manuscript register; each manuscript must be imported separately with line-level provenance and CC BY-SA 4.0 notices."
   ],
   "development_priority": {
     "order": [
