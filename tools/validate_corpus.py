@@ -84,6 +84,33 @@ def validate_apocrypha():
     print(f"Validated {len(REQUIRED_GREEK | REQUIRED_LATIN)} complete Apocrypha books/forms; {len(records)} text records")
 
 def validate_dss():
+    import json as json_module
+    dss_lines_path = ROOT / "dss/etcbc_transcriptions.jsonl"
+    dss_index_path = ROOT / "dss/etcbc_scroll_index.json"
+    assert dss_lines_path.exists() and dss_index_path.exists(), "Offline ETCBC DSS transcription assets were not generated"
+    index = json_module.loads(dss_index_path.read_text(encoding="utf-8"))
+    assert index["license"] == "CC BY-NC 4.0" and index["total_line_records"] >= 10000
+    indexed_scrolls = {item["scroll"]: item for item in index["scrolls"]}
+    assert len(indexed_scrolls) >= 200, f"Unexpected DSS scroll coverage: {len(indexed_scrolls)}"
+    required_witnesses = ("1QS", "1QM", "1QpHab", "1QH", "1QIsa")
+    assert all(any(required.lower() in key.lower() for key in indexed_scrolls) for required in required_witnesses)
+    actual_lines = 0
+    found_major = set()
+    with dss_lines_path.open(encoding="utf-8") as imported:
+        for raw in imported:
+            if not raw.strip():
+                continue
+            record = json_module.loads(raw)
+            assert record.get("scroll") and record.get("fragment") and record.get("line")
+            assert record.get("transcription_text") or record.get("normalized_text")
+            assert record.get("license") == "CC BY-NC 4.0" and record.get("source_revision")
+            assert record.get("attribution") and isinstance(record.get("parallel_references"), list)
+            actual_lines += 1
+            for required in required_witnesses:
+                if required.lower() in record["scroll"].lower():
+                    found_major.add(required)
+    assert actual_lines == index["total_line_records"], f"DSS line count mismatch: {actual_lines}"
+    assert found_major == set(required_witnesses), f"Major DSS witness missing from transcription lines: {set(required_witnesses)-found_major}"
     dss = json.loads((ROOT / "catalog/dead_sea_scrolls_register.json").read_text(encoding="utf-8"))
     assert dss["record_type"] == "dead_sea_scrolls_manuscript_metadata_catalog"
     assert len(dss["records"]) >= 6
