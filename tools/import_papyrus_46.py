@@ -148,7 +148,7 @@ def main():
             if page_id not in handles:
                 handle = gzip.open(PAGES / filename, "wt", encoding="utf-8", newline="\n", compresslevel=9)
                 handles[page_id] = handle
-                pages[page_id] = {"page_id": page_id, "asset_file": "vaticanus/pages/" + filename, "record_count": 0}
+                pages[page_id] = {"page_id": page_id, "asset_file": "papyri/p46/pages/" + filename, "record_count": 0}
             payload = {
                 "page_id": page_id,
                 "column_ids": column_ids,
@@ -198,31 +198,29 @@ def main():
     index = {
         "schema_version": 1,
         "record_type": "papyrus_46_page_verse_transcription",
-        "manuscript": "Codex Papyrus 46 (GA P46; Chester Beatty Biblical Papyrus II / P.Mich. inv. 6238)",
+        "manuscript": "Papyrus 46 (GA P46; Chester Beatty Biblical Papyrus II / P.Mich. inv. 6238)",
         "language": "Koine Greek",
         "document_id": 10046,
         "source_url": SOURCE_URL,
         "provider": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room",
         "attribution": ATTRIBUTION,
         "license": LICENSE,
-        "scope_note": "Surviving pages of P46 only. The codex originally comprised approximately 104 leaves, of which 86 survive; the opening and ending are lost. The transcription records only the surviving witness and retains source omissions and correction notes. Editorial restorations are bracketed where encoded by the source.",
         "license_url": LICENSE_URL,
         "record_count": total_records,
         "text_record_count": total_with_text,
         "page_count": len(pages),
         "pages": sorted(pages.values(), key=lambda item: item["page_id"]),
-        "scope_note": "Original surviving New Testament transcription only. The original codex does not preserve the Pastoral Letters, Philemon, Revelation, or Hebrews after 9:14. The later Revelation supplement is excluded.",
-        "text_handling": "The original hand is displayed where the source distinguishes corrections; correction readings are retained as notes. Source labels and page/column/line coordinates are retained where present. Missing manuscript portions are not supplied."
+        "scope_note": "Surviving pages of P46 only. The codex originally comprised approximately 104 leaves, of which 86 survive; the opening and ending are lost. The transcription records only the surviving witness and retains source omissions and correction notes. Editorial restorations are bracketed where encoded by the source.",
+        "text_handling": "Source labels and page/column/line coordinates are retained where present. Supplied readings are bracketed when encoded by the source. Missing manuscript portions are not supplied."
     }
-    (ROOT / "vaticanus_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "p46_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     (ROOT / "SOURCE_NOTICE.txt").write_text(
         ATTRIBUTION + "\nLicense: " + LICENSE + "\nSource: " + SOURCE_URL + "\n"
-        "Original-hand readings are displayed where marked by the source; corrections are notes.\n"
-        "Original source labels and page/column/line coordinates are retained where available.\n"
-        "Missing manuscript portions are not supplied. The later Revelation supplement is excluded.\n",
+        "Source labels and page/column/line coordinates are retained where available.\n"
+        "Supplied readings are bracketed where encoded by the source. Missing manuscript portions are not supplied.\n",
         encoding="utf-8"
     )
-    print(f"Imported Codex Vaticanus: {len(pages)} pages, {total_records} page-linked records, {total_with_text} records with text.")
+    print(f"Imported Papyrus 46: {len(pages)} pages, {total_records} page-linked records, {total_with_text} records with text.")
 
 
 if __name__ == "__main__":
