@@ -425,6 +425,19 @@ def validate_android():
     assert all(r["language"] == "grc" and r["text"].strip() and r["reading_witness"] == "Wikisource" for r in twelve_patriarchs_records)
     assert all("not yet collated against Charles" in r["textual_basis"] for r in twelve_patriarchs_records)
     assert "void openTwelvePatriarchsArchive()" in source and "openTwelvePatriarchsChapter(String testament,String chapter)" in source
+    odes_path = ROOT / "other_reference/odes_of_solomon/odes_syriac_index.json"
+    assert odes_path.exists(), "Offline Syriac Odes of Solomon index was not generated"
+    odes_index = json.loads(odes_path.read_text(encoding="utf-8"))
+    assert odes_index["source_revision"] == "833adc148cc356a6c70c16f81b22df9188df717a"
+    assert odes_index["license"] == "CC BY 4.0"
+    assert odes_index["language_code"] == "syr"
+    assert odes_index["ode_count"] == 40 and odes_index["first_ode"] == 3 and odes_index["last_ode"] == 42
+    assert odes_index["line_count"] >= 300 and odes_index["transcription_status"] == "UncorrectedTranscription"
+    odes_records = [json.loads(line) for line in (ROOT / "other_reference/odes_of_solomon/odes_syriac.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(odes_records) == odes_index["line_count"]
+    assert {r["ode"] for r in odes_records} == set(range(3, 43))
+    assert all(r["language"] == "syr" and r["text"].strip() and r["source_revision"] == odes_index["source_revision"] for r in odes_records)
+    assert "void openOdesOfSolomonArchive()" in source and "openOdesOfSolomonOde(String ode)" in source
     three_baruch_path = ROOT / "other_reference/3_baruch/3bar_greek_index.json"
     assert three_baruch_path.exists(), "Offline Greek 3 Baruch index was not generated"
     three_baruch_index = json.loads(three_baruch_path.read_text(encoding="utf-8"))
