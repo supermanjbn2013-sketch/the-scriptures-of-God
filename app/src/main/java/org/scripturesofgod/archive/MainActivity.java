@@ -412,51 +412,6 @@ public class MainActivity extends Activity {
     private void showPassageActions(String reference,String body,String sourceLanguage){String[] actions={"AI translate / analyze","Bookmark passage","Highlight passage","Add or edit personal note","Copy passage","Share passage"};new android.app.AlertDialog.Builder(this).setTitle(reference).setItems(actions,(d,w)->{if(w==0){openAiTranslator(reference,body,sourceLanguage);}else if(w==1){appendLibraryEntry("bookmarks",reference+"  "+body);showInfo("Bookmark saved",reference+" was saved to your personal library.");}else if(w==2){appendLibraryEntry("highlights",reference+"  "+body);showInfo("Highlight saved",reference+" was added to your highlights.");}else if(w==3){android.content.SharedPreferences p=getSharedPreferences("archive_library",MODE_PRIVATE);EditText note=new EditText(this);note.setMinLines(3);note.setText(p.getString("note:"+reference,""));new android.app.AlertDialog.Builder(this).setTitle("Personal note · "+reference).setView(note).setNegativeButton("Cancel",null).setPositiveButton("Save",(a,b)->p.edit().putString("note:"+reference,note.getText().toString()).apply()).show();}else if(w==4){((android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(android.content.ClipData.newPlainText(reference,reference+" "+body));showInfo("Copied",reference+" copied to clipboard.");}else{android.content.Intent intent=new android.content.Intent(android.content.Intent.ACTION_SEND);intent.setType("text/plain");intent.putExtra(android.content.Intent.EXTRA_TEXT,reference+"\n"+body);startActivity(Intent.createChooser(intent,"Share passage"));}}).show();}
     void openAiTranslator(String reference,String sourceText,String sourceLanguage){Intent intent=new Intent(this,AiTranslatorActivity.class);intent.putExtra("passage_reference",reference);intent.putExtra("passage_text",sourceText);intent.putExtra("source_language",sourceLanguage);intent.putExtra("preferred_target_language",targetLanguageName());startActivity(intent);}
 
-    private void translateOnDevice(String reference,String sourceText,String sourceLanguage,TextView output){
-        String source="grc".equals(sourceLanguage)?"el":("he".equals(sourceLanguage)?"he":("la".equals(sourceLanguage)?"la":("en".equals(sourceLanguage)?"en":sourceLanguage)));
-        String target=targetLanguage();
-        if(source==null||source.isEmpty()||"la".equals(source)){output.setText("This source language is not supported by the on-device translator. Latin is not currently included in the supported ML Kit translation languages.");return;}
-        if(source.equals(target)){output.setText(sourceText);return;}
-        com.google.mlkit.nl.translate.TranslatorOptions options=new com.google.mlkit.nl.translate.TranslatorOptions.Builder()
-            .setSourceLanguage(source).setTargetLanguage(target).build();
-        com.google.mlkit.nl.translate.Translator translator=com.google.mlkit.nl.translate.Translation.getClient(options);
-        output.setText("Downloading or checking the language model…");
-        translator.downloadModelIfNeeded()
-            .addOnSuccessListener(v->{
-                output.setText("Translating into "+targetLanguageName()+"…");
-                translator.translate(sourceText)
-                    .addOnSuccessListener(translated->{output.setText(translated);translator.close();})
-                    .addOnFailureListener(error->{output.setText("Translation failed: "+error.getMessage());translator.close();});
-            })
-            .addOnFailureListener(error->{output.setText("Could not download the "+languageNameForCode(source)+" translation model. Connect to the internet and try again. "+error.getMessage());translator.close();});
-    }
-    private String languageNameForCode(String code){
-        if("el".equals(code))return "Greek";if("he".equals(code))return "Hebrew";if("la".equals(code))return "Latin";if("en".equals(code))return "English";return code;
-    }
-
-    void openGoogleTranslate(String sourceText,String targetLanguageCode){
-        try{
-            String target=targetLanguageCode==null||targetLanguageCode.trim().isEmpty()?"en":targetLanguageCode;
-            String url="https://translate.google.com/?sl=auto&tl="+android.net.Uri.encode(target)+"&text="+android.net.Uri.encode(sourceText)+"&op=translate";
-            Intent intent=new Intent(Intent.ACTION_VIEW,android.net.Uri.parse(url));
-            startActivity(intent);
-        }catch(Exception e){
-            new android.app.AlertDialog.Builder(this).setMessage("Google Translate could not be opened.").setPositiveButton("Close",null).show();
-        }
-    }
-
-    void shareVerseForTranslation(String reference,String sourceText){
-        try{
-            Intent intent=new Intent(Intent.ACTION_SEND);
-            intent.setType("text/plain");
-            intent.putExtra(Intent.EXTRA_SUBJECT,reference);
-            intent.putExtra(Intent.EXTRA_TEXT,reference+"\n"+sourceText);
-            startActivity(Intent.createChooser(intent,"Open with a translator"));
-        }catch(Exception e){
-            new android.app.AlertDialog.Builder(this).setMessage("No compatible sharing or translation app is available.").setPositiveButton("Close",null).show();
-        }
-    }
-
     void renderEtcbcDssIndex(String query){
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/etcbc_scroll_index.json"),"UTF-8"));
