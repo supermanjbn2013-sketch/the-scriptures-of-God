@@ -244,6 +244,26 @@
         "Original-hand readings are displayed where the TEI distinguishes corrections; correction readings are retained as notes.",
         "Missing manuscript portions are not supplied from another edition or witness."
       ]
+    },
+    {
+      "id": "papyrus-46-ntvmr",
+      "name": "Papyrus 46 (GA P46) — INTF NTVMR diplomatic transcription",
+      "language": "Koine Greek",
+      "coverage": "Surviving page-level transcription of Papyrus 46, document 10046. Exact page and record counts are generated in papyri/p46/p46_index.json during the build.",
+      "record_type": "TEI diplomatic manuscript transcription, indexed by original NTVMR page identifier",
+      "edition": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, GA P46",
+      "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10046&pageID=ALL&format=teiraw",
+      "repository": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10046",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "attribution": "Papyrus 46 (GA P46), transcription and catalogue data by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, CC BY 4.0.",
+      "status": "Imported at APK build time as offline compressed page records.",
+      "limitations": [
+        "P46 is a fragmentary codex; the transcription contains only surviving manuscript material.",
+        "The codex originally comprised approximately 104 leaves; 86 leaves survive.",
+        "Lost opening and ending portions are not supplied.",
+        "Supplied readings are bracketed only where the source encodes them; no missing text is reconstructed.",
+        "The electronic transcription is not a photographic facsimile."
+      ]
     }
   ],
   "not_yet_integrated": [
