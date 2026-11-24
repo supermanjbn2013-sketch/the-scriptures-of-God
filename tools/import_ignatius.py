@@ -144,9 +144,9 @@ def main():
     letters.sort(key=lambda item: int(item["number"]))
     if [item["number"] for item in letters] != list(NAMES) or len(records) < 150:
         raise SystemExit(f"Ignatius import rejected: {len(letters)} letters, {len(records)} sections.")
-    with (ROOT / "ignatius_greek.jsonl").open("w", encoding="utf-8", newline="\\n") as out:
+    with (ROOT / "ignatius_greek.jsonl").open("w", encoding="utf-8", newline="\n") as out:
         for record in records:
-            out.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            out.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
 
     index = {
         "schema_version": 1,
