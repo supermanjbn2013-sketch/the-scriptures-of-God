@@ -429,6 +429,28 @@
         "The digital transcription and encoding are distributed under CC BY-SA 4.0.",
         "No missing wording is reconstructed."
       ]
+    },
+    {
+      "id": "gospel-thomas-coptic-scriptorium",
+      "name": "Gospel of Thomas — Sahidic Coptic text from Nag Hammadi Codex II",
+      "language": "Sahidic Coptic with Lycopolitan features",
+      "coverage": "Tractate II,2, codex pages 32–51; exact page, column, line and saying counts are generated in other_reference/thomas/thomas_index.json during the build.",
+      "record_type": "Coptic manuscript-based digital edition with codex page, column, line and saying identifiers",
+      "edition": "Paul C. Dilley, ed., Coptic SCRIPTORIUM version 6.2.0 (2025-11-25), based on examination of the Nag Hammadi Codex II facsimile",
+      "license": "CC BY 4.0",
+      "repository": "https://github.com/CopticScriptorium/corpora/tree/e624efd798e3b49530472c7a4258db636222a826/thomas-gospel/thomas.gospel_TEI",
+      "source_url": "https://raw.githubusercontent.com/CopticScriptorium/corpora/e624efd798e3b49530472c7a4258db636222a826/thomas-gospel/thomas.gospel_TEI/thomas_gospel.xml",
+      "attribution": "Paul C. Dilley, ed., Gospel of Thomas, Coptic SCRIPTORIUM version 6.2.0; annotations by Lydia Bremer-McCollum, Caroline T. Schroeder and Amir Zeldes; CC BY 4.0.",
+      "status": "Imported at APK build time as offline Coptic text indexed by codex page, column, line and saying.",
+      "limitations": [
+        "The complete surviving copy is in Sahidic Coptic in Nag Hammadi Codex II, tractate 2, pages 32–51.",
+        "The source is a scholarly digital edition based on examination of the facsimile, not a new independent transcription made by this app.",
+        "The work is commonly understood to have been composed originally in Greek; this dataset is the surviving Coptic copy.",
+        "Greek Oxyrhynchus fragments P.Oxy. 1, 654 and 655 are separate witnesses and are not included in this Coptic dataset.",
+        "Damaged, missing or unreadable wording is not reconstructed.",
+        "Nag Hammadi manuscript images are not bundled; institutional image rights remain separate."
+      ],
+      "asset_file": "other_reference/thomas/thomas_coptic.jsonl"
     }
   ],
   "not_yet_integrated": [
