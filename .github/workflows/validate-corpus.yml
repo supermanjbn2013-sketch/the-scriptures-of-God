@@ -44,8 +44,6 @@ jobs:
         run: python tools/prepare_corpus.py
       - name: Import offline Dead Sea Scrolls transcriptions
         run: python tools/import_etcbc_dss.py
-      - name: Import Codex Sinaiticus manuscript transcription
-        run: python tools/import_codex_sinaiticus.py
       - name: Import Codex Vaticanus manuscript transcription
         run: python tools/import_codex_vaticanus.py
       - name: Import Papyrus 46 manuscript transcription
@@ -60,6 +58,8 @@ jobs:
         run: python tools/import_papyrus_72.py
       - name: Import Papyrus 77 manuscript transcription
         run: python tools/import_papyrus_77.py
+      - name: Import Codex Sinaiticus manuscript transcription
+        run: python tools/import_codex_sinaiticus.py
       - name: Import Greek Didache reference text
         run: python tools/import_didache.py
       - name: Import Greek Shepherd of Hermas reference text
