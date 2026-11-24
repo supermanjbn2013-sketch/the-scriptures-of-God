@@ -526,6 +526,17 @@
       "license": "CC BY 4.0",
       "source_edition": "J.-C. Picard (ed.), Apocalypsis Baruchi Graece (PVTG 2; Leiden: Brill, 1967), pp. 81–96; TEI editors Ken M. Penner and David M. Miller.",
       "status": "Offline Greek text reader; Greek and Slavonic traditions kept separate. Edition-derived, not a fresh diplomatic transcription."
+    },
+    {
+      "id": "twelve-patriarchs-greek-ocp-provisional",
+      "name": "Testaments of the Twelve Patriarchs — provisional Greek base text",
+      "language": "Ancient Greek",
+      "coverage": "Twelve testament divisions, 142 chapter divisions and numbered Greek verse records.",
+      "source_url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/954a1f057c2426ad2f049b135600712812516242/static/docs/tei/T12P.xml",
+      "source_revision": "954a1f057c2426ad2f049b135600712812516242",
+      "license": "CC BY 4.0",
+      "source_edition": "OCP TEI Greek Wikisource base text, apparently related to R. H. Charles (1908); source header explicitly says it has not yet been collated against Charles.",
+      "status": "Offline reader by patriarch and chapter. Provisional single-witness base text only; not a critical edition or diplomatic transcription of an identified ancient codex."
     }
   ],
   "not_yet_integrated": [
