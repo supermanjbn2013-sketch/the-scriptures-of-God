@@ -86,6 +86,8 @@ jobs:
         run: python tools/import_2_baruch.py
       - name: Import Ge'ez Ascension of Isaiah text
         run: python tools/import_ascension_isaiah.py
+      - name: Validate imported papyrus page indexes and text records
+        run: python tools/validate_corpus.py papyri
       - name: Validate base Hebrew and Greek corpus
         run: python tools/validate_corpus.py base
       - name: Validate complete Apocrypha texts
