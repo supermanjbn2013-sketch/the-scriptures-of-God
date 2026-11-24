@@ -197,7 +197,7 @@ def main():
 
     index = {
         "schema_version": 1,
-        "record_type": "papyrus_75_page_verse_transcription",
+        "record_type": "papyrus_77_page_verse_transcription",
         "manuscript": "Papyrus 77 (GA P77; P. Oxy. 2683 + P. Oxy. 4405)",
         "language": "Koine Greek",
         "document_id": 10077,
@@ -210,7 +210,7 @@ def main():
         "text_record_count": total_with_text,
         "page_count": len(pages),
         "pages": sorted(pages.values(), key=lambda item: item["page_id"]),
-        "scope_note": "Surviving pages and fragments of P77 only. Approximately 51 leaves survive, with substantial gaps and damaged portions. The transcription records only the source witness; supplied readings are bracketed where encoded by the source. Missing portions are not reconstructed.",
+        "scope_note": "One surviving leaf represented by two fragments, preserving Matthew 23:30–39. The transcription records only surviving witness text and source-encoded correction readings. Missing portions are not reconstructed.",
         "text_handling": "Source labels and page/column/line coordinates are retained where present. Supplied readings are bracketed when encoded by the source. Missing manuscript portions are not supplied."
     }
     (ROOT / "p77_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
