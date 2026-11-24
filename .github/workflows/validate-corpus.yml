@@ -7,6 +7,7 @@ on:
       - "tools/import_codex_sinaiticus.py"
       - "tools/import_codex_vaticanus.py"
       - "tools/import_papyrus_46.py"
+      - "tools/import_papyrus_52.py"
       - "tools/validate_corpus.py"
       - "app/src/main/java/org/scripturesofgod/archive/MainActivity.java"
       - "app/src/main/assets/catalog/**"
@@ -32,6 +33,8 @@ jobs:
         run: python tools/import_codex_vaticanus.py
       - name: Import Papyrus 46 manuscript transcription
         run: python tools/import_papyrus_46.py
+      - name: Import Papyrus 52 manuscript transcription
+        run: python tools/import_papyrus_52.py
       - name: Validate base Hebrew and Greek corpus
         run: python tools/validate_corpus.py base
       - name: Validate complete Apocrypha texts
