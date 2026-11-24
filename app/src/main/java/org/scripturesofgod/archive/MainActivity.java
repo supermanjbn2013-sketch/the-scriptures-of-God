@@ -1002,6 +1002,70 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void openPapyrus52Archive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("papyri/p52/p52_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONObject index=new org.json.JSONObject(raw.toString());
+            org.json.JSONArray pages=index.getJSONArray("pages");
+            String[] labels=new String[pages.length()];
+            String[] ids=new String[pages.length()];
+            for(int i=0;i<pages.length();i++){
+                org.json.JSONObject page=pages.getJSONObject(i);
+                ids[i]=page.optString("page_id");
+                labels[i]=ids[i]+"  ·  "+page.optInt("record_count")+" text records";
+            }
+            new android.app.AlertDialog.Builder(this).setTitle("Papyrus 52 · Offline Page Archive")
+                .setItems(labels,(dialog,which)->openPapyrus52Page(ids[which]))
+                .setNegativeButton("Close",null).show();
+        }catch(Exception e){
+            showInfo("Papyrus 52 transcription unavailable","The offline P46 transcription was not generated in this build. "+e.getMessage());
+        }
+    }
+
+    void openPapyrus52Page(String pageId){
+        final String selected=pageId;
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader indexReader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("papyri/p52/p52_index.json"),"UTF-8"));
+                    StringBuilder indexRaw=new StringBuilder();String indexLine;while((indexLine=indexReader.readLine())!=null)indexRaw.append(indexLine);indexReader.close();
+                    org.json.JSONArray pages=new org.json.JSONObject(indexRaw.toString()).getJSONArray("pages");
+                    String assetPath=null;
+                    for(int i=0;i<pages.length();i++){org.json.JSONObject page=pages.getJSONObject(i);if(selected.equals(page.optString("page_id"))){assetPath=page.optString("asset_file");break;}}
+                    if(assetPath==null)return "No offline page file is indexed for "+selected+".";
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(new java.util.zip.GZIPInputStream(getAssets().open(assetPath)),"UTF-8"),8192);
+                    String raw;
+                    while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(count==0)out.append("Source: Papyrus 52 (GA P46), INTF / New Testament Virtual Manuscript Room, document 10052\n")
+                            .append("Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)\n")
+                            .append("Original source labels and page/column/line identifiers are retained where present.\n")
+                            .append("Only surviving manuscript text is included. Supplied readings are bracketed where the source encodes them; missing portions are not reconstructed.\n\n");
+                        out.append(record.optString("source_label")).append("\n");
+                        out.append("Page: ").append(record.optString("page_id")).append("\n");
+                        out.append("Column: ").append(record.optJSONArray("column_ids")==null?"":record.optJSONArray("column_ids").toString()).append("\n");
+                        out.append("Line: ").append(record.optJSONArray("line_ids")==null?"":record.optJSONArray("line_ids").toString()).append("\n");
+                        out.append(record.optString("text")).append("\n");
+                        org.json.JSONArray notes=record.optJSONArray("correction_notes");
+                        if(notes!=null)for(int i=0;i<notes.length();i++)out.append("Correction note: ").append(notes.optString(i)).append("\n");
+                        out.append("\n");count++;
+                    }
+                    reader.close();
+                    return count==0?"No transcription records were found for "+selected+".":count+" source text records\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline Papyrus 52 transcription: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Papyrus 52")
+                    .setView(sv).setNegativeButton("Back to page index",(d,w)->openPapyrus52Archive())
+                    .setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     void openCatalogEntry(String item){
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/greek_manuscript_register.json"),"UTF-8"));
@@ -1053,6 +1117,7 @@ public class MainActivity extends Activity {
             android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(match.optString("name")).setView(sv).setPositiveButton("Close",null);
             if("Vaticanus".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openVaticanusArchive());
             if("P46".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus46Archive());
+            if("P52".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open fragment transcription",(d,w)->openPapyrus52Archive());
             builder.show();
         }catch(Exception e){
             new android.app.AlertDialog.Builder(this).setTitle("Manuscript catalogue unavailable").setMessage("The metadata register is not present in this build yet.").setPositiveButton("Close",null).show();
