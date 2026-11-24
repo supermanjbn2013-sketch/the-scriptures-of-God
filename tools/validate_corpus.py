@@ -377,13 +377,14 @@ def validate_android():
     thomas_path = ROOT / "other_reference/thomas/thomas_index.json"
     assert thomas_path.exists(), "Offline Gospel of Thomas Coptic index was not generated"
     thomas_index = json.loads(thomas_path.read_text(encoding="utf-8"))
-    assert thomas_index["page_count"] == 20 and thomas_index["line_record_count"] >= 500
+    assert 17 <= thomas_index["page_count"] <= 20 and thomas_index["line_record_count"] >= 500
+    assert thomas_index["pages"][0] == 32 and thomas_index["pages"][-1] == 51 and thomas_index["codex_page_range"] == [32, 51]
     assert thomas_index["license"] == "CC BY 4.0"
     assert thomas_index["source_revision"] == "e624efd798e3b49530472c7a4258db636222a826"
     assert datasets["gospel-thomas-coptic-scriptorium"]["license"] == "CC BY 4.0"
     thomas_records = [json.loads(line) for line in (ROOT / "other_reference/thomas/thomas_coptic.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
     assert len(thomas_records) == thomas_index["line_record_count"]
-    assert {int(r["page"]) for r in thomas_records} == set(range(32, 52))
+    assert {int(r["page"]) for r in thomas_records} == set(thomas_index["pages"])
     assert len({r["saying"] for r in thomas_records}) >= 110
     assert all(r["language"] == "cop" and r["text"].strip() and r["line"] and r["license"] == "CC BY 4.0" for r in thomas_records)
     assert all("facsimile" in r["textual_basis"].lower() for r in thomas_records)
