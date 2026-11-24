@@ -19,6 +19,7 @@ on:
       - "tools/import_2_baruch.py"
       - "tools/import_3_baruch.py"
       - "tools/import_twelve_patriarchs.py"
+      - "tools/import_odes_of_solomon.py"
       - "tools/import_jubilees_geez.py"
       - "tools/validate_corpus.py"
       - "app/src/main/java/org/scripturesofgod/archive/MainActivity.java"
@@ -63,6 +64,8 @@ jobs:
         run: python tools/import_enoch_greek.py
       - name: Import Ge'ez Jubilees editions
         run: python tools/import_jubilees_geez.py
+      - name: Import Syriac Odes of Solomon text
+        run: python tools/import_odes_of_solomon.py
       - name: Import Greek Twelve Patriarchs provisional base text
         run: python tools/import_twelve_patriarchs.py
       - name: Import Greek 3 Baruch critical edition
