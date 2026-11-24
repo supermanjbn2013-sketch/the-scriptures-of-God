@@ -169,6 +169,63 @@ def validate_dss():
     assert len(dss["archive_browse_index"]["qumran_sites"]) >= 9
     print("Validated DSS metadata and passage concordance:", len(dss["records"]), len(concordance["records"]))
 
+
+def validate_papyri():
+    """Verify every imported papyrus index against its compressed page records."""
+    catalog = json.loads((ROOT / "catalog/greek_manuscript_register.json").read_text(encoding="utf-8"))
+    entries = {item["id"]: item for item in catalog["records"]}
+    witnesses = {
+        "P46": (10046, "p46", "papyrus_46_page_verse_transcription"),
+        "P52": (10052, "p52", "papyrus_52_page_verse_transcription"),
+        "P66": (10066, "p66", "papyrus_66_page_verse_transcription"),
+        "P75": (10075, "p75", "papyrus_75_page_verse_transcription"),
+        "P72": (10072, "p72", "papyrus_72_page_verse_transcription"),
+        "P77": (10077, "p77", "papyrus_77_page_verse_transcription"),
+    }
+    for witness, (document_id, folder, record_type) in witnesses.items():
+        entry = entries[witness]
+        source = entry["digital_transcription_source"]
+        assert source["document_id"] == document_id, f"{witness}: source document ID mismatch"
+        assert source["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)", f"{witness}: unverified or changed licence"
+        assert "integrated" in entry["status"].lower(), f"{witness}: register does not mark importer integrated"
+        index_path = ROOT / f"papyri/{folder}/{folder}_index.json"
+        assert index_path.exists(), f"{witness}: generated offline index missing"
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+        assert index["document_id"] == document_id and index["record_type"] == record_type
+        assert index["license"] == source["license"] and index["source_url"] == source["source_url"]
+        assert index["attribution"] and index["provider"] and index["scope_note"] and index["text_handling"]
+        assert index["page_count"] == len(index["pages"]) > 0
+        assert index["record_count"] >= 1 and index["text_record_count"] >= 1
+        seen_pages = set()
+        actual_records = 0
+        actual_text_records = 0
+        for page in index["pages"]:
+            page_id = page["page_id"]
+            assert page_id and page_id not in seen_pages, f"{witness}: duplicate or empty page ID"
+            seen_pages.add(page_id)
+            asset = ROOT / page["asset_file"]
+            assert asset.exists() and asset.stat().st_size > 0, f"{witness}: missing compressed page {page_id}"
+            page_records = 0
+            with gzip.open(asset, "rt", encoding="utf-8") as stream:
+                for raw in stream:
+                    if not raw.strip():
+                        continue
+                    record = json.loads(raw)
+                    assert record.get("page_id") == page_id
+                    assert record.get("source_label") is not None
+                    assert isinstance(record.get("column_ids"), list) and isinstance(record.get("line_ids"), list)
+                    assert isinstance(record.get("correction_notes"), list)
+                    assert record.get("text", "").strip(), f"{witness}: empty imported text record"
+                    page_records += 1
+                    actual_records += 1
+                    actual_text_records += 1
+            assert page_records == page["record_count"], f"{witness}: page record count mismatch for {page_id}"
+        assert actual_records == index["record_count"], f"{witness}: index record count mismatch"
+        assert actual_text_records == index["text_record_count"], f"{witness}: text record count mismatch"
+        if witness == "P77":
+            assert actual_records >= 5 and index["page_count"] >= 1, "P77 source output unexpectedly incomplete"
+    print("Validated six papyrus witnesses against their generated offline page records.")
+
 def validate_android():
     source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
     for required in (
@@ -537,7 +594,7 @@ def validate_android():
     assert all("not a diplomatic transcription" in r["editorial_basis"].lower() for r in enoch_greek_records)
     print("Validated Android navigation, manuscript transcriptions, Didache, Shepherd of Hermas both Testament of Abraham recensions and the Coptic Gospel of Thomas and Greek 1 Enoch")
 
-sections = {"base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "android": validate_android}
+sections = {"base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
-    raise SystemExit("Usage: python tools/validate_corpus.py base|apocrypha|dss|android")
+    raise SystemExit("Usage: python tools/validate_corpus.py base|apocrypha|dss|papyri|android")
 sections[sys.argv[1]]()
