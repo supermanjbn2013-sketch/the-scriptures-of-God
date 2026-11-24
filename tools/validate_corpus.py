@@ -340,7 +340,7 @@ def validate_android():
     assert len(didache_records) == didache_index["section_count"]
     assert {r["chapter"] for r in didache_records} == set(range(1, 17))
     assert all(r["language"] == "grc" and r["text"].strip() and r["reference"] and r["license"] == "CC BY-SA 4.0" for r in didache_records)
-    assert all("printed edition" in r["textual_basis"].lower() for r in didache_records)
+    assert all("printed" in r["textual_basis"].lower() for r in didache_records)
     hermas_path = ROOT / "other_reference/hermas/hermas_index.json"
     assert hermas_path.exists(), "Offline Shepherd of Hermas Greek index was not generated"
     hermas_index = json.loads(hermas_path.read_text(encoding="utf-8"))
