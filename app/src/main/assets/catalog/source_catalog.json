@@ -494,6 +494,16 @@
         "Nag Hammadi manuscript images are not bundled; institutional image rights remain separate."
       ],
       "asset_file": "other_reference/thomas/thomas_coptic.jsonl"
+    },
+    {
+      "id": "2-baruch-syriac-etcbc",
+      "name": "2 Baruch Syriac text (ETCBC electronic Peshitta)",
+      "language": "Classical Syriac",
+      "license": "CC BY-NC 4.0",
+      "source_url": "https://github.com/ETCBC/peshitta/tree/9850f5addade26f681334aa475570bef9b0b440a/plain/0.2",
+      "source_revision": "9850f5addade26f681334aa475570bef9b0b440a",
+      "textual_basis": "OCR-derived electronic text of the Syriac Peshitta main text, based on the printed Vetus Testamentum Syriace edition; critical apparatus omitted.",
+      "status": "Offline Syriac text imported with Apocalypse proper and two Epistle forms kept separate; non-commercial use only."
     }
   ],
   "not_yet_integrated": [
