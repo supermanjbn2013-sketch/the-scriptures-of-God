@@ -182,7 +182,7 @@ def validate_android():
         "void openPapyrus52Archive()", "void openPapyrus52Page(String pageId)", "papyri/p52/p52_index.json",
         "void openPapyrus66Archive()", "void openPapyrus66Page(String pageId)", "papyri/p66/p66_index.json",
         "void openPapyrus75Archive()", "void openPapyrus75Page(String pageId)", "papyri/p75/p75_index.json",
-        "void openDidacheArchive()", "void openDidacheChapter(int chapter)", "other_reference/didache/didache_index.json", "other_reference/didache/didache_greek.jsonl", "Open Greek text"
+        "void openDidacheArchive()", "void openDidacheChapter(int chapter)", "other_reference/didache/didache_index.json", "other_reference/didache/didache_greek.jsonl", "Open Greek text",
         "594 line records across these nine Qumran witness identifiers", "not a continuous reconstructed text or an English translation", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate  ·  Long press for passage tools", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "void translateOnDevice(", "com.google.mlkit.nl.translate.TranslatorOptions", "targetLanguage()"
     ):
         assert required in source, f"Android source is missing: {required}"
