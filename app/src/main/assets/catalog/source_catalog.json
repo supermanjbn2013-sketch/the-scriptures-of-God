@@ -74,7 +74,14 @@
           "Separate manuscript witnesses and comparison texts must remain distinguished.",
           "The site owner's editorial interpretations must not be presented as institutional consensus or as the manuscript's unmediated wording."
         ]
-      }
+      },
+      "limitations": [
+        "This is a collection of downloadable documents, not one unified critical edition or manuscript catalogue; each file must be assessed and attributed separately.",
+        "A provider's transcription or PDF text layer may contain transcription, OCR, spacing, or extraction errors; verify readings against the rendered document and the cited scholarly edition.",
+        "A PDF heading or displayed line break is not automatically a manuscript fragment, column, or line coordinate.",
+        "Only files whose individual source, scope, and CC BY-SA 4.0 terms have been checked may be imported; do not infer that every file on the site has identical content or coverage.",
+        "Do not merge these transcriptions with Qumran-Digital, ETCBC, or published DJD readings; preserve each source as a distinct witness or edition."
+      ]
     },
     {
       "id": "swete-lxx-apocrypha",
@@ -164,7 +171,8 @@
         "The PDF headings and line breaks are retained as provider labels, not asserted manuscript column/line coordinates.",
         "Do not merge this transcription with Qumran-Digital or the published DJD edition; preserve source distinctions."
       ],
-      "status": "Later fragment-group text blocks imported separately in the DSS passage concordance."
+      "status": "Later fragment-group text blocks imported separately in the DSS passage concordance.",
+      "repository": "https://downloads.thewaytoyahuweh.com/pdf/dead_sea_scrolls/DSS_-_4Q47Joshuaa.pdf"
     },
     {
       "id": "qumran-digital-transcription-index",
@@ -405,7 +413,8 @@
         "The fragments are not assembled into a continuous reconstructed book.",
         "Missing and unreadable text remains missing; no reconstruction is supplied.",
         "Source license is non-commercial (CC BY-NC 4.0)."
-      ]
+      ],
+      "repository": "https://github.com/ETCBC/dss"
     },
     {
       "id": "jubilees-qumran-hebrew-fragments",
@@ -426,7 +435,8 @@
         "The fragments are not assembled into a continuous reconstructed book.",
         "Missing and unreadable text remains missing; no reconstruction is supplied.",
         "Source license is non-commercial (CC BY-NC 4.0)."
-      ]
+      ],
+      "repository": "https://github.com/ETCBC/dss"
     },
     {
       "id": "testament-abraham-first1k-greek",
@@ -503,7 +513,21 @@
       "source_url": "https://github.com/ETCBC/peshitta/tree/9850f5addade26f681334aa475570bef9b0b440a/plain/0.2",
       "source_revision": "9850f5addade26f681334aa475570bef9b0b440a",
       "textual_basis": "OCR-derived electronic text of the Syriac Peshitta main text, based on the printed Vetus Testamentum Syriace edition; critical apparatus omitted.",
-      "status": "Offline Syriac text imported with Apocalypse proper and two Epistle forms kept separate; non-commercial use only."
+      "status": "Offline Syriac text imported with Apocalypse proper and two Epistle forms kept separate; non-commercial use only.",
+      "coverage": [
+        "Apocalypse of Baruch in Syriac, chapters 1–77",
+        "Epistle of Baruch, Syriac text A, chapters 78–86",
+        "Epistle of Baruch, Syriac text B, chapters 78–87"
+      ],
+      "record_type": "OCR-derived electronic Syriac Peshitta text from a printed edition; not a diplomatic transcription of Codex Ambrosianus",
+      "repository": "https://github.com/ETCBC/peshitta/tree/9850f5addade26f681334aa475570bef9b0b440a",
+      "limitations": [
+        "The Syriac text is a translation from Greek; the Greek survives only in small fragments.",
+        "The Apocalypse proper (chapters 1–77) and the two Syriac forms of the Epistle (A: 78–86; B: 78–87) are kept separate and are not merged into a reconstructed text.",
+        "The electronic text is OCR-derived from the printed Vetus Testamentum Syriace edition, not a fresh diplomatic transcription of Codex Ambrosianus.",
+        "The critical apparatus of the printed edition is not included.",
+        "The source data is CC BY-NC 4.0; non-commercial use only. Commercial use requires separate permission from ETCBC or Brill."
+      ]
     },
     {
       "id": "jubilees-geez-beta-masaheft",
@@ -514,7 +538,15 @@
       "source_revision": "ff9d4981eba2084c4914ca840ff323d85cbd2a1d",
       "license": "CC BY-SA 4.0",
       "edition": "Ge'ez transcription of VanderKam's edition by Ran HaCohen; standard printed EOTC edition. Kept separate.",
-      "status": "Offline Ge'ez text with edition selector and chapter reader; separate from Hebrew Qumran fragments."
+      "status": "Offline Ge'ez text with edition selector and chapter reader; separate from Hebrew Qumran fragments.",
+      "record_type": "Two separately encoded Ge'ez edition texts; not fresh diplomatic transcriptions of named manuscripts",
+      "repository": "https://github.com/BetaMasaheft/Works/tree/ff9d4981eba2084c4914ca840ff323d85cbd2a1d/1001-2000",
+      "limitations": [
+        "The two Ge'ez editions are kept separate and are not conflated into a composite text.",
+        "These are edition-based texts, not fresh diplomatic transcriptions of individual codices.",
+        "The Qumran Hebrew fragments of Jubilees already held in the archive remain separate witnesses and are not merged with either Ge'ez edition.",
+        "No missing wording is reconstructed."
+      ]
     },
     {
       "id": "3-baruch-greek-ocp-picard",
@@ -525,7 +557,15 @@
       "source_revision": "954a1f057c2426ad2f049b135600712812516242",
       "license": "CC BY 4.0",
       "source_edition": "J.-C. Picard (ed.), Apocalypsis Baruchi Graece (PVTG 2; Leiden: Brill, 1967), pp. 81–96; TEI editors Ken M. Penner and David M. Miller.",
-      "status": "Offline Greek text reader; Greek and Slavonic traditions kept separate. Edition-derived, not a fresh diplomatic transcription."
+      "status": "Offline Greek text reader; Greek and Slavonic traditions kept separate. Edition-derived, not a fresh diplomatic transcription.",
+      "record_type": "Greek critical-edition lemma encoded in OCP TEI; not a fresh diplomatic transcription of either surviving Greek manuscript",
+      "repository": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/tree/954a1f057c2426ad2f049b135600712812516242/static/docs/tei",
+      "limitations": [
+        "Only the Greek critical-edition lemma is imported; the OCP translation and French translation divisions are not mixed into the Greek text.",
+        "The Slavonic tradition is not included or merged.",
+        "The source encodes the Greek lemma but no separate Greek variant readings in this TEI file; absence of encoded variants is not proof that manuscripts have no variants.",
+        "No missing wording is reconstructed."
+      ]
     },
     {
       "id": "twelve-patriarchs-greek-ocp-provisional",
@@ -536,7 +576,16 @@
       "source_revision": "954a1f057c2426ad2f049b135600712812516242",
       "license": "CC BY 4.0",
       "source_edition": "OCP TEI Greek Wikisource base text, apparently related to R. H. Charles (1908); source header explicitly says it has not yet been collated against Charles.",
-      "status": "Offline reader by patriarch and chapter. Provisional single-witness base text only; not a critical edition or diplomatic transcription of an identified ancient codex."
+      "status": "Offline reader by patriarch and chapter. Provisional single-witness base text only; not a critical edition or diplomatic transcription of an identified ancient codex.",
+      "record_type": "Provisional single-witness Greek base text encoded in OCP TEI; not a collated critical text or diplomatic transcription of a named ancient codex",
+      "repository": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/tree/954a1f057c2426ad2f049b135600712812516242/static/docs/tei",
+      "limitations": [
+        "Only the Greek base-text lemma is imported; no reconstructed variants are added.",
+        "The OCP TEI file identifies one base witness, Wikisource; it does not provide a multi-manuscript apparatus for this text.",
+        "The OCP source explicitly labels the base text provisional and not yet collated against Charles.",
+        "Keep the Greek base text distinct from fragmentary Semitic-language evidence and other versional traditions.",
+        "No missing wording is reconstructed."
+      ]
     },
     {
       "id": "odes-of-solomon-syriac-digital-syriac-corpus",
@@ -549,7 +598,16 @@
       "source_edition": "James H. Charlesworth (ed.), The Odes of Solomon: The Syriac Texts (Oxford University Press, 1973).",
       "transcriber": "Michael Oez",
       "tei_encoder": "James E. Walters",
-      "status": "Offline Syriac text for Odes 3–42. Digital Syriac Corpus source marks this a print transcription and UncorrectedTranscription; not a fresh diplomatic manuscript transcription. Odes 1–2 not reconstructed; Greek/Coptic witnesses kept separate."
+      "status": "Offline Syriac text for Odes 3–42. Digital Syriac Corpus source marks this a print transcription and UncorrectedTranscription; not a fresh diplomatic manuscript transcription. Odes 1–2 not reconstructed; Greek/Coptic witnesses kept separate.",
+      "record_type": "Uncorrected print transcription of the Syriac edition by Charlesworth (1973); not a fresh diplomatic transcription of manuscript images",
+      "repository": "https://github.com/srophe/syriac-corpus/tree/833adc148cc356a6c70c16f81b22df9188df717a/data/tei",
+      "limitations": [
+        "This Syriac dataset contains Odes 3–42 only; Ode 2 is absent from the Syriac manuscript tradition represented by this source, and Ode 1 is not supplied by these files.",
+        "The source is a print transcription based on Charlesworth (1973), not a fresh diplomatic transcription of a manuscript image.",
+        "The source marks the transcription UncorrectedTranscription; possible transcription errors remain.",
+        "Greek and Coptic fragments and other manuscript witnesses are not merged into this Syriac text.",
+        "No missing wording is reconstructed."
+      ]
     },
     {
       "id": "ignatius-seven-letters-first1k-greek",
