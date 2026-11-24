@@ -227,6 +227,35 @@
         "status": "Not imported; Greek transcription and image-to-line coordinates still require verification",
         "caution": "Do not treat a modern printed or normalized Greek text as a diplomatic transcription of P77."
       }
+    },
+    {
+      "id": "P72",
+      "name": "Papyrus 72 (P72) / Papyrus Bodmer VII–VIII",
+      "material": "Papyrus codex",
+      "language": "Koine Greek; additional works in Greek",
+      "date_estimate": "3rd–4th century CE (approximate)",
+      "date_basis": "Palaeographical assessment; dating varies in scholarship",
+      "contents": "1 Peter, 2 Peter and Jude, with additional writings in the composite codex",
+      "condition": "Fragmentary composite codex; multiple works and fragments",
+      "holding_institution": "Fondation Martin Bodmer, Cologny, Switzerland, and Biblioteca Apostolica Vaticana, Vatican City",
+      "shelfmark": "Bodmer VII–VIII; parts held in separate collections",
+      "source_urls": [
+        "https://manuscripts.csntm.org/Manuscript/Group/GA_P72",
+        "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10072"
+      ],
+      "status": "INTF NTVMR TEI transcription importer integrated; offline page-indexed records generated during APK build",
+      "caution": "P72 is a composite codex. Distinguish its individual works and fragments; do not imply that every included work is complete or that the codex is a single-book manuscript.",
+      "digital_transcription_source": {
+        "title": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room — Papyrus 72 (GA P72)",
+        "document_id": 10072,
+        "format": "TEI XML transcription; imported as compressed offline page records",
+        "version": "Published NTVMR transcription retrieved at build time",
+        "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10072&pageID=ALL&format=teiraw",
+        "repository_url": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10072",
+        "status": "Importer integrated; exact page/record counts generated in papyri/p72/p72_index.json during APK build",
+        "caution": "Composite codex containing several works; retain page, column, line, correction and source labels. Missing portions are not reconstructed."
+      }
     }
   ],
   "catalog_policy": "Metadata records are not transcriptions. A manuscript passage is not available in-app until the exact folio/page, image rights, transcription source, and reading have been verified. Dates are estimates and must retain uncertainty."
