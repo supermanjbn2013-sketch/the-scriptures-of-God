@@ -70,7 +70,7 @@ def main():
     def finish_line():
         nonlocal total_lines, tokens, word_ids, token_markup
         if current_page is None or not tokens:
-            tokens, word_ids = [], []
+            tokens, word_ids, token_markup = [], [], []
             return
         record = {
             "page_id": current_page,
