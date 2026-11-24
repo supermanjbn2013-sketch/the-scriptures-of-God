@@ -287,7 +287,7 @@ def validate_android():
     historical_json = json.dumps(historical)
     assert "P.Oxy. 1782 (late 4th century Greek fragment)" in historical_json
     assert "P.Oxy. 3528" in historical_json and "not be casually assigned to Barnabas" in historical_json
-    assert "do not automatically be identified as Paul's referenced letter" in historical_json
+    assert "must not automatically be identified as Paul's referenced letter" in historical_json
 
     manuscript_register = json.loads((ROOT / "catalog/greek_manuscript_register.json").read_text(encoding="utf-8"))
     p76 = next((record for record in manuscript_register["records"] if record.get("id") == "P76"), None)
