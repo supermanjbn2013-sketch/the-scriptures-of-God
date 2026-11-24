@@ -21,7 +21,7 @@
       "id": "sblgnt",
       "name": "SBL Greek New Testament v1.2",
       "language": "Koine Greek",
-      "coverage": "27 traditional Disciples and Apostles Writings",
+      "coverage": "27 writings associated with the disciples and apostles",
       "record_type": "edited Greek text",
       "license": "CC BY 4.0",
       "repository": "https://github.com/Faithlife/SBLGNT",
