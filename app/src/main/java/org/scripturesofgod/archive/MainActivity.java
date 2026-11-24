@@ -1075,6 +1075,44 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void openOdesOfSolomonArchive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/odes_of_solomon/odes_syriac_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray odes=new org.json.JSONObject(raw.toString()).getJSONArray("odes");String[] nums=new String[odes.length()];String[] labels=new String[odes.length()];
+            for(int i=0;i<odes.length();i++){org.json.JSONObject ode=odes.getJSONObject(i);nums[i]=ode.optString("ode");labels[i]="Ode "+nums[i]+" · "+ode.optInt("stanza_count")+" stanzas";}
+            new android.app.AlertDialog.Builder(this).setTitle("Odes of Solomon · Syriac text (Odes 3–42)")
+                .setItems(labels,(d,w)->openOdesOfSolomonOde(nums[w])).setNegativeButton("Close",null).show();
+        }catch(Exception e){showInfo("Odes of Solomon unavailable","The offline Syriac text was not generated in this build. "+e.getMessage());}
+    }
+    void openOdesOfSolomonOde(String ode){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;String lastStanza="";
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/odes_of_solomon/odes_syriac.jsonl"),"UTF-8"),8192);
+                    String raw;while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);if(!ode.equals(record.optString("ode")))continue;
+                        if(count==0)out.append("Language: Classical Syriac\n")
+                            .append("Source: Digital Syriac Corpus; Charlesworth (1973)\n")
+                            .append("Transcription: Michael Oez; TEI encoding: James E. Walters\n")
+                            .append("Licence: CC BY 4.0 for the TEI edition; Syriac base text public domain\n")
+                            .append("Source status: UncorrectedTranscription; print transcription, not a fresh manuscript transcription. Only Odes 3–42 are included.\n\n");
+                        String stanza=record.optString("stanza");
+                        if(!stanza.equals(lastStanza)){out.append("Stanza ").append(stanza).append("\n");lastStanza=stanza;}
+                        out.append(record.optString("text")).append("\n");count++;
+                    }reader.close();return count==0?"No Syriac text records found for this ode.":count+" Syriac lines\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline Syriac text: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,16,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Ode "+ode+" · Syriac").setView(sv)
+                    .setNegativeButton("Back to Odes",(d,w)->openOdesOfSolomonArchive()).setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     void openThreeBaruchArchive(){
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/3_baruch/3bar_greek_index.json"),"UTF-8"));
@@ -1411,16 +1449,17 @@ public class MainActivity extends Activity {
         else if(item.equals("Dormition of Mary (Transitus Mariae traditions)")){category="Mary's Dormition and departure traditions";preservation="A family of early Christian narratives about Mary's final days and departure. The texts survive in multiple language traditions and differing recensions, not as one uniform book.";witnesses="Greek, Syriac, Coptic, Latin and other versional traditions; individual recensions require separate identification.";}
         else if(item.equals("Six Books Dormition Apocryphon")){category="Dormition narrative";preservation="An ancient Christian Dormition narrative preserved in Syriac and related traditions. Its relationship to other Transitus Mariae texts must be tracked by recension.";witnesses="Syriac manuscript tradition and related versions.";}
         else if(item.equals("Book of Mary's Repose")){category="Dormition narrative";preservation="A title used for a group of traditions about Mary's repose or departure; titles and textual identities vary across manuscripts and scholarship.";witnesses="Eastern Christian manuscript traditions; exact witness identification should accompany any future transcription.";}
-        else if(item.equals("Odes of Solomon")){category="Ancient hymn collection";preservation="Survives in Syriac, with Greek and Coptic fragments.";witnesses="Syriac manuscripts and Greek/Coptic fragments.";}
+        else if(item.equals("Odes of Solomon")){category="Ancient hymn collection";preservation="The Syriac collection is preserved in a manuscript tradition; Greek and Coptic fragments are separate witnesses.";witnesses="Syriac manuscripts; Greek and Coptic fragments. The offline dataset contains the Syriac Odes 3–42 transcription only.";}
         else if(item.equals("Pseudo-Philo: Biblical Antiquities")){category="Jewish rewritten-Scripture history";preservation="Survives principally in Latin manuscripts; the original language and form remain debated.";witnesses="Latin manuscript tradition.";}
         else if(item.equals("Zohar")){category="Medieval Jewish mystical literature";preservation="A medieval Aramaic literary corpus associated with the Zoharic tradition, transmitted in manuscripts and printed editions; it is not an ancient Second Temple writing.";witnesses="Medieval Aramaic manuscript tradition and later printed editions. Its historical composition and attribution are subjects of scholarship.";}
-        String textStatus=item.equals("Gospel of Thomas")?"Sahidic Coptic text from Nag Hammadi Codex II is available offline, indexed by manuscript page, column and line. The digital edition is based on examination of the facsimile; it is not a new independent transcription.":item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("1 Enoch")?"Aramaic Qumran fragments and a separate Greek fragment text from the Flemming 1901 edition are available offline. Neither dataset is a complete Ethiopic or Greek copy; no continuous book is reconstructed.":item.equals("Jubilees")?"Fragmentary Hebrew Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Testament of Abraham")?"Both Greek recensions are available offline as separate editions. Manuscript-variant notes, source page markers and editorial deletions are retained. These are edition-derived texts, not direct diplomatic transcriptions of one codex.":item.equals("Testament of the Twelve Patriarchs")?"A provisional Greek base text is available offline, organized by patriarch and chapter. The OCP source identifies its single base witness as Wikisource and explicitly says it has not yet been collated against Charles (1908); it is not a diplomatic transcription of a named ancient codex.":item.equals("Ascension of Isaiah")?"Ge'ez edition text is available offline by numbered section. The source is a Unicode transcription, not a new diplomatic transcription of one manuscript; its underlying text is licensed for non-commercial use only.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
+        String textStatus=item.equals("Gospel of Thomas")?"Sahidic Coptic text from Nag Hammadi Codex II is available offline, indexed by manuscript page, column and line. The digital edition is based on examination of the facsimile; it is not a new independent transcription.":item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("1 Enoch")?"Aramaic Qumran fragments and a separate Greek fragment text from the Flemming 1901 edition are available offline. Neither dataset is a complete Ethiopic or Greek copy; no continuous book is reconstructed.":item.equals("Jubilees")?"Fragmentary Hebrew Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Testament of Abraham")?"Both Greek recensions are available offline as separate editions. Manuscript-variant notes, source page markers and editorial deletions are retained. These are edition-derived texts, not direct diplomatic transcriptions of one codex.":item.equals("Odes of Solomon")?"Syriac text for Odes 3–42 is available offline. It is the Digital Syriac Corpus print transcription based on Charlesworth (1973), marked UncorrectedTranscription; it is not a fresh diplomatic transcription. Greek and Coptic fragments remain separate, and Odes 1–2 are not reconstructed.":item.equals("Testament of the Twelve Patriarchs")?"A provisional Greek base text is available offline, organized by patriarch and chapter. The OCP source identifies its single base witness as Wikisource and explicitly says it has not yet been collated against Charles (1908); it is not a diplomatic transcription of a named ancient codex.":item.equals("Ascension of Isaiah")?"Ge'ez edition text is available offline by numbered section. The source is a Unicode transcription, not a new diplomatic transcription of one manuscript; its underlying text is licensed for non-commercial use only.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
         String detail=category+"\n\nPreservation: "+preservation+"\n\nKnown witnesses: "+witnesses+"\n\nText status in this app: "+textStatus+" Different languages and recensions remain separate. This archive is for reference and historical study; inclusion here does not automatically make a work part of the Scripture collections.";
         android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(item).setMessage(detail).setPositiveButton("Close",null);
         if(item.equals("Gospel of Thomas"))builder.setNeutralButton("Open Coptic text",(d,w)->openThomasArchive());
         if(item.equals("Didache"))builder.setNeutralButton("Open Greek text",(d,w)->openDidacheArchive());
         if(item.equals("2 Baruch"))builder.setNeutralButton("Open Syriac text",(d,w)->openTwoBaruchArchive());
         if(item.equals("3 Baruch"))builder.setNeutralButton("Open Greek text",(d,w)->openThreeBaruchArchive());
+        if(item.equals("Odes of Solomon"))builder.setNeutralButton("Open Syriac text",(d,w)->openOdesOfSolomonArchive());
         if(item.equals("Testament of the Twelve Patriarchs"))builder.setNeutralButton("Open Greek text",(d,w)->openTwelvePatriarchsArchive());
         if(item.equals("Shepherd of Hermas"))builder.setNeutralButton("Open Greek text",(d,w)->openHermasArchive());
         if(item.equals("1 Enoch"))builder.setNeutralButton("Open Aramaic fragments",(d,w)->openQumranReferenceFragments("1 Enoch",new String[]{"4Q201","4Q202","4Q204","4Q205","4Q206","4Q207","4Q208","4Q209","4Q210","4Q211","4Q212"}));
