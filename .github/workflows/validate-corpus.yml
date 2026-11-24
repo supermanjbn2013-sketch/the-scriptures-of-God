@@ -12,6 +12,7 @@ on:
       - "tools/import_papyrus_75.py"
       - "tools/import_didache.py"
       - "tools/import_shepherd_of_hermas.py"
+      - "tools/import_ignatius.py"
       - "tools/import_testament_of_abraham.py"
       - "tools/import_gospel_of_thomas.py"
       - "tools/import_enoch_greek.py"
@@ -56,6 +57,8 @@ jobs:
         run: python tools/import_didache.py
       - name: Import Greek Shepherd of Hermas reference text
         run: python tools/import_shepherd_of_hermas.py
+      - name: Import seven Greek letters of Ignatius
+        run: python tools/import_ignatius.py
       - name: Import Greek Testament of Abraham recensions
         run: python tools/import_testament_of_abraham.py
       - name: Import Coptic Gospel of Thomas manuscript text
