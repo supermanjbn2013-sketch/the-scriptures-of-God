@@ -179,6 +179,7 @@ def validate_android():
         "void translateVerse(String reference,String sourceText,String sourceLanguage)", "Disciples and Apostles Writings", "Lost and Referenced Books", "openReferencedBookEntry(item)", "Book of the Wars of YHWH", "Book of Giants (fragmentarily preserved)", "void openBookOfGiantsFragments()", "4Q203", "4Q530", "4Q533", "openEtcbcDssScroll(ids.get(which))",
         "void openVaticanusArchive()", "void openVaticanusPage(String pageId)", "vaticanus/vaticanus_index.json",
         "void openPapyrus46Archive()", "void openPapyrus46Page(String pageId)", "papyri/p46/p46_index.json",
+        "void openPapyrus52Archive()", "void openPapyrus52Page(String pageId)", "papyri/p52/p52_index.json",
         "594 line records across these nine Qumran witness identifiers", "not a continuous reconstructed text or an English translation", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate  ·  Long press for passage tools", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "void translateOnDevice(", "com.google.mlkit.nl.translate.TranslatorOptions", "targetLanguage()"
     ):
         assert required in source, f"Android source is missing: {required}"
@@ -209,7 +210,7 @@ def validate_android():
     assert "11Q19" in ids and "1QM" in ids
     catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
     datasets = {item["id"]: item for item in catalog["datasets"]}
-    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "papyrus-46-ntvmr", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
+    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "papyrus-46-ntvmr", "papyrus-52-ntvmr", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
     assert "current complete 16-chapter import is a Latin transmission text" in " ".join(datasets["swete-lxx-apocrypha"]["limitations"])
     assert datasets["4q47-joshua-direct-transcription"]["license"] == "CC BY-SA 4.0"
     assert datasets["4q47-joshua-direct-transcription"]["source_url"]
@@ -261,7 +262,28 @@ def validate_android():
         p46_sample = json.loads(next(page_stream))
     assert p46_sample.get("source_label") and p46_sample.get("text") and p46_sample.get("page_id")
     assert "correction_notes" in p46_sample
-    print("Validated Android navigation, text search, Codex Vaticanus and Papyrus 46 offline transcriptions")
+    p52 = next(r for r in greek["records"] if r["id"] == "P52")
+    assert "imported" in p52["status"].lower()
+    assert p52["digital_transcription_source"]["document_id"] == 10052
+    assert p52["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    assert datasets["papyrus-52-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    p52_importer = Path("tools/import_papyrus_52.py").read_text(encoding="utf-8")
+    assert "docID=10052" in p52_importer and "papyri/p52/pages/" in p52_importer
+    p52_index_path = ROOT / "papyri/p52/p52_index.json"
+    assert p52_index_path.exists(), "Offline Papyrus 52 index was not generated"
+    p52_index = json.loads(p52_index_path.read_text(encoding="utf-8"))
+    assert p52_index["document_id"] == 10052
+    assert p52_index["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    assert p52_index["record_count"] >= 1 and p52_index["text_record_count"] >= 1
+    assert p52_index["page_count"] == len(p52_index["pages"]) > 0
+    p52_first = p52_index["pages"][0]
+    p52_file = ROOT / p52_first["asset_file"]
+    assert p52_file.exists() and p52_file.stat().st_size > 0
+    with gzip.open(p52_file, "rt", encoding="utf-8") as page_stream:
+        p52_sample = json.loads(next(page_stream))
+    assert p52_sample.get("source_label") and p52_sample.get("text") and p52_sample.get("page_id")
+    assert "correction_notes" in p52_sample
+    print("Validated Android navigation, text search, Codex Vaticanus, Papyrus 46 and Papyrus 52 offline transcriptions")
 
 sections = {"base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
