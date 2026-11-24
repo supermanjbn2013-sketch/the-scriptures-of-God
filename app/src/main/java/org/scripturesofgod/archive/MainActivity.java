@@ -1008,7 +1008,7 @@ public class MainActivity extends Activity {
                             .append("Edition basis: Library of Ethiopic Texts transcription (1995)\n")
                             .append("TEI encoding: Beta maṣāḥǝft, Universität Hamburg\n")
                             .append("Reuse: non-commercial use only for the underlying Ge'ez text\n")
-                            .append("This is an edition-based Unicode transcription, not a fresh diplomatic transcription of one manuscript. The Ge'ez tradition is complete, but represents a translation from a lost Greek textual form. Other language witnesses are separate.\n\n");
+                            .append("This is an edition-based Unicode transcription, not a fresh diplomatic transcription of one manuscript. The pinned source file contains only five numbered sections and is not a complete transcription of the work. The Ge'ez tradition represents a translation from a lost Greek textual form. Other language witnesses are separate.\n\n");
                         out.append(record.optString("reference")).append("\n\n").append(record.optString("text")).append("\n\n");
                         count++;
                     }
