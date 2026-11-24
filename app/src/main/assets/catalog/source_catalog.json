@@ -224,6 +224,26 @@
         "The corpus is not a photographic facsimile; manuscript images and their reproduction rights are separate.",
         "The QDR structured export includes word-level lexical and morphological source data, but this app import focuses on line-level text and coordinates."
       ]
+    },
+    {
+      "id": "codex-vaticanus-ntvmr",
+      "name": "Codex Vaticanus (GA 03) New Testament transcription",
+      "language": "Koine Greek",
+      "coverage": "Original surviving New Testament manuscript transcription supplied by NTVMR document 20003; exact page and record coverage is generated in vaticanus/vaticanus_index.json during the build.",
+      "record_type": "source TEI manuscript transcription with original-hand readings and correction notes, indexed by manuscript page",
+      "edition": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, Codex Vaticanus (GA 03; Vat.gr.1209)",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "repository": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=20003",
+      "source_url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=20003&pageID=ALL&format=teiraw",
+      "attribution": "Codex Vaticanus (GA 03), New Testament transcription by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, CC BY 4.0.",
+      "status": "Imported during APK build as offline page-indexed records; page, column, line and source labels are retained where present.",
+      "limitations": [
+        "The transcription is an electronic scholarly transcription, not a photographic facsimile.",
+        "The original codex does not preserve the Pastoral Letters, Philemon, or Revelation; the surviving Hebrews text ends at 9:14.",
+        "The Revelation now bound with the codex is a later fifteenth-century supplement and is excluded.",
+        "Original-hand readings are displayed where the TEI distinguishes corrections; correction readings are retained as notes.",
+        "Missing manuscript portions are not supplied from another edition or witness."
+      ]
     }
   ],
   "not_yet_integrated": [
