@@ -915,7 +915,7 @@ public class MainActivity extends Activity {
                             .append("Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)\n")
                             .append("Original source labels and page/column/line identifiers are retained where present.\n")
                             .append("Original-hand readings are displayed; corrections are retained as notes. Missing portions are not supplied.\n\n");
-                        out.append(record.optString("source_label")).append("\n");
+                        if(!record.optString("source_label").isEmpty())out.append(record.optString("source_label")).append("\n");
                         out.append("Page: ").append(record.optString("page_id")).append("\n");
                         out.append("Column: ").append(record.optJSONArray("column_ids")==null?"":record.optJSONArray("column_ids").toString()).append("\n");
                         out.append("Line: ").append(record.optJSONArray("line_ids")==null?"":record.optJSONArray("line_ids").toString()).append("\n");
@@ -979,7 +979,7 @@ public class MainActivity extends Activity {
                             .append("Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)\n")
                             .append("Original source labels and page/column/line identifiers are retained where present.\n")
                             .append("Only surviving manuscript text is included. Supplied readings are bracketed where the source encodes them; missing portions are not reconstructed.\n\n");
-                        out.append(record.optString("source_label")).append("\n");
+                        if(!record.optString("source_label").isEmpty())out.append(record.optString("source_label")).append("\n");
                         out.append("Page: ").append(record.optString("page_id")).append("\n");
                         out.append("Column: ").append(record.optJSONArray("column_ids")==null?"":record.optJSONArray("column_ids").toString()).append("\n");
                         out.append("Line: ").append(record.optJSONArray("line_ids")==null?"":record.optJSONArray("line_ids").toString()).append("\n");
@@ -1043,7 +1043,7 @@ public class MainActivity extends Activity {
                             .append("Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)\n")
                             .append("Original source labels and page/column/line identifiers are retained where present.\n")
                             .append("Only surviving manuscript text is included. Supplied readings are bracketed where the source encodes them; missing portions are not reconstructed.\n\n");
-                        out.append(record.optString("source_label")).append("\n");
+                        if(!record.optString("source_label").isEmpty())out.append(record.optString("source_label")).append("\n");
                         out.append("Page: ").append(record.optString("page_id")).append("\n");
                         out.append("Column: ").append(record.optJSONArray("column_ids")==null?"":record.optJSONArray("column_ids").toString()).append("\n");
                         out.append("Line: ").append(record.optJSONArray("line_ids")==null?"":record.optJSONArray("line_ids").toString()).append("\n");
@@ -1107,7 +1107,7 @@ public class MainActivity extends Activity {
                             .append("Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)\n")
                             .append("Original source labels and page/column/line identifiers are retained where present.\n")
                             .append("Only surviving manuscript text is included. Supplied readings are bracketed where the source encodes them; missing portions are not reconstructed.\n\n");
-                        out.append(record.optString("source_label")).append("\n");
+                        if(!record.optString("source_label").isEmpty())out.append(record.optString("source_label")).append("\n");
                         out.append("Page: ").append(record.optString("page_id")).append("\n");
                         out.append("Column: ").append(record.optJSONArray("column_ids")==null?"":record.optJSONArray("column_ids").toString()).append("\n");
                         out.append("Line: ").append(record.optJSONArray("line_ids")==null?"":record.optJSONArray("line_ids").toString()).append("\n");
@@ -1171,7 +1171,7 @@ public class MainActivity extends Activity {
                             .append("Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)\n")
                             .append("Original source labels and page/column/line identifiers are retained where present.\n")
                             .append("Only surviving manuscript text is included. Supplied readings are bracketed where the source encodes them; missing portions are not reconstructed.\n\n");
-                        out.append(record.optString("source_label")).append("\n");
+                        if(!record.optString("source_label").isEmpty())out.append(record.optString("source_label")).append("\n");
                         out.append("Page: ").append(record.optString("page_id")).append("\n");
                         out.append("Column: ").append(record.optJSONArray("column_ids")==null?"":record.optJSONArray("column_ids").toString()).append("\n");
                         out.append("Line: ").append(record.optJSONArray("line_ids")==null?"":record.optJSONArray("line_ids").toString()).append("\n");
