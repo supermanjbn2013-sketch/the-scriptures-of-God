@@ -33,8 +33,19 @@
       "source_urls": [
         "https://manuscripts.csntm.org/manuscript/View/GA_P46"
       ],
-      "status": "metadata catalogued; transcription not imported",
-      "caution": "Do not imply that every Pauline writing or every verse survives in this codex."
+      "status": "INTF NTVMR diplomatic transcription imported during APK build as offline page-indexed source records",
+      "caution": "Do not imply that every Pauline writing or every verse survives in this codex.",
+      "digital_transcription_source": {
+        "title": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room — Papyrus 46 (GA P46)",
+        "document_id": 10046,
+        "format": "TEI XML transcription; imported as compressed offline page records",
+        "version": "Published NTVMR transcription retrieved at build time",
+        "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10046&pageID=ALL&format=teiraw",
+        "repository_url": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10046",
+        "status": "Importer integrated; exact page/record counts generated in papyri/p46/p46_index.json during APK build",
+        "caution": "P46 is fragmentary. Only surviving witness text is included. Supplied readings are bracketed where encoded by the source; missing portions are not reconstructed."
+      }
     },
     {
       "id": "P66",
