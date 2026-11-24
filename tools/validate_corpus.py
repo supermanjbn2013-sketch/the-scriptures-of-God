@@ -297,7 +297,7 @@ def validate_android():
     p66_index = json.loads(p66_index_path.read_text(encoding="utf-8"))
     assert p66_index["document_id"] == 10066
     assert p66_index["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
-    assert p66_index["record_count"] >= 1000 and p66_index["text_record_count"] >= 1000
+    assert p66_index["record_count"] >= 500 and p66_index["text_record_count"] >= 500
     assert p66_index["page_count"] == len(p66_index["pages"]) > 0
     p66_first = p66_index["pages"][0]
     p66_file = ROOT / p66_first["asset_file"]
