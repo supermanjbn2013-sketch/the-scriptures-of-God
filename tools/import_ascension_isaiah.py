@@ -89,8 +89,8 @@ def main():
                         "attribution": ATTRIBUTION,
                         "reuse_restriction": "Non-commercial use only for the underlying Ge'ez text; no commercial redistribution."
                     })
-    if len(records) < 10:
-        raise SystemExit(f"Ascension of Isaiah import rejected: only {len(records)} Ge'ez sections found.")
+    if len(records) != 5:
+        raise SystemExit(f"Ascension of Isaiah import rejected: expected five encoded Ge'ez sections, found {len(records)}.")
     numbers = sorted({int(r["section"]) for r in records if r["section"].isdigit()})
     with (ROOT / "ascension_isaiah_geez.jsonl").open("w", encoding="utf-8", newline="\n") as out:
         for record in records:
@@ -111,7 +111,7 @@ def main():
         "limitations": [
             "This is an edition-based Unicode transcription, not a fresh diplomatic transcription of a single manuscript.",
             "The underlying text permission explicitly limits use to non-commercial purposes; it may not be sold or commercially redistributed.",
-            "The Ge'ez text is the complete surviving language tradition, but it is a translation from a lost Greek textual form.",
+            "This pinned TEI file contains only five numbered Ge'ez sections; it is not a complete transcription of the work. The Ge'ez textual tradition is a translation from a lost Greek textual form; this five-section file must not be treated as the complete surviving tradition.",
             "Greek, Latin, Coptic and Slavonic witnesses are separate traditions and are not merged into this Ge'ez text.",
             "The source edition's manuscript basis and editorial decisions are not independently re-collated by this app.",
             "No missing wording is reconstructed."
