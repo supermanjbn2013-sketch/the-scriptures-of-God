@@ -26,7 +26,7 @@ def local(tag):
 
 
 def norm(value):
-    return re.sub(r"\\s+", " ", value or "").strip()
+    return re.sub(r"\s+", " ", value or "").strip()
 
 
 def section_content(section):
@@ -121,9 +121,9 @@ def main():
     if len(chapters) != 21 or len(records) != 194:
         raise SystemExit(f"Barnabas import rejected: {len(chapters)} chapters, {len(records)} sections; expected 21 and 194.")
 
-    with (ROOT / "barnabas_greek.jsonl").open("w", encoding="utf-8", newline="\\n") as out:
+    with (ROOT / "barnabas_greek.jsonl").open("w", encoding="utf-8", newline="\n") as out:
         for record in records:
-            out.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            out.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
 
     index = {
         "schema_version": 1,
@@ -149,8 +149,8 @@ def main():
         ],
         "asset_file": "other_reference/barnabas/barnabas_greek.jsonl"
     }
-    (ROOT / "barnabas_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
-    (ROOT / "SOURCE_NOTICE.txt").write_text(ATTRIBUTION + "\\nLicense: " + LICENSE + "\\nSource: " + SOURCE_URL + "\\n", encoding="utf-8")
+    (ROOT / "barnabas_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "SOURCE_NOTICE.txt").write_text(ATTRIBUTION + "\nLicense: " + LICENSE + "\nSource: " + SOURCE_URL + "\n", encoding="utf-8")
     print(f"Imported Epistle of Barnabas: {len(chapters)} chapters, {len(records)} Greek sections.")
 
 
