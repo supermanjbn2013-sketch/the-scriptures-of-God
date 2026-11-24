@@ -515,6 +515,17 @@
       "license": "CC BY-SA 4.0",
       "edition": "Ge'ez transcription of VanderKam's edition by Ran HaCohen; standard printed EOTC edition. Kept separate.",
       "status": "Offline Ge'ez text with edition selector and chapter reader; separate from Hebrew Qumran fragments."
+    },
+    {
+      "id": "3-baruch-greek-ocp-picard",
+      "name": "3 Baruch Greek critical-edition text",
+      "language": "Ancient Greek",
+      "coverage": "Greek prologue and numbered chapter/verse text as encoded in the OCP TEI edition.",
+      "source_url": "https://github.com/OnlineCriticalPseudepigrapha/Online-Critical-Pseudepigrapha/blob/954a1f057c2426ad2f049b135600712812516242/static/docs/tei/3Bar.xml",
+      "source_revision": "954a1f057c2426ad2f049b135600712812516242",
+      "license": "CC BY 4.0",
+      "source_edition": "J.-C. Picard (ed.), Apocalypsis Baruchi Graece (PVTG 2; Leiden: Brill, 1967), pp. 81–96; TEI editors Ken M. Penner and David M. Miller.",
+      "status": "Offline Greek text reader; Greek and Slavonic traditions kept separate. Edition-derived, not a fresh diplomatic transcription."
     }
   ],
   "not_yet_integrated": [
