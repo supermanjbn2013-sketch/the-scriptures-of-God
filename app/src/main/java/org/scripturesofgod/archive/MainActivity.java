@@ -405,16 +405,11 @@ public class MainActivity extends Activity {
     private void appendLibraryEntry(String key,String entry){android.content.SharedPreferences p=getSharedPreferences("archive_library",MODE_PRIVATE);String old=p.getString(key,"");for(String line:old.split("\n"))if(line.equals(entry))return;p.edit().putString(key,entry+(old.isEmpty()?"":"\n"+old)).apply();}
     private void showPassageActions(String reference,String body){String[] actions={"Bookmark passage","Highlight passage","Add or edit personal note","Copy passage","Share passage"};new android.app.AlertDialog.Builder(this).setTitle(reference).setItems(actions,(d,w)->{if(w==0){appendLibraryEntry("bookmarks",reference+"  "+body);showInfo("Bookmark saved",reference+" was saved to your personal library.");}else if(w==1){appendLibraryEntry("highlights",reference+"  "+body);showInfo("Highlight saved",reference+" was added to your highlights.");}else if(w==2){android.content.SharedPreferences p=getSharedPreferences("archive_library",MODE_PRIVATE);EditText note=new EditText(this);note.setMinLines(3);note.setText(p.getString("note:"+reference,""));new android.app.AlertDialog.Builder(this).setTitle("Personal note · "+reference).setView(note).setNegativeButton("Cancel",null).setPositiveButton("Save",(a,b)->p.edit().putString("note:"+reference,note.getText().toString()).apply()).show();}else if(w==3){((android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(android.content.ClipData.newPlainText(reference,reference+" "+body));showInfo("Copied",reference+" copied to clipboard.");}else{android.content.Intent intent=new android.content.Intent(android.content.Intent.ACTION_SEND);intent.setType("text/plain");intent.putExtra(android.content.Intent.EXTRA_TEXT,reference+"\n"+body);startActivity(android.content.Intent.createChooser(intent,"Share passage"));}}).show();}
     void translateVerse(String reference,String sourceText,String sourceLanguage){
-        LinearLayout box=new LinearLayout(this);box.setOrientation(1);box.setPadding(18,8,18,8);
-        String languageName="he".equals(sourceLanguage)?"Hebrew":("grc".equals(sourceLanguage)?"Greek":("la".equals(sourceLanguage)?"Latin":("en".equals(sourceLanguage)?"English":"source language")));
-        box.addView(text(reference+"  ·  "+languageName+" → "+targetLanguageName(),13,gold,true));
-        TextView original=text(sourceText,16,ink,false);original.setTextIsSelectable(true);box.addView(original);
-        TextView result=text("Preparing on-device translation…",14,ink,false);result.setBackground(shape(panel));box.addView(result);
-        box.addView(text("Google ML Kit on-device translation. The language model may download once; no personal API key is required. These general-purpose models are not a scholarly translation of ancient languages.",11,muted,false));
-        ScrollView scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.addView(box);
-        android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle(reference+" — Translation").setView(scroll).setNegativeButton("Close",null).create();
-        dialog.show();
-        translateOnDevice(reference,sourceText,sourceLanguage,result);
+        Intent intent=new Intent(this,AiTranslatorActivity.class);
+        intent.putExtra("passage_reference",reference);
+        intent.putExtra("passage_text",sourceText);
+        intent.putExtra("source_language",sourceLanguage);
+        startActivity(intent);
     }
     private void translateOnDevice(String reference,String sourceText,String sourceLanguage,TextView output){
         String source="grc".equals(sourceLanguage)?"el":("he".equals(sourceLanguage)?"he":("la".equals(sourceLanguage)?"la":("en".equals(sourceLanguage)?"en":sourceLanguage)));
