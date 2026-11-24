@@ -406,6 +406,29 @@
         "Missing and unreadable text remains missing; no reconstruction is supplied.",
         "Source license is non-commercial (CC BY-NC 4.0)."
       ]
+    },
+    {
+      "id": "testament-abraham-first1k-greek",
+      "name": "Testament of Abraham — Greek Recensions A and B",
+      "language": "Ancient Greek",
+      "coverage": "Two separate Greek recensions imported chapter by chapter; exact chapter counts are generated in other_reference/testament_abraham/testament_abraham_index.json.",
+      "record_type": "TEI printed-edition-derived Greek text, separated by recension, with source page markers, line markers, manuscript-variant notes and editorial deletions",
+      "edition": "M. R. James, Testament of Abraham, Recensions A and B; digital TEI by Open Greek and Latin / First1KGreek",
+      "source_urls": [
+        "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/03776b39f4047c5cff06f5296fae4b2bae4b08fb/data/tlg1701/tlg001/tlg1701.tlg001.1st1K-grc1.xml",
+        "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/03776b39f4047c5cff06f5296fae4b2bae4b08fb/data/tlg1701/tlg002/tlg1701.tlg002.1st1K-grc1.xml"
+      ],
+      "repository": "https://github.com/OpenGreekAndLatin/First1KGreek/tree/03776b39f4047c5cff06f5296fae4b2bae4b08fb/data/tlg1701",
+      "license": "CC BY-SA 4.0",
+      "attribution": "M. R. James, Testament of Abraham, Recensions A and B; digital TEI by Open Greek and Latin / First1KGreek, CC BY-SA 4.0.",
+      "status": "Imported at APK build time as separate offline Greek recensions.",
+      "limitations": [
+        "Recensions A and B are distinct textual forms and are not merged.",
+        "This is a printed Greek edition based on manuscript traditions, not a direct diplomatic transcription of one manuscript.",
+        "Source page markers, manuscript-variant notes, line markers and editorial deletions are retained.",
+        "The digital transcription and encoding are distributed under CC BY-SA 4.0.",
+        "No missing wording is reconstructed."
+      ]
     }
   ],
   "not_yet_integrated": [
