@@ -143,35 +143,6 @@
       ]
     },
     {
-      "id": "codex-sinaiticus-xml",
-      "name": "Codex Sinaiticus electronic transcription",
-      "language": "Ancient Greek",
-      "coverage": [
-        "2 Esdras",
-        "Esther",
-        "Tobit",
-        "Judith",
-        "1 Maccabees",
-        "4 Maccabees",
-        "Wisdom of Solomon",
-        "Sirach",
-        "plus other surviving Hebrew Scripture and Disciples and Apostles Writings books listed by the project"
-      ],
-      "record_type": "manuscript-based diplomatic electronic transcription in TEI-based XML",
-      "edition": "Codex Sinaiticus Project electronic transcription; website v1.05 and repository v1.94/v1.95",
-      "license": "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)",
-      "repository": "https://github.com/itsee-birmingham/codex-sinaiticus",
-      "source_url": "https://www.codexsinaiticus.org/en/project/transcription_download.aspx",
-      "attribution": "The Codex Sinaiticus Project, www.codexsinaiticus.org; XML transcription maintained by ITSEE, University of Birmingham.",
-      "status": "source located; not yet imported into the offline corpus",
-      "limitations": [
-        "Non-commercial and share-alike terms apply to the transcription; any derivative redistribution must preserve these terms.",
-        "Preserve the XML's page, column, line, verse, correction, marginal and paratextual markup when importing.",
-        "Codex Sinaiticus is incomplete and dispersed; the source's book index does not mean every chapter of every listed book survives.",
-        "This is one manuscript witness, not a modern critical edition or a universal canonical table."
-      ]
-    },
-    {
       "id": "4q47-joshua-direct-transcription",
       "name": "4Q47 Joshuaᵃ direct transcription",
       "language": "Hebrew",
