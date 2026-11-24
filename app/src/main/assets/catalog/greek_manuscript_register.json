@@ -44,7 +44,7 @@
       "source_urls": [
         "https://manuscripts.csntm.org/manuscript/View/GA_P46"
       ],
-      "status": "INTF NTVMR diplomatic transcription imported during APK build as offline page-indexed source records",
+      "status": "INTF NTVMR diplomatic transcription importer integrated; offline page-indexed source records generated during APK build",
       "caution": "Do not imply that every Pauline writing or every verse survives in this codex.",
       "digital_transcription_source": {
         "title": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room — Papyrus 46 (GA P46)",
