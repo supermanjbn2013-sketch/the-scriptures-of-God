@@ -17,8 +17,19 @@
         "https://manuscripts.csntm.org/manuscript/View/GA_P52",
         "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/palaeography-precision-and-publicity-further-thoughts-on-pryliii457-p52/1D4E56BF0E9D4DDDA313D0C2754E2F28"
       ],
-      "status": "metadata catalogued; transcription not imported",
-      "caution": "Do not call it definitively the earliest manuscript without explaining dating uncertainty."
+      "status": "INTF NTVMR fragment transcription imported during APK build as offline page-indexed source records",
+      "caution": "Do not call it definitively the earliest manuscript without explaining dating uncertainty.",
+      "digital_transcription_source": {
+        "title": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room — Papyrus 52 (GA P52)",
+        "document_id": 10052,
+        "format": "TEI XML diplomatic transcription; imported as compressed offline page records",
+        "version": "Published NTVMR transcription retrieved at build time",
+        "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10052&pageID=ALL&format=teiraw",
+        "repository_url": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10052",
+        "status": "Importer integrated; exact page/record counts generated in papyri/p52/p52_index.json during APK build",
+        "caution": "One fragment only, preserving portions of John 18:31–33 and 18:37–38. Do not call it definitively the earliest manuscript without explaining dating uncertainty. No missing text is reconstructed."
+      }
     },
     {
       "id": "P46",
