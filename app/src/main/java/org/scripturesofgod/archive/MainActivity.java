@@ -2171,7 +2171,7 @@ public class MainActivity extends Activity {
             request.setTitle("Papyrus 76 transcription (P76)");
             request.setDescription("Downloading the IGNTP XML transcription for offline reference.");
             request.setNotificationVisibility(android.app.DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-            request.setDestinationInExternalFilesDir(this,android.os.Environment.DIRECTORY_DOWNLOADS,"04_P76.xml");
+            request.setDestinationInExternalPublicDir(android.os.Environment.DIRECTORY_DOWNLOADS,"04_P76.xml");
             manager.enqueue(request);
             Toast.makeText(this,"P76 XML download started. Check the download notification when complete.",Toast.LENGTH_LONG).show();
         }catch(Exception ex){showInfo("P76 download unavailable","The source could not be downloaded on this device. Open the source manually: https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml");}
