@@ -109,7 +109,15 @@ public class AiTranslatorActivity extends Activity {
     }
 
     private android.content.SharedPreferences keyPreferences(){
-        return getSharedPreferences("ai_connection",MODE_PRIVATE);
+        android.content.SharedPreferences current=getSharedPreferences("ai_connection",MODE_PRIVATE);
+        if(current.getString("api_key_encrypted","").isEmpty()){
+            String previous=getPreferences(0).getString("api_key_encrypted","");
+            if(!previous.isEmpty()){
+                current.edit().putString("api_key_encrypted",previous).commit();
+                getPreferences(0).edit().remove("api_key_encrypted").commit();
+            }
+        }
+        return current;
     }
     private String getSavedKey(){
         try{
