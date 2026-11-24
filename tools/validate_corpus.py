@@ -313,7 +313,7 @@ def validate_android():
     assert sample_record.get("source_label") and sample_record.get("text")
     assert "correction_notes" in sample_record and "page_id" in sample_record
     p46 = next(r for r in greek["records"] if r["id"] == "P46")
-    assert "imported" in p46["status"].lower()
+    assert "integrated" in p46["status"].lower()
     assert p46["digital_transcription_source"]["document_id"] == 10046
     assert p46["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
     assert datasets["papyrus-46-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
@@ -334,7 +334,7 @@ def validate_android():
     assert p46_sample.get("source_label") and p46_sample.get("text") and p46_sample.get("page_id")
     assert "correction_notes" in p46_sample
     p52 = next(r for r in greek["records"] if r["id"] == "P52")
-    assert "imported" in p52["status"].lower()
+    assert "integrated" in p52["status"].lower()
     assert p52["digital_transcription_source"]["document_id"] == 10052
     assert p52["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
     assert datasets["papyrus-52-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
@@ -355,7 +355,7 @@ def validate_android():
     assert p52_sample.get("source_label") and p52_sample.get("text") and p52_sample.get("page_id")
     assert "correction_notes" in p52_sample
     p66 = next(r for r in greek["records"] if r["id"] == "P66")
-    assert "imported" in p66["status"].lower()
+    assert "integrated" in p66["status"].lower()
     assert p66["digital_transcription_source"]["document_id"] == 10066
     assert p66["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
     assert datasets["papyrus-66-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
@@ -376,7 +376,7 @@ def validate_android():
     assert p66_sample.get("text") and p66_sample.get("page_id")
     assert "correction_notes" in p66_sample
     p75 = next(r for r in greek["records"] if r["id"] == "P75")
-    assert "imported" in p75["status"].lower()
+    assert "integrated" in p75["status"].lower()
     assert p75["digital_transcription_source"]["document_id"] == 10075
     assert p75["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
     assert datasets["papyrus-75-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
