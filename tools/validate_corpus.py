@@ -186,6 +186,7 @@ def validate_android():
         "void openPapyrus52Archive()", "void openPapyrus52Page(String pageId)", "papyri/p52/p52_index.json",
         "void openPapyrus66Archive()", "void openPapyrus66Page(String pageId)", "papyri/p66/p66_index.json",
         "void openPapyrus75Archive()", "void openPapyrus75Page(String pageId)", "papyri/p75/p75_index.json",
+        "void openPapyrus77Archive()", "void openPapyrus77Page(String pageId)", "papyri/p77/p77_index.json", "Papyrus 77 (P77)",
         "void openDidacheArchive()", "void openDidacheChapter(int chapter)", "other_reference/didache/didache_index.json", "other_reference/didache/didache_greek.jsonl", "Open Greek text",
         "void openQumranReferenceFragments(String title,String[] requestedIds)", "4Q201", "4Q216", "4Q223_224", "Open Aramaic fragments", "Open Hebrew fragments",
         "void openHermasArchive()", "void openHermasBook(int book)", "other_reference/hermas/hermas_index.json", "other_reference/hermas/hermas_greek.jsonl",
@@ -337,6 +338,27 @@ def validate_android():
         p75_sample = json.loads(next(page_stream))
     assert p75_sample.get("text") and p75_sample.get("page_id")
     assert "correction_notes" in p75_sample
+    p77 = next(r for r in greek["records"] if r["id"] == "P77")
+    assert "imported" in p77["status"].lower()
+    assert p77["digital_transcription_source"]["document_id"] == 10077
+    assert p77["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    assert datasets["papyrus-77-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    p77_importer = Path("tools/import_papyrus_77.py").read_text(encoding="utf-8")
+    assert "docID=10077" in p77_importer and "papyri/p77/pages/" in p77_importer
+    p77_index_path = ROOT / "papyri/p77/p77_index.json"
+    assert p77_index_path.exists(), "Offline Papyrus 77 index was not generated"
+    p77_index = json.loads(p77_index_path.read_text(encoding="utf-8"))
+    assert p77_index["document_id"] == 10077
+    assert p77_index["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    assert p77_index["record_count"] >= 5 and p77_index["text_record_count"] >= 5
+    assert p77_index["page_count"] == len(p77_index["pages"]) > 0
+    p77_first = p77_index["pages"][0]
+    p77_file = ROOT / p77_first["asset_file"]
+    assert p77_file.exists() and p77_file.stat().st_size > 0
+    with gzip.open(p77_file, "rt", encoding="utf-8") as page_stream:
+        p77_sample = json.loads(next(page_stream))
+    assert p77_sample.get("text") and p77_sample.get("page_id")
+    assert "correction_notes" in p77_sample
     didache_path = ROOT / "other_reference/didache/didache_index.json"
     assert didache_path.exists(), "Offline Didache Greek index was not generated"
     didache_index = json.loads(didache_path.read_text(encoding="utf-8"))
