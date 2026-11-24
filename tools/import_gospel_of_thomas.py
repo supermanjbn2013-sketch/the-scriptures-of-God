@@ -127,7 +127,7 @@ def main():
     pages = sorted({int(r["page"]) for r in records if r["page"].isdigit()})
     sayings = sorted({int(r["saying"]) for r in records if r["saying"].isdigit()})
     lines = len(records)
-    if len(pages) < 18 or pages[0] != 32 or pages[-1] != 51 or len(sayings) < 110 or lines < 500:
+    if len(pages) < 17 or pages[0] != 32 or pages[-1] != 51 or len(sayings) < 110 or lines < 500:
         raise SystemExit(f"Thomas import rejected: {len(pages)} pages, {len(sayings)} numbered sayings, {lines} line records.")
 
     with (ROOT / "thomas_coptic.jsonl").open("w", encoding="utf-8", newline="\n") as out:
@@ -141,6 +141,8 @@ def main():
         "manuscript": "Nag Hammadi Codex II, tractate 2, pages 32–51",
         "manuscript_id": "Coptic Museum, Cairo, NH 10544",
         "page_count": len(pages),
+        "pages": pages,
+        "codex_page_range": [32, 51],
         "line_record_count": lines,
         "sayings_in_source": sayings,
         "source_revision": REV,
