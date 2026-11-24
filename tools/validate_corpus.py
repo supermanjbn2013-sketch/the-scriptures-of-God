@@ -181,6 +181,7 @@ def validate_android():
         "void openPapyrus46Archive()", "void openPapyrus46Page(String pageId)", "papyri/p46/p46_index.json",
         "void openPapyrus52Archive()", "void openPapyrus52Page(String pageId)", "papyri/p52/p52_index.json",
         "void openPapyrus66Archive()", "void openPapyrus66Page(String pageId)", "papyri/p66/p66_index.json",
+        "void openPapyrus75Archive()", "void openPapyrus75Page(String pageId)", "papyri/p75/p75_index.json",
         "594 line records across these nine Qumran witness identifiers", "not a continuous reconstructed text or an English translation", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate  ·  Long press for passage tools", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "void translateOnDevice(", "com.google.mlkit.nl.translate.TranslatorOptions", "targetLanguage()"
     ):
         assert required in source, f"Android source is missing: {required}"
@@ -211,7 +212,7 @@ def validate_android():
     assert "11Q19" in ids and "1QM" in ids
     catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
     datasets = {item["id"]: item for item in catalog["datasets"]}
-    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "papyrus-46-ntvmr", "papyrus-52-ntvmr", "papyrus-66-ntvmr", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
+    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "papyrus-46-ntvmr", "papyrus-52-ntvmr", "papyrus-66-ntvmr", "papyrus-75-ntvmr", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
     assert "current complete 16-chapter import is a Latin transmission text" in " ".join(datasets["swete-lxx-apocrypha"]["limitations"])
     assert datasets["4q47-joshua-direct-transcription"]["license"] == "CC BY-SA 4.0"
     assert datasets["4q47-joshua-direct-transcription"]["source_url"]
@@ -305,7 +306,28 @@ def validate_android():
         p66_sample = json.loads(next(page_stream))
     assert p66_sample.get("source_label") and p66_sample.get("text") and p66_sample.get("page_id")
     assert "correction_notes" in p66_sample
-    print("Validated Android navigation, text search, Codex Vaticanus, Papyrus 46, Papyrus 52 and Papyrus 66 offline transcriptions")
+    p75 = next(r for r in greek["records"] if r["id"] == "P75")
+    assert "imported" in p75["status"].lower()
+    assert p75["digital_transcription_source"]["document_id"] == 10075
+    assert p75["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    assert datasets["papyrus-75-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    p75_importer = Path("tools/import_papyrus_75.py").read_text(encoding="utf-8")
+    assert "docID=10075" in p75_importer and "papyri/p75/pages/" in p75_importer
+    p75_index_path = ROOT / "papyri/p75/p75_index.json"
+    assert p75_index_path.exists(), "Offline Papyrus 75 index was not generated"
+    p75_index = json.loads(p75_index_path.read_text(encoding="utf-8"))
+    assert p75_index["document_id"] == 10075
+    assert p75_index["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    assert p75_index["record_count"] >= 1000 and p75_index["text_record_count"] >= 1000
+    assert p75_index["page_count"] == len(p75_index["pages"]) > 0
+    p75_first = p75_index["pages"][0]
+    p75_file = ROOT / p75_first["asset_file"]
+    assert p75_file.exists() and p75_file.stat().st_size > 0
+    with gzip.open(p75_file, "rt", encoding="utf-8") as page_stream:
+        p75_sample = json.loads(next(page_stream))
+    assert p75_sample.get("source_label") and p75_sample.get("text") and p75_sample.get("page_id")
+    assert "correction_notes" in p75_sample
+    print("Validated Android navigation, text search, Codex Vaticanus, Papyrus 46, P52, P66 and P75 offline transcriptions")
 
 sections = {"base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
