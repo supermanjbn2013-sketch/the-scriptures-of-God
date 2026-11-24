@@ -537,6 +537,19 @@
       "license": "CC BY 4.0",
       "source_edition": "OCP TEI Greek Wikisource base text, apparently related to R. H. Charles (1908); source header explicitly says it has not yet been collated against Charles.",
       "status": "Offline reader by patriarch and chapter. Provisional single-witness base text only; not a critical edition or diplomatic transcription of an identified ancient codex."
+    },
+    {
+      "id": "odes-of-solomon-syriac-digital-syriac-corpus",
+      "name": "Odes of Solomon — Syriac print transcription (Odes 3–42)",
+      "language": "Classical Syriac",
+      "coverage": "40 Odes (3–42); source stanza and line divisions retained.",
+      "source_url": "https://github.com/srophe/syriac-corpus/tree/833adc148cc356a6c70c16f81b22df9188df717a/data/tei",
+      "source_revision": "833adc148cc356a6c70c16f81b22df9188df717a",
+      "license": "CC BY 4.0 for TEI edition; Syriac base text public domain",
+      "source_edition": "James H. Charlesworth (ed.), The Odes of Solomon: The Syriac Texts (Oxford University Press, 1973).",
+      "transcriber": "Michael Oez",
+      "tei_encoder": "James E. Walters",
+      "status": "Offline Syriac text for Odes 3–42. Digital Syriac Corpus source marks this a print transcription and UncorrectedTranscription; not a fresh diplomatic manuscript transcription. Odes 1–2 not reconstructed; Greek/Coptic witnesses kept separate."
     }
   ],
   "not_yet_integrated": [
