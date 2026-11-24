@@ -389,6 +389,20 @@ def validate_android():
     assert all(r["source_revision"] == ignatius_index["source_revision"] and isinstance(r["editorial_notes"], list) for r in ignatius_records)
     assert all("printed greek edition" in r["textual_basis"].lower() for r in ignatius_records)
     assert "void openIgnatiusArchive()" in source and "void openIgnatiusChapter(String letterNo,String chapter)" in source
+    barnabas_path = ROOT / "other_reference/barnabas/barnabas_index.json"
+    assert barnabas_path.exists(), "Offline Greek Barnabas index was not generated"
+    barnabas_index = json.loads(barnabas_path.read_text(encoding="utf-8"))
+    assert barnabas_index["source_revision"] == "03776b39f4047c5cff06f5296fae4b2bae4b08fb"
+    assert barnabas_index["license"] == "CC BY-SA 4.0" and barnabas_index["language_code"] == "grc"
+    assert barnabas_index["chapter_count"] == 21 and barnabas_index["section_count"] == 194
+    barnabas_records = [json.loads(line) for line in (ROOT / "other_reference/barnabas/barnabas_greek.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(barnabas_records) == 194
+    assert {int(r["chapter"]) for r in barnabas_records} == set(range(1, 22))
+    assert all(r["language"] == "grc" and r["text"].strip() and r["license"] == "CC BY-SA 4.0" for r in barnabas_records)
+    assert all(r["source_revision"] == barnabas_index["source_revision"] and isinstance(r["editorial_notes"], list) and isinstance(r["cross_references"], list) for r in barnabas_records)
+    assert all("printed greek edition" in r["textual_basis"].lower() for r in barnabas_records)
+    assert "void openBarnabasArchive()" in source and "void openBarnabasChapter(String chapter)" in source
+    assert datasets["epistle-barnabas-greek-lake-first1k"]["license"] == "CC BY-SA 4.0"
     thomas_path = ROOT / "other_reference/thomas/thomas_index.json"
     assert thomas_path.exists(), "Offline Gospel of Thomas Coptic index was not generated"
     thomas_index = json.loads(thomas_path.read_text(encoding="utf-8"))
