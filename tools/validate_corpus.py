@@ -155,7 +155,7 @@ def validate_android():
     source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
     for required in (
         "void openDssCatalogEntry(String item)", "void openDssConcordanceEntry(String item)",
-        "DSS Passage Concordance", "openDssConcordanceEntry(item)", "openDssCatalogEntry(item)",
+        "DSS Passage Concordance", "DSS Transcription Archive", "void renderEtcbcDssIndex(String query)", "void openEtcbcDssScroll(String scrollId)", "dss/etcbc_transcriptions.jsonl", "dss/etcbc_scroll_index.json", "openDssConcordanceEntry(item)", "openDssCatalogEntry(item)",
         "void searchCorpus(String query)", "void openBook(String name)", "ref.startsWith(bookName+\" \")", "boolean matchesExact(String text, String needle)", "matchesExact(body,needle)", "matchesExact(reference,needle)", "matchesExact(sourceReference,needle)", "passageRefs", "executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR)", "Search complete text corpus",
         "catalog/dss_passage_concordance.json", "transcription_text", "additional_transcription_sources", "PDF text layer",
         "Apocrypha and Deuterocanonical Writings", "Psalm 151", "Odes",
@@ -191,7 +191,7 @@ def validate_android():
     assert "11Q19" in ids and "1QM" in ids
     catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
     datasets = {item["id"]: item for item in catalog["datasets"]}
-    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "4q47-joshua-direct-transcription"}.issubset(datasets)
+    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
     assert "current complete 16-chapter import is a Latin transmission text" in " ".join(datasets["swete-lxx-apocrypha"]["limitations"])
     assert datasets["4q47-joshua-direct-transcription"]["license"] == "CC BY-SA 4.0"
     assert datasets["4q47-joshua-direct-transcription"]["source_url"]
