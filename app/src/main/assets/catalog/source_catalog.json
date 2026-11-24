@@ -21,7 +21,7 @@
       "id": "sblgnt",
       "name": "SBL Greek New Testament v1.2",
       "language": "Koine Greek",
-      "coverage": "27 traditional Apostolic Writings",
+      "coverage": "27 traditional Disciples and Apostles Writings",
       "record_type": "edited Greek text",
       "license": "CC BY 4.0",
       "repository": "https://github.com/Faithlife/SBLGNT",
@@ -155,7 +155,7 @@
         "4 Maccabees",
         "Wisdom of Solomon",
         "Sirach",
-        "plus other surviving Hebrew Scripture and Apostolic Writings books listed by the project"
+        "plus other surviving Hebrew Scripture and Disciples and Apostles Writings books listed by the project"
       ],
       "record_type": "manuscript-based diplomatic electronic transcription in TEI-based XML",
       "edition": "Codex Sinaiticus Project electronic transcription; website v1.05 and repository v1.94/v1.95",
