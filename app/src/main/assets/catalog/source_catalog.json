@@ -264,6 +264,26 @@
         "Supplied readings are bracketed only where the source encodes them; no missing text is reconstructed.",
         "The electronic transcription is not a photographic facsimile."
       ]
+    },
+    {
+      "id": "papyrus-52-ntvmr",
+      "name": "Papyrus 52 (GA P52) — INTF NTVMR diplomatic transcription",
+      "language": "Koine Greek",
+      "coverage": "Single surviving fragment of P52, preserving portions of John 18:31–33 and 18:37–38; exact page and record counts are generated in papyri/p52/p52_index.json during the build.",
+      "record_type": "TEI diplomatic manuscript transcription, indexed by original NTVMR page identifier",
+      "edition": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, GA P52",
+      "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10052&pageID=ALL&format=teiraw",
+      "repository": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10052",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "attribution": "Papyrus 52 (GA P52), transcription and catalogue data by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, CC BY 4.0.",
+      "status": "Imported at APK build time as offline compressed page records.",
+      "limitations": [
+        "Only one small fragment survives; the transcription contains only source text for the extant fragment.",
+        "The commonly cited second-century dating is palaeographical and debated; it is not an exact date.",
+        "The manuscript is not proof of a definitive earliest surviving New Testament manuscript.",
+        "Supplied readings are bracketed only where encoded by the source; missing portions are not reconstructed.",
+        "The electronic transcription is not a photographic facsimile."
+      ]
     }
   ],
   "not_yet_integrated": [
