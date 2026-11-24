@@ -389,6 +389,18 @@ def validate_android():
     assert len({r["saying"] for r in thomas_records}) >= 110
     assert all(r["language"] == "cop" and r["text"].strip() and r["line"] and r["license"] == "CC BY 4.0" for r in thomas_records)
     assert all("facsimile" in r["textual_basis"].lower() for r in thomas_records)
+    ascension_path = ROOT / "other_reference/ascension_isaiah/ascension_isaiah_index.json"
+    assert ascension_path.exists(), "Offline Ascension of Isaiah Ge'ez index was not generated"
+    ascension_index = json.loads(ascension_path.read_text(encoding="utf-8"))
+    assert ascension_index["source_revision"] == "671a29177071f19cc9da990aaad1681b338cdb49"
+    assert ascension_index["record_count"] >= 10 and ascension_index["section_count"] >= 10
+    assert "non-commercial" in ascension_index["license"].lower()
+    assert datasets["ascension-isaiah-geez-beta-masaheft"]["license"].startswith("CC BY-SA 4.0")
+    ascension_records = [json.loads(line) for line in (ROOT / "other_reference/ascension_isaiah/ascension_isaiah_geez.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(ascension_records) == ascension_index["record_count"]
+    assert all(r["language"] == "gez" and r["text"].strip() and r["section"] and "non-commercial" in r["reuse_restriction"] for r in ascension_records)
+    assert all(r["source_revision"] == ascension_index["source_revision"] for r in ascension_records)
+    assert "void openAscensionIsaiahArchive()" in source and "void openAscensionIsaiahSection(int section)" in source
     enoch_greek_path = ROOT / "other_reference/enoch_greek/enoch_greek_index.json"
     assert enoch_greek_path.exists(), "Offline Greek 1 Enoch index was not generated"
     enoch_greek_index = json.loads(enoch_greek_path.read_text(encoding="utf-8"))
