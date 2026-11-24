@@ -79,4 +79,46 @@ index_doc = {
     "scrolls": sorted(index.values(), key=lambda x: x["scroll"])
 }
 (OUT / "etcbc_scroll_index.json").write_text(json.dumps(index_doc, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+# Synchronize the manuscript catalogue with the actual imported line-level data.
+# A title match alone is not sufficient: only exact normalized witness IDs count.
+catalog_path = Path("app/src/main/assets/catalog/dead_sea_scrolls_register.json")
+catalog = json.loads(catalog_path.read_text(encoding="utf-8"))
+normalized_index = {}
+for scroll_id, details in index.items():
+    key = "".join(ch.lower() for ch in scroll_id if ch.isalnum())
+    normalized_index[key] = details
+aliases = {
+    "1QIsa-a": ("1qisaa", "1qisa"),
+    "1QpHab": ("1qphab",),
+    "1QapGen": ("1qapgen",),
+    "1QS": ("1qs",),
+    "11Q19": ("11q19",),
+    "1QM": ("1qm",),
+}
+for record in catalog.get("records", []):
+    matches = []
+    for alias in aliases.get(record.get("id"), ()):
+        if alias in normalized_index:
+            matches.append(normalized_index[alias])
+    if matches:
+        matched = matches[0]
+        record["status"] = "offline transcription imported; line-level text available"
+        record["transcription_coverage"] = {
+            "source": "ETCBC/CACCHT Dead Sea Scrolls corpus, Martin Abegg transcriptions distributed through QDR",
+            "license": "CC BY-NC 4.0",
+            "scroll_identifier": matched["scroll"],
+            "fragment_count": matched["fragment_count"],
+            "line_count": matched["line_count"],
+            "offline_asset": "dss/etcbc_transcriptions.jsonl",
+            "index_asset": "dss/etcbc_scroll_index.json",
+            "source_revision": REV,
+            "coverage_note": "Only line records present in the pinned source export are included. This is not a complete reconstruction of the manuscript; gaps and absent fragments remain absent."
+        }
+    else:
+        record["status"] = "metadata catalogued; no matching line-level transcription in the imported dataset"
+        record.pop("transcription_coverage", None)
+catalog["catalog_policy"] = "Metadata records are distinguished from imported transcriptions. A transcription is marked available only when an exact normalized witness identifier and line-level records are present in the pinned ETCBC/QDR export. Dates are approximate institutional descriptions. Digital images remain at the rights holder's site."
+catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"Imported {total} line-level DSS records from {len(index)} scrolls (CC BY-NC 4.0).")
+print("Synchronized Dead Sea Scrolls register with exact imported witness IDs.")
