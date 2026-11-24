@@ -20,7 +20,7 @@ def main():
     root=ET.fromstring(data)
     title=root.findtext(".//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:title",namespaces=NS) or "3 Baruch"
     editors=[text_content(x) for x in root.findall(".//tei:teiHeader/tei:fileDesc/tei:titleStmt/tei:editor",NS)]
-    source_bibl=[text_content(x) for x in root.findall(".//tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:listWit/tei:witness[@xml:id='Picard']/tei:bibl",{"tei":NS,"xml":"http://www.w3.org/XML/1998/namespace"})]
+    source_bibl=[text_content(x) for x in root.findall(".//tei:teiHeader/tei:fileDesc/tei:sourceDesc/tei:listWit/tei:witness[@xml:id='Picard']/tei:bibl",{"tei":"http://www.tei-c.org/ns/1.0","xml":"http://www.w3.org/XML/1998/namespace"})]
     edition=root.find(".//tei:div[@type='edition'][@xml:id='ver_Greek']",{"tei":NS,"xml":"http://www.w3.org/XML/1998/namespace"})
     if edition is None:raise SystemExit("Greek edition div ver_Greek not found")
     records=[]; chapters=[]
