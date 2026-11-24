@@ -128,3 +128,13 @@ for record in catalog.get("records", []):
         print(f"Featured DSS witness {record['id']}: {coverage['scroll_identifier']} — {coverage['fragment_count']} fragments, {coverage['line_count']} lines.")
     else:
         print(f"Featured DSS witness {record['id']}: no exact transcription match in this import.")
+for title, witness_ids in (
+    ("1 Enoch Aramaic", ("4Q201", "4Q202", "4Q204", "4Q205", "4Q206", "4Q207", "4Q208", "4Q209", "4Q210", "4Q211", "4Q212")),
+    ("Jubilees Hebrew", ("4Q216", "4Q217", "4Q218", "4Q219", "4Q220", "4Q221", "4Q222", "4Q223_224", "4Q225"))
+):
+    for witness_id in witness_ids:
+        details = index.get(witness_id)
+        if details:
+            print(f"{title} witness {witness_id}: {details['fragment_count']} fragments, {details['line_count']} lines.")
+        else:
+            print(f"{title} witness {witness_id}: no exact transcription match in this import.")
