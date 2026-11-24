@@ -56,7 +56,7 @@
       "contents": "An Aramaic retelling or expansion of portions of Genesis; the cited publication describes surviving material as a reworking of part of Genesis",
       "condition": "Fragmentary; not a complete copy of Genesis",
       "holding_institution": "Israel Museum, Shrine of the Book",
-      "shelfmark": "1QapGen",
+      "shelfmark": "1Q20 (1QapGen)",
       "source_urls": [
         "https://dss.collections.imj.org.il/",
         "https://museum.imj.org.il/pdf/dss-english.pdf",
@@ -64,7 +64,7 @@
       ],
       "image_access": "Use the institutional digital viewer; reproduction rights must be checked with the holding institution.",
       "status": "metadata catalogued; transcription not imported",
-      "caution": "Do not label this as a direct copy of the canonical book of Genesis. It is a distinct Aramaic composition that retells and expands Genesis material."
+      "caution": "The standard Qumran identifier is 1Q20; the descriptive abbreviation 1QapGen is also used. This is an Aramaic retelling/expansion of Genesis, not a direct copy of the book of Genesis."
     },
     {
       "id": "1QS",
