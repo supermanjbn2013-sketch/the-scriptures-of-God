@@ -189,6 +189,7 @@ def validate_android():
         "void openDidacheArchive()", "void openDidacheChapter(int chapter)", "other_reference/didache/didache_index.json", "other_reference/didache/didache_greek.jsonl", "Open Greek text",
         "void openQumranReferenceFragments(String title,String[] requestedIds)", "4Q201", "4Q216", "4Q223_224", "Open Aramaic fragments", "Open Hebrew fragments",
         "void openHermasArchive()", "void openHermasBook(int book)", "other_reference/hermas/hermas_index.json", "other_reference/hermas/hermas_greek.jsonl",
+        "void openTestamentAbrahamArchive()", "void openTestamentAbrahamRecension(String recension)", "void openTestamentAbrahamChapter(String recension,int chapter,String assetFile)", "other_reference/testament_abraham/testament_abraham_index.json", "Open Greek recensions",
         "594 line records across these nine Qumran witness identifiers", "not a continuous reconstructed text or an English translation", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate  ·  Long press for passage tools", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "void translateOnDevice(", "com.google.mlkit.nl.translate.TranslatorOptions", "targetLanguage()"
     ):
         assert required in source, f"Android source is missing: {required}"
@@ -219,7 +220,7 @@ def validate_android():
     assert "11Q19" in ids and "1QM" in ids
     catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
     datasets = {item["id"]: item for item in catalog["datasets"]}
-    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "papyrus-46-ntvmr", "papyrus-52-ntvmr", "papyrus-66-ntvmr", "papyrus-75-ntvmr", "didache-first1k-greek", "shepherd-of-hermas-first1k-greek", "1-enoch-qumran-aramaic-fragments", "jubilees-qumran-hebrew-fragments", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
+    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "papyrus-46-ntvmr", "papyrus-52-ntvmr", "papyrus-66-ntvmr", "papyrus-75-ntvmr", "didache-first1k-greek", "shepherd-of-hermas-first1k-greek", "testament-abraham-first1k-greek", "1-enoch-qumran-aramaic-fragments", "jubilees-qumran-hebrew-fragments", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
     assert "current complete 16-chapter import is a Latin transmission text" in " ".join(datasets["swete-lxx-apocrypha"]["limitations"])
     assert datasets["4q47-joshua-direct-transcription"]["license"] == "CC BY-SA 4.0"
     assert datasets["4q47-joshua-direct-transcription"]["source_url"]
@@ -358,7 +359,21 @@ def validate_android():
     assert {r["book"] for r in hermas_records} == set(range(1, 28))
     assert all(r["language"] == "grc" and r["text"].strip() and r["reference"] and r["license"] == "CC BY-SA 4.0" for r in hermas_records)
     assert all("printed greek edition" in r["textual_basis"].lower() for r in hermas_records)
-    print("Validated Android navigation, manuscript transcriptions, Greek Didache and Shepherd of Hermas reference texts")
+    abraham_path = ROOT / "other_reference/testament_abraham/testament_abraham_index.json"
+    assert abraham_path.exists(), "Offline Testament of Abraham index was not generated"
+    abraham_index = json.loads(abraham_path.read_text(encoding="utf-8"))
+    assert abraham_index["license"] == "CC BY-SA 4.0"
+    assert {r["recension"] for r in abraham_index["recensions"]} == {"A", "B"}
+    assert datasets["testament-abraham-first1k-greek"]["license"] == "CC BY-SA 4.0"
+    for recension in abraham_index["recensions"]:
+        records = [json.loads(line) for line in (ROOT / recension["asset_file"]).read_text(encoding="utf-8").splitlines() if line.strip()]
+        assert len(records) == recension["chapter_count"] >= 10
+        assert {r["recension"] for r in records} == {recension["recension"]}
+        assert {r["chapter"] for r in records} == set(recension["chapters"])
+        assert all(r["language"] == "grc" and r["text"].strip() and r["reference"] and r["license"] == "CC BY-SA 4.0" for r in records)
+        assert all("printed greek edition" in r["textual_basis"].lower() for r in records)
+        assert all(isinstance(r["editorial_notes_and_variants"], list) for r in records)
+    print("Validated Android navigation, manuscript transcriptions, Didache, Shepherd of Hermas and both Testament of Abraham recensions")
 
 sections = {"base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
