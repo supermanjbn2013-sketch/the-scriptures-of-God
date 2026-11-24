@@ -54,7 +54,6 @@ def main():
 
     pages = []
     total_lines = 0
-    total_words = 0
     current_page = None
     current_column = ""
     current_line = ""
@@ -182,7 +181,6 @@ def main():
     if not pages or total_lines < 1000:
         raise SystemExit("Import rejected: unexpectedly small or empty transcription; check source XML structure.")
 
-    total_words = sum(len([]) for _ in ())  # word IDs are retained per source line; no estimated word total is reported.
     index = {
         "schema_version": 1,
         "record_type": "codex_sinaiticus_page_column_line_transcription",
