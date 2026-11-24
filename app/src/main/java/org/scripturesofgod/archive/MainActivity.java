@@ -1356,7 +1356,6 @@ public class MainActivity extends Activity {
         else if(item.equals("Testament of the Twelve Patriarchs")){category="Testamentary collection";preservation="Survives principally in Greek manuscripts, with related fragmentary Semitic-language evidence.";witnesses="Greek manuscript tradition and related fragmentary witnesses.";}
         else if(item.equals("2 Baruch")){category="Jewish apocalyptic writing";preservation="Survives principally in Syriac, with other fragmentary evidence.";witnesses="Syriac manuscript tradition and fragmentary versional evidence.";}
         else if(item.equals("3 Baruch")){category="Apocalyptic writing";preservation="Survives in Greek and Slavonic forms that differ.";witnesses="Greek and Slavonic recensions.";}
-        if(item.equals("3 Baruch"))builder.setNeutralButton("Open Greek text",(d,w)->openThreeBaruchArchive());
         else if(item.equals("Life of Adam and Eve")){category="Adam and Eve narrative cycle";preservation="Survives in several distinct language traditions and recensions; they are not one uniform text.";witnesses="Greek, Latin, Armenian, Georgian and Slavonic traditions.";}
         else if(item.equals("Apocalypse of Moses")){category="Adam and Eve narrative; Greek recension";preservation="A Greek-language form closely related to the Life of Adam and Eve tradition. It is not a separate, securely independent account from every other recension.";witnesses="Greek manuscript tradition; commonly treated as a Greek recension within the Adam and Eve literary cycle.";}
         else if(item.equals("Dormition of Mary (Transitus Mariae traditions)")){category="Mary's Dormition and departure traditions";preservation="A family of early Christian narratives about Mary's final days and departure. The texts survive in multiple language traditions and differing recensions, not as one uniform book.";witnesses="Greek, Syriac, Coptic, Latin and other versional traditions; individual recensions require separate identification.";}
@@ -1371,6 +1370,7 @@ public class MainActivity extends Activity {
         if(item.equals("Gospel of Thomas"))builder.setNeutralButton("Open Coptic text",(d,w)->openThomasArchive());
         if(item.equals("Didache"))builder.setNeutralButton("Open Greek text",(d,w)->openDidacheArchive());
         if(item.equals("2 Baruch"))builder.setNeutralButton("Open Syriac text",(d,w)->openTwoBaruchArchive());
+        if(item.equals("3 Baruch"))builder.setNeutralButton("Open Greek text",(d,w)->openThreeBaruchArchive());
         if(item.equals("Shepherd of Hermas"))builder.setNeutralButton("Open Greek text",(d,w)->openHermasArchive());
         if(item.equals("1 Enoch"))builder.setNeutralButton("Open Aramaic fragments",(d,w)->openQumranReferenceFragments("1 Enoch",new String[]{"4Q201","4Q202","4Q204","4Q205","4Q206","4Q207","4Q208","4Q209","4Q210","4Q211","4Q212"}));
         if(item.equals("1 Enoch"))builder.setNegativeButton("Open Greek fragments",(d,w)->openGreekEnochArchive());
