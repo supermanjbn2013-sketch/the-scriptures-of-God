@@ -28,7 +28,7 @@ The Apocrypha import currently covers 23 named books or textual forms. The gener
 
 The catalogue includes selected Dead Sea Scrolls metadata and passage concordances. Some Qumran-Digital transcriptions and published passage mappings are imported line by line where the source provides explicit coordinates. Digital display-line numbers are not silently converted into manuscript column or line numbers.
 
-The Codex Sinaiticus Project's electronic transcription has been located and catalogued separately. Its XML is a manuscript-based transcription with page, column, line, correction, and marginal-text markup. It is not yet bundled in the offline corpus. Its transcription licence is CC BY-NC-SA 3.0; any later import must preserve that non-commercial, share-alike licence and the XML's manuscript structure.
+The Codex Sinaiticus Project's electronic transcription is imported during the Android APK build from the ITSEE repository's pinned v1.95 XML revision. The offline reader preserves original page, column, line, and word identifiers and displays page-specific text without inventing verse references or normalizing the source wording. Its separate CC BY-NC-SA 3.0 licence is retained; use is non-commercial and adaptations must remain share-alike. Manuscript images remain at their institutional source websites.
 
 The Way to Yahuweh downloads are evaluated file by file. Each transcription must retain its own manuscript identifier, underlying edition, coverage, source URL, licence, and editorial cautions.
 
