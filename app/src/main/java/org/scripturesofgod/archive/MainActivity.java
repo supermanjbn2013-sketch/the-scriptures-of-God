@@ -2112,6 +2112,7 @@ public class MainActivity extends Activity {
             else if(key.contains("p46"))key="p46";
             else if(key.contains("p66"))key="p66";
             else if(key.contains("p75"))key="p75";
+            else if(key.contains("p76"))key="p76";
             for(int i=0;i<records.length();i++){
                 org.json.JSONObject r=records.getJSONObject(i);
                 if(r.optString("id").equalsIgnoreCase(key)){match=r;break;}
@@ -2154,6 +2155,7 @@ public class MainActivity extends Activity {
             if("P66".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus66Archive());
             if("P75".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus75Archive());
             if("P77".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus77Archive());
+            if("P76".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Search P76 online",(d,w)->{try{Intent intent=new Intent(Intent.ACTION_VIEW,android.net.Uri.parse("https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml"));startActivity(intent);}catch(Exception ex){showInfo("P76 online transcription","Open this source in a browser: https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml");}});
             if("P72".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus72Archive());
             builder.show();
         }catch(Exception e){
