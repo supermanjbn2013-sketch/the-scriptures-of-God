@@ -369,7 +369,7 @@
       "id": "1-enoch-qumran-aramaic-fragments",
       "name": "1 Enoch — surviving Aramaic Qumran fragments",
       "language": "Aramaic",
-      "coverage": "Offline line-level fragment records for 4Q201, 4Q202 and 4Q204–4Q212 where present in the pinned ETCBC/QDR export. 4Q203 is catalogued separately as Book of Giants.",
+      "coverage": "141 fragments and 788 line-level records across 11 Aramaic witnesses: 4Q201, 4Q202 and 4Q204–4Q212, as verified in the pinned ETCBC/QDR export.",
       "record_type": "Fragment-level Aramaic manuscript transcription with fragment and line identifiers",
       "edition": "Martin G. Abegg Jr. transcriptions in the ETCBC/CACCHT Dead Sea Scrolls corpus, structured export distributed by Qumran Digital Reader",
       "source_urls": [
@@ -390,7 +390,7 @@
       "id": "jubilees-qumran-hebrew-fragments",
       "name": "Jubilees — surviving Hebrew Qumran fragments",
       "language": "Hebrew",
-      "coverage": "Offline line-level fragment records for 4Q216–4Q222, 4Q223/224 and 4Q225 where present in the pinned ETCBC/QDR export.",
+      "coverage": "86 fragments and 530 line-level records across nine Hebrew witnesses: 4Q216–4Q222, 4Q223/224 and 4Q225, as verified in the pinned ETCBC/QDR export.",
       "record_type": "Fragment-level Hebrew manuscript transcription with fragment and line identifiers",
       "edition": "Martin G. Abegg Jr. transcriptions in the ETCBC/CACCHT Dead Sea Scrolls corpus, structured export distributed by Qumran Digital Reader",
       "source_urls": [
