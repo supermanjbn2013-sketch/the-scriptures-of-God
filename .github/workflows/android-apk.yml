@@ -36,6 +36,8 @@ jobs:
         run: python3 tools/import_codex_vaticanus.py
       - name: Import Papyrus 46 manuscript transcription
         run: python3 tools/import_papyrus_46.py
+      - name: Import Papyrus 52 manuscript transcription
+        run: python3 tools/import_papyrus_52.py
       - name: Validate complete corpus before any APK build
         run: |
           python3 tools/validate_corpus.py base
