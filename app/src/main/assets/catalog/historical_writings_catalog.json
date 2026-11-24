@@ -1,0 +1,350 @@
+{
+  "schema_version": 1,
+  "record_type": "historical_writings_and_manuscript_witness_catalog",
+  "policy": "Catalogue identity, ancient references, manuscript witnesses, text availability, and editorial/redistribution status are separate fields. A writing named by another work is not automatically recovered. Never reconstruct missing text or merge distinct language witnesses and recensions.",
+  "categories": [
+    {
+      "id": "scripture_references",
+      "name": "Writings Mentioned in the Scriptures"
+    },
+    {
+      "id": "early_disciple",
+      "name": "Early Disciple and Apostolic Writings"
+    },
+    {
+      "id": "early_gospels",
+      "name": "Early Christian Gospels and Related Writings"
+    }
+  ],
+  "records": [
+    {
+      "id": "wars_of_the_lord",
+      "title": "Book of the Wars of the Lord",
+      "category": "scripture_references",
+      "reference": "Numbers 21:14",
+      "preservation": "Lost or unidentified source",
+      "languages": [
+        "Unknown"
+      ],
+      "date": "Undetermined",
+      "witnesses": [],
+      "text_status": "No independently identified surviving copy or verified transcription in this archive.",
+      "note": "The passage quotes or refers to a source called the Book of the Wars of the Lord. Its contents and extent cannot be reconstructed from the citation.",
+      "sources": [
+        "https://www.biblegateway.com/passage/?search=Numbers%2021%3A14"
+      ]
+    },
+    {
+      "id": "jashar",
+      "title": "Book of Jashar",
+      "category": "scripture_references",
+      "reference": "Joshua 10:13; 2 Samuel 1:18",
+      "preservation": "Lost or unidentified source; identity debated",
+      "languages": [
+        "Unknown"
+      ],
+      "date": "Undetermined",
+      "witnesses": [],
+      "text_status": "No independently verified ancient manuscript copy is identified here.",
+      "note": "The references name a work called the Book of Jashar. Later works bearing similar titles must not automatically be equated with this source.",
+      "sources": [
+        "https://www.biblegateway.com/passage/?search=Joshua%2010%3A13",
+        "https://www.biblegateway.com/passage/?search=2%20Samuel%201%3A18"
+      ]
+    },
+    {
+      "id": "samuel_nathan_gad_records",
+      "title": "Records of Samuel, Nathan, and Gad",
+      "category": "scripture_references",
+      "reference": "1 Chronicles 29:29",
+      "preservation": "Named source records; no independently identified complete copies",
+      "languages": [
+        "Unknown; likely source traditions in Hebrew"
+      ],
+      "date": "Undetermined",
+      "witnesses": [],
+      "text_status": "Reference only; no separate full transcription available.",
+      "note": "The passage names records associated with Samuel the seer, Nathan the prophet, and Gad the seer. It does not establish that three complete books survive or that their contents can be recovered.",
+      "sources": [
+        "https://www.biblegateway.com/passage/?search=1%20Chronicles%2029%3A29"
+      ]
+    },
+    {
+      "id": "earlier_corinthian_letter",
+      "title": "Paul's Earlier Letter to Corinth",
+      "category": "scripture_references",
+      "reference": "1 Corinthians 5:9",
+      "preservation": "Letter referred to; not securely identified as a separate surviving document",
+      "languages": [
+        "Greek (inferred from Paul's correspondence; original letter not extant)"
+      ],
+      "date": "Before the composition of 1 Corinthians; exact date unknown",
+      "witnesses": [],
+      "text_status": "No independently identified manuscript or text survives.",
+      "note": "Paul says he had written to the assembly previously. The letter is not preserved as a separately identifiable document.",
+      "sources": [
+        "https://www.biblegateway.com/passage/?search=1%20Corinthians%205%3A9"
+      ]
+    },
+    {
+      "id": "sorrowful_corinthian_letter",
+      "title": "Paul's Severe / Sorrowful Letter to Corinth",
+      "category": "scripture_references",
+      "reference": "2 Corinthians 2:4; 7:8",
+      "preservation": "Letter or correspondence episode referred to; identity debated",
+      "languages": [
+        "Greek (inferred; original document not extant)"
+      ],
+      "date": "Before the relevant portions of 2 Corinthians; exact date unknown",
+      "witnesses": [],
+      "text_status": "No independently identified manuscript or text survives.",
+      "note": "The passages describe a painful letter. Whether it is identical with the letter reflected in another part of the Corinthian correspondence is debated; do not treat its separate physical existence or exact reconstruction as settled.",
+      "sources": [
+        "https://www.biblegateway.com/passage/?search=2%20Corinthians%202%3A4",
+        "https://www.biblegateway.com/passage/?search=2%20Corinthians%207%3A8"
+      ]
+    },
+    {
+      "id": "laodicean_letter",
+      "title": "Letter Associated with Laodicea",
+      "category": "scripture_references",
+      "reference": "Colossians 4:16",
+      "preservation": "Unidentified letter; identity uncertain",
+      "languages": [
+        "Greek (contextual inference; original not identified)"
+      ],
+      "date": "Undetermined",
+      "witnesses": [],
+      "text_status": "The letter referred to is not securely identified with a surviving text.",
+      "note": "The instruction concerns a letter associated with Laodicea. It may mean a letter addressed to Laodicea or one coming from there. The later Latin Epistle to the Laodiceans must not automatically be identified as Paul's referenced letter.",
+      "sources": [
+        "https://www.biblegateway.com/passage/?search=Colossians%204%3A16"
+      ]
+    },
+    {
+      "id": "enoch",
+      "title": "Prophecy / Book of Enoch (1 Enoch)",
+      "category": "scripture_references",
+      "reference": "Jude 1:14–15",
+      "preservation": "Substantially preserved in Ge'ez; fragmentary Aramaic and Greek witnesses survive",
+      "languages": [
+        "Aramaic",
+        "Greek",
+        "Ge'ez"
+      ],
+      "date": "Composite work; constituent sections have different dates, broadly Second Temple period",
+      "witnesses": [
+        "Qumran Aramaic Enoch manuscripts including 4Q201–4Q212",
+        "Greek fragments",
+        "Ethiopic Ge'ez manuscript tradition"
+      ],
+      "text_status": "Separate Aramaic DSS fragments and Greek fragments are catalogued as witnesses; a complete Ge'ez textual tradition survives externally. Do not label this work lost.",
+      "note": "Jude quotes Enochic prophecy. The Dead Sea Scrolls preserve multiple Aramaic Enoch manuscripts; these are fragmentary witnesses, not a complete Aramaic copy. The Ge'ez tradition preserves the work substantially.",
+      "sources": [
+        "https://www.deadseascrolls.org.il/",
+        "https://www.earlyjewishwritings.com/1enoch.html"
+      ]
+    },
+    {
+      "id": "barnabas",
+      "title": "Epistle of Barnabas",
+      "category": "early_disciple",
+      "reference": "No direct citation in the Scriptures asserted",
+      "preservation": "Survives in Greek; included after other writings in Codex Sinaiticus",
+      "languages": [
+        "Greek"
+      ],
+      "date": "Usually dated late 1st or early 2nd century CE; exact date debated",
+      "witnesses": [
+        "Codex Sinaiticus (4th century; appended after the main scriptural books)",
+        "Greek papyrus PSI 7.757"
+      ],
+      "text_status": "Greek text available offline in the archive from an edition; edition-derived text, not a new diplomatic transcription of Sinaiticus or PSI 7.757.",
+      "note": "Its presence in Codex Sinaiticus documents the codex's contents and reception; it does not by itself prove that every community treated it as Scripture.",
+      "sources": [
+        "https://manuscripts.csntm.org/",
+        "https://www.gospels.net/manuscript/"
+      ]
+    },
+    {
+      "id": "hermas",
+      "title": "Shepherd of Hermas",
+      "category": "early_disciple",
+      "reference": "No direct citation in the Scriptures asserted",
+      "preservation": "Survives in Greek and ancient versions; portions appear in Codex Sinaiticus",
+      "languages": [
+        "Greek",
+        "Latin",
+        "Sahidic Coptic and other versions"
+      ],
+      "date": "2nd century CE; composition likely over a period",
+      "witnesses": [
+        "Codex Sinaiticus (partial text)",
+        "P.Mich. 129",
+        "P.Oxy. 1828 (fragment identified with Hermas)",
+        "Additional Greek papyri and versional witnesses"
+      ],
+      "text_status": "Greek edition text available offline; not a full diplomatic transcription of all witnesses.",
+      "note": "Codex Sinaiticus contains portions of Hermas. P.Mich. 129 and P.Oxy. 1828 are Hermas witnesses; P.Oxy. 3528 should not be casually assigned to Barnabas.",
+      "sources": [
+        "https://manuscripts.csntm.org/",
+        "https://www.sbl-site.org/assets/pdfs/presidentialaddresses/JBL123_1_1Epp2003.pdf"
+      ]
+    },
+    {
+      "id": "clement_1",
+      "title": "1 Clement",
+      "category": "early_disciple",
+      "reference": "No direct citation in the Scriptures asserted",
+      "preservation": "Survives in Greek and ancient versions; included in Codex Alexandrinus",
+      "languages": [
+        "Greek",
+        "Latin",
+        "Syriac",
+        "Coptic fragments / versions"
+      ],
+      "date": "Late 1st century CE (commonly dated around 90s CE)",
+      "witnesses": [
+        "Codex Alexandrinus (5th century; at the end of the codex)",
+        "Earlier fragmentary Greek and versional witnesses"
+      ],
+      "text_status": "Catalogue entry; a dedicated witness-by-witness text import is not yet implemented.",
+      "note": "Codex Alexandrinus transmits 1 Clement after the main collection. The codex's contents should not be conflated with a later council's decision.",
+      "sources": [
+        "https://manuscripts.csntm.org/"
+      ]
+    },
+    {
+      "id": "clement_2",
+      "title": "2 Clement",
+      "category": "early_disciple",
+      "reference": "No direct citation in the Scriptures asserted",
+      "preservation": "Survives in Greek; included with Clementine writings in Codex Alexandrinus",
+      "languages": [
+        "Greek"
+      ],
+      "date": "2nd century CE; exact date debated",
+      "witnesses": [
+        "Codex Alexandrinus (5th century)",
+        "Earlier fragmentary witnesses; individual papyri require separate verification"
+      ],
+      "text_status": "Catalogue entry; a dedicated witness-by-witness text import is not yet implemented.",
+      "note": "The title is traditional. The work is generally not regarded as a letter written by Clement himself; catalogue attribution and manuscript contents remain separate questions.",
+      "sources": [
+        "https://manuscripts.csntm.org/"
+      ]
+    },
+    {
+      "id": "didache",
+      "title": "Didache (Teaching of the Twelve Apostles)",
+      "category": "early_disciple",
+      "reference": "No direct citation in the Scriptures asserted",
+      "preservation": "Survives in Greek and ancient versions",
+      "languages": [
+        "Greek",
+        "Ge'ez and other versional witnesses"
+      ],
+      "date": "Usually placed in the late 1st or early 2nd century; manuscript witnesses are later",
+      "witnesses": [
+        "Codex Hierosolymitanus 54 (1056 CE)",
+        "P.Oxy. 1782 (late 4th century Greek fragment)"
+      ],
+      "text_status": "Greek edition text available offline; P.Oxy. 1782 is a fragmentary witness and not a complete papyrus copy.",
+      "note": "P.Oxy. 1782 is commonly dated to the late 4th century, not simply labelled a 3rd-century witness. The medieval Codex Hierosolymitanus preserves a much fuller Greek text.",
+      "sources": [
+        "https://www.sbl-site.org/assets/pdfs/presidentialaddresses/JBL123_1_1Epp2003.pdf",
+        "https://www.gospels.net/manuscript/"
+      ]
+    },
+    {
+      "id": "gospel_peter",
+      "title": "Gospel of Peter",
+      "category": "early_gospels",
+      "reference": "No direct citation in the Scriptures asserted",
+      "preservation": "Fragmentary Greek witnesses survive",
+      "languages": [
+        "Greek"
+      ],
+      "date": "Composition date uncertain; Greek manuscript witnesses range from 2nd/3rd to late 6th century",
+      "witnesses": [
+        "P.Oxy. 2949 (late 2nd / early 3rd century; short fragment)",
+        "P.Oxy. 4009 (2nd century; possible Gospel of Peter fragment)",
+        "Akhmim / P.Cair. 10759 (late 6th century; substantial fragment)"
+      ],
+      "text_status": "Akhmim fragment text is known; papyrus fragments are separate, short witnesses and should not be merged into a continuous text without editorial marking.",
+      "note": "P.Oxy. 2949 and P.Oxy. 4009 are possible Gospel of Peter witnesses; preserve the uncertainty in identification.",
+      "sources": [
+        "https://www.gospels.net/manuscript/",
+        "https://dokumen.pub/christian-oxyrhynchus-texts-documents-and-sources-1481309269-9781481309264.html"
+      ]
+    },
+    {
+      "id": "gospel_thomas",
+      "title": "Gospel of Thomas",
+      "category": "early_gospels",
+      "reference": "No direct citation in the Scriptures asserted",
+      "preservation": "Substantially preserved in Coptic; earlier Greek fragments survive",
+      "languages": [
+        "Greek",
+        "Sahidic Coptic"
+      ],
+      "date": "Composition date debated; Greek papyri are generally 2nd–3rd century; Coptic codex 4th century",
+      "witnesses": [
+        "P.Oxy. 1",
+        "P.Oxy. 654",
+        "P.Oxy. 655",
+        "Nag Hammadi Codex II, tractate 2"
+      ],
+      "text_status": "Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set.",
+      "note": "The three Greek papyri are fragmentary and do not contain the complete work. Keep Coptic and Greek witnesses distinct.",
+      "sources": [
+        "https://www.gospels.net/manuscript/",
+        "https://www.sbl-site.org/assets/pdfs/presidentialaddresses/JBL123_1_1Epp2003.pdf"
+      ]
+    },
+    {
+      "id": "gospel_mary",
+      "title": "Gospel of Mary",
+      "category": "early_gospels",
+      "reference": "No direct citation in the Scriptures asserted",
+      "preservation": "Incomplete Coptic codex and two Greek papyrus fragments",
+      "languages": [
+        "Coptic",
+        "Greek"
+      ],
+      "date": "Coptic codex 5th century; Greek fragments 3rd century (one early 3rd century)",
+      "witnesses": [
+        "Berlin Codex 8502, tractate 1 (5th century; incomplete)",
+        "P.Oxy. 3525 (3rd century)",
+        "P.Ryl. 463 (early 3rd century)"
+      ],
+      "text_status": "Coptic and Greek witnesses are known; the two Greek fragments overlap portions also preserved in the Coptic codex. No complete Greek text survives.",
+      "note": "Do not describe the Greek fragments as a complete earlier edition; they preserve short overlapping portions.",
+      "sources": [
+        "https://www.gospels.net/manuscript/",
+        "https://api.pageplace.de/preview/DT0400.9780191549731_A24387361/preview-9780191549731_A24387361.pdf"
+      ]
+    },
+    {
+      "id": "apocalypse_peter",
+      "title": "Apocalypse of Peter",
+      "category": "early_gospels",
+      "reference": "No direct citation in the Scriptures asserted",
+      "preservation": "Greek fragmentary witness and Ethiopic versional tradition",
+      "languages": [
+        "Greek",
+        "Ge'ez"
+      ],
+      "date": "Composition commonly placed in the 2nd century; surviving Greek witness is later",
+      "witnesses": [
+        "Akhmim Greek fragment (late 6th century)",
+        "Ethiopic Ge'ez versional tradition"
+      ],
+      "text_status": "Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript.",
+      "note": "The Ethiopic text survives in a later versional tradition; do not claim that the Akhmim fragment is the only witness or merge the two forms without apparatus.",
+      "sources": [
+        "https://www.earlychristianwritings.com/apocalypsepeter.html"
+      ]
+    }
+  ]
+}
