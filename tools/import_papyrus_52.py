@@ -197,7 +197,7 @@ def main():
 
     index = {
         "schema_version": 1,
-        "record_type": "papyrus_46_page_verse_transcription",
+        "record_type": "papyrus_52_page_verse_transcription",
         "manuscript": "Papyrus 52 (GA P52; John Rylands Library, Gr. P. 457)",
         "language": "Koine Greek",
         "document_id": 10052,
