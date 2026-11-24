@@ -2,6 +2,7 @@
 """Validate generated text corpus, Apocrypha imports, DSS metadata, and Android navigation."""
 import json
 import sys
+import gzip
 import re
 from pathlib import Path
 
@@ -163,6 +164,7 @@ def validate_android():
         "source_reference", "Temple Scroll (11Q19)", "War Scroll (1QM)",
         "Other Reference Books", "Protoevangelium of James (Nativity and Infancy of Jesus)", "Infancy Gospel of Thomas", "Gospel of Pseudo-Matthew", "Arabic Infancy Gospel", "Zohar", "Apocalypse of Moses", "Dormition of Mary (Transitus Mariae traditions)", "Six Books Dormition Apocryphon", "Book of Mary's Repose", "void openOtherReferenceBookEntry(String item)", "openOtherReferenceBookEntry(item)",
         "void translateVerse(String reference,String sourceText,String sourceLanguage)", "Disciples and Apostles Writings", "Lost and Referenced Books", "openReferencedBookEntry(item)", "Book of the Wars of YHWH", "Book of Giants (fragmentarily preserved)", "void openBookOfGiantsFragments()", "4Q203", "4Q530", "4Q533", "openEtcbcDssScroll(ids.get(which))",
+        "void openVaticanusArchive()", "void openVaticanusPage(String pageId)", "vaticanus/vaticanus_index.json", "vaticanus/pages/"
         "594 line records across these nine Qumran witness identifiers", "not a continuous reconstructed text or an English translation", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate  ·  Long press for passage tools", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "void translateOnDevice(", "com.google.mlkit.nl.translate.TranslatorOptions", "targetLanguage()"
     ):
         assert required in source, f"Android source is missing: {required}"
@@ -193,7 +195,7 @@ def validate_android():
     assert "11Q19" in ids and "1QM" in ids
     catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
     datasets = {item["id"]: item for item in catalog["datasets"]}
-    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
+    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
     assert "current complete 16-chapter import is a Latin transmission text" in " ".join(datasets["swete-lxx-apocrypha"]["limitations"])
     assert datasets["4q47-joshua-direct-transcription"]["license"] == "CC BY-SA 4.0"
     assert datasets["4q47-joshua-direct-transcription"]["source_url"]
@@ -204,7 +206,25 @@ def validate_android():
     assert digital["license"] == "Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported (CC BY-NC-SA 3.0)"
     assert digital["source_url"] and digital["repository_url"] and digital["status"]
     assert "digital_transcription_source" in source
-    print("Validated Android navigation, text search and manuscript source metadata")
+    vaticanus = next(r for r in greek["records"] if r["id"] == "Vaticanus")
+    assert "imported" in vaticanus["status"].lower()
+    assert vaticanus["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    assert datasets["codex-vaticanus-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    vaticanus_index_path = ROOT / "vaticanus/vaticanus_index.json"
+    assert vaticanus_index_path.exists(), "Offline Codex Vaticanus index was not generated"
+    vaticanus_index = json.loads(vaticanus_index_path.read_text(encoding="utf-8"))
+    assert vaticanus_index["document_id"] == 20003
+    assert vaticanus_index["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    assert vaticanus_index["record_count"] >= 1000 and vaticanus_index["text_record_count"] >= 1000
+    assert vaticanus_index["page_count"] == len(vaticanus_index["pages"]) > 0
+    first_page = vaticanus_index["pages"][0]
+    page_file = ROOT / first_page["asset_file"]
+    assert page_file.exists() and page_file.stat().st_size > 0
+    with gzip.open(page_file, "rt", encoding="utf-8") as page_stream:
+        sample_record = json.loads(next(page_stream))
+    assert sample_record.get("source_label") and sample_record.get("text")
+    assert "correction_notes" in sample_record and "page_id" in sample_record
+    print("Validated Android navigation, text search, and Codex Vaticanus offline transcription")
 
 sections = {"base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
