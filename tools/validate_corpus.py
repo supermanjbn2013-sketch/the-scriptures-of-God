@@ -186,6 +186,7 @@ def validate_android():
         "void openPapyrus52Archive()", "void openPapyrus52Page(String pageId)", "papyri/p52/p52_index.json",
         "void openPapyrus66Archive()", "void openPapyrus66Page(String pageId)", "papyri/p66/p66_index.json",
         "void openPapyrus75Archive()", "void openPapyrus75Page(String pageId)", "papyri/p75/p75_index.json",
+        "void openPapyrus72Archive()", "void openPapyrus72Page(String pageId)", "papyri/p72/p72_index.json",
         "void openPapyrus77Archive()", "void openPapyrus77Page(String pageId)", "papyri/p77/p77_index.json", "Papyrus 77 (P77)",
         "void openDidacheArchive()", "void openDidacheChapter(int chapter)", "other_reference/didache/didache_index.json", "other_reference/didache/didache_greek.jsonl", "Open Greek text",
         "void openQumranReferenceFragments(String title,String[] requestedIds)", "4Q201", "4Q216", "4Q223_224", "Open Aramaic fragments", "Open Hebrew fragments",
@@ -338,6 +339,16 @@ def validate_android():
         p75_sample = json.loads(next(page_stream))
     assert p75_sample.get("text") and p75_sample.get("page_id")
     assert "correction_notes" in p75_sample
+    p72 = next(r for r in greek["records"] if r["id"] == "P72")
+    assert "imported" in p72["status"].lower()
+    assert p72["digital_transcription_source"]["document_id"] == 10072
+    assert p72["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    assert datasets["papyrus-72-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
+    p72_index_path = ROOT / "papyri/p72/p72_index.json"
+    assert p72_index_path.exists(), "Offline Papyrus 72 index was not generated"
+    p72_index = json.loads(p72_index_path.read_text(encoding="utf-8"))
+    assert p72_index["document_id"] == 10072 and p72_index["page_count"] == len(p72_index["pages"]) > 0
+    assert p72_index["record_count"] > 0 and p72_index["text_record_count"] > 0
     p77 = next(r for r in greek["records"] if r["id"] == "P77")
     assert "imported" in p77["status"].lower()
     assert p77["digital_transcription_source"]["document_id"] == 10077
