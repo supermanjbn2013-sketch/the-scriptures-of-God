@@ -122,3 +122,9 @@ catalog["catalog_policy"] = "Metadata records are distinguished from imported tr
 catalog_path.write_text(json.dumps(catalog, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"Imported {total} line-level DSS records from {len(index)} scrolls (CC BY-NC 4.0).")
 print("Synchronized Dead Sea Scrolls register with exact imported witness IDs.")
+for record in catalog.get("records", []):
+    coverage = record.get("transcription_coverage", {})
+    if coverage:
+        print(f"Featured DSS witness {record['id']}: {coverage['scroll_identifier']} — {coverage['fragment_count']} fragments, {coverage['line_count']} lines.")
+    else:
+        print(f"Featured DSS witness {record['id']}: no exact transcription match in this import.")
