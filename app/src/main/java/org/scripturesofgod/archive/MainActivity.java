@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         }).setNegativeButton("Cancel",null).show();
     }
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
-    String[] sections={"Home","Hebrew Scriptures","Prophets","Disciples and Apostles Writings","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Early Disciple and Apostolic Writings","Early Christian Gospels and Related Writings","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
+    String[] sections={"Home","Hebrew Scriptures","Prophets","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
     @Override public void onCreate(Bundle b){super.onCreate(b); applyTheme(); seed(); show();}
     void applyTheme(){String mode=getSharedPreferences("archive_settings",MODE_PRIVATE).getString("theme","dark");lightMode=mode.equals("light")||(mode.equals("system")&&((getResources().getConfiguration().uiMode&android.content.res.Configuration.UI_MODE_NIGHT_MASK)==android.content.res.Configuration.UI_MODE_NIGHT_NO));if(lightMode){bg=Color.rgb(247,245,239);panel=Color.rgb(255,255,255);gold=Color.rgb(133,94,38);ink=Color.rgb(35,39,42);muted=Color.rgb(105,110,113);}else{bg=Color.rgb(15,19,24);panel=Color.rgb(26,33,41);gold=Color.rgb(205,174,112);ink=Color.rgb(232,228,217);muted=Color.rgb(160,166,170);}}
     void saveTheme(String mode){getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("theme",mode).apply();applyTheme();show();}
@@ -92,9 +92,6 @@ public class MainActivity extends Activity {
             addHomeTile("Hebrew Scriptures","39 writings",() -> navigateTo("Hebrew Scriptures"));
             addHomeTile("Unified Apostolic and Disciple Writings","All catalogued letters, gospels, acts, testimony and related works in estimated chronological order",() -> navigateTo("Unified Apostolic and Disciple Writings"));
             addHomeTile("Apocrypha and Deuterocanonical Writings","Greek and Latin textual forms",() -> navigateTo("Apocrypha and Deuterocanonical Writings"));
-            addHomeTile("Writings Mentioned in the Scriptures","Lost references and recovered works, each with witness status",() -> navigateTo("Writings Mentioned in the Scriptures"));
-            addHomeTile("Early Disciple and Apostolic Writings","Barnabas, Hermas, Clement, Didache and related writings",() -> navigateTo("Early Disciple and Apostolic Writings"));
-            addHomeTile("Early Christian Gospels and Related Writings","Greek papyri, Coptic codices and Ethiopic witnesses",() -> navigateTo("Early Christian Gospels and Related Writings"));
             addHomeTile("Lost and Referenced Books","Other ancient records, fragmentary works and disputed identifications",() -> navigateTo("Lost and Referenced Books"));
             addHomeTile("Other Reference Books","Ancient Jewish and early Christian writings outside the main Scripture collections",() -> navigateTo("Other Reference Books"));
             content.addView(text("MANUSCRIPT RESEARCH",12,gold,true));
