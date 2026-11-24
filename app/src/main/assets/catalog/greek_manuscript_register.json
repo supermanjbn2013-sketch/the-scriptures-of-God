@@ -178,6 +178,55 @@
         "handling": "Display the original-hand reading where the TEI marks corrections; retain correction readings as notes. Preserve source verse labels and page/column/line identifiers where present. Do not fill missing manuscript portions or include the later Revelation supplement.",
         "scope": "Original surviving New Testament text only; do not include the later Revelation supplement."
       }
+    },
+    {
+      "id": "P76",
+      "name": "Papyrus 76 (P76)",
+      "material": "Papyrus",
+      "language": "Koine Greek",
+      "date_estimate": "6th century CE",
+      "date_basis": "Catalogue palaeographical dating; approximate",
+      "contents": "John 4:9 and 4:11–12",
+      "condition": "One small fragment; one column, approximately 3–11 surviving lines",
+      "holding_institution": "Österreichische Nationalbibliothek, Vienna, Austria",
+      "shelfmark": "Pap. G. 36102",
+      "source_urls": [
+        "https://manuscripts.csntm.org/Manuscript/View/GA_P76_digital",
+        "https://data.onb.ac.at/rec/RZ00002179"
+      ],
+      "status": "Witness metadata catalogued; diplomatic transcription not yet imported",
+      "caution": "Only a small fragment of John survives. Do not infer or reconstruct surrounding verses.",
+      "digital_transcription_source": {
+        "title": "No verified public diplomatic transcription identified in the sources checked",
+        "format": "Institutional manuscript images/catalogue record; transcription import pending",
+        "status": "Not imported; image-based transcription and line-coordinate verification still required",
+        "caution": "Do not substitute a later printed Greek text for the manuscript witness."
+      }
+    },
+    {
+      "id": "P77",
+      "name": "Papyrus 77 (P77) / P. Oxy. 2683 + P. Oxy. 4405",
+      "material": "Papyrus",
+      "language": "Koine Greek",
+      "date_estimate": "2nd–3rd century CE",
+      "date_basis": "Published palaeographical assessment; approximate",
+      "contents": "Matthew 23:30–39",
+      "condition": "One leaf represented by two fragments; one column, approximately 13 surviving lines",
+      "holding_institution": "Sackler Library, Oxford, United Kingdom",
+      "shelfmark": "P. Oxy. 2683, re-edited with P. Oxy. 4405",
+      "source_urls": [
+        "https://manuscripts.csntm.org/Manuscript/Group/GA_P77",
+        "https://www.greeklab.org/manuscript_image.php?image=P77_0001a.jpg&man=GA_P77&text=809",
+        "https://www.greeklab.org/manuscript_image.php?image=P77_0001b.jpg&man=GA_P77&text=809"
+      ],
+      "status": "Witness metadata catalogued; diplomatic transcription not yet imported",
+      "caution": "The two Oxyrhynchus papyrus pieces are treated together as P77. Only Matthew 23:30–39 survives; do not reconstruct missing text.",
+      "digital_transcription_source": {
+        "title": "No verified public diplomatic transcription identified in the sources checked",
+        "format": "Digital manuscript images and published edition references; transcription import pending",
+        "status": "Not imported; Greek transcription and image-to-line coordinates still require verification",
+        "caution": "Do not treat a modern printed or normalized Greek text as a diplomatic transcription of P77."
+      }
     }
   ],
   "catalog_policy": "Metadata records are not transcriptions. A manuscript passage is not available in-app until the exact folio/page, image rights, transcription source, and reading have been verified. Dates are estimates and must retain uncertainty."
