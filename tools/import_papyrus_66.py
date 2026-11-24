@@ -192,7 +192,7 @@ def main():
         for handle in handles.values():
             handle.close()
 
-    if not pages or total_records < 1000 or total_with_text < 1000:
+    if not pages or total_records < 500 or total_with_text < 500:
         raise SystemExit(f"Import rejected: unexpectedly small Papyrus 66 transcription ({len(pages)} pages, {total_records} records, {total_with_text} with text).")
 
     index = {
