@@ -215,6 +215,25 @@
       ]
     },
     {
+      "id": "codex-sinaiticus-xml",
+      "name": "Codex Sinaiticus electronic transcription (ITSEE v1.95)",
+      "language": "Greek",
+      "coverage": "Surviving manuscript pages represented in the pinned upstream XML; exact page, column, and line counts are generated in sinaiticus/sinaiticus_index.json during the build.",
+      "record_type": "diplomatic manuscript transcription with original page, column, line, and word identifiers",
+      "edition": "Codex Sinaiticus Project electronic transcription; ITSEE repository v1.95, pinned upstream commit af1633b5102cbe6200e79053cc618ac447e1bb16",
+      "license": "CC BY-NC-SA 3.0 Unported",
+      "repository": "https://github.com/itsee-birmingham/codex-sinaiticus",
+      "source_url": "https://raw.githubusercontent.com/itsee-birmingham/codex-sinaiticus/af1633b5102cbe6200e79053cc618ac447e1bb16/sinaiticus_full_v195.xml",
+      "attribution": "Codex Sinaiticus Project; XML maintained by ITSEE, University of Birmingham.",
+      "status": "Imported at APK build time as offline page-specific compressed line records; page/column/line coverage is generated in the index.",
+      "limitations": [
+        "CC BY-NC-SA 3.0: non-commercial use only; adaptations must be shared under the same licence.",
+        "The transcription is not a photographic facsimile; manuscript images remain at institutional source websites.",
+        "Original page, column, line, and word identifiers are preserved; the import does not invent chapter-and-verse references.",
+        "Text is displayed as supplied by the source XML and is not silently normalized."
+      ]
+    },
+    {
       "id": "etcbc-abegg-dss-transcriptions",
       "name": "ETCBC/CACCHT Dead Sea Scrolls diplomatic transcriptions (Martin Abegg data)",
       "language": "Hebrew and Aramaic",
