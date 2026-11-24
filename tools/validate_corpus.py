@@ -389,7 +389,7 @@ def validate_android():
     assert all(r["source_revision"] == ignatius_index["source_revision"] and isinstance(r["editorial_notes"], list) for r in ignatius_records)
     assert all("printed greek edition" in r["textual_basis"].lower() for r in ignatius_records)
     assert "void openIgnatiusArchive()" in source and "void openIgnatiusChapter(String letterNo,String chapter)" in source
-        thomas_path = ROOT / "other_reference/thomas/thomas_index.json"
+    thomas_path = ROOT / "other_reference/thomas/thomas_index.json"
     assert thomas_path.exists(), "Offline Gospel of Thomas Coptic index was not generated"
     thomas_index = json.loads(thomas_path.read_text(encoding="utf-8"))
     assert 17 <= thomas_index["page_count"] <= 20 and thomas_index["line_record_count"] >= 500
