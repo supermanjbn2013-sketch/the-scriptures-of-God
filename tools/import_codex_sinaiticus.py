@@ -61,12 +61,14 @@ def main():
     page_counts = None
     tokens = []
     word_ids = []
+    token_markup = []
+    element_stack = []
     word_depth = 0
     legacy_mode = False
     root_seen = False
 
     def finish_line():
-        nonlocal total_lines, tokens, word_ids
+        nonlocal total_lines, tokens, word_ids, token_markup
         if current_page is None or not tokens:
             tokens, word_ids = [], []
             return
@@ -75,12 +77,13 @@ def main():
             "column_id": current_column,
             "line_id": current_line,
             "text": " ".join(tokens),
-            "word_ids": word_ids
+            "word_ids": word_ids,
+            "token_markup": token_markup
         }
         page_handle.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
         page_counts["line_count"] += 1
         total_lines += 1
-        tokens, word_ids = [], []
+        tokens, word_ids, token_markup = [], [], []
 
     def finish_page():
         nonlocal page_handle, page_counts
@@ -147,6 +150,7 @@ def main():
                 continue
 
             if event == "start":
+                element_stack.append({"element": tag, "attributes": dict(elem.attrib)})
                 if tag == "pb":
                     start_page(marker_id(elem))
                 elif tag == "cb":
@@ -168,13 +172,25 @@ def main():
                     if value:
                         tokens.append(value)
                         word_ids.append(marker_id(elem))
+                        token_markup.append({
+                            "kind": "word",
+                            "xml": ET.tostring(elem, encoding="unicode"),
+                            "context": element_stack[:-1]
+                        })
                     elem.clear()
-                continue
-            if tag == "pc" and word_depth == 0:
+            elif tag == "pc" and word_depth == 0:
                 value = "".join(elem.itertext())
                 if value:
                     tokens.append(value)
+                    word_ids.append(marker_id(elem))
+                    token_markup.append({
+                        "kind": "punctuation",
+                        "xml": ET.tostring(elem, encoding="unicode"),
+                        "context": element_stack[:-1]
+                    })
                 elem.clear()
+            if element_stack:
+                element_stack.pop()
 
     finish_line()
     finish_page()
