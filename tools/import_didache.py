@@ -27,7 +27,7 @@ def lname(tag):
 
 
 def clean_space(value):
-    return re.sub(r"\\s+", " ", value or "").strip()
+    return re.sub(r"\s+", " ", value or "").strip()
 
 
 def main():
@@ -123,9 +123,9 @@ def main():
     if len(records) < 90 or len(chapter_counts) != 16 or any(n == 0 for n in chapter_counts.values()):
         raise SystemExit(f"Didache import rejected: {len(records)} sections across {len(chapter_counts)} chapters.")
 
-    with (ROOT / "didache_greek.jsonl").open("w", encoding="utf-8", newline="\\n") as out:
+    with (ROOT / "didache_greek.jsonl").open("w", encoding="utf-8", newline="\n") as out:
         for record in records:
-            out.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            out.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
 
     index = {
         "schema_version": 1,
@@ -152,8 +152,8 @@ def main():
         ],
         "asset_file": "other_reference/didache/didache_greek.jsonl"
     }
-    (ROOT / "didache_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
-    (ROOT / "SOURCE_NOTICE.txt").write_text(ATTRIBUTION + "\\nLicense: " + LICENSE + "\\nSource: " + SOURCE_URL + "\\n", encoding="utf-8")
+    (ROOT / "didache_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    (ROOT / "SOURCE_NOTICE.txt").write_text(ATTRIBUTION + "\nLicense: " + LICENSE + "\nSource: " + SOURCE_URL + "\n", encoding="utf-8")
     print(f"Imported Didache Greek text: {len(chapter_counts)} chapters, {len(records)} sections (CC BY-SA 4.0).")
 
 
