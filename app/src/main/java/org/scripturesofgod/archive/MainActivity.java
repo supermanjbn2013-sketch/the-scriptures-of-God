@@ -806,7 +806,28 @@ public class MainActivity extends Activity {
         else if(item.equals("Jason of Cyrene's Five-Book History")){reference="2 Maccabees 2:23";status="Lost source work; Second Maccabees survives as an abridgment.";note="The author says the present work is an epitome of Jason of Cyrene's five books. Jason's full five-volume history is not preserved as a complete independent work.";}
         else if(item.equals("Book of Giants (fragmentarily preserved)")){reference="Dead Sea Scrolls: 1Q23, 1Q24, 2Q26, 4Q203, 4Q530–533, 6Q8; compare later Manichaean witnesses";status="Partially preserved in manuscript fragments; not wholly lost.";note="An ancient work about the giants is represented by Qumran fragments. Its relationship to the Enochic Watchers tradition and later witnesses must be described source by source.";}
         String detail="Ancient referenced writing\n\nSource reference: "+reference+"\nStatus: "+status+"\n\nRecord: "+note+"\n\nArchive policy: A citation or allusion does not supply the full lost text. No missing wording is reconstructed or presented as an original manuscript reading.";
-        new android.app.AlertDialog.Builder(this).setTitle(item).setMessage(detail).setPositiveButton("Close",null).show();
+        android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(item).setMessage(detail).setPositiveButton("Close",null);
+        if(item.equals("Book of Giants (fragmentarily preserved)"))builder.setNeutralButton("Open surviving DSS fragments",(dialog,which)->openBookOfGiantsFragments());
+        builder.show();
+    }
+
+    void openBookOfGiantsFragments(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/etcbc_scroll_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray scrolls=new org.json.JSONObject(raw.toString()).getJSONArray("scrolls");
+            String[] sigla={"1Q23","1Q24","2Q26","4Q203","4Q530","4Q531","4Q532","4Q533","6Q8"};
+            ArrayList<String> ids=new ArrayList<>();ArrayList<String> labels=new ArrayList<>();
+            for(int i=0;i<scrolls.length();i++){
+                org.json.JSONObject scroll=scrolls.getJSONObject(i);String id=scroll.optString("scroll");
+                for(String siglum:sigla)if(id.equalsIgnoreCase(siglum)||id.toLowerCase().startsWith(siglum.toLowerCase()+" ")){
+                    ids.add(id);labels.add(id+"  ·  "+scroll.optInt("fragment_count")+" fragments · "+scroll.optInt("line_count")+" transcribed lines");break;
+                }
+            }
+            if(ids.isEmpty()){showInfo("Book of Giants fragments","The offline transcription index does not contain a verified line transcription for the listed Book of Giants witnesses in this build. The manuscript catalogue and fragment images remain available through the source links.");return;}
+            String[] choices=labels.toArray(new String[0]);
+            new android.app.AlertDialog.Builder(this).setTitle("Book of Giants · DSS witnesses").setItems(choices,(dialog,which)->openEtcbcDssScroll(ids.get(which))).setNegativeButton("Close",null).show();
+        }catch(Exception e){showInfo("DSS fragment index unavailable","The offline Dead Sea Scrolls transcription index could not be opened: "+e.getMessage());}
     }
 
     void openCatalogEntry(String item){
