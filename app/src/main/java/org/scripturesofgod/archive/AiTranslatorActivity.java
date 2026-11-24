@@ -39,6 +39,8 @@ public class AiTranslatorActivity extends Activity {
             String passage=getIntent().getStringExtra("passage_text");
             String sourceCode=getIntent().getStringExtra("source_language");
             if(passage!=null&&!passage.isEmpty())source.setText(passage);
+            String ref=getIntent().getStringExtra("passage_reference");
+            if(ref!=null&&!ref.isEmpty())setTitle(ref+" — AI Translation");
             if(sourceCode!=null&&language!=null){
                 int index="he".equals(sourceCode)?1:("grc".equals(sourceCode)?2:("arc".equals(sourceCode)?3:("la".equals(sourceCode)?4:("en".equals(sourceCode)?5:0))));
                 language.setSelection(index);
@@ -56,12 +58,20 @@ public class AiTranslatorActivity extends Activity {
         body.addView(label("AI TRANSLATION WORKSPACE",21,gold,true));
         body.addView(label("Original-language study and English style conversion",13,muted,false));
         Button key=new Button(this);key.setText("AI connection settings");key.setTextColor(ink);key.setBackground(shape(panel));body.addView(key);key.setOnClickListener(v->showKeyDialog());
+        body.addView(label(getSavedKey().trim().isEmpty()?"API key: Not saved — enter it once in AI connection settings.":"API key: Saved securely on this device. It will be reused automatically.",12,muted,false));
         body.addView(label("Translation / study mode",14,ink,true));
         mode=spinner(new String[]{"Modern English translation","Older English style (Early Modern)","Literal translation","Word-for-word analysis","Grammar and meaning explanation"});body.addView(mode);
         body.addView(label("Input language",14,ink,true));
         language=spinner(new String[]{"Detect automatically","Ancient Hebrew","Koine Greek","Aramaic","Latin","Modern English"});body.addView(language);
         body.addView(label("Output language",14,ink,true));
         target=spinner(new String[]{"English","Filipino / Tagalog","Spanish","French","German","Portuguese","Arabic"});body.addView(target);
+        String savedTarget=getSharedPreferences("ai_connection",MODE_PRIVATE).getString("target_language","English");
+        String[] targetNames={"English","Filipino / Tagalog","Spanish","French","German","Portuguese","Arabic"};
+        for(int i=0;i<targetNames.length;i++)if(targetNames[i].equals(savedTarget))target.setSelection(i);
+        target.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener(){
+            public void onItemSelected(android.widget.AdapterView<?> p,View v,int position,long id){getSharedPreferences("ai_connection",MODE_PRIVATE).edit().putString("target_language",targetNames[position]).apply();}
+            public void onNothingSelected(android.widget.AdapterView<?> p){}
+        });
         body.addView(label("Original text or English passage",14,ink,true));
         source=new EditText(this);source.setTextColor(ink);source.setHintTextColor(muted);source.setHint("Paste or type the text to translate…");source.setGravity(48);source.setMinLines(5);source.setPadding(14,12,14,12);source.setBackground(shape(panel));body.addView(source,new LinearLayout.LayoutParams(-1,-2));
         translate=new Button(this);translate.setText("Translate / Analyze");translate.setTextColor(Color.BLACK);translate.setBackground(shape(gold));LinearLayout.LayoutParams bp=new LinearLayout.LayoutParams(-1,-2);bp.topMargin=14;body.addView(translate,bp);translate.setOnClickListener(v->runTranslation());
