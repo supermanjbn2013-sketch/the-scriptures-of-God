@@ -364,6 +364,48 @@
         "The digital transcription and encoding are distributed under CC BY-SA 4.0.",
         "No missing wording is reconstructed."
       ]
+    },
+    {
+      "id": "1-enoch-qumran-aramaic-fragments",
+      "name": "1 Enoch — surviving Aramaic Qumran fragments",
+      "language": "Aramaic",
+      "coverage": "Offline line-level fragment records for 4Q201, 4Q202 and 4Q204–4Q212 where present in the pinned ETCBC/QDR export. 4Q203 is catalogued separately as Book of Giants.",
+      "record_type": "Fragment-level Aramaic manuscript transcription with fragment and line identifiers",
+      "edition": "Martin G. Abegg Jr. transcriptions in the ETCBC/CACCHT Dead Sea Scrolls corpus, structured export distributed by Qumran Digital Reader",
+      "source_urls": [
+        "https://github.com/ETCBC/dss",
+        "https://github.com/evenderekh/QDR"
+      ],
+      "license": "CC BY-NC 4.0",
+      "attribution": "Martin G. Abegg Jr.; ETCBC/CACCHT Dead Sea Scrolls corpus; structured export distributed by Qumran Digital Reader (QDR), CC BY-NC 4.0.",
+      "status": "Connected to the offline Qumran fragment reader; exact available witnesses and line counts are read from dss/etcbc_scroll_index.json.",
+      "limitations": [
+        "Only the listed surviving Qumran fragments are included; this is not the complete Ethiopic text of 1 Enoch.",
+        "The fragments are not assembled into a continuous reconstructed book.",
+        "Missing and unreadable text remains missing; no reconstruction is supplied.",
+        "Source license is non-commercial (CC BY-NC 4.0)."
+      ]
+    },
+    {
+      "id": "jubilees-qumran-hebrew-fragments",
+      "name": "Jubilees — surviving Hebrew Qumran fragments",
+      "language": "Hebrew",
+      "coverage": "Offline line-level fragment records for 4Q216–4Q222, 4Q223/224 and 4Q225 where present in the pinned ETCBC/QDR export.",
+      "record_type": "Fragment-level Hebrew manuscript transcription with fragment and line identifiers",
+      "edition": "Martin G. Abegg Jr. transcriptions in the ETCBC/CACCHT Dead Sea Scrolls corpus, structured export distributed by Qumran Digital Reader",
+      "source_urls": [
+        "https://github.com/ETCBC/dss",
+        "https://github.com/evenderekh/QDR"
+      ],
+      "license": "CC BY-NC 4.0",
+      "attribution": "Martin G. Abegg Jr.; ETCBC/CACCHT Dead Sea Scrolls corpus; structured export distributed by Qumran Digital Reader (QDR), CC BY-NC 4.0.",
+      "status": "Connected to the offline Qumran fragment reader; exact available witnesses and line counts are read from dss/etcbc_scroll_index.json.",
+      "limitations": [
+        "Only surviving Hebrew Qumran fragments are included; this is not a complete Ethiopic text of Jubilees.",
+        "The fragments are not assembled into a continuous reconstructed book.",
+        "Missing and unreadable text remains missing; no reconstruction is supplied.",
+        "Source license is non-commercial (CC BY-NC 4.0)."
+      ]
     }
   ],
   "not_yet_integrated": [
