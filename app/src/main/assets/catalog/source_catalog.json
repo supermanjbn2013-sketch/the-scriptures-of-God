@@ -366,6 +366,27 @@
       ]
     },
     {
+      "id": "1-enoch-flemming-greek-fragments",
+      "name": "1 Enoch — Greek fragment text in Flemming 1901 edition",
+      "language": "Ancient Greek",
+      "coverage": "Greek text paragraphs and fragmentary sections represented in Johannes Flemming's 1901 edition; exact paragraph, printed-page and chapter/section counts are generated in other_reference/enoch_greek/enoch_greek_index.json.",
+      "record_type": "edition-derived Greek fragment text with printed-page and section references",
+      "edition": "Johannes Flemming, ed., Das Buch Henoch (Leipzig: J. C. Hinrichs, 1901), Greek text section",
+      "license": "CC BY-SA 4.0",
+      "repository": "https://github.com/OpenGreekAndLatin/First1KGreek",
+      "source_url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/a1e7714108a71af5124e934038d06ba30003dc0c/volume_xml/henoch.1901.xml",
+      "attribution": "Johannes Flemming, ed.; digital TEI transcription by Open Greek and Latin, First1KGreek; CC BY-SA 4.0.",
+      "status": "Imported at APK build time as Greek edition text, separated from the Aramaic Qumran witnesses.",
+      "limitations": [
+        "This is fragmentary Greek text in a scholarly printed edition, not a complete Greek manuscript of 1 Enoch.",
+        "The edition-derived text is not a diplomatic transcription of one ancient codex.",
+        "The source includes editorial readings and a critical apparatus; Greek text paragraphs are retained separately from the apparatus.",
+        "German translation, introduction and commentary are not included.",
+        "Aramaic Qumran witnesses and the Ethiopic manuscript tradition remain separate datasets.",
+        "No missing wording is reconstructed by this app."
+      ]
+    },
+    {
       "id": "1-enoch-qumran-aramaic-fragments",
       "name": "1 Enoch — surviving Aramaic Qumran fragments",
       "language": "Aramaic",
