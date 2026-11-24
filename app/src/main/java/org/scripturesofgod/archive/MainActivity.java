@@ -616,7 +616,9 @@ public class MainActivity extends Activity {
             if(urls!=null)for(int i=0;i<urls.length();i++)detail.append(urls.optString(i)).append("\n");
             TextView view=text(detail.toString(),14,ink,false);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
             ScrollView sv=new ScrollView(this);sv.setPadding(14,8,14,8);sv.addView(view);
-            android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(match.optString("name")).setView(sv).setPositiveButton("Close",null);\n            if("sinaiticus".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open transcription",(d,w)->openSinaiticusArchive());\n            builder.show();
+            android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(match.optString("name")).setView(sv).setPositiveButton("Close",null);
+            if("Sinaiticus".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open transcription",(d,w)->openSinaiticusArchive());
+            builder.show();
         }catch(Exception e){new android.app.AlertDialog.Builder(this).setTitle("DSS catalogue unavailable").setMessage("The Dead Sea Scrolls metadata register is not present in this build.").setPositiveButton("Close",null).show();}
     }
 
