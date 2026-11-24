@@ -48,7 +48,7 @@ def main():
             label_node = next((x for x in list(part) if local(x.tag) == "label"), None)
             label = flatten(label_node) if label_node is not None else ""
             if subtype == "chapter":
-                match = re.search(r"(\\d+)$", chapter_raw or xml_id or label)
+                match = re.search(r"(\d+)$", chapter_raw or xml_id or label)
                 if not match: continue
                 chapter = int(match.group(1))
                 chapters.add(chapter)
