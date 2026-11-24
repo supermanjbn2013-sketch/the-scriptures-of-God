@@ -54,6 +54,8 @@ jobs:
         run: python3 tools/import_enoch_greek.py
       - name: Import Ge'ez Jubilees editions
         run: python3 tools/import_jubilees_geez.py
+      - name: Import Greek Twelve Patriarchs provisional base text
+        run: python3 tools/import_twelve_patriarchs.py
       - name: Import Greek 3 Baruch critical edition
         run: python3 tools/import_3_baruch.py
       - name: Import Syriac 2 Baruch text
