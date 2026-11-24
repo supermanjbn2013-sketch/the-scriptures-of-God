@@ -57,6 +57,34 @@
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
     },
     {
+      "id": "paul_previous_corinthian_letter",
+      "title": "Paul's Previous Letter to Corinth (referenced in 1 Corinthians 5:9)",
+      "composition_date_start_ce": 53,
+      "composition_date_end_ce": 55,
+      "date_precision": "approximate; inferred from its reference before the extant 1 Corinthians; exact date unknown",
+      "genre": "letter",
+      "attribution_status": "Paul explicitly refers to a previous letter he had written to the Corinthian community; the writing itself is lost and its full contents cannot be recovered from the reference.",
+      "textual_status": "Lost or unidentified; no independently identified manuscript witness or complete text is known. Do not reconstruct its wording from 1 Corinthians 5:9.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Relative sequence is supported by 1 Corinthians 5:9; calendar date is an estimate, not a manuscript date.",
+      "related_scriptural_reference": "1 Corinthians 5:9",
+      "preservation_status": "lost_or_unidentified"
+    },
+    {
+      "id": "paul_sorrowful_corinthian_letter",
+      "title": "Paul's Sorrowful / Tearful Letter to Corinth",
+      "composition_date_start_ce": 54,
+      "composition_date_end_ce": 56,
+      "date_precision": "approximate; placed between 1 Corinthians and the correspondence represented by 2 Corinthians; exact date debated",
+      "genre": "letter",
+      "attribution_status": "Paul refers to a letter written with distress and many tears; many scholars identify it as a separate lost letter, while some propose that material now in 2 Corinthians may preserve it.",
+      "textual_status": "Not independently preserved as a complete identifiable writing. Possible identification with portions of 2 Corinthians 10–13 is disputed and must not be treated as established.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Relative sequence from 2 Corinthians 2:1–4 and 7:8–12; exact date and relationship to 2 Corinthians remain debated.",
+      "related_scriptural_reference": "2 Corinthians 2:1–4; 7:8–12",
+      "preservation_status": "lost_or_possible_embedded_material"
+    },
+    {
       "id": "2_corinthians",
       "title": "2 Corinthians",
       "composition_date_start_ce": 55,
@@ -163,6 +191,20 @@
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+    },
+    {
+      "id": "paul_laodicean_correspondence_referenced",
+      "title": "Paul's Letter Associated with Laodicea (referenced in Colossians 4:16)",
+      "composition_date_start_ce": 60,
+      "composition_date_end_ce": 90,
+      "date_precision": "broad provisional range; depends on the disputed date and authorship of Colossians",
+      "genre": "letter",
+      "attribution_status": "Colossians refers to a letter associated with Laodicea, but the wording does not establish with certainty that Paul authored a separate letter addressed to Laodicea; it may refer to a letter to be exchanged or read there.",
+      "textual_status": "The referenced writing has not been securely identified with any surviving text. Do not equate it automatically with the later Latin Epistle to the Laodiceans.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Date is provisional and tied to the composition date of Colossians; identity and direction of correspondence remain uncertain.",
+      "related_scriptural_reference": "Colossians 4:16",
+      "preservation_status": "unidentified_referenced_letter"
     },
     {
       "id": "mark",
@@ -411,6 +453,20 @@
       "existing_catalogue_id": "hermas"
     },
     {
+      "id": "third_corinthians",
+      "title": "3 Corinthians (within the Acts of Paul)",
+      "composition_date_start_ce": 150,
+      "composition_date_end_ce": 200,
+      "date_precision": "approximate second-century range; exact date disputed",
+      "genre": "letter",
+      "attribution_status": "A later composition placed in Paul's name and incorporated into the Acts of Paul; not established as an authentic letter by Paul.",
+      "textual_status": "Survives in Greek and other ancient-language manuscript traditions as part of the Acts of Paul; witness records and textual alignment require separate work.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Date refers to the apocryphal composition, not to the date of any surviving manuscript witness.",
+      "related_scriptural_reference": "",
+      "preservation_status": "surviving_pseudepigraph"
+    },
+    {
       "id": "gospel_peter",
       "title": "Gospel of Peter",
       "composition_date_start_ce": 150,
@@ -448,6 +504,48 @@
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "gospel_thomas"
+    },
+    {
+      "id": "paul_seneca_correspondence",
+      "title": "Correspondence of Paul and Seneca",
+      "composition_date_start_ce": 300,
+      "composition_date_end_ce": 400,
+      "date_precision": "commonly regarded as a later, probably fourth-century pseudepigraphal correspondence; exact date uncertain",
+      "genre": "letter collection",
+      "attribution_status": "A collection of letters attributed to Paul and Seneca; not regarded as authentic correspondence from Paul's lifetime.",
+      "textual_status": "Survives in Latin manuscript transmission; manuscript witnesses must be catalogued separately.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Date refers to the later composition of the pseudepigraphal correspondence.",
+      "related_scriptural_reference": "",
+      "preservation_status": "surviving_pseudepigraphal_collection"
+    },
+    {
+      "id": "epistle_to_laodiceans_latin",
+      "title": "Epistle to the Laodiceans (Latin work)",
+      "composition_date_start_ce": 300,
+      "composition_date_end_ce": 500,
+      "date_precision": "broad provisional late-antique range; exact date and origin disputed",
+      "genre": "letter",
+      "attribution_status": "A later work presented under Paul's name; not established as an authentic letter written by Paul. Its identity with the letter mentioned in Colossians 4:16 is unproven.",
+      "textual_status": "A Latin text survives in later manuscript transmission; it is not evidence that the lost Laodicean correspondence mentioned in Colossians has been recovered.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Provisional date for the surviving pseudepigraphal work, not the date of the correspondence mentioned in Colossians.",
+      "related_scriptural_reference": "",
+      "preservation_status": "surviving_later_pseudepigraph"
+    },
+    {
+      "id": "paul_letter_to_alexandrians_reported",
+      "title": "Letter to the Alexandrians (reported as a Pauline writing)",
+      "composition_date_start_ce": 9999,
+      "composition_date_end_ce": 9999,
+      "date_precision": "undated; 9999 is a sorting placeholder, not a proposed composition date",
+      "genre": "letter",
+      "attribution_status": "The Muratorian Fragment mentions a letter to the Alexandrians as forged in Paul's name; no authentic Pauline authorship is established.",
+      "textual_status": "No securely identified complete text or manuscript witness; retained as an ancient report of an attributed/forged writing, not as a recovered Pauline letter.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date unknown. Placed at the end of the chronological display until a non-numeric undated category is implemented.",
+      "related_scriptural_reference": "Muratorian Fragment",
+      "preservation_status": "reported_lost_or_unidentified"
     }
   ]
 }
