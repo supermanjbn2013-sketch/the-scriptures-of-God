@@ -926,6 +926,37 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void openQumranReferenceFragments(String title,String[] requestedIds){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/etcbc_scroll_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray scrolls=new org.json.JSONObject(raw.toString()).getJSONArray("scrolls");
+            java.util.ArrayList<String> availableIds=new java.util.ArrayList<>();
+            java.util.ArrayList<String> labels=new java.util.ArrayList<>();
+            for(String requested:requestedIds){
+                for(int i=0;i<scrolls.length();i++){
+                    org.json.JSONObject scroll=scrolls.getJSONObject(i);
+                    if(requested.equals(scroll.optString("scroll"))&&scroll.optInt("line_count")>0){
+                        availableIds.add(requested);
+                        labels.add(requested+"  ·  "+scroll.optInt("fragment_count")+" fragments, "+scroll.optInt("line_count")+" lines");
+                        break;
+                    }
+                }
+            }
+            if(availableIds.isEmpty()){
+                showInfo(title+" fragments unavailable","No matching line-level Qumran transcriptions were found in the offline archive.");
+                return;
+            }
+            String[] ids=availableIds.toArray(new String[0]);
+            String[] items=labels.toArray(new String[0]);
+            new android.app.AlertDialog.Builder(this).setTitle(title+" · Surviving Qumran fragments")
+                .setItems(items,(dialog,which)->openEtcbcDssScroll(ids[which]))
+                .setNegativeButton("Close",null).show();
+        }catch(Exception e){
+            showInfo(title+" fragments unavailable","Unable to open the offline Qumran witness index. "+e.getMessage());
+        }
+    }
+
     void openOtherReferenceBookEntry(String item){
         String category="Ancient reference writing";
         String preservation="Catalogue entry only; manuscript witnesses and text editions must be verified before a transcription is added.";
@@ -963,11 +994,13 @@ public class MainActivity extends Activity {
         else if(item.equals("Odes of Solomon")){category="Ancient hymn collection";preservation="Survives in Syriac, with Greek and Coptic fragments.";witnesses="Syriac manuscripts and Greek/Coptic fragments.";}
         else if(item.equals("Pseudo-Philo: Biblical Antiquities")){category="Jewish rewritten-Scripture history";preservation="Survives principally in Latin manuscripts; the original language and form remain debated.";witnesses="Latin manuscript tradition.";}
         else if(item.equals("Zohar")){category="Medieval Jewish mystical literature";preservation="A medieval Aramaic literary corpus associated with the Zoharic tradition, transmitted in manuscripts and printed editions; it is not an ancient Second Temple writing.";witnesses="Medieval Aramaic manuscript tradition and later printed editions. Its historical composition and attribution are subjects of scholarship.";}
-        String textStatus=item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
+        String textStatus=item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("1 Enoch")?"Fragmentary Aramaic Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Jubilees")?"Fragmentary Hebrew Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
         String detail=category+"\n\nPreservation: "+preservation+"\n\nKnown witnesses: "+witnesses+"\n\nText status in this app: "+textStatus+" Different languages and recensions remain separate. This archive is for reference and historical study; inclusion here does not automatically make a work part of the Scripture collections.";
         android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(item).setMessage(detail).setPositiveButton("Close",null);
         if(item.equals("Didache"))builder.setNeutralButton("Open Greek text",(d,w)->openDidacheArchive());
         if(item.equals("Shepherd of Hermas"))builder.setNeutralButton("Open Greek text",(d,w)->openHermasArchive());
+        if(item.equals("1 Enoch"))builder.setNeutralButton("Open Aramaic fragments",(d,w)->openQumranReferenceFragments("1 Enoch",new String[]{"4Q201","4Q202","4Q204","4Q205","4Q206","4Q207","4Q208","4Q209","4Q210","4Q211","4Q212"}));
+        if(item.equals("Jubilees"))builder.setNeutralButton("Open Hebrew fragments",(d,w)->openQumranReferenceFragments("Jubilees",new String[]{"4Q216","4Q217","4Q218","4Q219","4Q220","4Q221","4Q222","4Q223_224","4Q225"}));
         builder.show();
     }
 
