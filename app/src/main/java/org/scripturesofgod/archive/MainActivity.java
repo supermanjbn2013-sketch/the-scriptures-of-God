@@ -34,11 +34,11 @@ public class MainActivity extends Activity {
         }).setNegativeButton("Cancel",null).show();
     }
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
-    String[] sections={"Home","Hebrew Scriptures","Prophets","Apostolic Writings","Apocrypha and Deuterocanonical Writings","Ancient Referenced Books","Other Ancient Writings","Manuscript Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
+    String[] sections={"Home","Hebrew Scriptures","Prophets","Disciples and Apostles Writings","Apocrypha and Deuterocanonical Writings","Ancient Referenced Books","Other Ancient Writings","Manuscript Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
     @Override public void onCreate(Bundle b){super.onCreate(b); applyTheme(); seed(); show();}
     void applyTheme(){String mode=getSharedPreferences("archive_settings",MODE_PRIVATE).getString("theme","dark");lightMode=mode.equals("light")||(mode.equals("system")&&((getResources().getConfiguration().uiMode&android.content.res.Configuration.UI_MODE_NIGHT_MASK)==android.content.res.Configuration.UI_MODE_NIGHT_NO));if(lightMode){bg=Color.rgb(247,245,239);panel=Color.rgb(255,255,255);gold=Color.rgb(133,94,38);ink=Color.rgb(35,39,42);muted=Color.rgb(105,110,113);}else{bg=Color.rgb(15,19,24);panel=Color.rgb(26,33,41);gold=Color.rgb(205,174,112);ink=Color.rgb(232,228,217);muted=Color.rgb(160,166,170);}}
     void saveTheme(String mode){getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("theme",mode).apply();applyTheme();show();}
-    void openSettings(){String[] items={"System default","Light","Dark","Reading font size","Preferred translation language","About this application","Privacy information"};new android.app.AlertDialog.Builder(this).setTitle("Settings").setItems(items,(d,w)->{if(w==0)saveTheme("system");else if(w==1)saveTheme("light");else if(w==2)saveTheme("dark");else if(w==3)chooseFontSize();else if(w==4)chooseTranslationLanguage();else if(w==5)showInfo("About","The Scriptures of God is an offline-first Scripture and manuscript research archive. Texts are displayed with source and edition attribution.");else showInfo("Privacy","Reading history, bookmarks, notes and preferences are stored locally on this device. AI translation sends the selected passage to the configured external AI service.");}).show();}
+    void openSettings(){String[] items={"System default","Light","Dark","Reading font size","Preferred translation language","About this application","Privacy information"};new android.app.AlertDialog.Builder(this).setTitle("Settings").setItems(items,(d,w)->{if(w==0)saveTheme("system");else if(w==1)saveTheme("light");else if(w==2)saveTheme("dark");else if(w==3)chooseFontSize();else if(w==4)chooseTranslationLanguage();else if(w==5)showInfo("About","The Scriptures of God is an offline-first Scripture and manuscript research archive. Texts are displayed with source and edition attribution.");else showInfo("Privacy","Reading history, bookmarks, notes and preferences are stored locally on this device. Translation uses on-device language models after their initial download.");}).show();}
     void chooseFontSize(){int size=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",16);final SeekBar bar=new SeekBar(this);bar.setMax(16);bar.setProgress(Math.max(0,Math.min(16,size-12)));new android.app.AlertDialog.Builder(this).setTitle("Reading font size").setMessage("Adjust passage text size").setView(bar).setPositiveButton("Save",(d,w)->getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putInt("font_size",12+bar.getProgress()).apply()).setNegativeButton("Cancel",null).show();}
     void showInfo(String title,String message){new android.app.AlertDialog.Builder(this).setTitle(title).setMessage(message).setPositiveButton("Close",null).show();}
     void seed(){
@@ -49,7 +49,7 @@ public class MainActivity extends Activity {
         entries.put("Other Ancient Writings",new ArrayList<>(Arrays.asList("1 Enoch","Jubilees","Didache","Shepherd of Hermas","Gospel of Thomas")));
         entries.put("Manuscript Archive",new ArrayList<>(Arrays.asList("Dead Sea Scrolls (DSS)","Great Isaiah Scroll (1QIsaᵃ)","Pesher Habakkuk (1QpHab)","Genesis Apocryphon (1QapGen)","Community Rule (1QS)","Temple Scroll (11Q19)","War Scroll (1QM)","Masoretic Text","Septuagint","Samaritan Pentateuch","Papyrus 46 (P46)","Papyrus 52 (P52)","Papyrus 66 (P66)","Papyrus 75 (P75)","Codex Vaticanus","Codex Sinaiticus","Codex Alexandrinus")));
         entries.put("DSS Passage Concordance",new ArrayList<>(Arrays.asList("4Q26 Lev d — Leviticus","4Q27 Num b — Numbers","4Q31 Deut d — Deuteronomy","4Q47 Josh a — Joshua","4Q53 Sam c — Samuel")));
-        entries.put("Translation Center",new ArrayList<>(Arrays.asList("Preferred translation language","AI connection settings")));
+        entries.put("Translation Center",new ArrayList<>(Arrays.asList("Preferred translation language","On-device translation")));
         entries.put("Manuscript Comparison",new ArrayList<>(Arrays.asList("Compare witness transcriptions","Review additions and omissions","Inspect textual variants","Trace quotations and parallels")));
         entries.put("Research Archive",new ArrayList<>(Arrays.asList("Source metadata","Authorship assessments","Composition dates","Language and provenance","Fragment and witness records","Research notes")));
         entries.put("Favorites",new ArrayList<>()); entries.put("Reading History",new ArrayList<>());
@@ -84,7 +84,7 @@ public class MainActivity extends Activity {
             TextView searchTile=text("⌕   Search the Scriptures and manuscript records",15,ink,true);searchTile.setBackground(shape(panel));content.addView(searchTile);searchTile.setOnClickListener(v->navigateTo("Search"));
             content.addView(text("SCRIPTURE COLLECTIONS",12,gold,true));
             addHomeTile("Hebrew Scriptures","39 writings",() -> navigateTo("Hebrew Scriptures"));
-            addHomeTile("Apostolic Writings","27 writings",() -> navigateTo("Apostolic Writings"));
+            addHomeTile("Disciples and Apostles Writings","27 writings",() -> navigateTo("Disciples and Apostles Writings"));
             addHomeTile("Apocrypha and Deuterocanonical Writings","Greek and Latin textual forms",() -> navigateTo("Apocrypha and Deuterocanonical Writings"));
             content.addView(text("MANUSCRIPT RESEARCH",12,gold,true));
             addHomeTile("Dead Sea Scrolls Archive","Manuscript catalogue and passage concordance",() -> navigateTo("Manuscript Archive"));
@@ -101,7 +101,7 @@ public class MainActivity extends Activity {
         if(section.equals("Search")){EditText query=new EditText(this);query.setSingleLine(true);query.setHint("Exact word or phrase");content.addView(query);Button go=new Button(this);go.setText("Search offline corpus");content.addView(go);go.setOnClickListener(v->{String searchTerm=query.getText().toString().trim();if(!searchTerm.isEmpty())searchCorpus(searchTerm);});return;}
         if(section.equals("DSS Transcription Archive")){renderEtcbcDssIndex(q);return;}
         ArrayList<String> data=entries.get(section); if(data==null)data=new ArrayList<>();
-        int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {returnSection=section;if(section.equals("Translation Center")){if(item.equals("Preferred translation language"))chooseTranslationLanguage();else showAiConnectionSettings();}else if(section.equals("DSS Passage Concordance"))openDssConcordanceEntry(item);else if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
+        int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {returnSection=section;if(section.equals("Translation Center")){if(item.equals("Preferred translation language"))chooseTranslationLanguage();else showInfo("On-device translation","Translations use Google ML Kit language models. No personal API key is needed. Models may download once and then work on-device. Ancient Hebrew and Koine Greek results are general-purpose machine translations, not scholarly editions.");}else if(section.equals("DSS Passage Concordance"))openDssConcordanceEntry(item);else if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
         if(count==0)content.addView(text("No matching entries. This archive does not fabricate missing manuscript contents or readings.",14,muted,false));
         if(section.equals("Manuscript Archive")||section.equals("Research Archive")||section.equals("Manuscript Comparison"))content.addView(text("Records are catalog placeholders until a source, transcription, date and provenance are verified and attached.",12,gold,false));
     }
@@ -417,85 +417,38 @@ public class MainActivity extends Activity {
             return new String(cipher.doFinal(encrypted),"UTF-8");
         }catch(Exception e){return "";}
     }
-    private javax.crypto.SecretKey getAiSecretKey()throws Exception{
-        java.security.KeyStore store=java.security.KeyStore.getInstance("AndroidKeyStore");store.load(null);
-        String alias="scriptures_of_god_ai_key";
-        if(store.containsAlias(alias))return (javax.crypto.SecretKey)store.getKey(alias,null);
-        javax.crypto.KeyGenerator generator=javax.crypto.KeyGenerator.getInstance(android.security.keystore.KeyProperties.KEY_ALGORITHM_AES,"AndroidKeyStore");
-        generator.init(new android.security.keystore.KeyGenParameterSpec.Builder(alias,android.security.keystore.KeyProperties.PURPOSE_ENCRYPT|android.security.keystore.KeyProperties.PURPOSE_DECRYPT)
-            .setBlockModes(android.security.keystore.KeyProperties.BLOCK_MODE_GCM).setEncryptionPaddings(android.security.keystore.KeyProperties.ENCRYPTION_PADDING_NONE).setRandomizedEncryptionRequired(true).build());
-        return generator.generateKey();
-    }
-    private void saveAiKey(String value)throws Exception{
-        if(value.isEmpty()){getSharedPreferences("archive_ai",MODE_PRIVATE).edit().remove("api_key_encrypted").apply();return;}
-        javax.crypto.Cipher cipher=javax.crypto.Cipher.getInstance("AES/GCM/NoPadding");
-        cipher.init(javax.crypto.Cipher.ENCRYPT_MODE,getAiSecretKey());
-        byte[] encrypted=cipher.doFinal(value.getBytes("UTF-8")),iv=cipher.getIV(),packed=new byte[iv.length+encrypted.length];
-        System.arraycopy(iv,0,packed,0,iv.length);System.arraycopy(encrypted,0,packed,iv.length,encrypted.length);
-        getSharedPreferences("archive_ai",MODE_PRIVATE).edit().putString("api_key_encrypted",android.util.Base64.encodeToString(packed,android.util.Base64.NO_WRAP)).apply();
-    }
-    void showAiConnectionSettings(){
-        LinearLayout box=new LinearLayout(this);box.setOrientation(1);box.setPadding(18,8,18,4);
-        EditText key=new EditText(this);key.setSingleLine(true);key.setHint("Paste your Gemini API key");key.setInputType(129);key.setText(getAiKey());box.addView(key);
-        box.addView(text("Your key is encrypted on this device. AI translation sends submitted text to Google Gemini. Free-tier limits and Google's data-use terms apply.",12,muted,false));
-        new android.app.AlertDialog.Builder(this).setTitle("AI connection settings").setView(box)
-            .setNeutralButton("Get free key",(d,w)->startActivity(new Intent(Intent.ACTION_VIEW,android.net.Uri.parse("https://aistudio.google.com/app/apikey"))))
-            .setNegativeButton("Cancel",null)
-            .setPositiveButton("Save key",(d,w)->{try{saveAiKey(key.getText().toString().trim());Toast.makeText(this,"AI key saved securely",Toast.LENGTH_SHORT).show();}catch(Exception e){Toast.makeText(this,"Could not save key: "+e.getMessage(),Toast.LENGTH_LONG).show();}}).show();
-    }
     void translateVerse(String reference,String sourceText,String sourceLanguage){
         LinearLayout box=new LinearLayout(this);box.setOrientation(1);box.setPadding(18,8,18,8);
-        String languageName="he".equals(sourceLanguage)?"Ancient Hebrew":("grc".equals(sourceLanguage)?"Koine Greek":("la".equals(sourceLanguage)?"Latin":("en".equals(sourceLanguage)?"English":"source language")));
-        box.addView(text(reference+"  ·  "+languageName,13,gold,true));
+        String languageName="he".equals(sourceLanguage)?"Hebrew":("grc".equals(sourceLanguage)?"Greek":("la".equals(sourceLanguage)?"Latin":("en".equals(sourceLanguage)?"English":"source language")));
+        box.addView(text(reference+"  ·  "+languageName+" → "+targetLanguageName(),13,gold,true));
         TextView original=text(sourceText,16,ink,false);original.setTextIsSelectable(true);box.addView(original);
-        Spinner mode=new Spinner(this);
-        ArrayAdapter<String> adapter=new ArrayAdapter<>(this,android.R.layout.simple_spinner_item,AI_MODES);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);mode.setAdapter(adapter);box.addView(mode);
-        TextView result=text("Translating automatically with AI…",14,ink,false);result.setBackground(shape(panel));box.addView(result);
-        Button settings=new Button(this);settings.setText("AI connection settings");settings.setOnClickListener(v->showAiConnectionSettings());box.addView(settings);
-        Button external=new Button(this);external.setText("Open Google Translate");external.setOnClickListener(v->openGoogleTranslate(sourceText,targetLanguage()));box.addView(external);
+        TextView result=text("Preparing on-device translation…",14,ink,false);result.setBackground(shape(panel));box.addView(result);
+        box.addView(text("Google ML Kit on-device translation. The language model may download once; no personal API key is required. These general-purpose models are not a scholarly translation of ancient languages.",11,muted,false));
         ScrollView scroll=new ScrollView(this);scroll.setFillViewport(true);scroll.addView(box);
-        android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle(reference+" — AI Translation").setView(scroll).setNegativeButton("Close",null).create();
+        android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle(reference+" — Translation").setView(scroll).setNegativeButton("Close",null).create();
         dialog.show();
-        mode.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener(){
-            boolean first=true;
-            public void onNothingSelected(android.widget.AdapterView<?> parent){}
-            public void onItemSelected(android.widget.AdapterView<?> parent,View view,int position,long id){
-                if(first){first=false;return;}
-                requestAiTranslation(reference,sourceText,sourceLanguage,AI_MODES[position],result);
-            }
-        });
-        requestAiTranslation(reference,sourceText,sourceLanguage,AI_MODES[0],result);
+        translateOnDevice(reference,sourceText,sourceLanguage,result);
     }
-    private void requestAiTranslation(String reference,String sourceText,String sourceLanguage,String selectedMode,TextView output){
-        String key=getAiKey().trim();
-        if(key.isEmpty()){
-            output.setText("Add your free Gemini API key in AI connection settings, then tap this passage again.");
-            return;
-        }
-        output.setText("AI is translating…");
-        String lang="he".equals(sourceLanguage)?"Ancient Hebrew":("grc".equals(sourceLanguage)?"Koine Greek":("la".equals(sourceLanguage)?"Latin":"automatically detected"));
-        String target=targetLanguageName();
-        String prompt="You are a cautious scholarly translation assistant. Translate the supplied passage into "+target+". Mode: "+selectedMode+". Source language: "+lang+". Preserve the supplied text; never invent missing words, clauses, manuscript readings, witnesses or citations. Distinguish translation from interpretation and reconstruction. Mark uncertain readings and explain ambiguity. Do not claim manuscript attestation without evidence supplied. For Hebrew or Koine Greek, explain morphology and syntax only when supportable. For Older English style, use restrained Early Modern English, not Anglo-Saxon Old English. For word-for-word analysis, give source form, transliteration, lemma if identifiable, morphology, lexical range and contextual sense. Separate observed linguistic facts from interpretation. Include a clear result and concise language notes. Reference: "+reference+"\nTEXT:\n"+sourceText;
-        new Thread(()->{
-            String answer=null,error=null;java.net.HttpURLConnection connection=null;
-            try{
-                java.net.URL url=new java.net.URL("https://generativelanguage.googleapis.com/v1beta/models/"+AI_MODEL+":generateContent");
-                connection=(java.net.HttpURLConnection)url.openConnection();connection.setRequestMethod("POST");connection.setConnectTimeout(20000);connection.setReadTimeout(90000);connection.setDoOutput(true);
-                connection.setRequestProperty("Content-Type","application/json");connection.setRequestProperty("x-goog-api-key",key);
-                org.json.JSONObject part=new org.json.JSONObject().put("text",prompt);
-                org.json.JSONObject payload=new org.json.JSONObject().put("contents",new org.json.JSONArray().put(new org.json.JSONObject().put("parts",new org.json.JSONArray().put(part)))).put("generationConfig",new org.json.JSONObject().put("maxOutputTokens",4096));
-                try(java.io.OutputStream out=connection.getOutputStream()){out.write(payload.toString().getBytes("UTF-8"));}
-                int status=connection.getResponseCode();java.io.InputStream stream=status>=200&&status<300?connection.getInputStream():connection.getErrorStream();
-                StringBuilder raw=new StringBuilder();try(java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(stream,"UTF-8"))){String line;while((line=reader.readLine())!=null)raw.append(line);}
-                org.json.JSONObject response=new org.json.JSONObject(raw.toString());
-                if(status<200||status>=300){org.json.JSONObject e=response.optJSONObject("error");error=e==null?"AI service returned HTTP "+status:e.optString("message","AI request failed");}
-                else{org.json.JSONArray candidates=response.optJSONArray("candidates");if(candidates==null||candidates.length()==0)error="AI returned no translation.";else{org.json.JSONArray parts=candidates.getJSONObject(0).optJSONObject("content").optJSONArray("parts");StringBuilder text=new StringBuilder();if(parts!=null)for(int i=0;i<parts.length();i++)text.append(parts.getJSONObject(i).optString("text",""));answer=text.toString().trim();if(answer.isEmpty())error="AI returned an empty response.";}}
-            }catch(Exception e){error=e.getMessage()==null?e.getClass().getSimpleName():e.getMessage();}
-            finally{if(connection!=null)connection.disconnect();}
-            final String a=answer,e=error;
-            runOnUiThread(()->output.setText(a!=null?a:"Translation unavailable: "+e));
-        }).start();
+    private void translateOnDevice(String reference,String sourceText,String sourceLanguage,TextView output){
+        String source="grc".equals(sourceLanguage)?"el":("he".equals(sourceLanguage)?"he":("la".equals(sourceLanguage)?"la":("en".equals(sourceLanguage)?"en":sourceLanguage)));
+        String target=targetLanguage();
+        if(source==null||source.isEmpty()){output.setText("This source language is not supported by the on-device translator.");return;}
+        if(source.equals(target)){output.setText(sourceText);return;}
+        com.google.mlkit.nl.translate.TranslatorOptions options=new com.google.mlkit.nl.translate.TranslatorOptions.Builder()
+            .setSourceLanguage(source).setTargetLanguage(target).build();
+        com.google.mlkit.nl.translate.Translator translator=com.google.mlkit.nl.translate.Translation.getClient(options);
+        output.setText("Downloading or checking the language model…");
+        translator.downloadModelIfNeeded()
+            .addOnSuccessListener(v->{
+                output.setText("Translating into "+targetLanguageName()+"…");
+                translator.translate(sourceText)
+                    .addOnSuccessListener(translated->{output.setText(translated);translator.close();})
+                    .addOnFailureListener(error->{output.setText("Translation failed: "+error.getMessage());translator.close();});
+            })
+            .addOnFailureListener(error->{output.setText("Could not download the "+languageNameForCode(source)+" translation model. Connect to the internet and try again. "+error.getMessage());translator.close();});
+    }
+    private String languageNameForCode(String code){
+        if("el".equals(code))return "Greek";if("he".equals(code))return "Hebrew";if("la".equals(code))return "Latin";if("en".equals(code))return "English";return code;
     }
 
     void openGoogleTranslate(String sourceText,String targetLanguageCode){
