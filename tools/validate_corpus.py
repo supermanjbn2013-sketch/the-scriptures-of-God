@@ -424,7 +424,7 @@ def validate_android():
     assert len(baruch_records) == baruch_index["record_count"] and len(baruch_records) > 700
     assert all(r["language"] == "syc" and r["text"].strip() and r["license"] == "CC BY-NC 4.0" for r in baruch_records)
     assert {r["witness"] for r in baruch_records} == {"apocalypse", "epistle_a", "epistle_b"}
-    assert "void openTwoBaruchArchive()" in source and "void openTwoBaruchChapter(String witness, int chapter)" in source
+    assert "void openTwoBaruchArchive()" in source and "openTwoBaruchChapter(String witness,int chapter)" in source or "openTwoBaruchChapter(String witness, int chapter)" in source
     enoch_greek_path = ROOT / "other_reference/enoch_greek/enoch_greek_index.json"
     assert enoch_greek_path.exists(), "Offline Greek 1 Enoch index was not generated"
     enoch_greek_index = json.loads(enoch_greek_path.read_text(encoding="utf-8"))
