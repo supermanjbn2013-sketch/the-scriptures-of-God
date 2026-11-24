@@ -1,0 +1,114 @@
+{
+  "schema_version": 1,
+  "record_type": "textual_tradition_comparison_register",
+  "policy": "Comparison traditions attach to existing writing identities. These records identify candidate witness collections and limits; they do not assert that every passage survives or authorize reconstruction without exact passage and source-coordinate verification.",
+  "records": [
+    {
+      "id": "lxx_papyrus_fouad_266_deuteronomy",
+      "tradition": "septuagint",
+      "witness_or_collection": "Papyrus Fouad 266 (Greek Pentateuch papyrus)",
+      "writing_ids": [
+        "deuteronomy"
+      ],
+      "date_of_witness_or_tradition": "Physical manuscript generally dated 2nd–1st century BCE; exact passage-level use requires catalogue verification.",
+      "language": "Ancient Greek",
+      "evidence_status": "Known ancient Greek witness; exact coverage must be checked against edition and images.",
+      "passage_level_mapping_status": "not_mapped",
+      "coverage_limitations": "Do not assume all of Deuteronomy survives. No passage may be supplied until exact extant fragments and source coordinates are mapped.",
+      "source_url": "",
+      "editorial_rule": "Treat as a Greek manuscript witness, not as the entire Septuagint or as a Hebrew DSS reading."
+    },
+    {
+      "id": "lxx_codex_vaticanus",
+      "tradition": "septuagint",
+      "witness_or_collection": "Codex Vaticanus (B/03), Greek scriptural codex",
+      "writing_ids": [
+        "deuteronomy",
+        "joshua",
+        "1_samuel",
+        "2_samuel"
+      ],
+      "date_of_witness_or_tradition": "Physical codex commonly dated 4th century CE.",
+      "language": "Ancient Greek",
+      "evidence_status": "Major surviving Greek codex; exact book and folio coverage must be checked.",
+      "passage_level_mapping_status": "not_mapped",
+      "coverage_limitations": "Confirm each passage is present in the codex and distinguish lacunae, corrections, and textual variants.",
+      "source_url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+      "editorial_rule": "Use only for the exact passage represented; retain Greek wording and identify translation-mediated readings."
+    },
+    {
+      "id": "samaritan_pentateuch_tradition",
+      "tradition": "samaritan_pentateuch",
+      "witness_or_collection": "Samaritan Pentateuch manuscript tradition",
+      "writing_ids": [
+        "leviticus",
+        "numbers",
+        "deuteronomy"
+      ],
+      "date_of_witness_or_tradition": "The textual tradition is ancient; surviving complete codices are medieval. Date each physical manuscript independently.",
+      "language": "Samaritan Hebrew",
+      "evidence_status": "Independent Pentateuch textual tradition; not a single dated manuscript.",
+      "passage_level_mapping_status": "not_mapped",
+      "coverage_limitations": "Applies only to the Five Books of Moses. Do not extend it to Joshua or Samuel. Qumran pre-Samaritan witnesses are separate DSS records.",
+      "source_url": "https://www.britannica.com/topic/Samaritan-Pentateuch",
+      "editorial_rule": "Keep Samaritan readings distinct from DSS pre-Samaritan texts and Masoretic readings."
+    },
+    {
+      "id": "masoretic_leningrad_codex",
+      "tradition": "masoretic",
+      "witness_or_collection": "Leningrad Codex (Firkovich B 19A)",
+      "writing_ids": [
+        "leviticus",
+        "numbers",
+        "deuteronomy",
+        "joshua",
+        "1_samuel",
+        "2_samuel"
+      ],
+      "date_of_witness_or_tradition": "Physical codex dated 1008/1009 CE.",
+      "language": "Hebrew",
+      "evidence_status": "Complete surviving Masoretic codex witness for the collection it transmits.",
+      "passage_level_mapping_status": "not_mapped",
+      "coverage_limitations": "One medieval Masoretic witness. Its book division does not define archive scope. Map each passage and retain vocalization, marginal notes, and corrections.",
+      "source_url": "",
+      "editorial_rule": "Do not project its wording backward as the exact reading of a DSS manuscript."
+    },
+    {
+      "id": "masoretic_aleppo_codex",
+      "tradition": "masoretic",
+      "witness_or_collection": "Aleppo Codex",
+      "writing_ids": [
+        "joshua",
+        "1_samuel",
+        "2_samuel"
+      ],
+      "date_of_witness_or_tradition": "Physical codex commonly dated circa 930 CE.",
+      "language": "Hebrew",
+      "evidence_status": "Important Masoretic codex; surviving portions include Prophets.",
+      "passage_level_mapping_status": "not_mapped",
+      "coverage_limitations": "The codex is incomplete; the Pentateuch is not extant in the surviving codex. Verify relevant surviving folios before passage use.",
+      "source_url": "https://www.aleppocodex.org/",
+      "editorial_rule": "Do not claim it supplies a passage unless the relevant surviving folio is verified."
+    },
+    {
+      "id": "ethiopic_geez_scripture_tradition",
+      "tradition": "ethiopic",
+      "witness_or_collection": "Ethiopic / Ge'ez scriptural translation tradition; individual codices not yet registered",
+      "writing_ids": [
+        "leviticus",
+        "numbers",
+        "deuteronomy",
+        "joshua",
+        "1_samuel",
+        "2_samuel"
+      ],
+      "date_of_witness_or_tradition": "Translation tradition is ancient; surviving manuscript dates vary and must be recorded per codex.",
+      "language": "Ge'ez",
+      "evidence_status": "Tradition-level candidate only; no individual manuscript verified in this record.",
+      "passage_level_mapping_status": "not_mapped",
+      "coverage_limitations": "This is not a physical manuscript citation and cannot supply text. Identify a specific Ge'ez codex, edition, source language, and passage before use.",
+      "source_url": "",
+      "editorial_rule": "Never label a Ge'ez translation as an original Hebrew or Greek manuscript reading."
+    }
+  ]
+}

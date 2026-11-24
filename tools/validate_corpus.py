@@ -688,6 +688,18 @@ def validate_witness_registers():
         assert item["reconstruction_status"] == "not_reconstruction_ready"
         assert item["gap_fill_source_witness_id"] is None
     assert all(not x.get("text") for x in coverage["records"]), "Coverage inventory must not invent reconstructed text"
+    traditions = json.loads((ROOT / "catalog/tradition_comparison_register.json").read_text(encoding="utf-8"))
+    assert traditions["record_type"] == "textual_tradition_comparison_register"
+    tradition_ids = [item["id"] for item in traditions["records"]]
+    assert len(tradition_ids) == len(set(tradition_ids))
+    for item in traditions["records"]:
+        assert item["tradition"] in {"septuagint", "samaritan_pentateuch", "masoretic", "ethiopic"}
+        assert item["writing_ids"] and set(item["writing_ids"]).issubset(writing_set)
+        assert item["witness_or_collection"] and item["date_of_witness_or_tradition"]
+        assert item["evidence_status"] and item["coverage_limitations"]
+        assert item["passage_level_mapping_status"] in {"not_mapped", "partially_mapped"}
+    assert {"septuagint", "samaritan_pentateuch", "masoretic", "ethiopic"}.issubset({x["tradition"] for x in traditions["records"]})
+    print(f"Validated {len(traditions['records'])} comparison-tradition records; none is automatically reconstruction-ready.")
     print(f"Validated {len(catalog['records'])} writing identities, {len(witnesses['records'])} DSS witnesses, and {len(coverage['records'])} passage locators.")
 
 sections = {"witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}
