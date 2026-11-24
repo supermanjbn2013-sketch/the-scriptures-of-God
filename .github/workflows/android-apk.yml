@@ -28,7 +28,9 @@ jobs:
           gradle-version: '8.9'
       - name: Prepare offline Scripture corpus
         run: python3 tools/prepare_corpus.py
-      - name: Import offline Dead Sea Scrolls transcriptions\n        run: python3 tools/import_etcbc_dss.py\n      - name: Validate complete corpus before any APK build
+      - name: Import offline Dead Sea Scrolls transcriptions
+        run: python3 tools/import_etcbc_dss.py
+      - name: Validate complete corpus before any APK build
         run: |
           python3 tools/validate_corpus.py base
           python3 tools/validate_corpus.py apocrypha
