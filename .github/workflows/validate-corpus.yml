@@ -2,7 +2,8 @@ name: Validate Offline Scripture Corpus
 on:
   push:
     paths:
-      - "tools/prepare_corpus.py"\n      - "tools/import_etcbc_dss.py"
+      - "tools/prepare_corpus.py"
+      - "tools/import_etcbc_dss.py"
       - "tools/validate_corpus.py"
       - "app/src/main/java/org/scripturesofgod/archive/MainActivity.java"
       - "app/src/main/assets/catalog/**"
@@ -20,7 +21,9 @@ jobs:
           python-version: '3.12'
       - name: Fetch and prepare licensed source texts
         run: python tools/prepare_corpus.py
-      - name: Import offline Dead Sea Scrolls transcriptions\n        run: python tools/import_etcbc_dss.py\n      - name: Validate base Hebrew and Greek corpus
+      - name: Import offline Dead Sea Scrolls transcriptions
+        run: python tools/import_etcbc_dss.py
+      - name: Validate base Hebrew and Greek corpus
         run: python tools/validate_corpus.py base
       - name: Validate complete Apocrypha texts
         run: python tools/validate_corpus.py apocrypha
