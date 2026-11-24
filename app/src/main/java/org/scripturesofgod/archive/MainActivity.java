@@ -2137,6 +2137,8 @@ public class MainActivity extends Activity {
                 detail.append("Format: ").append(digital.optString("format")).append("\n");
                 detail.append("Licence: ").append(digital.optString("license")).append("\n");
                 detail.append("Status: ").append(digital.optString("status")).append("\n");
+                if(!digital.optString("bundle_status").isEmpty())detail.append("Offline bundle: ").append(digital.optString("bundle_status")).append("\n");
+                if(!digital.optString("use_restriction").isEmpty())detail.append("\nUSE RESTRICTION NOTICE:\n").append(digital.optString("use_restriction")).append("\n");
                 detail.append("Caution: ").append(digital.optString("caution")).append("\n");
                 detail.append("Transcription source: ").append(digital.optString("source_url")).append("\n");
                 detail.append("Repository: ").append(digital.optString("repository_url")).append("\n\n");
