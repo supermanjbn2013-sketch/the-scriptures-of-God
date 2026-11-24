@@ -645,6 +645,26 @@
         "The digital TEI transcription is CC BY-SA 4.0; attribution and share-alike terms must be preserved.",
         "No missing wording is reconstructed."
       ]
+    },
+    {
+      "id": "papyrus-77-ntvmr",
+      "name": "Papyrus 77 (GA P77) — INTF NTVMR diplomatic transcription",
+      "language": "Koine Greek",
+      "coverage": "One surviving leaf represented by two fragments, preserving Matthew 23:30–39; exact page and record counts are generated in papyri/p77/p77_index.json during the build.",
+      "record_type": "TEI diplomatic manuscript transcription, indexed by original NTVMR page identifier",
+      "edition": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, GA P77",
+      "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10077&pageID=ALL&format=teiraw",
+      "repository": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10077",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "attribution": "Papyrus 77 (GA P77), transcription and catalogue data by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, CC BY 4.0.",
+      "status": "Imported at APK build time as offline compressed page records.",
+      "limitations": [
+        "P77 consists of one surviving leaf represented by two fragments, preserving Matthew 23:30–39.",
+        "The manuscript is incomplete; only surviving text represented in the NTVMR transcription is included.",
+        "First-hand and correction readings are retained where encoded by the source.",
+        "Missing manuscript portions are not reconstructed.",
+        "The electronic transcription is not a photographic facsimile."
+      ]
     }
   ],
   "not_yet_integrated": [
