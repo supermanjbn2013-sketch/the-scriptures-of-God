@@ -1075,6 +1075,79 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void openIgnatiusArchive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/ignatius/ignatius_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray letters=new org.json.JSONObject(raw.toString()).getJSONArray("letters");
+            String[] numbers=new String[letters.length()];String[] labels=new String[letters.length()];
+            for(int i=0;i<letters.length();i++){
+                org.json.JSONObject letter=letters.getJSONObject(i);numbers[i]=letter.optString("number");
+                labels[i]=letter.optString("name")+" · "+letter.optInt("chapter_count")+" chapters · "+letter.optInt("section_count")+" sections";
+            }
+            new android.app.AlertDialog.Builder(this).setTitle("Ignatius of Antioch · Greek letters")
+                .setItems(labels,(d,w)->openIgnatiusLetter(numbers[w])).setNegativeButton("Close",null).show();
+        }catch(Exception e){showInfo("Ignatius Greek text unavailable","The offline Greek text was not generated in this build. "+e.getMessage());}
+    }
+
+    void openIgnatiusLetter(String letterNo){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/ignatius/ignatius_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray letters=new org.json.JSONObject(raw.toString()).getJSONArray("letters");
+            org.json.JSONObject selected=null;
+            for(int i=0;i<letters.length();i++){org.json.JSONObject item=letters.getJSONObject(i);if(item.optString("number").equals(letterNo)){selected=item;break;}}
+            if(selected==null)throw new Exception("Letter index not found.");
+            org.json.JSONArray chapters=selected.getJSONArray("chapters");String[] numbers=new String[chapters.length()];String[] labels=new String[chapters.length()];
+            for(int i=0;i<chapters.length();i++){
+                org.json.JSONObject chapter=chapters.getJSONObject(i);numbers[i]=chapter.optString("chapter");
+                labels[i]=(numbers[i].equals("praef")?"Preface":"Chapter "+numbers[i])+" · "+chapter.optInt("section_count")+" sections";
+            }
+            String title=selected.optString("name");
+            new android.app.AlertDialog.Builder(this).setTitle(title+" · Greek text")
+                .setItems(labels,(d,w)->openIgnatiusChapter(letterNo,numbers[w]))
+                .setNegativeButton("Back to letters",(d,w)->openIgnatiusArchive()).setPositiveButton("Close",null).show();
+        }catch(Exception e){showInfo("Ignatius letter unavailable",e.getMessage());}
+    }
+
+    void openIgnatiusChapter(String letterNo,String chapter){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/ignatius/ignatius_greek.jsonl"),"UTF-8"),8192);
+                    String raw;
+                    while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(!letterNo.equals(record.optString("letter"))||!chapter.equals(record.optString("chapter")))continue;
+                        if(count==0)out.append("Source: Kirsopp Lake, The Apostolic Fathers, volume 1 (1912)\n")
+                            .append("Digital edition: Perseus Digital Library / Open Greek and Latin First1KGreek\n")
+                            .append("License: CC BY-SA 4.0\n")
+                            .append("Textual basis: printed Greek edition, not a direct diplomatic transcription of one ancient manuscript.\n")
+                            .append("Editorial notes and cross-references are stored separately from the Greek text.\n\n");
+                        out.append(record.optString("reference")).append("\n");
+                        org.json.JSONArray pages=record.optJSONArray("source_pages");
+                        if(pages!=null&&pages.length()>0){out.append("Printed pages: ");for(int p=0;p<pages.length();p++){if(p>0)out.append(", ");out.append(pages.optString(p));}out.append("\n");}
+                        out.append(record.optString("text")).append("\n\n");
+                        org.json.JSONArray notes=record.optJSONArray("editorial_notes");
+                        if(notes!=null&&notes.length()>0){out.append("Editorial notes:\n");for(int n=0;n<notes.length();n++){org.json.JSONObject note=notes.getJSONObject(n);out.append("- ").append(note.optString("text")).append("\n");}out.append("\n");}
+                        org.json.JSONArray refs=record.optJSONArray("cross_references");
+                        if(refs!=null&&refs.length()>0){out.append("Cross-references:\n");for(int n=0;n<refs.length();n++){org.json.JSONObject ref=refs.getJSONObject(n);out.append("- ").append(ref.optString("text")).append(" ").append(ref.optString("corresp")).append("\n");}out.append("\n");}
+                        count++;
+                    }
+                    reader.close();
+                }catch(Exception e){return "Unable to read the offline Ignatius Greek text: "+e.getMessage();}
+                return count==0?"No sections were found for this letter and chapter.":count+" sections\n\n"+out.toString()+"\nNo missing wording is reconstructed.";
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Ignatius · "+chapter).setView(sv)
+                    .setNegativeButton("Back to chapters",(d,w)->openIgnatiusLetter(letterNo)).setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     void openOdesOfSolomonArchive(){
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/odes_of_solomon/odes_syriac_index.json"),"UTF-8"));
