@@ -802,13 +802,23 @@ public class MainActivity extends Activity {
                 StringBuilder out=new StringBuilder();
                 int count=0;
                 try{
+                    java.io.BufferedReader indexReader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("sinaiticus/sinaiticus_index.json"),"UTF-8"));
+                    StringBuilder indexRaw=new StringBuilder();String indexLine;
+                    while((indexLine=indexReader.readLine())!=null)indexRaw.append(indexLine);
+                    indexReader.close();
+                    org.json.JSONArray pages=new org.json.JSONObject(indexRaw.toString()).getJSONArray("pages");
+                    String assetPath=null;
+                    for(int i=0;i<pages.length();i++){
+                        org.json.JSONObject page=pages.getJSONObject(i);
+                        if(selected.equals(page.optString("page_id"))){assetPath=page.optString("asset_file");break;}
+                    }
+                    if(assetPath==null)return "No offline page file is indexed for "+selected+".";
                     java.io.BufferedReader reader=new java.io.BufferedReader(
                         new java.io.InputStreamReader(
-                            new java.util.zip.GZIPInputStream(getAssets().open("sinaiticus/sinaiticus_lines.jsonl.gz")),"UTF-8"),65536);
+                            new java.util.zip.GZIPInputStream(getAssets().open(assetPath)),"UTF-8"),8192);
                     String raw;
                     while((raw=reader.readLine())!=null){
                         org.json.JSONObject record=new org.json.JSONObject(raw);
-                        if(!selected.equals(record.optString("page_id")))continue;
                         if(count==0)out.append("Source: Codex Sinaiticus Project / ITSEE XML transcription\n")
                             .append("Licence: CC BY-NC-SA 3.0 — non-commercial use; adaptations share alike.\n")
                             .append("Original page, column, line, and word identifiers are preserved.\n\n");
