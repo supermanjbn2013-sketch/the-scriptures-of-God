@@ -401,6 +401,18 @@ def validate_android():
     assert all(r["language"] == "gez" and r["text"].strip() and r["section"] and "non-commercial" in r["reuse_restriction"] for r in ascension_records)
     assert all(r["source_revision"] == ascension_index["source_revision"] for r in ascension_records)
     assert "void openAscensionIsaiahArchive()" in source and "void openAscensionIsaiahSection(int section)" in source
+    baruch_path = ROOT / "other_reference/2_baruch/2_baruch_index.json"
+    assert baruch_path.exists(), "Offline Syriac 2 Baruch index was not generated"
+    baruch_index = json.loads(baruch_path.read_text(encoding="utf-8"))
+    assert baruch_index["source_revision"] == "9850f5addade26f681334aa475570bef9b0b440a"
+    assert baruch_index["license"] == "CC BY-NC 4.0"
+    assert len(baruch_index["witnesses"]) == 3
+    assert [w["witness"] for w in baruch_index["witnesses"]] == ["apocalypse", "epistle_a", "epistle_b"]
+    baruch_records = [json.loads(line) for line in (ROOT / "other_reference/2_baruch/2_baruch_syriac.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(baruch_records) == baruch_index["record_count"] and len(baruch_records) > 700
+    assert all(r["language"] == "syc" and r["text"].strip() and r["license"] == "CC BY-NC 4.0" for r in baruch_records)
+    assert {r["witness"] for r in baruch_records} == {"apocalypse", "epistle_a", "epistle_b"}
+    assert "void openTwoBaruchArchive()" in source and "void openTwoBaruchChapter(String witness, int chapter)" in source
     enoch_greek_path = ROOT / "other_reference/enoch_greek/enoch_greek_index.json"
     assert enoch_greek_path.exists(), "Offline Greek 1 Enoch index was not generated"
     enoch_greek_index = json.loads(enoch_greek_path.read_text(encoding="utf-8"))
