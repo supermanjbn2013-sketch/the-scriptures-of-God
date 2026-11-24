@@ -401,6 +401,18 @@ def validate_android():
     assert all(r["language"] == "gez" and r["text"].strip() and r["section"] and "non-commercial" in r["reuse_restriction"].lower() for r in ascension_records)
     assert all(r["source_revision"] == ascension_index["source_revision"] for r in ascension_records)
     assert "void openAscensionIsaiahArchive()" in source and "void openAscensionIsaiahSection(int section)" in source
+    jubilees_geez_path = ROOT / "other_reference/jubilees_geez/jubilees_geez_index.json"
+    assert jubilees_geez_path.exists(), "Offline Ge'ez Jubilees index was not generated"
+    jubilees_geez_index = json.loads(jubilees_geez_path.read_text(encoding="utf-8"))
+    assert jubilees_geez_index["source_revision"] == "ff9d4981eba2084c4914ca840ff323d85cbd2a1d"
+    assert jubilees_geez_index["license"] == "CC BY-SA 4.0"
+    assert len(jubilees_geez_index["editions"]) == 2
+    assert all(e["chapter_count"] == 50 and e["record_count"] > 1000 for e in jubilees_geez_index["editions"])
+    jubilees_geez_records = [json.loads(line) for line in (ROOT / "other_reference/jubilees_geez/jubilees_geez.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(jubilees_geez_records) == jubilees_geez_index["record_count"]
+    assert {r["edition"] for r in jubilees_geez_records} == {"vanderkam_transcription", "eotc_printed"}
+    assert all(r["language"] == "gez" and r["text"].strip() and r["license"] == "CC BY-SA 4.0" for r in jubilees_geez_records)
+    assert "void openJubileesGeezArchive()" in source and "void openJubileesGeezChapter(String edition,int chapter)" in source
     baruch_path = ROOT / "other_reference/2_baruch/2_baruch_index.json"
     assert baruch_path.exists(), "Offline Syriac 2 Baruch index was not generated"
     baruch_index = json.loads(baruch_path.read_text(encoding="utf-8"))
