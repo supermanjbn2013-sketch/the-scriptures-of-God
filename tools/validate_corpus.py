@@ -398,7 +398,7 @@ def validate_android():
     assert datasets["ascension-isaiah-geez-beta-masaheft"]["license"].startswith("CC BY-SA 4.0")
     ascension_records = [json.loads(line) for line in (ROOT / "other_reference/ascension_isaiah/ascension_isaiah_geez.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
     assert len(ascension_records) == ascension_index["record_count"]
-    assert all(r["language"] == "gez" and r["text"].strip() and r["section"] and "non-commercial" in r["reuse_restriction"] for r in ascension_records)
+    assert all(r["language"] == "gez" and r["text"].strip() and r["section"] and "non-commercial" in r["reuse_restriction"].lower() for r in ascension_records)
     assert all(r["source_revision"] == ascension_index["source_revision"] for r in ascension_records)
     assert "void openAscensionIsaiahArchive()" in source and "void openAscensionIsaiahSection(int section)" in source
     baruch_path = ROOT / "other_reference/2_baruch/2_baruch_index.json"
