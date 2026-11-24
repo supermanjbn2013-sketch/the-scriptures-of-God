@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
         entries.put("Apocrypha and Deuterocanonical Writings",new ArrayList<>(Arrays.asList("1 Esdras","Tobit","Judith","Esther (Greek)","Wisdom of Solomon","Sirach","Baruch","Letter of Jeremiah","1 Maccabees","2 Maccabees","3 Maccabees","4 Maccabees","Susanna (Old Greek)","Susanna (Theodotion)","Daniel (Old Greek)","Daniel (Theodotion)","Bel and the Dragon (Old Greek)","Bel and the Dragon (Theodotion)","Odes","Prayer of Manasseh (Greek)","Psalm 151","2 Esdras / 4 Ezra (Latin)","Prayer of Manasseh (Latin)")));
         entries.put("Other Reference Books",new ArrayList<>(Arrays.asList("1 Enoch","Jubilees","Didache","Epistle of Barnabas","Letters of Ignatius of Antioch","Shepherd of Hermas","Gospel of Thomas","Protoevangelium of James (Nativity and Infancy of Jesus)","Infancy Gospel of Thomas","Gospel of Pseudo-Matthew","Arabic Infancy Gospel","Gospel of Peter","Gospel of Mary","Gospel of Philip","Gospel of Truth","Gospel of Judas","Acts of Peter","Acts of Paul","Acts of John","Acts of Thomas","Apocalypse of Peter","Apocalypse of Paul","Ascension of Isaiah","Testament of Abraham","Testament of the Twelve Patriarchs","2 Baruch","3 Baruch","Life of Adam and Eve","Apocalypse of Moses","Dormition of Mary (Transitus Mariae traditions)","Six Books Dormition Apocryphon","Book of Mary's Repose","Odes of Solomon","Pseudo-Philo: Biblical Antiquities","Zohar")));
         entries.put("Lost and Referenced Books",new ArrayList<>(Arrays.asList("Book of the Wars of YHWH","Book of Jashar","Acts of Solomon","Chronicles of the Kings of Israel","Chronicles of the Kings of Judah","Records of Samuel the Seer","Records of Nathan the Prophet","Records of Gad the Seer","Prophecy of Ahijah","Visions of Iddo","Records of Shemaiah","Records of Iddo","History of Iddo","Book of Jehu","Records of the Seers (Hozai)","Chronicles of the Kings of Media and Persia","Earlier Letter to the Corinthians","Letter to the Laodiceans (identity uncertain)","Assumption of Moses (identification debated)","Book of Noah (Jubilees reference)","Book of Giants (fragmentarily preserved)","Nehemiah's Library and Collected Records","Jason of Cyrene's Five-Book History","Chronicles of John Hyrcanus")));
-        entries.put("Manuscript Archive",new ArrayList<>(Arrays.asList("Dead Sea Scrolls (DSS)","Great Isaiah Scroll (1QIsaᵃ)","Pesher Habakkuk (1QpHab)","Genesis Apocryphon (1QapGen)","Community Rule (1QS)","Temple Scroll (11Q19)","War Scroll (1QM)","Masoretic Text","Septuagint","Samaritan Pentateuch","Papyrus 46 (P46)","Papyrus 52 (P52)","Papyrus 66 (P66)","Papyrus 75 (P75)","Codex Vaticanus","Codex Sinaiticus","Codex Alexandrinus")));
+        entries.put("Manuscript Archive",new ArrayList<>(Arrays.asList("Dead Sea Scrolls (DSS)","Great Isaiah Scroll (1QIsaᵃ)","Pesher Habakkuk (1QpHab)","Genesis Apocryphon (1QapGen)","Community Rule (1QS)","Temple Scroll (11Q19)","War Scroll (1QM)","Masoretic Text","Septuagint","Samaritan Pentateuch","Papyrus 46 (P46)","Papyrus 52 (P52)","Papyrus 66 (P66)","Papyrus 72 (P72)","Papyrus 75 (P75)","Papyrus 76 (P76)","Papyrus 77 (P77)","Codex Vaticanus","Codex Sinaiticus","Codex Alexandrinus")));
         entries.put("DSS Passage Concordance",new ArrayList<>(Arrays.asList("4Q26 Lev d — Leviticus","4Q27 Num b — Numbers","4Q31 Deut d — Deuteronomy","4Q47 Josh a — Joshua","4Q53 Sam c — Samuel")));
         entries.put("Translation Center",new ArrayList<>(Arrays.asList("Preferred translation language","On-device translation")));
         entries.put("Manuscript Comparison",new ArrayList<>(Arrays.asList("Compare witness transcriptions","Review additions and omissions","Inspect textual variants","Trace quotations and parallels")));
@@ -1880,7 +1880,7 @@ public class MainActivity extends Activity {
                     String raw;
                     while((raw=reader.readLine())!=null){
                         org.json.JSONObject record=new org.json.JSONObject(raw);
-                        if(count==0)out.append("Source: Papyrus 75 (GA P46), INTF / New Testament Virtual Manuscript Room, document 10075\n")
+                        if(count==0)out.append("Source: Papyrus 75 (GA P75), INTF / New Testament Virtual Manuscript Room, document 10075\n")
                             .append("Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)\n")
                             .append("Original source labels and page/column/line identifiers are retained where present.\n")
                             .append("Only surviving manuscript text is included. Supplied readings are bracketed where the source encodes them; missing portions are not reconstructed.\n\n");
@@ -1902,6 +1902,70 @@ public class MainActivity extends Activity {
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Papyrus 75")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openPapyrus75Archive())
+                    .setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    void openPapyrus77Archive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("papyri/p77/p77_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONObject index=new org.json.JSONObject(raw.toString());
+            org.json.JSONArray pages=index.getJSONArray("pages");
+            String[] labels=new String[pages.length()];
+            String[] ids=new String[pages.length()];
+            for(int i=0;i<pages.length();i++){
+                org.json.JSONObject page=pages.getJSONObject(i);
+                ids[i]=page.optString("page_id");
+                labels[i]=ids[i]+"  ·  "+page.optInt("record_count")+" text records";
+            }
+            new android.app.AlertDialog.Builder(this).setTitle("Papyrus 77 · Offline Page Archive")
+                .setItems(labels,(dialog,which)->openPapyrus77Page(ids[which]))
+                .setNegativeButton("Close",null).show();
+        }catch(Exception e){
+            showInfo("Papyrus 77 transcription unavailable","The offline P77 transcription was not generated in this build. "+e.getMessage());
+        }
+    }
+
+    void openPapyrus77Page(String pageId){
+        final String selected=pageId;
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader indexReader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("papyri/p77/p77_index.json"),"UTF-8"));
+                    StringBuilder indexRaw=new StringBuilder();String indexLine;while((indexLine=indexReader.readLine())!=null)indexRaw.append(indexLine);indexReader.close();
+                    org.json.JSONArray pages=new org.json.JSONObject(indexRaw.toString()).getJSONArray("pages");
+                    String assetPath=null;
+                    for(int i=0;i<pages.length();i++){org.json.JSONObject page=pages.getJSONObject(i);if(selected.equals(page.optString("page_id"))){assetPath=page.optString("asset_file");break;}}
+                    if(assetPath==null)return "No offline page file is indexed for "+selected+".";
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(new java.util.zip.GZIPInputStream(getAssets().open(assetPath)),"UTF-8"),8192);
+                    String raw;
+                    while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(count==0)out.append("Source: Papyrus 77 (GA P77), INTF / New Testament Virtual Manuscript Room, document 10077\n")
+                            .append("Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)\n")
+                            .append("Original source labels and page/column/line identifiers are retained where present.\n")
+                            .append("Only surviving manuscript text is included. Supplied readings are bracketed where the source encodes them; missing portions are not reconstructed.\n\n");
+                        if(!record.optString("source_label").isEmpty())out.append(record.optString("source_label")).append("\n");
+                        out.append("Page: ").append(record.optString("page_id")).append("\n");
+                        out.append("Column: ").append(record.optJSONArray("column_ids")==null?"":record.optJSONArray("column_ids").toString()).append("\n");
+                        out.append("Line: ").append(record.optJSONArray("line_ids")==null?"":record.optJSONArray("line_ids").toString()).append("\n");
+                        out.append(record.optString("text")).append("\n");
+                        org.json.JSONArray notes=record.optJSONArray("correction_notes");
+                        if(notes!=null)for(int i=0;i<notes.length();i++)out.append("Correction note: ").append(notes.optString(i)).append("\n");
+                        out.append("\n");count++;
+                    }
+                    reader.close();
+                    return count==0?"No transcription records were found for "+selected+".":count+" source text records\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline Papyrus 77 transcription: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Papyrus 77")
+                    .setView(sv).setNegativeButton("Back to page index",(d,w)->openPapyrus77Archive())
                     .setPositiveButton("Close",null).show();
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
@@ -2025,6 +2089,7 @@ public class MainActivity extends Activity {
             if("P52".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open fragment transcription",(d,w)->openPapyrus52Archive());
             if("P66".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus66Archive());
             if("P75".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus75Archive());
+            if("P77".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus77Archive());
             builder.show();
         }catch(Exception e){
             new android.app.AlertDialog.Builder(this).setTitle("Manuscript catalogue unavailable").setMessage("The metadata register is not present in this build yet.").setPositiveButton("Close",null).show();
