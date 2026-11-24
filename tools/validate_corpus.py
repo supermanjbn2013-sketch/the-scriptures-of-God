@@ -237,7 +237,7 @@ def validate_android():
         "Prayer of Manasseh (Greek)", "2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)",
         "source_reference", "Temple Scroll (11Q19)", "War Scroll (1QM)",
         "Other Reference Books", "Protoevangelium of James (Nativity and Infancy of Jesus)", "Infancy Gospel of Thomas", "Gospel of Pseudo-Matthew", "Arabic Infancy Gospel", "Zohar", "Apocalypse of Moses", "Dormition of Mary (Transitus Mariae traditions)", "Six Books Dormition Apocryphon", "Book of Mary's Repose", "void openOtherReferenceBookEntry(String item)", "openOtherReferenceBookEntry(item)",
-        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "Translation connection settings · Target: ", "showTranslationSettings()", "https://translate.google.com/?sl=", "openAiTranslator(String reference,String sourceText,String sourceLanguage)", "AI translate / analyze", "preferred_target_language", "Disciples and Apostles Writings", "Lost and Referenced Books", "openReferencedBookEntry(item)", "Book of the Wars of YHWH", "Book of Giants (fragmentarily preserved)", "void openBookOfGiantsFragments()", "4Q203", "4Q530", "4Q533", "openEtcbcDssScroll(ids.get(which))",
+        "Translation connection settings · Target: ", "showTranslationSettings()", "Connect Gemini API key", "openAiConnectionSettings()", "openAiTranslator(String reference,String sourceText,String sourceLanguage)", "AI translate / analyze", "preferred_target_language", "Disciples and Apostles Writings", "Lost and Referenced Books", "openReferencedBookEntry(item)", "Book of the Wars of YHWH", "Book of Giants (fragmentarily preserved)", "void openBookOfGiantsFragments()", "4Q203", "4Q530", "4Q533", "openEtcbcDssScroll(ids.get(which))",
         "void openVaticanusArchive()", "void openVaticanusPage(String pageId)", "vaticanus/vaticanus_index.json",
         "void openPapyrus46Archive()", "void openPapyrus46Page(String pageId)", "papyri/p46/p46_index.json",
         "void openPapyrus52Archive()", "void openPapyrus52Page(String pageId)", "papyri/p52/p52_index.json",
@@ -251,7 +251,7 @@ def validate_android():
         "void openThomasArchive()", "void openThomasPage(int page)", "other_reference/thomas/thomas_index.json", "other_reference/thomas/thomas_coptic.jsonl", "Open Coptic text",
         "void openGreekEnochArchive()", "void openGreekEnochPage(int page)", "other_reference/enoch_greek/enoch_greek_index.json", "other_reference/enoch_greek/enoch_greek.jsonl", "Open Greek fragments",
         "void openTestamentAbrahamArchive()", "void openTestamentAbrahamRecension(String recension)", "void openTestamentAbrahamChapter(String recension,int chapter,String assetFile)", "other_reference/testament_abraham/testament_abraham_index.json", "Open Greek recensions",
-        "594 line records across these nine Qumran witness identifiers", "not a continuous reconstructed text or an English translation", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate  ·  Long press for passage tools", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "void translateOnDevice(", "com.google.mlkit.nl.translate.TranslatorOptions", "targetLanguage()"
+        "594 line records across these nine Qumran witness identifiers", "not a continuous reconstructed text or an English translation", "ClickableSpan", "openAiTranslator(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate with Gemini AI", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "targetLanguage()"
     ):
         assert required in source, f"Android source is missing: {required}"
     for book in REQUIRED_GREEK | REQUIRED_LATIN:
@@ -272,10 +272,12 @@ def validate_android():
     for required in ("Modern English translation", "Older English style (Early Modern)", "Literal translation", "Word-for-word analysis", "Grammar and meaning explanation", "gemini-3.1-flash-lite", "x-goog-api-key", "AndroidKeyStore", "AES/GCM/NoPadding", "aistudio.google.com/app/apikey", "do not invent words"):
         assert required in ai_source, f"AI translator is missing: {required}"
     assert "getAiKey()" not in source and "x-goog-api-key" not in source, "Main reader must not require a personal API key for translation"
+    assert "translate.google.com" not in source and "com.google.mlkit" not in source, "Only Gemini AI translation is permitted in the reader"
+    assert "open_connection_settings" in ai_source and "showKeyDialog()" in ai_source, "Gemini connection settings must be accessible from the main reader"
     manifest = Path("app/src/main/AndroidManifest.xml").read_text(encoding="utf-8")
     assert '.AiTranslatorActivity' in manifest and '.MainActivity' in manifest and 'android:exported="false"' in manifest, "AI translator screen must be registered as a private activity alongside the main Scripture reader"
     gradle = Path("app/build.gradle").read_text(encoding="utf-8")
-    assert "versionCode 5" in gradle and "versionName '1.4.0'" in gradle and "com.google.mlkit:translate" in gradle, "On-device translation app version or dependency is missing"
+    assert "versionCode 5" in gradle and "versionName '1.4.0'" in gradle and "com.google.mlkit:translate" not in gradle, "App version or obsolete translation dependency check failed"
 
     mapping = re.search(r'String\[\]\[\] pairs=\{\{(.*?)\}\};', source, re.S)
     assert mapping, "Reader book-code mapping could not be inspected"
