@@ -3,6 +3,8 @@
 import json
 import pathlib
 import re
+import time
+import urllib.error
 import urllib.request
 import xml.etree.ElementTree as ET
 
@@ -52,10 +54,25 @@ SWETE_REPO = "https://github.com/nathans/lxx-swete"
 SWETE_LICENSE = "CC BY-SA 4.0"
 SWETE_ATTRIBUTION = "Henry Barclay Swete, ed., The Old Testament in Greek according to the Septuagint; digital transcription from Open Greek and Latin First1KGreek via nathans/lxx-swete. https://github.com/nathans/lxx-swete"
 
-def fetch(url):
+def fetch(url, attempts=6):
+    """Fetch a source file with bounded retries for temporary upstream failures."""
     request = urllib.request.Request(url, headers={"User-Agent": "The-Scriptures-of-God-Archive/1.0"})
-    with urllib.request.urlopen(request, timeout=90) as response:
-        return response.read()
+    last_error = None
+    for attempt in range(attempts):
+        try:
+            with urllib.request.urlopen(request, timeout=90) as response:
+                return response.read()
+        except urllib.error.HTTPError as error:
+            last_error = error
+            if error.code not in (408, 425, 429, 500, 502, 503, 504):
+                raise
+        except (urllib.error.URLError, TimeoutError, ConnectionError) as error:
+            last_error = error
+        if attempt + 1 < attempts:
+            delay = min(5 * (2 ** attempt), 60)
+            print(f"Temporary source download failure ({last_error}); retrying in {delay}s: {url}", flush=True)
+            time.sleep(delay)
+    raise RuntimeError(f"Source download failed after {attempts} attempts: {url}: {last_error}") from last_error
 
 def local_name(tag):
     return tag.rsplit("}", 1)[-1].lower()
