@@ -109,16 +109,31 @@
       "language": "Greek",
       "date_estimate": "4th century CE according to the Vatican Library catalogue",
       "date_basis": "Institutional catalogue dating",
-      "contents": "The Vatican Library catalogue lists extensive Hebrew Scripture and Apostolic Writings contents, including the four Gospels, Acts, letters, and Revelation",
-      "condition": "Surviving codex; catalogue pagination and contents must be checked passage by passage",
+      "contents": "Surviving original manuscript: Matthew–2 Thessalonians; Hebrews 1:1–9:14; James–Jude. The manuscript does not preserve the Pastoral Letters, Philemon, or Revelation. The Revelation now bound with the codex is a later fifteenth-century supplement and is not part of the original codex.",
+      "condition": "Incomplete parchment codex; original New Testament leaves survive for the stated range. The ending of Hebrews is lost after 9:14; later supplements must be distinguished from the original manuscript.",
       "holding_institution": "Biblioteca Apostolica Vaticana",
       "shelfmark": "Vat.gr.1209",
       "source_urls": [
-        "https://digi.vatlib.it/view/MSS_Vat.gr.1209/1378",
-        "https://digi.vatlib.it/mss/detail/Vat.gr.1209"
+        "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=20003",
+        "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=20003&pageID=ALL&format=teiraw",
+        "https://manuscripts.csntm.org/manuscript/View/GA_03",
+        "https://digi.vatlib.it/view/MSS_Vat.gr.1209"
       ],
-      "status": "metadata catalogued; transcription not imported",
-      "caution": "Vatican digital images are stated to be for personal use or study; publication rights require permission from the Library."
+      "status": "metadata catalogued; INTF NTVMR transcription source and CC BY 4.0 licence verified; offline transcription importer not yet integrated",
+      "caution": "Do not claim that the original Codex Vaticanus contains the Pastorals, Philemon, or Revelation. The later Revelation supplement is a separate manuscript. Preserve the codex's missing leaves as physical losses, not as textual omissions. Do not fill its readings from another edition.",
+      "digital_transcription_source": {
+        "title": "Codex Vaticanus (GA 03), New Testament transcription",
+        "provider": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room",
+        "document_id": 20003,
+        "format": "TEI XML",
+        "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "attribution": "Codex Vaticanus (GA 03), New Testament transcription by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, CC BY 4.0.",
+        "source_url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=20003&pageID=ALL&format=teiraw",
+        "repository_url": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=20003",
+        "status": "source and licence verified; transcription import pending",
+        "handling": "Use the original-hand reading as the displayed text; retain corrections and uncertain/supplied readings as explicit notes. Do not fill missing manuscript portions from another edition.",
+        "scope": "Original surviving New Testament text only; do not include the later Revelation supplement."
+      }
     }
   ],
   "catalog_policy": "Metadata records are not transcriptions. A manuscript passage is not available in-app until the exact folio/page, image rights, transcription source, and reading have been verified. Dates are estimates and must retain uncertainty."
