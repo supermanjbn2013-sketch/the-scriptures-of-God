@@ -1,5 +1,10 @@
 #!/usr/bin/env python3
-"""Import the ITSEE Codex Sinaiticus XML as page/column/line-addressable offline text."""
+"""Import ITSEE's TEI Codex Sinaiticus transcription as offline page files.
+
+The current upstream XML uses TEI page/column/line milestones (pb/cb/lb),
+not nested page/col/line elements. A legacy nested-layout reader is retained
+for older project XML. Source wording and XML identifiers are not normalized.
+"""
 import gzip
 import json
 import pathlib
@@ -16,11 +21,22 @@ SOURCE_PATH = "sinaiticus_full_v195.xml"
 SOURCE_URL = "https://raw.githubusercontent.com/itsee-birmingham/codex-sinaiticus/" + SOURCE_COMMIT + "/" + SOURCE_PATH
 ATTRIBUTION = "Codex Sinaiticus Project electronic transcription; XML maintained by ITSEE, University of Birmingham. " + SOURCE_REPO
 LICENSE = "CC BY-NC-SA 3.0 Unported"
+XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 USER_AGENT = "The-Scriptures-of-God-Archive/1.0"
 
 
 def lname(tag):
     return tag.rsplit("}", 1)[-1].lower()
+
+
+def marker_id(elem, fallback=""):
+    return elem.attrib.get(XML_ID) or elem.attrib.get("id") or elem.attrib.get("n") or elem.attrib.get("folionum") or fallback
+
+
+def safe_file(value):
+    if not value or not re.fullmatch(r"[A-Za-z0-9_.-]+", value):
+        raise ValueError("Unsafe or missing source page identifier: " + repr(value))
+    return value + ".jsonl.gz"
 
 
 def main():
@@ -36,60 +52,137 @@ def main():
                     break
                 out.write(chunk)
 
-    pages, total_lines, total_words = [], 0, 0
-    with xml_path.open("rb") as source:
-        for event, page in ET.iterparse(source, events=("end",)):
-            if lname(page.tag) != "page":
-                continue
-            page_id = page.attrib.get("id", "")
-            if not page_id or not re.fullmatch(r"[A-Za-z0-9_.-]+", page_id):
-                page.clear()
-                continue
-            page_records = []
-            columns = set()
-            for col in page.iter():
-                if lname(col.tag) != "col":
-                    continue
-                col_id = col.attrib.get("id", "")
-                for line in col:
-                    if lname(line.tag) != "line":
-                        continue
-                    line_id = line.attrib.get("id", "")
-                    words, word_ids = [], []
-                    for word in line.iter():
-                        if lname(word.tag) == "word":
-                            value = "".join(word.itertext())
-                            if value:
-                                words.append(value)
-                                word_ids.append(word.attrib.get("id", ""))
-                    if not words and not word_ids:
-                        continue
-                    page_records.append({
-                        "page_id": page_id,
-                        "column_id": col_id,
-                        "line_id": line_id,
-                        "text": "".join(words),
-                        "word_ids": word_ids
-                    })
-                    total_words += len(words)
-                    columns.add(col_id)
-            if page_records:
-                safe_name = page_id + ".jsonl.gz"
-                with gzip.open(PAGES / safe_name, "wt", encoding="utf-8", newline="\n", compresslevel=9) as out:
-                    for record in page_records:
-                        out.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
-                pages.append({
-                    "page_id": page_id,
-                    "asset_file": "sinaiticus/pages/" + safe_name,
-                    "column_ids": sorted(columns),
-                    "column_count": len(columns),
-                    "line_count": len(page_records)
-                })
-                total_lines += len(page_records)
-            page.clear()
+    pages = []
+    total_lines = 0
+    total_words = 0
+    current_page = None
+    current_column = ""
+    current_line = ""
+    page_handle = None
+    page_counts = None
+    tokens = []
+    word_ids = []
+    word_depth = 0
+    legacy_mode = False
+    root_seen = False
 
+    def finish_line():
+        nonlocal total_lines, tokens, word_ids
+        if current_page is None or not tokens:
+            tokens, word_ids = [], []
+            return
+        record = {
+            "page_id": current_page,
+            "column_id": current_column,
+            "line_id": current_line,
+            "text": " ".join(tokens),
+            "word_ids": word_ids
+        }
+        page_handle.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
+        page_counts["line_count"] += 1
+        total_lines += 1
+        tokens, word_ids = [], []
+
+    def finish_page():
+        nonlocal page_handle, page_counts
+        if page_handle is not None:
+            page_handle.close()
+            if page_counts and page_counts["line_count"] > 0:
+                pages.append(page_counts)
+            page_handle = None
+            page_counts = None
+
+    def start_page(page_id):
+        nonlocal current_page, current_column, current_line, page_handle, page_counts
+        finish_line()
+        finish_page()
+        current_page = page_id
+        current_column = ""
+        current_line = ""
+        if not current_page:
+            return
+        filename = safe_file(current_page)
+        page_handle = gzip.open(PAGES / filename, "wt", encoding="utf-8", newline="\n", compresslevel=9)
+        page_counts = {
+            "page_id": current_page,
+            "asset_file": "sinaiticus/pages/" + filename,
+            "column_ids": [],
+            "column_count": 0,
+            "line_count": 0
+        }
+
+    with xml_path.open("rb") as source:
+        for event, elem in ET.iterparse(source, events=("start", "end")):
+            tag = lname(elem.tag)
+            if event == "start" and not root_seen:
+                root_seen = True
+                legacy_mode = tag == "page"
+
+            if legacy_mode:
+                if event == "end" and tag == "page":
+                    page_id = marker_id(elem)
+                    start_page(page_id)
+                    for col in elem.iter():
+                        if lname(col.tag) != "col":
+                            continue
+                        col_id = marker_id(col)
+                        if page_counts is not None and col_id and col_id not in page_counts["column_ids"]:
+                            page_counts["column_ids"].append(col_id)
+                        current_column = col_id
+                        for line_elem in col:
+                            if lname(line_elem.tag) != "line":
+                                continue
+                            current_line = marker_id(line_elem)
+                            tokens, word_ids = [], []
+                            for word in line_elem.iter():
+                                if lname(word.tag) == "word":
+                                    value = "".join(word.itertext())
+                                    if value:
+                                        tokens.append(value)
+                                        word_ids.append(marker_id(word))
+                            finish_line()
+                    if page_counts is not None:
+                        page_counts["column_count"] = len(page_counts["column_ids"])
+                    finish_page()
+                    elem.clear()
+                continue
+
+            if event == "start":
+                if tag == "pb":
+                    start_page(marker_id(elem))
+                elif tag == "cb":
+                    finish_line()
+                    current_column = marker_id(elem)
+                    if page_counts is not None and current_column and current_column not in page_counts["column_ids"]:
+                        page_counts["column_ids"].append(current_column)
+                elif tag == "lb":
+                    finish_line()
+                    current_line = marker_id(elem)
+                elif tag == "w":
+                    word_depth += 1
+                continue
+
+            if tag == "w":
+                word_depth -= 1
+                if word_depth == 0:
+                    value = "".join(elem.itertext())
+                    if value:
+                        tokens.append(value)
+                        word_ids.append(marker_id(elem))
+                    elem.clear()
+                continue
+            if tag == "pc" and word_depth == 0:
+                value = "".join(elem.itertext())
+                if value:
+                    tokens.append(value)
+                elem.clear()
+
+    finish_line()
+    finish_page()
     if not pages or total_lines < 1000:
-        raise SystemExit("Import rejected: unexpectedly small or empty transcription.")
+        raise SystemExit("Import rejected: unexpectedly small or empty transcription; check source XML structure.")
+
+    total_words = sum(len([]) for _ in ())  # word IDs are retained per source line; no estimated word total is reported.
     index = {
         "schema_version": 1,
         "record_type": "codex_sinaiticus_page_column_line_transcription",
@@ -106,7 +199,6 @@ def main():
         "coordinate_policy": "Original page, column, line, and word identifiers are preserved. No chapter-and-verse references are invented.",
         "page_count": len(pages),
         "line_count": total_lines,
-        "word_count": total_words,
         "pages": pages
     }
     (ROOT / "sinaiticus_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
@@ -117,7 +209,7 @@ def main():
         "Original page, column, line, and word identifiers are preserved.\n",
         encoding="utf-8"
     )
-    print(f"Imported {len(pages)} pages, {total_lines} lines, {total_words} word elements.")
+    print(f"Imported {len(pages)} pages and {total_lines} manuscript lines.")
 
 
 if __name__ == "__main__":
