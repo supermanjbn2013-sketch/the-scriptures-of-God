@@ -1025,6 +1025,41 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void openThreeBaruchArchive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/3_baruch/3bar_greek_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONObject index=new org.json.JSONObject(raw.toString());org.json.JSONArray chapters=index.getJSONArray("chapters");
+            String[] nums=new String[chapters.length()];String[] labels=new String[chapters.length()];
+            for(int i=0;i<chapters.length();i++){nums[i]=chapters.getString(i);labels[i]=nums[i].equals("Prologue")?"Prologue":"Chapter "+nums[i];}
+            new android.app.AlertDialog.Builder(this).setTitle("3 Baruch · Greek critical edition").setItems(labels,(d,w)->openThreeBaruchChapter(nums[w])).setNegativeButton("Close",null).show();
+        }catch(Exception e){showInfo("3 Baruch Greek text unavailable","The offline Greek text was not generated in this build. "+e.getMessage());}
+    }
+    void openThreeBaruchChapter(String chapter){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/3_baruch/3bar_greek.jsonl"),"UTF-8"),8192);
+                    String raw;while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);if(!chapter.equals(record.optString("chapter")))continue;
+                        if(count==0)out.append("Source: J.-C. Picard, Apocalypsis Baruchi Graece (1967), as encoded in OCP TEI\n")
+                            .append("Language: Ancient Greek\nLicence: CC BY 4.0\n")
+                            .append("TEI editors: Ken M. Penner and David M. Miller\n")
+                            .append("Edition-derived Greek critical text, not a fresh diplomatic transcription. Slavonic tradition is not included.\n\n");
+                        out.append(record.optString("reference")).append("\n").append(record.optString("text")).append("\n\n");count++;
+                    }reader.close();return count==0?"No Greek text records found for this division.":count+" Greek text records\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline Greek text: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("3 Baruch · "+chapter).setView(sv)
+                    .setNegativeButton("Back to chapters",(d,w)->openThreeBaruchArchive()).setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     void openTwoBaruchArchive(){
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/2_baruch/2_baruch_index.json"),"UTF-8"));
@@ -1321,6 +1356,7 @@ public class MainActivity extends Activity {
         else if(item.equals("Testament of the Twelve Patriarchs")){category="Testamentary collection";preservation="Survives principally in Greek manuscripts, with related fragmentary Semitic-language evidence.";witnesses="Greek manuscript tradition and related fragmentary witnesses.";}
         else if(item.equals("2 Baruch")){category="Jewish apocalyptic writing";preservation="Survives principally in Syriac, with other fragmentary evidence.";witnesses="Syriac manuscript tradition and fragmentary versional evidence.";}
         else if(item.equals("3 Baruch")){category="Apocalyptic writing";preservation="Survives in Greek and Slavonic forms that differ.";witnesses="Greek and Slavonic recensions.";}
+        if(item.equals("3 Baruch"))builder.setNeutralButton("Open Greek text",(d,w)->openThreeBaruchArchive());
         else if(item.equals("Life of Adam and Eve")){category="Adam and Eve narrative cycle";preservation="Survives in several distinct language traditions and recensions; they are not one uniform text.";witnesses="Greek, Latin, Armenian, Georgian and Slavonic traditions.";}
         else if(item.equals("Apocalypse of Moses")){category="Adam and Eve narrative; Greek recension";preservation="A Greek-language form closely related to the Life of Adam and Eve tradition. It is not a separate, securely independent account from every other recension.";witnesses="Greek manuscript tradition; commonly treated as a Greek recension within the Adam and Eve literary cycle.";}
         else if(item.equals("Dormition of Mary (Transitus Mariae traditions)")){category="Mary's Dormition and departure traditions";preservation="A family of early Christian narratives about Mary's final days and departure. The texts survive in multiple language traditions and differing recensions, not as one uniform book.";witnesses="Greek, Syriac, Coptic, Latin and other versional traditions; individual recensions require separate identification.";}
