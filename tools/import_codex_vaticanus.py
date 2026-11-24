@@ -194,8 +194,6 @@ def main():
                     if record["text"]:
                         write_record(record, inherited)
                     elem.clear()
-                elif tag not in ("w", "pc", "app", "rdg", "note"):
-                    elem.clear()
     finally:
         for handle in handles.values():
             handle.close()
