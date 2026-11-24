@@ -858,9 +858,9 @@ public class MainActivity extends Activity {
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/thomas/thomas_index.json"),"UTF-8"));
             StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
             org.json.JSONObject index=new org.json.JSONObject(raw.toString());
-            int first=32,last=51;
-            String[] labels=new String[last-first+1];int[] pages=new int[labels.length];
-            for(int i=0;i<labels.length;i++){pages[i]=first+i;labels[i]="Codex page "+pages[i];}
+            org.json.JSONArray pageArray=index.getJSONArray("pages");
+            String[] labels=new String[pageArray.length()];int[] pages=new int[pageArray.length()];
+            for(int i=0;i<pageArray.length();i++){pages[i]=pageArray.getInt(i);labels[i]="Codex page "+pages[i];}
             new android.app.AlertDialog.Builder(this).setTitle("Gospel of Thomas · Coptic manuscript text")
                 .setItems(labels,(dialog,which)->openThomasPage(pages[which]))
                 .setNegativeButton("Close",null).show();
