@@ -709,9 +709,19 @@ def validate_witness_registers():
     unified_ids = [x["id"] for x in unified["records"]]
     assert len(unified_ids) == len(set(unified_ids)), "Duplicate unified writing identities"
     assert len(unified["records"]) > 27, "Unified collection must extend beyond the 27-item source dataset"
-    assert unified["records"] == sorted(unified["records"], key=lambda x: (x["composition_date_start_ce"], x["title"]))
-    assert all(x["composition_date_start_ce"] <= x["composition_date_end_ce"] for x in unified["records"])
-    assert all(x["attribution_status"] and x["textual_status"] and x["chronology_basis"] for x in unified["records"])
+    def chronology_key(record):
+        start = record.get("composition_date_start_ce")
+        return (start is None, start if start is not None else 0, record["title"].casefold())
+    assert unified["records"] == sorted(unified["records"], key=chronology_key), "Unified writings are not chronologically sorted"
+    for record in unified["records"]:
+        start = record.get("composition_date_start_ce")
+        end = record.get("composition_date_end_ce")
+        assert (start is None) == (end is None), f"Date range must have two numeric values or two nulls: {record['id']}"
+        assert start is None or (isinstance(start, int) and isinstance(end, int) and start <= end), f"Invalid composition date range: {record['id']}"
+        assert start != 9999 and end != 9999, f"Do not use numeric sentinels for undated works: {record['id']}"
+        assert record.get("attribution_status") and record.get("textual_status") and record.get("chronology_basis")
+        if record.get("research_sources") is not None:
+            assert record["research_sources"] and all(s.get("title") and s.get("url", "").startswith("https://") for s in record["research_sources"]), f"Invalid research source metadata: {record['id']}"
     print(f"Validated unified chronological writings collection: {len(unified['records'])} entries; not restricted to 27.")
 
 sections = {"witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}

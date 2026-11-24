@@ -2,11 +2,11 @@
   "schema_version": 1,
   "record_type": "unified_apostolic_and_disciple_writings_catalog",
   "title": "Apostolic and Disciple Writings — Unified Historical Collection",
-  "ordering": "Chronological by estimated composition date; overlapping ranges are not a claim of exact sequence.",
+  "ordering": "Chronological by estimated composition date; records with undetermined dates appear last. Overlapping ranges are not a claim of exact sequence.",
   "scope": "All identifiable writings connected by historical attribution, claim, tradition, subject, or early community use to apostles and disciples, including gospels, letters, testimony, acts, instruction, apocalypses, and other related writings. Inclusion is not an endorsement of authenticity, apostolic authorship, inspiration, or historical accuracy.",
   "anti_compilation_rule": "Do not use the later 27-writing compilation as the archive boundary or as the ordering template. Preserve its history as one later classification only.",
-  "date_policy": "Store composition date estimates separately from physical witness dates. Where estimates overlap or are disputed, show a date band and mark sequence as approximate.",
-  "evidence_policy": "Every entry must distinguish title tradition, actual author identification, date of composition, earliest surviving witness, manuscript text status, and historical reliability. Anonymous or pseudonymous works must not be presented as verified apostolic authorship.",
+  "date_policy": "Composition date estimates are stored separately from physical witness dates. Use null for undetermined dates; never use numeric sentinels. Where estimates overlap or are disputed, show a date band and mark sequence as approximate.",
+  "evidence_policy": "Every entry must distinguish title tradition, actual author identification, date of composition, earliest surviving witness, manuscript text status, and historical reliability. Anonymous or pseudonymous works must not be presented as verified apostolic authorship. New additions include scholarly research-source URLs. A source supports only the claims described in its entry; it does not automatically verify every textual or attribution statement.",
   "records": [
     {
       "id": "1_thessalonians",
@@ -402,6 +402,132 @@
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
     },
     {
+      "id": "ignatius_polycarp",
+      "title": "Letter of Ignatius to Polycarp",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ]
+    },
+    {
+      "id": "ignatius_ephesians",
+      "title": "Letter of Ignatius to the Ephesians",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ]
+    },
+    {
+      "id": "ignatius_magnesians",
+      "title": "Letter of Ignatius to the Magnesians",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ]
+    },
+    {
+      "id": "ignatius_philadelphians",
+      "title": "Letter of Ignatius to the Philadelphians",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ]
+    },
+    {
+      "id": "ignatius_romans",
+      "title": "Letter of Ignatius to the Romans",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ]
+    },
+    {
+      "id": "ignatius_smyrnaeans",
+      "title": "Letter of Ignatius to the Smyrnaeans",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ]
+    },
+    {
+      "id": "ignatius_trallians",
+      "title": "Letter of Ignatius to the Trallians",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ]
+    },
+    {
       "id": "clement_2",
       "title": "2 Clement",
       "composition_date_start_ce": 100,
@@ -440,6 +566,68 @@
       "existing_catalogue_id": "apocalypse_peter"
     },
     {
+      "id": "gospel_mary",
+      "title": "Gospel of Mary",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 200,
+      "date_precision": "Second-century composition is commonly proposed; exact date debated; surviving Greek and Coptic witnesses are later physical copies.",
+      "genre": "gospel or apocalypse",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Coptic and Greek witnesses are known; the two Greek fragments overlap portions also preserved in the Coptic codex. No complete Greek text survives.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Composition date is distinct from the dates of the Greek papyrus fragments and Coptic codex.",
+      "existing_catalogue_id": "gospel_mary"
+    },
+    {
+      "id": "gospel_peter",
+      "title": "Gospel of Peter",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 200,
+      "date_precision": "Second-century composition commonly proposed; exact date debated.",
+      "genre": "gospel or apocalypse",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Akhmim fragment text is known; papyrus fragments are separate, short witnesses and should not be merged into a continuous text without editorial marking.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Composition estimate is distinct from the date of the Akhmim manuscript witness.",
+      "existing_catalogue_id": "gospel_peter"
+    },
+    {
+      "id": "gospel_thomas",
+      "title": "Gospel of Thomas",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 200,
+      "date_precision": "Second-century composition commonly proposed; possible earlier sayings traditions and the date of the final collection are debated.",
+      "genre": "gospel or apocalypse",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Composition estimate is not the date of the Greek papyrus fragments or the Coptic Nag Hammadi manuscript.",
+      "existing_catalogue_id": "gospel_thomas"
+    },
+    {
+      "id": "papias_exposition",
+      "title": "Papias — Exposition of the Sayings of the Lord",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 150,
+      "date_precision": "Early to mid-second-century estimate; exact date uncertain",
+      "genre": "exposition / collected traditions",
+      "attribution_status": "Attributed to Papias of Hierapolis. The original work is lost; surviving material consists of fragments quoted by later authors.",
+      "textual_status": "No complete manuscript of the work survives. Preserve each quotation with its quoting author, source work, and exact passage; do not combine fragments into an invented continuous text.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition estimate is broad and distinct from the dates of later authors who quote Papias.",
+      "research_sources": [
+        {
+          "title": "Oxford Bibliographies — Apostolic Fathers",
+          "url": "https://academic.oup.com/reference/62341/reference-article-abstract/561741752"
+        },
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ],
+      "preservation_status": "fragmentary_quotations"
+    },
+    {
       "id": "hermas",
       "title": "Shepherd of Hermas",
       "composition_date_start_ce": 100,
@@ -451,6 +639,62 @@
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "hermas"
+    },
+    {
+      "id": "polycarp_philippians",
+      "title": "Polycarp's Letter to the Philippians",
+      "composition_date_start_ce": 110,
+      "composition_date_end_ce": 140,
+      "date_precision": "Broad scholarly range; unity and dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Polycarp of Smyrna; whether the text combines more than one letter is debated.",
+      "textual_status": "Greek text survives incompletely in the principal Greek witness; a Latin version preserves additional material. Witnesses and possible letter-division must be recorded separately.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Cambridge scholarship notes a range around 110–140 depending on the unity of the letter.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ]
+    },
+    {
+      "id": "quadratus_apology",
+      "title": "Quadratus — Apology",
+      "composition_date_start_ce": 117,
+      "composition_date_end_ce": 130,
+      "date_precision": "Early second-century estimate; exact date uncertain",
+      "genre": "apology",
+      "attribution_status": "Attributed to Quadratus; only a brief fragment is preserved through Eusebius.",
+      "textual_status": "The work is lost apart from a short quotation. The quotation must remain linked to Eusebius as its transmitting source.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate date inferred from the historical setting of Quadratus's reported address to Hadrian.",
+      "research_sources": [
+        {
+          "title": "Oxford Bibliographies — Apostolic Fathers",
+          "url": "https://academic.oup.com/reference/62341/reference-article-abstract/561741752"
+        }
+      ],
+      "preservation_status": "fragmentary_quotation"
+    },
+    {
+      "id": "aristides_apology",
+      "title": "Apology of Aristides",
+      "composition_date_start_ce": 125,
+      "composition_date_end_ce": 140,
+      "date_precision": "Approximate early to mid-second-century date",
+      "genre": "apology",
+      "attribution_status": "Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison.",
+      "textual_status": "Survives through Syriac and Armenian transmission and a Greek fragment incorporated into the later Barlaam and Josaphat tradition; do not conflate these witnesses.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date is approximate; language and date of surviving copies are separate evidence.",
+      "research_sources": [
+        {
+          "title": "Early Christian Fathers — CCEL historical introduction",
+          "url": "https://ccel.org/ccel/richardson/fathers.v.i.html"
+        }
+      ],
+      "preservation_status": "surviving_in_multiple_language_versions"
     },
     {
       "id": "third_corinthians",
@@ -467,43 +711,156 @@
       "preservation_status": "surviving_pseudepigraph"
     },
     {
-      "id": "gospel_peter",
-      "title": "Gospel of Peter",
+      "id": "acts_paul",
+      "title": "Acts of Paul",
       "composition_date_start_ce": 150,
-      "composition_date_end_ce": 250,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "gospel or apocalypse",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Akhmim fragment text is known; papyrus fragments are separate, short witnesses and should not be merged into a continuous text without editorial marking.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "gospel_peter"
+      "composition_date_end_ce": 200,
+      "date_precision": "Second-century work; broad date estimate",
+      "genre": "Episodic apocryphal acts narrative",
+      "attribution_status": "A later narrative about Paul; not authored by the apostle. The work includes the Acts of Paul and Thecla and 3 Corinthians as textual components in its transmission.",
+      "textual_status": "Second-century apocryphal work; surviving in fragmentary Greek, Coptic, and other versions. Components and recensions must be mapped separately.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Oxford Reference dates the five earliest apocryphal Acts broadly to the late second through early third centuries; individual dating and textual histories remain distinct.",
+      "research_sources": [
+        {
+          "title": "NASSCAL e-Clavis — Acts of Paul",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-paul/"
+        },
+        {
+          "title": "NASSCAL e-Clavis: Christian Apocrypha catalogue",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/"
+        }
+      ],
+      "preservation_status": "surviving_in_fragmentary_or_versional_transmission"
     },
     {
-      "id": "gospel_mary",
-      "title": "Gospel of Mary",
-      "composition_date_start_ce": 200,
-      "composition_date_end_ce": 299,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "gospel or apocalypse",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Coptic and Greek witnesses are known; the two Greek fragments overlap portions also preserved in the Coptic codex. No complete Greek text survives.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "gospel_mary"
+      "id": "diognetus",
+      "title": "Epistle to Diognetus",
+      "composition_date_start_ce": 150,
+      "composition_date_end_ce": 200,
+      "date_precision": "Most scholarship favors a later second-century date; exact date and authorship unknown",
+      "genre": "apology / treatise",
+      "attribution_status": "Anonymous. The claim that the author was a disciple of apostles is textually present but does not securely identify the author or prove direct apostolic association.",
+      "textual_status": "Greek text survives in a single medieval manuscript that was later lost; modern editions depend on earlier copies/transcriptions. The physical witness date must not be mistaken for composition date.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Cambridge overview notes that most scholars favor a late-second-century date.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ],
+      "preservation_status": "surviving_text_from_lost_medieval_codex"
     },
     {
-      "id": "gospel_thomas",
-      "title": "Gospel of Thomas",
-      "composition_date_start_ce": 200,
-      "composition_date_end_ce": 299,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "gospel or apocalypse",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "gospel_thomas"
+      "id": "martyrdom_polycarp",
+      "title": "Martyrdom of Polycarp",
+      "composition_date_start_ce": 150,
+      "composition_date_end_ce": 180,
+      "date_precision": "Second-century composition; exact date debated",
+      "genre": "martyrdom account",
+      "attribution_status": "An early account concerning Polycarp; its narrative and transmission must be evaluated as a historical source rather than treated as a verbatim eyewitness transcript.",
+      "textual_status": "Survives in Greek manuscript transmission and later versions; manuscript witnesses are distinct from the date of composition.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Placed broadly in the second half of the second century; narrower dating remains disputed.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ]
+    },
+    {
+      "id": "acts_andrew",
+      "title": "Acts of Andrew",
+      "composition_date_start_ce": 180,
+      "composition_date_end_ce": 225,
+      "date_precision": "Late second to early third century; broad scholarly range",
+      "genre": "Apocryphal acts narrative",
+      "attribution_status": "A later narrative about Andrew; not authenticated as a work written by the apostle.",
+      "textual_status": "The original work is not fully extant; substantial portions are known through later summaries and versions. Do not present a later summary as the original manuscript text.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Oxford Reference dates the five earliest apocryphal Acts broadly to the late second through early third centuries; individual dating and textual histories remain distinct.",
+      "research_sources": [
+        {
+          "title": "NASSCAL e-Clavis — Acts of Andrew",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-andrew/"
+        },
+        {
+          "title": "Oxford Reference — Apocryphal Acts",
+          "url": "https://academic.oup.com/reference/62341/reference-article/554093678"
+        }
+      ],
+      "preservation_status": "surviving_in_fragmentary_or_versional_transmission"
+    },
+    {
+      "id": "acts_john",
+      "title": "Acts of John",
+      "composition_date_start_ce": 180,
+      "composition_date_end_ce": 225,
+      "date_precision": "Late second to early third century; broad scholarly range",
+      "genre": "Apocryphal acts narrative",
+      "attribution_status": "A later narrative about John; not authenticated as a work written by the apostle.",
+      "textual_status": "Beginning is missing; surviving material is reconstructed from multiple manuscript and quotation sources. Fragmentary transmission must be shown explicitly.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Oxford Reference dates the five earliest apocryphal Acts broadly to the late second through early third centuries; individual dating and textual histories remain distinct.",
+      "research_sources": [
+        {
+          "title": "NASSCAL e-Clavis — Acts of John",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "title": "Oxford Reference — Apocryphal Acts",
+          "url": "https://academic.oup.com/reference/62341/reference-article/554093678"
+        }
+      ],
+      "preservation_status": "surviving_in_fragmentary_or_versional_transmission"
+    },
+    {
+      "id": "acts_peter",
+      "title": "Acts of Peter",
+      "composition_date_start_ce": 180,
+      "composition_date_end_ce": 225,
+      "date_precision": "Late second to early third century; broad scholarly range",
+      "genre": "Apocryphal acts narrative",
+      "attribution_status": "A later narrative attributed to Peter by its subject and tradition; not an authenticated composition by the apostle.",
+      "textual_status": "The main narrative is preserved in Latin (Vercelli Acts); Greek witnesses preserve martyrdom material. Do not assume the surviving forms represent one complete identical text.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Oxford Reference dates the five earliest apocryphal Acts broadly to the late second through early third centuries; individual dating and textual histories remain distinct.",
+      "research_sources": [
+        {
+          "title": "NASSCAL e-Clavis — Acts of Peter",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "title": "Oxford Reference — Apocryphal Acts",
+          "url": "https://academic.oup.com/reference/62341/reference-article/554093678"
+        }
+      ],
+      "preservation_status": "surviving_in_fragmentary_or_versional_transmission"
+    },
+    {
+      "id": "acts_thomas",
+      "title": "Acts of Thomas",
+      "composition_date_start_ce": 180,
+      "composition_date_end_ce": 225,
+      "date_precision": "Late second to early third century; broad scholarly range",
+      "genre": "Apocryphal acts narrative",
+      "attribution_status": "A later narrative about Thomas; not authenticated as a work written by the apostle.",
+      "textual_status": "Survives in Syriac and Greek textual traditions; these must be treated as related but distinct witnesses and versions.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Oxford Reference dates the five earliest apocryphal Acts broadly to the late second through early third centuries; individual dating and textual histories remain distinct.",
+      "research_sources": [
+        {
+          "title": "NASSCAL e-Clavis: Christian Apocrypha catalogue",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/"
+        },
+        {
+          "title": "Oxford Reference — Apocryphal Acts",
+          "url": "https://academic.oup.com/reference/62341/reference-article/554093678"
+        }
+      ],
+      "preservation_status": "surviving_in_fragmentary_or_versional_transmission"
     },
     {
       "id": "paul_seneca_correspondence",
@@ -536,14 +893,14 @@
     {
       "id": "paul_letter_to_alexandrians_reported",
       "title": "Letter to the Alexandrians (reported as a Pauline writing)",
-      "composition_date_start_ce": 9999,
-      "composition_date_end_ce": 9999,
-      "date_precision": "undated; 9999 is a sorting placeholder, not a proposed composition date",
+      "composition_date_start_ce": null,
+      "composition_date_end_ce": null,
+      "date_precision": "Undated; no reliable composition date is established.",
       "genre": "letter",
       "attribution_status": "The Muratorian Fragment mentions a letter to the Alexandrians as forged in Paul's name; no authentic Pauline authorship is established.",
       "textual_status": "No securely identified complete text or manuscript witness; retained as an ancient report of an attributed/forged writing, not as a recovered Pauline letter.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Composition date unknown. Placed at the end of the chronological display until a non-numeric undated category is implemented.",
+      "chronology_basis": "The Muratorian Fragment reports a forged letter under Paul's name but does not provide a secure composition date. Unknown dates are sorted after dated records.",
       "related_scriptural_reference": "Muratorian Fragment",
       "preservation_status": "reported_lost_or_unidentified"
     }

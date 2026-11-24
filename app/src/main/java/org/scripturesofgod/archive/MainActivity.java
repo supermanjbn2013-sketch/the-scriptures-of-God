@@ -134,9 +134,8 @@ public class MainActivity extends Activity {
                 String title=record.optString("title","Untitled record");
                 String genre=record.optString("genre","writing");
                 String attribution=record.optString("attribution_status","");
-                String dateStart=record.optString("composition_date_start_ce","");
-                String dateEnd=record.optString("composition_date_end_ce","");
-                String date=(dateStart.equals("9999")||dateStart.isEmpty())?"Date undetermined":(dateStart.equals(dateEnd)?dateStart+" CE":dateStart+"–"+dateEnd+" CE");
+                boolean hasDate=!record.isNull("composition_date_start_ce")&&!record.isNull("composition_date_end_ce");
+                String date=hasDate?(record.optInt("composition_date_start_ce")==record.optInt("composition_date_end_ce")?record.optInt("composition_date_start_ce")+" CE":record.optInt("composition_date_start_ce")+"–"+record.optInt("composition_date_end_ce")+" CE"):"Date undetermined";
                 String hay=(title+" "+genre+" "+attribution+" "+record.optString("textual_status","")).toLowerCase(java.util.Locale.ROOT);
                 if(!query.isEmpty()&&!hay.contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
                 LinearLayout row=new LinearLayout(this);row.setOrientation(1);row.setPadding(12,7,12,7);row.setBackground(shape(panel));
@@ -156,9 +155,8 @@ public class MainActivity extends Activity {
 
     void showUnifiedWritingDetail(org.json.JSONObject record){
         StringBuilder detail=new StringBuilder();
-        String start=record.optString("composition_date_start_ce","");
-        String end=record.optString("composition_date_end_ce","");
-        String date=(start.equals("9999")||start.isEmpty())?"Undetermined":(start.equals(end)?start+" CE":start+"–"+end+" CE");
+        boolean hasDate=!record.isNull("composition_date_start_ce")&&!record.isNull("composition_date_end_ce");
+        String date=hasDate?(record.optInt("composition_date_start_ce")==record.optInt("composition_date_end_ce")?record.optInt("composition_date_start_ce")+" CE":record.optInt("composition_date_start_ce")+"–"+record.optInt("composition_date_end_ce")+" CE"):"Undetermined";
         detail.append("Estimated composition: ").append(date).append("\\n");
         detail.append("Date note: ").append(record.optString("date_precision")).append("\\n\\n");
         detail.append("Genre: ").append(record.optString("genre")).append("\\n\\n");
@@ -168,7 +166,17 @@ public class MainActivity extends Activity {
         detail.append("Chronology basis: ").append(record.optString("chronology_basis")).append("\\n\\n");
         detail.append("Later compilation classification: ").append(record.optString("later_canonical_compilation_status")).append("\\n\\n");
         detail.append("Preservation category: ").append(record.optString("preservation_status","Not yet classified"));
+        org.json.JSONArray sources=record.optJSONArray("research_sources");
+        if(sources!=null&&sources.length()>0){
+            detail.append("\\n\\nResearch references:");
+            for(int i=0;i<sources.length();i++){
+                org.json.JSONObject source=sources.optJSONObject(i);
+                if(source!=null)detail.append("\\n").append(source.optString("title","Source")).append("\\n").append(source.optString("url",""));
+            }
+        }
         TextView view=text(detail.toString(),14,ink,false);view.setTextIsSelectable(true);
+        android.text.util.Linkify.addLinks(view,android.text.util.Linkify.WEB_URLS);
+        view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
         ScrollView scroll=new ScrollView(this);scroll.setPadding(12,8,12,8);scroll.addView(view);
         new android.app.AlertDialog.Builder(this).setTitle(record.optString("title","Writing record")).setView(scroll).setPositiveButton("Close",null).show();
     }
