@@ -87,7 +87,8 @@ public class MainActivity extends Activity {
             addHomeTile("Apostolic Writings","27 writings",() -> navigateTo("Apostolic Writings"));
             addHomeTile("Apocrypha and Deuterocanonical Writings","Greek and Latin textual forms",() -> navigateTo("Apocrypha and Deuterocanonical Writings"));
             content.addView(text("MANUSCRIPT RESEARCH",12,gold,true));
-            addHomeTile("Dead Sea Scrolls Archive","Manuscript catalogue and passage concordance",() -> navigateTo("Manuscript Archive"));\n            addHomeTile("DSS Transcription Archive","Offline line-level readings from the ETCBC / Abegg corpus",() -> navigateTo("DSS Transcription Archive"));
+            addHomeTile("Dead Sea Scrolls Archive","Manuscript catalogue and passage concordance",() -> navigateTo("Manuscript Archive"));
+            addHomeTile("DSS Transcription Archive","Offline line-level readings from the ETCBC / Abegg corpus",() -> navigateTo("DSS Transcription Archive"));
             addHomeTile("Greek Manuscripts","Papyrus and codex registers",()->{section="Manuscript Archive";show();});
             addHomeTile("Latin Manuscripts","Latin transmission records",()->{section="Manuscript Archive";show();});
             addHomeTile("Manuscript Research Library","Sources, provenance and textual forms",() -> navigateTo("Research Archive"));
@@ -98,7 +99,8 @@ public class MainActivity extends Activity {
         if(section.equals("Settings")){content.addView(text("Appearance, reading and privacy",14,muted,false));addHomeTile("Appearance and reading settings","Theme, font size and language",()->openSettings());return;}
         if(section.equals("Personal Library")||section.equals("Favorites")||section.equals("Reading History")){renderLibrary();return;}
         if(section.equals("Search")){EditText query=new EditText(this);query.setSingleLine(true);query.setHint("Exact word or phrase");content.addView(query);Button go=new Button(this);go.setText("Search offline corpus");content.addView(go);go.setOnClickListener(v->{String searchTerm=query.getText().toString().trim();if(!searchTerm.isEmpty())searchCorpus(searchTerm);});return;}
-        if(section.equals("DSS Transcription Archive")){renderEtcbcDssIndex(q);return;}\n        ArrayList<String> data=entries.get(section); if(data==null)data=new ArrayList<>();
+        if(section.equals("DSS Transcription Archive")){renderEtcbcDssIndex(q);return;}
+        ArrayList<String> data=entries.get(section); if(data==null)data=new ArrayList<>();
         int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {returnSection=section;if(section.equals("Translation Center")){if(item.equals("Preferred translation language"))chooseTranslationLanguage();else showAiConnectionSettings();}else if(section.equals("DSS Passage Concordance"))openDssConcordanceEntry(item);else if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
         if(count==0)content.addView(text("No matching entries. This archive does not fabricate missing manuscript contents or readings.",14,muted,false));
         if(section.equals("Manuscript Archive")||section.equals("Research Archive")||section.equals("Manuscript Comparison"))content.addView(text("Records are catalog placeholders until a source, transcription, date and provenance are verified and attached.",12,gold,false));
@@ -243,7 +245,23 @@ public class MainActivity extends Activity {
                         }
                     }
                 }catch(Exception e){hits.add("Search data unavailable: "+e.getMessage());}
-                if(hits.size()<100){\n                    try{\n                        java.io.BufferedReader dssReader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/etcbc_transcriptions.jsonl"),"UTF-8"),65536);\n                        String dssLine;\n                        while((dssLine=dssReader.readLine())!=null&&hits.size()<100){\n                            org.json.JSONObject record=new org.json.JSONObject(dssLine);\n                            String body=record.optString("transcription_text");\n                            String normalized=record.optString("normalized_text");\n                            String coordinate=record.optString("scroll")+" "+record.optString("fragment")+" line "+record.optString("line");\n                            String parallels=record.optJSONArray("parallel_references")==null?"":record.optJSONArray("parallel_references").toString();\n                            if(matchesExact(body,needle)||matchesExact(normalized,needle)||matchesExact(coordinate,needle)||matchesExact(parallels,needle))\n                                hits.add("[ETCBC / Abegg DSS] "+coordinate+"  "+body);\n                        }\n                        dssReader.close();\n                    }catch(Exception dssError){hits.add("ETCBC DSS search unavailable: "+dssError.getMessage());}\n                }\n                return hits;
+                if(hits.size()<100){
+                    try{
+                        java.io.BufferedReader dssReader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/etcbc_transcriptions.jsonl"),"UTF-8"),65536);
+                        String dssLine;
+                        while((dssLine=dssReader.readLine())!=null&&hits.size()<100){
+                            org.json.JSONObject record=new org.json.JSONObject(dssLine);
+                            String body=record.optString("transcription_text");
+                            String normalized=record.optString("normalized_text");
+                            String coordinate=record.optString("scroll")+" "+record.optString("fragment")+" line "+record.optString("line");
+                            String parallels=record.optJSONArray("parallel_references")==null?"":record.optJSONArray("parallel_references").toString();
+                            if(matchesExact(body,needle)||matchesExact(normalized,needle)||matchesExact(coordinate,needle)||matchesExact(parallels,needle))
+                                hits.add("[ETCBC / Abegg DSS] "+coordinate+"  "+body);
+                        }
+                        dssReader.close();
+                    }catch(Exception dssError){hits.add("ETCBC DSS search unavailable: "+dssError.getMessage());}
+                }
+                return hits;
             }
             protected void onPostExecute(ArrayList<String> hits){
                 if(hits.isEmpty()){
