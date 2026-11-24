@@ -268,31 +268,61 @@ public class MainActivity extends Activity {
                     String detail=result.optString("error","No matching records. Scanned "+result.optInt("scanned")+" bundled lines. Book code: "+code);
                     new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — no verses loaded").setMessage(detail).setPositiveButton("Close",null).show();return;
                 }
-                LinearLayout list=new LinearLayout(MainActivity.this);list.setOrientation(1);list.setPadding(12,8,12,8);
-                list.addView(text(count+" verses loaded from the offline corpus",13,gold,true));
+                android.content.SharedPreferences readingPrefs=getSharedPreferences("archive_library",MODE_PRIVATE);
+                java.util.LinkedHashSet<String> chapterSet=new java.util.LinkedHashSet<>();
+                for(int i=0;i<count;i++){org.json.JSONObject verse=verses.optJSONObject(i);if(verse==null)continue;String ref=verse.optString("reference");String chapter=ref.contains(":")?ref.substring(0,ref.indexOf(':')):"1";chapterSet.add(chapter);}
+                ArrayList<String> chapters=new ArrayList<>(chapterSet);
+                if(chapters.isEmpty())chapters.add("1");
+                String savedChapter=readingPrefs.getString("last_chapter:"+bookName,chapters.get(0));
+                int initialChapter=Math.max(0,chapters.indexOf(savedChapter));
+                LinearLayout reader=new LinearLayout(MainActivity.this);reader.setOrientation(1);reader.setPadding(12,8,12,8);
+                reader.addView(text(count+" verses loaded from the offline corpus",13,gold,true));
                 TextView meta=text(result.optString("metadata"),12,muted,false);
                 meta.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);
                 meta.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
-                list.addView(meta);
-                String currentChapter="";
-                for(int i=0;i<count;i++){
-                    org.json.JSONObject verse=verses.optJSONObject(i);if(verse==null)continue;
-                    String reference=verse.optString("reference"),body=verse.optString("text"),language=verse.optString("language");
-                    String chapter=reference.contains(":")?reference.substring(0,reference.indexOf(':')):"";
-                    if(!chapter.equals(currentChapter)&&chapter.length()>0){
-                        currentChapter=chapter;
-                        list.addView(text("Chapter "+chapter,18,gold,true));
-                    }
+                reader.addView(meta);
+                LinearLayout chapterBar=new LinearLayout(MainActivity.this);chapterBar.setGravity(Gravity.CENTER_VERTICAL);
+                Button previous=new Button(MainActivity.this);previous.setText("‹ Previous");
+                Spinner chapterPicker=new Spinner(MainActivity.this);
+                ArrayAdapter<String> chapterAdapter=new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_spinner_item,chapters);
+                chapterAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);chapterPicker.setAdapter(chapterAdapter);
+                Button next=new Button(MainActivity.this);next.setText("Next ›");
+                chapterBar.addView(previous,new LinearLayout.LayoutParams(0,-2,1));
+                chapterBar.addView(chapterPicker,new LinearLayout.LayoutParams(0,-2,1));
+                chapterBar.addView(next,new LinearLayout.LayoutParams(0,-2,1));
+                reader.addView(chapterBar);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setFillViewport(true);sv.setPadding(8,8,8,8);
+                LinearLayout chapterContent=new LinearLayout(MainActivity.this);chapterContent.setOrientation(1);sv.addView(chapterContent);
+                reader.addView(sv,new LinearLayout.LayoutParams(-1,0,1));
+                final boolean[] pickerReady={false};
+                Runnable renderChapter=()->{
+                    int selected=Math.max(0,chapterPicker.getSelectedItemPosition());
+                    String selectedChapter=chapters.get(selected);
+                    readingPrefs.edit().putString("last_book",bookName).putString("last_chapter:"+bookName,selectedChapter).apply();
+                    chapterContent.removeAllViews();
+                    chapterContent.addView(text(bookName+" — Chapter "+selectedChapter,19,gold,true));
                     int readingSize=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",16);
-                    TextView row=text(reference+"\n"+body+"\n\nTap to translate  ·  Long press for passage tools",readingSize,ink,false);
-                    row.setBackground(shape(panel));
-                    LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);
-                    p.setMargins(0,4,0,4);list.addView(row,p);
-                    row.setOnClickListener(v->translateVerse(reference,body,language));
-                    row.setOnLongClickListener(v->{showPassageActions(reference,body);return true;});
-                }
-                ScrollView sv=new ScrollView(MainActivity.this);sv.setFillViewport(true);sv.setPadding(8,8,8,8);sv.addView(list);
-                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — "+count+" verses").setView(sv).setNegativeButton("Back to "+returnSection,(d,w)->{}).setNeutralButton("Home",(d,w)->{section="Home";show();}).setPositiveButton("Close",null).show();
+                    for(int i=0;i<count;i++){
+                        org.json.JSONObject verse=verses.optJSONObject(i);if(verse==null)continue;
+                        String reference=verse.optString("reference"),body=verse.optString("text"),language=verse.optString("language");
+                        String verseChapter=reference.contains(":")?reference.substring(0,reference.indexOf(':')):"1";
+                        if(!selectedChapter.equals(verseChapter))continue;
+                        TextView row=text(reference+"\n"+body+"\n\nTap to translate  ·  Long press for passage tools",readingSize,ink,false);
+                        row.setBackground(shape(panel));
+                        LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);chapterContent.addView(row,p);
+                        row.setOnClickListener(v->translateVerse(reference,body,language));
+                        row.setOnLongClickListener(v->{showPassageActions(reference,body);return true;});
+                    }
+                    previous.setEnabled(selected>0);next.setEnabled(selected<chapters.size()-1);
+                };
+                chapterPicker.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener(){
+                    public void onItemSelected(android.widget.AdapterView<?> parent,View view,int position,long id){if(pickerReady[0])renderChapter.run();}
+                    public void onNothingSelected(android.widget.AdapterView<?> parent){}
+                });
+                previous.setOnClickListener(v->{int p=chapterPicker.getSelectedItemPosition();if(p>0)chapterPicker.setSelection(p-1);});
+                next.setOnClickListener(v->{int p=chapterPicker.getSelectedItemPosition();if(p<chapters.size()-1)chapterPicker.setSelection(p+1);});
+                chapterPicker.setSelection(initialChapter);pickerReady[0]=true;renderChapter.run();
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — "+count+" verses").setView(reader).setNegativeButton("Back to "+returnSection,(d,w)->{navigateTo(returnSection);}).setNeutralButton("Home",(d,w)->{previousSection="Home";section="Home";show();}).setPositiveButton("Close",null).show();
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
