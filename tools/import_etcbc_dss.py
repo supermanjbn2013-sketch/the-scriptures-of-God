@@ -91,7 +91,7 @@ for scroll_id, details in index.items():
 aliases = {
     "1QIsa-a": ("1qisaa", "1qisa"),
     "1QpHab": ("1qphab",),
-    "1QapGen": ("1qapgen",),
+    "1QapGen": ("1q20", "1qapgen"),
     "1QS": ("1qs",),
     "11Q19": ("11q19",),
     "1QM": ("1qm",),
