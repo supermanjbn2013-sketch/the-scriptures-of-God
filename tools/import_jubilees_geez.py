@@ -44,11 +44,13 @@ def main():
             subtype = part.attrib.get("subtype", "")
             if subtype not in ("chapter", "incipit"): continue
             chapter_raw = part.attrib.get("n", "")
+            xml_id = part.attrib.get("{http://www.w3.org/XML/1998/namespace}id", "")
             label_node = next((x for x in list(part) if local(x.tag) == "label"), None)
             label = flatten(label_node) if label_node is not None else ""
             if subtype == "chapter":
-                try: chapter = int(chapter_raw)
-                except ValueError: continue
+                match = re.search(r"(\\d+)$", chapter_raw or xml_id or label)
+                if not match: continue
+                chapter = int(match.group(1))
                 chapters.add(chapter)
             else: chapter = 0
             for ab in list(part):
