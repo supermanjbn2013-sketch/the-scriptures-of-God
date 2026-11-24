@@ -155,6 +155,7 @@ def main():
             "title": title,
             "edition": spec["edition"],
             "chapter_count": len(records),
+            "chapters": [r["chapter"] for r in records],
             "asset_file": f"other_reference/testament_abraham/recension_{name}_greek.jsonl",
             "source_url": source_url
         })
