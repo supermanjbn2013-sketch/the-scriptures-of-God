@@ -29,3 +29,10 @@ RESEARCH DATA POLICY
     The 16-chapter 2 Esdras text is composite: 5 Ezra (chapters 1–2), 4 Ezra proper (chapters 3–14), and 6 Ezra (chapters 15–16). Keep these literary divisions visible in research notes.
     The Latin text is a transmitted version, not the lost Greek original or a direct manuscript transcription. Preserve source wording and numbering, and compare against critical editions and manuscript witnesses before making textual claims.
     The Prayer of Manasseh is represented in both the Greek form separately indexed from Odes 8 and a Latin transmitted form. Keep these as distinct textual forms; do not assume either is the original language or conflate them.
+
+13. DEAD SEA SCROLLS DIPLOMATIC TRANSCRIPTIONS
+    The offline archive imports 52,769 line-level records across 997 scroll identifiers from the ETCBC/CACCHT Dead Sea Scrolls corpus, using the Qumran Digital Reader structured export at a pinned upstream revision. The transcriptions are based on data provided by Martin G. Abegg Jr.
+    Attribution: Martin G. Abegg Jr.; ETCBC/CACCHT Dead Sea Scrolls corpus; Qumran Digital Reader structured export. Source repositories: https://github.com/ETCBC/dss and https://github.com/evenderekh/QDR.
+    The underlying data is licensed CC BY-NC 4.0. It may not be used for commercial purposes or commercially redistributed without separate permission from the rights holder. The app's use of this data must remain non-commercial.
+    Preserve the diplomatic display form, normalized token stream, scroll identifier, fragment identifier, source line label, and textual-parallel references as separate fields. Do not merge parallels into the manuscript's own text or imply that digital line labels are physical manuscript column/line coordinates.
+    The source is Abegg-derived; do not present it as independent new readings made by this app from manuscript photographs. It is a digital transcription corpus, not a photographic facsimile.
