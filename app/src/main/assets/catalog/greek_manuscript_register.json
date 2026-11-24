@@ -198,7 +198,7 @@
         "https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml",
         "http://www.iohannes.com/XML/transcriptions/greek/04_P76.xml"
       ],
-      "status": "Online searchable IGNTP TEI transcription linked from the app; not imported offline because the individual file licence and TEI structure remain unverified",
+      "status": "Offline personal-study catalogue record bundled; transcription text is not embedded because redistribution permission has not been verified.",
       "caution": "Only a small fragment of John survives. Do not infer or reconstruct surrounding verses.",
       "digital_transcription_source": {
         "title": "International Greek New Testament Project (IGNTP), A transcription of P76",
@@ -206,8 +206,11 @@
         "format": "TEI XML, downloadable file 04_P76.xml (6 kB)",
         "source_url": "https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml",
         "online_edition_url": "http://www.iohannes.com/XML/transcriptions/greek/04_P76.xml",
-        "status": "Online source link available in the app; open the XML in a browser and use Find in page. The repository states that reuse terms are specified in the transcription header; offline import remains pending verification.",
-        "caution": "Do not describe the transcription as unavailable. Do not import until the header's exact license and encoding are verified. Distinguish the transcription from the manuscript images and preserve only source-attested readings."
+        "status": "Source details and restriction notice are bundled offline. The original XML remains available for direct download; its text is not included in the app.",
+        "caution": "Do not describe the transcription as unavailable. Do not import until the header's exact license and encoding are verified. Distinguish the transcription from the manuscript images and preserve only source-attested readings.",
+        "license": "Not verified for redistribution; no licence is asserted by this archive.",
+        "use_restriction": "PERSONAL STUDY ONLY. Do not redistribute, republish, sublicense, or include the transcription in another product unless the rights holder grants permission. Downloading a copy does not grant redistribution rights. This notice is a precaution, not a claim that the rights holder has imposed these exact terms.",
+        "bundle_status": "Offline metadata and restriction notice only; transcription text not bundled."
       }
     },
     {
