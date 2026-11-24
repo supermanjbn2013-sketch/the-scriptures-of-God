@@ -31,6 +31,8 @@ public class AiTranslatorActivity extends Activity {
     private Spinner mode, language, target;
     private Button translate;
     private static final String MODEL="gemini-3.1-flash-lite";
+    private final String[] targetNames={"Afrikaans","Arabic","Belarusian","Bulgarian","Bengali","Catalan","Czech","Welsh","Danish","German","Greek","English","Esperanto","Spanish","Estonian","Persian","Finnish","French","Irish","Galician","Gujarati","Hebrew","Hindi","Croatian","Haitian Creole","Hungarian","Indonesian","Icelandic","Italian","Japanese","Georgian","Kannada","Korean","Lithuanian","Latvian","Macedonian","Marathi","Malay","Maltese","Dutch","Norwegian","Polish","Portuguese","Romanian","Russian","Slovak","Slovenian","Albanian","Swedish","Swahili","Tamil","Telugu","Thai","Filipino / Tagalog","Turkish","Ukrainian","Urdu","Vietnamese","Chinese"};
+    private final String[] targetCodes={"af","ar","be","bg","bn","ca","cs","cy","da","de","el","en","eo","es","et","fa","fi","fr","ga","gl","gu","he","hi","hr","ht","hu","id","is","it","ja","ka","kn","ko","lt","lv","mk","mr","ms","mt","nl","no","pl","pt","ro","ru","sk","sl","sq","sv","sw","ta","te","th","tl","tr","uk","ur","vi","zh"};
 
     @Override public void onCreate(Bundle state){
         super.onCreate(state);
@@ -64,12 +66,13 @@ public class AiTranslatorActivity extends Activity {
         body.addView(label("Input language",14,ink,true));
         language=spinner(new String[]{"Detect automatically","Ancient Hebrew","Koine Greek","Aramaic","Latin","Modern English"});body.addView(language);
         body.addView(label("Output language",14,ink,true));
-        target=spinner(new String[]{"English","Filipino / Tagalog","Spanish","French","German","Portuguese","Arabic"});body.addView(target);
-        String savedTarget=getSharedPreferences("ai_connection",MODE_PRIVATE).getString("target_language","English");
-        String[] targetNames={"English","Filipino / Tagalog","Spanish","French","German","Portuguese","Arabic"};
-        for(int i=0;i<targetNames.length;i++)if(targetNames[i].equals(savedTarget))target.setSelection(i);
+        target=spinner(targetNames);body.addView(target);
+        String savedCode=getSharedPreferences("archive_settings",MODE_PRIVATE).getString("target_language","en");
+        String preferredName=getIntent()==null?null:getIntent().getStringExtra("preferred_target_language");
+        int selectedTarget=11;for(int i=0;i<targetNames.length;i++)if((preferredName!=null&&preferredName.equals(targetNames[i]))||((preferredName==null||preferredName.isEmpty())&&targetCodes[i].equals(savedCode)))selectedTarget=i;
+        target.setSelection(selectedTarget);
         target.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener(){
-            public void onItemSelected(android.widget.AdapterView<?> p,View v,int position,long id){getSharedPreferences("ai_connection",MODE_PRIVATE).edit().putString("target_language",targetNames[position]).apply();}
+            public void onItemSelected(android.widget.AdapterView<?> p,View v,int position,long id){getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("target_language",targetCodes[position]).apply();getSharedPreferences("ai_connection",MODE_PRIVATE).edit().putString("target_language",targetNames[position]).apply();}
             public void onNothingSelected(android.widget.AdapterView<?> p){}
         });
         body.addView(label("Original text or English passage",14,ink,true));
