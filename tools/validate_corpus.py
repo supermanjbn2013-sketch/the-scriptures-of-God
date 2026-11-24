@@ -190,6 +190,7 @@ def validate_android():
         "void openQumranReferenceFragments(String title,String[] requestedIds)", "4Q201", "4Q216", "4Q223_224", "Open Aramaic fragments", "Open Hebrew fragments",
         "void openHermasArchive()", "void openHermasBook(int book)", "other_reference/hermas/hermas_index.json", "other_reference/hermas/hermas_greek.jsonl",
         "void openThomasArchive()", "void openThomasPage(int page)", "other_reference/thomas/thomas_index.json", "other_reference/thomas/thomas_coptic.jsonl", "Open Coptic text",
+        "void openGreekEnochArchive()", "void openGreekEnochPage(int page)", "other_reference/enoch_greek/enoch_greek_index.json", "other_reference/enoch_greek/enoch_greek.jsonl", "Open Greek fragments",
         "void openTestamentAbrahamArchive()", "void openTestamentAbrahamRecension(String recension)", "void openTestamentAbrahamChapter(String recension,int chapter,String assetFile)", "other_reference/testament_abraham/testament_abraham_index.json", "Open Greek recensions",
         "594 line records across these nine Qumran witness identifiers", "not a continuous reconstructed text or an English translation", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate  ·  Long press for passage tools", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "void translateOnDevice(", "com.google.mlkit.nl.translate.TranslatorOptions", "targetLanguage()"
     ):
@@ -221,7 +222,7 @@ def validate_android():
     assert "11Q19" in ids and "1QM" in ids
     catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
     datasets = {item["id"]: item for item in catalog["datasets"]}
-    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "papyrus-46-ntvmr", "papyrus-52-ntvmr", "papyrus-66-ntvmr", "papyrus-75-ntvmr", "didache-first1k-greek", "shepherd-of-hermas-first1k-greek", "testament-abraham-first1k-greek", "gospel-thomas-coptic-scriptorium", "1-enoch-qumran-aramaic-fragments", "jubilees-qumran-hebrew-fragments", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
+    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "papyrus-46-ntvmr", "papyrus-52-ntvmr", "papyrus-66-ntvmr", "papyrus-75-ntvmr", "didache-first1k-greek", "shepherd-of-hermas-first1k-greek", "testament-abraham-first1k-greek", "gospel-thomas-coptic-scriptorium", "1-enoch-flemming-greek-fragments", "1-enoch-qumran-aramaic-fragments", "jubilees-qumran-hebrew-fragments", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
     assert "current complete 16-chapter import is a Latin transmission text" in " ".join(datasets["swete-lxx-apocrypha"]["limitations"])
     assert datasets["4q47-joshua-direct-transcription"]["license"] == "CC BY-SA 4.0"
     assert datasets["4q47-joshua-direct-transcription"]["source_url"]
@@ -388,7 +389,20 @@ def validate_android():
     assert len({r["saying"] for r in thomas_records}) >= 110
     assert all(r["language"] == "cop" and r["text"].strip() and r["line"] and r["license"] == "CC BY 4.0" for r in thomas_records)
     assert all("facsimile" in r["textual_basis"].lower() for r in thomas_records)
-    print("Validated Android navigation, manuscript transcriptions, Didache, Shepherd of Hermas both Testament of Abraham recensions and the Coptic Gospel of Thomas")
+    enoch_greek_path = ROOT / "other_reference/enoch_greek/enoch_greek_index.json"
+    assert enoch_greek_path.exists(), "Offline Greek 1 Enoch index was not generated"
+    enoch_greek_index = json.loads(enoch_greek_path.read_text(encoding="utf-8"))
+    assert enoch_greek_index["license"] == "CC BY-SA 4.0"
+    assert enoch_greek_index["source_revision"] == "a1e7714108a71af5124e934038d06ba30003dc0c"
+    assert enoch_greek_index["record_count"] >= 15 and enoch_greek_index["printed_pages"]
+    assert enoch_greek_index["section_count"] > 0
+    assert datasets["1-enoch-flemming-greek-fragments"]["license"] == "CC BY-SA 4.0"
+    enoch_greek_records = [json.loads(line) for line in (ROOT / "other_reference/enoch_greek/enoch_greek.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(enoch_greek_records) == enoch_greek_index["record_count"]
+    assert all(r["language"] == "grc" and r["text"].strip() and r["printed_page"] and r["chapter"] and r["section"] for r in enoch_greek_records)
+    assert all(r["license"] == "CC BY-SA 4.0" and r["source_revision"] == enoch_greek_index["source_revision"] for r in enoch_greek_records)
+    assert all("not a diplomatic transcription" in r["editorial_basis"].lower() for r in enoch_greek_records)
+    print("Validated Android navigation, manuscript transcriptions, Didache, Shepherd of Hermas both Testament of Abraham recensions and the Coptic Gospel of Thomas and Greek 1 Enoch")
 
 sections = {"base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
