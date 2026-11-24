@@ -274,7 +274,7 @@ def validate_android():
         "Book of the Wars of the Lord", "Book of Jashar", "Records of Samuel, Nathan, and Gad",
         "Paul's Earlier Letter to Corinth", "Paul's Severe / Sorrowful Letter to Corinth",
         "Letter Associated with Laodicea", "Prophecy / Book of Enoch (1 Enoch)",
-        "Epistle of Barnabas", "Shepherd of Hermas", "1 Clement", "2 Clement", "Didache",
+        "Epistle of Barnabas", "Shepherd of Hermas", "1 Clement", "2 Clement", "Didache (Teaching of the Twelve Apostles)",
         "Gospel of Peter", "Gospel of Thomas", "Gospel of Mary", "Apocalypse of Peter"
     }
     assert required_historical.issubset(historical_titles), f"Missing historical writing records: {required_historical - historical_titles}"
