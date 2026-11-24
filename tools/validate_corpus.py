@@ -257,6 +257,15 @@ def validate_android():
     for book in REQUIRED_GREEK | REQUIRED_LATIN:
         assert f'"{book}"' in source, f"An imported Apocrypha book is missing from Android navigation: {book}"
 
+    manuscript_register = json.loads((ROOT / "catalog/greek_manuscript_register.json").read_text(encoding="utf-8"))
+    p76 = next((record for record in manuscript_register["records"] if record.get("id") == "P76"), None)
+    assert p76 is not None, "P76 offline catalogue record is missing"
+    p76_source = p76.get("digital_transcription_source", {})
+    assert "Offline metadata and restriction notice only" in p76_source.get("status", "")
+    assert "PERSONAL STUDY ONLY" in p76_source.get("use_restriction", "")
+    assert "not included in the app" in p76_source.get("status", "")
+    assert "use_restriction" in source and "bundle_status" in source
+
     ai_source = Path("app/src/main/java/org/scripturesofgod/archive/AiTranslatorActivity.java").read_text(encoding="utf-8")
     for required in ("Modern English translation", "Older English style (Early Modern)", "Literal translation", "Word-for-word analysis", "Grammar and meaning explanation", "gemini-3.1-flash-lite", "x-goog-api-key", "AndroidKeyStore", "AES/GCM/NoPadding", "aistudio.google.com/app/apikey", "do not invent words"):
         assert required in ai_source, f"AI translator is missing: {required}"
