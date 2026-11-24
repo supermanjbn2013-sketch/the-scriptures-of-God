@@ -172,7 +172,7 @@ def validate_android():
         assert required in ai_source, f"AI translator is missing: {required}"
     assert "getAiKey()" not in source and "x-goog-api-key" not in source, "Main reader must not require a personal API key for translation"
     manifest = Path("app/src/main/AndroidManifest.xml").read_text(encoding="utf-8")
-    assert '.AiTranslatorActivity' not in manifest and '.MainActivity' in manifest, "AI translation must be integrated into the main Scripture reader, not a separate activity"
+    assert '.AiTranslatorActivity' in manifest and '.MainActivity' in manifest and 'android:exported="false"' in manifest, "AI translator screen must be registered as a private activity alongside the main Scripture reader"
     gradle = Path("app/build.gradle").read_text(encoding="utf-8")
     assert "versionCode 5" in gradle and "versionName '1.4.0'" in gradle and "com.google.mlkit:translate" in gradle, "On-device translation app version or dependency is missing"
 
