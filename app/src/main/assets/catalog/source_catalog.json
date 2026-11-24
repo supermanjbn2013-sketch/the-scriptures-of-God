@@ -504,6 +504,17 @@
       "source_revision": "9850f5addade26f681334aa475570bef9b0b440a",
       "textual_basis": "OCR-derived electronic text of the Syriac Peshitta main text, based on the printed Vetus Testamentum Syriace edition; critical apparatus omitted.",
       "status": "Offline Syriac text imported with Apocalypse proper and two Epistle forms kept separate; non-commercial use only."
+    },
+    {
+      "id": "jubilees-geez-beta-masaheft",
+      "name": "Jubilees — two separate Ge'ez editions",
+      "language": "Classical Ethiopic (Ge'ez)",
+      "coverage": "50 chapters in each of two separately encoded edition divisions.",
+      "source_url": "https://github.com/BetaMasaheft/Works/blob/ff9d4981eba2084c4914ca840ff323d85cbd2a1d/1001-2000/LIT1697Jubilees.xml",
+      "source_revision": "ff9d4981eba2084c4914ca840ff323d85cbd2a1d",
+      "license": "CC BY-SA 4.0",
+      "edition": "Ge'ez transcription of VanderKam's edition by Ran HaCohen; standard printed EOTC edition. Kept separate.",
+      "status": "Offline Ge'ez text with edition selector and chapter reader; separate from Hebrew Qumran fragments."
     }
   ],
   "not_yet_integrated": [
