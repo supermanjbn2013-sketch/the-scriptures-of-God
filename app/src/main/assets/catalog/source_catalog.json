@@ -569,6 +569,24 @@
         "The digital TEI transcription is CC BY-SA 4.0; preserve attribution and share-alike terms.",
         "No missing wording is reconstructed."
       ]
+    },
+    {
+      "id": "epistle-barnabas-greek-lake-first1k",
+      "name": "Epistle of Barnabas — Greek text",
+      "language": "Ancient Greek",
+      "coverage": "21 chapters and 194 sections, following Kirsopp Lake's 1912 printed Greek edition.",
+      "record_type": "edition-derived Greek text with source page markers, editorial notes and cross-references; not a direct diplomatic manuscript transcription",
+      "edition": "Kirsopp Lake, The Apostolic Fathers, volume 1 (1912)",
+      "license": "CC BY-SA 4.0",
+      "repository": "https://github.com/OpenGreekAndLatin/First1KGreek/tree/03776b39f4047c5cff06f5296fae4b2bae4b08fb/data/tlg1216/tlg001",
+      "attribution": "Epistle of Barnabas, Greek text edited by Kirsopp Lake, The Apostolic Fathers, volume 1 (1912); digitized and encoded by the Perseus Digital Library / Open Greek and Latin First1KGreek.",
+      "limitations": [
+        "The imported text follows the printed Greek edition of Kirsopp Lake (1912), not a direct diplomatic transcription of one ancient manuscript.",
+        "Printed page markers, chapter and section divisions, editorial notes and cross-references are retained.",
+        "Editorial notes and cross-references are stored separately from the Greek body text.",
+        "The digital TEI transcription is CC BY-SA 4.0; attribution and share-alike terms must be preserved.",
+        "No missing wording is reconstructed."
+      ]
     }
   ],
   "not_yet_integrated": [
