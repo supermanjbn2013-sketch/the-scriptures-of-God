@@ -16,6 +16,7 @@ on:
       - "tools/import_gospel_of_thomas.py"
       - "tools/import_enoch_greek.py"
       - "tools/import_ascension_isaiah.py"
+      - "tools/import_2_baruch.py"
       - "tools/validate_corpus.py"
       - "app/src/main/java/org/scripturesofgod/archive/MainActivity.java"
       - "app/src/main/assets/catalog/**"
@@ -57,6 +58,8 @@ jobs:
         run: python tools/import_gospel_of_thomas.py
       - name: Import Greek 1 Enoch fragment edition
         run: python tools/import_enoch_greek.py
+      - name: Import Syriac 2 Baruch text
+        run: python tools/import_2_baruch.py
       - name: Import Ge'ez Ascension of Isaiah text
         run: python tools/import_ascension_isaiah.py
       - name: Validate base Hebrew and Greek corpus
