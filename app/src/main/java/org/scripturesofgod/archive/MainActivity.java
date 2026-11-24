@@ -853,6 +853,79 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void openHermasArchive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/hermas/hermas_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONObject index=new org.json.JSONObject(raw.toString());
+            org.json.JSONArray books=index.getJSONArray("books");
+            int[] numbers=new int[books.length()];
+            String[] labels=new String[books.length()];
+            for(int i=0;i<books.length();i++){
+                org.json.JSONObject book=books.getJSONObject(i);
+                numbers[i]=book.optInt("book");
+                String title=book.optString("book_title");
+                labels[i]=book.optString("part_type")+" "+numbers[i]+"  ·  "+book.optInt("section_count")+" sections";
+                if(!title.isEmpty())labels[i]+="  ·  "+title;
+            }
+            new android.app.AlertDialog.Builder(this).setTitle("Shepherd of Hermas · Greek text")
+                .setItems(labels,(dialog,which)->openHermasBook(numbers[which]))
+                .setNegativeButton("Close",null).show();
+        }catch(Exception e){
+            showInfo("Shepherd of Hermas text unavailable","The offline Greek text was not generated in this build. "+e.getMessage());
+        }
+    }
+
+    void openHermasBook(int book){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/hermas/hermas_greek.jsonl"),"UTF-8"),8192);
+                    String raw;
+                    while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(record.optInt("book")!=book)continue;
+                        if(count==0)out.append("Source: Kirsopp Lake, The Apostolic Fathers, volume 2 (1917), Shepherd of Hermas Greek text\n")
+                            .append("Digital edition: Open Greek and Latin / First1KGreek\n")
+                            .append("Licence: CC BY-SA 4.0\n")
+                            .append("Textual basis: printed Greek edition, not a direct diplomatic transcription of one manuscript\n")
+                            .append("No missing wording is reconstructed.\n\n");
+                        out.append(record.optString("reference")).append("\n");
+                        org.json.JSONArray pages=record.optJSONArray("source_pages");
+                        if(pages!=null&&pages.length()>0)out.append("Printed page marker(s): ").append(pages.toString()).append("\n");
+                        out.append(record.optString("text")).append("\n");
+                        org.json.JSONArray refs=record.optJSONArray("cross_references");
+                        if(refs!=null&&refs.length()>0){
+                            out.append("Source cross-references:\n");
+                            for(int i=0;i<refs.length();i++){
+                                org.json.JSONObject ref=refs.getJSONObject(i);
+                                out.append("• ").append(ref.optString("text"));
+                                if(!ref.optString("corresp").isEmpty())out.append(" [").append(ref.optString("corresp")).append("]");
+                                out.append("\n");
+                            }
+                        }
+                        org.json.JSONArray notes=record.optJSONArray("editorial_notes");
+                        if(notes!=null)for(int i=0;i<notes.length();i++){
+                            org.json.JSONObject note=notes.getJSONObject(i);
+                            out.append("Edition note: ").append(note.optString("text")).append("\n");
+                        }
+                        out.append("\n");count++;
+                    }
+                    reader.close();
+                    return count==0?"No source sections were found for Hermas book "+book+".":count+" Greek sections\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline Shepherd of Hermas text: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Shepherd of Hermas · Book "+book)
+                    .setView(sv).setNegativeButton("Back to divisions",(d,w)->openHermasArchive())
+                    .setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     void openOtherReferenceBookEntry(String item){
         String category="Ancient reference writing";
         String preservation="Catalogue entry only; manuscript witnesses and text editions must be verified before a transcription is added.";
@@ -890,10 +963,11 @@ public class MainActivity extends Activity {
         else if(item.equals("Odes of Solomon")){category="Ancient hymn collection";preservation="Survives in Syriac, with Greek and Coptic fragments.";witnesses="Syriac manuscripts and Greek/Coptic fragments.";}
         else if(item.equals("Pseudo-Philo: Biblical Antiquities")){category="Jewish rewritten-Scripture history";preservation="Survives principally in Latin manuscripts; the original language and form remain debated.";witnesses="Latin manuscript tradition.";}
         else if(item.equals("Zohar")){category="Medieval Jewish mystical literature";preservation="A medieval Aramaic literary corpus associated with the Zoharic tradition, transmitted in manuscripts and printed editions; it is not an ancient Second Temple writing.";witnesses="Medieval Aramaic manuscript tradition and later printed editions. Its historical composition and attribution are subjects of scholarship.";}
-        String textStatus=item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
+        String textStatus=item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
         String detail=category+"\n\nPreservation: "+preservation+"\n\nKnown witnesses: "+witnesses+"\n\nText status in this app: "+textStatus+" Different languages and recensions remain separate. This archive is for reference and historical study; inclusion here does not automatically make a work part of the Scripture collections.";
         android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(item).setMessage(detail).setPositiveButton("Close",null);
         if(item.equals("Didache"))builder.setNeutralButton("Open Greek text",(d,w)->openDidacheArchive());
+        if(item.equals("Shepherd of Hermas"))builder.setNeutralButton("Open Greek text",(d,w)->openHermasArchive());
         builder.show();
     }
 
