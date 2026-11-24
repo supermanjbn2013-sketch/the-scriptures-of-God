@@ -96,12 +96,65 @@ public class MainActivity extends Activity {
             return;
         }
         if(section.equals("Settings")){content.addView(text("Appearance, reading and privacy",14,muted,false));addHomeTile("Appearance and reading settings","Theme, font size and language",()->openSettings());return;}
-        if(section.equals("Personal Library")||section.equals("Favorites")||section.equals("Reading History")){String saved=getSharedPreferences("archive_library",MODE_PRIVATE).getString(section.equals("Reading History")?"history":"bookmarks","");if(saved.isEmpty())content.addView(text("Nothing saved here yet. Open a passage and use its save controls.",14,muted,false));else content.addView(text(saved,15,ink,false));return;}
+        if(section.equals("Personal Library")||section.equals("Favorites")||section.equals("Reading History")){renderLibrary();return;}
         if(section.equals("Search")){EditText query=new EditText(this);query.setSingleLine(true);query.setHint("Exact word or phrase");content.addView(query);Button go=new Button(this);go.setText("Search offline corpus");content.addView(go);go.setOnClickListener(v->{String searchTerm=query.getText().toString().trim();if(!searchTerm.isEmpty())searchCorpus(searchTerm);});return;}
         ArrayList<String> data=entries.get(section); if(data==null)data=new ArrayList<>();
         int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {returnSection=section;if(section.equals("Translation Center")){if(item.equals("Preferred translation language"))chooseTranslationLanguage();else showAiConnectionSettings();}else if(section.equals("DSS Passage Concordance"))openDssConcordanceEntry(item);else if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
         if(count==0)content.addView(text("No matching entries. This archive does not fabricate missing manuscript contents or readings.",14,muted,false));
         if(section.equals("Manuscript Archive")||section.equals("Research Archive")||section.equals("Manuscript Comparison"))content.addView(text("Records are catalog placeholders until a source, transcription, date and provenance are verified and attached.",12,gold,false));
+    }
+
+    String libraryCategory="Bookmarks";
+    void renderLibrary(){
+        if(section.equals("Favorites"))libraryCategory="Bookmarks";
+        if(section.equals("Reading History"))libraryCategory="History";
+        content.addView(text("Your saved research stays on this device.",13,muted,false));
+        LinearLayout tabs=new LinearLayout(this);tabs.setOrientation(LinearLayout.HORIZONTAL);
+        String[] categories={"Bookmarks","Highlights","Notes","History"};
+        for(String category:categories){
+            Button tab=new Button(this);tab.setText(category);tab.setTextSize(11);tab.setTextColor(category.equals(libraryCategory)?gold:ink);tab.setBackground(shape(panel));
+            LinearLayout.LayoutParams tp=new LinearLayout.LayoutParams(0,-2,1);tp.setMargins(2,4,2,8);tabs.addView(tab,tp);
+            tab.setOnClickListener(v->{libraryCategory=category;renderLibrary();});
+        }
+        content.addView(tabs);
+        android.content.SharedPreferences prefs=getSharedPreferences("archive_library",MODE_PRIVATE);
+        ArrayList<String> items=new ArrayList<>();
+        String storageKey=libraryCategory.equals("History")?"history":libraryCategory.toLowerCase();
+        if(libraryCategory.equals("Notes")){
+            for(Map.Entry<String,?> entry:prefs.getAll().entrySet())if(entry.getKey().startsWith("note:")&&entry.getValue() instanceof String&&!((String)entry.getValue()).toString().trim().isEmpty())items.add(entry.getKey().substring(5)+"  "+entry.getValue().toString());
+        }else{
+            String stored=prefs.getString(storageKey,"");
+            if(!stored.isEmpty())items.addAll(Arrays.asList(stored.split("\\n")));
+        }
+        if(items.isEmpty()){content.addView(text("No "+libraryCategory.toLowerCase()+" saved yet.",14,muted,false));return;}
+        for(String item:items){
+            if(item.trim().isEmpty())continue;
+            String label=item;int split=item.indexOf("  ");if(split>0)label=item.substring(0,split);
+            TextView row=text(label,15,ink,true);row.setBackground(shape(panel));
+            LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,4,0,4);content.addView(row,rp);
+            row.setOnClickListener(v->{
+                if(libraryCategory.equals("History")){openBook(item);return;}
+                if(libraryCategory.equals("Notes")){
+                    String key="note:"+label;EditText editor=new EditText(this);editor.setMinLines(4);editor.setText(prefs.getString(key,""));
+                    new android.app.AlertDialog.Builder(this).setTitle("Note · "+label).setView(editor)
+                        .setNegativeButton("Close",null).setNeutralButton("Delete",(d,w)->{prefs.edit().remove(key).apply();renderLibrary();})
+                        .setPositiveButton("Save",(d,w)->{prefs.edit().putString(key,editor.getText().toString()).apply();renderLibrary();}).show();
+                    return;
+                }
+                TextView detail=text(item,14,ink,false);ScrollView sv=new ScrollView(this);sv.setPadding(12,8,12,8);sv.addView(detail);
+                new android.app.AlertDialog.Builder(this).setTitle(label).setView(sv)
+                    .setNegativeButton("Close",null).setPositiveButton("Remove",(d,w)->{
+                        String key=libraryCategory.equals("Highlights")?"highlights":"bookmarks";
+                        removeLibraryEntry(key,item);renderLibrary();
+                    }).show();
+            });
+        }
+    }
+    void removeLibraryEntry(String key,String target){
+        android.content.SharedPreferences prefs=getSharedPreferences("archive_library",MODE_PRIVATE);
+        String stored=prefs.getString(key,"");ArrayList<String> kept=new ArrayList<>();
+        for(String line:stored.split("\\n"))if(!line.equals(target)&&!line.trim().isEmpty())kept.add(line);
+        prefs.edit().putString(key,android.text.TextUtils.join("\\n",kept)).apply();
     }
 
     void openAiTranslator(){startActivity(new Intent(this,AiTranslatorActivity.class));}
