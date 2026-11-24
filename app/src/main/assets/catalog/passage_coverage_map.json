@@ -1,0 +1,514 @@
+{
+  "schema_version": 1,
+  "record_type": "manuscript_passage_coverage_map",
+  "policy": "Passage references are locators only. A verse or chapter reference does not prove that every word survives. A record becomes reconstruction-ready only after the exact text, manuscript coordinates, and comparison witness have been verified.",
+  "records": [
+    {
+      "id": "dss_4q26_lev_d_leviticus_22_12_18",
+      "writing_id": "leviticus",
+      "witness_id": "dss_4q26_lev_d",
+      "passage_reference": "Leviticus 22:12-18",
+      "coverage_basis": "Preliminary photographic inventory association at PAM 40.967; fragment-level reading not yet checked.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; extant wording not verified",
+      "mapped_transcription_lines": [],
+      "evidence_status": "inventory_or_edition_reference_only",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q26_lev_d_leviticus_17_2_11",
+      "writing_id": "leviticus",
+      "witness_id": "dss_4q26_lev_d",
+      "passage_reference": "Leviticus 17:2–11",
+      "coverage_basis": "Published fragment concordance in The Dead Sea Scrolls Study Edition, p. 251, Frag. 4.",
+      "condition": "fragmentary",
+      "source_coverage_status": "published fragment-to-passage assignment",
+      "mapped_transcription_lines": [
+        {
+          "group": "frg. 4",
+          "digital_line": 0,
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 0"
+        },
+        {
+          "group": "frg. 4",
+          "digital_line": 1,
+          "source_reference": "Qumran-Digital 4Q26, frg. 4, displayed line 1"
+        }
+      ],
+      "evidence_status": "transcription_lines_linked_but_exact_extent_unverified",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q27_num_b_numbers_11_13",
+      "writing_id": "numbers",
+      "witness_id": "dss_4q27_num_b",
+      "passage_reference": "Numbers 11-13",
+      "coverage_basis": "Preliminary inventory entry 41.198.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; extant wording not verified",
+      "mapped_transcription_lines": [],
+      "evidence_status": "inventory_or_edition_reference_only",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q27_num_b_numbers_16",
+      "writing_id": "numbers",
+      "witness_id": "dss_4q27_num_b",
+      "passage_reference": "Numbers 16",
+      "coverage_basis": "Preliminary inventory entry 41.198.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; extant wording not verified",
+      "mapped_transcription_lines": [
+        {
+          "group": "frg. 6–10",
+          "digital_line": 12,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 12"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 13,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 13"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 14,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 14"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 15,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 15"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 16,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 16"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 17,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 17"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 18,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 18"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 19,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 19"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 21,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 21"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 22,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 22"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 23,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 23"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 24,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 24"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 28,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 28"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 29,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 29"
+        },
+        {
+          "group": "frg. 6–10",
+          "digital_line": 30,
+          "source_reference": "Qumran-Digital 4Q27, frg. 6–10, displayed line 30"
+        }
+      ],
+      "evidence_status": "transcription_lines_linked_but_exact_extent_unverified",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q27_num_b_numbers_18",
+      "writing_id": "numbers",
+      "witness_id": "dss_4q27_num_b",
+      "passage_reference": "Numbers 18",
+      "coverage_basis": "Preliminary inventory entry 41.198.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; extant wording not verified",
+      "mapped_transcription_lines": [
+        {
+          "group": "frg. 12",
+          "digital_line": 1,
+          "source_reference": "Qumran-Digital 4Q27, frg. 12, displayed line 1"
+        },
+        {
+          "group": "frg. 12",
+          "digital_line": 2,
+          "source_reference": "Qumran-Digital 4Q27, frg. 12, displayed line 2"
+        },
+        {
+          "group": "frg. 12",
+          "digital_line": 3,
+          "source_reference": "Qumran-Digital 4Q27, frg. 12, displayed line 3"
+        },
+        {
+          "group": "frg. 12",
+          "digital_line": 4,
+          "source_reference": "Qumran-Digital 4Q27, frg. 12, displayed line 4"
+        },
+        {
+          "group": "frg. 12",
+          "digital_line": 5,
+          "source_reference": "Qumran-Digital 4Q27, frg. 12, displayed line 5"
+        },
+        {
+          "group": "frg. 12",
+          "digital_line": 6,
+          "source_reference": "Qumran-Digital 4Q27, frg. 12, displayed line 6"
+        },
+        {
+          "group": "frg. 12",
+          "digital_line": 7,
+          "source_reference": "Qumran-Digital 4Q27, frg. 12, displayed line 7"
+        },
+        {
+          "group": "frg. 12",
+          "digital_line": 8,
+          "source_reference": "Qumran-Digital 4Q27, frg. 12, displayed line 8"
+        },
+        {
+          "group": "frg. 12",
+          "digital_line": 9,
+          "source_reference": "Qumran-Digital 4Q27, frg. 12, displayed line 9"
+        },
+        {
+          "group": "frg. 12",
+          "digital_line": 10,
+          "source_reference": "Qumran-Digital 4Q27, frg. 12, displayed line 10"
+        }
+      ],
+      "evidence_status": "transcription_lines_linked_but_exact_extent_unverified",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q27_num_b_numbers_20",
+      "writing_id": "numbers",
+      "witness_id": "dss_4q27_num_b",
+      "passage_reference": "Numbers 20",
+      "coverage_basis": "Preliminary inventory entry 41.198.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; extant wording not verified",
+      "mapped_transcription_lines": [
+        {
+          "group": "frg. 13 i–14",
+          "digital_line": 24,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 i–14, displayed line 24"
+        },
+        {
+          "group": "frg. 13 i–14",
+          "digital_line": 25,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 i–14, displayed line 25"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 13,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 13"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 14,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 14"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 15,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 15"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 16,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 16"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 17,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 17"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 18,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 18"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 19,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 19"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 20,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 20"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 21,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 21"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 22,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 22"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 23,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 23"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 24,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 24"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 25,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 25"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 26,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 26"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 27,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 27"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 28,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 28"
+        },
+        {
+          "group": "frg. 13 ii+15–17 i",
+          "digital_line": 29,
+          "source_reference": "Qumran-Digital 4Q27, frg. 13 ii+15–17 i, displayed line 29"
+        }
+      ],
+      "evidence_status": "transcription_lines_linked_but_exact_extent_unverified",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q27_num_b_numbers_26_62_64",
+      "writing_id": "numbers",
+      "witness_id": "dss_4q27_num_b",
+      "passage_reference": "Numbers 26:62-64",
+      "coverage_basis": "Preliminary inventory entry 41.517.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; extant wording not verified",
+      "mapped_transcription_lines": [
+        {
+          "group": "frg. 33 ii–40",
+          "digital_line": 4,
+          "source_reference": "Qumran-Digital 4Q27, frg. 33 ii–40, displayed line 4"
+        },
+        {
+          "group": "frg. 41",
+          "digital_line": 29,
+          "source_reference": "Qumran-Digital 4Q27, frg. 41, displayed line 29"
+        }
+      ],
+      "evidence_status": "transcription_lines_linked_but_exact_extent_unverified",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q31_deut_d_deuteronomy_2_24_36",
+      "writing_id": "deuteronomy",
+      "witness_id": "dss_4q31_deut_d",
+      "passage_reference": "Deuteronomy 2:24–36",
+      "coverage_basis": "Qumran-Digital 4Q31 transcription, version 2026-10-06, group 1, displayed lines 5–17; individual line references are retained in transcription_line_map.",
+      "condition": "fragmentary",
+      "source_coverage_status": "digital transcription lines mapped to passage range; not a claim of continuous scroll coverage",
+      "mapped_transcription_lines": [
+        {
+          "group": "1",
+          "digital_line": 5,
+          "source_reference": "Qumran-Digital 4Q31, group 1, displayed line 5"
+        }
+      ],
+      "evidence_status": "transcription_lines_linked_but_exact_extent_unverified",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q31_deut_d_deuteronomy_3_14_29_and_4_1",
+      "writing_id": "deuteronomy",
+      "witness_id": "dss_4q31_deut_d",
+      "passage_reference": "Deuteronomy 3:14–29 and 4:1",
+      "coverage_basis": "Qumran-Digital 4Q31 transcription, version 2026-10-06, group 2, displayed lines 1–21; individual line references are retained in transcription_line_map.",
+      "condition": "fragmentary",
+      "source_coverage_status": "digital transcription lines mapped to passage range; not a claim of continuous scroll coverage",
+      "mapped_transcription_lines": [
+        {
+          "group": "2",
+          "digital_line": 1,
+          "source_reference": "Qumran-Digital 4Q31, group 2, displayed line 1"
+        }
+      ],
+      "evidence_status": "transcription_lines_linked_but_exact_extent_unverified",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q47_josh_a_joshua_6_5_10",
+      "writing_id": "joshua",
+      "witness_id": "dss_4q47_josh_a",
+      "passage_reference": "Joshua 6:5-10",
+      "coverage_basis": "Preliminary inventory entry 41.199 / 42.273, portion a.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; extant wording not verified",
+      "mapped_transcription_lines": [
+        {
+          "group": "frg. 3–8",
+          "digital_line": 1,
+          "source_reference": "Qumran-Digital 4Q47, frg. 3–8, displayed line 1"
+        }
+      ],
+      "evidence_status": "transcription_lines_linked_but_exact_extent_unverified",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q47_josh_a_joshua_7_12_16",
+      "writing_id": "joshua",
+      "witness_id": "dss_4q47_josh_a",
+      "passage_reference": "Joshua 7:12-16",
+      "coverage_basis": "Preliminary inventory entry 41.199 / 42.273, portion a.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; extant wording not verified",
+      "mapped_transcription_lines": [],
+      "evidence_status": "inventory_or_edition_reference_only",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q47_josh_a_joshua_8_3_5",
+      "writing_id": "joshua",
+      "witness_id": "dss_4q47_josh_a",
+      "passage_reference": "Joshua 8:3-5",
+      "coverage_basis": "Preliminary inventory entry 41.199 / 42.273, portion a.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; extant wording not verified",
+      "mapped_transcription_lines": [],
+      "evidence_status": "inventory_or_edition_reference_only",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q47_josh_a_joshua_8_34_35_and_following_fragmentary_material",
+      "writing_id": "joshua",
+      "witness_id": "dss_4q47_josh_a",
+      "passage_reference": "Joshua 8:34-35 and following fragmentary material",
+      "coverage_basis": "Preliminary inventory entry 41.199 / 42.273, portion b.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; exact continuation unspecified",
+      "mapped_transcription_lines": [
+        {
+          "group": "frg. 1–2",
+          "digital_line": 1,
+          "source_reference": "Qumran-Digital 4Q47, frg. 1–2, displayed line 1"
+        }
+      ],
+      "evidence_status": "transcription_lines_linked_but_exact_extent_unverified",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q47_josh_a_joshua_10_2_5_8_11",
+      "writing_id": "joshua",
+      "witness_id": "dss_4q47_josh_a",
+      "passage_reference": "Joshua 10:2-5, 8-11",
+      "coverage_basis": "Preliminary inventory entry 41.199 / 42.273, portion b.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; extant wording not verified",
+      "mapped_transcription_lines": [],
+      "evidence_status": "inventory_or_edition_reference_only",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q53_sam_c_1_samuel_25_30_32",
+      "writing_id": "1_samuel",
+      "witness_id": "dss_4q53_sam_c",
+      "passage_reference": "1 Samuel 25:30-32",
+      "coverage_basis": "Preliminary inventory entry 43.077; cites Ulrich, BASOR 235 (1979), p. 5.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; exact fragment and extant wording require edition/image verification",
+      "mapped_transcription_lines": [],
+      "evidence_status": "inventory_or_edition_reference_only",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q53_sam_c_2_samuel_14_7_15_4",
+      "writing_id": "2_samuel",
+      "witness_id": "dss_4q53_sam_c",
+      "passage_reference": "2 Samuel 14:7-15:4",
+      "coverage_basis": "Preliminary inventory entry 43.071; cites Ulrich, BASOR 235 (1979), p. 5.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; exact fragment and extant wording require edition/image verification",
+      "mapped_transcription_lines": [],
+      "evidence_status": "inventory_or_edition_reference_only",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    },
+    {
+      "id": "dss_4q53_sam_c_2_samuel_15_4_15",
+      "writing_id": "2_samuel",
+      "witness_id": "dss_4q53_sam_c",
+      "passage_reference": "2 Samuel 15:4-15",
+      "coverage_basis": "Preliminary inventory entry 43.077; cites Ulrich, BASOR 235 (1979), p. 5.",
+      "condition": "unknown",
+      "source_coverage_status": "inventory-reported; exact fragment and extant wording require edition/image verification",
+      "mapped_transcription_lines": [],
+      "evidence_status": "inventory_or_edition_reference_only",
+      "reconstruction_status": "not_reconstruction_ready",
+      "gap_fill_source_witness_id": null,
+      "editorial_note": "This record is a passage locator, not a claim of complete verse coverage. Do not fill gaps from it until the exact preserved text and corresponding source coordinates have been checked."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "record_type": "master_writing_catalog",
+  "policy": "One identity per distinct writing. Canonical grouping is not fixed by a modern book count. Multiple manuscripts and translations link to the same writing where identity is established; distinct compositions and retellings remain separate.",
+  "records": [
+    {
+      "id": "1_samuel",
+      "title": "1 Samuel",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "primary_reference_tradition": "dss",
+      "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
+      "status": "witness_inventory_started"
+    },
+    {
+      "id": "2_samuel",
+      "title": "2 Samuel",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "primary_reference_tradition": "dss",
+      "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
+      "status": "witness_inventory_started"
+    },
+    {
+      "id": "deuteronomy",
+      "title": "Deuteronomy",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "primary_reference_tradition": "dss",
+      "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
+      "status": "witness_inventory_started"
+    },
+    {
+      "id": "joshua",
+      "title": "Joshua",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "primary_reference_tradition": "dss",
+      "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
+      "status": "witness_inventory_started"
+    },
+    {
+      "id": "leviticus",
+      "title": "Leviticus",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "primary_reference_tradition": "dss",
+      "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
+      "status": "witness_inventory_started"
+    },
+    {
+      "id": "numbers",
+      "title": "Numbers",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "primary_reference_tradition": "dss",
+      "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
+      "status": "witness_inventory_started"
+    }
+  ]
+}

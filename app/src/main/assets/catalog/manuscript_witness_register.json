@@ -1,0 +1,144 @@
+{
+  "schema_version": 1,
+  "record_type": "manuscript_witness_register",
+  "policy": "One record per physical manuscript or separately identified textual witness. A witness may connect to more than one writing; do not duplicate writing identities to represent multiple witnesses.",
+  "records": [
+    {
+      "id": "dss_4q26_lev_d",
+      "manuscript_id": "4Q26 Lev d",
+      "catalogue_record_id": "4Q26-Lev-d",
+      "tradition": "dss",
+      "writing_ids": [
+        "leviticus"
+      ],
+      "cave": "Qumran Cave 4",
+      "language": "Hebrew",
+      "material": null,
+      "date_estimate": null,
+      "shelfmark": "4Q26 Lev d",
+      "source_catalogue": "catalog/dss_passage_concordance.json",
+      "transcription_source": {
+        "title": "Qumran-Digital: 4Q26 transcription",
+        "url": "https://lexicon.qumran-digital.org/transcriptions/4Q26/2026-10-06/index.html?v=2026-10-06",
+        "version": "2026-10-06",
+        "provider": "DFG project 465277421, Qumran-Digital: Text und Lexikon",
+        "attribution": "Based on a text of the earlier Qumran-Wörterbuch project of the Göttingen Academy of Sciences and Humanities, itself based on a precursor text by Martin Abegg.",
+        "license": "CC BY-SA 4.0",
+        "use": "Online Hebrew transcription of the digitally presented fragments. Published concordance identifies additional fragments 5–11 whose passage locations are not assigned in the cited Study Edition.",
+        "caution": "Digital transcription display-line numbering is not a manuscript column/line coordinate. Preserve brackets, dots and editorial signs. The transcription is not a manuscript image and should be checked against the published edition and images."
+      },
+      "transcription_status": "line-level transcription map present in source concordance",
+      "transcription_line_count": 33,
+      "fragment_count": 4,
+      "caution": "Passage anchors and transcription display lines are not proof that every word of a referenced verse survives. Check exact fragment, column, line, and edition before reconstructing."
+    },
+    {
+      "id": "dss_4q27_num_b",
+      "manuscript_id": "4Q27 Num b",
+      "catalogue_record_id": "4Q27-Num-b",
+      "tradition": "dss",
+      "writing_ids": [
+        "numbers"
+      ],
+      "cave": "Qumran Cave 4",
+      "language": "Hebrew",
+      "material": null,
+      "date_estimate": null,
+      "shelfmark": "4Q27 Num b",
+      "source_catalogue": "catalog/dss_passage_concordance.json",
+      "transcription_source": {
+        "title": "Qumran-Digital: 4Q27 transcription",
+        "url": "https://lexicon.qumran-digital.org/transcriptions/4Q27/2026-10-06/index.html?v=2026-10-06",
+        "version": "2026-10-06",
+        "provider": "DFG project 465277421, Qumran-Digital: Text und Lexikon",
+        "attribution": "Based on a text of the earlier Qumran-Wörterbuch project of the Göttingen Academy of Sciences and Humanities, itself based on a precursor text by Martin Abegg.",
+        "license": "CC BY-SA 4.0",
+        "use": "Online Hebrew transcription with 52 digital display groups representing fragment numbers 1–109; only the first group has been mapped to passage references in this record. The linked comparison texts are not the manuscript transcription.",
+        "caution": "The displayed line numbers are digital transcription navigation lines, not manuscript column/line coordinates. The transcription juxtaposes the manuscript text with Masoretic and Samaritan Pentateuch readings; those comparison texts must not be mistaken for 4Q27."
+      },
+      "transcription_status": "line-level transcription map present in source concordance",
+      "transcription_line_count": 436,
+      "fragment_count": 52,
+      "caution": "Passage anchors and transcription display lines are not proof that every word of a referenced verse survives. Check exact fragment, column, line, and edition before reconstructing."
+    },
+    {
+      "id": "dss_4q31_deut_d",
+      "manuscript_id": "4Q31 Deut d",
+      "catalogue_record_id": "4Q31-Deut-d",
+      "tradition": "dss",
+      "writing_ids": [
+        "deuteronomy"
+      ],
+      "cave": "Qumran Cave 4",
+      "language": "Hebrew",
+      "material": null,
+      "date_estimate": null,
+      "shelfmark": "4Q31 Deut d",
+      "source_catalogue": "catalog/dss_passage_concordance.json",
+      "transcription_source": {
+        "title": "Qumran-Digital 4Q31 transcription",
+        "url": "https://lexicon.qumran-digital.org/transcriptions/4Q31/2026-10-06/index.html?v=2026-10-06",
+        "version": "2026-10-06",
+        "license": "CC BY-SA 4.0",
+        "project": "DFG-Projekt 465277421, Qumran-Digital: Text und Lexikon",
+        "textual_basis": "Editorial transcription based on the earlier Qumran-Wörterbuch project and a precursor text by Martin Abegg; not a manuscript photograph.",
+        "attribution_required": true,
+        "share_alike_required": true
+      },
+      "transcription_status": "line-level transcription map present in source concordance",
+      "transcription_line_count": 34,
+      "fragment_count": 0,
+      "caution": "Passage anchors and transcription display lines are not proof that every word of a referenced verse survives. Check exact fragment, column, line, and edition before reconstructing."
+    },
+    {
+      "id": "dss_4q47_josh_a",
+      "manuscript_id": "4Q47 Josh a",
+      "catalogue_record_id": "4Q47-Josh-a",
+      "tradition": "dss",
+      "writing_ids": [
+        "joshua"
+      ],
+      "cave": "Qumran Cave 4",
+      "language": "Hebrew",
+      "material": null,
+      "date_estimate": null,
+      "shelfmark": "4Q47 Josh a",
+      "source_catalogue": "catalog/dss_passage_concordance.json",
+      "transcription_source": {
+        "title": "Qumran-Digital: 4Q47 transcription",
+        "url": "https://lexicon.qumran-digital.org/transcriptions/4Q47/2026-10-06/index.html?v=2026-10-06",
+        "version": "2026-10-06",
+        "provider": "DFG project 465277421, Qumran-Digital: Text und Lexikon",
+        "attribution": "Based on a text of the earlier Qumran-Wörterbuch project of the Göttingen Academy of Sciences and Humanities, itself based on a precursor text by Martin Abegg.",
+        "license": "CC BY-SA 4.0",
+        "use": "Online Hebrew transcription with fragment groupings and line-by-line links to corresponding scriptural passages.",
+        "caution": "The page's numbered lines are digital transcription display lines, not independently verified manuscript column-and-line coordinates. Brackets, dots and other editorial signs must be preserved; this digital transcription is not a photograph and does not replace inspection of manuscript images or the DJD edition."
+      },
+      "transcription_status": "line-level transcription map present in source concordance",
+      "transcription_line_count": 20,
+      "fragment_count": 6,
+      "caution": "Passage anchors and transcription display lines are not proof that every word of a referenced verse survives. Check exact fragment, column, line, and edition before reconstructing."
+    },
+    {
+      "id": "dss_4q53_sam_c",
+      "manuscript_id": "4Q53 Sam c",
+      "catalogue_record_id": "4Q53-Sam-c",
+      "tradition": "dss",
+      "writing_ids": [
+        "1_samuel",
+        "2_samuel"
+      ],
+      "cave": "Qumran Cave 4",
+      "language": "Hebrew",
+      "material": null,
+      "date_estimate": null,
+      "shelfmark": "4Q53 Sam c",
+      "source_catalogue": "catalog/dss_passage_concordance.json",
+      "transcription_source": null,
+      "transcription_status": "metadata / passage inventory only",
+      "transcription_line_count": 0,
+      "fragment_count": 0,
+      "caution": "Passage anchors and transcription display lines are not proof that every word of a referenced verse survives. Check exact fragment, column, line, and edition before reconstructing."
+    }
+  ]
+}

@@ -664,7 +664,33 @@ def validate_reconstruction_policy():
     assert "does not define the archive's scope" in " ".join(wlc["limitations"])
     print("Validated witness-led reconstruction policy and source provenance rules.")
 
-sections = {"reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}
+
+def validate_witness_registers():
+    catalog = json.loads((ROOT / "catalog/writing_catalog.json").read_text(encoding="utf-8"))
+    witnesses = json.loads((ROOT / "catalog/manuscript_witness_register.json").read_text(encoding="utf-8"))
+    coverage = json.loads((ROOT / "catalog/passage_coverage_map.json").read_text(encoding="utf-8"))
+    assert catalog["record_type"] == "master_writing_catalog"
+    assert witnesses["record_type"] == "manuscript_witness_register"
+    assert coverage["record_type"] == "manuscript_passage_coverage_map"
+    writing_ids = [x["id"] for x in catalog["records"]]
+    witness_ids = [x["id"] for x in witnesses["records"]]
+    coverage_ids = [x["id"] for x in coverage["records"]]
+    assert len(writing_ids) == len(set(writing_ids)) and len(witness_ids) == len(set(witness_ids))
+    assert len(coverage_ids) == len(set(coverage_ids))
+    writing_set, witness_set = set(writing_ids), set(witness_ids)
+    assert {"leviticus","numbers","deuteronomy","joshua","1_samuel","2_samuel"}.issubset(writing_set)
+    for witness in witnesses["records"]:
+        assert witness["writing_ids"] and set(witness["writing_ids"]).issubset(writing_set)
+        assert witness["catalogue_record_id"] and witness["source_catalogue"]
+    for item in coverage["records"]:
+        assert item["writing_id"] in writing_set and item["witness_id"] in witness_set
+        assert item["passage_reference"] and item["coverage_basis"]
+        assert item["reconstruction_status"] == "not_reconstruction_ready"
+        assert item["gap_fill_source_witness_id"] is None
+    assert all(not x.get("text") for x in coverage["records"]), "Coverage inventory must not invent reconstructed text"
+    print(f"Validated {len(catalog['records'])} writing identities, {len(witnesses['records'])} DSS witnesses, and {len(coverage['records'])} passage locators.")
+
+sections = {"witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
-    raise SystemExit("Usage: python tools/validate_corpus.py reconstruction|base|apocrypha|dss|papyri|android")
+    raise SystemExit("Usage: python tools/validate_corpus.py witnesses|reconstruction|base|apocrypha|dss|papyri|android")
 sections[sys.argv[1]]()
