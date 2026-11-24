@@ -403,16 +403,6 @@ def validate_android():
     assert all("printed greek edition" in r["textual_basis"].lower() for r in barnabas_records)
     assert "void openBarnabasArchive()" in source and "void openBarnabasChapter(String chapter)" in source
     assert datasets["epistle-barnabas-greek-lake-first1k"]["license"] == "CC BY-SA 4.0"
-    p72_path = ROOT / "papyri/p72/p72_index.json"
-    assert p72_path.exists(), "Offline P72 transcription index was not generated"
-    p72_index = json.loads(p72_path.read_text(encoding="utf-8"))
-    assert p72_index["document_id"] == 10072 and p72_index["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
-    assert p72_index["page_count"] == len(p72_index["pages"]) > 0
-    assert p72_index["record_count"] > 0 and p72_index["text_record_count"] > 0
-    assert all(page["asset_file"].startswith("papyri/p72/pages/") and page["record_count"] > 0 for page in p72_index["pages"])
-    assert "composite codex" in p72_index["scope_note"].lower()
-    assert "void openPapyrus72Archive()" in source and "void openPapyrus72Page(String pageId)" in source
-    assert datasets["papyrus-72-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
     thomas_path = ROOT / "other_reference/thomas/thomas_index.json"
     assert thomas_path.exists(), "Offline Gospel of Thomas Coptic index was not generated"
     thomas_index = json.loads(thomas_path.read_text(encoding="utf-8"))

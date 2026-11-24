@@ -17,7 +17,7 @@ import xml.etree.ElementTree as ET
 ROOT = pathlib.Path("app/src/main/assets/papyri/p72")
 PAGES = ROOT / "pages"
 SOURCE_URL = "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10072&pageID=ALL&format=teiraw"
-ATTRIBUTION = "Papyrus 72 (GA P72), New Testament transcription by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room."
+ATTRIBUTION = "Papyrus 72 (GA P72; Bodmer VII–VIII composite codex), transcription by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room."
 LICENSE = "Creative Commons Attribution 4.0 International (CC BY 4.0)"
 LICENSE_URL = "https://creativecommons.org/licenses/by/4.0/"
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
@@ -198,7 +198,7 @@ def main():
     index = {
         "schema_version": 1,
         "record_type": "papyrus_72_page_verse_transcription",
-        "manuscript": "Papyrus 72 (GA P72; John Rylands Library, Gr. P. 457)",
+        "manuscript": "Papyrus 72 (GA P72; Bodmer VII–VIII composite codex, with parts held by the Vatican Library and Fondation Martin Bodmer)",
         "language": "Koine Greek",
         "document_id": 10072,
         "source_url": SOURCE_URL,
@@ -210,7 +210,7 @@ def main():
         "text_record_count": total_with_text,
         "page_count": len(pages),
         "pages": sorted(pages.values(), key=lambda item: item["page_id"]),
-        "scope_note": "One surviving fragment only, preserving portions of John 18:31–33 and 18:37–38. The transcription records only text present in the source witness. Editorial restorations are bracketed where encoded by the source; missing portions are not reconstructed.",
+        "scope_note": "Composite papyrus codex containing 1 Peter, 2 Peter and Jude, together with additional writings including the Nativity of Mary, correspondence of Paul with the Corinthians, Ode of Solomon 11, Melito's On the Pascha and other fragments. The transcription includes page-indexed source records only; works must be identified individually and not conflated. Missing portions are not reconstructed.",
         "text_handling": "Source labels and page/column/line coordinates are retained where present. Supplied readings are bracketed when encoded by the source. Missing manuscript portions are not supplied."
     }
     (ROOT / "p72_index.json").write_text(json.dumps(index, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
