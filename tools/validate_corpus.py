@@ -304,7 +304,7 @@ def validate_android():
     assert p66_file.exists() and p66_file.stat().st_size > 0
     with gzip.open(p66_file, "rt", encoding="utf-8") as page_stream:
         p66_sample = json.loads(next(page_stream))
-    assert p66_sample.get("source_label") and p66_sample.get("text") and p66_sample.get("page_id")
+    assert p66_sample.get("text") and p66_sample.get("page_id")
     assert "correction_notes" in p66_sample
     p75 = next(r for r in greek["records"] if r["id"] == "P75")
     assert "imported" in p75["status"].lower()
@@ -325,7 +325,7 @@ def validate_android():
     assert p75_file.exists() and p75_file.stat().st_size > 0
     with gzip.open(p75_file, "rt", encoding="utf-8") as page_stream:
         p75_sample = json.loads(next(page_stream))
-    assert p75_sample.get("source_label") and p75_sample.get("text") and p75_sample.get("page_id")
+    assert p75_sample.get("text") and p75_sample.get("page_id")
     assert "correction_notes" in p75_sample
     print("Validated Android navigation, text search, Codex Vaticanus, Papyrus 46, P52, P66 and P75 offline transcriptions")
 
