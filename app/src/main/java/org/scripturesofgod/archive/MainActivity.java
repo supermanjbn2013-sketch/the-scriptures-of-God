@@ -130,22 +130,25 @@ public class MainActivity extends Activity {
         for(String item:items){
             if(item.trim().isEmpty())continue;
             String label=item;int split=item.indexOf("  ");if(split>0)label=item.substring(0,split);
-            TextView row=text(label,15,ink,true);row.setBackground(shape(panel));
+            final String rowLabel=label;
+            final String rowItem=item;
+            final String activeCategory=libraryCategory;
+            TextView row=text(rowLabel,15,ink,true);row.setBackground(shape(panel));
             LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,4,0,4);content.addView(row,rp);
             row.setOnClickListener(v->{
-                if(libraryCategory.equals("History")){openBook(item);return;}
-                if(libraryCategory.equals("Notes")){
-                    String key="note:"+label;EditText editor=new EditText(this);editor.setMinLines(4);editor.setText(prefs.getString(key,""));
-                    new android.app.AlertDialog.Builder(this).setTitle("Note · "+label).setView(editor)
+                if(activeCategory.equals("History")){openBook(rowItem);return;}
+                if(activeCategory.equals("Notes")){
+                    String key="note:"+rowLabel;EditText editor=new EditText(this);editor.setMinLines(4);editor.setText(prefs.getString(key,""));
+                    new android.app.AlertDialog.Builder(this).setTitle("Note · "+rowLabel).setView(editor)
                         .setNegativeButton("Close",null).setNeutralButton("Delete",(d,w)->{prefs.edit().remove(key).apply();renderLibrary();})
                         .setPositiveButton("Save",(d,w)->{prefs.edit().putString(key,editor.getText().toString()).apply();renderLibrary();}).show();
                     return;
                 }
-                TextView detail=text(item,14,ink,false);ScrollView sv=new ScrollView(this);sv.setPadding(12,8,12,8);sv.addView(detail);
-                new android.app.AlertDialog.Builder(this).setTitle(label).setView(sv)
+                TextView detail=text(rowItem,14,ink,false);ScrollView sv=new ScrollView(this);sv.setPadding(12,8,12,8);sv.addView(detail);
+                new android.app.AlertDialog.Builder(this).setTitle(rowLabel).setView(sv)
                     .setNegativeButton("Close",null).setPositiveButton("Remove",(d,w)->{
-                        String key=libraryCategory.equals("Highlights")?"highlights":"bookmarks";
-                        removeLibraryEntry(key,item);renderLibrary();
+                        String key=activeCategory.equals("Highlights")?"highlights":"bookmarks";
+                        removeLibraryEntry(key,rowItem);renderLibrary();
                     }).show();
             });
         }
