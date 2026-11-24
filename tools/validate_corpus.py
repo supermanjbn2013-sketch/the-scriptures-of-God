@@ -257,6 +257,38 @@ def validate_android():
     for book in REQUIRED_GREEK | REQUIRED_LATIN:
         assert f'"{book}"' in source, f"An imported Apocrypha book is missing from Android navigation: {book}"
 
+    historical_path = ROOT / "catalog/historical_writings_catalog.json"
+    assert historical_path.exists(), "Historical writings catalogue is missing"
+    historical = json.loads(historical_path.read_text(encoding="utf-8"))
+    assert historical["record_type"] == "historical_writings_and_manuscript_witness_catalog"
+    historical_records = historical["records"]
+    historical_ids = [record["id"] for record in historical_records]
+    historical_titles = {record["title"] for record in historical_records}
+    assert len(historical_ids) == len(set(historical_ids)), "Duplicate historical-writing catalogue IDs"
+    assert len(historical_records) >= 17, "Historical writings catalogue is unexpectedly incomplete"
+    for record in historical_records:
+        assert record["title"] and record["category"] and record["preservation"] and record["date"]
+        assert isinstance(record["languages"], list) and isinstance(record["witnesses"], list)
+        assert record["text_status"] and record["note"] and isinstance(record["sources"], list)
+    required_historical = {
+        "Book of the Wars of the Lord", "Book of Jashar", "Records of Samuel, Nathan, and Gad",
+        "Paul's Earlier Letter to Corinth", "Paul's Severe / Sorrowful Letter to Corinth",
+        "Letter Associated with Laodicea", "Prophecy / Book of Enoch (1 Enoch)",
+        "Epistle of Barnabas", "Shepherd of Hermas", "1 Clement", "2 Clement", "Didache",
+        "Gospel of Peter", "Gospel of Thomas", "Gospel of Mary", "Apocalypse of Peter"
+    }
+    assert required_historical.issubset(historical_titles), f"Missing historical writing records: {required_historical - historical_titles}"
+    for required in (
+        "Writings Mentioned in the Scriptures", "Early Disciple and Apostolic Writings",
+        "Early Christian Gospels and Related Writings", "void openHistoricalWritingEntry(String title)",
+        "catalog/historical_writings_catalog.json", "openHistoricalWritingEntry(item)"
+    ):
+        assert required in source, f"Historical writings Android navigation is missing: {required}"
+    historical_json = json.dumps(historical)
+    assert "P.Oxy. 1782 (late 4th century Greek fragment)" in historical_json
+    assert "P.Oxy. 3528" in historical_json and "not be casually assigned to Barnabas" in historical_json
+    assert "do not automatically be identified as Paul's referenced letter" in historical_json
+
     manuscript_register = json.loads((ROOT / "catalog/greek_manuscript_register.json").read_text(encoding="utf-8"))
     p76 = next((record for record in manuscript_register["records"] if record.get("id") == "P76"), None)
     assert p76 is not None, "P76 offline catalogue record is missing"
