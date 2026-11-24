@@ -119,7 +119,20 @@ def validate_dss():
     assert len(ids) == len(set(ids)), "Duplicate DSS catalogue IDs"
     for record in dss["records"]:
         assert record["name"] and record["language"] and record["date_estimate"]
-        assert record["source_urls"] and record["status"] == "metadata catalogued; transcription not imported"
+        assert record["source_urls"]
+        coverage = record.get("transcription_coverage")
+        if coverage:
+            key = "".join(ch.lower() for ch in coverage["scroll_identifier"] if ch.isalnum())
+            assert key in {"".join(ch.lower() for ch in item["scroll"] if ch.isalnum()) for item in index["scrolls"]}
+            indexed = next(item for item in index["scrolls"] if "".join(ch.lower() for ch in item["scroll"] if ch.isalnum()) == key)
+            assert coverage["line_count"] == indexed["line_count"] > 0
+            assert coverage["fragment_count"] == indexed["fragment_count"] > 0
+            assert coverage["license"] == "CC BY-NC 4.0"
+            assert coverage["offline_asset"] == "dss/etcbc_transcriptions.jsonl"
+            assert "gaps" in coverage["coverage_note"]
+            assert record["status"] == "offline transcription imported; line-level text available"
+        else:
+            assert record["status"] == "metadata catalogued; no matching line-level transcription in the imported dataset"
     concordance = json.loads((ROOT / "catalog/dss_passage_concordance.json").read_text(encoding="utf-8"))
     assert concordance["record_type"] == "dss_manuscript_passage_concordance"
     assert len(concordance["records"]) >= 5
