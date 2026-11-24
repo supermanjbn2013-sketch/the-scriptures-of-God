@@ -550,6 +550,25 @@
       "transcriber": "Michael Oez",
       "tei_encoder": "James E. Walters",
       "status": "Offline Syriac text for Odes 3–42. Digital Syriac Corpus source marks this a print transcription and UncorrectedTranscription; not a fresh diplomatic manuscript transcription. Odes 1–2 not reconstructed; Greek/Coptic witnesses kept separate."
+    },
+    {
+      "id": "ignatius-seven-letters-first1k-greek",
+      "name": "Letters of Ignatius of Antioch — seven Greek letters",
+      "language": "Ancient Greek",
+      "coverage": "Seven letters: Ephesians, Magnesians, Trallians, Romans, Philadelphians, Smyrnaeans and Polycarp; exact chapter and section counts generated in other_reference/ignatius/ignatius_index.json.",
+      "record_type": "printed-edition-derived Greek text with source page markers, editorial notes and cross-references; not a diplomatic manuscript transcription",
+      "edition": "Kirsopp Lake, The Apostolic Fathers, volume 1 (1912)",
+      "license": "CC BY-SA 4.0",
+      "repository": "https://github.com/OpenGreekAndLatin/First1KGreek/tree/03776b39f4047c5cff06f5296fae4b2bae4b08fb/data/tlg1443/tlg001",
+      "attribution": "Ignatius of Antioch, seven genuine letters, Greek text edited by Kirsopp Lake, The Apostolic Fathers, volume 1 (1912); digital TEI transcription by Perseus Digital Library / Open Greek and Latin First1KGreek.",
+      "limitations": [
+        "This source contains the seven letters treated as genuine in Lake's edition; it is not a complete catalogue of all writings attributed to Ignatius.",
+        "The Greek text follows a printed edition and is not a direct diplomatic transcription of one ancient manuscript.",
+        "Chapter and section labels, printed page markers, editorial notes and cross-references are retained.",
+        "Editorial notes are stored separately from the Greek body text.",
+        "The digital TEI transcription is CC BY-SA 4.0; preserve attribution and share-alike terms.",
+        "No missing wording is reconstructed."
+      ]
     }
   ],
   "not_yet_integrated": [
