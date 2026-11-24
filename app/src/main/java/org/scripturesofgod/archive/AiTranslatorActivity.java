@@ -35,7 +35,15 @@ public class AiTranslatorActivity extends Activity {
     @Override public void onCreate(Bundle state){
         super.onCreate(state);
         build();
-        if(getSavedKey().trim().isEmpty()) showKeyDialog();
+        if(getIntent()!=null){
+            String passage=getIntent().getStringExtra("passage_text");
+            String sourceCode=getIntent().getStringExtra("source_language");
+            if(passage!=null&&!passage.isEmpty())source.setText(passage);
+            if(sourceCode!=null&&language!=null){
+                int index="he".equals(sourceCode)?1:("grc".equals(sourceCode)?2:("arc".equals(sourceCode)?3:("la".equals(sourceCode)?4:("en".equals(sourceCode)?5:0))));
+                language.setSelection(index);
+            }
+        }
     }
     private GradientDrawable shape(int color){GradientDrawable d=new GradientDrawable();d.setColor(color);d.setCornerRadius(16);return d;}
     private TextView label(String value,int size,int color,boolean bold){TextView t=new TextView(this);t.setText(value);t.setTextSize(size);t.setTextColor(color);if(bold)t.setTypeface(Typeface.DEFAULT,Typeface.BOLD);t.setPadding(4,9,4,7);return t;}
@@ -90,9 +98,12 @@ public class AiTranslatorActivity extends Activity {
         return p.toString();
     }
 
+    private android.content.SharedPreferences keyPreferences(){
+        return getSharedPreferences("ai_connection",MODE_PRIVATE);
+    }
     private String getSavedKey(){
         try{
-            String packed=getPreferences(0).getString("api_key_encrypted","");
+            String packed=keyPreferences().getString("api_key_encrypted","");
             if(packed.isEmpty())return "";
             byte[] all=Base64.decode(packed,Base64.NO_WRAP);
             byte[] iv=java.util.Arrays.copyOfRange(all,0,12);
@@ -103,13 +114,14 @@ public class AiTranslatorActivity extends Activity {
         }catch(Exception e){return "";}
     }
     private void saveApiKey(String value)throws Exception{
-        if(value.isEmpty()){getPreferences(0).edit().remove("api_key_encrypted").apply();return;}
+        if(value.isEmpty()){keyPreferences().edit().remove("api_key_encrypted").commit();return;}
         Cipher cipher=Cipher.getInstance("AES/GCM/NoPadding");
         cipher.init(Cipher.ENCRYPT_MODE,getSecretKey());
         byte[] encrypted=cipher.doFinal(value.getBytes("UTF-8"));
         byte[] iv=cipher.getIV();byte[] packed=new byte[iv.length+encrypted.length];
         System.arraycopy(iv,0,packed,0,iv.length);System.arraycopy(encrypted,0,packed,iv.length,encrypted.length);
-        getPreferences(0).edit().putString("api_key_encrypted",Base64.encodeToString(packed,Base64.NO_WRAP)).apply();
+        boolean saved=keyPreferences().edit().putString("api_key_encrypted",Base64.encodeToString(packed,Base64.NO_WRAP)).commit();
+        if(!saved||!value.equals(getSavedKey()))throw new Exception("Saved key could not be verified. Please try again.");
     }
     private SecretKey getSecretKey()throws Exception{
         KeyStore store=KeyStore.getInstance("AndroidKeyStore");store.load(null);
