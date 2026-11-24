@@ -42,6 +42,7 @@ jobs:
         run: python3 tools/import_papyrus_66.py
       - name: Import Papyrus 75 manuscript transcription
         run: python3 tools/import_papyrus_75.py
+        run: python3 tools/import_papyrus_72.py
       - name: Import Greek Didache reference text
         run: python3 tools/import_didache.py
       - name: Import Greek Shepherd of Hermas reference text

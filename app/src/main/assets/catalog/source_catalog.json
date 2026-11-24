@@ -587,6 +587,25 @@
         "The digital TEI transcription is CC BY-SA 4.0; attribution and share-alike terms must be preserved.",
         "No missing wording is reconstructed."
       ]
+    },
+    {
+      "id": "papyrus-72-ntvmr",
+      "name": "Papyrus 72 (GA P72; Bodmer VII–VIII composite codex) — INTF NTVMR transcription",
+      "language": "Koine Greek",
+      "coverage": "Surviving page-level transcription of the composite codex, including 1 Peter, 2 Peter and Jude; the codex also contains additional non-Apostolic writings. Exact page and record counts are generated during the build.",
+      "record_type": "INTF manuscript transcription indexed by original NTVMR page identifiers",
+      "edition": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, GA P72, document 10072",
+      "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10072&pageID=ALL&format=teiraw",
+      "repository": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10072",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "attribution": "Papyrus 72 (GA P72; Bodmer VII–VIII composite codex), transcription and catalogue data by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, CC BY 4.0.",
+      "status": "Imported at APK build time as offline compressed page records.",
+      "limitations": [
+        "P72 is a composite codex. The page-indexed transcription may include writings beyond 1 Peter, 2 Peter and Jude; the additional contents must remain separately identified.",
+        "The surviving manuscript text is fragmentary and contains gaps. Only records supplied by the NTVMR transcription are included.",
+        "The codex's constituent works must not be conflated into one writing or treated as all part of the Apostolic Writings.",
+        "The electronic transcription is not a photographic facsimile; manuscript images remain with their holding institutions."
+      ]
     }
   ],
   "not_yet_integrated": [
