@@ -35,7 +35,7 @@ def lname(tag):
 
 
 def clean_space(value):
-    return re.sub(r"\\s+", " ", value or "").strip()
+    return re.sub(r"\s+", " ", value or "").strip()
 
 
 def extract(section):
