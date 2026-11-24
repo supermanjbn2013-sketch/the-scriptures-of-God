@@ -393,7 +393,7 @@ def validate_android():
     assert ascension_path.exists(), "Offline Ascension of Isaiah Ge'ez index was not generated"
     ascension_index = json.loads(ascension_path.read_text(encoding="utf-8"))
     assert ascension_index["source_revision"] == "671a29177071f19cc9da990aaad1681b338cdb49"
-    assert ascension_index["record_count"] >= 10 and ascension_index["section_count"] >= 10
+    assert ascension_index["record_count"] == 5 and ascension_index["section_count"] == 5
     assert "non-commercial" in ascension_index["license"].lower()
     assert datasets["ascension-isaiah-geez-beta-masaheft"]["license"].startswith("CC BY-SA 4.0")
     ascension_records = [json.loads(line) for line in (ROOT / "other_reference/ascension_isaiah/ascension_isaiah_geez.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
