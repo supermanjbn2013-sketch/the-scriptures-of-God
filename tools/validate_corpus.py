@@ -413,6 +413,18 @@ def validate_android():
     assert {r["edition"] for r in jubilees_geez_records} == {"vanderkam_transcription", "eotc_printed"}
     assert all(r["language"] == "gez" and r["text"].strip() and r["license"] == "CC BY-SA 4.0" for r in jubilees_geez_records)
     assert "void openJubileesGeezArchive()" in source and "void openJubileesGeezChapter(String edition,int chapter)" in source
+    twelve_patriarchs_path = ROOT / "other_reference/twelve_patriarchs/twelve_patriarchs_index.json"
+    assert twelve_patriarchs_path.exists(), "Offline Greek Twelve Patriarchs index was not generated"
+    twelve_patriarchs_index = json.loads(twelve_patriarchs_path.read_text(encoding="utf-8"))
+    assert twelve_patriarchs_index["source_revision"] == "954a1f057c2426ad2f049b135600712812516242"
+    assert twelve_patriarchs_index["license"] == "CC BY 4.0"
+    assert twelve_patriarchs_index["language_code"] == "grc"
+    assert twelve_patriarchs_index["testament_count"] == 12 and twelve_patriarchs_index["chapter_count"] >= 100 and twelve_patriarchs_index["record_count"] >= 900
+    twelve_patriarchs_records = [json.loads(line) for line in (ROOT / "other_reference/twelve_patriarchs/twelve_patriarchs_greek.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(twelve_patriarchs_records) == twelve_patriarchs_index["record_count"]
+    assert all(r["language"] == "grc" and r["text"].strip() and r["reading_witness"] == "Wikisource" for r in twelve_patriarchs_records)
+    assert all("not yet collated against Charles" in r["textual_basis"] for r in twelve_patriarchs_records)
+    assert "void openTwelvePatriarchsArchive()" in source and "openTwelvePatriarchsChapter(String testament,String chapter)" in source
     three_baruch_path = ROOT / "other_reference/3_baruch/3bar_greek_index.json"
     assert three_baruch_path.exists(), "Offline Greek 3 Baruch index was not generated"
     three_baruch_index = json.loads(three_baruch_path.read_text(encoding="utf-8"))
