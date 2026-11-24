@@ -957,6 +957,92 @@ public class MainActivity extends Activity {
         }
     }
 
+    void openTestamentAbrahamArchive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/testament_abraham/testament_abraham_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray recensions=new org.json.JSONObject(raw.toString()).getJSONArray("recensions");
+            String[] ids=new String[recensions.length()];
+            String[] labels=new String[recensions.length()];
+            for(int i=0;i<recensions.length();i++){
+                org.json.JSONObject rec=recensions.getJSONObject(i);
+                ids[i]=rec.optString("recension");
+                labels[i]="Recension "+ids[i]+"  ·  "+rec.optInt("chapter_count")+" chapters";
+            }
+            new android.app.AlertDialog.Builder(this).setTitle("Testament of Abraham · Greek recensions")
+                .setItems(labels,(dialog,which)->openTestamentAbrahamRecension(ids[which]))
+                .setNegativeButton("Close",null).show();
+        }catch(Exception e){
+            showInfo("Testament of Abraham unavailable","The offline Greek recensions were not generated in this build. "+e.getMessage());
+        }
+    }
+
+    void openTestamentAbrahamRecension(String recension){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/testament_abraham/testament_abraham_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray recensions=new org.json.JSONObject(raw.toString()).getJSONArray("recensions");
+            org.json.JSONObject selected=null;
+            for(int i=0;i<recensions.length();i++){org.json.JSONObject item=recensions.getJSONObject(i);if(recension.equals(item.optString("recension"))){selected=item;break;}}
+            if(selected==null)throw new Exception("The requested recension is not indexed.");
+            org.json.JSONArray chapters=selected.getJSONArray("chapters");
+            String assetFile=selected.optString("asset_file");
+            int[] numbers=new int[chapters.length()];
+            String[] labels=new String[chapters.length()];
+            for(int i=0;i<chapters.length();i++){numbers[i]=chapters.optInt(i);labels[i]="Chapter "+numbers[i];}
+            new android.app.AlertDialog.Builder(this).setTitle("Recension "+recension+" · Chapters")
+                .setItems(labels,(dialog,which)->openTestamentAbrahamChapter(recension,numbers[which],assetFile))
+                .setNegativeButton("Back to recensions",(d,w)->openTestamentAbrahamArchive()).show();
+        }catch(Exception e){
+            showInfo("Recension unavailable","Unable to open the chapter index. "+e.getMessage());
+        }
+    }
+
+    void openTestamentAbrahamChapter(String recension,int chapter,String assetFile){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open(assetFile),"UTF-8"),8192);
+                    String raw;
+                    while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(record.optInt("chapter")!=chapter)continue;
+                        if(count==0)out.append("Source: M. R. James, Testament of Abraham, Recension "+recension+"\n")
+                            .append("Digital edition: Open Greek and Latin / First1KGreek\n")
+                            .append("Licence: CC BY-SA 4.0\n")
+                            .append("Textual basis: printed Greek edition based on manuscript tradition; not a direct diplomatic transcription of one codex\n")
+                            .append("Recensions A and B are kept separate. No missing wording is reconstructed.\n\n");
+                        out.append(record.optString("reference")).append("\n");
+                        org.json.JSONArray pages=record.optJSONArray("source_pages");
+                        if(pages!=null&&pages.length()>0)out.append("Printed page marker(s): ").append(pages.toString()).append("\n");
+                        org.json.JSONArray lines=record.optJSONArray("line_markers");
+                        if(lines!=null&&lines.length()>0)out.append("Line markers: ").append(lines.toString()).append("\n");
+                        out.append(record.optString("text")).append("\n");
+                        org.json.JSONArray notes=record.optJSONArray("editorial_notes_and_variants");
+                        if(notes!=null&&notes.length()>0){
+                            out.append("Manuscript variants / editorial notes:\n");
+                            for(int i=0;i<notes.length();i++){
+                                org.json.JSONObject note=notes.getJSONObject(i);
+                                out.append(note.optString("type")).append(" ").append(note.optString("number")).append(": ").append(note.optString("text")).append("\n");
+                            }
+                        }
+                        out.append("\n");count++;
+                    }
+                    reader.close();
+                    return count==0?"No source text was found for Recension "+recension+", chapter "+chapter+".":out.toString();
+                }catch(Exception e){return "Unable to read Testament of Abraham: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Recension "+recension+" · Chapter "+chapter)
+                    .setView(sv).setNegativeButton("Back to chapters",(d,w)->openTestamentAbrahamRecension(recension))
+                    .setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     void openOtherReferenceBookEntry(String item){
         String category="Ancient reference writing";
         String preservation="Catalogue entry only; manuscript witnesses and text editions must be verified before a transcription is added.";
@@ -994,13 +1080,14 @@ public class MainActivity extends Activity {
         else if(item.equals("Odes of Solomon")){category="Ancient hymn collection";preservation="Survives in Syriac, with Greek and Coptic fragments.";witnesses="Syriac manuscripts and Greek/Coptic fragments.";}
         else if(item.equals("Pseudo-Philo: Biblical Antiquities")){category="Jewish rewritten-Scripture history";preservation="Survives principally in Latin manuscripts; the original language and form remain debated.";witnesses="Latin manuscript tradition.";}
         else if(item.equals("Zohar")){category="Medieval Jewish mystical literature";preservation="A medieval Aramaic literary corpus associated with the Zoharic tradition, transmitted in manuscripts and printed editions; it is not an ancient Second Temple writing.";witnesses="Medieval Aramaic manuscript tradition and later printed editions. Its historical composition and attribution are subjects of scholarship.";}
-        String textStatus=item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("1 Enoch")?"Fragmentary Aramaic Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Jubilees")?"Fragmentary Hebrew Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
+        String textStatus=item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("1 Enoch")?"Fragmentary Aramaic Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Jubilees")?"Fragmentary Hebrew Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Testament of Abraham")?"Both Greek recensions are available offline as separate editions. Manuscript-variant notes, source page markers and editorial deletions are retained. These are edition-derived texts, not direct diplomatic transcriptions of one codex.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
         String detail=category+"\n\nPreservation: "+preservation+"\n\nKnown witnesses: "+witnesses+"\n\nText status in this app: "+textStatus+" Different languages and recensions remain separate. This archive is for reference and historical study; inclusion here does not automatically make a work part of the Scripture collections.";
         android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(item).setMessage(detail).setPositiveButton("Close",null);
         if(item.equals("Didache"))builder.setNeutralButton("Open Greek text",(d,w)->openDidacheArchive());
         if(item.equals("Shepherd of Hermas"))builder.setNeutralButton("Open Greek text",(d,w)->openHermasArchive());
         if(item.equals("1 Enoch"))builder.setNeutralButton("Open Aramaic fragments",(d,w)->openQumranReferenceFragments("1 Enoch",new String[]{"4Q201","4Q202","4Q204","4Q205","4Q206","4Q207","4Q208","4Q209","4Q210","4Q211","4Q212"}));
         if(item.equals("Jubilees"))builder.setNeutralButton("Open Hebrew fragments",(d,w)->openQumranReferenceFragments("Jubilees",new String[]{"4Q216","4Q217","4Q218","4Q219","4Q220","4Q221","4Q222","4Q223_224","4Q225"}));
+        if(item.equals("Testament of Abraham"))builder.setNeutralButton("Open Greek recensions",(d,w)->openTestamentAbrahamArchive());
         builder.show();
     }
 
