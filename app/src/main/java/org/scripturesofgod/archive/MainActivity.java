@@ -980,6 +980,51 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void openJubileesGeezArchive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/jubilees_geez/jubilees_geez_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray editions=new org.json.JSONObject(raw.toString()).getJSONArray("editions");
+            String[] labels=new String[editions.length()];String[] ids=new String[editions.length()];
+            for(int i=0;i<editions.length();i++){org.json.JSONObject e=editions.getJSONObject(i);ids[i]=e.optString("edition");labels[i]=e.optString("title")+" · "+e.optInt("chapter_count")+" chapters";}
+            new android.app.AlertDialog.Builder(this).setTitle("Jubilees · Ge'ez editions").setItems(labels,(d,w)->openJubileesGeezEdition(ids[w])).setNegativeButton("Close",null).show();
+        }catch(Exception e){showInfo("Jubilees Ge'ez text unavailable","The offline Ge'ez editions were not generated in this build. "+e.getMessage());}
+    }
+    void openJubileesGeezEdition(String edition){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/jubilees_geez/jubilees_geez_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray editions=new org.json.JSONObject(raw.toString()).getJSONArray("editions");org.json.JSONObject selected=null;
+            for(int i=0;i<editions.length();i++)if(edition.equals(editions.getJSONObject(i).optString("edition")))selected=editions.getJSONObject(i);
+            if(selected==null)return;
+            org.json.JSONArray chapters=selected.getJSONArray("chapters");int[] nums=new int[chapters.length()];String[] labels=new String[chapters.length()];
+            for(int i=0;i<chapters.length();i++){nums[i]=chapters.getInt(i);labels[i]="Chapter "+nums[i];}
+            new android.app.AlertDialog.Builder(this).setTitle(selected.optString("title")).setItems(labels,(d,w)->openJubileesGeezChapter(edition,nums[w])).setNegativeButton("Back to editions",(d,w)->openJubileesGeezArchive()).show();
+        }catch(Exception e){showInfo("Jubilees index unavailable",e.getMessage());}
+    }
+    void openJubileesGeezChapter(String edition,int chapter){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/jubilees_geez/jubilees_geez.jsonl"),"UTF-8"),8192);
+                    String raw;while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(!edition.equals(record.optString("edition"))||record.optInt("chapter")!=chapter)continue;
+                        if(count==0)out.append(record.optString("edition_title")).append("\n").append("Source: Beta maṣāḥǝft, LIT1697Jubilees.xml\nLanguage: Ge'ez\nLicence: CC BY-SA 4.0\n").append(record.optString("edition_basis")).append("\nEdition-based text, not a fresh diplomatic transcription of a named manuscript. The two Ge'ez editions and Qumran Hebrew fragments remain separate.\n\n");
+                        out.append(record.optString("reference")).append("\n").append(record.optString("text")).append("\n\n");count++;
+                    }reader.close();
+                    return count==0?"No Ge'ez text records found for this chapter.":count+" numbered text records\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline Ge'ez Jubilees text: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Jubilees · Chapter "+chapter).setView(sv).setNegativeButton("Back to chapters",(d,w)->openJubileesGeezEdition(edition)).setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     void openTwoBaruchArchive(){
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/2_baruch/2_baruch_index.json"),"UTF-8"));
@@ -1294,6 +1339,7 @@ public class MainActivity extends Activity {
         if(item.equals("1 Enoch"))builder.setNeutralButton("Open Aramaic fragments",(d,w)->openQumranReferenceFragments("1 Enoch",new String[]{"4Q201","4Q202","4Q204","4Q205","4Q206","4Q207","4Q208","4Q209","4Q210","4Q211","4Q212"}));
         if(item.equals("1 Enoch"))builder.setNegativeButton("Open Greek fragments",(d,w)->openGreekEnochArchive());
         if(item.equals("Jubilees"))builder.setNeutralButton("Open Hebrew fragments",(d,w)->openQumranReferenceFragments("Jubilees",new String[]{"4Q216","4Q217","4Q218","4Q219","4Q220","4Q221","4Q222","4Q223_224","4Q225"}));
+        if(item.equals("Jubilees"))builder.setNegativeButton("Open Ge'ez editions",(d,w)->openJubileesGeezArchive());
         if(item.equals("Testament of Abraham"))builder.setNeutralButton("Open Greek recensions",(d,w)->openTestamentAbrahamArchive());
         if(item.equals("Ascension of Isaiah"))builder.setNeutralButton("Open Ge'ez text",(d,w)->openAscensionIsaiahArchive());
         builder.show();
