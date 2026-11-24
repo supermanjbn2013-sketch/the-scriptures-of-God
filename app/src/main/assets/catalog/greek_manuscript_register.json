@@ -193,17 +193,21 @@
       "source_urls": [
         "https://manuscripts.csntm.org/Manuscript/View/GA_P76_digital",
         "https://data.onb.ac.at/rec/RZ00002179",
-        "https://epapers.bham.ac.uk/view/divisions/col=5Fartl.type.html"
+        "https://epapers.bham.ac.uk/view/divisions/col=5Fartl.type.html",
+        "https://epapers.bham.ac.uk/id/eprint/1760/",
+        "https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml",
+        "http://www.iohannes.com/XML/transcriptions/greek/04_P76.xml"
       ],
-      "status": "Witness metadata and institutional image references catalogued; no publicly accessible diplomatic transcription located",
+      "status": "IGNTP TEI transcription publicly listed in the University of Birmingham ePapers repository; import pending verification of the XML header license and TEI structure",
       "caution": "Only a small fragment of John survives. Do not infer or reconstruct surrounding verses.",
       "digital_transcription_source": {
-        "title": "International Greek New Testament Project (IGNTP), transcription of P76 listed as unpublished in the University of Birmingham ePapers repository",
-        "format": "Unpublished research transcription; no public downloadable text identified",
-        "status": "Not imported. The repository catalogue lists an IGNTP transcription of P76 as unpublished; institutional digital images are separately available",
-        "repository_url": "https://epapers.bham.ac.uk/view/divisions/col=5Fartl.type.html",
-        "image_catalogue_url": "https://manuscripts.csntm.org/Manuscript/View/GA_P76_digital",
-        "caution": "Do not replace the unavailable manuscript transcription with a normalized critical text. A future import requires lawful access to the IGNTP transcription or a new transcription checked directly against the institutional images."
+        "title": "International Greek New Testament Project (IGNTP), A transcription of P76",
+        "repository": "University of Birmingham ePapers Repository, item 1760",
+        "format": "TEI XML, downloadable file 04_P76.xml (6 kB)",
+        "source_url": "https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml",
+        "online_edition_url": "http://www.iohannes.com/XML/transcriptions/greek/04_P76.xml",
+        "status": "Publicly listed as an unpublished research transcription; the repository states that the reuse license is specified in the transcription header. Import is pending verification of the exact license and XML structure.",
+        "caution": "Do not describe the transcription as unavailable. Do not import until the header's exact license and encoding are verified. Distinguish the transcription from the manuscript images and preserve only source-attested readings."
       }
     },
     {
