@@ -183,6 +183,7 @@ def validate_android():
         "void openPapyrus66Archive()", "void openPapyrus66Page(String pageId)", "papyri/p66/p66_index.json",
         "void openPapyrus75Archive()", "void openPapyrus75Page(String pageId)", "papyri/p75/p75_index.json",
         "void openDidacheArchive()", "void openDidacheChapter(int chapter)", "other_reference/didache/didache_index.json", "other_reference/didache/didache_greek.jsonl", "Open Greek text",
+        "void openHermasArchive()", "void openHermasBook(int book)", "other_reference/hermas/hermas_index.json", "other_reference/hermas/hermas_greek.jsonl",
         "594 line records across these nine Qumran witness identifiers", "not a continuous reconstructed text or an English translation", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate  ·  Long press for passage tools", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "void translateOnDevice(", "com.google.mlkit.nl.translate.TranslatorOptions", "targetLanguage()"
     ):
         assert required in source, f"Android source is missing: {required}"
@@ -213,7 +214,7 @@ def validate_android():
     assert "11Q19" in ids and "1QM" in ids
     catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
     datasets = {item["id"]: item for item in catalog["datasets"]}
-    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "papyrus-46-ntvmr", "papyrus-52-ntvmr", "papyrus-66-ntvmr", "papyrus-75-ntvmr", "didache-first1k-greek", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
+    assert {"swete-lxx-apocrypha", "latin-library-apocrypha", "codex-sinaiticus-xml", "codex-vaticanus-ntvmr", "papyrus-46-ntvmr", "papyrus-52-ntvmr", "papyrus-66-ntvmr", "papyrus-75-ntvmr", "didache-first1k-greek", "shepherd-of-hermas-first1k-greek", "4q47-joshua-direct-transcription", "etcbc-abegg-dss-transcriptions"}.issubset(datasets)
     assert "current complete 16-chapter import is a Latin transmission text" in " ".join(datasets["swete-lxx-apocrypha"]["limitations"])
     assert datasets["4q47-joshua-direct-transcription"]["license"] == "CC BY-SA 4.0"
     assert datasets["4q47-joshua-direct-transcription"]["source_url"]
@@ -340,7 +341,19 @@ def validate_android():
     assert {r["chapter"] for r in didache_records} == set(range(1, 17))
     assert all(r["language"] == "grc" and r["text"].strip() and r["reference"] and r["license"] == "CC BY-SA 4.0" for r in didache_records)
     assert all("printed edition" in r["textual_basis"].lower() for r in didache_records)
-    print("Validated Android navigation, manuscript transcriptions and offline Greek Didache reference text")
+    hermas_path = ROOT / "other_reference/hermas/hermas_index.json"
+    assert hermas_path.exists(), "Offline Shepherd of Hermas Greek index was not generated"
+    hermas_index = json.loads(hermas_path.read_text(encoding="utf-8"))
+    assert hermas_index["book_count"] == 27 and hermas_index["section_count"] >= 500
+    assert hermas_index["license"] == "CC BY-SA 4.0"
+    assert hermas_index["source_revision"] == "03776b39f4047c5cff06f5296fae4b2bae4b08fb"
+    assert datasets["shepherd-of-hermas-first1k-greek"]["license"] == "CC BY-SA 4.0"
+    hermas_records = [json.loads(line) for line in (ROOT / "other_reference/hermas/hermas_greek.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(hermas_records) == hermas_index["section_count"]
+    assert {r["book"] for r in hermas_records} == set(range(1, 28))
+    assert all(r["language"] == "grc" and r["text"].strip() and r["reference"] and r["license"] == "CC BY-SA 4.0" for r in hermas_records)
+    assert all("printed greek edition" in r["textual_basis"].lower() for r in hermas_records)
+    print("Validated Android navigation, manuscript transcriptions, Greek Didache and Shepherd of Hermas reference texts")
 
 sections = {"base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
