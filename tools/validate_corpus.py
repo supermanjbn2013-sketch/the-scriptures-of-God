@@ -161,7 +161,7 @@ def validate_android():
         "Apocrypha and Deuterocanonical Writings", "Psalm 151", "Odes",
         "Prayer of Manasseh (Greek)", "2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)",
         "source_reference", "Temple Scroll (11Q19)", "War Scroll (1QM)",
-        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate  ·  Long press for passage tools", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "requestAiTranslation(", "archive_ai", "AI Translation"
+        "void translateVerse(String reference,String sourceText,String sourceLanguage)", "Disciples and Apostles Writings", "Ancient Referenced Books", "openReferencedBookEntry(item)", "Book of the Wars of YHWH", "openGoogleTranslate(String sourceText,String targetLanguageCode)", "shareVerseForTranslation(String reference,String sourceText)", "ACTION_SEND", "translate.google.com", "ClickableSpan", "translateVerse(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate  ·  Long press for passage tools", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "void translateOnDevice(", "com.google.mlkit.nl.translate.TranslatorOptions", "targetLanguage()"
     ):
         assert required in source, f"Android source is missing: {required}"
     for book in REQUIRED_GREEK | REQUIRED_LATIN:
@@ -170,11 +170,11 @@ def validate_android():
     ai_source = Path("app/src/main/java/org/scripturesofgod/archive/AiTranslatorActivity.java").read_text(encoding="utf-8")
     for required in ("Modern English translation", "Older English style (Early Modern)", "Literal translation", "Word-for-word analysis", "Grammar and meaning explanation", "gemini-3.1-flash-lite", "x-goog-api-key", "AndroidKeyStore", "AES/GCM/NoPadding", "aistudio.google.com/app/apikey", "do not invent words"):
         assert required in ai_source, f"AI translator is missing: {required}"
-    assert "com.google.mlkit" not in source, "Obsolete ML Kit translation must not be used for ancient-language translation"
+    assert "getAiKey()" not in source and "x-goog-api-key" not in source, "Main reader must not require a personal API key for translation"
     manifest = Path("app/src/main/AndroidManifest.xml").read_text(encoding="utf-8")
     assert '.AiTranslatorActivity' not in manifest and '.MainActivity' in manifest, "AI translation must be integrated into the main Scripture reader, not a separate activity"
     gradle = Path("app/build.gradle").read_text(encoding="utf-8")
-    assert "versionCode 4" in gradle and "versionName '1.3.0'" in gradle, "App update version was not incremented"
+    assert "versionCode 5" in gradle and "versionName '1.4.0'" in gradle and "com.google.mlkit:translate" in gradle, "On-device translation app version or dependency is missing"
 
     mapping = re.search(r'String\[\]\[\] pairs=\{\{(.*?)\}\};', source, re.S)
     assert mapping, "Reader book-code mapping could not be inspected"
