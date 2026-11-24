@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
-"""Import the published Papyrus 46 (GA 03) TEI transcription for offline reading.
+"""Import the published Papyrus 46 (GA P46) TEI transcription for offline reading.
 
-Source: Institut für Neutestamentliche Textforschung, NTVMR, document 20003.
+Source: Institut für Neutestamentliche Textforschung, NTVMR, document 10046.
 The importer preserves the source verse labels and page/column/line identifiers.
 For corrected readings, the original hand is displayed and correction readings
 are retained as notes. Missing manuscript portions are never supplied.
