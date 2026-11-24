@@ -665,6 +665,26 @@
         "Missing manuscript portions are not reconstructed.",
         "The electronic transcription is not a photographic facsimile."
       ]
+    },
+    {
+      "id": "papyrus-72-ntvmr",
+      "name": "Papyrus 72 (GA P72) — INTF NTVMR composite-codex transcription",
+      "language": "Koine Greek",
+      "coverage": "Surviving page-indexed transcription of the composite Bodmer VII–VIII codex, including 1 Peter, 2 Peter, Jude and additional works; exact counts are generated in papyri/p72/p72_index.json.",
+      "record_type": "TEI diplomatic manuscript transcription, indexed by original NTVMR page identifier",
+      "edition": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, GA P72",
+      "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10072&pageID=ALL&format=teiraw",
+      "repository": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10072",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "attribution": "Papyrus 72 (GA P72), transcription and catalogue data by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, CC BY 4.0.",
+      "status": "Imported at APK build time as offline compressed page records.",
+      "limitations": [
+        "P72 is a fragmentary composite codex containing multiple works; it is not a single-book manuscript.",
+        "Only text represented in the NTVMR transcription is included.",
+        "Source labels and page, column and line coordinates are retained where present.",
+        "Corrections and supplied readings are retained or bracketed where encoded by the source.",
+        "Missing manuscript portions are not reconstructed."
+      ]
     }
   ],
   "not_yet_integrated": [
