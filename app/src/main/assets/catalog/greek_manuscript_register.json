@@ -67,13 +67,24 @@
       "date_basis": "Palaeographical estimate",
       "contents": "Gospel according to John",
       "condition": "Approximately 75 identifiable papyrus folios and numerous fragments",
-      "holding_institution": "Foundation Martin Bodmer, Geneva",
+      "holding_institution": "Bibliotheca Bodmeriana, Geneva; Chester Beatty Library, Dublin; Institut für Altertumskunde, Cologne",
       "shelfmark": "P. Bodmer II",
       "source_urls": [
         "https://manuscripts.csntm.org/manuscript/View/GA_P66_Bodmer"
       ],
-      "status": "metadata catalogued; transcription not imported",
-      "caution": "The catalogue describes a fragmentary surviving manuscript, not a complete copy."
+      "status": "INTF NTVMR diplomatic transcription imported during APK build as offline page-indexed source records",
+      "caution": "The catalogue describes a fragmentary surviving manuscript, not a complete copy.",
+      "digital_transcription_source": {
+        "title": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room — Papyrus 66 (GA P66)",
+        "document_id": 10066,
+        "format": "TEI XML diplomatic transcription; imported as compressed offline page records",
+        "version": "Published NTVMR transcription retrieved at build time",
+        "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10066&pageID=ALL&format=teiraw",
+        "repository_url": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10066",
+        "status": "Importer integrated; exact page/record counts generated in papyri/p66/p66_index.json during APK build",
+        "caution": "Fragmentary surviving witness of John only. Original page and line identifiers are retained; correction readings and source omissions are not silently normalized. Missing portions are not reconstructed."
+      }
     },
     {
       "id": "P75",
