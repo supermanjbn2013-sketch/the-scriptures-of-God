@@ -324,6 +324,26 @@
         "Supplied readings are bracketed where encoded by the source; missing portions are not reconstructed.",
         "The electronic transcription is not a photographic facsimile."
       ]
+    },
+    {
+      "id": "didache-first1k-greek",
+      "name": "Didache — Greek text in First1KGreek / Open Greek and Latin",
+      "language": "Ancient Greek",
+      "coverage": "16 chapters; section-level Greek text from Kirsopp Lake's 1912 edition. Exact section and page-marker coverage is generated in other_reference/didache/didache_index.json during the build.",
+      "record_type": "TEI printed-edition-derived Greek text with chapter/section references, page markers, editorial notes and cross-references",
+      "edition": "Kirsopp Lake, The Apostolic Fathers, volume 1 (1912), Didache; digital TEI by Open Greek and Latin / First1KGreek",
+      "source_url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/03776b39f4047c5cff06f5296fae4b2bae4b08fb/data/tlg1311/tlg001/tlg1311.tlg001.1st1K-grc1.xml",
+      "repository": "https://github.com/OpenGreekAndLatin/First1KGreek/tree/03776b39f4047c5cff06f5296fae4b2bae4b08fb/data/tlg1311/tlg001",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Kirsopp Lake, The Apostolic Fathers, volume 1 (1912), Didache Greek text; digital TEI transcription by Open Greek and Latin / First1KGreek, CC BY-SA 4.0.",
+      "status": "Imported at APK build time as offline chapter-and-section Greek text.",
+      "limitations": [
+        "This is a printed-edition-derived Greek text, not a direct diplomatic transcription of the sole complete manuscript.",
+        "The principal complete Greek witness is Codex Hierosolymitanus 54, copied in 1056.",
+        "The source edition is Kirsopp Lake's 1912 edition; its editorial decisions must not be confused with manuscript readings.",
+        "Source chapter and section numbering, printed-edition page markers, cross-references and editorial notes are retained.",
+        "The digital transcription and encoding are distributed under CC BY-SA 4.0."
+      ]
     }
   ],
   "not_yet_integrated": [
