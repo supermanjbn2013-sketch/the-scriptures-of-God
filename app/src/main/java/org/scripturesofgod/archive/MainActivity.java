@@ -388,7 +388,7 @@ public class MainActivity extends Activity {
                         String reference=verse.optString("reference"),body=verse.optString("text"),language=verse.optString("language");
                         String verseChapter=reference.contains(":")?reference.substring(0,reference.indexOf(':')):"1";
                         if(!selectedChapter.equals(verseChapter))continue;
-                        TextView row=text(reference+"\n"+body+"\n\nTap to translate  ·  Long press for passage tools",readingSize,ink,false);
+                        TextView row=text(reference+"\n"+body+"\n\nTap to translate with Gemini AI  ·  Long press for passage tools",readingSize,ink,false);
                         row.setBackground(shape(panel));
                         LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);chapterContent.addView(row,p);
                         row.setOnClickListener(v->openAiTranslator(reference,body,language));
@@ -701,7 +701,7 @@ public class MainActivity extends Activity {
                 final String selectedReference=translationRefs.get(spanIndex);
                 int[] range=translationRanges.get(spanIndex);
                 clickableText.setSpan(new android.text.style.ClickableSpan(){
-                    @Override public void onClick(View widget){translateVerse(selectedReference,selectedText,"he");}
+                    @Override public void onClick(View widget){openAiTranslator(selectedReference,selectedText,"he");}
                     @Override public void updateDrawState(android.text.TextPaint paint){paint.setColor(gold);paint.setUnderlineText(true);}
                 },range[0],range[1],android.text.Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
             }
