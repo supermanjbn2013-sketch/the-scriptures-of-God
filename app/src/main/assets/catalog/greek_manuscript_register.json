@@ -101,8 +101,19 @@
         "https://bav.vatican.va/moduli/BodmerVoicu_ing.pdf",
         "https://codex.mf.no/codex_show/1058"
       ],
-      "status": "metadata catalogued; transcription not imported",
-      "caution": "The date is an estimate, not a precise year; discovery and provenance details are not fully certain."
+      "status": "INTF NTVMR diplomatic transcription imported during APK build as offline page-indexed source records",
+      "caution": "The date is an estimate, not a precise year; discovery and provenance details are not fully certain.",
+      "digital_transcription_source": {
+        "title": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room — Papyrus 75 (GA P75)",
+        "document_id": 10075,
+        "format": "TEI XML diplomatic transcription; imported as compressed offline page records",
+        "version": "Published NTVMR transcription retrieved at build time",
+        "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+        "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10075&pageID=ALL&format=teiraw",
+        "repository_url": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10075",
+        "status": "Importer integrated; exact page/record counts generated in papyri/p75/p75_index.json during APK build",
+        "caution": "Fragmentary codex of Luke and John. About 51 leaves survive, with substantial gaps and damaged portions. Only text represented in the NTVMR source is included; missing portions are not reconstructed."
+      }
     },
     {
       "id": "Sinaiticus",
