@@ -413,6 +413,17 @@ def validate_android():
     assert {r["edition"] for r in jubilees_geez_records} == {"vanderkam_transcription", "eotc_printed"}
     assert all(r["language"] == "gez" and r["text"].strip() and r["license"] == "CC BY-SA 4.0" for r in jubilees_geez_records)
     assert "void openJubileesGeezArchive()" in source and "void openJubileesGeezChapter(String edition,int chapter)" in source
+    three_baruch_path = ROOT / "other_reference/3_baruch/3bar_greek_index.json"
+    assert three_baruch_path.exists(), "Offline Greek 3 Baruch index was not generated"
+    three_baruch_index = json.loads(three_baruch_path.read_text(encoding="utf-8"))
+    assert three_baruch_index["source_revision"] == "954a1f057c2426ad2f049b135600712812516242"
+    assert three_baruch_index["license"] == "CC BY 4.0"
+    assert three_baruch_index["language_code"] == "grc"
+    assert three_baruch_index["chapter_count"] >= 15 and three_baruch_index["record_count"] >= 100
+    three_baruch_records = [json.loads(line) for line in (ROOT / "other_reference/3_baruch/3bar_greek.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(three_baruch_records) == three_baruch_index["record_count"]
+    assert all(r["language"] == "grc" and r["text"].strip() and r["reading_witness"] == "Picard" for r in three_baruch_records)
+    assert "void openThreeBaruchArchive()" in source and "openThreeBaruchChapter(String chapter)" in source
     baruch_path = ROOT / "other_reference/2_baruch/2_baruch_index.json"
     assert baruch_path.exists(), "Offline Syriac 2 Baruch index was not generated"
     baruch_index = json.loads(baruch_path.read_text(encoding="utf-8"))
