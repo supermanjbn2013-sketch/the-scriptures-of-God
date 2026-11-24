@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         }).setNegativeButton("Cancel",null).show();
     }
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
-    String[] sections={"Home","Hebrew Scriptures","Prophets","Disciples and Apostles Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Early Disciple and Apostolic Writings","Early Christian Gospels and Related Writings","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
+    String[] sections={"Home","Hebrew Scriptures","Prophets","Disciples and Apostles Writings","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Early Disciple and Apostolic Writings","Early Christian Gospels and Related Writings","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
     @Override public void onCreate(Bundle b){super.onCreate(b); applyTheme(); seed(); show();}
     void applyTheme(){String mode=getSharedPreferences("archive_settings",MODE_PRIVATE).getString("theme","dark");lightMode=mode.equals("light")||(mode.equals("system")&&((getResources().getConfiguration().uiMode&android.content.res.Configuration.UI_MODE_NIGHT_MASK)==android.content.res.Configuration.UI_MODE_NIGHT_NO));if(lightMode){bg=Color.rgb(247,245,239);panel=Color.rgb(255,255,255);gold=Color.rgb(133,94,38);ink=Color.rgb(35,39,42);muted=Color.rgb(105,110,113);}else{bg=Color.rgb(15,19,24);panel=Color.rgb(26,33,41);gold=Color.rgb(205,174,112);ink=Color.rgb(232,228,217);muted=Color.rgb(160,166,170);}}
     void saveTheme(String mode){getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("theme",mode).apply();applyTheme();show();}
@@ -90,7 +90,7 @@ public class MainActivity extends Activity {
             TextView searchTile=text("⌕   Search the Scriptures and manuscript records",15,ink,true);searchTile.setBackground(shape(panel));content.addView(searchTile);searchTile.setOnClickListener(v->navigateTo("Search"));
             content.addView(text("SCRIPTURE COLLECTIONS",12,gold,true));
             addHomeTile("Hebrew Scriptures","39 writings",() -> navigateTo("Hebrew Scriptures"));
-            addHomeTile("Disciples and Apostles Writings","27 writings",() -> navigateTo("Disciples and Apostles Writings"));
+            addHomeTile("Unified Apostolic and Disciple Writings","All catalogued letters, gospels, acts, testimony and related works in estimated chronological order",() -> navigateTo("Unified Apostolic and Disciple Writings"));
             addHomeTile("Apocrypha and Deuterocanonical Writings","Greek and Latin textual forms",() -> navigateTo("Apocrypha and Deuterocanonical Writings"));
             addHomeTile("Writings Mentioned in the Scriptures","Lost references and recovered works, each with witness status",() -> navigateTo("Writings Mentioned in the Scriptures"));
             addHomeTile("Early Disciple and Apostolic Writings","Barnabas, Hermas, Clement, Didache and related writings",() -> navigateTo("Early Disciple and Apostolic Writings"));
@@ -111,6 +111,7 @@ public class MainActivity extends Activity {
         if(section.equals("Personal Library")||section.equals("Favorites")||section.equals("Reading History")){renderLibrary();return;}
         if(section.equals("Search")){EditText query=new EditText(this);query.setSingleLine(true);query.setHint("Exact word or phrase");content.addView(query);Button go=new Button(this);go.setText("Search offline corpus");content.addView(go);go.setOnClickListener(v->{String searchTerm=query.getText().toString().trim();if(!searchTerm.isEmpty())searchCorpus(searchTerm);});return;}
         if(section.equals("DSS Transcription Archive")){renderEtcbcDssIndex(q);return;}
+        if(section.equals("Unified Apostolic and Disciple Writings")){renderUnifiedWritings(q);return;}
         if(section.equals("Writings Mentioned in the Scriptures")){content.addView(text("SCRIPTURE REFERENCES • LOST SOURCES • RECOVERED WITNESSES",12,gold,true));content.addView(text("This catalogue separates a writing named in a surviving passage from any surviving manuscript of that writing. Lost works remain reference records only. Fragmentary and translated works show their actual witnesses and language. 1 Enoch is included as a recovered work quoted in Jude, not as a lost book.",14,muted,false));}
         if(section.equals("Early Disciple and Apostolic Writings")){content.addView(text("EARLY CHRISTIAN WRITINGS • CODEX CONTENTS • PAPYRUS WITNESSES",12,gold,true));content.addView(text("These works survive in different manuscripts, dates, languages and textual forms. Their presence in a codex is a historical fact about that manuscript, not by itself a ruling about scriptural authority.",14,muted,false));}
         if(section.equals("Early Christian Gospels and Related Writings")){content.addView(text("GREEK PAPYRI • COPTIC CODEXES • ETHIOPIC TRANSMISSION",12,gold,true));content.addView(text("Each manuscript witness is listed separately. Short fragments are not silently joined into a complete text, and later translations are not mislabelled as early Greek manuscripts.",14,muted,false));}
@@ -120,6 +121,59 @@ public class MainActivity extends Activity {
         int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {returnSection=section;if(section.equals("Writings Mentioned in the Scriptures")||section.equals("Early Disciple and Apostolic Writings")||section.equals("Early Christian Gospels and Related Writings"))openHistoricalWritingEntry(item);else if(section.equals("Lost and Referenced Books"))openReferencedBookEntry(item);else if(section.equals("Other Reference Books"))openOtherReferenceBookEntry(item);else if(section.equals("Translation Center")){if(item.equals("Preferred translation language"))chooseTranslationLanguage();else openAiConnectionSettings();}else if(section.equals("DSS Passage Concordance"))openDssConcordanceEntry(item);else if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
         if(count==0)content.addView(text("No matching entries. This archive does not fabricate missing manuscript contents or readings.",14,muted,false));
         if(section.equals("Manuscript Archive")||section.equals("Research Archive")||section.equals("Manuscript Comparison"))content.addView(text("Records are catalog placeholders until a source, transcription, date and provenance are verified and attached.",12,gold,false));
+    }
+
+
+    void renderUnifiedWritings(String query){
+        content.addView(text("ONE HISTORICAL COLLECTION • CHRONOLOGICAL ORDER",12,gold,true));
+        content.addView(text("This collection is not limited by the later 27-writing compilation. It includes writings attributed to apostles and disciples, works associated with their communities, and later works bearing their names. Inclusion does not establish authorship or authority. Dates refer to estimated composition, not manuscript-copy dates.",13,muted,false));
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/unified_apostolic_disciple_writings.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray records=new org.json.JSONObject(raw.toString()).getJSONArray("records");
+            int shown=0;
+            for(int i=0;i<records.length();i++){
+                org.json.JSONObject record=records.getJSONObject(i);
+                String title=record.optString("title","Untitled record");
+                String genre=record.optString("genre","writing");
+                String attribution=record.optString("attribution_status","");
+                String dateStart=record.optString("composition_date_start_ce","");
+                String dateEnd=record.optString("composition_date_end_ce","");
+                String date=(dateStart.equals("9999")||dateStart.isEmpty())?"Date undetermined":(dateStart.equals(dateEnd)?dateStart+" CE":dateStart+"–"+dateEnd+" CE");
+                String hay=(title+" "+genre+" "+attribution+" "+record.optString("textual_status","")).toLowerCase(java.util.Locale.ROOT);
+                if(!query.isEmpty()&&!hay.contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
+                LinearLayout row=new LinearLayout(this);row.setOrientation(1);row.setPadding(12,7,12,7);row.setBackground(shape(panel));
+                row.addView(text(title,15,ink,true));
+                row.addView(text(date+"  •  "+genre,12,gold,false));
+                TextView status=text(attribution,12,muted,false);status.setMaxLines(3);row.addView(status);
+                LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,4,0,5);content.addView(row,rp);
+                row.setOnClickListener(v->showUnifiedWritingDetail(record));
+                shown++;
+            }
+            if(shown==0)content.addView(text("No matching writing records.",14,muted,false));
+            content.addView(text(shown+" records shown. Composition dates are estimates; manuscript witnesses are catalogued separately.",12,muted,false));
+        }catch(Exception e){
+            content.addView(text("The unified writings catalogue could not be opened: "+e.getMessage(),13,muted,false));
+        }
+    }
+
+    void showUnifiedWritingDetail(org.json.JSONObject record){
+        StringBuilder detail=new StringBuilder();
+        String start=record.optString("composition_date_start_ce","");
+        String end=record.optString("composition_date_end_ce","");
+        String date=(start.equals("9999")||start.isEmpty())?"Undetermined":(start.equals(end)?start+" CE":start+"–"+end+" CE");
+        detail.append("Estimated composition: ").append(date).append("\\n");
+        detail.append("Date note: ").append(record.optString("date_precision")).append("\\n\\n");
+        detail.append("Genre: ").append(record.optString("genre")).append("\\n\\n");
+        detail.append("Attribution and authorship: ").append(record.optString("attribution_status")).append("\\n\\n");
+        detail.append("Textual / preservation status: ").append(record.optString("textual_status")).append("\\n\\n");
+        detail.append("Historical reference: ").append(record.optString("related_scriptural_reference","Not specified")).append("\\n\\n");
+        detail.append("Chronology basis: ").append(record.optString("chronology_basis")).append("\\n\\n");
+        detail.append("Later compilation classification: ").append(record.optString("later_canonical_compilation_status")).append("\\n\\n");
+        detail.append("Preservation category: ").append(record.optString("preservation_status","Not yet classified"));
+        TextView view=text(detail.toString(),14,ink,false);view.setTextIsSelectable(true);
+        ScrollView scroll=new ScrollView(this);scroll.setPadding(12,8,12,8);scroll.addView(view);
+        new android.app.AlertDialog.Builder(this).setTitle(record.optString("title","Writing record")).setView(scroll).setPositiveButton("Close",null).show();
     }
 
     String libraryCategory="Bookmarks";
