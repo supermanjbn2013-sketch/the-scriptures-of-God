@@ -980,6 +980,54 @@ public class MainActivity extends Activity {
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
+    void openGreekEnochArchive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/enoch_greek/enoch_greek_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONObject index=new org.json.JSONObject(raw.toString());
+            org.json.JSONArray pages=index.getJSONArray("printed_pages");
+            int[] numbers=new int[pages.length()];String[] labels=new String[pages.length()];
+            for(int i=0;i<pages.length();i++){numbers[i]=pages.getInt(i);labels[i]="Printed edition page "+numbers[i];}
+            new android.app.AlertDialog.Builder(this).setTitle("1 Enoch · Greek edition fragments")
+                .setItems(labels,(dialog,which)->openGreekEnochPage(numbers[which]))
+                .setNegativeButton("Close",null).show();
+        }catch(Exception e){
+            showInfo("Greek Enoch text unavailable","The offline Greek edition text was not generated in this build. "+e.getMessage());
+        }
+    }
+
+    void openGreekEnochPage(int page){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/enoch_greek/enoch_greek.jsonl"),"UTF-8"),8192);
+                    String raw;
+                    while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(record.optInt("printed_page")!=page)continue;
+                        if(count==0)out.append("Work: 1 Enoch\nLanguage: Ancient Greek\n")
+                            .append("Edition: Johannes Flemming, Das Buch Henoch (1901)\n")
+                            .append("Digital source: Open Greek and Latin / First1KGreek\nLicence: CC BY-SA 4.0\n")
+                            .append("This is fragmentary, edition-derived Greek text, not a complete manuscript or a diplomatic transcription of one codex. Aramaic and Ethiopic witnesses remain separate. No missing wording is reconstructed.\n\n");
+                        out.append(record.optString("reference")).append(" · printed page ").append(page).append("\n")
+                            .append(record.optString("text")).append("\n\n");
+                        count++;
+                    }
+                    reader.close();
+                    return count==0?"No Greek text records were found for printed page "+page+".":count+" Greek text paragraphs\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline Greek Enoch text: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("1 Enoch · Greek page "+page)
+                    .setView(sv).setNegativeButton("Back to page index",(d,w)->openGreekEnochArchive())
+                    .setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
     void openQumranReferenceFragments(String title,String[] requestedIds){
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/etcbc_scroll_index.json"),"UTF-8"));
@@ -1134,13 +1182,14 @@ public class MainActivity extends Activity {
         else if(item.equals("Odes of Solomon")){category="Ancient hymn collection";preservation="Survives in Syriac, with Greek and Coptic fragments.";witnesses="Syriac manuscripts and Greek/Coptic fragments.";}
         else if(item.equals("Pseudo-Philo: Biblical Antiquities")){category="Jewish rewritten-Scripture history";preservation="Survives principally in Latin manuscripts; the original language and form remain debated.";witnesses="Latin manuscript tradition.";}
         else if(item.equals("Zohar")){category="Medieval Jewish mystical literature";preservation="A medieval Aramaic literary corpus associated with the Zoharic tradition, transmitted in manuscripts and printed editions; it is not an ancient Second Temple writing.";witnesses="Medieval Aramaic manuscript tradition and later printed editions. Its historical composition and attribution are subjects of scholarship.";}
-        String textStatus=item.equals("Gospel of Thomas")?"Sahidic Coptic text from Nag Hammadi Codex II is available offline, indexed by manuscript page, column and line. The digital edition is based on examination of the facsimile; it is not a new independent transcription.":item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("1 Enoch")?"Fragmentary Aramaic Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Jubilees")?"Fragmentary Hebrew Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Testament of Abraham")?"Both Greek recensions are available offline as separate editions. Manuscript-variant notes, source page markers and editorial deletions are retained. These are edition-derived texts, not direct diplomatic transcriptions of one codex.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
+        String textStatus=item.equals("Gospel of Thomas")?"Sahidic Coptic text from Nag Hammadi Codex II is available offline, indexed by manuscript page, column and line. The digital edition is based on examination of the facsimile; it is not a new independent transcription.":item.equals("Didache")?"Greek text available offline from the Lake 1912 edition, with the source page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("Shepherd of Hermas")?"Greek text available offline from the Lake 1917 edition, with book/chapter/section references, page markers, notes and cross-references retained. This is an edition-derived text, not a direct manuscript transcription.":item.equals("1 Enoch")?"Aramaic Qumran fragments and a separate Greek fragment text from the Flemming 1901 edition are available offline. Neither dataset is a complete Ethiopic or Greek copy; no continuous book is reconstructed.":item.equals("Jubilees")?"Fragmentary Hebrew Qumran witness texts are available offline for the identified scrolls. These are manuscript fragments, not a complete Ethiopic text or a reconstructed continuous book.":item.equals("Testament of Abraham")?"Both Greek recensions are available offline as separate editions. Manuscript-variant notes, source page markers and editorial deletions are retained. These are edition-derived texts, not direct diplomatic transcriptions of one codex.":"Catalogue record only unless a separately identified transcription is available. No complete text is claimed by this entry.";
         String detail=category+"\n\nPreservation: "+preservation+"\n\nKnown witnesses: "+witnesses+"\n\nText status in this app: "+textStatus+" Different languages and recensions remain separate. This archive is for reference and historical study; inclusion here does not automatically make a work part of the Scripture collections.";
         android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(item).setMessage(detail).setPositiveButton("Close",null);
         if(item.equals("Gospel of Thomas"))builder.setNeutralButton("Open Coptic text",(d,w)->openThomasArchive());
         if(item.equals("Didache"))builder.setNeutralButton("Open Greek text",(d,w)->openDidacheArchive());
         if(item.equals("Shepherd of Hermas"))builder.setNeutralButton("Open Greek text",(d,w)->openHermasArchive());
         if(item.equals("1 Enoch"))builder.setNeutralButton("Open Aramaic fragments",(d,w)->openQumranReferenceFragments("1 Enoch",new String[]{"4Q201","4Q202","4Q204","4Q205","4Q206","4Q207","4Q208","4Q209","4Q210","4Q211","4Q212"}));
+        if(item.equals("1 Enoch"))builder.setNegativeButton("Open Greek fragments",(d,w)->openGreekEnochArchive());
         if(item.equals("Jubilees"))builder.setNeutralButton("Open Hebrew fragments",(d,w)->openQumranReferenceFragments("Jubilees",new String[]{"4Q216","4Q217","4Q218","4Q219","4Q220","4Q221","4Q222","4Q223_224","4Q225"}));
         if(item.equals("Testament of Abraham"))builder.setNeutralButton("Open Greek recensions",(d,w)->openTestamentAbrahamArchive());
         builder.show();
