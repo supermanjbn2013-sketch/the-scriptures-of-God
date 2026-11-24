@@ -340,7 +340,7 @@ def validate_android():
     assert p75_sample.get("text") and p75_sample.get("page_id")
     assert "correction_notes" in p75_sample
     p72 = next(r for r in greek["records"] if r["id"] == "P72")
-    assert "imported" in p72["status"].lower()
+    assert "integrated" in p72["status"].lower()
     assert p72["digital_transcription_source"]["document_id"] == 10072
     assert p72["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
     assert datasets["papyrus-72-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
@@ -350,7 +350,7 @@ def validate_android():
     assert p72_index["document_id"] == 10072 and p72_index["page_count"] == len(p72_index["pages"]) > 0
     assert p72_index["record_count"] > 0 and p72_index["text_record_count"] > 0
     p77 = next(r for r in greek["records"] if r["id"] == "P77")
-    assert "imported" in p77["status"].lower()
+    assert "integrated" in p77["status"].lower()
     assert p77["digital_transcription_source"]["document_id"] == 10077
     assert p77["digital_transcription_source"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
     assert datasets["papyrus-77-ntvmr"]["license"] == "Creative Commons Attribution 4.0 International (CC BY 4.0)"
