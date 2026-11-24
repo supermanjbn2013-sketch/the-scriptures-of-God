@@ -35,7 +35,7 @@
       "id": "dss-metadata-register",
       "name": "Selected Dead Sea Scrolls manuscript metadata register",
       "language": "Hebrew and Aramaic",
-      "coverage": "Four selected Qumran Cave 1 manuscripts: 1QIsaᵃ, 1QpHab, 1QapGen, and 1QS",
+      "coverage": "Six selected Dead Sea Scrolls manuscripts: 1QIsaᵃ, 1QpHab, 1QapGen, 1QS, 11Q19, and 1QM.",
       "record_type": "institution-sourced manuscript metadata; not transcription",
       "license": "Metadata descriptions are independently summarized with source attribution. IAA and Israel Museum manuscript images and site text are not bundled or republished.",
       "repository": "https://www.deadseascrolls.org.il/",
