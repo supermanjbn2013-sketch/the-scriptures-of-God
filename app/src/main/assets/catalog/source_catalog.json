@@ -452,6 +452,28 @@
       ]
     },
     {
+      "id": "ascension-isaiah-geez-beta-masaheft",
+      "name": "Ascension of Isaiah — Ge'ez text",
+      "language": "Classical Ethiopic (Ge'ez)",
+      "coverage": "Numbered Ge'ez text sections and exact record counts are generated in other_reference/ascension_isaiah/ascension_isaiah_index.json during the build.",
+      "record_type": "TEI edition text in Ge'ez with section identifiers",
+      "edition": "Library of Ethiopic Texts transcription (1995), encoded by Beta maṣāḥǝft",
+      "license": "CC BY-SA 4.0 for TEI encoding; underlying Ge'ez text is permitted for non-commercial use only",
+      "repository": "https://github.com/BetaMasaheft/Works",
+      "source_url": "https://raw.githubusercontent.com/BetaMasaheft/Works/671a29177071f19cc9da990aaad1681b338cdb49/1001-2000/LIT1671Isaiah.xml",
+      "attribution": "Michal Jerabek, Library of Ethiopic Texts (1995); Unicode conversion by Ran HaCohen; TEI encoding and curation by Beta maṣāḥǝft, Universität Hamburg.",
+      "status": "Imported at APK build time as offline Ge'ez edition text, separated by source section.",
+      "limitations": [
+        "This is an edition-based Unicode transcription, not a fresh diplomatic transcription of a single manuscript.",
+        "The underlying text permission explicitly limits use to non-commercial purposes; it may not be sold or commercially redistributed.",
+        "The Ge'ez text is the complete surviving language tradition, but it is a translation from a lost Greek textual form.",
+        "Greek, Latin, Coptic and Slavonic witnesses are separate traditions and are not merged into this Ge'ez text.",
+        "The source edition's manuscript basis and editorial decisions are not independently re-collated by this app.",
+        "No missing wording is reconstructed."
+      ],
+      "asset_file": "other_reference/ascension_isaiah/ascension_isaiah_geez.jsonl"
+    },
+    {
       "id": "gospel-thomas-coptic-scriptorium",
       "name": "Gospel of Thomas — Sahidic Coptic text from Nag Hammadi Codex II",
       "language": "Sahidic Coptic with Lycopolitan features",
