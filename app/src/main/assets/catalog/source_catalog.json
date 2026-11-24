@@ -304,6 +304,26 @@
         "Missing manuscript portions are not reconstructed.",
         "The electronic transcription is not a photographic facsimile."
       ]
+    },
+    {
+      "id": "papyrus-75-ntvmr",
+      "name": "Papyrus 75 (GA P75) — INTF NTVMR diplomatic transcription",
+      "language": "Koine Greek",
+      "coverage": "Surviving page and fragment transcription of P75, document 10075; exact page and record counts are generated in papyri/p75/p75_index.json during the build.",
+      "record_type": "TEI diplomatic manuscript transcription, indexed by original NTVMR page identifier",
+      "edition": "Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, GA P75",
+      "source_url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10075&pageID=ALL&format=teiraw",
+      "repository": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=10075",
+      "license": "Creative Commons Attribution 4.0 International (CC BY 4.0)",
+      "attribution": "Papyrus 75 (GA P75), transcription and catalogue data by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, CC BY 4.0.",
+      "status": "Imported at APK build time as offline compressed page records.",
+      "limitations": [
+        "P75 is a fragmentary codex of Luke and John, not a complete copy of either writing.",
+        "About 51 leaves survive; some portions are damaged or absent.",
+        "Only text represented in the pinned NTVMR transcription is included.",
+        "Supplied readings are bracketed where encoded by the source; missing portions are not reconstructed.",
+        "The electronic transcription is not a photographic facsimile."
+      ]
     }
   ],
   "not_yet_integrated": [
