@@ -192,15 +192,18 @@
       "shelfmark": "Pap. G. 36102",
       "source_urls": [
         "https://manuscripts.csntm.org/Manuscript/View/GA_P76_digital",
-        "https://data.onb.ac.at/rec/RZ00002179"
+        "https://data.onb.ac.at/rec/RZ00002179",
+        "https://epapers.bham.ac.uk/view/divisions/col=5Fartl.type.html"
       ],
-      "status": "Witness metadata catalogued; diplomatic transcription not yet imported",
+      "status": "Witness metadata and institutional image references catalogued; no publicly accessible diplomatic transcription located",
       "caution": "Only a small fragment of John survives. Do not infer or reconstruct surrounding verses.",
       "digital_transcription_source": {
-        "title": "No verified public diplomatic transcription identified in the sources checked",
-        "format": "Institutional manuscript images/catalogue record; transcription import pending",
-        "status": "Not imported; image-based transcription and line-coordinate verification still required",
-        "caution": "Do not substitute a later printed Greek text for the manuscript witness."
+        "title": "International Greek New Testament Project (IGNTP), transcription of P76 listed as unpublished in the University of Birmingham ePapers repository",
+        "format": "Unpublished research transcription; no public downloadable text identified",
+        "status": "Not imported. The repository catalogue lists an IGNTP transcription of P76 as unpublished; institutional digital images are separately available",
+        "repository_url": "https://epapers.bham.ac.uk/view/divisions/col=5Fartl.type.html",
+        "image_catalogue_url": "https://manuscripts.csntm.org/Manuscript/View/GA_P76_digital",
+        "caution": "Do not replace the unavailable manuscript transcription with a normalized critical text. A future import requires lawful access to the IGNTP transcription or a new transcription checked directly against the institutional images."
       }
     },
     {
