@@ -119,7 +119,7 @@
         "https://manuscripts.csntm.org/manuscript/View/GA_03",
         "https://digi.vatlib.it/view/MSS_Vat.gr.1209"
       ],
-      "status": "metadata catalogued; INTF NTVMR transcription source and CC BY 4.0 licence verified; offline transcription importer not yet integrated",
+      "status": "metadata catalogued; INTF NTVMR transcription imported at APK build time as offline page-indexed source records",
       "caution": "Do not claim that the original Codex Vaticanus contains the Pastorals, Philemon, or Revelation. The later Revelation supplement is a separate manuscript. Preserve the codex's missing leaves as physical losses, not as textual omissions. Do not fill its readings from another edition.",
       "digital_transcription_source": {
         "title": "Codex Vaticanus (GA 03), New Testament transcription",
@@ -130,8 +130,8 @@
         "attribution": "Codex Vaticanus (GA 03), New Testament transcription by the Institut für Neutestamentliche Textforschung, New Testament Virtual Manuscript Room, CC BY 4.0.",
         "source_url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=20003&pageID=ALL&format=teiraw",
         "repository_url": "https://ntvmr.uni-muenster.de/manuscript-workspace?docID=20003",
-        "status": "source and licence verified; transcription import pending",
-        "handling": "Use the original-hand reading as the displayed text; retain corrections and uncertain/supplied readings as explicit notes. Do not fill missing manuscript portions from another edition.",
+        "status": "source and CC BY 4.0 licence verified; offline page-indexed transcription imported during APK build",
+        "handling": "Display the original-hand reading where the TEI marks corrections; retain correction readings as notes. Preserve source verse labels and page/column/line identifiers where present. Do not fill missing manuscript portions or include the later Revelation supplement.",
         "scope": "Original surviving New Testament text only; do not include the later Revelation supplement."
       }
     }
