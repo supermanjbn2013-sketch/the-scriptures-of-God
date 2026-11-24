@@ -78,7 +78,7 @@ def extract_block(block):
             readings = [child for child in list(elem) if lname(child.tag) == "rdg"]
             first = next((r for r in readings if r.attrib.get("type") == "orig"), None)
             corrections = [r for r in readings if r.attrib.get("type") == "corr"]
-            chosen = first or (corrections[0] if corrections else None)
+            chosen = first if first is not None else (corrections[0] if corrections else None)
             if chosen is not None:
                 if first is not None and corrections:
                     before = " ".join((visible_text(first) or "").split())
@@ -182,12 +182,8 @@ def main():
                     continue
                 if tag == "ab" and stack and stack[-1][0] is elem:
                     _, inherited = stack.pop()
-                    parent_type = ""
-                    parent = elem.getparent() if hasattr(elem, "getparent") else None
-                    if parent is not None:
-                        parent_type = parent.attrib.get("type", "").lower()
                     label = elem.attrib.get("n", "")
-                    if parent_type in ("incipit", "explicit") or "inscriptio" in label.lower() or "subscriptio" in label.lower():
+                    if "inscriptio" in label.lower() or "subscriptio" in label.lower():
                         elem.clear()
                         continue
                     record = extract_block(elem)
