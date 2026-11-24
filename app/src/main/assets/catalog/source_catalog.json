@@ -344,6 +344,26 @@
         "Source chapter and section numbering, printed-edition page markers, cross-references and editorial notes are retained.",
         "The digital transcription and encoding are distributed under CC BY-SA 4.0."
       ]
+    },
+    {
+      "id": "shepherd-of-hermas-first1k-greek",
+      "name": "Shepherd of Hermas — Greek text in First1KGreek / Open Greek and Latin",
+      "language": "Ancient Greek",
+      "coverage": "27 structural divisions (visions, mandates and similitudes) with section-level Greek text; exact counts are generated in other_reference/hermas/hermas_index.json during the build.",
+      "record_type": "TEI printed-edition-derived Greek text with book/chapter/section references, source page markers, editorial notes and cross-references",
+      "edition": "Kirsopp Lake, The Apostolic Fathers, volume 2 (1917); digital TEI by Open Greek and Latin / First1KGreek",
+      "source_url": "https://raw.githubusercontent.com/OpenGreekAndLatin/First1KGreek/03776b39f4047c5cff06f5296fae4b2bae4b08fb/data/tlg1419/tlg001/tlg1419.tlg001.1st1K-grc1.xml",
+      "repository": "https://github.com/OpenGreekAndLatin/First1KGreek/tree/03776b39f4047c5cff06f5296fae4b2bae4b08fb/data/tlg1419/tlg001",
+      "license": "CC BY-SA 4.0",
+      "attribution": "Hermas, The Shepherd, Greek text edited by Kirsopp Lake, The Apostolic Fathers, volume 2 (1917); digital TEI transcription by Open Greek and Latin / First1KGreek, CC BY-SA 4.0.",
+      "status": "Imported at APK build time as offline book/chapter/section Greek text.",
+      "limitations": [
+        "This is a printed-edition-derived Greek text, not a direct diplomatic transcription of one manuscript.",
+        "The work survives in multiple Greek manuscripts and ancient translations with textual variation.",
+        "Book, chapter and section numbering, source page markers, editorial notes and cross-references are retained.",
+        "The digital transcription and encoding are distributed under CC BY-SA 4.0.",
+        "No missing wording is reconstructed."
+      ]
     }
   ],
   "not_yet_integrated": [
