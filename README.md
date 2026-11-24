@@ -16,7 +16,7 @@ An Android-first, offline-capable research archive for ancient scriptural texts,
 The build process generates an offline JSONL corpus from the source repositories. The current collection includes:
 
 - Hebrew text based on the Westminster Leningrad Codex through the Open Scriptures Hebrew Bible project.
-- Greek Apostolic Writings from the SBL Greek New Testament v1.2. This is an edited Greek text, not a transcription of P46, P52, P66, P75, Codex Vaticanus, or Codex Sinaiticus.
+- Greek Disciples and Apostles Writings from the SBL Greek New Testament v1.2. This is an edited Greek text, not a transcription of P46, P52, P66, P75, Codex Vaticanus, or Codex Sinaiticus.
 - Greek Apocrypha and Deuterocanonical texts from Henry Barclay Swete's Septuagint edition as digitized by Open Greek and Latin First1KGreek.
 - Separate Old Greek and Theodotionic forms for Susanna, Daniel, and Bel and the Dragon.
 - Latin transmission texts for 2 Esdras / 4 Ezra (the 16-chapter composite containing 5 Ezra, 4 Ezra proper, and 6 Ezra) and the Latin Prayer of Manasseh.
@@ -55,7 +55,7 @@ Each dataset has its own licence. Do not assume that one licence applies to the 
 - SBLGNT v1.2: CC BY 4.0.
 - First1KGreek / nathans/lxx-swete transcription: CC BY-SA 4.0.
 - Latin Library texts: public-domain status is stated by the Latin Library source; the source does not identify a modern critical edition.
-- Codex Sinaiticus electronic transcription: CC BY-NC-SA 3.0; not yet bundled.
+- Codex Sinaiticus electronic transcription: CC BY-NC-SA 3.0; imported at APK build time as offline page-specific transcription records.
 - Institutional manuscript images remain on their source websites unless reuse permissions are verified.
 
 Attribution and licence notices are generated in `app/src/main/assets/corpus/SOURCE_NOTICES.txt`.
@@ -69,7 +69,7 @@ The corpus validation workflow fetches the licensed source texts, generates the 
 3. DSS metadata and passage concordance integrity.
 4. Android navigation and exact search implementation.
 
-The Android source validation workflow compiles the application without producing an APK. The APK workflow is separate and must not be run until the data and app are ready for a complete release.
+The Android APK workflow prepares and validates the offline corpus, compiles the application, and publishes the debug APK as a downloadable workflow artifact. A successful CI build confirms compilation and corpus validation; it does not replace device testing.
 
 ## Repository layout
 
