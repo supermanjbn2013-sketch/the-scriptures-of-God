@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "record_type": "textual_reconstruction_policy",
+  "project": "The Scriptures of God",
+  "archive_scope": "witness-led; no fixed canon or book-count limit",
+  "primary_hebrew_reference": "Dead Sea Scrolls",
+  "purpose": "Build readable continuous texts where possible while preserving the identity, age, language, coverage, and textual differences of every manuscript witness.",
+  "witness_traditions": [
+    {
+      "id": "dss",
+      "name": "Dead Sea Scrolls",
+      "role": "Primary organizing reference for Hebrew and Aramaic scriptural writings wherever a relevant Qumran witness survives.",
+      "dating_note": "Individual manuscripts are generally dated from the last centuries BCE through the first century CE; dates must be recorded per manuscript, not assigned collectively as one date.",
+      "handling_rule": "Preserve each Qumran manuscript and fragment separately with its Qumran identifier, exact coverage, transcription basis, and lacunae. Do not fill a DSS lacuna and label the supplied wording DSS text."
+    },
+    {
+      "id": "septuagint",
+      "name": "Septuagint and Greek witnesses",
+      "role": "Early Greek translation and manuscript evidence; use as a comparison and supplement where the same writing and passage are represented.",
+      "dating_note": "Translation activity began in the third century BCE; surviving Greek manuscripts have individual dates and must be catalogued separately.",
+      "handling_rule": "Distinguish translation wording, manuscript reading, and later edited Septuagint editions. Do not treat Swete or another edited edition as a direct transcription of one ancient codex."
+    },
+    {
+      "id": "samaritan_pentateuch",
+      "name": "Samaritan Pentateuch",
+      "role": "Independent textual tradition for the Five Books of Moses and a comparison witness.",
+      "dating_note": "The textual tradition is ancient; surviving complete Samaritan codices are generally medieval. Qumran manuscripts can preserve pre-Samaritan or related textual forms.",
+      "handling_rule": "Keep Samaritan readings distinct from Qumran pre-Samaritan texts and from medieval Samaritan codices. Do not claim the date of a tradition as the date of a surviving copy."
+    },
+    {
+      "id": "masoretic",
+      "name": "Masoretic manuscripts",
+      "role": "Hebrew comparison witnesses, including the Cairo Codex of Prophets, Aleppo Codex, and Leningrad Codex.",
+      "dating_note": "Major surviving Masoretic codices are medieval; proto-Masoretic textual forms are also represented among the DSS.",
+      "handling_rule": "Identify the exact codex and manuscript date. The Leningrad Codex is one witness and must not define the archive's scope or canon."
+    },
+    {
+      "id": "ethiopic",
+      "name": "Ethiopic / Ge'ez tradition",
+      "role": "Versional witness tradition for writings preserved in Ge'ez, including writings whose Hebrew or Greek witnesses are fragmentary or absent.",
+      "dating_note": "Translation traditions can be ancient while surviving codices are later; record translation date estimates separately from the date of each physical manuscript.",
+      "handling_rule": "Identify the Ge'ez edition or manuscript, its source language where known, and its editorial basis. Do not present a translation as the original-language witness."
+    },
+    {
+      "id": "other_versions",
+      "name": "Other ancient versions",
+      "role": "Syriac, Latin, Coptic, Armenian, and other versional witnesses where relevant.",
+      "dating_note": "Date each translation tradition and each surviving manuscript independently.",
+      "handling_rule": "Use only where the work and passage are demonstrably represented; preserve versional wording separately and identify translation-mediated readings."
+    }
+  ],
+  "reconstruction_rules": {
+    "preserve_original_witnesses": true,
+    "mark_every_supplement": true,
+    "never_invent_missing_text": true,
+    "unresolved_gaps_remain_blank": true,
+    "never_silently_merge_variant_readings": true,
+    "never_treat_edited_edition_as_diplomatic_manuscript_transcription": true,
+    "compare_the_same_writing_and_passage_only": true,
+    "record_uncertainty_and_editorial_intervention": true,
+    "prefer_earliest_relevant_witness_not_age_alone": true
+  },
+  "segment_statuses": [
+    "directly_preserved",
+    "partially_preserved",
+    "supplied_from_named_witness",
+    "editorial_restoration",
+    "uncertain_reading",
+    "unrecoverable_gap"
+  ],
+  "required_segment_fields": [
+    "writing_id",
+    "passage_reference",
+    "segment_order",
+    "text",
+    "segment_status",
+    "source_witness_id",
+    "source_location",
+    "language",
+    "transcription_or_edition_basis",
+    "confidence",
+    "editorial_note"
+  ],
+  "display_modes": [
+    {
+      "id": "witness_only",
+      "label": "Manuscript witness only",
+      "description": "Show only text directly preserved by the selected witness; leave damaged or missing areas visibly blank."
+    },
+    {
+      "id": "reconstructed_reading",
+      "label": "Reconstructed reading",
+      "description": "Show a continuous reading where supported, with every supplied segment visibly marked and linked to its actual source witness."
+    },
+    {
+      "id": "witness_comparison",
+      "label": "Compare witnesses",
+      "description": "Show each witness independently so differences, omissions, additions, and translation effects remain visible."
+    }
+  ],
+  "reconstruction_workflow": [
+    "Identify one writing once in the master writing catalogue; do not create duplicate writing records for each manuscript tradition.",
+    "Register every physical manuscript, fragment, codex, or versional witness as a separate witness record.",
+    "Map exact passage coverage and source coordinates before using a witness to supplement a gap.",
+    "Display the oldest directly preserved text first, while allowing an earlier or more reliable parallel witness to take precedence where evidence warrants.",
+    "When a witness does not preserve a segment, supplement only from a named witness preserving the same passage; record the source and textual relationship.",
+    "If no reliable witness supplies the segment, retain an explicit unrecoverable gap.",
+    "Keep reconstructed reading, diplomatic witness text, and editorial translation as separate data layers."
+  ],
+  "notes": [
+    "The age of a textual tradition, the estimated date of composition, and the date of a surviving physical manuscript are separate facts.",
+    "The DSS do not preserve every writing or every passage; absence from the DSS is not evidence that a passage never existed.",
+    "A continuous reconstructed display is an editorial aid, not a claim that one ancient manuscript contained the complete displayed text.",
+    "No reconstruction is populated by guessing; passage-level evidence and source coordinates are prerequisites."
+  ]
+}

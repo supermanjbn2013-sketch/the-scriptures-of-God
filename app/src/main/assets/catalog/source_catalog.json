@@ -6,7 +6,7 @@
       "id": "oshb-wlc",
       "name": "Open Scriptures Hebrew Bible / Westminster Leningrad Codex",
       "language": "Hebrew",
-      "coverage": "39-book Hebrew Scripture collection",
+      "coverage": "Westminster Leningrad Codex (Masoretic witness); its 39-book division is the scope of this dataset only, not the archive.",
       "record_type": "edition text / transcription",
       "license": "WLC base text: Public Domain; OSHB lemma and morphology annotations: CC BY 4.0",
       "repository": "https://github.com/openscriptures/morphhb",
@@ -14,7 +14,9 @@
         "The underlying Westminster Leningrad Codex base text is public domain; OSHB lemma and morphology annotations are CC BY 4.0 and require attribution",
         "Not a Dead Sea Scrolls transcription",
         "Not a photographic facsimile",
-        "Does not itself provide a full comparison of all Hebrew witnesses"
+        "Does not itself provide a full comparison of all Hebrew witnesses",
+        "This is one medieval Masoretic codex witness; its 39-book division does not define the archive's scope or the complete collection of ancient scriptural writings.",
+        "Use the Dead Sea Scrolls as the primary organizing reference for Hebrew Scripture witnesses where they preserve the writing; retain the WLC as a separately identified comparison witness."
       ]
     },
     {

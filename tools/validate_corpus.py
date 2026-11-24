@@ -19,7 +19,7 @@ REQUIRED_GREEK = {
 }
 REQUIRED_LATIN = {"2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)"}
 
-HEBREW_BOOK_CODES = {
+WLC_EXPECTED_BOOK_CODES = {
     "Gen","Exod","Lev","Num","Deut","Josh","Judg","Ruth","1Sam","2Sam","1Kgs","2Kgs",
     "1Chr","2Chr","Ezra","Neh","Esth","Job","Ps","Prov","Eccl","Song","Isa","Jer","Lam",
     "Ezek","Dan","Hos","Joel","Amos","Obad","Jonah","Mic","Nah","Hab","Zeph","Hag","Zech","Mal"
@@ -41,12 +41,12 @@ def validate_base():
     assert all(r.get("book") and r.get("book_code") for r in greek + latin)
     hebrew_codes = {r["ref"].split(".", 1)[0] for r in hebrew}
     greek_codes = {r["book_code"] for r in greek if r["book_code"] in GREEK_BOOK_CODES}
-    assert hebrew_codes == HEBREW_BOOK_CODES, f"Hebrew source book coverage mismatch: missing={HEBREW_BOOK_CODES - hebrew_codes}, unexpected={hebrew_codes - HEBREW_BOOK_CODES}"
+    assert hebrew_codes == WLC_EXPECTED_BOOK_CODES, f"WLC base-witness coverage mismatch: missing={WLC_EXPECTED_BOOK_CODES - hebrew_codes}, unexpected={hebrew_codes - WLC_EXPECTED_BOOK_CODES}"
     assert greek_codes == GREEK_BOOK_CODES, f"SBLGNT book coverage mismatch: missing={GREEK_BOOK_CODES - greek_codes}, unexpected={greek_codes - GREEK_BOOK_CODES}"
     assert all(r.get("attribution") for r in hebrew + greek + latin)
     refs = [(r["language"], r["ref"]) for r in rows]
     assert len(refs) == len(set(refs)), "Duplicate verse references detected within a language"
-    print(f"Validated {len(rows)} text records; Hebrew {len(hebrew)} across {len(hebrew_codes)} books, Greek {len(greek)} across {len(greek_codes)} SBLGNT books, Latin {len(latin)}")
+    print(f"Validated {len(rows)} text records; WLC base witness {len(hebrew)} records across {len(hebrew_codes)} book divisions, Greek {len(greek)} across {len(greek_codes)} SBLGNT books, Latin {len(latin)}")
 
 def validate_apocrypha():
     records = [r for r in rows if r.get("book")]
@@ -641,7 +641,30 @@ def validate_android():
     assert all("not a diplomatic transcription" in r["editorial_basis"].lower() for r in enoch_greek_records)
     print("Validated Android navigation, manuscript transcriptions, Didache, Shepherd of Hermas both Testament of Abraham recensions and the Coptic Gospel of Thomas and Greek 1 Enoch")
 
-sections = {"base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}
+
+def validate_reconstruction_policy():
+    path = ROOT / "catalog/text_reconstruction_policy.json"
+    assert path.exists(), "Text reconstruction policy is missing"
+    policy = json.loads(path.read_text(encoding="utf-8"))
+    assert policy["record_type"] == "textual_reconstruction_policy"
+    assert policy["archive_scope"] == "witness-led; no fixed canon or book-count limit"
+    assert policy["primary_hebrew_reference"] == "Dead Sea Scrolls"
+    assert len(policy["witness_traditions"]) >= 5
+    ids = [item["id"] for item in policy["witness_traditions"]]
+    assert len(ids) == len(set(ids)), "Duplicate witness-tradition IDs"
+    for item in policy["witness_traditions"]:
+        assert item["name"] and item["role"] and item["dating_note"] and item["handling_rule"]
+    assert policy["reconstruction_rules"]["preserve_original_witnesses"] is True
+    assert policy["reconstruction_rules"]["mark_every_supplement"] is True
+    assert policy["reconstruction_rules"]["never_invent_missing_text"] is True
+    assert policy["reconstruction_rules"]["unresolved_gaps_remain_blank"] is True
+    assert policy["required_segment_fields"]
+    wlc = next(item for item in source_catalog["datasets"] if item["id"] == "oshb-wlc")
+    assert "Masoretic witness" in wlc["coverage"]
+    assert "does not define the archive's scope" in " ".join(wlc["limitations"])
+    print("Validated witness-led reconstruction policy and source provenance rules.")
+
+sections = {"reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
-    raise SystemExit("Usage: python tools/validate_corpus.py base|apocrypha|dss|papyri|android")
+    raise SystemExit("Usage: python tools/validate_corpus.py reconstruction|base|apocrypha|dss|papyri|android")
 sections[sys.argv[1]]()
