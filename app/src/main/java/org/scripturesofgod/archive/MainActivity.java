@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
         }).setNegativeButton("Cancel",null).show();
     }
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
-    String[] sections={"Home","Hebrew Scriptures","Prophets","Apostolic Writings","Apocrypha and Deuterocanonical Writings","Ancient Referenced Books","Other Ancient Writings","Manuscript Archive","DSS Passage Concordance","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
+    String[] sections={"Home","Hebrew Scriptures","Prophets","Apostolic Writings","Apocrypha and Deuterocanonical Writings","Ancient Referenced Books","Other Ancient Writings","Manuscript Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
     @Override public void onCreate(Bundle b){super.onCreate(b); applyTheme(); seed(); show();}
     void applyTheme(){String mode=getSharedPreferences("archive_settings",MODE_PRIVATE).getString("theme","dark");lightMode=mode.equals("light")||(mode.equals("system")&&((getResources().getConfiguration().uiMode&android.content.res.Configuration.UI_MODE_NIGHT_MASK)==android.content.res.Configuration.UI_MODE_NIGHT_NO));if(lightMode){bg=Color.rgb(247,245,239);panel=Color.rgb(255,255,255);gold=Color.rgb(133,94,38);ink=Color.rgb(35,39,42);muted=Color.rgb(105,110,113);}else{bg=Color.rgb(15,19,24);panel=Color.rgb(26,33,41);gold=Color.rgb(205,174,112);ink=Color.rgb(232,228,217);muted=Color.rgb(160,166,170);}}
     void saveTheme(String mode){getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("theme",mode).apply();applyTheme();show();}
@@ -87,7 +87,7 @@ public class MainActivity extends Activity {
             addHomeTile("Apostolic Writings","27 writings",() -> navigateTo("Apostolic Writings"));
             addHomeTile("Apocrypha and Deuterocanonical Writings","Greek and Latin textual forms",() -> navigateTo("Apocrypha and Deuterocanonical Writings"));
             content.addView(text("MANUSCRIPT RESEARCH",12,gold,true));
-            addHomeTile("Dead Sea Scrolls Archive","Catalogue and passage concordance",() -> navigateTo("Manuscript Archive"));
+            addHomeTile("Dead Sea Scrolls Archive","Manuscript catalogue and passage concordance",() -> navigateTo("Manuscript Archive"));\n            addHomeTile("DSS Transcription Archive","Offline line-level readings from the ETCBC / Abegg corpus",() -> navigateTo("DSS Transcription Archive"));
             addHomeTile("Greek Manuscripts","Papyrus and codex registers",()->{section="Manuscript Archive";show();});
             addHomeTile("Latin Manuscripts","Latin transmission records",()->{section="Manuscript Archive";show();});
             addHomeTile("Manuscript Research Library","Sources, provenance and textual forms",() -> navigateTo("Research Archive"));
@@ -98,7 +98,7 @@ public class MainActivity extends Activity {
         if(section.equals("Settings")){content.addView(text("Appearance, reading and privacy",14,muted,false));addHomeTile("Appearance and reading settings","Theme, font size and language",()->openSettings());return;}
         if(section.equals("Personal Library")||section.equals("Favorites")||section.equals("Reading History")){renderLibrary();return;}
         if(section.equals("Search")){EditText query=new EditText(this);query.setSingleLine(true);query.setHint("Exact word or phrase");content.addView(query);Button go=new Button(this);go.setText("Search offline corpus");content.addView(go);go.setOnClickListener(v->{String searchTerm=query.getText().toString().trim();if(!searchTerm.isEmpty())searchCorpus(searchTerm);});return;}
-        ArrayList<String> data=entries.get(section); if(data==null)data=new ArrayList<>();
+        if(section.equals("DSS Transcription Archive")){renderEtcbcDssIndex(q);return;}\n        ArrayList<String> data=entries.get(section); if(data==null)data=new ArrayList<>();
         int count=0;for(String item:data){if(q.length()==0||item.toLowerCase().contains(q.toLowerCase())){TextView row=text(item,15,ink,false);row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,5,0,5);content.addView(row,p); row.setOnClickListener(v -> {returnSection=section;if(section.equals("Translation Center")){if(item.equals("Preferred translation language"))chooseTranslationLanguage();else showAiConnectionSettings();}else if(section.equals("DSS Passage Concordance"))openDssConcordanceEntry(item);else if(codeFor(item)!=null)openBook(item);else if(item.toLowerCase().contains("isaiah scroll")||item.toLowerCase().contains("habakkuk")||item.toLowerCase().contains("genesis apocryphon")||item.toLowerCase().contains("community rule")||item.toLowerCase().contains("temple scroll")||item.toLowerCase().contains("war scroll"))openDssCatalogEntry(item);else openCatalogEntry(item);}); count++;}}
         if(count==0)content.addView(text("No matching entries. This archive does not fabricate missing manuscript contents or readings.",14,muted,false));
         if(section.equals("Manuscript Archive")||section.equals("Research Archive")||section.equals("Manuscript Comparison"))content.addView(text("Records are catalog placeholders until a source, transcription, date and provenance are verified and attached.",12,gold,false));
@@ -243,7 +243,7 @@ public class MainActivity extends Activity {
                         }
                     }
                 }catch(Exception e){hits.add("Search data unavailable: "+e.getMessage());}
-                return hits;
+                if(hits.size()<100){\n                    try{\n                        java.io.BufferedReader dssReader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/etcbc_transcriptions.jsonl"),"UTF-8"),65536);\n                        String dssLine;\n                        while((dssLine=dssReader.readLine())!=null&&hits.size()<100){\n                            org.json.JSONObject record=new org.json.JSONObject(dssLine);\n                            String body=record.optString("transcription_text");\n                            String normalized=record.optString("normalized_text");\n                            String coordinate=record.optString("scroll")+" "+record.optString("fragment")+" line "+record.optString("line");\n                            String parallels=record.optJSONArray("parallel_references")==null?"":record.optJSONArray("parallel_references").toString();\n                            if(matchesExact(body,needle)||matchesExact(normalized,needle)||matchesExact(coordinate,needle)||matchesExact(parallels,needle))\n                                hits.add("[ETCBC / Abegg DSS] "+coordinate+"  "+body);\n                        }\n                        dssReader.close();\n                    }catch(Exception dssError){hits.add("ETCBC DSS search unavailable: "+dssError.getMessage());}\n                }\n                return hits;
             }
             protected void onPostExecute(ArrayList<String> hits){
                 if(hits.isEmpty()){
@@ -501,6 +501,69 @@ public class MainActivity extends Activity {
         }catch(Exception e){
             new android.app.AlertDialog.Builder(this).setMessage("No compatible sharing or translation app is available.").setPositiveButton("Close",null).show();
         }
+    }
+
+    void renderEtcbcDssIndex(String query){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/etcbc_scroll_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONObject index=new org.json.JSONObject(raw.toString());
+            org.json.JSONArray scrolls=index.getJSONArray("scrolls");
+            content.addView(text(index.optInt("total_line_records")+" manuscript lines · "+scrolls.length()+" scroll identifiers",13,gold,true));
+            content.addView(text("Source: Martin G. Abegg Jr. transcriptions, ETCBC/CACCHT structured export. CC BY-NC 4.0; non-commercial use only.",12,muted,false));
+            content.addView(text("Each entry retains its scroll, fragment and source line label. Transcription display and normalized text are shown separately; parallel references are not merged into the manuscript text.",12,muted,false));
+            int shown=0;
+            for(int i=0;i<scrolls.length();i++){
+                org.json.JSONObject entry=scrolls.getJSONObject(i);
+                String scroll=entry.optString("scroll");
+                if(!query.isEmpty()&&!scroll.toLowerCase(java.util.Locale.ROOT).contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
+                TextView row=text(scroll+"  ·  "+entry.optInt("fragment_count")+" fragments · "+entry.optInt("line_count")+" lines",15,ink,true);
+                row.setBackground(shape(panel));LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);content.addView(row,p);
+                row.setOnClickListener(v->{returnSection="DSS Transcription Archive";openEtcbcDssScroll(scroll);});
+                shown++;
+            }
+            if(shown==0)content.addView(text("No scroll identifier matches this filter.",14,muted,false));
+        }catch(Exception e){content.addView(text("The offline DSS transcription index is not present in this build. "+e.getMessage(),13,muted,false));}
+    }
+
+    void openEtcbcDssScroll(String scrollId){
+        final String selected=scrollId;
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/etcbc_transcriptions.jsonl"),"UTF-8"),65536);
+                    String raw;
+                    while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(!selected.equals(record.optString("scroll")))continue;
+                        if(count==0){
+                            out.append("Source: Martin G. Abegg Jr. transcriptions, ETCBC/CACCHT; structured export distributed by QDR.\n");
+                            out.append("License: CC BY-NC 4.0 — non-commercial use only.\n");
+                            out.append("Source revision: ").append(record.optString("source_revision")).append("\n");
+                            out.append("Diplomatic display text is retained separately from normalized token text. Textual parallels are references, not part of this manuscript line.\n\n");
+                        }
+                        out.append("Fragment ").append(record.optString("fragment")).append(" · line ").append(record.optString("line")).append("\n");
+                        out.append(record.optString("transcription_text")).append("\n");
+                        String normalized=record.optString("normalized_text");
+                        if(!normalized.isEmpty()&&!normalized.equals(record.optString("transcription_text")))out.append("Normalized token stream: ").append(normalized).append("\n");
+                        org.json.JSONArray refs=record.optJSONArray("parallel_references");
+                        if(refs!=null&&refs.length()>0){out.append("Textual parallels: ");for(int i=0;i<refs.length();i++){if(i>0)out.append("; ");out.append(refs.optString(i));}out.append("\n");}
+                        out.append("\n");count++;
+                    }
+                    reader.close();
+                    if(count==0)return "No line records found for "+selected+".";
+                    return count+" source lines loaded.\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline DSS transcription: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · ETCBC / Abegg").setView(sv)
+                    .setNegativeButton("Back to scroll index",(d,w)->navigateTo("DSS Transcription Archive"))
+                    .setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
     void openDssCatalogEntry(String item){
