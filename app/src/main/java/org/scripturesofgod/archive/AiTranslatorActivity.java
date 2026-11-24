@@ -47,6 +47,7 @@ public class AiTranslatorActivity extends Activity {
                 int index="he".equals(sourceCode)?1:("grc".equals(sourceCode)?2:("arc".equals(sourceCode)?3:("la".equals(sourceCode)?4:("en".equals(sourceCode)?5:0))));
                 language.setSelection(index);
             }
+            if(getIntent().getBooleanExtra("open_connection_settings",false))showKeyDialog();
         }
     }
     private GradientDrawable shape(int color){GradientDrawable d=new GradientDrawable();d.setColor(color);d.setCornerRadius(16);return d;}
