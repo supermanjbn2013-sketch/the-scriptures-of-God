@@ -265,6 +265,8 @@ def validate_android():
     assert "PERSONAL STUDY ONLY" in p76_source.get("use_restriction", "")
     assert "transcription text is not embedded" in p76.get("status", "")
     assert "use_restriction" in source and "bundle_status" in source
+    assert 'builder.setNegativeButton("View transcription online",(d,w)->openP76Online())' in source
+    assert "void openP76Online()" in source and "https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml" in source
 
     ai_source = Path("app/src/main/java/org/scripturesofgod/archive/AiTranslatorActivity.java").read_text(encoding="utf-8")
     for required in ("targetNames", "targetCodes", 'getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("target_language",targetCodes[position]).apply()', "preferred_target_language"):
