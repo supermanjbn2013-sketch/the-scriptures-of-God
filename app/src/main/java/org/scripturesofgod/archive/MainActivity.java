@@ -209,7 +209,8 @@ public class MainActivity extends Activity {
                 .setTitle("English reading")
                 .setView(scroll)
                 .setPositiveButton("Close",null);
-            if(!attribution.isEmpty())builder.setNeutralButton("Text source",(dialog,which)->showInfo("Reading source",attribution));
+            final String attributionText=attribution;
+            if(!attributionText.isEmpty())builder.setNeutralButton("Text source",(dialog,which)->showInfo("Reading source",attributionText));
             builder.show();
         }catch(Exception e){
             showInfo("English reading not yet available",
