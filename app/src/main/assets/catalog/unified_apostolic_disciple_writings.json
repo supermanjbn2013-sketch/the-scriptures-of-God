@@ -3618,7 +3618,7 @@
       "date_precision": "Second-century composition; exact date debated",
       "genre": "martyrdom account",
       "attribution_status": "An early account concerning Polycarp; its narrative and transmission must be evaluated as a historical source rather than treated as a verbatim eyewitness transcript.",
-      "textual_status": "Survives in Greek manuscript transmission and later versions; manuscript witnesses are distinct from the date of composition. Added provisional Greek witness records only where shelfmark information is still being checked; these are not yet a verified complete witness inventory.",
+      "textual_status": "Now records six distinct transmission channels: five Greek manuscript witnesses (Moscow/Codex Mosquensis, Baroccianus, Mediceus, Parisinus, Vindobonensis) and Eusebius, Ecclesiastical History 4.15, as an ancient literary quotation. The Latin version is separate; Syriac, Armenian, and Coptic forms based on Eusebius are not direct translations from the original letter.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Placed broadly in the second half of the second century; narrower dating remains disputed.",
       "research_sources": [
@@ -3640,24 +3640,64 @@
       "preservation_status": "surviving_in_greek_manuscript_transmission",
       "manuscript_witnesses": [
         {
-          "id": "Mosquensis_ gr_",
-          "siglum": "Moscow, State Historical Museum, Synod. gr. 160 (Vladimir 161), fols. 1–?",
+          "id": "Mosquensis_160",
+          "siglum": "Codex Mosquensis (Moscow Synodal Library, MS 160)",
           "writing": "Greek",
           "material": "parchment codex",
-          "date": "11th century CE",
-          "contents": "Martyrdom of Polycarp, Greek text",
-          "text_status": "Catalogued Greek witness; folio range should be confirmed against the current catalogue before finer citation.",
-          "source": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+          "date": "Medieval; commonly dated around 11th century",
+          "contents": "Martyrdom of Polycarp; opening paragraph omitted",
+          "text_status": "A principal Greek manuscript witness; Eusebius also preserves an extensive early quotation of the letter in Ecclesiastical History 4.15.",
+          "source": "https://tohdee.github.io/Daaa-Fth/A911-MPy.pdf"
         },
         {
-          "id": "Codex_Hier_Sin",
-          "siglum": "Jerusalem, Patriarchal Library, Hagiou Saba Η",
+          "id": "Baroccianus_180",
+          "siglum": "Oxford, Bodleian Library, Baroccianus 180",
           "writing": "Greek",
           "material": "parchment codex",
           "date": "11th century CE",
           "contents": "Martyrdom of Polycarp",
-          "text_status": "Greek manuscript transmission; exact shelfmark and folios require confirmation in the manuscript catalogue.",
-          "source": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+          "text_status": "One of the independent Greek manuscript witnesses.",
+          "source": "https://tohdee.github.io/Daaa-Fth/A911-MPy.pdf"
+        },
+        {
+          "id": "Mediceus",
+          "siglum": "Codex Mediceus",
+          "writing": "Greek",
+          "material": "manuscript codex",
+          "date": "10th century CE",
+          "contents": "Martyrdom of Polycarp",
+          "text_status": "Greek manuscript witness; exact shelfmark not supplied in the cited overview.",
+          "source": "https://tohdee.github.io/Daaa-Fth/A911-MPy.pdf"
+        },
+        {
+          "id": "Parisinus",
+          "siglum": "Codex Parisinus",
+          "writing": "Greek",
+          "material": "manuscript codex",
+          "date": "10th century CE",
+          "contents": "Martyrdom of Polycarp",
+          "text_status": "Greek manuscript witness; described as showing signs of revision.",
+          "source": "https://tohdee.github.io/Daaa-Fth/A911-MPy.pdf"
+        },
+        {
+          "id": "Vindobonensis",
+          "siglum": "Codex Vindobonensis",
+          "writing": "Greek",
+          "material": "manuscript codex",
+          "date": "10th century CE",
+          "contents": "Martyrdom of Polycarp",
+          "text_status": "Greek manuscript witness; described as showing signs of revision.",
+          "source": "https://tohdee.github.io/Daaa-Fth/A911-MPy.pdf"
+        },
+        {
+          "id": "Eusebius_HE_4_15",
+          "siglum": "Eusebius, Ecclesiastical History 4.15",
+          "writing": "Greek quotation/transmission",
+          "material": "literary quotation in a later historical work",
+          "date": "Eusebius composed early 4th century CE; surviving manuscript copies later",
+          "contents": "Extensive quotation of the Martyrdom of Polycarp",
+          "text_status": "An ancient transmitting quotation, not an independent copy of the original letter.",
+          "source": "https://christearlychurch.co.uk/text/the-martyrdom-of-polycarp/"
         }
       ]
     },
@@ -3807,16 +3847,6 @@
           "date": "7th century CE",
           "contents": "Acts of Peter / Actus Vercellenses",
           "text_status": "Primary witness to the first major narrative section in Latin.",
-          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
-        },
-        {
-          "id": "Codex_Boernerianus_Peter",
-          "siglum": "Zagreb manuscript (as cited in Weiss edition)",
-          "writing": "Latin",
-          "material": "manuscript",
-          "date": "Date not stated in catalogue summary",
-          "contents": "Acts of Peter fragments",
-          "text_status": "A separately reported Latin witness in the cited edition; shelfmark not supplied in summary.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
         }
       ]
@@ -4274,7 +4304,7 @@
       "date_precision": "commonly regarded as a later, probably fourth-century pseudepigraphal correspondence; exact date uncertain",
       "genre": "letter collection",
       "attribution_status": "A collection of letters attributed to Paul and Seneca; not regarded as authentic correspondence from Paul's lifetime.",
-      "textual_status": "Survives in Latin manuscript transmission; manuscript witnesses must be catalogued separately. Added Latin transmission records; the precise shelfmark normalization remains subject to catalogue-level verification.",
+      "textual_status": "The Latin transmission is now represented by specifically catalogued witnesses including Brussels 2839–43 (ca. 830), Zurich C 129 (9th c.), Vienna 969 (9th c.), St Gall 197 (9th/10th c.), Einsiedeln 262 (10th c.), and Vatican lat. 251 (11th c.). Strasbourg C. VI. 5 was destroyed in 1870 but had been collated.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Date refers to the later composition of the pseudepigraphal correspondence.",
       "related_scriptural_reference": "",
@@ -4305,23 +4335,83 @@
       "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date.",
       "manuscript_witnesses": [
         {
-          "id": "Codex_Vaticanus_Lat_221",
-          "siglum": "Vatican, BAV, Vat. lat. 221",
+          "id": "Brussels_2839_43",
+          "siglum": "Brussels, Bibliothèque Royale, 2839–43, fols. 66v–74r",
           "writing": "Latin",
           "material": "parchment codex",
-          "date": "9th century CE",
+          "date": "ca. 830 CE",
           "contents": "Correspondence of Paul and Seneca",
-          "text_status": "Early Latin manuscript transmission; manuscript family includes later medieval copies.",
+          "text_status": "Early Latin manuscript witness.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
         },
         {
-          "id": "Codex_Bambergensis",
-          "siglum": "Bamberg, Staatsbibliothek, Class. สม. 9",
+          "id": "Strasbourg_C_VI_5",
+          "siglum": "Strasbourg, C. VI. 5, fols. 1r–4v",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "9th/10th century CE",
+          "contents": "Correspondence of Paul and Seneca",
+          "text_status": "Manuscript destroyed by fire in 1870; its text had been collated before destruction.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
+        },
+        {
+          "id": "Zurich_C129",
+          "siglum": "Zurich, Zentralbibliothek, C 129, fols. 97r–99v",
           "writing": "Latin",
           "material": "parchment codex",
           "date": "9th century CE",
           "contents": "Correspondence of Paul and Seneca",
-          "text_status": "Latin manuscript witness; exact shelfmark requires catalogue normalization.",
+          "text_status": "Early Latin manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
+        },
+        {
+          "id": "Vienna_969",
+          "siglum": "Vienna, Österreichische Nationalbibliothek, 969, fols. 70r–72v",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "9th century CE",
+          "contents": "Correspondence of Paul and Seneca",
+          "text_status": "Early Latin manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
+        },
+        {
+          "id": "Einsiedeln_262",
+          "siglum": "Einsiedeln, Stiftsbibliothek, 262, fols. 58r–65r",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "10th century CE",
+          "contents": "Correspondence of Paul and Seneca",
+          "text_status": "Latin manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
+        },
+        {
+          "id": "Vat_lat_251",
+          "siglum": "Vatican, BAV, Vat. lat. 251, fols. 223v–225v",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "11th century CE",
+          "contents": "Correspondence of Paul and Seneca",
+          "text_status": "Latin manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
+        },
+        {
+          "id": "Berne_225",
+          "siglum": "Berne, Stadt- und Hochschulbibliothek, 225, fols. 15r–16r and 85v–87r",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "11th century CE",
+          "contents": "Correspondence of Paul and Seneca",
+          "text_status": "Latin manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
+        },
+        {
+          "id": "StGall_197",
+          "siglum": "St Gall, Stiftsbibliothek, 197, fols. 87r–91v",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "9th/10th century CE",
+          "contents": "Correspondence of Paul and Seneca",
+          "text_status": "Early Latin manuscript witness.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
         }
       ]
