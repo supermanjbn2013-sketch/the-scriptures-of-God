@@ -854,7 +854,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "narrative",
       "attribution_status": "Anonymous narrative, conventionally linked with the author of Luke; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 20,
@@ -906,6 +906,19 @@
             }
           ],
           "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
+        },
+        {
+          "id": "P74",
+          "siglum": "𝔓74 / Papyrus Bodmer XVII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Seventh century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
+          "contents": "Acts and Catholic Epistles; surviving fragments include Acts, James, 1–2 Peter, 1–3 John, and Jude",
+          "physical_extent": "124 fragments, single-column codex",
+          "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
+          "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
         }
       ]
     },
@@ -1014,7 +1027,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to James; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 20,
@@ -1037,7 +1050,34 @@
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "The relative historical order of these community writings is not established; they are grouped by broad early-community setting.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P74",
+          "siglum": "𝔓74 / Papyrus Bodmer XVII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Seventh century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
+          "contents": "Acts and Catholic Epistles; surviving fragments include Acts, James, 1–2 Peter, 1–3 John, and Jude",
+          "physical_extent": "124 fragments, single-column codex",
+          "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
+          "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
+        },
+        {
+          "id": "P23",
+          "siglum": "𝔓23 / P.Oxy. 1229",
+          "writing": "Greek",
+          "material": "papyrus codex leaf fragment",
+          "date": "Late second/early third century CE (dating disputed)",
+          "provenance": "Oxyrhynchus, Egypt",
+          "current_location": "Spurlock Museum, University of Illinois, Urbana-Champaign, USA",
+          "contents": "James 1:10–12 (verso) and 1:15–18 (recto)",
+          "text_status": "Small fragment; only the cited verses survive.",
+          "source": "https://www.islamic-awareness.org/bible/text/mss/p23"
+        }
+      ]
     },
     {
       "id": "1_thessalonians",
@@ -1662,7 +1702,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Peter; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1693,7 +1733,35 @@
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "The addressed regions and closing greetings provide a broad community setting, but they do not establish a datable journey or an exact place/date. 'Babylon' is commonly read as Rome, not stated as Rome; Silvanus may have carried the letter or assisted in its production. Authorship and date remain disputed, so no exact relative event order with Paul's letters, Acts, or Revelation is claimed.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P72",
+          "siglum": "𝔓72 / Bodmer VII–VIII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third/fourth century CE (commonly around 300)",
+          "provenance": "Dishnā region, Egypt; Bodmer collection provenance",
+          "current_location": "Biblioteca Apostolica Vaticana, Vatican City (Bodmer collection)",
+          "contents": "1 Peter 1:1–5:14; 2 Peter 1:1–3:18; Jude 1–25, alongside other writings",
+          "physical_extent": "Three portions from a codex of about 72 pages",
+          "text_status": "Substantial witness to all three writings, but not every line is equally preserved; maintain each writing's text segmentation and variants.",
+          "source": "https://www.islamic-awareness.org/bible/text/mss/p72"
+        },
+        {
+          "id": "P74",
+          "siglum": "𝔓74 / Papyrus Bodmer XVII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Seventh century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
+          "contents": "Acts and Catholic Epistles; surviving fragments include Acts, James, 1–2 Peter, 1–3 John, and Jude",
+          "physical_extent": "124 fragments, single-column codex",
+          "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
+          "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
+        }
+      ]
     },
     {
       "id": "colossians",
@@ -1891,7 +1959,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Paul.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1918,7 +1986,22 @@
           "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/prison-epistles-1-philippians-and-philemon/DC2D9B05DF14C0253DE1FAD3804B6A91"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P87",
+          "siglum": "𝔓87 / P. Col. theol. 12",
+          "writing": "Greek",
+          "material": "papyrus codex leaf fragment",
+          "date": "Third century CE; some proposals place it earlier",
+          "provenance": "Unknown",
+          "current_location": "Institut für Altertumskunde, University of Cologne, Germany",
+          "contents": "Philemon 13–15 and 24–25",
+          "physical_extent": "One surviving leaf",
+          "text_status": "Very small fragment; only the specified verses survive.",
+          "source": "https://www.islamic-awareness.org/bible/text/mss/p87"
+        }
+      ]
     },
     {
       "id": "philippians",
@@ -2022,7 +2105,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Jude; precise identity and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -2045,7 +2128,35 @@
         }
       ],
       "historical_order_note": "These settings do not establish a relative chronological order with one another; the shared display position is a provisional grouping only.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P72",
+          "siglum": "𝔓72 / Bodmer VII–VIII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third/fourth century CE (commonly around 300)",
+          "provenance": "Dishnā region, Egypt; Bodmer collection provenance",
+          "current_location": "Biblioteca Apostolica Vaticana, Vatican City (Bodmer collection)",
+          "contents": "1 Peter 1:1–5:14; 2 Peter 1:1–3:18; Jude 1–25, alongside other writings",
+          "physical_extent": "Three portions from a codex of about 72 pages",
+          "text_status": "Substantial witness to all three writings, but not every line is equally preserved; maintain each writing's text segmentation and variants.",
+          "source": "https://www.islamic-awareness.org/bible/text/mss/p72"
+        },
+        {
+          "id": "P74",
+          "siglum": "𝔓74 / Papyrus Bodmer XVII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Seventh century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
+          "contents": "Acts and Catholic Epistles; surviving fragments include Acts, James, 1–2 Peter, 1–3 John, and Jude",
+          "physical_extent": "124 fragments, single-column codex",
+          "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
+          "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
+        }
+      ]
     },
     {
       "id": "hebrews",
@@ -2250,7 +2361,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 40,
@@ -2269,7 +2380,22 @@
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "The letter gives a planned meeting at Nicopolis and a mission setting in Crete. The later notice about Titus in Dalmatia (2 Timothy 4:10) cannot by itself prove whether the Nicopolis plan occurred before or after that journey. The relative order of Titus and 1 Timothy remains unresolved.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P32",
+          "siglum": "𝔓32 / Rylands Greek P. 5",
+          "writing": "Greek",
+          "material": "papyrus codex leaf",
+          "date": "Around 200 CE (palaeographic estimate)",
+          "provenance": "Probably Oxyrhynchus, Egypt; provenance uncertain",
+          "current_location": "John Rylands Library, University of Manchester, United Kingdom",
+          "contents": "Titus 1:11–15 (recto) and Titus 2:3–8 (verso)",
+          "physical_extent": "One fragmentary leaf; top portions of the page are lost",
+          "text_status": "Only the cited Titus passages survive; text is damaged at the upper portion of the leaf.",
+          "source": "https://www.cambridge.org/core/journals/new-testament-studies/article/papyrus-32-titus-as-a-multitext-codex-a-new-reconstruction/A323F29FD2839730ECB39B70801610AE/share/2ab086a243dd5ed779c1c2ec6f827faaf9caa1d5"
+        }
+      ]
     },
     {
       "id": "2_timothy",
@@ -2320,7 +2446,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Anonymous or Johannine-community writing; exact author is not named.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 40,
@@ -2343,7 +2469,22 @@
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "The letters' literary relationship and implied historical network are disputed; alphabetical display within this group does not claim chronological order.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P74",
+          "siglum": "𝔓74 / Papyrus Bodmer XVII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Seventh century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
+          "contents": "Acts and Catholic Epistles; surviving fragments include Acts, James, 1–2 Peter, 1–3 John, and Jude",
+          "physical_extent": "124 fragments, single-column codex",
+          "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
+          "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
+        }
+      ]
     },
     {
       "id": "2_john",
@@ -2353,7 +2494,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter from 'the elder'; personal identity is not established by the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 40,
@@ -2372,7 +2513,22 @@
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "The letters' literary relationship and implied historical network are disputed; alphabetical display within this group does not claim chronological order.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P74",
+          "siglum": "𝔓74 / Papyrus Bodmer XVII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Seventh century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
+          "contents": "Acts and Catholic Epistles; surviving fragments include Acts, James, 1–2 Peter, 1–3 John, and Jude",
+          "physical_extent": "124 fragments, single-column codex",
+          "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
+          "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
+        }
+      ]
     },
     {
       "id": "3_john",
@@ -2382,7 +2538,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter from 'the elder'; personal identity is not established by the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 40,
@@ -2401,7 +2557,22 @@
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "The letters' literary relationship and implied historical network are disputed; alphabetical display within this group does not claim chronological order.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P74",
+          "siglum": "𝔓74 / Papyrus Bodmer XVII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Seventh century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
+          "contents": "Acts and Catholic Epistles; surviving fragments include Acts, James, 1–2 Peter, 1–3 John, and Jude",
+          "physical_extent": "124 fragments, single-column codex",
+          "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
+          "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
+        }
+      ]
     },
     {
       "id": "2_peter",
@@ -2411,7 +2582,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Peter; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 40,
@@ -2434,7 +2605,35 @@
         }
       ],
       "historical_order_note": "These works have different claimed settings and no securely established relative event order; they are grouped in a broad later-apostolic context.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P72",
+          "siglum": "𝔓72 / Bodmer VII–VIII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third/fourth century CE (commonly around 300)",
+          "provenance": "Dishnā region, Egypt; Bodmer collection provenance",
+          "current_location": "Biblioteca Apostolica Vaticana, Vatican City (Bodmer collection)",
+          "contents": "1 Peter 1:1–5:14; 2 Peter 1:1–3:18; Jude 1–25, alongside other writings",
+          "physical_extent": "Three portions from a codex of about 72 pages",
+          "text_status": "Substantial witness to all three writings, but not every line is equally preserved; maintain each writing's text segmentation and variants.",
+          "source": "https://www.islamic-awareness.org/bible/text/mss/p72"
+        },
+        {
+          "id": "P74",
+          "siglum": "𝔓74 / Papyrus Bodmer XVII",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Seventh century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
+          "contents": "Acts and Catholic Epistles; surviving fragments include Acts, James, 1–2 Peter, 1–3 John, and Jude",
+          "physical_extent": "124 fragments, single-column codex",
+          "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
+          "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
+        }
+      ]
     },
     {
       "id": "papias_exposition",
