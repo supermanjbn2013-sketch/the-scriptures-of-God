@@ -1028,8 +1028,12 @@
       "preservation_status": "surviving_in_fragmentary_coptic_codex_and_two_greek_papyri",
       "research_sources": [
         {
-          "title": "NASSCAL — Gospel of Mary: manuscript inventory and textual status",
+          "title": "NASSCAL — Gospel of Mary: manuscript inventory, surviving text, and bibliography",
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
+        },
+        {
+          "title": "Christopher Tuckett, The Gospel of Mary, chapter on manuscripts",
+          "url": "https://academic.oup.com/book/34836/chapter-abstract/297775279"
         },
         {
           "title": "Gospels.net — Gospel of Mary manuscript information",
@@ -1067,7 +1071,57 @@
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
         }
       ],
-      "description": "Gospel of Mary is a gospel or apocalypse writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Coptic and Greek witnesses are known; the two Greek fragments overlap portions also preserved in the Coptic codex. No complete Greek text survives. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
+      "description": "Gospel of Mary is a fragmentary post-resurrection dialogue writing in the Unified Apostolic and Disciple collection. Its principal witness is the fifth-century Sahidic Coptic Berlin Codex 8502, which preserves pages 7–10 and 15–19; pages 1–6 and 11–14 are missing. Two third-century Greek papyri, P.Oxy. 3525 and P.Ryl. 463, preserve parallel portions also found in the Coptic codex. The Greek fragments do not supply additional continuous episodes. The detail page separates the Coptic sections from the overlapping Greek witnesses and keeps the missing pages explicit.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "GM-BG8502-pages7-10",
+          "transmitting_author": "Anonymous Coptic translator and copyist; Berlin Codex witness",
+          "source_work": "Papyrus Berolinensis 8502, tractate 1",
+          "passage": "Pages 7.1–10.23",
+          "language_of_surviving_source": "Sahidic Coptic",
+          "content_scope": "The surviving text begins in the middle of a dialogue between the Saviour and the disciples. It preserves final instructions, the Saviour's departure, the disciples' distress, Mary's encouragement, Peter's request that she share what she knows, and the beginning of her account. The preceding pages 1–6 are missing.",
+          "status": "Surviving portion of the principal Coptic witness; the beginning of the work is lost.",
+          "english_paraphrase": "The Saviour instructs the disciples about the nature of sin and matter and gives them final directions before departing. The disciples grieve and fear for their mission. Mary encourages them, and Peter asks her to share the teaching she received. The surviving passage then begins Mary's account of a vision.",
+          "text_type": "content_paraphrase_of_surviving_coptic_section",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
+        },
+        {
+          "fragment_id": "GM-BG8502-pages15-19",
+          "transmitting_author": "Anonymous Coptic translator and copyist; Berlin Codex witness",
+          "source_work": "Papyrus Berolinensis 8502, tractate 1",
+          "passage": "Pages 15.1–19.5",
+          "language_of_surviving_source": "Sahidic Coptic",
+          "content_scope": "The preserved second section contains Mary's account of the soul's ascent and the subsequent dispute among the disciples. Pages 11–14, which would have contained the intervening portion of Mary's vision discourse, are missing.",
+          "status": "Surviving ending section of the Coptic witness; four intervening codex pages are lost.",
+          "english_paraphrase": "Mary describes the soul's passage through hostile powers, including Desire and Ignorance, and recounts the answers by which it passes them. Andrew and Peter question whether the Saviour would have given such teaching privately to a woman. Levi defends Mary, rebukes the others, and urges them to preach as the Saviour commanded. The work ends with the disciples going out to proclaim the message.",
+          "text_type": "content_paraphrase_of_surviving_coptic_section",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
+        },
+        {
+          "fragment_id": "GM-POxy3525",
+          "transmitting_author": "Anonymous Greek copyist; Oxyrhynchus papyrus witness",
+          "source_work": "Oxyrhynchus Papyrus 3525",
+          "passage": "Parallel to BG 8502, 9.5–10.13",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "A small, severely damaged Greek papyrus fragment corresponding to part of the disciples' discussion and Mary's role in the Coptic text. The fragment is incomplete and does not preserve a separate continuous narrative.",
+          "status": "Third-century Greek witness overlapping material also preserved in the Coptic codex; not an independent additional episode.",
+          "english_paraphrase": "The fragment belongs to the section in which the disciples discuss their situation after the Saviour's departure and Mary takes a leading role. Because the papyrus is severely damaged, this is a contextual identification from its parallel passage, not a fresh reconstruction of every missing line.",
+          "text_type": "contextual_paraphrase_from_parallel_witness",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
+        },
+        {
+          "fragment_id": "GM-PRyl463",
+          "transmitting_author": "Anonymous Greek copyist; Rylands papyrus witness",
+          "source_work": "John Rylands Library Greek Papyrus 463",
+          "passage": "Parallel to BG 8502, 17.5–19.5",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "A small Greek codex fragment corresponding to the ending dispute among the disciples and Levi's defense of Mary in the Coptic witness.",
+          "status": "Third-century Greek witness overlapping the ending section also preserved in the Coptic codex.",
+          "english_paraphrase": "The fragment preserves part of the final disagreement over Mary's account. Peter and Andrew challenge her authority, while Levi defends her and urges the disciples to accept her testimony and carry out the Saviour's instruction. The Greek papyrus is fragmentary and should be read alongside, not substituted for, the Coptic witness.",
+          "text_type": "contextual_paraphrase_from_parallel_witness",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
+        }
+      ]
     },
     {
       "id": "acts",
