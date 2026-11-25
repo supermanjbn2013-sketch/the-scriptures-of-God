@@ -727,6 +727,11 @@ def validate_witness_registers():
     assert "Timothy" in by_id["1_thessalonians"]["historical_anchor_basis"] and "Acts 17" in by_id["1_thessalonians"]["historical_anchor_basis"], "1 Thessalonians must retain its internal travel clues and qualified Acts correlation"
     assert "disputed" in by_id["2_thessalonians"]["historical_order_note"].lower(), "2 Thessalonians must retain its disputed relative order"
     assert "Romans 15:25" in by_id["romans"]["historical_anchor_basis"], "Romans must retain its Jerusalem-delivery journey anchor"
+    pastoral_pair = [by_id["1_timothy"], by_id["titus"]]
+    assert len({(r["historical_sequence"], r["historical_subsequence"]) for r in pastoral_pair}) == 1, "Do not force an exact order between 1 Timothy and Titus"
+    assert all(term in by_id["1_timothy"]["historical_anchor_basis"] for term in ["1 Timothy 1:3", "Ephesus", "Macedonia", "3:14–15"]), "1 Timothy must retain its internal travel and stated-visit clues"
+    assert all(term in by_id["titus"]["historical_anchor_basis"] for term in ["Titus 1:5", "Crete", "3:12", "Nicopolis", "3:13", "Dalmatia", "2 Timothy 4:10"]), "Titus must retain its internal itinerary clues and qualified Dalmatia connection"
+    assert "not established" in by_id["titus"]["historical_anchor_basis"] and "unresolved" in by_id["titus"]["historical_order_note"], "Do not force Titus itinerary into an unproven sequence"
     second_timothy = by_id["2_timothy"]
     assert all(term in second_timothy["historical_anchor_basis"] for term in ["Troas", "Carpus", "Miletus", "Trophimus", "Erastus", "4:16"]), "2 Timothy must retain its internal travel and hearing clues"
     assert "disputed" in second_timothy["historical_anchor_basis"].lower() and "Do not automatically place this after Acts" in second_timothy["historical_order_note"], "Do not force 2 Timothy into an unproven post-Acts chronology"

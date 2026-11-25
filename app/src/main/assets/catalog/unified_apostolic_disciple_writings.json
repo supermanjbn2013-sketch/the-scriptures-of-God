@@ -779,7 +779,7 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "timothy_ephesus_paul_macedonia",
       "historical_anchor": "Timothy's assignment in Ephesus while Paul is described as departing for Macedonia",
-      "historical_anchor_basis": "1 Timothy 1:3 supplies this travel setting directly. Its place in Paul's lifetime chronology depends on disputed authorship and on whether the itinerary belongs after Acts 28 or to another reconstruction.",
+      "historical_anchor_basis": "1 Timothy 1:3 places Timothy in Ephesus while Paul says he was going to Macedonia. 1 Timothy 3:14–15 adds the writer's stated hope of coming soon and explains the purpose of the instructions if delayed. These are internal travel and communication clues; they do not identify a securely dated stop in Acts or establish whether this letter preceded Titus. Pauline authorship and the fit of the itinerary with Acts remain disputed.",
       "historical_subsequence": 80,
       "historical_anchor_status": "internal_travel_setting_disputed",
       "research_sources": [
@@ -789,7 +789,7 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The travel settings are stated in the letters, but the relative order of 1 Timothy and Titus is not established."
+      "historical_order_note": "The letter places Timothy in Ephesus during Paul's stated departure for Macedonia and anticipates Paul's possible visit. This does not securely establish a position before or after Titus; the two are grouped without an exact relative order."
     },
     {
       "id": "titus",
@@ -807,7 +807,7 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "titus_crete_nicopolis",
       "historical_anchor": "Titus left in Crete and Paul's stated plan to spend winter at Nicopolis",
-      "historical_anchor_basis": "Titus 1:5 and 3:12 give the itinerary in the letter. Its fit with the known Acts chronology depends on the disputed reconstruction of Paul's later travels and authorship.",
+      "historical_anchor_basis": "Titus 1:5 places Titus in Crete to complete unfinished matters and appoint elders. Titus 3:12 says Paul plans to send Artemas or Tychicus and asks Titus to join him at Nicopolis, where Paul says he has decided to spend the winter; 3:13 names Zenas and Apollos as travelers to be helped. 2 Timothy 4:10 later says Titus went to Dalmatia, but the relationship between that notice and the Nicopolis plan is not established. These are internal itinerary clues, not a securely dated reconstruction of Paul's later travels. Pauline authorship and the fit with Acts remain disputed.",
       "historical_subsequence": 80,
       "historical_anchor_status": "internal_itinerary_disputed",
       "research_sources": [
@@ -817,7 +817,7 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The travel settings are stated in the letters, but the relative order of 1 Timothy and Titus is not established."
+      "historical_order_note": "The letter gives a planned meeting at Nicopolis and a mission setting in Crete. The later notice about Titus in Dalmatia (2 Timothy 4:10) cannot by itself prove whether the Nicopolis plan occurred before or after that journey. The relative order of Titus and 1 Timothy remains unresolved."
     },
     {
       "id": "2_timothy",
