@@ -835,17 +835,29 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "paul_final_imprisonment_setting",
       "historical_anchor": "Paul's imprisonment, anticipated death and requests for Timothy's visit",
-      "historical_anchor_basis": "2 Timothy 4:6–13 presents an imprisonment and final-departure setting, mentioning Troas and a request for Timothy to come. Its historical authenticity and chronology are disputed.",
+      "historical_anchor_basis": "The writing presents Paul as a prisoner in Rome (2 Timothy 1:16–17; 2:9), facing a further hearing after an earlier defense at which no one supported him (4:16–18). It recalls a recent itinerary involving Troas, where a cloak and writings were left with Carpus (4:13), and Miletus, where Trophimus was left ill, while Erastus remained at Corinth (4:20). Timothy is urged to come before winter (4:9, 21). These details form an internal travel-and-imprisonment sequence, but they do not independently establish a second Roman imprisonment after Acts 28. Pauline authorship and the date are disputed; some reconstructions place the setting within Paul's lifetime, while others understand it as a later Pauline-style farewell writing.",
       "historical_subsequence": 82,
-      "historical_anchor_status": "internal_travel_and_imprisonment_setting_disputed",
+      "historical_anchor_status": "internal_itinerary_and_authorship_disputed",
       "research_sources": [
         {
           "title": "Pastoral Epistles — historical setting and destination",
           "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Pastoral-Epistles"
+        },
+        {
+          "title": "Peter Walker, Revisiting the Pastoral Epistles — Part II: 2 Timothy",
+          "url": "https://biblicalstudies.org.uk/pdf/ejt/21-2_120.pdf"
+        },
+        {
+          "title": "Oxford Bibliographies — Pauline Chronology",
+          "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554103486"
+        },
+        {
+          "title": "2 Timothy — Asbury Bible Commentary, authorship and dating",
+          "url": "https://www.biblegateway.com/resources/asbury-bible-commentary/i-authorship-and-dating"
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "The sequence represented is: recent travel through Troas and Miletus; Paul's present imprisonment and first defense; urgent request for Timothy and the cloak and writings before winter. The text names Rome (1:17), but the relationship of this imprisonment to Acts 28 is disputed. Do not automatically place this after Acts' ending or after the other imprisonment letters. The farewell tone does not prove the writer's historical identity or a precise date."
     },
     {
       "id": "1_john",

@@ -727,6 +727,9 @@ def validate_witness_registers():
     assert "Timothy" in by_id["1_thessalonians"]["historical_anchor_basis"] and "Acts 17" in by_id["1_thessalonians"]["historical_anchor_basis"], "1 Thessalonians must retain its internal travel clues and qualified Acts correlation"
     assert "disputed" in by_id["2_thessalonians"]["historical_order_note"].lower(), "2 Thessalonians must retain its disputed relative order"
     assert "Romans 15:25" in by_id["romans"]["historical_anchor_basis"], "Romans must retain its Jerusalem-delivery journey anchor"
+    second_timothy = by_id["2_timothy"]
+    assert all(term in second_timothy["historical_anchor_basis"] for term in ["Troas", "Carpus", "Miletus", "Trophimus", "Erastus", "4:16"]), "2 Timothy must retain its internal travel and hearing clues"
+    assert "disputed" in second_timothy["historical_anchor_basis"].lower() and "Do not automatically place this after Acts" in second_timothy["historical_order_note"], "Do not force 2 Timothy into an unproven post-Acts chronology"
     peter = by_id["1_peter"]
     assert "1 Peter 1:1" in peter["historical_anchor_basis"] and "Silvanus" in peter["historical_anchor_basis"] and "Mark" in peter["historical_anchor_basis"], "1 Peter must retain its internal audience and closing-greeting clues"
     assert "commonly interpreted as Rome" in peter["historical_anchor_basis"] and "rather than an explicit place-name" in peter["historical_anchor_basis"], "Do not treat Babylon as an uncontested explicit place-name"
