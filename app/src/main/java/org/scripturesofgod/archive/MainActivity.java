@@ -527,6 +527,27 @@ public class MainActivity extends Activity {
                         dssReader.close();
                     }catch(Exception dssError){hits.add("ETCBC DSS search unavailable: "+dssError.getMessage());}
                 }
+                if(hits.size()<100){
+                    try{
+                        org.json.JSONArray witnesses=readIgntpManifest().optJSONArray("files");
+                        if(witnesses!=null)for(int i=0;i<witnesses.length()&&hits.size()<100;i++){
+                            org.json.JSONObject witness=witnesses.optJSONObject(i);if(witness==null)continue;
+                            java.io.InputStream input=null;
+                            try{
+                                input=getAssets().open(witness.optString("offline_asset"));
+                                String body=readIgntpBody(input);
+                                String metadata=witness.optString("work")+" "+witness.optString("collection")+" "+
+                                    witness.optString("xml_id")+" "+witness.optString("manuscript_title",witness.optString("title"))+" "+
+                                    witness.optString("archive_member");
+                                if(matchesExact(body,needle)||matchesExact(metadata,needle)){
+                                    hits.add("[IGNTP "+witness.optString("collection")+" · "+witness.optString("xml_id","no xml:id")+
+                                        "] "+witness.optString("manuscript_title",witness.optString("title"))+
+                                        " — "+witness.optString("archive_member")+"\n"+body);
+                                }
+                            }catch(Exception ignoredWitness){}finally{if(input!=null)try{input.close();}catch(Exception ignoredClose){}}
+                        }
+                    }catch(Exception ignptError){hits.add("IGNTP witness search unavailable: "+ignptError.getMessage());}
+                }
                 return hits;
             }
             protected void onPostExecute(ArrayList<String> hits){
