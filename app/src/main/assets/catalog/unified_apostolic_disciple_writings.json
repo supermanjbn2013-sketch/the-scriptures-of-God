@@ -168,6 +168,14 @@
         {
           "title": "Oxford Bibliographies — Didache",
           "url": "https://academic.oup.com/reference/62341/reference-article-abstract/561741752"
+        },
+        {
+          "title": "Didache — Oxford Bibliographies",
+          "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554099864"
+        },
+        {
+          "title": "Didache — Cambridge Edition of Early Christian Writings",
+          "url": "https://www.cambridge.org/core/books/abs/cambridge-edition-of-early-christian-writings/didache/F6EEA99D2B1AB5A25464F0C619B86021"
         }
       ],
       "scope_relationship": "attributed_to_or_associated_with_early_disciple"
@@ -488,6 +496,14 @@
         {
           "title": "Hebrews — historical setting overview",
           "url": "https://www.bibleodyssey.org/articles/hebrews/"
+        },
+        {
+          "title": "Cambridge University Press — Hebrews and the community's remembered suffering",
+          "url": "https://assets.cambridge.org/97805210/18913/excerpt/9780521018913_excerpt.pdf"
+        },
+        {
+          "title": "Hebrews 10:32–34 — textual note and translation",
+          "url": "https://classic.net.bible.org/passage.php/passage.php?passage=Heb+10%3A32-34"
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple"
@@ -534,7 +550,17 @@
       "historical_anchor_basis": "Jude 4–19 describes the conflict that occasions the writing, but no location, journey or independently datable event is supplied.",
       "historical_subsequence": 70,
       "historical_anchor_status": "internal_conflict_no_external_date",
-      "scope_relationship": "attributed_to_apostle_or_disciple"
+      "scope_relationship": "attributed_to_apostle_or_disciple",
+      "research_sources": [
+        {
+          "title": "2 Peter and Jude: Contested Issues — Oxford Handbook (2024)",
+          "url": "https://academic.oup.com/edited-volume/57514/chapter-abstract/467936255"
+        },
+        {
+          "title": "Recovering the Voices of James and Jude — Oxford Academic",
+          "url": "https://academic.oup.com/book/10742/chapter/158829783"
+        }
+      ]
     },
     {
       "id": "1_timothy",
@@ -632,14 +658,18 @@
       "historical_period": "Later apostolic ministry, imprisonment and final testimony",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "community_secession",
-      "historical_anchor": "A dispute after some members departed from the addressed community",
-      "historical_anchor_basis": "1 John 2:18–19 explicitly refers to people who went out from the community. This anchors the writing to a reported division, without proving a particular location or date.",
+      "historical_anchor": "The letter represents some people as having departed from the addressed group (1 John 2:19), while the historical reality and scale of that division remain debated",
+      "historical_anchor_basis": "The departure is part of the letter's own account. Modern research disputes whether the implied Johannine network can be reconstructed as a real historical community, so the text's narrative situation must not be treated as independently verified.",
       "historical_subsequence": 85,
-      "historical_anchor_status": "internal_community_event",
+      "historical_anchor_status": "reported_internal_conflict_historicity_disputed",
       "research_sources": [
         {
-          "title": "Did the Johannine Community Exist?",
+          "title": "Did the Johannine Community Exist? — Journal for the Study of the New Testament (2020)",
           "url": "https://journals.sagepub.com/doi/10.1177/0142064X19890490"
+        },
+        {
+          "title": "Background and Setting of 1 John",
+          "url": "https://new.bible.org/seriespage/background-and-setting-1-john"
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple"
@@ -735,10 +765,20 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "peter_farewell_setting",
       "historical_anchor": "A farewell warning presented as Peter's final testimony before death",
-      "historical_anchor_basis": "The writing frames its message as a final reminder before departure (2 Peter 1:13–15). This is the text's claimed setting, not independent proof of authorship or a dated event.",
+      "historical_anchor_basis": "2 Peter 1:13–15 presents the writer as anticipating death and wishing to preserve a reminder. Scholars debate whether this is a farewell/testamentary literary form and whether it reflects Peter's lifetime; the text does not narrate a deathbed scene.",
       "historical_subsequence": 91,
-      "historical_anchor_status": "farewell_narrative_setting_disputed",
-      "scope_relationship": "attributed_to_apostle_or_disciple"
+      "historical_anchor_status": "farewell_form_and_authorship_disputed",
+      "scope_relationship": "attributed_to_apostle_or_disciple",
+      "research_sources": [
+        {
+          "title": "2 Peter — Cambridge University Press introduction",
+          "url": "https://www.cambridge.org/core/books/2-peter/introduction/3ABA87082E50284BCC36678C68EAC098"
+        },
+        {
+          "title": "2 Peter and Jude: Contested Issues — Oxford Handbook (2024)",
+          "url": "https://academic.oup.com/edited-volume/57514/chapter-abstract/467936255"
+        }
+      ]
     },
     {
       "id": "papias_exposition",
