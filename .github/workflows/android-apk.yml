@@ -30,6 +30,8 @@ jobs:
         run: python3 tools/prepare_corpus.py
       - name: Download featured Qumran-Digital transcription source pages
         run: python3 tools/download_qumran_digital_sources.py
+      - name: Download IGNTP Greek manuscript transcriptions
+        run: python3 tools/import_igntp_transcriptions.py
       - name: Import offline Dead Sea Scrolls transcriptions
         run: python3 tools/import_etcbc_dss.py
       - name: Import Codex Vaticanus manuscript transcription

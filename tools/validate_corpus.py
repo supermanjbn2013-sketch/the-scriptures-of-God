@@ -771,7 +771,45 @@ def validate_witness_registers():
             assert record["research_sources"] and all(s.get("title") and s.get("url", "").startswith("https://") for s in record["research_sources"]), f"Invalid research source metadata: {record['id']}"
     print(f"Validated unified chronological writings collection: {len(unified['records'])} entries; not restricted to 27.")
 
-sections = {"witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}
+
+def validate_igntp():
+    manifest_path = ROOT / "igntp/manifest.json"
+    assert manifest_path.exists(), "IGNTP transcription manifest missing"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert manifest["provider"].startswith("International Greek New Testament Project")
+    assert len(manifest["collections"]) == 8, f"Expected eight IGNTP works, got {len(manifest['collections'])}"
+    expected = {"John", "Romans", "Galatians", "Ephesians", "Philippians", "Colossians", "Philemon", "Hebrews"}
+    assert {x["work"] for x in manifest["collections"]} == expected
+    assert len(manifest["files"]) >= 8, "IGNTP archive contains too few manuscript files"
+    import hashlib
+    import xml.etree.ElementTree as ET
+    seen = set()
+    by_work = {}
+    for record in manifest["files"]:
+        assert record["license"] == "CC BY 4.0"
+        assert record["source_archive"].startswith("https://itseeweb.cal.bham.ac.uk/")
+        assert record["xml_id"] and record["title"] and record["sha256"]
+        path = ROOT / record["offline_asset"]
+        assert path.is_file(), f"Missing IGNTP TEI asset: {record['offline_asset']}"
+        raw = path.read_bytes()
+        assert hashlib.sha256(raw).hexdigest() == record["sha256"], f"IGNTP checksum mismatch: {path}"
+        root = ET.fromstring(raw)
+        assert root.tag.endswith("TEI"), f"Not a TEI document: {path}"
+        assert root.attrib.get("{http://www.w3.org/XML/1998/namespace}id") == record["xml_id"]
+        assert any(child.tag.endswith("teiHeader") for child in root), f"TEI header missing: {path}"
+        key = (record["collection"], record["archive_member"])
+        assert key not in seen, f"Duplicate IGNTP archive member: {key}"
+        seen.add(key)
+        by_work[record["work"]] = by_work.get(record["work"], 0) + 1
+    assert set(by_work) == expected, f"IGNTP works missing: {expected - set(by_work)}"
+    for collection in manifest["collections"]:
+        assert collection["xml_file_count"] == by_work[collection["work"]] > 0
+    for record in manifest["excluded_files"]:
+        assert record["reason"] and record["source_archive"]
+    print(f"Validated {len(manifest['files'])} original IGNTP TEI manuscript files across eight writings; "
+          f"{len(manifest['excluded_files'])} files excluded for restrictive licence declarations.")
+
+sections = {"igntp": validate_igntp, "witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
-    raise SystemExit("Usage: python tools/validate_corpus.py witnesses|reconstruction|base|apocrypha|dss|papyri|android")
+    raise SystemExit("Usage: python tools/validate_corpus.py igntp|witnesses|reconstruction|base|apocrypha|dss|papyri|android")
 sections[sys.argv[1]]()

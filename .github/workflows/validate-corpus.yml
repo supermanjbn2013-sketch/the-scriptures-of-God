@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - "tools/prepare_corpus.py"
+      - "tools/import_igntp_transcriptions.py"
       - "tools/import_etcbc_dss.py"
       - "tools/import_codex_sinaiticus.py"
       - "tools/import_codex_vaticanus.py"
@@ -44,6 +45,8 @@ jobs:
         run: python tools/prepare_corpus.py
       - name: Download featured Qumran-Digital transcription source pages
         run: python tools/download_qumran_digital_sources.py
+      - name: Download IGNTP Greek manuscript transcriptions
+        run: python tools/import_igntp_transcriptions.py
       - name: Import offline Dead Sea Scrolls transcriptions
         run: python tools/import_etcbc_dss.py
       - name: Import Codex Vaticanus manuscript transcription
@@ -88,6 +91,8 @@ jobs:
         run: python tools/import_2_baruch.py
       - name: Import Ge'ez Ascension of Isaiah text
         run: python tools/import_ascension_isaiah.py
+      - name: Validate IGNTP TEI manuscript archives
+        run: python tools/validate_corpus.py igntp
       - name: Validate imported papyrus page indexes and text records
         run: python tools/validate_corpus.py papyri
       - name: Validate base Hebrew and Greek corpus
