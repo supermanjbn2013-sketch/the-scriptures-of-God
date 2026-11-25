@@ -2259,6 +2259,12 @@ public class MainActivity extends Activity {
             else if(key.contains("p66"))key="p66";
             else if(key.contains("p75"))key="p75";
             else if(key.contains("p76"))key="p76";
+            else if(key.contains("p72"))key="p72";
+            else if(key.contains("p77"))key="p77";
+            else if(key.contains("p88"))key="p88";
+            else if(key.contains("p103"))key="p103";
+            else if(key.contains("p104"))key="p104";
+            else if(key.contains("p45"))key="p45";
             for(int i=0;i<records.length();i++){
                 org.json.JSONObject r=records.getJSONObject(i);
                 if(r.optString("id").equalsIgnoreCase(key)){match=r;break;}
