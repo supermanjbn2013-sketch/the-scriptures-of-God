@@ -574,31 +574,40 @@
       "preservation_status": "lost_or_fragmentary",
       "surviving_fragments": [
         {
-          "fragment_id": "GH-Jerome-VirIll-2",
-          "transmitting_author": "Jerome",
-          "source_work": "De viris illustribus",
-          "passage": "2",
-          "language_of_surviving_source": "Latin",
-          "content_scope": "Report and attributed tradition concerning a Gospel used by Jewish-Christian groups; not a continuous quotation.",
-          "status": "Secondary testimony; fragment attribution requires evaluation."
+          "fragment_id": "GH-Origen-CommJo-2.12",
+          "transmitting_author": "Origen of Alexandria",
+          "source_work": "Commentary on John",
+          "passage": "2.12 (on John 1:3)",
+          "language_of_surviving_source": "Greek, transmitted through later copies of Origen",
+          "content_scope": "A saying attributed by Origen to the Gospel according to the Hebrews.",
+          "status": "A fragment quoted by Origen; Jerome later repeats the same tradition. It is not a surviving manuscript leaf of the Gospel.",
+          "english_paraphrase": "In the reported saying, Jesus speaks of the Holy Spirit as his mother and says that she took him by one of his hairs and carried him to the great mountain, identified in the tradition as Mount Tabor.",
+          "text_type": "English paraphrase of the attributed saying; the fragment's literary setting and meaning are debated.",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-hebrews/"
         },
         {
-          "fragment_id": "GH-Origen-CommJo-2.12",
-          "transmitting_author": "Origen",
-          "source_work": "Commentary on John",
-          "passage": "2.12",
-          "language_of_surviving_source": "Greek (preserved through later manuscript transmission)",
-          "content_scope": "A quotation or report attributed to the Gospel according to the Hebrews.",
-          "status": "Patristic fragment; preserve the exact quotation with its source, not as an independent Gospel manuscript."
+          "fragment_id": "GH-Clement-Strom-5.14.96.3",
+          "transmitting_author": "Clement of Alexandria",
+          "source_work": "Stromateis",
+          "passage": "5.14.96.3 (compare 3.9.45.5)",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "A wisdom saying attributed to the Gospel according to the Hebrews.",
+          "status": "A short saying transmitted by Clement; parallels in other sayings collections do not prove direct literary dependence.",
+          "english_paraphrase": "The saying describes the seeker who is astonished as one who will reach a place of rest and exercise rule. The wording and relationship to parallel sayings require comparison of the Greek witnesses.",
+          "text_type": "Summary only; not a full translation.",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-hebrews/"
         },
         {
           "fragment_id": "GH-Eusebius-HE-3.25.5",
-          "transmitting_author": "Eusebius",
+          "transmitting_author": "Eusebius of Caesarea",
           "source_work": "Ecclesiastical History",
           "passage": "3.25.5",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Names the Gospel according to the Hebrews among disputed writings.",
-          "status": "Ancient bibliographic testimony, not a quotation of the Gospel text."
+          "content_scope": "A bibliographic notice naming the Gospel according to the Hebrews among writings whose standing was disputed.",
+          "status": "This is testimony about the book's reception, not a quotation from its contents.",
+          "english_paraphrase": "Eusebius lists the Gospel according to the Hebrews among writings discussed in connection with disputed or non-universally received works.",
+          "text_type": "Paraphrase of a bibliographic notice, not a Gospel fragment.",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-hebrews/"
         }
       ],
       "description": "Gospel of the Hebrews is a fragmentary gospel writing in the Unified Apostolic and Disciple collection. Known through later patristic quotations; identity and extent disputed. No complete manuscript survives. Available material consists of separately attributed patristic quotations and reports. Keep the wording, attribution, and source locus attached to each fragment; do not merge these automatically with the Ebionite or Nazarene Gospel. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
@@ -633,13 +642,52 @@
       "preservation_status": "lost_or_fragmentary",
       "surviving_fragments": [
         {
-          "fragment_id": "GE-Epiphanius-Pan-30",
+          "fragment_id": "GE-Epiphanius-Pan-30.13.2-3",
           "transmitting_author": "Epiphanius of Salamis",
           "source_work": "Panarion",
-          "passage": "30.13.2–3, 30.13.4, 30.13.6–8, 30.14.3, 30.14.5, 30.16.5, 30.22.4",
+          "passage": "30.13.2–3",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Seven principal fragment groups attributed to the Gospel used by the Ebionites.",
-          "status": "Text survives only as quotations embedded in Epiphanius; the manuscript copies are manuscripts of Panarion, not of the Gospel of the Ebionites."
+          "content_scope": "Opening narrative fragment about Jesus' selection of the Twelve and John's request for baptism.",
+          "status": "Quoted within Epiphanius' polemical account; not an independent manuscript of the Gospel.",
+          "english_paraphrase": "The fragment places Jesus at Simon Peter's house in Capernaum and says that, at about thirty years of age, he chose the Twelve. John responds by asking Jesus to baptize him, but Jesus refuses and says that the required order must be fulfilled.",
+          "text_type": "English paraphrase of Epiphanius' quotation; not a reconstructed continuous Gospel.",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-ebionites/"
+        },
+        {
+          "fragment_id": "GE-Epiphanius-Pan-30.14.5",
+          "transmitting_author": "Epiphanius of Salamis",
+          "source_work": "Panarion",
+          "passage": "30.14.5",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "A saying about Jesus' family and those who do the Father's will.",
+          "status": "A fragment quoted by Epiphanius; wording must be read in the context of his report.",
+          "english_paraphrase": "Jesus identifies his family not simply by physical relationship, but with the disciples who carry out the will of his heavenly Father.",
+          "text_type": "English paraphrase of the surviving fragment.",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-ebionites/"
+        },
+        {
+          "fragment_id": "GE-Epiphanius-Pan-30.16.5",
+          "transmitting_author": "Epiphanius of Salamis",
+          "source_work": "Panarion",
+          "passage": "30.16.5",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "A saying attributed to Jesus concerning the abolition of sacrifices.",
+          "status": "The wording and interpretation are debated; this is a quotation embedded in Epiphanius' account, not an independent Gospel manuscript.",
+          "english_paraphrase": "Jesus is represented as saying that he came to abolish sacrifices, and that continued sacrifice would bring the people under judgment. Modern scholarship has re-examined the wording and its Jewish-Christian context.",
+          "text_type": "English paraphrase; the theological and textual interpretation remains debated.",
+          "source_url": "https://www.cambridge.org/core/journals/new-testament-studies/article/i-have-come-to-abolish-sacrifices-epiphanius-pan-30165-reexamining-a-jewish-christian-text-and-tradition/C57C00120217A962F3C1E5AB6C3BA8EB"
+        },
+        {
+          "fragment_id": "GE-Epiphanius-Pan-30.22.4",
+          "transmitting_author": "Epiphanius of Salamis",
+          "source_work": "Panarion",
+          "passage": "30.22.4",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "A Passover saying that differs from the familiar Synoptic wording.",
+          "status": "A quotation transmitted by Epiphanius; the fragment is not a complete Passover narrative.",
+          "english_paraphrase": "The saying is presented as Jesus expressing that he does not desire to eat meat with the disciples at the Passover meal.",
+          "text_type": "English paraphrase of the fragment.",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-ebionites/"
         }
       ],
       "description": "Gospel of the Ebionites is a fragmentary gospel writing in the Unified Apostolic and Disciple collection. Modern scholarly title for a non-extant gospel known chiefly through Epiphanius. No independent manuscript of this Gospel survives. Its seven principal fragment groups are transmitted within Epiphanius, Panarion 30. Keep the fragments tied to the exact Panarion sections; do not treat manuscripts of Epiphanius as direct Gospel codices. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
