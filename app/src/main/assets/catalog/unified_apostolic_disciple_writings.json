@@ -5173,6 +5173,10 @@
         {
           "title": "NASSCAL — Gospel of the Egyptians",
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-egyptians/"
+        },
+        {
+          "title": "Clement, Stromateis 3.6.45 and surrounding Greek text",
+          "url": "https://www.sophiascriptura.com/fathers/clement-stromata/3-6-45/"
         }
       ],
       "preservation_status": "lost_or_fragmentary",
@@ -5183,8 +5187,11 @@
           "source_work": "Stromateis",
           "passage": "3.6.45",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Quotation or allusion attributed to the Gospel according to the Egyptians.",
-          "status": "Fragment preserved in Clement's work."
+          "content_scope": "A dialogue saying attributed to the Gospel of the Egyptians, in which Salome asks about the power of death.",
+          "status": "Clement quotes the saying while arguing against those who reject marriage and childbirth; his framing is not part of the Gospel quotation.",
+          "english_paraphrase": "Salome asks how long death will hold power. The answer connects death's continuation with women giving birth. Clement immediately explains that the saying should not be read as calling life or creation evil, but as describing the sequence in which birth is followed by decay.",
+          "text_type": "English paraphrase of Clement's quotation and immediate explanation; Clement's commentary is distinguished from the Gospel saying.",
+          "source_url": "https://www.sophiascriptura.com/fathers/clement-stromata/3-6-45/"
         },
         {
           "fragment_id": "GEg-Clement-Strom-3.9.63-66",
@@ -5192,8 +5199,11 @@
           "source_work": "Stromateis",
           "passage": "3.9.63–66",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Extended discussion and sayings attributed to the Gospel according to the Egyptians.",
-          "status": "Fragmentary citation in a heresiological discussion."
+          "content_scope": "Sayings attributed to Jesus in a dialogue with Salome, including a statement about the works of the female and a response concerning food.",
+          "status": "Clement quotes and interprets these sayings while disputing an ascetic group's use of them. His interpretation must not be silently merged into the quoted material.",
+          "english_paraphrase": "One saying attributed to the Saviour declares that he came to undo the works of the female. In the same discussion Salome is represented as saying that she did well not to bear children, and the Lord answers with an instruction to eat plants while avoiding what is bitter. Clement interprets the imagery in relation to birth and decay; that interpretation is his own explanatory argument.",
+          "text_type": "English paraphrase of the reported sayings with Clement's commentary identified separately.",
+          "source_url": "https://www.interfaith.org/world-religions/christianity/apocrypha-gospel-of-the-egyptians/"
         },
         {
           "fragment_id": "GEg-Clement-Strom-3.13.92-93",
@@ -5201,29 +5211,38 @@
           "source_work": "Stromateis",
           "passage": "3.13.92–93",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Further material attributed to the Gospel according to the Egyptians.",
-          "status": "Fragment preserved in Clement."
+          "content_scope": "A dialogue saying in which Salome asks when the matters under discussion will become known.",
+          "status": "A saying attributed to the Gospel of the Egyptians; Clement compares it with other teachings and uses it in his argument.",
+          "english_paraphrase": "Salome asks when the things about which she has questioned will become known. The answer speaks of trampling the garment of shame and of the two becoming one, with male and female no longer divided into those categories.",
+          "text_type": "English paraphrase of the surviving saying.",
+          "source_url": "https://www.interfaith.org/world-religions/christianity/apocrypha-gospel-of-the-egyptians/"
         },
         {
           "fragment_id": "GEg-Hippolytus-Ref-5.7",
-          "transmitting_author": "Hippolytus",
+          "transmitting_author": "Hippolytus of Rome",
           "source_work": "Refutation of All Heresies",
           "passage": "5.7",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Reports the use of the Gospel by Naassenes and cites associated teaching.",
-          "status": "Ancient report and excerpt; distinguish the author's summary from a verbatim Gospel quotation."
+          "content_scope": "Hippolytus reports that the Naassenes used the Gospel of the Egyptians and summarizes their teaching about the soul.",
+          "status": "This is a report about a group's use of the Gospel, not a securely identifiable verbatim quotation from the Gospel itself.",
+          "english_paraphrase": "Hippolytus says that the Naassenes appealed to the Gospel of the Egyptians while describing the soul as difficult to find and understand, changing in form and condition rather than remaining in one fixed state.",
+          "text_type": "Paraphrase of Hippolytus' report; not presented as a direct Gospel quotation.",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-egyptians/"
         },
         {
           "fragment_id": "GEg-Epiphanius-Pan-62.2.4",
-          "transmitting_author": "Epiphanius",
+          "transmitting_author": "Epiphanius of Salamis",
           "source_work": "Panarion",
           "passage": "62.2.4",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Reports sayings attributed to the Gospel of the Egyptians.",
-          "status": "Later patristic testimony."
+          "content_scope": "Epiphanius reports sayings he associates with the Gospel of the Egyptians in his discussion of Sabellians.",
+          "status": "A later polemical report; it records Epiphanius' characterization and should not be treated as an independently preserved Gospel passage.",
+          "english_paraphrase": "Epiphanius claims that the work contains sayings presented as secret teaching of the Saviour and used by the group he is criticizing to support the view that Father, Son, and Holy Spirit are one and the same. This is Epiphanius' report of their use of the text, not a neutral description of the Gospel's complete teaching.",
+          "text_type": "Paraphrase of a heresiological report, not a verbatim Gospel fragment.",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-egyptians/"
         }
       ],
-      "description": "Gospel of the Egyptians (Greek fragments) is a fragmentary sayings gospel writing in the Unified Apostolic and Disciple collection. Known through quotations by Clement, Hippolytus, Epiphanius and others; precise form and community remain debated. No complete Greek manuscript of this Gospel is known. The surviving Greek material consists of citations and reports in Clement, Hippolytus, and Epiphanius. These are fragments embedded in their works, not surviving Gospel codices; keep direct quotations distinct from an author's summary. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
+      "description": "Gospel of the Egyptians (Greek fragments) is a fragmentary sayings gospel writing in the Unified Apostolic and Disciple collection. Known through quotations by Clement, Hippolytus, Epiphanius and others; precise form and community remain debated. No complete Greek manuscript of this Gospel is known. The surviving Greek material consists of citations and reports in Clement, Hippolytus, and Epiphanius. These are fragments embedded in their works, not surviving Gospel codices; keep direct quotations distinct from an author's summary. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording. This is the Greek Gospel of the Egyptians known chiefly through Clement and later writers; it is distinct from the Coptic text titled Gospel of the Egyptians found among the Nag Hammadi writings."
     },
     {
       "id": "gospel_thomas",
