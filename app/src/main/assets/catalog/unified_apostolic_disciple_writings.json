@@ -249,11 +249,25 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "thessalonian_mission",
       "historical_anchor": "Paul's mission in Thessalonica and separation from that community",
-      "historical_anchor_basis": "The letter recalls the founding visit and Timothy's return; associated with Acts 17.",
+      "historical_anchor_basis": "1 Thessalonians 2:17–3:6 recalls Paul's separation from the community, Timothy's mission from Athens, and Timothy's return with news. Acts 17:1–10 and 18:1–5 provide a possible travel framework: Paul leaves Thessalonica, reaches Athens, then Corinth, where Silas and Timothy rejoin him. The letter's internal clues are primary; the precise correlation with Acts and the interval before writing remain approximate.",
       "historical_subsequence": 30,
       "historical_anchor_status": "contextual_anchor",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The relative order of these writings cannot be fixed securely because the Galatians chronology and the relationship between the Thessalonian letters are disputed."
+      "historical_order_note": "The letter belongs after the founding visit to Thessalonica and after the separation and Timothy's return described in 1 Thessalonians 2:17–3:6. Acts 17–18 offers a possible travel framework, commonly placing the writing during Paul's Corinth stay, but does not explicitly date the letter. Its relative order to 2 Thessalonians is not secure.",
+      "research_sources": [
+        {
+          "title": "Oxford Bibliographies — Thessalonians",
+          "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554092761"
+        },
+        {
+          "title": "Pauline Letters — Acts and Paul's letters, point by point",
+          "url": "https://paulineletters.com/explore/acts-and-letters"
+        },
+        {
+          "title": "Paul's Letters in Context — chronology and historical setting",
+          "url": "https://www.odbm.org/en/discovery-series/understanding-the-bible-the-letters-of-paul/pauls-letters-in-context"
+        }
+      ]
     },
     {
       "id": "2_thessalonians",
@@ -271,11 +285,25 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "thessalonian_mission",
       "historical_anchor": "The Thessalonian community and its continuing questions",
-      "historical_anchor_basis": "Authorship and relative order to 1 Thessalonians are disputed; grouped by community context.",
+      "historical_anchor_basis": "The writing addresses the Thessalonian community and its concerns about the day of the Lord (2 Thessalonians 2:1–3) and community conduct (3:6–15). Its relation to 1 Thessalonians is disputed: proposals include a later follow-up, a letter written shortly before it, or a later work written in Paul's name. The shared community setting is more secure than any precise sequence.",
       "historical_subsequence": 30,
       "historical_anchor_status": "disputed_order",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The relative order of these writings cannot be fixed securely because the Galatians chronology and the relationship between the Thessalonian letters are disputed."
+      "historical_order_note": "No exact event-order position relative to 1 Thessalonians is asserted. Some readings treat it as a follow-up; other proposals reverse the order or question Pauline authorship. It therefore shares the Thessalonian community group without claiming that its traditional title establishes sequence or authorship.",
+      "research_sources": [
+        {
+          "title": "Oxford Bibliographies — Thessalonians",
+          "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554092761"
+        },
+        {
+          "title": "Cambridge University Press — 2 Thessalonians",
+          "url": "https://www.cambridge.org/core/books/abs/companion-to-the-new-testament/2-thessalonians/10090D83256C0C37BD3A888280C8D68C"
+        },
+        {
+          "title": "Paul's Letters in Context — chronology and historical setting",
+          "url": "https://www.odbm.org/en/discovery-series/understanding-the-bible-the-letters-of-paul/pauls-letters-in-context"
+        }
+      ]
     },
     {
       "id": "galatians",
@@ -300,6 +328,14 @@
         {
           "title": "Galatians — Baker Exegetical Commentary, introduction",
           "url": "https://www.thetbs.org/study-materials/wp-content/uploads/2023/03/Galatians-Baker-Exegetical-Commentary-on-the-New-Testament-BECNT-by-Douglas-Moo-z-lib.org_.pdf"
+        },
+        {
+          "title": "Cambridge University Press — Galatians, author, provenance and date",
+          "url": "https://assets.cambridge.org/97811084/26817/excerpt/9781108426817_excerpt.pdf"
+        },
+        {
+          "title": "Galatians — chronology of the Jerusalem visit debate",
+          "url": "https://www.thegospelcoalition.org/commentary/Galatians/"
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
@@ -413,11 +449,21 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "paul_jerusalem_journey",
       "historical_anchor": "Paul's planned journey to Jerusalem before his intended visit to Rome",
-      "historical_anchor_basis": "Romans 15 describes the planned Jerusalem delivery and subsequent intended journey to Rome.",
+      "historical_anchor_basis": "Romans 15:25–28 places Paul's immediate plan as delivering the contribution to Jerusalem, then travelling toward Rome and onward to Spain. Romans 16:1–2 commends Phoebe from Cenchreae, and 16:23 names Gaius and Erastus; these details are commonly associated with a Greek, often Corinthian, setting, but the letter's own stated travel plan is the anchor used here.",
       "historical_subsequence": 50,
       "historical_anchor_status": "internal_future_reference",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "The letter is situated before Paul's planned Jerusalem delivery and intended visit to Rome (Romans 15:25–28). This orders the writing by the journey it describes, not by its estimated composition date; the precise location and dating remain historical reconstructions.",
+      "research_sources": [
+        {
+          "title": "USCCB — Introduction to Romans",
+          "url": "https://bible.usccb.org/bible/romans/0?bk=Romans&ch="
+        },
+        {
+          "title": "Paul's Letters in Context — chronology and historical setting",
+          "url": "https://www.odbm.org/en/discovery-series/understanding-the-bible-the-letters-of-paul/pauls-letters-in-context"
+        }
+      ]
     },
     {
       "id": "1_peter",
