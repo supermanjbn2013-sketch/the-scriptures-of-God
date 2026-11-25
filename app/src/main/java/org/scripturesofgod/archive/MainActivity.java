@@ -159,6 +159,17 @@ public class MainActivity extends Activity {
         detail.append("Preservation category: ").append(record.optString("preservation_status","Not classified")).append("\n");
         detail.append("Collection relationship: ").append(record.optString("scope_relationship","Not classified")).append("\n");
         if(!record.optString("related_scriptural_reference","").isEmpty())detail.append("Related reference: ").append(record.optString("related_scriptural_reference")).append("\n");
+        org.json.JSONArray fragments=record.optJSONArray("surviving_fragments");
+        if(fragments!=null&&fragments.length()>0){
+            detail.append("\nSURVIVING FRAGMENTS AND ANCIENT CITATIONS\n");
+            for(int i=0;i<fragments.length();i++){
+                org.json.JSONObject fragment=fragments.optJSONObject(i);if(fragment==null)continue;
+                detail.append("\n").append(fragment.optString("fragment_id","Fragment")).append("\n");
+                for(String key:new String[]{"transmitting_author","source_work","passage","language_of_surviving_source","content_scope","status"}){
+                    String value=fragment.optString(key,"");if(!value.isEmpty())detail.append(key.replace("_"," ")).append(": ").append(value).append("\n");
+                }
+            }
+        }
         org.json.JSONArray witnesses=record.optJSONArray("manuscript_witnesses");
         if(witnesses!=null&&witnesses.length()>0){
             detail.append("\nMANUSCRIPT AND TRANSMISSION WITNESSES\n");
