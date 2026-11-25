@@ -889,7 +889,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "Coptic apocalypse / revelatory dialogue",
       "attribution_status": "Pseudonymously attributed to Peter; a distinct work unrelated to the Greek/Ethiopic Apocalypse of Peter.",
-      "textual_status": "Coptic witness in Nag Hammadi Codex VII,3; fourth-century codex. Witness register records NHC VII,3, pp. 70–84, as a fourth-century Sahidic Coptic papyrus codex.",
+      "textual_status": "The complete tractate is preserved in one fourth-century Coptic witness, Nag Hammadi Codex VII, tractate 3, pages 70.13–84.14 (Cairo, Coptic Museum Inv. 10546). The language is predominantly Sahidic Coptic but includes dialectal features. The text is substantially legible, though it contains difficult grammatical constructions and some physical damage. No second manuscript or independent ancient quotation is known. This is not the Greek/Ethiopic Apocalypse of Peter.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 10,
@@ -904,8 +904,20 @@
       "historical_order_note": "Keep separate from the Greek/Ethiopic Apocalypse of Peter; their contents, narrative settings, and manuscript traditions differ.",
       "research_sources": [
         {
-          "title": "NASSCAL — Coptic Apocalypse of Peter",
-          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-of-peter-coptic/"
+          "title": "NASSCAL — Cairo, Coptic Museum, Inv. 10546 (Nag Hammadi Codex VII)",
+          "url": "https://www.nasscal.com/manuscripta-apocryphorum/cairo-coptic-museum-inv-10546-nag-hammadi-codex-vii/"
+        },
+        {
+          "title": "BYU Studies — The Apocalypse of Peter: Introduction and Translation",
+          "url": "https://byustudies.byu.edu/article/the-apocalypse-of-peter-introduction-and-translation"
+        },
+        {
+          "title": "Henriette W. Havelaar — The Coptic Apocalypse of Peter: Nag-Hammadi-Codex VII,3 (1999)",
+          "url": "https://www.degruyterbrill.com/document/doi/10.1515/9783110884449/html"
+        },
+        {
+          "title": "University of Groningen — Havelaar dissertation and text edition record",
+          "url": "https://research.rug.nl/en/publications/the-coptic-apocalypse-of-peter-nag-hammadia-codex-vii3-text-edtio/"
         }
       ],
       "preservation_status": "surviving_in_coptic_nag_hammadi_codex",
@@ -923,7 +935,21 @@
           "source": "https://www.nasscal.com/manuscripta-apocryphorum/cairo-coptic-museum-inv-10546-nag-hammadi-codex-vii/"
         }
       ],
-      "description": "Apocalypse of Peter (Coptic; Nag Hammadi Codex VII,3) is a Coptic apocalypse / revelatory dialogue writing in the Unified Apostolic and Disciple collection. Pseudonymously attributed to Peter; a distinct work unrelated to the Greek/Ethiopic Apocalypse of Peter. Coptic witness in Nag Hammadi Codex VII,3; fourth-century codex. Witness register records NHC VII,3, pp. 70–84, as a fourth-century Sahidic Coptic papyrus codex. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+      "description": "The Coptic Apocalypse of Peter is a distinct revelatory dialogue preserved in Nag Hammadi Codex VII, tractate 3, pages 70.13–84.14. Its fourth-century Coptic manuscript is the only known witness. The narrative presents Peter receiving instruction and visions from Jesus in a Jerusalem temple setting, including a distinctive account of Christ's mission and suffering and criticism of rival Christian interpretations. It must not be confused with the separate Greek/Ethiopic Apocalypse of Peter. The catalogue summary is not a verbatim translation.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "ApocPet-Coptic-NHC-VII3-70.13-84.14",
+          "transmitting_author": "Anonymous Coptic translator and copyist; Nag Hammadi Codex VII, tractate 3",
+          "source_work": "Nag Hammadi Codex VII, tractate 3",
+          "passage": "NHC VII,3, 70.13–84.14",
+          "language_of_surviving_source": "Coptic (predominantly Sahidic, with dialectal features)",
+          "content_scope": "The sole known witness preserves a complete tractate-length apocalypse. The narrative opens with Peter in a temple setting in Jerusalem and presents Jesus as the revealer who guides Peter through visions and instruction. The work develops its distinctive account of Christ, the Saviour's mission, the nature of his suffering, and criticism of groups the author regards as mistaken in their understanding of Christ and the apostolic message. It is a separate work from the Greek/Ethiopic Apocalypse of Peter.",
+          "status": "The tractate is preserved across pages 70.13–84.14 of the fourth-century papyrus codex. The manuscript is described as legible and substantially complete, though the Coptic wording contains grammatical difficulties and some physical damage. No second manuscript witness or independent ancient quotation is currently identified.",
+          "english_paraphrase": "Peter receives a revelation from Jesus in a Jerusalem temple setting. Jesus explains matters concerning his identity and mission and leads Peter through visions that challenge rival interpretations of the Saviour and the meaning of his suffering. The work presents its own theological claims through a dialogue between Jesus and Peter. This is a summary of the Coptic tractate, not a verbatim translation or a reconstruction of its damaged or difficult wording.",
+          "text_type": "whole_tractate_content_summary_from_coptic_witness",
+          "source_url": "https://byustudies.byu.edu/article/the-apocalypse-of-peter-introduction-and-translation"
+        }
+      ]
     },
     {
       "id": "epistle_apostles",
