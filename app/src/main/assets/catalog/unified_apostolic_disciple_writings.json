@@ -2,12 +2,118 @@
   "schema_version": 1,
   "record_type": "unified_apostolic_and_disciple_writings_catalog",
   "title": "Apostolic and Disciple Writings — Unified Historical Collection",
-  "ordering": "Chronological by estimated composition date; records with undetermined dates appear last. Overlapping ranges are not a claim of exact sequence.",
+  "ordering": "By the historical events or setting represented in the writings, from the Lord's ministry through the apostolic mission and the generations that followed. Composition dates and manuscript dates are separate metadata.",
   "scope": "All identifiable writings connected by historical attribution, claim, tradition, subject, or early community use to apostles and disciples, including gospels, letters, testimony, acts, instruction, apocalypses, and other related writings. Inclusion is not an endorsement of authenticity, apostolic authorship, inspiration, or historical accuracy.",
   "anti_compilation_rule": "Do not use the later 27-writing compilation as the archive boundary or as the ordering template. Preserve its history as one later classification only.",
   "date_policy": "Composition date estimates are stored separately from physical witness dates. Use null for undetermined dates; never use numeric sentinels. Where estimates overlap or are disputed, show a date band and mark sequence as approximate.",
   "evidence_policy": "Every entry must distinguish title tradition, actual author identification, date of composition, earliest surviving witness, manuscript text status, and historical reliability. Anonymous or pseudonymous works must not be presented as verified apostolic authorship. New additions include scholarly research-source URLs. A source supports only the claims described in its entry; it does not automatically verify every textual or attribution statement.",
   "records": [
+    {
+      "id": "mark",
+      "title": "Gospel of Mark",
+      "composition_date_start_ce": 65,
+      "composition_date_end_ce": 75,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "gospel",
+      "attribution_status": "Anonymous narrative traditionally associated with Mark; authorship is not stated in the text.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 10,
+      "historical_period": "The Lord's life, ministry, death and resurrection",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "luke",
+      "title": "Gospel of Luke",
+      "composition_date_start_ce": 80,
+      "composition_date_end_ce": 100,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "gospel",
+      "attribution_status": "Anonymous narrative traditionally associated with Luke; authorship is not stated in the text.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 10,
+      "historical_period": "The Lord's life, ministry, death and resurrection",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "matthew",
+      "title": "Gospel of Matthew",
+      "composition_date_start_ce": 80,
+      "composition_date_end_ce": 90,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "gospel",
+      "attribution_status": "Anonymous narrative traditionally associated with Matthew; authorship is not stated in the text.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 10,
+      "historical_period": "The Lord's life, ministry, death and resurrection",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "john",
+      "title": "Gospel of John",
+      "composition_date_start_ce": 90,
+      "composition_date_end_ce": 100,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "gospel",
+      "attribution_status": "Anonymous narrative traditionally associated with the disciple John; authorship is not stated in the text.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 10,
+      "historical_period": "The Lord's life, ministry, death and resurrection",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "james",
+      "title": "Letter of James",
+      "composition_date_start_ce": 60,
+      "composition_date_end_ce": 90,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Letter attributed to James; authorship and date are debated.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 20,
+      "historical_period": "The first disciples and the early Jerusalem community",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "acts",
+      "title": "Acts",
+      "composition_date_start_ce": 80,
+      "composition_date_end_ce": 100,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "narrative",
+      "attribution_status": "Anonymous narrative, conventionally linked with the author of Luke; authorship is not stated in the text.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 20,
+      "historical_period": "The first disciples and the early Jerusalem community",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "didache",
+      "title": "Didache (Teaching of the Twelve Apostles)",
+      "composition_date_start_ce": 90,
+      "composition_date_end_ce": 110,
+      "date_precision": "provisional broad range; verify scholarly dating",
+      "genre": "instruction, letter, or related writing",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Greek edition text available offline; P.Oxy. 1782 is a fragmentary witness and not a complete papyrus copy.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
+      "existing_catalogue_id": "didache",
+      "historical_sequence": 20,
+      "historical_period": "The first disciples and the early Jerusalem community",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
     {
       "id": "1_thessalonians",
       "title": "1 Thessalonians",
@@ -18,7 +124,10 @@
       "attribution_status": "Letter attributed to Paul; commonly dated among the earliest surviving Christian writings.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "2_thessalonians",
@@ -30,7 +139,10 @@
       "attribution_status": "Letter attributed to Paul; authorship and date are debated.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "galatians",
@@ -42,7 +154,10 @@
       "attribution_status": "Letter attributed to Paul; date depends partly on the reconstruction of Paul's chronology.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "1_corinthians",
@@ -54,7 +169,10 @@
       "attribution_status": "Letter attributed to Paul.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "paul_previous_corinthian_letter",
@@ -68,7 +186,10 @@
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Relative sequence is supported by 1 Corinthians 5:9; calendar date is an estimate, not a manuscript date.",
       "related_scriptural_reference": "1 Corinthians 5:9",
-      "preservation_status": "lost_or_unidentified"
+      "preservation_status": "lost_or_unidentified",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "paul_sorrowful_corinthian_letter",
@@ -82,7 +203,10 @@
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Relative sequence from 2 Corinthians 2:1–4 and 7:8–12; exact date and relationship to 2 Corinthians remain debated.",
       "related_scriptural_reference": "2 Corinthians 2:1–4; 7:8–12",
-      "preservation_status": "lost_or_possible_embedded_material"
+      "preservation_status": "lost_or_possible_embedded_material",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "2_corinthians",
@@ -94,7 +218,10 @@
       "attribution_status": "Letter attributed to Paul; composition may incorporate more than one correspondence unit.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "philemon",
@@ -106,7 +233,10 @@
       "attribution_status": "Letter attributed to Paul.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "philippians",
@@ -118,7 +248,10 @@
       "attribution_status": "Letter attributed to Paul; place and date of writing are debated.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "romans",
@@ -130,7 +263,10 @@
       "attribution_status": "Letter attributed to Paul.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "1_peter",
@@ -142,7 +278,10 @@
       "attribution_status": "Letter attributed to Peter; authorship and date are debated.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "colossians",
@@ -154,7 +293,10 @@
       "attribution_status": "Letter attributed to Paul; authorship is debated.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "ephesians",
@@ -166,19 +308,10 @@
       "attribution_status": "Letter attributed to Paul; authorship is debated.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
-    },
-    {
-      "id": "james",
-      "title": "Letter of James",
-      "composition_date_start_ce": 60,
-      "composition_date_end_ce": 90,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Letter attributed to James; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "hebrews",
@@ -190,7 +323,10 @@
       "attribution_status": "Anonymous composition; not identified as a letter written by Paul in its text.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "paul_laodicean_correspondence_referenced",
@@ -204,19 +340,10 @@
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Date is provisional and tied to the composition date of Colossians; identity and direction of correspondence remain uncertain.",
       "related_scriptural_reference": "Colossians 4:16",
-      "preservation_status": "unidentified_referenced_letter"
-    },
-    {
-      "id": "mark",
-      "title": "Gospel of Mark",
-      "composition_date_start_ce": 65,
-      "composition_date_end_ce": 75,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "gospel",
-      "attribution_status": "Anonymous narrative traditionally associated with Mark; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "preservation_status": "unidentified_referenced_letter",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "jude",
@@ -228,7 +355,10 @@
       "attribution_status": "Letter attributed to Jude; precise identity and date are debated.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "1_timothy",
@@ -240,7 +370,10 @@
       "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "2_timothy",
@@ -252,43 +385,10 @@
       "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
-    },
-    {
-      "id": "acts",
-      "title": "Acts",
-      "composition_date_start_ce": 80,
-      "composition_date_end_ce": 100,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "narrative",
-      "attribution_status": "Anonymous narrative, conventionally linked with the author of Luke; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
-    },
-    {
-      "id": "luke",
-      "title": "Gospel of Luke",
-      "composition_date_start_ce": 80,
-      "composition_date_end_ce": 100,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "gospel",
-      "attribution_status": "Anonymous narrative traditionally associated with Luke; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
-    },
-    {
-      "id": "matthew",
-      "title": "Gospel of Matthew",
-      "composition_date_start_ce": 80,
-      "composition_date_end_ce": 90,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "gospel",
-      "attribution_status": "Anonymous narrative traditionally associated with Matthew; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "titus",
@@ -300,20 +400,10 @@
       "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
-    },
-    {
-      "id": "clement_1",
-      "title": "1 Clement",
-      "composition_date_start_ce": 90,
-      "composition_date_end_ce": 110,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "instruction, letter, or related writing",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Catalogue entry; a dedicated witness-by-witness text import is not yet implemented.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "clement_1"
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "1_john",
@@ -325,7 +415,10 @@
       "attribution_status": "Anonymous or Johannine-community writing; exact author is not named.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "2_john",
@@ -337,7 +430,10 @@
       "attribution_status": "Letter from 'the elder'; personal identity is not established by the text.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "3_john",
@@ -349,45 +445,10 @@
       "attribution_status": "Letter from 'the elder'; personal identity is not established by the text.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
-    },
-    {
-      "id": "didache",
-      "title": "Didache (Teaching of the Twelve Apostles)",
-      "composition_date_start_ce": 90,
-      "composition_date_end_ce": 110,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "instruction, letter, or related writing",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek edition text available offline; P.Oxy. 1782 is a fragmentary witness and not a complete papyrus copy.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "didache"
-    },
-    {
-      "id": "barnabas",
-      "title": "Epistle of Barnabas",
-      "composition_date_start_ce": 90,
-      "composition_date_end_ce": 110,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "instruction, letter, or related writing",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek text available offline in the archive from an edition; edition-derived text, not a new diplomatic transcription of Sinaiticus or PSI 7.757.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "barnabas"
-    },
-    {
-      "id": "john",
-      "title": "Gospel of John",
-      "composition_date_start_ce": 90,
-      "composition_date_end_ce": 100,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "gospel",
-      "attribution_status": "Anonymous narrative traditionally associated with the disciple John; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "revelation",
@@ -399,146 +460,10 @@
       "attribution_status": "Apocalypse attributed internally to John; identifying him with the apostle is disputed.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
-    },
-    {
-      "id": "ignatius_polycarp",
-      "title": "Letter of Ignatius to Polycarp",
-      "composition_date_start_ce": 98,
-      "composition_date_end_ce": 117,
-      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
-      "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
-      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
-      "research_sources": [
-        {
-          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
-          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
-        }
-      ]
-    },
-    {
-      "id": "ignatius_ephesians",
-      "title": "Letter of Ignatius to the Ephesians",
-      "composition_date_start_ce": 98,
-      "composition_date_end_ce": 117,
-      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
-      "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
-      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
-      "research_sources": [
-        {
-          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
-          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
-        }
-      ]
-    },
-    {
-      "id": "ignatius_magnesians",
-      "title": "Letter of Ignatius to the Magnesians",
-      "composition_date_start_ce": 98,
-      "composition_date_end_ce": 117,
-      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
-      "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
-      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
-      "research_sources": [
-        {
-          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
-          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
-        }
-      ]
-    },
-    {
-      "id": "ignatius_philadelphians",
-      "title": "Letter of Ignatius to the Philadelphians",
-      "composition_date_start_ce": 98,
-      "composition_date_end_ce": 117,
-      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
-      "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
-      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
-      "research_sources": [
-        {
-          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
-          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
-        }
-      ]
-    },
-    {
-      "id": "ignatius_romans",
-      "title": "Letter of Ignatius to the Romans",
-      "composition_date_start_ce": 98,
-      "composition_date_end_ce": 117,
-      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
-      "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
-      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
-      "research_sources": [
-        {
-          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
-          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
-        }
-      ]
-    },
-    {
-      "id": "ignatius_smyrnaeans",
-      "title": "Letter of Ignatius to the Smyrnaeans",
-      "composition_date_start_ce": 98,
-      "composition_date_end_ce": 117,
-      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
-      "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
-      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
-      "research_sources": [
-        {
-          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
-          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
-        }
-      ]
-    },
-    {
-      "id": "ignatius_trallians",
-      "title": "Letter of Ignatius to the Trallians",
-      "composition_date_start_ce": 98,
-      "composition_date_end_ce": 117,
-      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
-      "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
-      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
-      "research_sources": [
-        {
-          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
-          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
-        }
-      ]
-    },
-    {
-      "id": "clement_2",
-      "title": "2 Clement",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 199,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "instruction, letter, or related writing",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Catalogue entry; a dedicated witness-by-witness text import is not yet implemented.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "clement_2"
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "2_peter",
@@ -550,7 +475,10 @@
       "attribution_status": "Letter attributed to Peter; authorship and date are debated.",
       "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness."
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "apocalypse_peter",
@@ -563,46 +491,10 @@
       "textual_status": "Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "apocalypse_peter"
-    },
-    {
-      "id": "gospel_mary",
-      "title": "Gospel of Mary",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 200,
-      "date_precision": "Second-century composition is commonly proposed; exact date debated; surviving Greek and Coptic witnesses are later physical copies.",
-      "genre": "gospel or apocalypse",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Coptic and Greek witnesses are known; the two Greek fragments overlap portions also preserved in the Coptic codex. No complete Greek text survives.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Composition date is distinct from the dates of the Greek papyrus fragments and Coptic codex.",
-      "existing_catalogue_id": "gospel_mary"
-    },
-    {
-      "id": "gospel_peter",
-      "title": "Gospel of Peter",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 200,
-      "date_precision": "Second-century composition commonly proposed; exact date debated.",
-      "genre": "gospel or apocalypse",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Akhmim fragment text is known; papyrus fragments are separate, short witnesses and should not be merged into a continuous text without editorial marking.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Composition estimate is distinct from the date of the Akhmim manuscript witness.",
-      "existing_catalogue_id": "gospel_peter"
-    },
-    {
-      "id": "gospel_thomas",
-      "title": "Gospel of Thomas",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 200,
-      "date_precision": "Second-century composition commonly proposed; possible earlier sayings traditions and the date of the final collection are debated.",
-      "genre": "gospel or apocalypse",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Composition estimate is not the date of the Greek papyrus fragments or the Coptic Nag Hammadi manuscript.",
-      "existing_catalogue_id": "gospel_thomas"
+      "existing_catalogue_id": "apocalypse_peter",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "papias_exposition",
@@ -625,7 +517,205 @@
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
         }
       ],
-      "preservation_status": "fragmentary_quotations"
+      "preservation_status": "fragmentary_quotations",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "clement_1",
+      "title": "1 Clement",
+      "composition_date_start_ce": 90,
+      "composition_date_end_ce": 110,
+      "date_precision": "provisional broad range; verify scholarly dating",
+      "genre": "instruction, letter, or related writing",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Catalogue entry; a dedicated witness-by-witness text import is not yet implemented.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
+      "existing_catalogue_id": "clement_1",
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "barnabas",
+      "title": "Epistle of Barnabas",
+      "composition_date_start_ce": 90,
+      "composition_date_end_ce": 110,
+      "date_precision": "provisional broad range; verify scholarly dating",
+      "genre": "instruction, letter, or related writing",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Greek text available offline in the archive from an edition; edition-derived text, not a new diplomatic transcription of Sinaiticus or PSI 7.757.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
+      "existing_catalogue_id": "barnabas",
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "ignatius_polycarp",
+      "title": "Letter of Ignatius to Polycarp",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ],
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "ignatius_ephesians",
+      "title": "Letter of Ignatius to the Ephesians",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ],
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "ignatius_magnesians",
+      "title": "Letter of Ignatius to the Magnesians",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ],
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "ignatius_philadelphians",
+      "title": "Letter of Ignatius to the Philadelphians",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ],
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "ignatius_romans",
+      "title": "Letter of Ignatius to the Romans",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ],
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "ignatius_smyrnaeans",
+      "title": "Letter of Ignatius to the Smyrnaeans",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ],
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "ignatius_trallians",
+      "title": "Letter of Ignatius to the Trallians",
+      "composition_date_start_ce": 98,
+      "composition_date_end_ce": 117,
+      "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
+      "genre": "letter",
+      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ],
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "clement_2",
+      "title": "2 Clement",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 199,
+      "date_precision": "provisional broad range; verify scholarly dating",
+      "genre": "instruction, letter, or related writing",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Catalogue entry; a dedicated witness-by-witness text import is not yet implemented.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
+      "existing_catalogue_id": "clement_2",
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "hermas",
@@ -638,7 +728,10 @@
       "textual_status": "Greek edition text available offline; not a full diplomatic transcription of all witnesses.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "hermas"
+      "existing_catalogue_id": "hermas",
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "polycarp_philippians",
@@ -656,7 +749,10 @@
           "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
         }
-      ]
+      ],
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "quadratus_apology",
@@ -675,7 +771,79 @@
           "url": "https://academic.oup.com/reference/62341/reference-article-abstract/561741752"
         }
       ],
-      "preservation_status": "fragmentary_quotation"
+      "preservation_status": "fragmentary_quotation",
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "martyrdom_polycarp",
+      "title": "Martyrdom of Polycarp",
+      "composition_date_start_ce": 150,
+      "composition_date_end_ce": 180,
+      "date_precision": "Second-century composition; exact date debated",
+      "genre": "martyrdom account",
+      "attribution_status": "An early account concerning Polycarp; its narrative and transmission must be evaluated as a historical source rather than treated as a verbatim eyewitness transcript.",
+      "textual_status": "Survives in Greek manuscript transmission and later versions; manuscript witnesses are distinct from the date of composition.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Placed broadly in the second half of the second century; narrower dating remains disputed.",
+      "research_sources": [
+        {
+          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
+          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ],
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "gospel_mary",
+      "title": "Gospel of Mary",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 200,
+      "date_precision": "Second-century composition is commonly proposed; exact date debated; surviving Greek and Coptic witnesses are later physical copies.",
+      "genre": "gospel or apocalypse",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Coptic and Greek witnesses are known; the two Greek fragments overlap portions also preserved in the Coptic codex. No complete Greek text survives.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Composition date is distinct from the dates of the Greek papyrus fragments and Coptic codex.",
+      "existing_catalogue_id": "gospel_mary",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "gospel_peter",
+      "title": "Gospel of Peter",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 200,
+      "date_precision": "Second-century composition commonly proposed; exact date debated.",
+      "genre": "gospel or apocalypse",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Akhmim fragment text is known; papyrus fragments are separate, short witnesses and should not be merged into a continuous text without editorial marking.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Composition estimate is distinct from the date of the Akhmim manuscript witness.",
+      "existing_catalogue_id": "gospel_peter",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
+    },
+    {
+      "id": "gospel_thomas",
+      "title": "Gospel of Thomas",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 200,
+      "date_precision": "Second-century composition commonly proposed; possible earlier sayings traditions and the date of the final collection are debated.",
+      "genre": "gospel or apocalypse",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Composition estimate is not the date of the Greek papyrus fragments or the Coptic Nag Hammadi manuscript.",
+      "existing_catalogue_id": "gospel_thomas",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "aristides_apology",
@@ -694,7 +862,10 @@
           "url": "https://ccel.org/ccel/richardson/fathers.v.i.html"
         }
       ],
-      "preservation_status": "surviving_in_multiple_language_versions"
+      "preservation_status": "surviving_in_multiple_language_versions",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "third_corinthians",
@@ -708,7 +879,10 @@
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Date refers to the apocryphal composition, not to the date of any surviving manuscript witness.",
       "related_scriptural_reference": "",
-      "preservation_status": "surviving_pseudepigraph"
+      "preservation_status": "surviving_pseudepigraph",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "acts_paul",
@@ -731,7 +905,10 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/"
         }
       ],
-      "preservation_status": "surviving_in_fragmentary_or_versional_transmission"
+      "preservation_status": "surviving_in_fragmentary_or_versional_transmission",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "diognetus",
@@ -750,25 +927,10 @@
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
         }
       ],
-      "preservation_status": "surviving_text_from_lost_medieval_codex"
-    },
-    {
-      "id": "martyrdom_polycarp",
-      "title": "Martyrdom of Polycarp",
-      "composition_date_start_ce": 150,
-      "composition_date_end_ce": 180,
-      "date_precision": "Second-century composition; exact date debated",
-      "genre": "martyrdom account",
-      "attribution_status": "An early account concerning Polycarp; its narrative and transmission must be evaluated as a historical source rather than treated as a verbatim eyewitness transcript.",
-      "textual_status": "Survives in Greek manuscript transmission and later versions; manuscript witnesses are distinct from the date of composition.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Placed broadly in the second half of the second century; narrower dating remains disputed.",
-      "research_sources": [
-        {
-          "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
-          "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
-        }
-      ]
+      "preservation_status": "surviving_text_from_lost_medieval_codex",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "acts_andrew",
@@ -791,7 +953,10 @@
           "url": "https://academic.oup.com/reference/62341/reference-article/554093678"
         }
       ],
-      "preservation_status": "surviving_in_fragmentary_or_versional_transmission"
+      "preservation_status": "surviving_in_fragmentary_or_versional_transmission",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "acts_john",
@@ -814,7 +979,10 @@
           "url": "https://academic.oup.com/reference/62341/reference-article/554093678"
         }
       ],
-      "preservation_status": "surviving_in_fragmentary_or_versional_transmission"
+      "preservation_status": "surviving_in_fragmentary_or_versional_transmission",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "acts_peter",
@@ -837,7 +1005,10 @@
           "url": "https://academic.oup.com/reference/62341/reference-article/554093678"
         }
       ],
-      "preservation_status": "surviving_in_fragmentary_or_versional_transmission"
+      "preservation_status": "surviving_in_fragmentary_or_versional_transmission",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "acts_thomas",
@@ -860,7 +1031,10 @@
           "url": "https://academic.oup.com/reference/62341/reference-article/554093678"
         }
       ],
-      "preservation_status": "surviving_in_fragmentary_or_versional_transmission"
+      "preservation_status": "surviving_in_fragmentary_or_versional_transmission",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "paul_seneca_correspondence",
@@ -874,7 +1048,10 @@
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Date refers to the later composition of the pseudepigraphal correspondence.",
       "related_scriptural_reference": "",
-      "preservation_status": "surviving_pseudepigraphal_collection"
+      "preservation_status": "surviving_pseudepigraphal_collection",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "epistle_to_laodiceans_latin",
@@ -888,7 +1065,10 @@
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Provisional date for the surviving pseudepigraphal work, not the date of the correspondence mentioned in Colossians.",
       "related_scriptural_reference": "",
-      "preservation_status": "surviving_later_pseudepigraph"
+      "preservation_status": "surviving_later_pseudepigraph",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     },
     {
       "id": "paul_letter_to_alexandrians_reported",
@@ -902,7 +1082,11 @@
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "The Muratorian Fragment reports a forged letter under Paul's name but does not provide a secure composition date. Unknown dates are sorted after dated records.",
       "related_scriptural_reference": "Muratorian Fragment",
-      "preservation_status": "reported_lost_or_unidentified"
+      "preservation_status": "reported_lost_or_unidentified",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain."
     }
-  ]
+  ],
+  "historical_chronology_policy": "Use the events and historical setting represented in each writing as the organizing basis. For narratives, follow narrated events. For letters and instruction writings, use the historical situation, people, journeys, imprisonment, or community events they address. If an exact setting cannot be established, use a broad labelled period and mark placement provisional. Never use composition date as a substitute for event chronology."
 }

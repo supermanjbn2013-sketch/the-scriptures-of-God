@@ -709,10 +709,7 @@ def validate_witness_registers():
     unified_ids = [x["id"] for x in unified["records"]]
     assert len(unified_ids) == len(set(unified_ids)), "Duplicate unified writing identities"
     assert len(unified["records"]) > 27, "Unified collection must extend beyond the 27-item source dataset"
-    def chronology_key(record):
-        start = record.get("composition_date_start_ce")
-        return (start is None, start if start is not None else 0, record["title"].casefold())
-    assert unified["records"] == sorted(unified["records"], key=chronology_key), "Unified writings are not chronologically sorted"
+    assert unified["records"] == sorted(unified["records"], key=lambda r: r.get("historical_sequence", 999)), "Unified writings are not sorted by historical event sequence"
     for record in unified["records"]:
         start = record.get("composition_date_start_ce")
         end = record.get("composition_date_end_ce")
@@ -720,6 +717,7 @@ def validate_witness_registers():
         assert start is None or (isinstance(start, int) and isinstance(end, int) and start <= end), f"Invalid composition date range: {record['id']}"
         assert start != 9999 and end != 9999, f"Do not use numeric sentinels for undated works: {record['id']}"
         assert record.get("attribution_status") and record.get("textual_status") and record.get("chronology_basis")
+        assert isinstance(record.get("historical_sequence"), int) and record.get("historical_period") and record.get("historical_order_basis"), f"Missing event-based chronology metadata: {record['id']}"
         if record.get("research_sources") is not None:
             assert record["research_sources"] and all(s.get("title") and s.get("url", "").startswith("https://") for s in record["research_sources"]), f"Invalid research source metadata: {record['id']}"
     print(f"Validated unified chronological writings collection: {len(unified['records'])} entries; not restricted to 27.")

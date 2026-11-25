@@ -122,15 +122,18 @@ public class MainActivity extends Activity {
 
 
     void renderUnifiedWritings(String query){
-        content.addView(text("ONE HISTORICAL COLLECTION • CHRONOLOGICAL ORDER",12,gold,true));
-        content.addView(text("This collection is not limited by the later 27-writing compilation. It includes writings attributed to apostles and disciples, works associated with their communities, and later works bearing their names. Inclusion does not establish authorship or authority. Dates refer to estimated composition, not manuscript-copy dates.",13,muted,false));
+        content.addView(text("ONE HISTORICAL COLLECTION • ORDERED BY EVENTS",12,gold,true));
+        content.addView(text("This collection is not limited by the later 27-writing compilation. It includes writings attributed to apostles and disciples, works associated with their communities, and later works bearing their names. Inclusion does not establish authorship or authority. The list follows represented events and historical settings. Composition and manuscript dates are separate reference details.",13,muted,false));
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/unified_apostolic_disciple_writings.json"),"UTF-8"));
             StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
             org.json.JSONArray records=new org.json.JSONObject(raw.toString()).getJSONArray("records");
+            java.util.ArrayList<org.json.JSONObject> ordered=new java.util.ArrayList<>();
+            for(int i=0;i<records.length();i++)ordered.add(records.getJSONObject(i));
+            java.util.Collections.sort(ordered,(a,b)->Integer.compare(a.optInt("historical_sequence",999),b.optInt("historical_sequence",999)));
             int shown=0;
-            for(int i=0;i<records.length();i++){
-                org.json.JSONObject record=records.getJSONObject(i);
+            for(int i=0;i<ordered.size();i++){
+                org.json.JSONObject record=ordered.get(i);
                 String title=record.optString("title","Untitled record");
                 String genre=record.optString("genre","writing");
                 String attribution=record.optString("attribution_status","");
@@ -140,14 +143,15 @@ public class MainActivity extends Activity {
                 if(!query.isEmpty()&&!hay.contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
                 LinearLayout row=new LinearLayout(this);row.setOrientation(1);row.setPadding(12,7,12,7);row.setBackground(shape(panel));
                 row.addView(text(title,15,ink,true));
-                row.addView(text(date+"  •  "+genre,12,gold,false));
+                row.addView(text(record.optString("historical_period","Historical setting not classified"),12,gold,false));
+                row.addView(text("Composition: "+date+"  •  "+genre,11,muted,false));
                 TextView status=text(attribution,12,muted,false);status.setMaxLines(3);row.addView(status);
                 LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,4,0,5);content.addView(row,rp);
                 row.setOnClickListener(v->showUnifiedWritingDetail(record));
                 shown++;
             }
             if(shown==0)content.addView(text("No matching writing records.",14,muted,false));
-            content.addView(text(shown+" records shown. Composition dates are estimates; manuscript witnesses are catalogued separately.",12,muted,false));
+            content.addView(text(shown+" records shown. Ordered by represented events and historical setting, not composition date.",12,muted,false));
         }catch(Exception e){
             content.addView(text("The unified writings catalogue could not be opened: "+e.getMessage(),13,muted,false));
         }
@@ -157,6 +161,8 @@ public class MainActivity extends Activity {
         StringBuilder detail=new StringBuilder();
         boolean hasDate=!record.isNull("composition_date_start_ce")&&!record.isNull("composition_date_end_ce");
         String date=hasDate?(record.optInt("composition_date_start_ce")==record.optInt("composition_date_end_ce")?record.optInt("composition_date_start_ce")+" CE":record.optInt("composition_date_start_ce")+"–"+record.optInt("composition_date_end_ce")+" CE"):"Undetermined";
+        detail.append("Historical period: ").append(record.optString("historical_period","Unclassified")).append("\\n");
+        detail.append("Historical order basis: ").append(record.optString("historical_order_basis","Not specified")).append("\\n");
         detail.append("Estimated composition: ").append(date).append("\\n");
         detail.append("Date note: ").append(record.optString("date_precision")).append("\\n\\n");
         detail.append("Genre: ").append(record.optString("genre")).append("\\n\\n");
