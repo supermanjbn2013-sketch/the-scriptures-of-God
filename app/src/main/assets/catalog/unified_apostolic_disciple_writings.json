@@ -3639,7 +3639,7 @@
       "date_precision": "Approximate early to mid-second-century date",
       "genre": "apology",
       "attribution_status": "Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison.",
-      "textual_status": "Manuscript witnesses distinguish the seventh-century complete Syriac translation (Sinai Syr. 16), the fourth-century Greek codex represented by P.Oxy. XV 1778 and P.Heid. inv. G 1013 (two fragments of one codex, covering parts of Apology 4.3–6.2), the separate early-fourth-century Greek codex P.Lond. Lit. 223 / British Library Papyrus 2486 (15.4–16.2), and the partial Armenian witnesses. The complete Syriac translation is not the original Greek. The two Oxyrhynchus/Heidelberg fragments must not be counted as two independent codices.",
+      "textual_status": "Manuscript witnesses distinguish the seventh-century complete Syriac translation (Sinai Syr. 16), the fourth-century Greek codex represented by P.Oxy. XV 1778 and P.Heid. inv. G 1013 (two fragments of one codex; identified surviving portions include Apology 5.5 and 6.1), the separate fourth-century Greek codex P.Lond. Lit. 223 / British Library Papyrus 2486 (15.4–16.2), and the partial Armenian witnesses. The Greek papyri preserve only fragments; the fuller Syriac text is a separate version and is not the wording of the papyri.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date is approximate; language and date of surviving copies are separate evidence.",
       "research_sources": [
@@ -3696,8 +3696,8 @@
           "writing": "Greek",
           "material": "papyrus codex fragments",
           "date": "Fourth century CE",
-          "contents": "Apology 4.3–6.2, with lacunae; the Oxyrhynchus and Heidelberg fragments belong to the same codex",
-          "text_status": "Two separately catalogued fragments from one Greek codex, not two independent manuscript witnesses. The surviving text is badly damaged and incomplete.",
+          "contents": "Apology 5.5 and 6.1 are the identified surviving portions; the wider codex coverage is reconstructed as 4.3–6.2 with substantial lacunae.",
+          "text_status": "Two separately catalogued fragments from one Greek codex. The identified surviving portions include Apology 5.5 and 6.1; the wider coverage 4.3–6.2 includes lacunae. Do not count them as two independent codices.",
           "source": "https://www.4care-skos.mf.no/4care-artefacts/384/"
         },
         {
@@ -3706,7 +3706,7 @@
           "writing": "Greek",
           "material": "papyrus codex bifolium (one sheet forming two leaves)",
           "date": "Early fourth century CE",
-          "contents": "Apology 15.4–16.2; the other leaf of the same bifolium contains Song of Songs 5:12–6:10",
+          "contents": "Apology 15.4–16.2. The other leaf of the same bifolium contains Song of Songs 5:12–6:10.",
           "text_status": "A separate Greek codex witness from the P.Oxy. 1778 / P.Heid. inv. G 1013 codex. The British Library catalogue dates the bifolium to the early fourth century and provides digitised access.",
           "source": "https://searcharchives.bl.uk/catalog/040-002105520"
         },
@@ -3741,7 +3741,33 @@
           "source": "https://www.academia.edu/29503347/The_Textual_Witnesses_to_the_Second-Century_Apology_of_Aristides"
         }
       ],
-      "description": "Apology of Aristides is an apology writing in the Unified Apostolic and Disciple collection. Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison. Manuscript witnesses distinguish the seventh-century complete Syriac translation (Sinai Syr. 16), the fourth-century Greek codex represented by P.Oxy. XV 1778 and P.Heid. inv. G 1013 (two fragments of one codex), the separate early-fourth-century Greek codex P.Lond. Lit. 223 / British Library Papyrus 2486, and the partial Armenian witnesses. The complete Syriac translation is not the original Greek. The two Oxyrhynchus/Heidelberg fragments are not independent codices. The catalogue keeps physical manuscript dates, language, extent, and textual limits separate."
+      "description": "Apology of Aristides is an apology writing in the Unified Apostolic and Disciple collection. Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison. Manuscript witnesses distinguish the seventh-century Syriac manuscript Sinai Syr. 16, the fourth-century Greek codex represented by P.Oxy. XV 1778 and P.Heid. inv. G 1013 (two fragments from one codex, with identified surviving portions at 5.5 and 6.1), the separate fourth-century Greek codex P.Lond. Lit. 223 / British Library Papyrus 2486 (15.4–16.2), and the partial Armenian witnesses. The Greek papyri preserve only fragments; the fuller Syriac text is a separate version and must not be passed off as the wording of the Greek papyri. The catalogue provides separate content summaries for the two Greek papyrus codices, not fabricated transcriptions.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "Aristides-Greek-Papyrus-POxy1778-PHeidG1013",
+          "transmitting_author": "Aristides of Athens; preserved in a fourth-century Greek papyrus codex",
+          "source_work": "Apology",
+          "passage": "Greek papyrus portions corresponding to Apology 5.5 and 6.1; the wider codex coverage is reconstructed as 4.3–6.2 with substantial lacunae",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "The preserved portions belong to the argument that natural elements are not deities. The section on water treats it as created, mutable, and used by human beings; the section on the sun presents it as moving according to an order beyond itself and serving the world under the Creator's authority.",
+          "status": "P.Oxy. XV 1778 and P.Heid. inv. G 1013 are two fragments from the same codex, not independent witnesses. The fragmentary Greek wording is incomplete; the summary identifies the argument from the extant passage and parallel fuller transmission without claiming to restore missing Greek.",
+          "english_paraphrase": "Aristides argues that water is a created part of the world rather than a god, because it changes, can be polluted or redirected, and serves human needs. He likewise argues that the sun is not divine: it follows an ordered course and provides light and warmth under the will of the one who governs it.",
+          "text_type": "Editorial content summary, not a verbatim transcription or a reconstruction of missing Greek. The fuller Syriac transmission is a parallel version and must not be mistaken for the wording of this Greek papyrus.",
+          "source_url": "https://4care-skos.mf.no/4care-artefacts/384/"
+        },
+        {
+          "fragment_id": "Aristides-Greek-Papyrus-PLondLit223",
+          "transmitting_author": "Aristides of Athens; preserved in a separate fourth-century Greek papyrus codex",
+          "source_work": "Apology",
+          "passage": "15.4–16.2",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "A section from the discussion of Christian belief and conduct. In the wider transmitted text, this closing part describes Christians' ethical conduct, their worship and prayer directed to God, discreet acts of generosity, and expectation of the Messiah and future reward.",
+          "status": "A separate Greek codex witness from the codex represented by P.Oxy. XV 1778 and P.Heid. inv. G 1013. The surviving sheet forms two leaves: one contains part of the Apology and the other a selected passage from Song of Songs 5:12–6:10. The surviving portion is fragmentary.",
+          "english_paraphrase": "The passage belongs to Aristides' account of Christian life and hope. It presents Christians as people who seek truth, follow moral commandments, care for others without public display, and look toward the Messiah and the promised future reward. This summary describes the wider transmitted context of the passage; it is not a claim that every detail is legible on the papyrus.",
+          "text_type": "Editorial summary of the passage's context, not a verbatim transcription. The limits of the surviving Greek sheet are kept distinct from the fuller Syriac version.",
+          "source_url": "https://searcharchives.bl.uk/catalog/040-002105520"
+        }
+      ]
     },
     {
       "id": "polycarp_philippians",
