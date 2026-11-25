@@ -777,10 +777,10 @@ def validate_igntp():
     assert manifest_path.exists(), "IGNTP transcription manifest missing"
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     assert manifest["provider"].startswith("International Greek New Testament Project")
-    assert len(manifest["collections"]) == 8, f"Expected eight IGNTP works, got {len(manifest['collections'])}"
-    expected = {"John", "Romans", "Galatians", "Ephesians", "Philippians", "Colossians", "Philemon", "Hebrews"}
+    assert len(manifest["collections"]) == 13, f"Expected thirteen IGNTP transcription collections, got {len(manifest['collections'])}"
+    expected = {"John — IGNTP Greek", "John — Byzantine Greek", "John — Family 1 Greek", "John — Latin", "John — Coptic", "Romans", "1 Corinthians", "Galatians", "Ephesians", "Philippians", "Colossians", "Philemon", "Hebrews"}
     assert {x["work"] for x in manifest["collections"]} == expected
-    assert len(manifest["files"]) >= 8, "IGNTP archive contains too few manuscript files"
+    assert len(manifest["files"]) >= 13, "IGNTP archive contains too few manuscript files"
     import hashlib
     import xml.etree.ElementTree as ET
     seen = set()
@@ -806,7 +806,7 @@ def validate_igntp():
         assert collection["xml_file_count"] == by_work[collection["work"]] > 0
     for record in manifest["excluded_files"]:
         assert record["reason"] and record["source_archive"]
-    print(f"Validated {len(manifest['files'])} original IGNTP TEI manuscript files across eight writings; "
+    print(f"Validated {len(manifest['files'])} original IGNTP TEI manuscript files across thirteen manuscript/version collections; "
           f"{len(manifest['excluded_files'])} files excluded for restrictive licence declarations.")
 
 sections = {"igntp": validate_igntp, "witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}

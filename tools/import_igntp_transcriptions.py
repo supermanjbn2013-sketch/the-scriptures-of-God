@@ -21,8 +21,13 @@ OUT.mkdir(parents=True, exist_ok=True)
 XML_NS = "{http://www.tei-c.org/ns/1.0}"
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 COLLECTIONS = [
-    ("john", "John", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/IGNTP_greek_john_transcriptions.zip"),
+    ("john_igntp_greek", "John — IGNTP Greek", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/IGNTP_greek_john_transcriptions.zip"),
+    ("john_byzantine_greek", "John — Byzantine Greek", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/Byzantine_greek_john_transcriptions.zip"),
+    ("john_family1_greek", "John — Family 1 Greek", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/Family_1_greek_john_transcriptions.zip"),
+    ("john_latin", "John — Latin", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/Latin_john_transcriptions.zip"),
+    ("john_coptic", "John — Coptic", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/Coptic_john_transcriptions.zip"),
     ("romans", "Romans", "https://itseeweb.cal.bham.ac.uk/epistulae/downloads/Romans_Greek_transcriptions.zip"),
+    ("first_corinthians", "1 Corinthians", "https://itseeweb.cal.bham.ac.uk/epistulae/downloads/1COR_Greek_transcriptions.zip"),
     ("galatians", "Galatians", "https://itseeweb.cal.bham.ac.uk/epistulae/downloads/Galatians_Greek_transcriptions.zip"),
     ("ephesians", "Ephesians", "https://itseeweb.cal.bham.ac.uk/epistulae/downloads/Ephesians_Greek_transcriptions.zip"),
     ("philippians", "Philippians", "https://itseeweb.cal.bham.ac.uk/epistulae/downloads/Philippians_Greek_transcriptions.zip"),
@@ -73,7 +78,7 @@ manifest = {
         "Original TEI XML files are retained unmodified.",
         "Each manuscript is a separate witness; no manuscript readings are merged.",
         "TEI identifiers and source metadata are preserved; a filename is not used as sole proof of manuscript identity.",
-        "The 1 Corinthians bulk collection is marked in progress and is not included."
+        "The 1 Corinthians project remains ongoing; the downloaded archive contains the individual transcriptions currently released by IGNTP, not a completed critical edition."
     ]
 }
 total_unpacked = 0
@@ -143,7 +148,7 @@ for collection_id, work, url in COLLECTIONS:
             "license_basis": "Official IGNTP transcription download collection page; no more restrictive licence found in this individual TEI header.",
             "source_archive": url,
             "source_page": ("https://itseeweb.cal.bham.ac.uk/iohannes/download.html"
-                            if collection_id == "john" else
+                            if collection_id.startswith("john_") else
                             "https://itseeweb.cal.bham.ac.uk/epistulae/download.html"),
             "byte_count": len(raw),
             "sha256": hashlib.sha256(raw).hexdigest()
@@ -164,7 +169,7 @@ for collection_id, work, url in COLLECTIONS:
 
 if len(manifest["collections"]) != len(COLLECTIONS):
     raise RuntimeError("One or more IGNTP source collections were not imported")
-if len(manifest["files"]) < 8:
+if len(manifest["files"]) < 13:
     raise RuntimeError(f"Unexpectedly small IGNTP import: {len(manifest['files'])} TEI files")
 (OUT / "manifest.json").write_text(json.dumps(manifest, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"Archived {len(manifest['files'])} individual IGNTP TEI witnesses from {len(manifest['collections'])} collections.")
