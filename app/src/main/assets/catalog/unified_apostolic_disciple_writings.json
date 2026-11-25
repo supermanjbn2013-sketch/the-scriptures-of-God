@@ -5394,7 +5394,7 @@
       "date_precision": "Second-century composition commonly proposed; possible earlier sayings traditions and the date of the final collection are debated.",
       "genre": "gospel or apocalypse",
       "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set. Witnesses now identify the complete Coptic copy in NHC II,2 and the three separate Greek Oxyrhynchus papyri (P.Oxy. 1, 654, 655).",
+      "textual_status": "The collection survives in an essentially complete Sahidic Coptic copy in Nag Hammadi Codex II, tractate 2, and in three separate, fragmentary Greek Oxyrhynchus papyri: P.Oxy. 654 (prologue and portions of sayings 1–7), P.Oxy. 1 (portions of sayings 26–33 and 77b), and P.Oxy. 655 (portions of sayings 24 and 36–39). These witnesses are recorded separately; no continuous Greek text is reconstructed by combining them with the Coptic codex.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Composition estimate is not the date of the Greek papyrus fragments or the Coptic Nag Hammadi manuscript.",
       "existing_catalogue_id": "gospel_thomas",
@@ -5415,8 +5415,12 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/"
         },
         {
-          "title": "Gospel of Thomas — Oxyrhynchus Greek fragments",
+          "title": "Oxyrhynchus Greek fragments of the Gospel of Thomas: P.Oxy. 1, 654, and 655",
           "url": "https://gnosis.org/naghamm/thomas_poxy.htm"
+        },
+        {
+          "title": "Coptic Gnostic Library Online — NHC II, tractate 2, critical Coptic text and translations",
+          "url": "https://scholarlyeditions.brill.com/cglo/"
         }
       ],
       "manuscript_witnesses": [
@@ -5462,7 +5466,57 @@
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/"
         }
       ],
-      "description": "Gospel of Thomas is a gospel or apocalypse writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set. Witnesses now identify the complete Coptic copy in NHC II,2 and the three separate Greek Oxyrhynchus papyri (P.Oxy. 1, 654, 655). The catalogue identifies 4 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+      "description": "Gospel of Thomas is a collection of 114 sayings attributed to Jesus, not a continuous narrative of his life. Its essentially complete surviving copy is Sahidic Coptic in Nag Hammadi Codex II, tractate 2. Three separate Greek papyri from Oxyrhynchus preserve portions of the prologue and sayings 1–7, 26–33 and 77b, and 24 and 36–39. The Greek papyri are fragmentary and are kept separate from one another and from the later Coptic codex.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "GTh-P.Oxy.654",
+          "transmitting_author": "Anonymous Greek copyist; Oxyrhynchus papyrus witness",
+          "source_work": "Oxyrhynchus Papyrus 654",
+          "passage": "Prologue and portions of sayings 1–7",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "The papyrus preserves the opening title/prologue material and portions of the first sayings. It is a fragmentary witness to the opening of the collection; gaps and uncertain letters remain and must not be silently completed from the later Coptic copy.",
+          "status": "Early Greek papyrus witness; fragmentary. The surviving text is not a complete copy of sayings 1–7.",
+          "english_paraphrase": "The preserved opening identifies the sayings as secret words attributed to the living Jesus and introduces the collection's promise concerning the interpretation of the sayings. The surviving papyrus then contains portions of the opening sayings, but the damaged text does not preserve all of their wording.",
+          "text_type": "content_summary_of_fragmentary_greek_witness",
+          "source_url": "https://gnosis.org/naghamm/thomas_poxy.htm"
+        },
+        {
+          "fragment_id": "GTh-P.Oxy.1",
+          "transmitting_author": "Anonymous Greek copyist; Oxyrhynchus papyrus witness",
+          "source_work": "Oxyrhynchus Papyrus 1",
+          "passage": "Portions of sayings 26–33 and 77b",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "This small Greek codex fragment preserves portions corresponding to sayings 26–33 and a portion conventionally identified as saying 77b. It is an independent physical witness and must not be combined with P.Oxy. 654 or P.Oxy. 655 as if they were one manuscript.",
+          "status": "Fragmentary Greek witness; only portions of the listed sayings survive.",
+          "english_paraphrase": "The surviving portions include teachings about removing the plank from one's own eye before addressing another's, recognizing what is within, and sayings about light and the relationship between Jesus and the world. The fragment's gaps mean this summary does not imply that every saying is fully preserved.",
+          "text_type": "content_summary_of_fragmentary_greek_witness",
+          "source_url": "https://gnosis.org/naghamm/thomas_poxy.htm"
+        },
+        {
+          "fragment_id": "GTh-P.Oxy.655",
+          "transmitting_author": "Anonymous Greek copyist; Oxyrhynchus papyrus witness",
+          "source_work": "Oxyrhynchus Papyrus 655",
+          "passage": "Portions of sayings 24 and 36–39",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "The Greek roll fragment preserves portions corresponding to saying 24 and sayings 36–39. The witness is small and damaged; its wording and extent remain distinct from the Coptic codex and the other Greek papyri.",
+          "status": "Fragmentary Greek witness; discontinuous portions only.",
+          "english_paraphrase": "The surviving sections include a saying about the light within a person and teachings concerning anxiety over clothing and the recognition of signs. The text is incomplete, so no continuous reconstruction is supplied beyond the preserved fragments.",
+          "text_type": "content_summary_of_fragmentary_greek_witness",
+          "source_url": "https://gnosis.org/naghamm/thomas_poxy.htm"
+        },
+        {
+          "fragment_id": "GTh-NHCII2",
+          "transmitting_author": "Anonymous Sahidic Coptic translator and copyist; Nag Hammadi Codex II witness",
+          "source_work": "Nag Hammadi Codex II, tractate 2",
+          "passage": "NHC II, 32.10–51.28; 114 sayings",
+          "language_of_surviving_source": "Sahidic Coptic",
+          "content_scope": "The codex preserves the only essentially complete version of the collection, consisting of 114 sayings. It is a Coptic witness, not a Greek papyrus, and its readings should not be silently substituted for the wording of the Greek fragments.",
+          "status": "Essentially complete Coptic manuscript witness; individual damaged places and editorial restorations still require manuscript-level notation.",
+          "english_paraphrase": "The collection consists of sayings attributed to Jesus, including short parables, commands, interpretive sayings, and dialogues with disciples. It has no continuous account of the ministry, death, and resurrection. The 114 sayings are preserved as a collection rather than arranged as a chronological narrative.",
+          "text_type": "collection_summary_from_complete_coptic_witness",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/"
+        }
+      ]
     },
     {
       "id": "paul_letter_to_alexandrians_reported",
