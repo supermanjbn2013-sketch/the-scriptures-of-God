@@ -22,7 +22,7 @@ XML_NS = "{http://www.tei-c.org/ns/1.0}"
 XML_ID = "{http://www.w3.org/XML/1998/namespace}id"
 COLLECTIONS = [
     ("john_igntp_greek", "John — IGNTP Greek", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/IGNTP_greek_john_transcriptions.zip"),
-    ("john_byzantine_greek", "John — Byzantine Greek", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/Byzantine_greek_john_transcriptions.zip"),
+    ("john_byzantine_greek", "John — Byzantine Greek", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/Byzantine_john_transcriptions.zip"),
     ("john_family1_greek", "John — Family 1 Greek", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/Family1_greek_john_transcriptions.zip"),
     ("john_latin", "John — Latin", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/Latin_john_transcriptions.zip"),
     ("john_coptic", "John — Coptic", "https://itseeweb.cal.bham.ac.uk/iohannes/downloads/coptic_transcriptions_john.zip"),
