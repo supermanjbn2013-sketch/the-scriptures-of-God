@@ -994,12 +994,26 @@
       "historical_period": "Later apostolic ministry, imprisonment and final testimony",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "patmos_vision",
-      "historical_anchor": "John's stated presence on Patmos and visions to seven assemblies",
-      "historical_anchor_basis": "Patmos is the stated setting; historical dating is disputed.",
+      "historical_anchor": "John's Patmos setting and messages to seven assemblies in Roman Asia",
+      "historical_anchor_basis": "Revelation 1:4 identifies seven assemblies in the province of Asia; 1:9 places John on Patmos because of the word of God and the witness of Jesus; 1:11 names the seven destinations. Chapters 2–3 address those assemblies, while 22:16 again frames the work as testimony for the assemblies. The text does not identify John as the son of Zebedee, so that identification must remain separate from the stated name. The date is disputed: a late-first-century setting, often associated with Domitian, is widely argued, while some scholarship proposes a date around 68–69 CE under Nero. The language of suffering does not by itself prove an empire-wide official persecution; local pressures and conflicts are also considered. Patmos is the stated location of John's vision, but whether every stage of composition occurred there is not certain.",
       "historical_subsequence": 90,
-      "historical_anchor_status": "stated_setting_date_disputed",
+      "historical_anchor_status": "stated_patmos_setting_author_identity_and_date_disputed",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "These works have different claimed settings and no securely established relative event order; they are grouped in a broad later-apostolic context."
+      "historical_order_note": "The historical setting represented is John's vision on Patmos and the messages directed to seven assemblies in Roman Asia. This is a later-apostolic setting, but the date remains disputed (including proposals around 68–69 CE and the later first-century period). The text does not establish an exact event-order relationship with 2 Peter or the other writings in this broad group. Do not identify this John with the apostle son of Zebedee as a settled fact.",
+      "research_sources": [
+        {
+          "title": "Introduction to Revelation’s Social Setting, Theological Perspective, and Literary Design",
+          "url": "https://academic.oup.com/edited-volume/34244/chapter/290344459"
+        },
+        {
+          "title": "Sarah Emanuel, Humor, Resistance, and Jewish Cultural Persistence in the Book of Revelation — Cambridge University Press excerpt",
+          "url": "https://assets.cambridge.org/97811084/96599/excerpt/9781108496599_excerpt.pdf"
+        },
+        {
+          "title": "Gonzalo Rojas-Flores, The Book of Revelation and the First Years of Nero’s Reign",
+          "url": "https://www.bsw.org/biblica/vol-85-2004/the-book-of-revelation-and-the-first-years-of-nero-s-reign/181/article-p377.html"
+        }
+      ]
     },
     {
       "id": "papias_exposition",
