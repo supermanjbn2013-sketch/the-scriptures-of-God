@@ -1397,7 +1397,7 @@
       "date_precision": "provisional broad range; verify scholarly dating",
       "genre": "instruction, letter, or related writing",
       "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek edition text available offline; P.Oxy. 1782 is a fragmentary witness and not a complete papyrus copy. Manuscript witnesses now separately identify the 1056 Greek Codex Hierosolymitanus 54, late-fourth-century P.Oxy. 1782 fragments, and the lost Georgian witness known through collation.",
+      "textual_status": "Greek edition text available offline. Direct witnesses include the nearly complete Greek Codex Hierosolymitanus 54 (1056 CE), late-fourth-century Greek P.Oxy. 1782 fragments, and a fifth-century Coptic papyrus fragment (British Museum Or. 9271). The Georgian witness is lost and known through a published collation. No single early manuscript preserves the complete work.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "didache",
@@ -1421,6 +1421,10 @@
         {
           "title": "Didache — Cambridge Edition of Early Christian Writings",
           "url": "https://www.cambridge.org/core/books/abs/cambridge-edition-of-early-christian-writings/didache/F6EEA99D2B1AB5A25464F0C619B86021"
+        },
+        {
+          "title": "Shawn J. Wilhite, MS Tradition of the Didache (extract)",
+          "url": "https://www.jamesclarke.co/storage/extracts/didache-ch1.pdf"
         }
       ],
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
@@ -1454,9 +1458,33 @@
           "contents": "Witness to Didache 1.3d–2.1",
           "text_status": "The physical manuscript is lost; known through a published collation, not a directly inspectable codex.",
           "source": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/sources-date-and-transmission-of-didache-13b21/88EA36C9320BC22D892A2755EAB072C0"
+        },
+        {
+          "id": "BrMusOr9271",
+          "siglum": "British Museum Oriental 9271",
+          "writing": "Coptic",
+          "material": "papyrus fragment",
+          "date": "Fifth century CE",
+          "contents": "Didache 10.3b–12.2",
+          "text_status": "Fragmentary Coptic witness preserving portions of the communal meal prayers and instructions concerning travelling visitors and ministers; it does not preserve the complete Didache.",
+          "source": "https://www.jamesclarke.co/storage/extracts/didache-ch1.pdf"
         }
       ],
-      "description": "Didache (Teaching of the Twelve Apostles) is a instruction, letter, or related writing writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Greek edition text available offline; P.Oxy. 1782 is a fragmentary witness and not a complete papyrus copy. Manuscript witnesses now separately identify the 1056 Greek Codex Hierosolymitanus 54, late-fourth-century P.Oxy. 1782 fragments, and the lost Georgian witness known through collation. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
+      "description": "Didache (Teaching of the Twelve Apostles) is an early Christian instruction writing associated by its traditional title with the apostles; that title does not establish authorship. The collection survives principally in a nearly complete Greek medieval codex, with earlier Greek and Coptic fragments preserving limited passages. The lost Georgian witness is known only through a published collation. The manuscript evidence is presented separately and does not reconstruct missing wording.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "Did-BrMusOr9271",
+          "transmitting_author": "Anonymous Coptic copyist; fragmentary manuscript witness",
+          "source_work": "British Museum Oriental 9271",
+          "passage": "Didache 10.3b–12.2",
+          "language_of_surviving_source": "Coptic",
+          "content_scope": "The surviving Coptic fragment covers the closing portion of the thanksgiving/prayer material and portions of the instructions concerning travelling visitors, apostles, prophets, and community reception. The extent is fragmentary and must not be expanded into a complete Coptic copy.",
+          "status": "Fifth-century Coptic papyrus fragment; a direct manuscript witness to only a limited portion of the Didache.",
+          "english_paraphrase": "The preserved section includes part of the community's thanksgiving after the meal and instructions for receiving travelling believers and recognized ministers. The fragment's damaged and limited extent does not permit reconstruction of the missing surrounding text from this witness alone.",
+          "text_type": "content_summary_of_fragmentary_coptic_witness",
+          "source_url": "https://www.jamesclarke.co/storage/extracts/didache-ch1.pdf"
+        }
+      ]
     },
     {
       "id": "james",
