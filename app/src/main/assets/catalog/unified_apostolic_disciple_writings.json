@@ -46,6 +46,39 @@
           "title": "IGNTP — P75 transcription (University of Birmingham repository)",
           "url": "https://epapers.bham.ac.uk/id/eprint/1742/"
         }
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P66",
+          "siglum": "𝔓66",
+          "shelfmark": "P. Bodmer II",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Second/early third century CE (palaeographic estimate)",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
+          "contents": "Gospel of John; substantial but not complete text",
+          "text_status": "IGNTP diplomatic transcription exists as TEI XML. The transcription is a separate witness record and must not be silently conflated with an edited critical text.",
+          "transcription_source": "https://epapers.bham.ac.uk/id/eprint/1759/",
+          "transcription_license": "The deposited transcription specifies Creative Commons BY-NC-SA in its header; preserve attribution and non-commercial/share-alike conditions before redistribution.",
+          "image_and_catalogue_source": "https://manuscripts.csntm.org/"
+        },
+        {
+          "id": "P75",
+          "siglum": "𝔓75",
+          "shelfmark": "P. Bodmer XIV–XV",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second/early third century CE (palaeographic estimate)",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Biblioteca Apostolica Vaticana, Vatican City",
+          "contents": "Large portions of Luke and John, with lacunae",
+          "text_status": "IGNTP diplomatic transcription exists as TEI XML for John. Luke witness transcription and any editorial reconstruction must be recorded separately.",
+          "transcription_source": "https://epapers.bham.ac.uk/id/eprint/1742/",
+          "transcription_license": "The deposited transcription specifies Creative Commons BY-NC-SA in its header; preserve attribution and non-commercial/share-alike conditions before redistribution.",
+          "image_and_catalogue_source": "https://manuscripts.csntm.org/"
+        }
       ]
     },
     {
@@ -74,7 +107,8 @@
           "title": "IGNTP — Project publications and Greek editions",
           "url": "https://itseeweb.cal.bham.ac.uk/igntp/publications.html"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "mark",
@@ -102,7 +136,8 @@
           "title": "INTF — New Testament Virtual Manuscript Room",
           "url": "https://ntvmr.uni-muenster.de/"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "matthew",
@@ -210,7 +245,48 @@
       "historical_subsequence": 10,
       "historical_anchor_status": "later_narrative_claim",
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This placement follows the event or scene represented by the writing, not its composition date. The narrative's historical reliability or authorship is assessed separately."
+      "historical_order_note": "This placement follows the event or scene represented by the writing, not its composition date. The narrative's historical reliability or authorship is assessed separately.",
+      "preservation_status": "surviving_in_akmim_greek_fragment_and_oxyrhynchus_fragments",
+      "research_sources": [
+        {
+          "title": "Gospels.net — Gospel of Peter manuscript information",
+          "url": "https://www.gospels.net/manuscript/"
+        },
+        {
+          "title": "NASSCAL — e-Clavis Christian Apocrypha",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/"
+        }
+      ],
+      "manuscript_witnesses": [
+        {
+          "id": "P.Cair.10759",
+          "name": "Akhmim fragment",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Late sixth century CE",
+          "contents": "Text conventionally numbered Gospel of Peter 1–60",
+          "text_status": "Fragmentary; this is the principal surviving narrative witness.",
+          "source": "https://www.gospels.net/manuscript/"
+        },
+        {
+          "id": "P.Oxy.2949",
+          "writing": "Greek",
+          "material": "papyrus roll fragment",
+          "date": "Late second/early third century CE",
+          "contents": "Possibly an alternative version of Gospel of Peter 3–5",
+          "text_status": "Identification is tentative; do not merge into the Akhmim text without marking the hypothesis.",
+          "source": "https://www.gospels.net/manuscript/"
+        },
+        {
+          "id": "P.Oxy.4009",
+          "writing": "Greek",
+          "material": "papyrus codex fragment",
+          "date": "Second century CE",
+          "contents": "Possibly from a lost portion of the Gospel of Peter",
+          "text_status": "Identification is tentative and must remain labelled as such.",
+          "source": "https://www.gospels.net/manuscript/"
+        }
+      ]
     },
     {
       "id": "gospel_hebrews",
@@ -436,7 +512,49 @@
       "historical_subsequence": 15,
       "historical_anchor_status": "later_narrative_claim",
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This placement follows the event or scene represented by the writing, not its composition date. The narrative's historical reliability or authorship is assessed separately."
+      "historical_order_note": "This placement follows the event or scene represented by the writing, not its composition date. The narrative's historical reliability or authorship is assessed separately.",
+      "preservation_status": "surviving_in_fragmentary_coptic_codex_and_two_greek_papyri",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Gospel of Mary: manuscript inventory and textual status",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
+        },
+        {
+          "title": "Gospels.net — Gospel of Mary manuscript information",
+          "url": "https://www.gospels.net/manuscript/"
+        }
+      ],
+      "manuscript_witnesses": [
+        {
+          "id": "BG8502",
+          "shelfmark": "Papyrus Berolinensis 8502, pages 7–10 and 15–19",
+          "writing": "Sahidic Coptic",
+          "material": "papyrus codex",
+          "date": "Fifth century CE (catalogued)",
+          "contents": "Less than half the work; pages 1–6 and 11–14 are missing",
+          "text_status": "Primary surviving Coptic codex witness; missing pages must remain lacunae.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
+        },
+        {
+          "id": "P.Oxy.3525",
+          "writing": "Greek",
+          "material": "papyrus roll",
+          "date": "Third century CE",
+          "contents": "Greek fragment parallel to part of BG 8502, 9.5–10.13",
+          "text_status": "Fragmentary Greek witness; does not restore the whole Coptic text.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
+        },
+        {
+          "id": "P.Ryl.463",
+          "shelfmark": "John Rylands Library, Gr. III 463",
+          "writing": "Greek",
+          "material": "papyrus codex fragment",
+          "date": "Third century CE",
+          "contents": "Greek fragment parallel to part of BG 8502, 17.5–19.5",
+          "text_status": "Fragmentary Greek witness; keep distinct from the Coptic codex.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
+        }
+      ]
     },
     {
       "id": "acts",
@@ -458,7 +576,18 @@
       "historical_subsequence": 20,
       "historical_anchor_status": "narrative_sequence",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "research_sources": [
+        {
+          "title": "IGNTP — Greek New Testament transcriptions and project publications",
+          "url": "https://itseeweb.cal.bham.ac.uk/igntp/transcriptions.html"
+        },
+        {
+          "title": "INTF — New Testament Virtual Manuscript Room",
+          "url": "https://ntvmr.uni-muenster.de/"
+        }
+      ]
     },
     {
       "id": "acts_barnabas",
@@ -524,7 +653,8 @@
         }
       ],
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "The relative historical order of these community writings is not established; they are grouped by broad early-community setting."
+      "historical_order_note": "The relative historical order of these community writings is not established; they are grouped by broad early-community setting.",
+      "preservation_status": "surviving_in_greek_codex_and_fragmentary_ancient_versions"
     },
     {
       "id": "james",
@@ -556,7 +686,8 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The relative historical order of these community writings is not established; they are grouped by broad early-community setting."
+      "historical_order_note": "The relative historical order of these community writings is not established; they are grouped by broad early-community setting.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "1_thessalonians",
@@ -592,7 +723,8 @@
           "title": "Paul's Letters in Context — chronology and historical setting",
           "url": "https://www.odbm.org/en/discovery-series/understanding-the-bible-the-letters-of-paul/pauls-letters-in-context"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "2_thessalonians",
@@ -628,7 +760,8 @@
           "title": "Paul's Letters in Context — chronology and historical setting",
           "url": "https://www.odbm.org/en/discovery-series/understanding-the-bible-the-letters-of-paul/pauls-letters-in-context"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "galatians",
@@ -664,7 +797,8 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The relative order of these writings cannot be fixed securely because the Galatians chronology and the relationship between the Thessalonian letters are disputed."
+      "historical_order_note": "The relative order of these writings cannot be fixed securely because the Galatians chronology and the relationship between the Thessalonian letters are disputed.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "paul_previous_corinthian_letter",
@@ -746,7 +880,8 @@
           "title": "The Rhetorical Situation of the Corinthian Correspondence",
           "url": "https://ora.ox.ac.uk/objects/uuid:9f613e23-7197-40d8-836c-d0e478be2636/files/mf311bf81e4a53ba099e46ddae88529b5"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "paul_sorrowful_corinthian_letter",
@@ -828,7 +963,8 @@
           "title": "The Rhetorical Situation of the Corinthian Correspondence",
           "url": "https://ora.ox.ac.uk/objects/uuid:9f613e23-7197-40d8-836c-d0e478be2636/files/mf311bf81e4a53ba099e46ddae88529b5"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "romans",
@@ -860,7 +996,8 @@
           "title": "Paul's Letters in Context — chronology and historical setting",
           "url": "https://www.odbm.org/en/discovery-series/understanding-the-bible-the-letters-of-paul/pauls-letters-in-context"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "1_peter",
@@ -900,7 +1037,8 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The addressed regions and closing greetings provide a broad community setting, but they do not establish a datable journey or an exact place/date. 'Babylon' is commonly read as Rome, not stated as Rome; Silvanus may have carried the letter or assisted in its production. Authorship and date remain disputed, so no exact relative event order with Paul's letters, Acts, or Revelation is claimed."
+      "historical_order_note": "The addressed regions and closing greetings provide a broad community setting, but they do not establish a datable journey or an exact place/date. 'Babylon' is commonly read as Rome, not stated as Rome; Silvanus may have carried the letter or assisted in its production. Authorship and date remain disputed, so no exact relative event order with Paul's letters, Acts, or Revelation is claimed.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "colossians",
@@ -932,7 +1070,8 @@
           "title": "Cambridge University Press — The Prison Epistles",
           "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-new-testament/prison-epistles/FD071EEAAFBDCBCABEF57A040331494B"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "ephesians",
@@ -964,7 +1103,8 @@
           "title": "Cambridge University Press — Introduction to Colossians (Tychicus and related correspondence)",
           "url": "https://www.cambridge.org/core/books/colossians-and-philemon/introduction-to-colossians/966C5826BB48CEB182E548108946FEAC"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "philemon",
@@ -1000,7 +1140,8 @@
           "title": "Cambridge University Press — Prison Epistles: Philippians and Philemon",
           "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/prison-epistles-1-philippians-and-philemon/DC2D9B05DF14C0253DE1FAD3804B6A91"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "philippians",
@@ -1032,7 +1173,8 @@
           "title": "Cambridge University Press — Prison Epistles: Philippians and Philemon",
           "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/prison-epistles-1-philippians-and-philemon/DC2D9B05DF14C0253DE1FAD3804B6A91"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "jude",
@@ -1064,7 +1206,8 @@
           "url": "https://academic.oup.com/book/10742/chapter/158829783"
         }
       ],
-      "historical_order_note": "These settings do not establish a relative chronological order with one another; the shared display position is a provisional grouping only."
+      "historical_order_note": "These settings do not establish a relative chronological order with one another; the shared display position is a provisional grouping only.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "hebrews",
@@ -1100,7 +1243,8 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "These settings do not establish a relative chronological order with one another; the shared display position is a provisional grouping only."
+      "historical_order_note": "These settings do not establish a relative chronological order with one another; the shared display position is a provisional grouping only.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "paul_laodicean_correspondence_referenced",
@@ -1186,7 +1330,8 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The letter places Timothy in Ephesus during Paul's stated departure for Macedonia and anticipates Paul's possible visit. This does not securely establish a position before or after Titus; the two are grouped without an exact relative order."
+      "historical_order_note": "The letter places Timothy in Ephesus during Paul's stated departure for Macedonia and anticipates Paul's possible visit. This does not securely establish a position before or after Titus; the two are grouped without an exact relative order.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "titus",
@@ -1214,7 +1359,8 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The letter gives a planned meeting at Nicopolis and a mission setting in Crete. The later notice about Titus in Dalmatia (2 Timothy 4:10) cannot by itself prove whether the Nicopolis plan occurred before or after that journey. The relative order of Titus and 1 Timothy remains unresolved."
+      "historical_order_note": "The letter gives a planned meeting at Nicopolis and a mission setting in Crete. The later notice about Titus in Dalmatia (2 Timothy 4:10) cannot by itself prove whether the Nicopolis plan occurred before or after that journey. The relative order of Titus and 1 Timothy remains unresolved.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "2_timothy",
@@ -1254,7 +1400,8 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The sequence represented is: recent travel through Troas and Miletus; Paul's present imprisonment and first defense; urgent request for Timothy and the cloak and writings before winter. The text names Rome (1:17), but the relationship of this imprisonment to Acts 28 is disputed. Do not automatically place this after Acts' ending or after the other imprisonment letters. The farewell tone does not prove the writer's historical identity or a precise date."
+      "historical_order_note": "The sequence represented is: recent travel through Troas and Miletus; Paul's present imprisonment and first defense; urgent request for Timothy and the cloak and writings before winter. The text names Rome (1:17), but the relationship of this imprisonment to Acts 28 is disputed. Do not automatically place this after Acts' ending or after the other imprisonment letters. The farewell tone does not prove the writer's historical identity or a precise date.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "1_john",
@@ -1286,7 +1433,8 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The letters' literary relationship and implied historical network are disputed; alphabetical display within this group does not claim chronological order."
+      "historical_order_note": "The letters' literary relationship and implied historical network are disputed; alphabetical display within this group does not claim chronological order.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "2_john",
@@ -1314,7 +1462,8 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The letters' literary relationship and implied historical network are disputed; alphabetical display within this group does not claim chronological order."
+      "historical_order_note": "The letters' literary relationship and implied historical network are disputed; alphabetical display within this group does not claim chronological order.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "3_john",
@@ -1342,7 +1491,8 @@
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The letters' literary relationship and implied historical network are disputed; alphabetical display within this group does not claim chronological order."
+      "historical_order_note": "The letters' literary relationship and implied historical network are disputed; alphabetical display within this group does not claim chronological order.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "2_peter",
@@ -1374,7 +1524,8 @@
           "url": "https://academic.oup.com/edited-volume/57514/chapter-abstract/467936255"
         }
       ],
-      "historical_order_note": "These works have different claimed settings and no securely established relative event order; they are grouped in a broad later-apostolic context."
+      "historical_order_note": "These works have different claimed settings and no securely established relative event order; they are grouped in a broad later-apostolic context.",
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     },
     {
       "id": "papias_exposition",
@@ -1430,7 +1581,18 @@
       "historical_subsequence": 110,
       "historical_anchor_status": "community_event",
       "scope_relationship": "anonymous_early_community_writing",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "preservation_status": "surviving_in_greek_coptic_syrian_and_latin_witnesses",
+      "research_sources": [
+        {
+          "title": "University of Helsinki — Apostolic Fathers manuscript guide: I & II Clement",
+          "url": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        },
+        {
+          "title": "David Lincicum, Two Overlooked Greek Manuscripts of 1 Clement (2019)",
+          "url": "https://www.academia.edu/39503798/Two_Overlooked_Greek_Manuscripts_of_1_Clement_submitted_version"
+        }
+      ]
     },
     {
       "id": "barnabas",
@@ -1463,7 +1625,8 @@
         }
       ],
       "scope_relationship": "anonymous_early_community_writing",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "preservation_status": "surviving_in_greek_manuscript_transmission"
     },
     {
       "id": "hermas",
@@ -1492,7 +1655,8 @@
         }
       ],
       "scope_relationship": "anonymous_early_community_writing",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "preservation_status": "surviving_in_greek_manuscript_transmission"
     },
     {
       "id": "ignatius_ephesians",
@@ -1528,7 +1692,8 @@
       "historical_subsequence": 120,
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters."
+      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters.",
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
     },
     {
       "id": "ignatius_magnesians",
@@ -1564,7 +1729,8 @@
       "historical_subsequence": 120,
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters."
+      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters.",
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
     },
     {
       "id": "ignatius_romans",
@@ -1600,7 +1766,8 @@
       "historical_subsequence": 120,
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters."
+      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters.",
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
     },
     {
       "id": "ignatius_trallians",
@@ -1636,7 +1803,8 @@
       "historical_subsequence": 120,
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters."
+      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters.",
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
     },
     {
       "id": "ignatius_polycarp",
@@ -1672,7 +1840,8 @@
       "historical_subsequence": 121,
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters."
+      "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters.",
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
     },
     {
       "id": "ignatius_philadelphians",
@@ -1708,7 +1877,8 @@
       "historical_subsequence": 121,
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters."
+      "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters.",
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
     },
     {
       "id": "ignatius_smyrnaeans",
@@ -1744,7 +1914,8 @@
       "historical_subsequence": 121,
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters."
+      "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters.",
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
     },
     {
       "id": "aristides_apology",
@@ -1809,7 +1980,8 @@
       "historical_subsequence": 130,
       "historical_anchor_status": "relative_reference",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "The approximate settings overlap in the early-to-mid second century; the sources do not establish which event should be placed first."
+      "historical_order_note": "The approximate settings overlap in the early-to-mid second century; the sources do not establish which event should be placed first.",
+      "preservation_status": "surviving_in_incomplete_greek_and_latin_witnesses"
     },
     {
       "id": "quadratus_apology",
@@ -1870,7 +2042,8 @@
       "historical_subsequence": 140,
       "historical_anchor_status": "narrated_event",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "preservation_status": "surviving_in_greek_manuscript_transmission"
     },
     {
       "id": "acts_paul",
@@ -2126,7 +2299,8 @@
         }
       ],
       "scope_relationship": "anonymous_early_community_writing",
-      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date.",
+      "preservation_status": "manuscript_transmission_known_text_import_pending"
     },
     {
       "id": "paul_seneca_correspondence",
@@ -2283,7 +2457,18 @@
       "historical_subsequence": 10,
       "historical_anchor_status": "no_recoverable_event_sequence",
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date.",
+      "preservation_status": "surviving_in_complete_sahidic_coptic_codex_and_three_greek_papyrus_fragments",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Gospel of Thomas: manuscript and edition bibliography",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/"
+        },
+        {
+          "title": "Gospel of Thomas — Oxyrhynchus Greek fragments",
+          "url": "https://gnosis.org/naghamm/thomas_poxy.htm"
+        }
+      ]
     },
     {
       "id": "paul_letter_to_alexandrians_reported",
@@ -2433,7 +2618,8 @@
         }
       ],
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "Placed immediately before Revelation by the archive's explicit final-section rule; this is an editorial ordering instruction, not proof of a historical sequence."
+      "historical_order_note": "Placed immediately before Revelation by the archive's explicit final-section rule; this is an editorial ordering instruction, not proof of a historical sequence.",
+      "preservation_status": "surviving_in_greek_fragment_and_ethiopic_version"
     },
     {
       "id": "revelation",
@@ -2469,7 +2655,8 @@
           "title": "Gonzalo Rojas-Flores, The Book of Revelation and the First Years of Nero’s Reign",
           "url": "https://www.bsw.org/biblica/vol-85-2004/the-book-of-revelation-and-the-first-years-of-nero-s-reign/181/article-p377.html"
         }
-      ]
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
     }
   ],
   "historical_chronology_policy": "Use the events and historical setting represented in each writing as the organizing basis. For narratives, follow narrated events. For letters and instruction writings, use the historical situation, people, journeys, imprisonment, or community events they address. If an exact setting cannot be established, use a broad labelled period and mark placement provisional. Never use composition date as a substitute for event chronology. Revelation is the final catalogue record by explicit archive arrangement; the Greek/Ethiopic Apocalypse of Peter is immediately before it. The Coptic Apocalypse of Peter is a separate work placed by its own Jerusalem-before-crucifixion narrative setting.",
