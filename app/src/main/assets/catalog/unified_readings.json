@@ -1,0 +1,9 @@
+{
+  "schema_version": 1,
+  "record_type": "separate_english_reading_texts",
+  "project": "The Scriptures of God",
+  "purpose": "Store complete readable English texts separately from descriptions, historical notes, manuscript metadata, fragments, and study commentary.",
+  "display_rule": "The reader displays english_text only. Attribution and source notes are available separately and never inserted between sentences or paragraphs of the reading.",
+  "reconstruction_rule": "A gap in one manuscript may be supplied only from another named witness that preserves the same passage. Every supplied segment must identify the witness and source location. If no reliable witness preserves the passage, record an explicit gap and do not invent wording.",
+  "readings": []
+}
