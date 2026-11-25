@@ -824,8 +824,20 @@
       "historical_order_note": "Place by the claimed pre-Passover setting while marking it as later anonymous literature.",
       "research_sources": [
         {
-          "title": "NASSCAL — Gospel of Judas",
-          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-judas/"
+          "title": "Gospels.net — Codex Tchacos manuscript information",
+          "url": "https://www.gospels.net/manuscript/"
+        },
+        {
+          "title": "John Turner, Oxford Bibliographies — Gospel of Judas",
+          "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554110339"
+        },
+        {
+          "title": "Codex Tchacos — Gospel of Judas text and context",
+          "url": "https://thejesusarchive.com/gospels/gospel-of-judas"
+        },
+        {
+          "title": "Irenaeus, Against Heresies 1.31.1",
+          "url": "https://www.newadvent.org/fathers/0103131.htm"
         }
       ],
       "preservation_status": "surviving_in_fragmentary_coptic_translation",
@@ -841,7 +853,33 @@
           "source": "https://www.gospels.net/manuscript"
         }
       ],
-      "description": "Gospel of Judas is a dialogue gospel writing in the Unified Apostolic and Disciple collection. Anonymous work using Judas Iscariot as its narrative frame; title does not establish his authorship. Damaged Coptic translation in Codex Tchacos; Greek original is inferred from ancient testimony. Manuscript witness identified as Codex Tchacos, tractate 3; damaged Coptic codex with editorial page reconstruction, not a surviving Greek manuscript. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+      "description": "Gospel of Judas is a dialogue gospel writing in the Unified Apostolic and Disciple collection. Its only known manuscript is the damaged Coptic tractate 3 of Codex Tchacos, pages 33–58; the Greek original is inferred, not extant. The text presents conversations between Jesus and his disciples, a special revelation to Judas, and Judas' final handing over of Jesus. Irenaeus, Against Heresies 1.31.1, separately reports a group using a Gospel of Judas; this is ancient testimony, not a second manuscript or a direct quotation from Codex Tchacos. The title does not establish authorship by Judas.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "GJ-CodexTchacos-III-33-58",
+          "transmitting_author": "Anonymous Coptic translator and copyist; Codex Tchacos witness",
+          "source_work": "Codex Tchacos, tractate 3",
+          "passage": "Codex Tchacos pages 33–58",
+          "language_of_surviving_source": "Sahidic Coptic",
+          "content_scope": "The single surviving manuscript witness preserves a damaged dialogue gospel. The narrative opens by describing secret teaching Jesus gives Judas over a period of days before Passover. Jesus criticizes the disciples' worship and understanding, gives Judas a revelation concerning heavenly realms and cosmic origins, and the work ends with Judas handing Jesus over to the authorities. The manuscript is damaged and some readings depend on editorial reconstruction.",
+          "status": "Principal and only currently known manuscript witness; damaged Coptic translation. The Greek composition behind it is inferred, not extant in a Greek manuscript.",
+          "english_paraphrase": "The text presents Jesus in conversation with the disciples and, more privately, with Judas. Jesus challenges the disciples' understanding and discloses to Judas a vision of heavenly powers, cosmic origins, and the fate of different human generations. The narrative concludes with Judas handing Jesus over. This is a broad content paraphrase of the surviving Coptic work, not a claim that every damaged line is recoverable.",
+          "text_type": "content_paraphrase_of_damaged_coptic_manuscript",
+          "source_url": "https://thejesusarchive.com/gospels/gospel-of-judas"
+        },
+        {
+          "fragment_id": "GJ-Irenaeus-AdvHaer-1.31.1",
+          "transmitting_author": "Irenaeus of Lyons",
+          "source_work": "Against Heresies",
+          "passage": "1.31.1",
+          "language_of_surviving_source": "Greek (preserved also through later transmission)",
+          "content_scope": "Irenaeus reports that a group he calls Cainites used a writing called the Gospel of Judas and describes their interpretation of Judas. This is an ancient external notice about a work bearing that title, not a surviving fragment of the Coptic text and not proof that Irenaeus' description matches every feature of Codex Tchacos.",
+          "status": "Ancient bibliographic and polemical testimony; not a manuscript witness or direct quotation from the Gospel.",
+          "english_paraphrase": "Irenaeus says that the group he calls Cainites claimed that Judas knew the truth and carried out the mystery of the betrayal, and that they used a Gospel of Judas to support their position. This is Irenaeus' hostile report of the group's teaching, kept distinct from the surviving Coptic narrative.",
+          "text_type": "ancient_external_report_not_work_fragment",
+          "source_url": "https://www.newadvent.org/fathers/0103131.htm"
+        }
+      ]
     },
     {
       "id": "apocalypse_peter_coptic",
