@@ -161,6 +161,8 @@ public class MainActivity extends Activity {
                 LinearLayout row=new LinearLayout(this);row.setOrientation(1);row.setPadding(12,7,12,7);row.setBackground(shape(panel));
                 row.addView(text(title,15,ink,true));
                 row.addView(text("Collection relationship: "+record.optString("scope_relationship","not classified").replace("_"," "),11,muted,false));
+                String orderNote=record.optString("historical_order_note","");
+                if(!orderNote.isEmpty()&&!orderNote.startsWith("This is an event/context grouping")){TextView orderView=text("Event-order note: "+orderNote,11,muted,false);orderView.setMaxLines(3);row.addView(orderView);}
                 row.addView(text("Composition: "+date+"  •  "+genre,11,muted,false));
                 TextView status=text(attribution,12,muted,false);status.setMaxLines(3);row.addView(status);
                 LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,4,0,5);content.addView(row,rp);

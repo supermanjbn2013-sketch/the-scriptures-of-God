@@ -327,7 +327,7 @@
       "historical_subsequence": 40,
       "historical_anchor_status": "explicit_relative_order",
       "scope_relationship": "lost_or_reported_apostolic_correspondence",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "Explicitly earlier than 1 Corinthians 5:9. Its contents, date and whether any fragment survives are not established."
     },
     {
       "id": "1_corinthians",
@@ -349,7 +349,7 @@
       "historical_subsequence": 41,
       "historical_anchor_status": "explicit_relative_order",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "Follows Paul's earlier, now-unidentified letter to Corinth (1 Corinthians 5:9). It precedes the painful correspondence mentioned in 2 Corinthians 2:1–4 only in the reconstructed sequence; the exact identity and placement of that letter remain debated."
     },
     {
       "id": "paul_sorrowful_corinthian_letter",
@@ -373,7 +373,7 @@
       "historical_subsequence": 42,
       "historical_anchor_status": "relative_order_with_identity_disputed",
       "scope_relationship": "lost_or_reported_apostolic_correspondence",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "The painful letter is referred to in 2 Corinthians 2:1–4 and 7:8, after the earlier letter mentioned in 1 Corinthians 5:9. Whether it survives as part of 2 Corinthians is disputed."
     },
     {
       "id": "2_corinthians",
@@ -395,7 +395,7 @@
       "historical_subsequence": 43,
       "historical_anchor_status": "contextual_order",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "Refers back to the painful correspondence and Titus's report (2 Corinthians 7:5–16). Its placement after that letter is supported by the internal references; exact travel intervals and the composition history of the present text remain debated."
     },
     {
       "id": "romans",
