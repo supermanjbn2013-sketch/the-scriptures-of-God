@@ -187,13 +187,50 @@
       "license": "CC BY-SA 4.0",
       "repository": "https://lexicon.qumran-digital.org/transcription-index/latest/index.html",
       "attribution": "DFG-Projekt 465277421, Qumran-Digital: Text und Lexikon; based on earlier Qumran-Wörterbuch project and precursor text by Martin Abegg.",
-      "status": "source index verified; additional individual manuscript transcriptions require passage/line-level import and validation before being marked available offline",
+      "status": "Five featured manuscript transcription pages (4Q26, 4Q27, 4Q31, 4Q47, 4Q53) are downloaded at APK build time as offline HTML source documents; line-level searchable integration remains a separate task.",
       "limitations": [
         "A transcription index entry is not itself an imported transcription in this app.",
         "The project's main text, manuscript parallels and biblical comparison texts must remain separate witnesses.",
         "Preserve brackets, uncertain letters, corrections, lacunae, editorial signs, manuscript identifiers and displayed line labels.",
         "Do not convert digital display-line labels into physical column/line coordinates unless the source explicitly establishes that equivalence.",
         "CC BY-SA 4.0 attribution and share-alike terms must accompany imported and adapted text."
+      ],
+      "downloaded_featured_sources": [
+        {
+          "manuscript_id": "4Q26",
+          "url": "https://lexicon.qumran-digital.org/transcriptions/4Q26/2026-10-06/index.html?v=2026-10-06",
+          "version": "2026-10-06",
+          "offline_asset": "dss/qumran_digital/4Q26.html",
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "manuscript_id": "4Q27",
+          "url": "https://lexicon.qumran-digital.org/transcriptions/4Q27/2026-10-06/index.html?v=2026-10-06",
+          "version": "2026-10-06",
+          "offline_asset": "dss/qumran_digital/4Q27.html",
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "manuscript_id": "4Q31",
+          "url": "https://lexicon.qumran-digital.org/transcriptions/4Q31/2026-10-06/index.html?v=2026-10-06",
+          "version": "2026-10-06",
+          "offline_asset": "dss/qumran_digital/4Q31.html",
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "manuscript_id": "4Q47",
+          "url": "https://lexicon.qumran-digital.org/transcriptions/4Q47/2026-10-06/index.html?v=2026-10-06",
+          "version": "2026-10-06",
+          "offline_asset": "dss/qumran_digital/4Q47.html",
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "manuscript_id": "4Q53",
+          "url": "https://lexicon.qumran-digital.org/transcriptions/4Q53/2026-10-06/index.html?v=2026-10-06",
+          "version": "2026-10-06",
+          "offline_asset": "dss/qumran_digital/4Q53.html",
+          "license": "CC BY-SA 4.0"
+        }
       ]
     },
     {
@@ -688,6 +725,58 @@
         "Corrections and supplied readings are retained or bracketed where encoded by the source.",
         "Missing manuscript portions are not reconstructed."
       ]
+    },
+    {
+      "id": "qumran-digital-featured-transcription-pages",
+      "name": "Qumran-Digital featured manuscript transcription pages",
+      "language": "Hebrew",
+      "coverage": [
+        "4Q26 Lev d",
+        "4Q27 Num b",
+        "4Q31 Deut d",
+        "4Q47 Josh a",
+        "4Q53 Sam c"
+      ],
+      "record_type": "archived source HTML containing manuscript transcription lines and separately displayed textual parallels",
+      "edition": "Qumran-Digital: Text und Lexikon, version 2026-10-06",
+      "license": "CC BY-SA 4.0",
+      "repository": "https://lexicon.qumran-digital.org/transcription-index/latest/index.html",
+      "attribution": "DFG-Projekt 465277421, Qumran-Digital: Text und Lexikon; based on earlier Qumran-Wörterbuch project and precursor text by Martin Abegg.",
+      "status": "Downloaded during Android APK build and bundled as source HTML; not yet converted into the app's searchable line-level DSS data model.",
+      "source_files": [
+        {
+          "manuscript_id": "4Q26",
+          "url": "https://lexicon.qumran-digital.org/transcriptions/4Q26/2026-10-06/index.html?v=2026-10-06",
+          "offline_asset": "dss/qumran_digital/4Q26.html"
+        },
+        {
+          "manuscript_id": "4Q27",
+          "url": "https://lexicon.qumran-digital.org/transcriptions/4Q27/2026-10-06/index.html?v=2026-10-06",
+          "offline_asset": "dss/qumran_digital/4Q27.html"
+        },
+        {
+          "manuscript_id": "4Q31",
+          "url": "https://lexicon.qumran-digital.org/transcriptions/4Q31/2026-10-06/index.html?v=2026-10-06",
+          "offline_asset": "dss/qumran_digital/4Q31.html"
+        },
+        {
+          "manuscript_id": "4Q47",
+          "url": "https://lexicon.qumran-digital.org/transcriptions/4Q47/2026-10-06/index.html?v=2026-10-06",
+          "offline_asset": "dss/qumran_digital/4Q47.html"
+        },
+        {
+          "manuscript_id": "4Q53",
+          "url": "https://lexicon.qumran-digital.org/transcriptions/4Q53/2026-10-06/index.html?v=2026-10-06",
+          "offline_asset": "dss/qumran_digital/4Q53.html"
+        }
+      ],
+      "limitations": [
+        "The archived HTML is the source page, not a fresh diplomatic transcription created by this app.",
+        "Manuscript transcription lines, other manuscript parallels, and biblical comparison texts remain distinct; do not merge their wording.",
+        "Preserve source fragment headings, displayed line labels, brackets, uncertainty marks, corrections, lacunae and editorial signs.",
+        "Digital display-line labels are not automatically physical manuscript column/line coordinates.",
+        "CC BY-SA 4.0 attribution and share-alike terms apply."
+      ]
     }
   ],
   "not_yet_integrated": [
@@ -699,7 +788,7 @@
     "Historical and multilingual translation corpus",
     "Additional Dead Sea Scrolls transcription files from The Way to Yahuweh; files are being evaluated and integrated individually under CC BY-SA 4.0",
     "Additional Greek, Hebrew, Aramaic, Syriac, Ethiopic and Armenian witnesses and manuscript-level collation for 2 Esdras / 4 Ezra; the current 16-chapter import is Latin only.",
-    "Additional Qumran-Digital manuscript transcriptions, prioritized by complete/large witnesses and texts already represented in the manuscript register; each manuscript must be imported separately with line-level provenance and CC BY-SA 4.0 notices."
+    "Additional Qumran-Digital manuscript transcriptions beyond the five archived featured pages; each must be separately imported and validated at line level."
   ],
   "development_priority": {
     "order": [

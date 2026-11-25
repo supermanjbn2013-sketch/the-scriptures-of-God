@@ -42,6 +42,8 @@ jobs:
           python-version: '3.12'
       - name: Fetch and prepare licensed source texts
         run: python tools/prepare_corpus.py
+      - name: Download featured Qumran-Digital transcription source pages
+        run: python tools/download_qumran_digital_sources.py
       - name: Import offline Dead Sea Scrolls transcriptions
         run: python tools/import_etcbc_dss.py
       - name: Import Codex Vaticanus manuscript transcription
