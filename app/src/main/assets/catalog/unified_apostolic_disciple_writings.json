@@ -2973,7 +2973,7 @@
       "date_precision": "provisional broad range; verify scholarly dating",
       "genre": "instruction, letter, or related writing",
       "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Witnesses recorded separately: fifth-century Codex Alexandrinus (partial Greek), 1056 Codex Hierosolymitanus 54, fourth-century Coptic Berlin codex, fifth-century Coptic papyrus fragments, and Syriac transmission. This is manuscript coverage metadata, not a new diplomatic transcription. Witness metadata added; no unverified transcription or translation has been inserted.",
+      "textual_status": "Witnesses include two principal Greek codices (fifth-century Codex Alexandrinus, incomplete, and Codex Hierosolymitanus 54, 1056 CE, preserving the continuous Greek text), later Greek copies or excerpts (BNF Suppl. gr. 64, fifteenth century, and National Library of Greece EBE 1896, sixteenth/seventeenth century), Coptic witnesses (Berlin Ms. or. fol. 3065, fourth century, and fragmentary Strasbourg papyrus, fifth century), a Syriac codex (Cambridge Add. 1700, 1170 CE), and a Latin manuscript (Namur MS 37, eleventh century). The late Greek copies are textually dependent on the principal codices; versional witnesses are kept distinct from Greek copies. Physical manuscript dates are not assumed to be composition or translation dates.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "clement_1",
@@ -2996,6 +2996,14 @@
         {
           "title": "David Lincicum, Two Overlooked Greek Manuscripts of 1 Clement (2019)",
           "url": "https://www.academia.edu/39503798/Two_Overlooked_Greek_Manuscripts_of_1_Clement_submitted_version"
+        },
+        {
+          "title": "David Lincicum, Two Overlooked Greek Manuscripts of 1 Clement",
+          "url": "https://www.academia.edu/39503798/Two_Overlooked_Greek_Manuscripts_of_1_Clement_submitted_version"
+        },
+        {
+          "title": "Staatsbibliothek zu Berlin — Coptic manuscript Ms. or. fol. 3065",
+          "url": "https://staatsbibliothek-berlin.de/en/about-the-library/departments/orient/translate-to-english-sammlungen/translate-to-english-handschriften/translate-to-english-koptische-handschriften"
         }
       ],
       "manuscript_witnesses": [
@@ -3050,9 +3058,80 @@
           "contents": "Fragments of 1 Clement 1.1–26.2",
           "text_status": "Fragmentary Coptic witness.",
           "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        },
+        {
+          "id": "Namur_Latin",
+          "siglum": "Namur, Grand Séminaire, MS 37",
+          "shelfmark": "Grand Séminaire de Namur, MS 37, fols. 105v–118r",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "Eleventh century CE",
+          "contents": "Latin translation of 1 Clement",
+          "text_status": "The physical manuscript is medieval; the Latin translation itself may be substantially earlier. The proposed date of the translation is not the date of this surviving copy.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        },
+        {
+          "id": "BNF_Suppl_grec_64",
+          "siglum": "Bibliothèque nationale de France, Supplément grec 64",
+          "shelfmark": "BNF Suppl. gr. 64, fols. 105–112v",
+          "writing": "Greek",
+          "material": "paper codex, part of a composite miscellany",
+          "date": "Fifteenth century CE",
+          "contents": "1 Clement 40.5–60.4a",
+          "text_status": "Late Greek witness that follows the textual form of Codex Hierosolymitanus closely; useful for transmission history, not an independent early witness.",
+          "source": "https://www.academia.edu/39503798/Two_Overlooked_Greek_Manuscripts_of_1_Clement_submitted_version"
+        },
+        {
+          "id": "Athens_EBE_1896",
+          "siglum": "National Library of Greece, EBE MS 1896",
+          "shelfmark": "EBE 1896, fols. 205–223",
+          "writing": "Greek",
+          "material": "paper codex, composite miscellany",
+          "date": "Sixteenth or seventeenth century CE",
+          "contents": "1 Clement 1.1–31.3, ending mid-word",
+          "text_status": "Late Greek witness closely copied from Codex Alexandrinus, including corresponding lacunae; it is not an independent early witness and contains its own copying gaps.",
+          "source": "https://www.academia.edu/39503798/Two_Overlooked_Greek_Manuscripts_of_1_Clement_submitted_version"
         }
       ],
-      "description": "1 Clement is a instruction, letter, or related writing writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Witnesses recorded separately: fifth-century Codex Alexandrinus (partial Greek), 1056 Codex Hierosolymitanus 54, fourth-century Coptic Berlin codex, fifth-century Coptic papyrus fragments, and Syriac transmission. This is manuscript coverage metadata, not a new diplomatic transcription. Witness metadata added; no unverified transcription or translation has been inserted. The catalogue identifies 5 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+      "description": "1 Clement is an anonymous early Christian letter addressed to the Corinthian community. Its traditional association with Clement of Rome is a historical attribution, not an authorial signature. The work survives in Greek codices, later Greek copies, and Coptic, Syriac, and Latin versional witnesses. The record distinguishes early and late copies, identifies derivative witnesses, and separates the date of a physical manuscript from the proposed date of the translation or composition. The summaries of manuscript sections are not presented as verbatim transcriptions.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "1Clem-BNF-SupplGr64",
+          "transmitting_author": "Anonymous Greek copyist",
+          "source_work": "Bibliothèque nationale de France, Supplément grec 64",
+          "passage": "1 Clement 40.5–60.4a",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "This fifteenth-century paper manuscript preserves a continuous section from the discussion of the proper ordering of community service through the letter's extended prayer and exhortations. The witness ends during chapter 60.4. Its text is closely affiliated with Codex Hierosolymitanus.",
+          "status": "Late Greek manuscript section; a secondary witness in the transmission history, not an early independent copy.",
+          "english_paraphrase": "The surviving portion addresses orderly appointment and service in the community, the need to avoid rivalry, examples of faithfulness, love and repentance, and a lengthy prayer. This is a section-level content summary, not a new translation.",
+          "text_type": "manuscript_witness_section_summary",
+          "source_url": "https://www.academia.edu/39503798/Two_Overlooked_Greek_Manuscripts_of_1_Clement_submitted_version"
+        },
+        {
+          "fragment_id": "1Clem-EBE1896",
+          "transmitting_author": "Anonymous Greek copyist",
+          "source_work": "National Library of Greece, EBE MS 1896",
+          "passage": "1 Clement 1.1–31.3",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "This late manuscript preserves the opening portion of 1 Clement and breaks off during the account of Abraham and Isaac in chapter 31.3. The copyist marks numerous gaps; the manuscript follows Codex Alexandrinus closely, including lacunae inherited from that exemplar.",
+          "status": "Sixteenth- or seventeenth-century Greek witness; derivative of Codex Alexandrinus rather than an independent ancient witness.",
+          "english_paraphrase": "The preserved opening recounts the Corinthian community's former good order and present conflict, urges humility and peace, and gives examples of obedience and faith from earlier generations. The manuscript ends before the letter's later discussion of Abraham is complete. This is a section-level summary, not a translation.",
+          "text_type": "manuscript_witness_section_summary",
+          "source_url": "https://www.academia.edu/39503798/Two_Overlooked_Greek_Manuscripts_of_1_Clement_submitted_version"
+        },
+        {
+          "fragment_id": "1Clem-Namur-Latin",
+          "transmitting_author": "Anonymous Latin translator; medieval copyist",
+          "source_work": "Namur, Grand Séminaire, MS 37",
+          "passage": "1 Clement, Latin version",
+          "language_of_surviving_source": "Latin",
+          "content_scope": "The manuscript preserves a Latin version of 1 Clement. The surviving codex is dated to the eleventh century; the date of the translation is a separate question and remains a scholarly reconstruction.",
+          "status": "Versional manuscript witness; do not date the physical copy by the proposed age of the translation.",
+          "english_paraphrase": "The Latin witness transmits the letter's exhortations to the Corinthian community, its appeal for peace and proper communal order, its scriptural examples, and its closing prayer and instructions. This summary describes the work as transmitted, not the exact wording of this particular copy.",
+          "text_type": "versional_witness_content_summary",
+          "source_url": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        }
+      ]
     },
     {
       "id": "barnabas",
