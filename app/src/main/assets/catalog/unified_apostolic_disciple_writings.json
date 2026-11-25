@@ -271,11 +271,11 @@
           "shelfmark": "Pap. Hanna 1 (formerly P. Bodmer XIV–XV)",
           "writing": "Greek",
           "material": "papyrus codex",
-          "date": "Late second to early third century CE (c. 175–225)",
-          "provenance": "Egypt; provenance details debated",
-          "current_location": "Biblioteca Apostolica Vaticana, Vatican City",
-          "contents": "Large portions of Luke and John, with substantial lacunae",
-          "text_status": "Fragmentary witness; many pages damaged or missing.",
+          "date": "Traditionally dated to the late second or early third century (often c. 175–225); a later fourth-century date has been proposed in recent scholarship, so the palaeographic date remains disputed.",
+          "provenance": "Probably Egypt; exact findspot and archaeological context are uncertain. A Dishna-area provenance has been proposed, but should not be treated as securely excavated context.",
+          "current_location": "Biblioteca Apostolica Vaticana, Vatican City (Pap. Hanna 1, Mater Verbi)",
+          "contents": "Originally contained the complete Gospels of Luke and John. Substantial portions survive from Luke 3:18–24:53 and John 1:1–15:8, with major gaps and damage.",
+          "text_status": "Fragmentary Greek papyrus codex. The extant text includes scattered portions of Luke 3:18–24:53 and John 1:1–15:8, not continuous complete copies of either Gospel. Dating is debated: the Vatican Library describes it as early third century, while more recent palaeographical discussion has proposed a fourth-century date.",
           "sample_passage": "Luke 3:18–22, folio 7 recto (NTVMR page 20)",
           "transcription_source": {
             "title": "INTF NTVMR diplomatic transcription of GA P75, docID 10075, pageID 20",
@@ -300,10 +300,43 @@
           ],
           "english_translation": "And while he was exhorting, he was proclaiming good news to the people. But Herod the tetrarch, being reproved by him concerning Herodias, the wife of his brother, and concerning all the evil things Herod had done, added this also to all the rest: he shut John up in prison. Now it happened, when all the people had been baptized, and Jesus also had been baptized and was praying, that heaven was opened, and the holy Spirit descended in bodily form, like a dove …",
           "translation_note": "New English rendering from the Greek transcription, not a later English Bible translation. Square brackets mark supplied letters or words where the papyrus is damaged or illegible; underdots mark uncertain letters. Verse 22 continues beyond the surviving portion shown in this transcription.",
-          "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Vatican Library images have separate rights and are not bundled here."
+          "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Vatican Library images have separate rights and are not bundled here.",
+          "physical_extent": "Papyrus codex originally about 72 leaves (36 folios); approximately 51 leaves survive, with many pages damaged. The Vatican Library account estimates that about half the text of each Gospel survives in satisfactory condition.",
+          "source_references": [
+            {
+              "title": "Vatican Library, Notes on the History, Contents and Purpose of Papyrus Bodmer XIV–XV (P75)",
+              "url": "https://bav.vatican.va/moduli/BodmerVoicu_ing.pdf"
+            },
+            {
+              "title": "4CARE artefact record 1438 / TM 61743, P.Bodmer XIV–XV",
+              "url": "https://4care-skos.mf.no/artefacts/1438/"
+            },
+            {
+              "title": "CSNTM — P75 manuscript record and digital facsimiles",
+              "url": "https://manuscripts.csntm.org/manuscript/Group/GA_P75"
+            },
+            {
+              "title": "Nongbri, Reconsidering the Place of Papyrus Bodmer XIV–XV (P75) in Textual Criticism",
+              "url": "https://www.jstor.org/stable/10.15699/jbl.1352.2016.3026"
+            }
+          ]
         }
       ],
-      "description": "Gospel of Luke is a gospel writing in the Unified Apostolic and Disciple collection. Anonymous narrative traditionally associated with Luke; authorship is not stated in the text. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P75 now includes the Greek transcription and fresh English rendering for Luke 3:18–22, with restorations bracketed and uncertain letters marked. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+      "description": "The Gospel of Luke is an anonymous narrative traditionally associated with Luke; the text itself does not name its author. Its early Greek papyrus evidence includes P75 (Papyrus Bodmer XIV / Pap. Hanna 1), a codex originally containing Luke and John. The surviving Luke portions are extensive but discontinuous, with major gaps. The date of P75 is disputed: it is traditionally placed around the late second or early third century, while a later fourth-century dating has also been proposed.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "Luke-P75-BodmerXIV-Hanna1-coverage",
+          "transmitting_author": "Anonymous Gospel of Luke; preserved in the Greek papyrus codex P75 (Papyrus Bodmer XIV / Pap. Hanna 1)",
+          "source_work": "Gospel of Luke",
+          "passage": "Luke 3:18–22; 3:33–4:2; 4:34–5:10; 5:37–6:4; 6:10–7:32, 7:35–39, 7:41–43, 7:46–9:2; 9:4–17:15; 17:19–18:18; 22:4–24:53",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "The surviving portions begin in the account of John the Baptist and the Lord's baptism, continue through many episodes of the Galilean and later ministry, and resume in the final Jerusalem narrative and resurrection account. Important gaps remain, including Luke 1:1–3:17, much of 3:23–4:33, 5:11–36, 6:5–10, 17:16–19, and 18:19–22:3. The passage list follows the published manuscript coverage and does not imply every word is legible.",
+          "status": "P75 originally contained Luke and John in one papyrus codex. The Vatican Library reports that about half of each Gospel survives in satisfactory condition; the surviving leaves are damaged and the codex has substantial lacunae. This record describes the Luke portion only. The manuscript's date is debated: the Vatican Library describes an early-third-century copy, while later scholarship has argued for a fourth-century date.",
+          "english_paraphrase": "The surviving Luke portions preserve sections from the ministry of John the Baptist and the Lord's baptism, through teachings, healings, journeys, and disputes, and finally portions of the last events in Jerusalem and the resurrection account. This overview follows the extant passage list; it does not fill the missing sections or claim continuous preservation.",
+          "text_type": "Editorial content and coverage summary based on the published witness inventory. It is not a verbatim translation or a reconstruction of missing Greek.",
+          "source_url": "https://4care-skos.mf.no/artefacts/1438/"
+        }
+      ]
     },
     {
       "id": "mark",
