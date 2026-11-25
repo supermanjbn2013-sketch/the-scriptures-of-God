@@ -28,7 +28,25 @@
       "historical_subsequence": 10,
       "historical_anchor_status": "overlapping_narrative",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "research_sources": [
+        {
+          "title": "IGNTP — Electronic transcriptions of the Gospel of John",
+          "url": "https://itseeweb.cal.bham.ac.uk/igntp/transcriptions.html"
+        },
+        {
+          "title": "IGNTP — John transcription and apparatus downloads",
+          "url": "https://itseeweb.cal.bham.ac.uk/iohannes/download.html"
+        },
+        {
+          "title": "IGNTP — P66 transcription (University of Birmingham repository)",
+          "url": "https://epapers.bham.ac.uk/id/eprint/1759/"
+        },
+        {
+          "title": "IGNTP — P75 transcription (University of Birmingham repository)",
+          "url": "https://epapers.bham.ac.uk/id/eprint/1742/"
+        }
+      ]
     },
     {
       "id": "luke",
@@ -50,7 +68,13 @@
       "historical_subsequence": 10,
       "historical_anchor_status": "overlapping_narrative",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "research_sources": [
+        {
+          "title": "IGNTP — Project publications and Greek editions",
+          "url": "https://itseeweb.cal.bham.ac.uk/igntp/publications.html"
+        }
+      ]
     },
     {
       "id": "mark",
@@ -72,7 +96,13 @@
       "historical_subsequence": 10,
       "historical_anchor_status": "overlapping_narrative",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "research_sources": [
+        {
+          "title": "INTF — New Testament Virtual Manuscript Room",
+          "url": "https://ntvmr.uni-muenster.de/"
+        }
+      ]
     },
     {
       "id": "matthew",
@@ -82,7 +112,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "gospel",
       "attribution_status": "Anonymous narrative traditionally associated with Matthew; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "A manuscript-specific Greek transcription and an English rendering directly from that transcription are now recorded for P104, Matthew 21:34–37 (recto). This is one fragmentary witness, not a complete edition of Matthew. Other witnesses and the edited Greek text remain separate.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 10,
@@ -94,7 +124,70 @@
       "historical_subsequence": 10,
       "historical_anchor_status": "overlapping_narrative",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "research_sources": [
+        {
+          "title": "Papyrus 104 (P.Oxy. 4404) — CSNTM manuscript record",
+          "url": "https://manuscripts.csntm.org/manuscript/Group/GA_P104"
+        },
+        {
+          "title": "E. W. Handley et al., The Oxyrhynchus Papyri LXIV, no. 4404 (1997)",
+          "url": "https://www.papyrology.ox.ac.uk/"
+        },
+        {
+          "title": "Papyrus 104 — Greek transcription and manuscript description",
+          "url": "https://www.islamic-awareness.org/bible/text/mss/p104"
+        }
+      ],
+      "preservation_status": "surviving_in_multiple_greek_manuscripts_including_second_century_papyrus_fragment",
+      "manuscript_witnesses": [
+        {
+          "id": "P104",
+          "siglum": "𝔓104",
+          "shelfmark": "P.Oxy. 4404",
+          "writing": "Greek",
+          "material": "papyrus codex leaf fragment",
+          "date": "Second century CE (palaeographic estimate; exact date disputed)",
+          "provenance": "Oxyrhynchus, Egypt",
+          "current_location": "Bodleian Art, Archaeology and Ancient World Library, Oxford, United Kingdom",
+          "contents": "Matthew 21:34–37 on the recto; tentative, very faint traces associated with Matthew 21:43 and 45 on the verso",
+          "physical_extent": "One small fragment; recto preserves part of the upper and outer margins",
+          "text_status": "Fragmentary. The recto transcription below follows the published transcription; line-end breaks are retained. The verso readings are too uncertain to present as a continuous text.",
+          "transcription_basis": "Published transcription of P.Oxy. 4404; normalized from majuscule display to standard Greek Unicode. This is not a new independent reading of the papyrus image.",
+          "greek_transcription_lines": [
+            "ΑΠΕ-",
+            "ΣΤΕΙΛΕΝ ΤΟΥΣ ΔΟΥΛΟΥΣ ΑΥΤΟΥ ΠΡΟΣ",
+            "ΤΟΥΣ ΓΕΩΡΓΟΥΣ ΛΑΒΕΙΝ ΤΟΥΣ ΚΑΡ-",
+            "ΠΟΥΣ ΑΥΤΟΥ ΚΑΙ ΛΑΒΟΝΤΕΣ ΟΙ ΓΕΩΡ-",
+            "ΓΟΙ ΤΟΥΣ ΔΟΥΛΟΥΣ ΑΥΤΟΥ ΟΝ ΜΕΝ",
+            "ΕΔΕΙΡΑΝ ΟΝ ΔΕ ΑΠΕΚΤΕΙΝΑΝ ΟΝ",
+            "ΔΕ ΕΛΙΘΟΒΟΛΗΣΑΝ ΠΑΛΙΝ ΑΠΕ-",
+            "ΣΤΕΙΛΕΝ ΑΛΛΟΥΣ ΔΟΥΛΟΥΣ ΠΛΕΙΟ-",
+            "ΝΑΣ ΤΩΝ ΠΡΩΤΩΝ ΚΑΙ ΕΠΟΙΗΣΑΝ",
+            "ΑΥΤΟΙΣ ΩΣΑΥΤΩΣ ΥΣΤΕΡΟΝ ΔΕ ΑΠΕ-",
+            "ΣΤΕΙΛΕΝ"
+          ],
+          "english_translation": "He sent his servants to the tenant farmers to collect his produce. The tenant farmers took his servants: one they beat, another they killed, and another they stoned. Again he sent other servants, more numerous than the first, and they treated them in the same way. Afterwards, however, he sent …",
+          "translation_method": "Fresh English rendering made from the Greek transcription above, not copied from a later English Bible translation. It translates only the surviving transcribed sequence; the final clause is left unfinished because the fragment breaks off.",
+          "lacuna_policy": "Hyphenated line endings reproduce physical word division in the published transcription, not missing text. The fragment does not preserve the complete surrounding narrative. No missing words or verses have been supplied.",
+          "verso_status": "The verso is reported to preserve only indecisive traces. No continuous Greek transcription or English translation is asserted here.",
+          "source_references": [
+            {
+              "title": "CSNTM — P104 manuscript record",
+              "url": "https://manuscripts.csntm.org/manuscript/Group/GA_P104"
+            },
+            {
+              "title": "Handley et al., The Oxyrhynchus Papyri LXIV (1997), no. 4404",
+              "url": "https://www.papyrology.ox.ac.uk/"
+            },
+            {
+              "title": "Papyrus 104 — Greek transcription and description",
+              "url": "https://www.islamic-awareness.org/bible/text/mss/p104"
+            }
+          ],
+          "source_rights_note": "Manuscript is ancient; this normalized transcription is attributed to its published transcriptional source. Verify edition-specific reuse rights before redistributing the source transcription in a public release."
+        }
+      ]
     },
     {
       "id": "gospel_peter",
