@@ -139,11 +139,13 @@ public class MainActivity extends Activity {
                 String attribution=record.optString("attribution_status","");
                 boolean hasDate=!record.isNull("composition_date_start_ce")&&!record.isNull("composition_date_end_ce");
                 String date=hasDate?(record.optInt("composition_date_start_ce")==record.optInt("composition_date_end_ce")?record.optInt("composition_date_start_ce")+" CE":record.optInt("composition_date_start_ce")+"–"+record.optInt("composition_date_end_ce")+" CE"):"Date undetermined";
-                String hay=(title+" "+genre+" "+attribution+" "+record.optString("textual_status","")).toLowerCase(java.util.Locale.ROOT);
+                String hay=(title+" "+genre+" "+attribution+" "+record.optString("textual_status","")+" "+record.optString("historical_anchor","")+" "+record.optString("scope_relationship","")).toLowerCase(java.util.Locale.ROOT);
                 if(!query.isEmpty()&&!hay.contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
                 LinearLayout row=new LinearLayout(this);row.setOrientation(1);row.setPadding(12,7,12,7);row.setBackground(shape(panel));
                 row.addView(text(title,15,ink,true));
                 row.addView(text(record.optString("historical_period","Historical setting not classified"),12,gold,false));
+                row.addView(text(record.optString("historical_anchor","Historical event or setting not established"),12,ink,false));
+                row.addView(text("Collection relationship: "+record.optString("scope_relationship","not classified").replace("_"," "),11,muted,false));
                 row.addView(text("Composition: "+date+"  •  "+genre,11,muted,false));
                 TextView status=text(attribution,12,muted,false);status.setMaxLines(3);row.addView(status);
                 LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,4,0,5);content.addView(row,rp);
