@@ -16,7 +16,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "gospel",
       "attribution_status": "Anonymous narrative traditionally associated with the disciple John; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. A P52 witness record now includes recto/verso Greek transcription with editorial restorations bracketed and an English rendering from that transcription.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 10,
@@ -78,6 +78,82 @@
           "transcription_source": "https://epapers.bham.ac.uk/id/eprint/1742/",
           "transcription_license": "The deposited transcription specifies Creative Commons BY-NC-SA in its header; preserve attribution and non-commercial/share-alike conditions before redistribution.",
           "image_and_catalogue_source": "https://manuscripts.csntm.org/"
+        },
+        {
+          "id": "P52",
+          "siglum": "𝔓52",
+          "shelfmark": "P. Rylands Greek 457",
+          "writing": "Greek",
+          "material": "papyrus codex fragment",
+          "date": "Second century CE; exact palaeographic range disputed",
+          "provenance": "Probably Oxyrhynchus, Egypt; provenance not certain",
+          "current_location": "John Rylands Library, University of Manchester, United Kingdom",
+          "contents": "John 18:31–33 (recto) and 18:37–38 (verso)",
+          "physical_extent": "One small leaf fragment; seven lines on each side in the transcriptional layout",
+          "transcription_basis": "Transcriptional reading compared with the INTF/CNTR witness record and published P52 transcriptions. Brackets mark editorially restored letters or words; unbracketed text is the surviving reading as represented in the transcription. Not every character is equally legible.",
+          "greek_transcription_lines_recto": [
+            "ΟΙ ΙΟΥΔΑΙ[Ο]Ι ΗΜΕ[ΙΝ ΟΥΚ ΕΞΕΣΤΙΝ ΑΠΟΚΤΕΙΝΑΙ]",
+            "ΟΥΔΕΝΑ ΙΝΑ Ο Λ[ΟΓΟΣ ΤΟΥ ΙΗΣΟΥ ΠΛΗΡΩΘΗ ΟΝ ΕΙ]",
+            "ΠΕΝ ΣΗΜΑΙΝΩ[Ν ΠΟΙΩ ΘΑΝΑΤΩ ΗΜΕΛΛΕΝ ΑΠΟ]",
+            "ΘΝΗΣΚΕΙΝ ΙΣ[ΗΛΘΕΝ ΟΥΝ ΠΑΛΙΝ ΕΙΣ ΤΟ ΠΡΑΙΤΩ]",
+            "ΡΙΟΝ Ο Π[ΙΛΑΤΟΣ ΚΑΙ ΕΦΩΝΗΣΕΝ ΤΟΝ ΙΗΣΟΥΝ]",
+            "ΚΑΙ ΕΙΠ[ΕΝ ΑΥΤΩ ΣΥ ΕΙ Ο ΒΑΣΙΛΕΥΣ ΤΩΝ ΙΟΥ]",
+            "[Δ]ΑΙΩ[Ν]"
+          ],
+          "english_translation_recto": "The Judeans said to him, “For us it is not permitted to kill anyone,” so that the word of Jesus might be fulfilled, which he had spoken, indicating by what kind of death he was going to die. Then he entered again into the praetorium, Pilate, and summoned Jesus and said to him, “Are you the king of the Judeans?”",
+          "greek_transcription_lines_verso": [
+            "[ΒΑΣΙΛΕΥΣ ΕΙΜΙ ΕΓΩ ΕΙΣ ΤΟ]ΥΤΟ Γ[Ε]ΓΕΝΝΗΜΑΙ",
+            "[ΚΑΙ ΕΙΣ ΤΟΥΤΟ ΕΛΗΛΥΘΑ ΕΙΣ ΤΟΝ ΚΟ]ΣΜΟΝ ΙΝΑ ΜΑΡΤΥ",
+            "[ΡΗΣΩ ΤΗ ΑΛΗΘΕΙΑ ΠΑΣ Ο ΩΝ] ΕΚ ΤΗΣ ΑΛΗΘΕ[Ι]",
+            "[ΑΣ ΑΚΟΥΕΙ ΜΟΥ ΤΗΣ ΦΩΝΗΣ] ΛΕΓΕΙ ΑΥΤΩ",
+            "Ο ΠΙΛΑΤΟΣ ΤΙ ΕΣΤΙΝ ΑΛΗΘΕΙΑ Κ[ΑΙ] ΤΟΥΤΟ",
+            "[ΕΙΠΩΝ ΠΑΛΙΝ ΕΞΗΛΘΕΝ ΠΡΟΣ] ΤΟΥΣ ΙΟ[Υ]",
+            "[ΔΑΙΟΥΣ ΚΑΙ ΛΕΓΕΙ ΑΥΤΟΙΣ ΕΓΩ ΟΥΔ]ΕΜΙ[ΑΝ]"
+          ],
+          "english_translation_verso": "“I am a king. For this I have been born, and for this I have come into the world, so that I might bear witness to the truth. Everyone who is of the truth hears my voice.” Pilate says to him, “What is truth?” And after saying this, he went out again to the Judeans and says to them, “I find no …”",
+          "lacuna_policy": "Square brackets indicate editorial restoration, not visible ink. The papyrus preserves only a small fragment of these verses; surrounding words and unpreserved verses are not supplied. The English is translated from the transcribed Greek sequence and is not copied from a later English Bible translation.",
+          "sources": [
+            {
+              "title": "INTF/CNTR — P52 witness record",
+              "url": "https://ebible.gr/collate/greekcntr/data/1G10052.html"
+            },
+            {
+              "title": "CSNTM — P52 manuscript and digital images",
+              "url": "https://manuscripts.csntm.org/manuscript/Group/GA_P52"
+            },
+            {
+              "title": "John Rylands Library — Papyrus 52 collection record",
+              "url": "https://www.library.manchester.ac.uk/rylands/"
+            }
+          ]
+        },
+        {
+          "id": "P45",
+          "siglum": "𝔓45",
+          "shelfmark": "P. Chester Beatty I / Pap. Vindob. G. 31974",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland, and Austrian National Library, Vienna, Austria",
+          "contents": "Fragmentary portions of Matthew, Mark, Luke, John, and Acts",
+          "physical_extent": "About 30 leaves survive from a much larger original codex; many surviving leaves are badly damaged and preserve only portions of lines",
+          "text_status": "Fragmentary Greek witness to the four Gospel narratives and Acts. Verse lists indicate partial representation only; they do not mean each verse is complete.",
+          "source_references": [
+            {
+              "title": "CSNTM — P45 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P45"
+            },
+            {
+              "title": "Austrian National Library — P45 Vienna portion",
+              "url": "https://manuscripts.csntm.org/Manuscript/View/GA_P45_ONB"
+            },
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            }
+          ],
+          "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
         }
       ]
     },
@@ -108,7 +184,37 @@
           "url": "https://itseeweb.cal.bham.ac.uk/igntp/publications.html"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P45",
+          "siglum": "𝔓45",
+          "shelfmark": "P. Chester Beatty I / Pap. Vindob. G. 31974",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland, and Austrian National Library, Vienna, Austria",
+          "contents": "Fragmentary portions of Matthew, Mark, Luke, John, and Acts",
+          "physical_extent": "About 30 leaves survive from a much larger original codex; many surviving leaves are badly damaged and preserve only portions of lines",
+          "text_status": "Fragmentary Greek witness to the four Gospel narratives and Acts. Verse lists indicate partial representation only; they do not mean each verse is complete.",
+          "source_references": [
+            {
+              "title": "CSNTM — P45 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P45"
+            },
+            {
+              "title": "Austrian National Library — P45 Vienna portion",
+              "url": "https://manuscripts.csntm.org/Manuscript/View/GA_P45_ONB"
+            },
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            }
+          ],
+          "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
+        }
+      ]
     },
     {
       "id": "mark",
@@ -137,7 +243,37 @@
           "url": "https://ntvmr.uni-muenster.de/"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P45",
+          "siglum": "𝔓45",
+          "shelfmark": "P. Chester Beatty I / Pap. Vindob. G. 31974",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland, and Austrian National Library, Vienna, Austria",
+          "contents": "Fragmentary portions of Matthew, Mark, Luke, John, and Acts",
+          "physical_extent": "About 30 leaves survive from a much larger original codex; many surviving leaves are badly damaged and preserve only portions of lines",
+          "text_status": "Fragmentary Greek witness to the four Gospel narratives and Acts. Verse lists indicate partial representation only; they do not mean each verse is complete.",
+          "source_references": [
+            {
+              "title": "CSNTM — P45 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P45"
+            },
+            {
+              "title": "Austrian National Library — P45 Vienna portion",
+              "url": "https://manuscripts.csntm.org/Manuscript/View/GA_P45_ONB"
+            },
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            }
+          ],
+          "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
+        }
+      ]
     },
     {
       "id": "matthew",
@@ -221,6 +357,34 @@
             }
           ],
           "source_rights_note": "Manuscript is ancient; this normalized transcription is attributed to its published transcriptional source. Verify edition-specific reuse rights before redistributing the source transcription in a public release."
+        },
+        {
+          "id": "P45",
+          "siglum": "𝔓45",
+          "shelfmark": "P. Chester Beatty I / Pap. Vindob. G. 31974",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland, and Austrian National Library, Vienna, Austria",
+          "contents": "Fragmentary portions of Matthew, Mark, Luke, John, and Acts",
+          "physical_extent": "About 30 leaves survive from a much larger original codex; many surviving leaves are badly damaged and preserve only portions of lines",
+          "text_status": "Fragmentary Greek witness to the four Gospel narratives and Acts. Verse lists indicate partial representation only; they do not mean each verse is complete.",
+          "source_references": [
+            {
+              "title": "CSNTM — P45 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P45"
+            },
+            {
+              "title": "Austrian National Library — P45 Vienna portion",
+              "url": "https://manuscripts.csntm.org/Manuscript/View/GA_P45_ONB"
+            },
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            }
+          ],
+          "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
         }
       ]
     },
@@ -587,6 +751,36 @@
           "title": "INTF — New Testament Virtual Manuscript Room",
           "url": "https://ntvmr.uni-muenster.de/"
         }
+      ],
+      "manuscript_witnesses": [
+        {
+          "id": "P45",
+          "siglum": "𝔓45",
+          "shelfmark": "P. Chester Beatty I / Pap. Vindob. G. 31974",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland, and Austrian National Library, Vienna, Austria",
+          "contents": "Fragmentary portions of Matthew, Mark, Luke, John, and Acts",
+          "physical_extent": "About 30 leaves survive from a much larger original codex; many surviving leaves are badly damaged and preserve only portions of lines",
+          "text_status": "Fragmentary Greek witness to the four Gospel narratives and Acts. Verse lists indicate partial representation only; they do not mean each verse is complete.",
+          "source_references": [
+            {
+              "title": "CSNTM — P45 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P45"
+            },
+            {
+              "title": "Austrian National Library — P45 Vienna portion",
+              "url": "https://manuscripts.csntm.org/Manuscript/View/GA_P45_ONB"
+            },
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            }
+          ],
+          "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
+        }
       ]
     },
     {
@@ -724,7 +918,37 @@
           "url": "https://www.odbm.org/en/discovery-series/understanding-the-bible-the-letters-of-paul/pauls-letters-in-context"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P46",
+          "siglum": "𝔓46",
+          "shelfmark": "P. Chester Beatty II / P. Mich. inv. 6238",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (commonly around 200 CE)",
+          "provenance": "Egypt; precise findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
+          "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
+          "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
+          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
+          "transcription_resources": [
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            },
+            {
+              "title": "CSNTM — P46 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+            },
+            {
+              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
+              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+            }
+          ],
+          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+        }
+      ]
     },
     {
       "id": "2_thessalonians",
@@ -798,7 +1022,37 @@
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "The relative order of these writings cannot be fixed securely because the Galatians chronology and the relationship between the Thessalonian letters are disputed.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P46",
+          "siglum": "𝔓46",
+          "shelfmark": "P. Chester Beatty II / P. Mich. inv. 6238",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (commonly around 200 CE)",
+          "provenance": "Egypt; precise findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
+          "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
+          "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
+          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
+          "transcription_resources": [
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            },
+            {
+              "title": "CSNTM — P46 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+            },
+            {
+              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
+              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+            }
+          ],
+          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+        }
+      ]
     },
     {
       "id": "paul_previous_corinthian_letter",
@@ -881,7 +1135,37 @@
           "url": "https://ora.ox.ac.uk/objects/uuid:9f613e23-7197-40d8-836c-d0e478be2636/files/mf311bf81e4a53ba099e46ddae88529b5"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P46",
+          "siglum": "𝔓46",
+          "shelfmark": "P. Chester Beatty II / P. Mich. inv. 6238",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (commonly around 200 CE)",
+          "provenance": "Egypt; precise findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
+          "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
+          "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
+          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
+          "transcription_resources": [
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            },
+            {
+              "title": "CSNTM — P46 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+            },
+            {
+              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
+              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+            }
+          ],
+          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+        }
+      ]
     },
     {
       "id": "paul_sorrowful_corinthian_letter",
@@ -964,7 +1248,37 @@
           "url": "https://ora.ox.ac.uk/objects/uuid:9f613e23-7197-40d8-836c-d0e478be2636/files/mf311bf81e4a53ba099e46ddae88529b5"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P46",
+          "siglum": "𝔓46",
+          "shelfmark": "P. Chester Beatty II / P. Mich. inv. 6238",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (commonly around 200 CE)",
+          "provenance": "Egypt; precise findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
+          "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
+          "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
+          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
+          "transcription_resources": [
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            },
+            {
+              "title": "CSNTM — P46 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+            },
+            {
+              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
+              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+            }
+          ],
+          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+        }
+      ]
     },
     {
       "id": "romans",
@@ -997,7 +1311,37 @@
           "url": "https://www.odbm.org/en/discovery-series/understanding-the-bible-the-letters-of-paul/pauls-letters-in-context"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P46",
+          "siglum": "𝔓46",
+          "shelfmark": "P. Chester Beatty II / P. Mich. inv. 6238",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (commonly around 200 CE)",
+          "provenance": "Egypt; precise findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
+          "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
+          "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
+          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
+          "transcription_resources": [
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            },
+            {
+              "title": "CSNTM — P46 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+            },
+            {
+              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
+              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+            }
+          ],
+          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+        }
+      ]
     },
     {
       "id": "1_peter",
@@ -1071,7 +1415,37 @@
           "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-new-testament/prison-epistles/FD071EEAAFBDCBCABEF57A040331494B"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P46",
+          "siglum": "𝔓46",
+          "shelfmark": "P. Chester Beatty II / P. Mich. inv. 6238",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (commonly around 200 CE)",
+          "provenance": "Egypt; precise findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
+          "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
+          "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
+          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
+          "transcription_resources": [
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            },
+            {
+              "title": "CSNTM — P46 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+            },
+            {
+              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
+              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+            }
+          ],
+          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+        }
+      ]
     },
     {
       "id": "ephesians",
@@ -1104,7 +1478,37 @@
           "url": "https://www.cambridge.org/core/books/colossians-and-philemon/introduction-to-colossians/966C5826BB48CEB182E548108946FEAC"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P46",
+          "siglum": "𝔓46",
+          "shelfmark": "P. Chester Beatty II / P. Mich. inv. 6238",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (commonly around 200 CE)",
+          "provenance": "Egypt; precise findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
+          "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
+          "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
+          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
+          "transcription_resources": [
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            },
+            {
+              "title": "CSNTM — P46 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+            },
+            {
+              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
+              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+            }
+          ],
+          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+        }
+      ]
     },
     {
       "id": "philemon",
@@ -1174,7 +1578,37 @@
           "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/prison-epistles-1-philippians-and-philemon/DC2D9B05DF14C0253DE1FAD3804B6A91"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P46",
+          "siglum": "𝔓46",
+          "shelfmark": "P. Chester Beatty II / P. Mich. inv. 6238",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (commonly around 200 CE)",
+          "provenance": "Egypt; precise findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
+          "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
+          "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
+          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
+          "transcription_resources": [
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            },
+            {
+              "title": "CSNTM — P46 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+            },
+            {
+              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
+              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+            }
+          ],
+          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+        }
+      ]
     },
     {
       "id": "jude",
@@ -1244,7 +1678,37 @@
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "These settings do not establish a relative chronological order with one another; the shared display position is a provisional grouping only.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P46",
+          "siglum": "𝔓46",
+          "shelfmark": "P. Chester Beatty II / P. Mich. inv. 6238",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (commonly around 200 CE)",
+          "provenance": "Egypt; precise findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
+          "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
+          "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
+          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
+          "transcription_resources": [
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            },
+            {
+              "title": "CSNTM — P46 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
+            },
+            {
+              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
+              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+            }
+          ],
+          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+        }
+      ]
     },
     {
       "id": "paul_laodicean_correspondence_referenced",
@@ -2666,7 +3130,33 @@
           "url": "https://www.bsw.org/biblica/vol-85-2004/the-book-of-revelation-and-the-first-years-of-nero-s-reign/181/article-p377.html"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "P47",
+          "siglum": "𝔓47",
+          "shelfmark": "P. Chester Beatty III",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third century CE",
+          "provenance": "Egypt; exact findspot uncertain",
+          "current_location": "Chester Beatty Library, Dublin, Ireland",
+          "contents": "Book of Revelation; surviving portions include Revelation 9–10 and other passages",
+          "physical_extent": "Ten leaves survive; single column, approximately 25–30 lines per column",
+          "text_status": "Fragmentary Greek witness. It preserves portions only, not a complete copy of Revelation.",
+          "source_references": [
+            {
+              "title": "CSNTM — P47 manuscript images and description",
+              "url": "https://manuscripts.csntm.org/manuscript/Group/GA_P47"
+            },
+            {
+              "title": "INTF New Testament Virtual Manuscript Room",
+              "url": "https://ntvmr.uni-muenster.de/"
+            }
+          ],
+          "transcription_note": "Manuscript inventory only; a diplomatic transcription and translation are not yet imported."
+        }
+      ]
     }
   ],
   "historical_chronology_policy": "Use the events and historical setting represented in each writing as the organizing basis. For narratives, follow narrated events. For letters and instruction writings, use the historical situation, people, journeys, imprisonment, or community events they address. If an exact setting cannot be established, use a broad labelled period and mark placement provisional. Never use composition date as a substitute for event chronology. Revelation is the final catalogue record by explicit archive arrangement; the Greek/Ethiopic Apocalypse of Peter is immediately before it. The Coptic Apocalypse of Peter is a separate work placed by its own Jerusalem-before-crucifixion narrative setting.",
