@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         }).setNegativeButton("Cancel",null).show();
     }
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
-    String[] sections={"Home","Hebrew Scriptures","Prophets","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
+    String[] sections={"Home","Hebrew Scriptures","Prophets","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Lost and Referenced Books","Other Reference Books","Manuscript Archive","IGNTP Manuscript Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
     @Override public void onCreate(Bundle b){super.onCreate(b); applyTheme(); seed(); show();}
     void applyTheme(){String mode=getSharedPreferences("archive_settings",MODE_PRIVATE).getString("theme","dark");lightMode=mode.equals("light")||(mode.equals("system")&&((getResources().getConfiguration().uiMode&android.content.res.Configuration.UI_MODE_NIGHT_MASK)==android.content.res.Configuration.UI_MODE_NIGHT_NO));if(lightMode){bg=Color.rgb(247,245,239);panel=Color.rgb(255,255,255);gold=Color.rgb(133,94,38);ink=Color.rgb(35,39,42);muted=Color.rgb(105,110,113);}else{bg=Color.rgb(15,19,24);panel=Color.rgb(26,33,41);gold=Color.rgb(205,174,112);ink=Color.rgb(232,228,217);muted=Color.rgb(160,166,170);}}
     void saveTheme(String mode){getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("theme",mode).apply();applyTheme();show();}
@@ -54,7 +54,7 @@ public class MainActivity extends Activity {
         entries.put("Other Reference Books",new ArrayList<>(Arrays.asList("Jubilees","Protoevangelium of James (Nativity and Infancy of Jesus)","Infancy Gospel of Thomas","Gospel of Pseudo-Matthew","Arabic Infancy Gospel","Gospel of Philip","Gospel of Truth","Gospel of Judas","Acts of Peter","Acts of Paul","Acts of John","Acts of Thomas","Apocalypse of Paul","Ascension of Isaiah","Testament of Abraham","Testament of the Twelve Patriarchs","2 Baruch","3 Baruch","Life of Adam and Eve","Apocalypse of Moses","Dormition of Mary (Transitus Mariae traditions)","Six Books Dormition Apocryphon","Book of Mary's Repose","Odes of Solomon","Pseudo-Philo: Biblical Antiquities","Zohar")));
         entries.put("Lost and Referenced Books",new ArrayList<>(Arrays.asList("Acts of Solomon","Chronicles of the Kings of Israel","Chronicles of the Kings of Judah","Prophecy of Ahijah","Visions of Iddo","Records of Shemaiah","Records of Iddo","History of Iddo","Book of Jehu","Records of the Seers (Hozai)","Chronicles of the Kings of Media and Persia","Assumption of Moses (identification debated)","Book of Noah (Jubilees reference)","Book of Giants (fragmentarily preserved)","Nehemiah's Library and Collected Records","Jason of Cyrene's Five-Book History","Chronicles of John Hyrcanus")));
         entries.put("Manuscript Archive",new ArrayList<>(Arrays.asList("Dead Sea Scrolls (DSS)","Great Isaiah Scroll (1QIsaᵃ)","Pesher Habakkuk (1QpHab)","Genesis Apocryphon (1QapGen)","Community Rule (1QS)","Temple Scroll (11Q19)","War Scroll (1QM)","Masoretic Text","Septuagint","Samaritan Pentateuch","Papyrus 46 (P46)","Papyrus 52 (P52)","Papyrus 66 (P66)","Papyrus 72 (P72)","Papyrus 75 (P75)","Papyrus 76 (P76)","Papyrus 77 (P77)","Codex Vaticanus","Codex Sinaiticus","Codex Alexandrinus")));
-        entries.put("DSS Passage Concordance",new ArrayList<>(Arrays.asList("4Q26 Lev d — Leviticus","4Q27 Num b — Numbers","4Q31 Deut d — Deuteronomy","4Q47 Josh a — Joshua","4Q53 Sam c — Samuel")));
+        entries.put("IGNTP Manuscript Archive",new ArrayList<>());\n        entries.put("DSS Passage Concordance",new ArrayList<>(Arrays.asList("4Q26 Lev d — Leviticus","4Q27 Num b — Numbers","4Q31 Deut d — Deuteronomy","4Q47 Josh a — Joshua","4Q53 Sam c — Samuel")));
         entries.put("Translation Center",new ArrayList<>(Arrays.asList("Preferred translation language","Gemini AI translation")));
         entries.put("Manuscript Comparison",new ArrayList<>(Arrays.asList("Compare witness transcriptions","Review additions and omissions","Inspect textual variants","Trace quotations and parallels")));
         entries.put("Research Archive",new ArrayList<>(Arrays.asList("Source metadata","Authorship assessments","Composition dates","Language and provenance","Fragment and witness records","Research notes")));
@@ -95,7 +95,7 @@ public class MainActivity extends Activity {
             addHomeTile("Lost and Referenced Books","Other ancient records, fragmentary works and disputed identifications",() -> navigateTo("Lost and Referenced Books"));
             addHomeTile("Other Reference Books","Ancient Jewish and early Christian writings outside the main Scripture collections",() -> navigateTo("Other Reference Books"));
             content.addView(text("MANUSCRIPT RESEARCH",12,gold,true));
-            addHomeTile("Dead Sea Scrolls Archive","Manuscript catalogue and passage concordance",() -> navigateTo("Manuscript Archive"));
+            addHomeTile("Dead Sea Scrolls Archive","Manuscript catalogue and passage concordance",() -> navigateTo("Manuscript Archive"));\n            addHomeTile("IGNTP Manuscript Archive","1,693 separately preserved TEI witnesses across 13 collections",() -> navigateTo("IGNTP Manuscript Archive"));
             addHomeTile("DSS Transcription Archive","Offline line-level readings from the ETCBC / Abegg corpus",() -> navigateTo("DSS Transcription Archive"));
             addHomeTile("Greek Manuscripts","Papyrus and codex registers",()->{section="Manuscript Archive";show();});
             addHomeTile("Latin Manuscripts","Latin transmission records",()->{section="Manuscript Archive";show();});
@@ -107,7 +107,7 @@ public class MainActivity extends Activity {
         if(section.equals("Settings")){content.addView(text("Appearance, reading and privacy",14,muted,false));addHomeTile("Appearance and reading settings","Theme, font size and language",()->openSettings());return;}
         if(section.equals("Personal Library")||section.equals("Favorites")||section.equals("Reading History")){renderLibrary();return;}
         if(section.equals("Search")){EditText query=new EditText(this);query.setSingleLine(true);query.setHint("Exact word or phrase");content.addView(query);Button go=new Button(this);go.setText("Search offline corpus");content.addView(go);go.setOnClickListener(v->{String searchTerm=query.getText().toString().trim();if(!searchTerm.isEmpty())searchCorpus(searchTerm);});return;}
-        if(section.equals("DSS Transcription Archive")){renderEtcbcDssIndex(q);return;}
+        if(section.equals("DSS Transcription Archive")){renderEtcbcDssIndex(q);return;}\n        if(section.equals("IGNTP Manuscript Archive")){renderIgntpArchive(q);return;}
         if(section.equals("Unified Apostolic and Disciple Writings")){renderUnifiedWritings(q);return;}
         if(section.equals("Writings Mentioned in the Scriptures")){content.addView(text("SCRIPTURE REFERENCES • LOST SOURCES • RECOVERED WITNESSES",12,gold,true));content.addView(text("This catalogue separates a writing named in a surviving passage from any surviving manuscript of that writing. Lost works remain reference records only. Fragmentary and translated works show their actual witnesses and language. 1 Enoch is included as a recovered work quoted in Jude, not as a lost book.",14,muted,false));}
         if(section.equals("Early Disciple and Apostolic Writings")){content.addView(text("EARLY CHRISTIAN WRITINGS • CODEX CONTENTS • PAPYRUS WITNESSES",12,gold,true));content.addView(text("These works survive in different manuscripts, dates, languages and textual forms. Their presence in a codex is a historical fact about that manuscript, not by itself a ruling about scriptural authority.",14,muted,false));}
@@ -293,6 +293,164 @@ public class MainActivity extends Activity {
         int type=Character.getType(value);
         return Character.isLetterOrDigit(value)||type==Character.NON_SPACING_MARK||
             type==Character.COMBINING_SPACING_MARK||type==Character.ENCLOSING_MARK;
+    }
+
+
+    org.json.JSONObject readIgntpManifest() throws Exception{
+        java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("igntp/manifest.json"),"UTF-8"));
+        StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+        return new org.json.JSONObject(raw.toString());
+    }
+
+    void renderIgntpArchive(String query){
+        try{
+            org.json.JSONObject manifest=readIgntpManifest();
+            org.json.JSONArray collections=manifest.optJSONArray("collections");
+            org.json.JSONArray files=manifest.optJSONArray("files");
+            if(collections==null||files==null){content.addView(text("The IGNTP manifest is incomplete in this build.",14,muted,false));return;}
+            content.addView(text(files.length()+" original TEI witnesses · "+collections.length()+" separate collections",14,gold,true));
+            content.addView(text("International Greek New Testament Project (IGNTP), University of Birmingham. The source TEI XML files are retained unmodified. Each file remains an individual manuscript witness; collection labels are not interchangeable witness identities.",13,muted,false));
+            content.addView(text("Official collection download licence: CC BY 4.0. Individual TEI files declaring a more restrictive licence are excluded and recorded in the import manifest. The 1 Corinthians project is ongoing; its released transcriptions are not a completed critical edition.",12,muted,false));
+            Button searchButton=new Button(this);searchButton.setText("Search exact phrase in all IGNTP witnesses");searchButton.setTextColor(ink);searchButton.setBackground(shape(panel));
+            LinearLayout.LayoutParams sbp=new LinearLayout.LayoutParams(-1,-2);sbp.setMargins(0,8,0,10);content.addView(searchButton,sbp);
+            searchButton.setOnClickListener(v->showIgntpSearchDialog());
+            int shown=0;
+            for(int i=0;i<collections.length();i++){
+                org.json.JSONObject c=collections.optJSONObject(i);if(c==null)continue;
+                String id=c.optString("id"),work=c.optString("work");
+                if(!query.isEmpty()&&!work.toLowerCase(java.util.Locale.ROOT).contains(query.toLowerCase(java.util.Locale.ROOT))&&!id.toLowerCase(java.util.Locale.ROOT).contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
+                TextView row=text(work+"  ·  "+c.optInt("xml_file_count")+" witnesses",15,ink,true);row.setBackground(shape(panel));
+                LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);content.addView(row,p);
+                row.setOnClickListener(v->openIgntpCollection(id,work));shown++;
+            }
+            if(shown==0)content.addView(text("No IGNTP collection matches this filter.",14,muted,false));
+            org.json.JSONArray excluded=manifest.optJSONArray("excluded_files");
+            content.addView(text("Excluded source files: "+(excluded==null?0:excluded.length())+" (see individual reasons in the import manifest).",12,muted,false));
+        }catch(Exception e){content.addView(text("IGNTP archive is not available in this build: "+e.getMessage(),13,muted,false));}
+    }
+
+    void openIgntpCollection(String collectionId,String work){
+        try{
+            org.json.JSONArray files=readIgntpManifest().optJSONArray("files");
+            java.util.ArrayList<org.json.JSONObject> records=new java.util.ArrayList<>();
+            java.util.ArrayList<String> labels=new java.util.ArrayList<>();
+            if(files!=null)for(int i=0;i<files.length();i++){
+                org.json.JSONObject record=files.optJSONObject(i);if(record==null||!collectionId.equals(record.optString("collection")))continue;
+                records.add(record);
+                String label=record.optString("manuscript_title",record.optString("title"));
+                String xmlId=record.optString("xml_id");
+                labels.add((xmlId.isEmpty()?"":xmlId+" — ")+label+" ["+record.optString("archive_member")+"]");
+            }
+            if(records.isEmpty()){showInfo(work,"No licensed witness files are available in this collection.");return;}
+            android.widget.ListView list=new android.widget.ListView(this);
+            list.setAdapter(new android.widget.ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,labels));
+            android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this).setTitle(work+" · "+records.size()+" witnesses").setView(list).setNegativeButton("Close",null).create();
+            list.setOnItemClickListener((parent,view,position,id)->{dialog.dismiss();openIgntpWitness(records.get(position));});
+            dialog.show();
+        }catch(Exception e){showInfo("Collection unavailable",e.getMessage());}
+    }
+
+    String readIgntpBody(java.io.InputStream input) throws Exception{
+        org.xmlpull.v1.XmlPullParser parser=android.util.Xml.newPullParser();
+        parser.setInput(input,"UTF-8");
+        StringBuilder out=new StringBuilder();boolean inBody=false;int bodyDepth=0;
+        java.util.HashSet<String> blocks=new java.util.HashSet<>(java.util.Arrays.asList("p","ab","l","head","div","lg","sp","list","item","quote","table","row","opener","closer","dateline","salute"));
+        int event=parser.getEventType();
+        while(event!=org.xmlpull.v1.XmlPullParser.END_DOCUMENT){
+            if(event==org.xmlpull.v1.XmlPullParser.START_TAG){
+                String tag=parser.getName();
+                if("body".equals(tag)){inBody=true;bodyDepth=1;}
+                else if(inBody){
+                    bodyDepth++;
+                    if("pb".equals(tag)){String n=parser.getAttributeValue(null,"n");out.append("\n[Page ").append(n==null?"":n).append("]\n");}
+                    else if("cb".equals(tag)){String n=parser.getAttributeValue(null,"n");out.append("\n[Column ").append(n==null?"":n).append("]\n");}
+                    else if("lb".equals(tag)){String n=parser.getAttributeValue(null,"n");out.append("\n");if(n!=null&&!n.isEmpty())out.append("[").append(n).append("] ");}
+                    else if(blocks.contains(tag)&&out.length()>0&&out.charAt(out.length()-1)!='\n')out.append("\n");
+                }
+            }else if(event==org.xmlpull.v1.XmlPullParser.TEXT&&inBody){
+                String value=parser.getText();if(value!=null)out.append(value);
+            }else if(event==org.xmlpull.v1.XmlPullParser.END_TAG&&inBody){
+                String tag=parser.getName();
+                if("body".equals(tag)){inBody=false;bodyDepth=0;}
+                else{
+                    if("w".equals(tag))out.append(" ");
+                    if(blocks.contains(tag)&&out.length()>0&&out.charAt(out.length()-1)!='\n')out.append("\n");
+                    bodyDepth--;
+                }
+            }
+            event=parser.next();
+        }
+        return out.toString().replaceAll("[\\t ]+\\n","\n").replaceAll("\\n{3,}","\n\n").trim();
+    }
+
+    void openIgntpWitness(org.json.JSONObject record){
+        final String asset=record.optString("offline_asset");
+        final String title=record.optString("manuscript_title",record.optString("title"));
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                try{java.io.InputStream input=getAssets().open(asset);try{return readIgntpBody(input);}finally{input.close();}}
+                catch(Exception e){return "Unable to parse this original TEI witness: "+e.getMessage();}
+            }
+            protected void onPostExecute(String body){
+                StringBuilder detail=new StringBuilder();
+                detail.append("Work / collection: ").append(record.optString("work")).append(" / ").append(record.optString("collection")).append("\n");
+                detail.append("TEI xml:id: ").append(record.optString("xml_id","Not supplied in source")).append("\n");
+                detail.append("Source title: ").append(record.optString("title")).append("\n");
+                detail.append("Manuscript title: ").append(title).append("\n");
+                detail.append("Archive member: ").append(record.optString("archive_member")).append("\n");
+                detail.append("Licence: ").append(record.optString("license")).append("\n");
+                detail.append("SHA-256: ").append(record.optString("sha256")).append("\n");
+                detail.append("Attribution: International Greek New Testament Project (IGNTP), University of Birmingham.\n");
+                detail.append("Source archive: ").append(record.optString("source_archive")).append("\n");
+                detail.append("Source page: ").append(record.optString("source_page")).append("\n\n");
+                detail.append("TRANSCRIPTION BODY\n");
+                TextView view=text(detail.toString()+body,14,ink,false);view.setTextIsSelectable(true);view.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(title).setView(sv).setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    void showIgntpSearchDialog(){
+        EditText input=new EditText(this);input.setSingleLine(true);input.setHint("Exact word or phrase");
+        new android.app.AlertDialog.Builder(this).setTitle("Search all IGNTP witnesses").setMessage("Searches the transcription body of every licensed TEI witness. Matching files are shown with their individual witness identifiers.").setView(input)
+            .setNegativeButton("Cancel",null).setPositiveButton("Search",(d,w)->{String term=input.getText().toString().trim();if(!term.isEmpty())searchIgntpWitnesses(term);}).show();
+    }
+
+    void searchIgntpWitnesses(String query){
+        final String needle=query.toLowerCase(java.util.Locale.ROOT);
+        new android.os.AsyncTask<Void,Void,java.util.ArrayList<String>>(){
+            protected java.util.ArrayList<String> doInBackground(Void... ignored){
+                java.util.ArrayList<String> hits=new java.util.ArrayList<>();
+                try{
+                    org.json.JSONArray files=readIgntpManifest().optJSONArray("files");
+                    if(files==null)return hits;
+                    for(int i=0;i<files.length()&&hits.size()<100;i++){
+                        org.json.JSONObject record=files.optJSONObject(i);if(record==null)continue;
+                        java.io.InputStream input=null;
+                        try{
+                            input=getAssets().open(record.optString("offline_asset"));
+                            String body=readIgntpBody(input);
+                            if(body.toLowerCase(java.util.Locale.ROOT).contains(needle)){
+                                hits.add(record.optString("work")+" · "+record.optString("collection")+"\n"+
+                                    record.optString("xml_id","(no xml:id)")+" · "+record.optString("manuscript_title",record.optString("title"))+
+                                    "\nArchive member: "+record.optString("archive_member")+"\n");
+                            }
+                        }catch(Exception ignoredFile){}finally{if(input!=null)try{input.close();}catch(Exception ignoredClose){}}
+                    }
+                }catch(Exception ignoredManifest){}
+                return hits;
+            }
+            protected void onPostExecute(java.util.ArrayList<String> hits){
+                StringBuilder out=new StringBuilder();
+                if(hits.isEmpty())out.append("No exact phrase match was found in the licensed IGNTP transcription bodies bundled in this build.");
+                else for(String hit:hits)out.append(hit).append("\n");
+                if(hits.size()==100)out.append("\nResults capped at 100 witnesses.");
+                TextView view=text(out.toString(),14,ink,false);view.setTextIsSelectable(true);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("IGNTP search: "+query).setView(sv).setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
 
     void searchCorpus(String query){
