@@ -720,7 +720,9 @@ def validate_witness_registers():
         assert isinstance(record.get("historical_sequence"), int) and record.get("historical_period") and record.get("historical_order_basis"), f"Missing event-based chronology metadata: {record['id']}"
         assert record.get("historical_anchor_id") and record.get("historical_anchor") and record.get("historical_anchor_basis") and record.get("historical_anchor_status"), f"Missing event-anchor evidence: {record['id']}"
         assert isinstance(record.get("historical_subsequence"), int), f"Missing event sub-sequence: {record['id']}"
-        assert record.get("scope_relationship"), f"Missing scope relationship classification: {record['id']}"
+        assert record.get("scope_relationship") in {"attributed_to_apostle_or_disciple", "attributed_to_or_associated_with_early_disciple", "anonymous_early_community_writing", "later_work_under_apostolic_or_disciple_name", "lost_or_reported_apostolic_correspondence", "broader_early_christian_context_association_unproven"}, f"Invalid scope relationship classification: {record['id']}"
+        assert record.get("historical_order_note"), f"Missing relative-order qualification: {record['id']}"
+        assert record.get("historical_anchor_status"), f"Missing event-anchor status: {record['id']}"
         if record.get("research_sources") is not None:
             assert record["research_sources"] and all(s.get("title") and s.get("url", "").startswith("https://") for s in record["research_sources"]), f"Invalid research source metadata: {record['id']}"
     print(f"Validated unified chronological writings collection: {len(unified['records'])} entries; not restricted to 27.")
