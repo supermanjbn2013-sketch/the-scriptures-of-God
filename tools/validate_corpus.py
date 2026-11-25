@@ -710,6 +710,23 @@ def validate_witness_registers():
     assert len(unified_ids) == len(set(unified_ids)), "Duplicate unified writing identities"
     assert len(unified["records"]) > 27, "Unified collection must extend beyond the 27-item source dataset"
     assert unified["records"] == sorted(unified["records"], key=lambda r: (r.get("historical_sequence", 999), r.get("historical_subsequence", 999), r["title"].casefold())), "Unified writings are not sorted by historical event sequence"
+
+    # Guard the event-based ordering against accidental reversion to composition-date order.
+    assert all(isinstance(r.get("historical_sequence"), int) and isinstance(r.get("historical_subsequence"), int) for r in unified["records"])
+    by_id = {r["id"]: r for r in unified["records"]}
+    corinthian_order = [
+        "paul_previous_corinthian_letter",
+        "1_corinthians",
+        "paul_sorrowful_corinthian_letter",
+        "2_corinthians",
+    ]
+    corinthian_positions = [(by_id[x]["historical_sequence"], by_id[x]["historical_subsequence"]) for x in corinthian_order]
+    assert corinthian_positions == sorted(corinthian_positions) and len(set(corinthian_positions)) == 4, "Corinthian correspondence must retain its explicitly reconstructed event sequence"
+    thessalonians = [by_id["1_thessalonians"], by_id["2_thessalonians"]]
+    assert len({(r["historical_sequence"], r["historical_subsequence"]) for r in thessalonians}) == 1, "Do not force an exact order between the Thessalonian letters"
+    assert "Timothy" in by_id["1_thessalonians"]["historical_anchor_basis"] and "Acts 17" in by_id["1_thessalonians"]["historical_anchor_basis"], "1 Thessalonians must retain its internal travel clues and qualified Acts correlation"
+    assert "disputed" in by_id["2_thessalonians"]["historical_order_note"].lower(), "2 Thessalonians must retain its disputed relative order"
+    assert "Romans 15:25" in by_id["romans"]["historical_anchor_basis"], "Romans must retain its Jerusalem-delivery journey anchor"
     for record in unified["records"]:
         start = record.get("composition_date_start_ce")
         end = record.get("composition_date_end_ce")
