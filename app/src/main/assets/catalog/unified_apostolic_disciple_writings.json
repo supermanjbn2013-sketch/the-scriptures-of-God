@@ -634,7 +634,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "dialogue gospel",
       "attribution_status": "Anonymous work using Judas Iscariot as its narrative frame; title does not establish his authorship.",
-      "textual_status": "Damaged Coptic translation in Codex Tchacos; Greek original is inferred from ancient testimony.",
+      "textual_status": "Damaged Coptic translation in Codex Tchacos; Greek original is inferred from ancient testimony. Manuscript witness identified as Codex Tchacos, tractate 3; damaged Coptic codex with editorial page reconstruction, not a surviving Greek manuscript.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 10,
@@ -653,7 +653,19 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-judas/"
         }
       ],
-      "preservation_status": "surviving_in_fragmentary_coptic_translation"
+      "preservation_status": "surviving_in_fragmentary_coptic_translation",
+      "manuscript_witnesses": [
+        {
+          "id": "Codex_Tchacos_III",
+          "siglum": "Codex Tchacos, tractate 3",
+          "writing": "Sahidic Coptic",
+          "material": "papyrus codex",
+          "date": "Late fourth to early fifth century CE (palaeographic/radiocarbon discussion)",
+          "contents": "More than 90% of the Gospel of Judas survives, but the codex is badly damaged",
+          "text_status": "Primary surviving witness; page reconstructions remain editorial and must be labelled, not silently treated as intact papyrus.",
+          "source": "https://www.gospels.net/manuscript"
+        }
+      ]
     },
     {
       "id": "apocalypse_peter_coptic",
@@ -663,7 +675,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "Coptic apocalypse / revelatory dialogue",
       "attribution_status": "Pseudonymously attributed to Peter; a distinct work unrelated to the Greek/Ethiopic Apocalypse of Peter.",
-      "textual_status": "Coptic witness in Nag Hammadi Codex VII,3; fourth-century codex.",
+      "textual_status": "Coptic witness in Nag Hammadi Codex VII,3; fourth-century codex. Witness register records NHC VII,3, pp. 70–84, as a fourth-century Sahidic Coptic papyrus codex.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 10,
@@ -682,7 +694,21 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-of-peter-coptic/"
         }
       ],
-      "preservation_status": "surviving_in_coptic_nag_hammadi_codex"
+      "preservation_status": "surviving_in_coptic_nag_hammadi_codex",
+      "manuscript_witnesses": [
+        {
+          "id": "NHC_VII_3",
+          "siglum": "Nag Hammadi Codex VII, tractate 3",
+          "shelfmark": "Cairo, Coptic Museum, Inv. 10546",
+          "writing": "Sahidic Coptic",
+          "material": "papyrus codex",
+          "date": "Fourth century CE",
+          "provenance": "Jabal al-Tarif, near Nag Hammadi, Egypt",
+          "contents": "Pages 70–84",
+          "text_status": "Coptic witness; distinct from the Greek Akhmim Apocalypse of Peter and from the Ethiopic version.",
+          "source": "https://www.nasscal.com/manuscripta-apocryphorum/cairo-coptic-museum-inv-10546-nag-hammadi-codex-vii/"
+        }
+      ]
     },
     {
       "id": "epistle_apostles",
@@ -907,7 +933,7 @@
       "date_precision": "provisional broad range; verify scholarly dating",
       "genre": "instruction, letter, or related writing",
       "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek edition text available offline; P.Oxy. 1782 is a fragmentary witness and not a complete papyrus copy.",
+      "textual_status": "Greek edition text available offline; P.Oxy. 1782 is a fragmentary witness and not a complete papyrus copy. Manuscript witnesses now separately identify the 1056 Greek Codex Hierosolymitanus 54, late-fourth-century P.Oxy. 1782 fragments, and the lost Georgian witness known through collation.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "didache",
@@ -935,7 +961,37 @@
       ],
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
       "historical_order_note": "The relative historical order of these community writings is not established; they are grouped by broad early-community setting.",
-      "preservation_status": "surviving_in_greek_codex_and_fragmentary_ancient_versions"
+      "preservation_status": "surviving_in_greek_codex_and_fragmentary_ancient_versions",
+      "manuscript_witnesses": [
+        {
+          "id": "H54",
+          "siglum": "Codex Hierosolymitanus 54",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "1056 CE",
+          "contents": "Nearly complete continuous text of the Didache",
+          "text_status": "Principal continuous Greek witness; later medieval copy, not an original or early papyrus.",
+          "source": "https://www.stromata-ev.de/en/projects/early-christian-texts/didache"
+        },
+        {
+          "id": "P.Oxy.1782",
+          "writing": "Greek",
+          "material": "papyrus fragments",
+          "date": "Late fourth century CE",
+          "contents": "Recto: Didache 1.3d–4a; verso: 2.7b–3.2b",
+          "text_status": "Two short fragments; they preserve only portions of the opening chapters and do not supply a continuous text.",
+          "source": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/sources-date-and-transmission-of-didache-13b21/88EA36C9320BC22D892A2755EAB072C0"
+        },
+        {
+          "id": "Georgian_version",
+          "writing": "Georgian",
+          "material": "translation; manuscript now lost",
+          "date": "Translation dated broadly to fifth–tenth century; surviving collation published in 1932",
+          "contents": "Witness to Didache 1.3d–2.1",
+          "text_status": "The physical manuscript is lost; known through a published collation, not a directly inspectable codex.",
+          "source": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/sources-date-and-transmission-of-didache-13b21/88EA36C9320BC22D892A2755EAB072C0"
+        }
+      ]
     },
     {
       "id": "james",
@@ -2442,7 +2498,7 @@
       "date_precision": "provisional broad range; verify scholarly dating",
       "genre": "instruction, letter, or related writing",
       "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek text available offline in the archive from an edition; edition-derived text, not a new diplomatic transcription of Sinaiticus or PSI 7.757.",
+      "textual_status": "Greek text available offline in the archive from an edition; edition-derived text, not a new diplomatic transcription of Sinaiticus or PSI 7.757. Witness register now distinguishes Codex Sinaiticus, Codex Hierosolymitanus 54, and the Latin version.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "barnabas",
@@ -2466,7 +2522,38 @@
       ],
       "scope_relationship": "anonymous_early_community_writing",
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
-      "preservation_status": "surviving_in_greek_manuscript_transmission"
+      "preservation_status": "surviving_in_greek_manuscript_transmission",
+      "manuscript_witnesses": [
+        {
+          "id": "Codex_Sinaiticus",
+          "siglum": "א / Codex Sinaiticus",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Fourth century CE",
+          "contents": "Complete Epistle of Barnabas; follows Revelation and precedes Shepherd of Hermas in the codex",
+          "text_status": "Early complete Greek witness; manuscript order is not a claim about canon status.",
+          "source": "https://www.newadvent.org/cathen/02299a.htm"
+        },
+        {
+          "id": "Codex_Hierosolymitanus_54",
+          "siglum": "H54",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "1056 CE",
+          "contents": "Epistle of Barnabas among other early Christian writings",
+          "text_status": "Later Greek witness, independent of the Sinaiticus copy according to manuscript tradition summaries.",
+          "source": "https://www.newadvent.org/cathen/02299a.htm"
+        },
+        {
+          "id": "Latin_version",
+          "writing": "Latin",
+          "material": "version in manuscript transmission",
+          "date": "Late fourth century CE (version)",
+          "contents": "Chapters 1–17",
+          "text_status": "A versional witness, not Greek manuscript text; described as free and not sufficient by itself to restore the Greek.",
+          "source": "https://www.newadvent.org/cathen/02299a.htm"
+        }
+      ]
     },
     {
       "id": "hermas",
@@ -2476,7 +2563,7 @@
       "date_precision": "provisional broad range; verify scholarly dating",
       "genre": "instruction, letter, or related writing",
       "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek edition text available offline; not a full diplomatic transcription of all witnesses.",
+      "textual_status": "Greek edition text available offline; not a full diplomatic transcription of all witnesses. Witness register now includes Codex Sinaiticus, P.Mich. 917, Papyrus Bodmer 38, and the divided Grigoriou 96/Leipzig Cod. gr. 9 witness.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "hermas",
@@ -2496,7 +2583,48 @@
       ],
       "scope_relationship": "anonymous_early_community_writing",
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
-      "preservation_status": "surviving_in_greek_manuscript_transmission"
+      "preservation_status": "surviving_in_greek_manuscript_transmission",
+      "manuscript_witnesses": [
+        {
+          "id": "Codex_Sinaiticus",
+          "siglum": "S",
+          "shelfmark": "British Library Add MS 43725",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Fourth century CE",
+          "contents": "Shepherd of Hermas 1.1–95.5 and much of Visions, Mandates, Similitudes through Similitude IX 18",
+          "text_status": "Major early Greek witness, but the codex text is not complete for the whole work.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/hermas"
+        },
+        {
+          "id": "P.Mich.917",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third century CE",
+          "contents": "Similitudes II–IX 5 (sections 51.8–82.1)",
+          "text_status": "Fragmentary papyrus witness.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/hermas"
+        },
+        {
+          "id": "Papyrus_Bodmer_38",
+          "siglum": "B",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Fourth/fifth century CE",
+          "contents": "Similitudes I–III (sections 1–21)",
+          "text_status": "Fragmentary papyrus witness.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/hermas"
+        },
+        {
+          "id": "Grigoriou_96_Leipzig_9",
+          "writing": "Greek",
+          "material": "parchment codex leaves now divided between Athos and Leipzig",
+          "date": "Fourteenth century CE; Leipzig portion copied 1351–1400",
+          "contents": "Additional sections of Visions, Mandates and Similitudes",
+          "text_status": "Later Greek witness split between two libraries; sections must be collated as a divided codex.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/hermas"
+        }
+      ]
     },
     {
       "id": "ignatius_ephesians",
@@ -3284,7 +3412,7 @@
       "date_precision": "Second-century composition commonly proposed; possible earlier sayings traditions and the date of the final collection are debated.",
       "genre": "gospel or apocalypse",
       "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set.",
+      "textual_status": "Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set. Witnesses now identify the complete Coptic copy in NHC II,2 and the three separate Greek Oxyrhynchus papyri (P.Oxy. 1, 654, 655).",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Composition estimate is not the date of the Greek papyrus fragments or the Coptic Nag Hammadi manuscript.",
       "existing_catalogue_id": "gospel_thomas",
@@ -3307,6 +3435,49 @@
         {
           "title": "Gospel of Thomas — Oxyrhynchus Greek fragments",
           "url": "https://gnosis.org/naghamm/thomas_poxy.htm"
+        }
+      ],
+      "manuscript_witnesses": [
+        {
+          "id": "NHC_II_2",
+          "siglum": "Nag Hammadi Codex II, tractate 2",
+          "writing": "Sahidic Coptic",
+          "material": "papyrus codex",
+          "date": "Fourth century CE",
+          "provenance": "Jabal al-Tarif, near Nag Hammadi, Egypt",
+          "contents": "Complete Coptic text of 114 sayings",
+          "text_status": "Only essentially complete surviving copy; Coptic is a separate witness and not the Greek papyrus wording.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/"
+        },
+        {
+          "id": "P.Oxy.654",
+          "writing": "Greek",
+          "material": "papyrus roll fragment",
+          "date": "Ca. 200–250 CE",
+          "provenance": "Oxyrhynchus, Egypt",
+          "contents": "Prologue and portions of sayings 1–7",
+          "text_status": "Fragmentary Greek witness; restorations in editions must be distinguished from visible letters.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/"
+        },
+        {
+          "id": "P.Oxy.1",
+          "writing": "Greek",
+          "material": "papyrus codex fragment",
+          "date": "Second century CE",
+          "provenance": "Oxyrhynchus, Egypt",
+          "contents": "Portions of sayings 26–33 and 77b",
+          "text_status": "Fragmentary Greek witness; not a continuous text.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/"
+        },
+        {
+          "id": "P.Oxy.655",
+          "writing": "Greek",
+          "material": "papyrus roll fragment",
+          "date": "Third century CE",
+          "provenance": "Oxyrhynchus, Egypt",
+          "contents": "Portions of sayings 24 and 36–39",
+          "text_status": "Fragmentary Greek witness; remains separate from P.Oxy. 1 and 654.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/"
         }
       ]
     },
