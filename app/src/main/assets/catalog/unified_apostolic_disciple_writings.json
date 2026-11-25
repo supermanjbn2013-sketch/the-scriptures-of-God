@@ -547,7 +547,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "fragmentary gospel",
       "attribution_status": "Known through later patristic quotations; identity and extent disputed.",
-      "textual_status": "No complete manuscript; preserve each attributed fragment with its quoting source.",
+      "textual_status": "No complete manuscript survives. Available material consists of separately attributed patristic quotations and reports. Keep the wording, attribution, and source locus attached to each fragment; do not merge these automatically with the Ebionite or Nazarene Gospel.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 10,
@@ -566,7 +566,36 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-hebrews/"
         }
       ],
-      "preservation_status": "lost_or_fragmentary"
+      "preservation_status": "lost_or_fragmentary",
+      "surviving_fragments": [
+        {
+          "fragment_id": "GH-Jerome-VirIll-2",
+          "transmitting_author": "Jerome",
+          "source_work": "De viris illustribus",
+          "passage": "2",
+          "language_of_surviving_source": "Latin",
+          "content_scope": "Report and attributed tradition concerning a Gospel used by Jewish-Christian groups; not a continuous quotation.",
+          "status": "Secondary testimony; fragment attribution requires evaluation."
+        },
+        {
+          "fragment_id": "GH-Origen-CommJo-2.12",
+          "transmitting_author": "Origen",
+          "source_work": "Commentary on John",
+          "passage": "2.12",
+          "language_of_surviving_source": "Greek (preserved through later manuscript transmission)",
+          "content_scope": "A quotation or report attributed to the Gospel according to the Hebrews.",
+          "status": "Patristic fragment; preserve the exact quotation with its source, not as an independent Gospel manuscript."
+        },
+        {
+          "fragment_id": "GH-Eusebius-HE-3.25.5",
+          "transmitting_author": "Eusebius",
+          "source_work": "Ecclesiastical History",
+          "passage": "3.25.5",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Names the Gospel according to the Hebrews among disputed writings.",
+          "status": "Ancient bibliographic testimony, not a quotation of the Gospel text."
+        }
+      ]
     },
     {
       "id": "gospel_ebionites",
@@ -576,7 +605,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "fragmentary gospel",
       "attribution_status": "Modern scholarly title for a non-extant gospel known chiefly through Epiphanius.",
-      "textual_status": "Seven principal fragments are attributed through Epiphanius; no complete manuscript survives.",
+      "textual_status": "No independent manuscript of this Gospel survives. Its seven principal fragment groups are transmitted within Epiphanius, Panarion 30. Keep the fragments tied to the exact Panarion sections; do not treat manuscripts of Epiphanius as direct Gospel codices.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 10,
@@ -595,7 +624,18 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-ebionites/"
         }
       ],
-      "preservation_status": "lost_or_fragmentary"
+      "preservation_status": "lost_or_fragmentary",
+      "surviving_fragments": [
+        {
+          "fragment_id": "GE-Epiphanius-Pan-30",
+          "transmitting_author": "Epiphanius of Salamis",
+          "source_work": "Panarion",
+          "passage": "30.13.2–3, 30.13.4, 30.13.6–8, 30.14.3, 30.14.5, 30.16.5, 30.22.4",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Seven principal fragment groups attributed to the Gospel used by the Ebionites.",
+          "status": "Text survives only as quotations embedded in Epiphanius; the manuscript copies are manuscripts of Panarion, not of the Gospel of the Ebionites."
+        }
+      ]
     },
     {
       "id": "gospel_nazarenes",
@@ -605,7 +645,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "hypothetical fragmentary gospel",
       "attribution_status": "A modern scholarly reconstruction from fragments Jerome associated with a Hebrew Gospel used by Nazarenes; separate identity disputed.",
-      "textual_status": "No independent complete manuscript; proposed fragments may overlap with the Gospel of the Hebrews or a Hebrew form of Matthew.",
+      "textual_status": "This is a hypothetical scholarly reconstruction, not an independently established book with its own manuscript. The available material consists of Jerome's reports and attributed excerpts; attribution to a distinct Nazarene Gospel remains disputed. Do not merge with the Gospel of the Hebrews without qualification.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 10,
@@ -624,7 +664,36 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-nazarenes/"
         }
       ],
-      "preservation_status": "hypothetical_reconstruction"
+      "preservation_status": "hypothetical_reconstruction",
+      "surviving_fragments": [
+        {
+          "fragment_id": "GN-Jerome-VirIll-3",
+          "transmitting_author": "Jerome",
+          "source_work": "De viris illustribus",
+          "passage": "3",
+          "language_of_surviving_source": "Latin",
+          "content_scope": "Jerome's report about a Hebrew/Chaldaic Gospel used by Nazarenes and associated by him with Matthew.",
+          "status": "Testimony about a text; not itself a manuscript of that Gospel."
+        },
+        {
+          "fragment_id": "GN-Jerome-Pelag-3.2",
+          "transmitting_author": "Jerome",
+          "source_work": "Dialogue Against the Pelagians",
+          "passage": "3.2",
+          "language_of_surviving_source": "Latin",
+          "content_scope": "A saying attributed to a Hebrew Gospel concerning Jesus' body after resurrection.",
+          "status": "Attribution is debated; some scholars assign the material to the Gospel of the Hebrews instead."
+        },
+        {
+          "fragment_id": "GN-Jerome-CommMatt-6.11",
+          "transmitting_author": "Jerome",
+          "source_work": "Commentary on Matthew",
+          "passage": "6.11",
+          "language_of_surviving_source": "Latin",
+          "content_scope": "Variant wording for the petition concerning daily bread.",
+          "status": "Jerome's report/translation; identity of the underlying Gospel is debated."
+        }
+      ]
     },
     {
       "id": "gospel_judas",
@@ -2826,7 +2895,7 @@
       "date_precision": "Early to mid-second-century estimate; exact date uncertain",
       "genre": "exposition / collected traditions",
       "attribution_status": "Attributed to Papias of Hierapolis. The original work is lost; surviving material consists of fragments quoted by later authors.",
-      "textual_status": "No complete manuscript of the work survives. Preserve each quotation with its quoting author, source work, and exact passage; do not combine fragments into an invented continuous text.",
+      "textual_status": "No complete manuscript of the five-book Exposition survives. The available material is fragmentary quotation and testimony, especially Eusebius, Ecclesiastical History 3.39, and Irenaeus, Against Heresies 5.33.4. Preserve the exact speaker and separate quotations from later authors' summaries.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition estimate is broad and distinct from the dates of later authors who quote Papias.",
       "research_sources": [
@@ -2837,6 +2906,14 @@
         {
           "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        },
+        {
+          "title": "Ad Fontes — Fragments of Papias",
+          "url": "https://adfonteslibrary.org/work-papias-fragments"
+        },
+        {
+          "title": "Eusebius, Ecclesiastical History 3.39",
+          "url": "https://www.ccel.org/ccel/schaff/npnf201.iii.ii.xxxix.html"
         }
       ],
       "preservation_status": "fragmentary_quotations",
@@ -2849,7 +2926,36 @@
       "historical_subsequence": 100,
       "historical_anchor_status": "later_collection",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "Papias-Eusebius-HE-3.39",
+          "transmitting_author": "Eusebius of Caesarea",
+          "source_work": "Ecclesiastical History",
+          "passage": "3.39.1–17",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Papias' own statements about his method and reports about Mark, Matthew, and earlier elders, quoted and summarized by Eusebius.",
+          "status": "The principal surviving block of Papias material; distinguish Papias' quoted words from Eusebius' framing."
+        },
+        {
+          "fragment_id": "Papias-Irenaeus-AH-5.33.4",
+          "transmitting_author": "Irenaeus of Lyons",
+          "source_work": "Against Heresies",
+          "passage": "5.33.4",
+          "language_of_surviving_source": "Greek (also transmitted in ancient Latin)",
+          "content_scope": "A report of Papias' tradition concerning the kingdom and the elders.",
+          "status": "A separate ancient citation; exact wording must follow the relevant witness."
+        },
+        {
+          "fragment_id": "Papias-Eusebius-HE-3.36.2",
+          "transmitting_author": "Eusebius of Caesarea",
+          "source_work": "Ecclesiastical History",
+          "passage": "3.36.2",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Papias' report about the daughters of Philip, transmitted through Eusebius.",
+          "status": "Ancient testimony attributed to Papias; not a complete text of his book."
+        }
+      ]
     },
     {
       "id": "clement_1",
@@ -3585,7 +3691,7 @@
       "date_precision": "Early second-century estimate; exact date uncertain",
       "genre": "apology",
       "attribution_status": "Attributed to Quadratus; only a brief fragment is preserved through Eusebius.",
-      "textual_status": "The work is lost apart from a short quotation. The quotation must remain linked to Eusebius as its transmitting source.",
+      "textual_status": "The Apology itself is lost. Its sole surviving paragraph is quoted by Eusebius, Ecclesiastical History 4.3.2. The archive records the transmitted fragment and its exact source, not a fictitious independent manuscript of Quadratus.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Approximate date inferred from the historical setting of Quadratus's reported address to Hadrian.",
       "research_sources": [
@@ -3596,6 +3702,10 @@
         {
           "title": "Eusebius, Church History 4.3",
           "url": "https://www.ccel.org/ccel/schaff/npnf201.iii.ix.iii.html"
+        },
+        {
+          "title": "Ad Fontes — Quadratus, Fragment of the Apology",
+          "url": "https://adfonteslibrary.org/work-quadratus-fragment"
         }
       ],
       "preservation_status": "fragmentary_quotation",
@@ -3608,7 +3718,18 @@
       "historical_subsequence": 130,
       "historical_anchor_status": "ancient_reported_event_date_approximate",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "The approximate settings overlap in the early-to-mid second century; the sources do not establish which event should be placed first."
+      "historical_order_note": "The approximate settings overlap in the early-to-mid second century; the sources do not establish which event should be placed first.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "Quadratus-Eusebius-HE-4.3.2",
+          "transmitting_author": "Eusebius of Caesarea",
+          "source_work": "Ecclesiastical History",
+          "passage": "4.3.2",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "The sole surviving paragraph from Quadratus' Apology, describing people healed and raised by the Saviour who remained alive for a time.",
+          "status": "The fragment survives only as a quotation in Eusebius; manuscripts of Eusebius transmit this quotation, not an independent copy of Quadratus' Apology."
+        }
+      ]
     },
     {
       "id": "martyrdom_polycarp",
@@ -4554,7 +4675,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "fragmentary sayings gospel",
       "attribution_status": "Known through quotations by Clement, Hippolytus, Epiphanius and others; precise form and community remain debated.",
-      "textual_status": "No complete manuscript; fragments survive in quotations by later writers.",
+      "textual_status": "No complete Greek manuscript of this Gospel is known. The surviving Greek material consists of citations and reports in Clement, Hippolytus, and Epiphanius. These are fragments embedded in their works, not surviving Gospel codices; keep direct quotations distinct from an author's summary.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 90,
@@ -4573,7 +4694,54 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-egyptians/"
         }
       ],
-      "preservation_status": "lost_or_fragmentary"
+      "preservation_status": "lost_or_fragmentary",
+      "surviving_fragments": [
+        {
+          "fragment_id": "GEg-Clement-Strom-3.6.45",
+          "transmitting_author": "Clement of Alexandria",
+          "source_work": "Stromateis",
+          "passage": "3.6.45",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Quotation or allusion attributed to the Gospel according to the Egyptians.",
+          "status": "Fragment preserved in Clement's work."
+        },
+        {
+          "fragment_id": "GEg-Clement-Strom-3.9.63-66",
+          "transmitting_author": "Clement of Alexandria",
+          "source_work": "Stromateis",
+          "passage": "3.9.63–66",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Extended discussion and sayings attributed to the Gospel according to the Egyptians.",
+          "status": "Fragmentary citation in a heresiological discussion."
+        },
+        {
+          "fragment_id": "GEg-Clement-Strom-3.13.92-93",
+          "transmitting_author": "Clement of Alexandria",
+          "source_work": "Stromateis",
+          "passage": "3.13.92–93",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Further material attributed to the Gospel according to the Egyptians.",
+          "status": "Fragment preserved in Clement."
+        },
+        {
+          "fragment_id": "GEg-Hippolytus-Ref-5.7",
+          "transmitting_author": "Hippolytus",
+          "source_work": "Refutation of All Heresies",
+          "passage": "5.7",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Reports the use of the Gospel by Naassenes and cites associated teaching.",
+          "status": "Ancient report and excerpt; distinguish the author's summary from a verbatim Gospel quotation."
+        },
+        {
+          "fragment_id": "GEg-Epiphanius-Pan-62.2.4",
+          "transmitting_author": "Epiphanius",
+          "source_work": "Panarion",
+          "passage": "62.2.4",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Reports sayings attributed to the Gospel of the Egyptians.",
+          "status": "Later patristic testimony."
+        }
+      ]
     },
     {
       "id": "gospel_thomas",
@@ -4775,7 +4943,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "reported sayings and fragments",
       "attribution_status": "The existence of one coherent Gospel is uncertain; sayings are attributed to Matthias in scattered reports.",
-      "textual_status": "No complete manuscript; fragments and reports survive through later authors.",
+      "textual_status": "No manuscript of a complete Gospel of Matthias survives, and even the existence of one coherent Gospel is uncertain. Four brief teachings in Clement's Stromateis are the principal alleged fragments; later heresiological lists are reports, not additional Gospel text.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 90,
@@ -4794,7 +4962,45 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-matthias/"
         }
       ],
-      "preservation_status": "reported_fragments_only"
+      "preservation_status": "reported_fragments_only",
+      "surviving_fragments": [
+        {
+          "fragment_id": "GM-Clement-Strom-2.9.45",
+          "transmitting_author": "Clement of Alexandria",
+          "source_work": "Stromateis",
+          "passage": "2.9.45",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Brief teaching attributed to the Traditions of Matthias.",
+          "status": "One of four principal Clementine fragment loci."
+        },
+        {
+          "fragment_id": "GM-Clement-Strom-3.4.6",
+          "transmitting_author": "Clement of Alexandria",
+          "source_work": "Stromateis",
+          "passage": "3.4.6",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Brief saying attributed to Matthias traditions.",
+          "status": "Attribution to a single coherent Gospel remains uncertain."
+        },
+        {
+          "fragment_id": "GM-Clement-Strom-7.13.82",
+          "transmitting_author": "Clement of Alexandria",
+          "source_work": "Stromateis",
+          "passage": "7.13.82",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Brief teaching attributed to Matthias traditions.",
+          "status": "Fragmentary attribution."
+        },
+        {
+          "fragment_id": "GM-Clement-Strom-7.17.108",
+          "transmitting_author": "Clement of Alexandria",
+          "source_work": "Stromateis",
+          "passage": "7.17.108",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Brief teaching attributed to Matthias traditions.",
+          "status": "Fragmentary attribution."
+        }
+      ]
     },
     {
       "id": "apocalypse_peter",
