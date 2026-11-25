@@ -3969,6 +3969,226 @@
           "contents": "Acts of Peter / Actus Vercellenses",
           "text_status": "Primary witness to the first major narrative section in Latin.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Patmos_Mon_tou_Hagio_I_annou_tou_Theologou_48_fols_308r_314r",
+          "siglum": "Patmos, Monē tou Hagio Iōannou tou Theologou 48, fols. 308r–314r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "9th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Mount_Athos_Mon_Batopediou_84_fols_174r_177v",
+          "siglum": "Mount Athos, Monē Batopediou 84, fols. 174r–177v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "9th/10th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Ohrid_Naroden_Muzej_44_Mo_in_70_pp_500_508",
+          "siglum": "Ohrid, Naroden Muzej 44 (Mošin 70), pp. 500–508",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "11th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Moscow_Pu_kin_Museum_GMII_I_1_b_686_fols_1r_11r",
+          "siglum": "Moscow, Puškin Museum, GMII I.1.b.686, fols. 1r–11r",
+          "writing": "Coptic (Sahidic)",
+          "material": "manuscript witness",
+          "date": "5th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Early Coptic witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Cairo_Coptic_Museum_13446_fols_51r_52v",
+          "siglum": "Cairo, Coptic Museum 13446, fols. 51r–52v",
+          "writing": "Coptic (Sahidic)",
+          "material": "manuscript witness",
+          "date": "7th/8th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Coptic witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "CLM_1998_pp_101_105",
+          "siglum": "CLM 1998, pp. 101–105",
+          "writing": "Coptic (Sahidic)",
+          "material": "manuscript witness",
+          "date": "ca. 10th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Coptic manuscript fragments.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "MONB_BY_pp_83_84",
+          "siglum": "MONB.BY, pp. 83–84",
+          "writing": "Coptic (Sahidic)",
+          "material": "manuscript witness",
+          "date": "ca. 10th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Coptic manuscript fragments.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "MONB_GQ_pp_3_16",
+          "siglum": "MONB.GQ, pp. 3–16",
+          "writing": "Coptic (Sahidic)",
+          "material": "manuscript witness",
+          "date": "ca. 10th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Coptic manuscript fragments.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "MONB_MQ_pp_7_10_13_14_17",
+          "siglum": "MONB.MQ, pp. 7–10, 13–14, 17",
+          "writing": "Coptic (Sahidic)",
+          "material": "manuscript witness",
+          "date": "ca. 10th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Coptic manuscript fragments.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "London_British_Library_Or_678_fols_11v_17v",
+          "siglum": "London, British Library, Or. 678, fols. 11v–17v",
+          "writing": "Ethiopic",
+          "material": "manuscript witness",
+          "date": "15th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Ethiopic versional witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "London_British_Library_Or_683_fols_32v_36v",
+          "siglum": "London, British Library, Or. 683, fols. 32v–36v",
+          "writing": "Ethiopic",
+          "material": "manuscript witness",
+          "date": "17th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Ethiopic versional witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "London_British_Library_Or_685_fols_14v_16v",
+          "siglum": "London, British Library, Or. 685, fols. 14v–16v",
+          "writing": "Ethiopic",
+          "material": "manuscript witness",
+          "date": "18th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Ethiopic versional witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Manchester_John_Rylands_Eth_6_fols_1r_7r",
+          "siglum": "Manchester, John Rylands, Eth. 6, fols. 1r–7r",
+          "writing": "Ethiopic",
+          "material": "manuscript witness",
+          "date": "19th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Ethiopic versional witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "London_British_Library_Add_12172_fols_13r_17r",
+          "siglum": "London, British Library, Add. 12172, fols. 13r–17r",
+          "writing": "Syriac",
+          "material": "manuscript witness",
+          "date": "10th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Syriac manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "London_British_Library_Add_14732_fols_223r_224r",
+          "siglum": "London, British Library, Add. 14732, fols. 223r–224r",
+          "writing": "Syriac",
+          "material": "manuscript witness",
+          "date": "13th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Syriac manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Berlin_Brandenburg_Academy_E29_olim_C22_fol_6",
+          "siglum": "Berlin-Brandenburg Academy, E29 (olim C22), fol. 6",
+          "writing": "Sogdian",
+          "material": "manuscript witness",
+          "date": "Date not specified in catalogue entry",
+          "contents": "Fragment from Peter's contest with Simon",
+          "text_status": "Sogdian fragment; differs substantially from Greek and Syriac forms.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Vatican_BAV_Vat_sir_199_fols_207v_210v",
+          "siglum": "Vatican, BAV, Vat. sir. 199, fols. 207v–210v",
+          "writing": "Arabic (Garshuni)",
+          "material": "manuscript witness",
+          "date": "1545 CE",
+          "contents": "Peter and Simon in Rome, portion",
+          "text_status": "Arabic text written in Syriac script.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Paris_BnF_Arm_110_fols_583r_585r",
+          "siglum": "Paris, BnF, Arm. 110, fols. 583r–585r",
+          "writing": "Armenian",
+          "material": "manuscript witness",
+          "date": "1194 CE",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Armenian versional witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Paris_BnF_Arm_118_fols_299_300",
+          "siglum": "Paris, BnF, Arm. 118, fols. 299–300",
+          "writing": "Armenian",
+          "material": "manuscript witness",
+          "date": "1307 CE",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Armenian versional witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Venice_San_Lazzaro_degli_Armeni_228_olim_653_item_153",
+          "siglum": "Venice, San Lazzaro degli Armeni 228 (olim 653), item 153",
+          "writing": "Armenian",
+          "material": "manuscript witness",
+          "date": "1847 CE",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Armenian manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Moscow_RSL_Undol_skij_1296_fols_239r_249v",
+          "siglum": "Moscow, RSL, Undol'skij 1296, fols. 239r–249v",
+          "writing": "Church Slavonic",
+          "material": "manuscript witness",
+          "date": "15th/16th c.",
+          "contents": "Martyrdom of Peter",
+          "text_status": "Church Slavonic witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Lviv_Komarnjan_s_kyj_Prolog_fols_51_53",
+          "siglum": "Lviv, Komarnjanǐsǐkyj Prolog, fols. 51–53",
+          "writing": "Church Slavonic",
+          "material": "manuscript witness",
+          "date": "Date not specified",
+          "contents": "Acts of Peter material",
+          "text_status": "Church Slavonic manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
         }
       ]
     },
@@ -4043,6 +4263,106 @@
           "date": "14th century CE",
           "contents": "Acts of John, chapters 18–55, 58–86, 106–115",
           "text_status": "Greek manuscript; shares text with Mezzojuzo witness R/Z group.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Vienna_NB_Cod_hist_gr_63_fols_51v_55v",
+          "siglum": "Vienna, ÖNB, Cod. hist. gr. 63, fols. 51v–55v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "1369 CE",
+          "contents": "Acts of John, chs. 87–105",
+          "text_status": "Independent episode.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Istanbul_Patriarchal_Library_Hagia_Trias_102",
+          "siglum": "Istanbul, Patriarchal Library, Hagia Trias 102",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "11th c. (palimpsest; overwritten 15th c.)",
+          "contents": "Acts of John by Prochorus, chs. 18–55, 58–86, 106–115",
+          "text_status": "Disordered palimpsest; separate Prochorus recension.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Mezzojuso_Biblioteca_dell_Istituto_A_Reres_2_fols_20r_66v",
+          "siglum": "Mezzojuso, Biblioteca dell’Istituto A. Reres 2, fols. 20r–66v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "14th c.",
+          "contents": "Acts of John by Prochorus, chs. 18–55, 58–86, 106–115",
+          "text_status": "Text identical to Patmos 188.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Mutilene_Mon_tou_Leim_nos_82_fols_1r_128v",
+          "siglum": "Mutilene, Monē tou Leimōnos 82, fols. 1r–128v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "1575 CE",
+          "contents": "Acts of John by Prochorus, chs. 18–55, 58–86, 106–115",
+          "text_status": "Copy of Patmos 188.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Venice_Biblioteca_Nazionale_Marciana_363_fols_53v_98r",
+          "siglum": "Venice, Biblioteca Nazionale Marciana 363, fols. 53v–98r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "12th/13th c.",
+          "contents": "Acts of John by Prochorus, chs. 58–80",
+          "text_status": "Partial Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Paris_BnF_gr_1468_fols_46v_83r",
+          "siglum": "Paris, BnF, gr. 1468, fols. 46v–83r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "11th c.",
+          "contents": "Acts of John by Prochorus, chs. 38–54, 56–57 and 106–111",
+          "text_status": "Partial Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Dublin_Trinity_College_185_olim_E_3_35_fols_39v_44v",
+          "siglum": "Dublin, Trinity College 185 (olim E.3.35), fols. 39v–44v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "11th c.",
+          "contents": "Acts of John by Prochorus, chs. 106–115",
+          "text_status": "Partial Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Mount_Athos_Megistes_Lavras_50_fols_100_114",
+          "siglum": "Mount Athos, Megistes Lavras Δ 50, fols. 100–114",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "1039 CE",
+          "contents": "Acts of John by Prochorus, chs. 56–57",
+          "text_status": "Witness to two chapters only.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Mount_Sinai_St_Catherine_s_Monastery_gr_497_fols_94r_107v",
+          "siglum": "Mount Sinai, St Catherine's Monastery, gr. 497, fols. 94r–107v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "10th/11th c.",
+          "contents": "Acts of John by Prochorus, chs. 56–57",
+          "text_status": "Witness to two chapters only.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "London_British_Library_Add_19228_Arm_99_fols_1_173",
+          "siglum": "London, British Library, Add. 19228 (Arm. 99), fols. 1–173",
+          "writing": "Armenian",
+          "material": "manuscript witness",
+          "date": "1307 CE",
+          "contents": "Acts of John, chs. 56–57",
+          "text_status": "Armenian version of the two-chapter unit.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
         }
       ]
@@ -4203,6 +4523,376 @@
           "date": "10th century CE",
           "contents": "Acts of Thomas, Recension A, chapters 1–29 and 161–170",
           "text_status": "Greek witness to selected portions; distinct from Syriac transmission.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_1454_fols_99r_107r",
+          "siglum": "Paris, BnF, gr. 1454, fols. 99r–107r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "10th c.",
+          "contents": "Acts of Thomas, Recension A, chs. 1–29",
+          "text_status": "Greek witness to the opening acts.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_1176_fols_66r_81v",
+          "siglum": "Paris, BnF, gr. 1176, fols. 66r–81v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "12th/13th c.",
+          "contents": "Acts of Thomas, Recension A, chs. 1–38 and 42–61",
+          "text_status": "Discontinuous Greek coverage.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_1556_fols_138r_141v",
+          "siglum": "Paris, BnF, gr. 1556, fols. 138r–141v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "15th c.",
+          "contents": "Acts of Thomas, chs. 1–6, 8–11, 13–27, 163, 166–168 and martyrdom",
+          "text_status": "Greek witness with gaps.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Rome_Biblioteca_Angelica_gr_108_B_2_2_fols_32r_43r",
+          "siglum": "Rome, Biblioteca Angelica, gr. 108 (B 2.2), fols. 32r–43r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "11th/12th c.",
+          "contents": "Acts of Thomas, chs. 1–29, 163, 146–148, 168–170",
+          "text_status": "Discontinuous Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Vatican_BAV_Chig_R_VII_51_gr_42_fols_7r_20r",
+          "siglum": "Vatican, BAV, Chig. R. VII. 51 (gr. 42), fols. 7r–20r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "11th/12th c.",
+          "contents": "Acts of Thomas, chs. 1–19 and 155–171",
+          "text_status": "Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_764_fols_440r_441v",
+          "siglum": "Paris, BnF, gr. 764, fols. 440r–441v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "9th c.",
+          "contents": "Acts of Thomas, chs. 144–148 and 163–169",
+          "text_status": "Early Greek fragmentary witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Munich_BSB_Cod_graec_262_fols_106r_109v",
+          "siglum": "Munich, BSB, Cod. graec. 262, fols. 106r–109v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "9th c.",
+          "contents": "Acts of Thomas, chs. 170–171",
+          "text_status": "Greek palimpsest witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Oxford_Bodleian_Clarke_43_fols_23r_33r",
+          "siglum": "Oxford, Bodleian, Clarke 43, fols. 23r–33r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "12th c.",
+          "contents": "Acts of Thomas, chs. 4–29 and 159–171",
+          "text_status": "Discontinuous Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_1510_fols_161r_230r",
+          "siglum": "Paris, BnF, gr. 1510, fols. 161r–230r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "1162 CE",
+          "contents": "Acts of Thomas, chs. 1–171, excluding Hymn of the Pearl",
+          "text_status": "Near-complete Greek witness; Hymn of the Pearl absent.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_1485_fols_40r_47v",
+          "siglum": "Paris, BnF, gr. 1485, fols. 40r–47v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "10th c.",
+          "contents": "Acts of Thomas, chs. 1, 27–29, 144–148",
+          "text_status": "Fragmentary Greek coverage.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_1551_fols_17v_31v_and_38r_42v",
+          "siglum": "Paris, BnF, gr. 1551, fols. 17v–31v and 38r–42v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "14th c.",
+          "contents": "Acts of Thomas, chs. 1–29, 42–50, 62–66, 156–171",
+          "text_status": "Discontinuous Greek coverage.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_1613_fols_137v_156r",
+          "siglum": "Paris, BnF, gr. 1613, fols. 137v–156r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "15th c.",
+          "contents": "Acts of Thomas, chs. 1–29, 144–149, 163–171",
+          "text_status": "Discontinuous Greek coverage.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_1540_fols_126_and_1r_10r",
+          "siglum": "Paris, BnF, gr. 1540, fols. 126 and 1r–10r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "11th c.",
+          "contents": "Acts of Thomas, chs. 1–29",
+          "text_status": "Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Rome_Biblioteca_Vallicelliana_B_35_fols_91v_141r",
+          "siglum": "Rome, Biblioteca Vallicelliana, B 35, fols. 91v–141r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "11th c.",
+          "contents": "Acts of Thomas, chs. 1–171, including Hymn of the Pearl",
+          "text_status": "Greek witness including Hymn of the Pearl.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Vatican_BAV_Vat_gr_1190_fols_100r_112v",
+          "siglum": "Vatican, BAV, Vat. gr. 1190, fols. 100r–112v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "1542 CE",
+          "contents": "Acts of Thomas, chs. 1–11, 40–81, 150–170",
+          "text_status": "Discontinuous Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_1173_A_fols_217v_225v",
+          "siglum": "Paris, BnF, gr. 1173 A, fols. 217v–225v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "12th c.",
+          "contents": "Acts of Thomas, chs. 1–29",
+          "text_status": "Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Vatican_BAV_Vat_gr_797_fols_140r_170r",
+          "siglum": "Vatican, BAV, Vat. gr. 797, fols. 140r–170r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "10th c.",
+          "contents": "Acts of Thomas, chs. 1–59",
+          "text_status": "Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Escorial_Real_Biblioteca_II_09_Andr_s_264_fols_50v_58v",
+          "siglum": "Escorial, Real Biblioteca, Υ. II. 09 (Andrés 264), fols. 50v–58v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "11th c.",
+          "contents": "Acts of Thomas, Recension B, chs. 1–29",
+          "text_status": "Distinct Greek recension.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Escorial_Real_Biblioteca_Y_II_06_Andr_s_314_fols_100v_106v",
+          "siglum": "Escorial, Real Biblioteca, Y. II. 06 (Andrés 314), fols. 100v–106v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "12th c.",
+          "contents": "Acts of Thomas, Recension B, chs. 1–29",
+          "text_status": "Distinct Greek recension.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "St_Petersburg_RNB_906_Gr_94_fols_22r_28r_and_121r_126r",
+          "siglum": "St Petersburg, RNB, Ф. № 906 (Gr.) 94, fols. 22r–28r and 121r–126r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "10th c.",
+          "contents": "Acts of Thomas, Recension B, chs. 1–3, 17–29, 144–149, 163–171",
+          "text_status": "Discontinuous Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "St_Petersburg_RNB_Gr_213_fols_121r_130v",
+          "siglum": "St Petersburg, RNB, Gr. 213, fols. 121r–130v",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "12th c.",
+          "contents": "Acts of Thomas, Recension B, chs. 1–3 and 17–29",
+          "text_status": "Greek witness not used in Lipsius-Bonnet edition.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_gr_1468_fols_91r_95r",
+          "siglum": "Paris, BnF, gr. 1468, fols. 91r–95r",
+          "writing": "Greek",
+          "material": "manuscript witness",
+          "date": "11th c.",
+          "contents": "Acts of Thomas, mixed Recension C, chs. 1–27",
+          "text_status": "Mixed-text Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Jerusalem_Armenian_Patriarchate_St_James_1_g_pp_64",
+          "siglum": "Jerusalem, Armenian Patriarchate, St James 1-g, pp. 64–?",
+          "writing": "Armenian",
+          "material": "manuscript witness",
+          "date": "1418 CE",
+          "contents": "Acts of Thomas, chs. 1–41, 62–81 (abridged), 134–154 (abridged)",
+          "text_status": "Armenian version; end folio not specified in catalogue.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Jerusalem_Armenian_Patriarchate_St_James_368",
+          "siglum": "Jerusalem, Armenian Patriarchate, St James 368",
+          "writing": "Armenian",
+          "material": "manuscript witness",
+          "date": "1300 CE",
+          "contents": "Acts of Thomas",
+          "text_status": "Armenian manuscript witness; detailed coverage not specified.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_Arm_110_fols_490r_500v",
+          "siglum": "Paris, BnF, Arm. 110, fols. 490r–500v",
+          "writing": "Armenian",
+          "material": "manuscript witness",
+          "date": "1194 CE",
+          "contents": "Acts of Thomas",
+          "text_status": "Armenian manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_BnF_Arm_118_fols_34r_38r",
+          "siglum": "Paris, BnF, Arm. 118, fols. 34r–38r",
+          "writing": "Armenian",
+          "material": "manuscript witness",
+          "date": "1307 CE",
+          "contents": "Acts of Thomas",
+          "text_status": "Armenian manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "New_York_Morgan_Library_M635_MICH_CG_fols_6r_14v",
+          "siglum": "New York, Morgan Library, M635 (= MICH.CG), fols. 6r–14v",
+          "writing": "Coptic",
+          "material": "manuscript witness",
+          "date": "ca. 10th c.",
+          "contents": "Martyrdom of Thomas",
+          "text_status": "Coptic witness to martyrdom, not full Greek/Syriac Acts.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "MONB_DM_pp_145_150",
+          "siglum": "MONB.DM, pp. 145–150",
+          "writing": "Coptic",
+          "material": "manuscript witness",
+          "date": "10th–12th c.",
+          "contents": "Martyrdom of Thomas",
+          "text_status": "Coptic manuscript fragment.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "MONB_GQ_pp_50",
+          "siglum": "MONB.GQ, pp. 50–?",
+          "writing": "Coptic",
+          "material": "manuscript witness",
+          "date": "ca. 10th c.",
+          "contents": "Martyrdom of Thomas",
+          "text_status": "Coptic manuscript fragment; ending page uncertain.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "MONB_MQ_pp_49_50_53_56_61_62",
+          "siglum": "MONB.MQ, pp. 49–50, 53–56, 61–62",
+          "writing": "Coptic",
+          "material": "manuscript witness",
+          "date": "ca. 10th c.",
+          "contents": "Martyrdom of Thomas",
+          "text_status": "Coptic manuscript fragments.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "MONB_MR_pp_31_34",
+          "siglum": "MONB.MR, pp. 31–34",
+          "writing": "Coptic",
+          "material": "manuscript witness",
+          "date": "ca. 10th c.",
+          "contents": "Martyrdom of Thomas",
+          "text_status": "Coptic manuscript fragment.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "MONB_MS_pp_105_106_and_109_110",
+          "siglum": "MONB.MS, pp. 105–106 and 109–110",
+          "writing": "Coptic",
+          "material": "manuscript witness",
+          "date": "10th–12th c.",
+          "contents": "Martyrdom of Thomas",
+          "text_status": "Coptic manuscript fragments.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "London_British_Library_Or_678_fols_129r_133v_and_152r_171v",
+          "siglum": "London, British Library, Or. 678, fols. 129r–133v and 152r–171v",
+          "writing": "Ethiopic",
+          "material": "manuscript witness",
+          "date": "15th c.",
+          "contents": "Martyrdom and Acts of Thomas, portions",
+          "text_status": "Ethiopic manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "London_British_Library_Or_683_fols_139r_148v_205r_209r_221r_223r_241v_249r",
+          "siglum": "London, British Library, Or. 683, fols. 139r–148v, 205r–209r, 221r–223r, 241v–249r",
+          "writing": "Ethiopic",
+          "material": "manuscript witness",
+          "date": "17th c.",
+          "contents": "Martyrdom and Acts of Thomas, portions",
+          "text_status": "Ethiopic manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "London_British_Library_Or_685_fols_139v_142v",
+          "siglum": "London, British Library, Or. 685, fols. 139v–142v",
+          "writing": "Ethiopic",
+          "material": "manuscript witness",
+          "date": "18th c.",
+          "contents": "Martyrdom of Thomas",
+          "text_status": "Ethiopic manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Manchester_John_Rylands_Eth_6_fols_88v_92r_133v_142v_211r_219r_228v_242r",
+          "siglum": "Manchester, John Rylands, Eth. 6, fols. 88v–92r, 133v–142v, 211r–219r, 228v–242r",
+          "writing": "Ethiopic",
+          "material": "manuscript witness",
+          "date": "19th c.",
+          "contents": "Acts I and III and Martyrdom of Thomas",
+          "text_status": "Ethiopic manuscript witness with specified portions.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Tbilisi_Simon_Janashia_Museum_H_341_pp_240_260",
+          "siglum": "Tbilisi, Simon Janashia Museum, H.341, pp. 240–260",
+          "writing": "Georgian",
+          "material": "manuscript witness",
+          "date": "11th c.",
+          "contents": "Martyrdom of Thomas (translation of Armenian BHO 1215)",
+          "text_status": "Georgian version derived from Armenian, not an independent Greek witness.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
         }
       ]
