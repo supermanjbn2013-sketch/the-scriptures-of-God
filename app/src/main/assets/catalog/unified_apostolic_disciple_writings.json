@@ -1268,7 +1268,17 @@
       "historical_subsequence": 65,
       "historical_anchor_status": "explicit_reference_unidentified",
       "scope_relationship": "lost_or_reported_apostolic_correspondence",
-      "historical_order_note": "These settings do not establish a relative chronological order with one another; the shared display position is a provisional grouping only."
+      "historical_order_note": "These settings do not establish a relative chronological order with one another; the shared display position is a provisional grouping only.",
+      "research_sources": [
+        {
+          "title": "Mark Allan Powell, Supplement to Introducing the New Testament — The Letter from Laodicea",
+          "url": "https://cdn.bakerpublishinggroup.com/processed/esource-assets/files/1926/original/19.21.The_Letter_from_Laodicea.pdf?1525181283="
+        },
+        {
+          "title": "Oxford Handbook of Early Christian Apocrypha — The Letter to the Laodiceans",
+          "url": "https://gnosis.study/library/%D0%93%D0%BD%D0%BE%D0%B7%D0%B8%D1%81/%2B%20%D0%9D%D0%B5%20%D1%82%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%BE%20%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%81%D0%B5/ENG/The%20Oxford%20Handbook%20of%20Early%20Christian%20Apocrypha.pdf"
+        }
+      ]
     },
     {
       "id": "third_corinthians",
