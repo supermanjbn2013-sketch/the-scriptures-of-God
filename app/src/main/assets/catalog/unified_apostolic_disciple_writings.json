@@ -3639,7 +3639,7 @@
       "date_precision": "Approximate early to mid-second-century date",
       "genre": "apology",
       "attribution_status": "Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison.",
-      "textual_status": "Manuscript witnesses now distinguish the seventh-century complete Syriac translation (Sinai Syr. 16), two fourth-century Greek papyrus fragments with shelfmarks not specified in the cited catalogue, and the partial Armenian witnesses. The complete Syriac translation is not the original Greek.",
+      "textual_status": "Manuscript witnesses distinguish the seventh-century complete Syriac translation (Sinai Syr. 16), the fourth-century Greek codex represented by P.Oxy. XV 1778 and P.Heid. inv. G 1013 (two fragments of one codex, covering parts of Apology 4.3–6.2), the separate early-fourth-century Greek codex P.Lond. Lit. 223 / British Library Papyrus 2486 (15.4–16.2), and the partial Armenian witnesses. The complete Syriac translation is not the original Greek. The two Oxyrhynchus/Heidelberg fragments must not be counted as two independent codices.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date is approximate; language and date of surviving copies are separate evidence.",
       "research_sources": [
@@ -3654,6 +3654,18 @@
         {
           "title": "Marcianus Aristides, On The Worship of God",
           "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/marcianus-aristides-on-the-worship-of-god/E82BA3C0F42673A88421E2B27B8575E4"
+        },
+        {
+          "title": "British Library Archives and Manuscripts — Papyrus 2486 (P.Lond. Lit. 223)",
+          "url": "https://searcharchives.bl.uk/catalog/040-002105520"
+        },
+        {
+          "title": "4CARE Artefacts — P.Oxy. XV 1778 and P.Heid. inv. G 1013",
+          "url": "https://www.4care-skos.mf.no/4care-artefacts/384/"
+        },
+        {
+          "title": "Grenfell and Hunt, The Oxyrhynchus Papyri, Part XV — no. 1778",
+          "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/The_Oxyrhynchus_papyri%2C_part_15._Bernard_Pyne_Grenfell%2C_Arthur_Surridge_Hunt._1922_%28IA_oxyrhynchuspapyr15gren%29.pdf"
         }
       ],
       "preservation_status": "surviving_in_multiple_language_versions",
@@ -3679,13 +3691,24 @@
           "source": "https://gedsh.bethmardutho.org/Aristides-of-Athens"
         },
         {
-          "id": "Greek_papyrus_fragments",
+          "id": "POxy_1778_PHeid_G1013",
+          "siglum": "P.Oxy. XV 1778 + P.Heid. inv. G 1013",
           "writing": "Greek",
-          "material": "two fragmentary papyri",
+          "material": "papyrus codex fragments",
           "date": "Fourth century CE",
-          "contents": "Small portions of the original Greek Apology",
-          "text_status": "Only fragments of the Greek original survive; the source summary does not identify exact shelfmarks, so none are guessed here.",
-          "source": "https://gedsh.bethmardutho.org/Aristides-of-Athens"
+          "contents": "Apology 4.3–6.2, with lacunae; the Oxyrhynchus and Heidelberg fragments belong to the same codex",
+          "text_status": "Two separately catalogued fragments from one Greek codex, not two independent manuscript witnesses. The surviving text is badly damaged and incomplete.",
+          "source": "https://www.4care-skos.mf.no/4care-artefacts/384/"
+        },
+        {
+          "id": "PLond_Lit_223_Papyrus_2486",
+          "siglum": "P.Lond. Lit. 223; British Library Papyrus 2486",
+          "writing": "Greek",
+          "material": "papyrus codex bifolium (one sheet forming two leaves)",
+          "date": "Early fourth century CE",
+          "contents": "Apology 15.4–16.2; the other leaf of the same bifolium contains Song of Songs 5:12–6:10",
+          "text_status": "A separate Greek codex witness from the P.Oxy. 1778 / P.Heid. inv. G 1013 codex. The British Library catalogue dates the bifolium to the early fourth century and provides digitised access.",
+          "source": "https://searcharchives.bl.uk/catalog/040-002105520"
         },
         {
           "id": "Matenadaran_2679",
@@ -3718,7 +3741,7 @@
           "source": "https://www.academia.edu/29503347/The_Textual_Witnesses_to_the_Second-Century_Apology_of_Aristides"
         }
       ],
-      "description": "Apology of Aristides is a apology writing in the Unified Apostolic and Disciple collection. Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison. Manuscript witnesses now distinguish the seventh-century complete Syriac translation (Sinai Syr. 16), two fourth-century Greek papyrus fragments with shelfmarks not specified in the cited catalogue, and the partial Armenian witnesses. The complete Syriac translation is not the original Greek. The catalogue identifies 5 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+      "description": "Apology of Aristides is an apology writing in the Unified Apostolic and Disciple collection. Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison. Manuscript witnesses distinguish the seventh-century complete Syriac translation (Sinai Syr. 16), the fourth-century Greek codex represented by P.Oxy. XV 1778 and P.Heid. inv. G 1013 (two fragments of one codex), the separate early-fourth-century Greek codex P.Lond. Lit. 223 / British Library Papyrus 2486, and the partial Armenian witnesses. The complete Syriac translation is not the original Greek. The two Oxyrhynchus/Heidelberg fragments are not independent codices. The catalogue keeps physical manuscript dates, language, extent, and textual limits separate."
     },
     {
       "id": "polycarp_philippians",
