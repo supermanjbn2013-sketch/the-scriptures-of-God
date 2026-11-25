@@ -60,12 +60,8 @@
           "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
           "contents": "Gospel of John; substantial but not complete text",
           "text_status": "IGNTP diplomatic transcription exists as TEI XML. The transcription is a separate witness record and must not be silently conflated with an edited critical text.",
-          "transcription_source": {
-            "title": "INTF NTVMR diplomatic transcription of GA P66, docID 10066, pageID 10",
-            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10066&pageID=10&format=txt",
-            "license": "CC BY 4.0 as stated in the transcription file"
-          },
-          "transcription_license": "The deposited transcription specifies Creative Commons BY-NC-SA in its header; preserve attribution and non-commercial/share-alike conditions before redistribution.",
+          "transcription_source": "https://epapers.bham.ac.uk/id/eprint/1759/",
+          "transcription_license": "INTF NTVMR diplomatic transcription: CC BY 4.0 as stated in the transcription file. Do not apply Bodmer Lab or Vatican image terms to the text transcription.",
           "image_and_catalogue_source": "https://manuscripts.csntm.org/",
           "sample_passage": "John 1:1–14 (page 1; verse 14 continues onto page 2)",
           "greek_transcription_lines": [
@@ -187,11 +183,7 @@
           "contents": "Large portions of Luke and John, with substantial lacunae",
           "text_status": "Fragmentary witness; many pages damaged or missing.",
           "sample_passage": "Luke 3:18–22, folio 7 recto (NTVMR page 20)",
-          "transcription_source": {
-            "title": "INTF NTVMR diplomatic transcription of GA P75, docID 10075, pageID 20",
-            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10075&pageID=20&format=txt",
-            "license": "CC BY 4.0 as stated in the transcription file"
-          },
+          "transcription_source": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10075&pageID=20&format=txt",
           "greek_transcription_lines": [
             "^{3:18} [μεν ουν και ετερα παρακαλω]ν",
             "[ευηγγελι]ζ̣ε̣[το] τ̣ον λαον· ^{19} [ο δε η]ρω",
@@ -210,7 +202,8 @@
           ],
           "english_translation": "And while he was exhorting, he was proclaiming good news to the people. But Herod the tetrarch, being reproved by him concerning Herodias, the wife of his brother, and concerning all the evil things Herod had done, added this also to all the rest: he shut John up in prison. Now it happened, when all the people had been baptized, and Jesus also had been baptized and was praying, that heaven was opened, and the holy Spirit descended in bodily form, like a dove …",
           "translation_note": "New English rendering from the Greek transcription, not a later English Bible translation. Square brackets mark supplied letters or words where the papyrus is damaged or illegible; underdots mark uncertain letters. Verse 22 continues beyond the surviving portion shown in this transcription.",
-          "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Vatican Library images have separate rights and are not bundled here."
+          "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Vatican Library images have separate rights and are not bundled here.",
+          "transcription_license": "INTF NTVMR diplomatic transcription: CC BY 4.0 as stated in the transcription file. Do not apply Bodmer Lab or Vatican image terms to the text transcription."
         }
       ]
     },
@@ -414,7 +407,7 @@
           "material": "papyrus codex leaf fragment",
           "date": "Second century CE (palaeographic estimate; exact date disputed)",
           "provenance": "Oxyrhynchus, Egypt",
-          "current_location": "Bodleian Art, Archaeology and Ancient World Library, Oxford, United Kingdom",
+          "current_location": "Bodleian Art, Archaeology and Ancient World Library, Oxford, United Kingdom (P.Oxy. 4404; Sackler/Papyrology Rooms cataloguing)",
           "contents": "Matthew 21:34–37 on the recto; tentative, very faint traces associated with Matthew 21:43 and 45 on the verso",
           "physical_extent": "One small fragment; recto preserves part of the upper and outer margins",
           "text_status": "Fragmentary. The recto transcription below follows the published transcription; line-end breaks are retained. The verso readings are too uncertain to present as a continuous text.",
@@ -439,14 +432,14 @@
           "source_references": [
             {
               "title": "CSNTM — P104 manuscript record",
-              "url": "https://manuscripts.csntm.org/manuscript/Group/GA_P104"
+              "url": "https://manuscripts.csntm.org/Manuscript/Group/GA_P104"
             },
             {
-              "title": "Handley et al., The Oxyrhynchus Papyri LXIV (1997), no. 4404",
+              "title": "E. W. Handley et al., The Oxyrhynchus Papyri LXIV (1997), no. 4404",
               "url": "https://www.papyrology.ox.ac.uk/"
             },
             {
-              "title": "Papyrus 104 — Greek transcription and description",
+              "title": "Papyrus 104 — transcription and description",
               "url": "https://www.islamic-awareness.org/bible/text/mss/p104"
             }
           ],
