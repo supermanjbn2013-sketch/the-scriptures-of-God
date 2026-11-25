@@ -727,6 +727,10 @@ def validate_witness_registers():
     assert "Timothy" in by_id["1_thessalonians"]["historical_anchor_basis"] and "Acts 17" in by_id["1_thessalonians"]["historical_anchor_basis"], "1 Thessalonians must retain its internal travel clues and qualified Acts correlation"
     assert "disputed" in by_id["2_thessalonians"]["historical_order_note"].lower(), "2 Thessalonians must retain its disputed relative order"
     assert "Romans 15:25" in by_id["romans"]["historical_anchor_basis"], "Romans must retain its Jerusalem-delivery journey anchor"
+    peter = by_id["1_peter"]
+    assert "1 Peter 1:1" in peter["historical_anchor_basis"] and "Silvanus" in peter["historical_anchor_basis"] and "Mark" in peter["historical_anchor_basis"], "1 Peter must retain its internal audience and closing-greeting clues"
+    assert "commonly interpreted as Rome" in peter["historical_anchor_basis"] and "rather than an explicit place-name" in peter["historical_anchor_basis"], "Do not treat Babylon as an uncontested explicit place-name"
+    assert "no exact relative event order" in peter["historical_order_note"], "Do not force 1 Peter into a precise relative chronology"
     ignatius_smyrna = {"ignatius_ephesians", "ignatius_magnesians", "ignatius_trallians", "ignatius_romans"}
     ignatius_troas = {"ignatius_philadelphians", "ignatius_smyrnaeans", "ignatius_polycarp"}
     assert all(by_id[x]["historical_subsequence"] == 120 for x in ignatius_smyrna), "Ignatius's Smyrna dispatches must share one event position"

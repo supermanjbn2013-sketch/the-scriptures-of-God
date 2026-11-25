@@ -481,21 +481,29 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "asia_minor_recipients",
       "historical_anchor": "Communities addressed in Pontus, Galatia, Cappadocia, Asia and Bithynia",
-      "historical_anchor_basis": "The geographical addressees are explicit in 1 Peter 1:1. The letter's date, place of writing and whether the persecution references describe a specific imperial event remain disputed.",
+      "historical_anchor_basis": "The geographical addressees are explicit in 1 Peter 1:1. The closing lines name Silvanus and Mark (5:12–13) and locate the sender with the community described as being 'in Babylon' (5:13). Babylon is commonly interpreted as Rome, but that identification is an interpretation rather than an explicit place-name; the letter's authorship, date and place of writing remain disputed. If Peter wrote it, a mid-60s setting is possible; if it is pseudonymous, later first-century settings are proposed. The persecution language does not by itself identify one imperial persecution or establish a precise event date.",
       "historical_subsequence": 55,
-      "historical_anchor_status": "geographic_audience_date_disputed",
+      "historical_anchor_status": "geographic_audience_and_provenance_disputed",
       "research_sources": [
+        {
+          "title": "1 Peter: Contested Issues — Oxford Handbook of Hebrews and the Catholic Epistles (2024)",
+          "url": "https://academic.oup.com/edited-volume/57514/chapter-abstract/467936100"
+        },
+        {
+          "title": "The Product of a Petrine Circle? A Reassessment of the Origin and Character of 1 Peter — Journal for the Study of the New Testament",
+          "url": "https://journals.sagepub.com/doi/pdf/10.1177/0142064X0202400402"
+        },
         {
           "title": "The Setting for 1 Peter",
           "url": "https://www.uibk.ac.at/iup/buch_pdfs/matthew_paul_others/10.152033187-66-5-12.pdf"
         },
         {
-          "title": "The Address of 1 Peter",
-          "url": "https://journals.sagepub.com/doi/10.1177/001452467808900805"
+          "title": "1 Peter 5:12–14 — NET Bible textual notes on Silvanus and Babylon",
+          "url": "https://classic.net.bible.org/passage.php?passage=1Pe+5%3A12-14"
         }
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "The addressed regions and closing greetings provide a broad community setting, but they do not establish a datable journey or an exact place/date. 'Babylon' is commonly read as Rome, not stated as Rome; Silvanus may have carried the letter or assisted in its production. Authorship and date remain disputed, so no exact relative event order with Paul's letters, Acts, or Revelation is claimed."
     },
     {
       "id": "colossians",
