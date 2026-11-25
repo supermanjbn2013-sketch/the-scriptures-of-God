@@ -122,8 +122,6 @@ public class MainActivity extends Activity {
 
 
     void renderUnifiedWritings(String query){
-        content.addView(text("ONE HISTORICAL COLLECTION • ORDERED BY EVENTS",12,gold,true));
-        content.addView(text("This collection is limited to writings attributed to, associated with, or reporting writings of apostles and early disciples; it is not a catalogue of all ancient writings. Later works using apostolic names are marked separately. A few contextual comparison records have disputed or unproven links and are clearly labeled; they are not treated as proven apostolic or disciple authorship. Inclusion does not establish authorship or authority. The list follows represented events and historical settings. Equal event-order groups do not claim an exact order between their writings. Writings without a recoverable event sequence are kept in a separate final group, not ordered by composition date. Composition and manuscript dates are separate reference details.",13,muted,false));
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/unified_apostolic_disciple_writings.json"),"UTF-8"));
             StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
@@ -132,83 +130,61 @@ public class MainActivity extends Activity {
             for(int i=0;i<records.length();i++)ordered.add(records.getJSONObject(i));
             java.util.Collections.sort(ordered,(a,b)->{int p=Integer.compare(a.optInt("historical_sequence",999),b.optInt("historical_sequence",999));if(p!=0)return p;int q=Integer.compare(a.optInt("historical_subsequence",999),b.optInt("historical_subsequence",999));return q!=0?q:a.optString("title","").compareToIgnoreCase(b.optString("title",""));});
             int shown=0;
-            String lastPeriod="";
-            String lastAnchorId="";
-            for(int i=0;i<ordered.size();i++){
-                org.json.JSONObject record=ordered.get(i);
+            for(org.json.JSONObject record:ordered){
                 String title=record.optString("title","Untitled record");
-                String genre=record.optString("genre","writing");
-                String attribution=record.optString("attribution_status","");
-                boolean hasDate=!record.isNull("composition_date_start_ce")&&!record.isNull("composition_date_end_ce");
-                String date=hasDate?(record.optInt("composition_date_start_ce")==record.optInt("composition_date_end_ce")?record.optInt("composition_date_start_ce")+" CE":record.optInt("composition_date_start_ce")+"–"+record.optInt("composition_date_end_ce")+" CE"):"Date undetermined";
-                String hay=(title+" "+genre+" "+attribution+" "+record.optString("textual_status","")+" "+record.optString("historical_anchor","")+" "+record.optString("historical_period","")+" "+record.optString("scope_relationship","")).toLowerCase(java.util.Locale.ROOT);
+                String hay=(title+" "+record.optString("description","")+" "+record.optString("genre","")+" "+record.optString("attribution_status","")+" "+record.optString("textual_status","")).toLowerCase(java.util.Locale.ROOT);
                 if(!query.isEmpty()&&!hay.contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
-                String period=record.optString("historical_period","Historical setting not classified");
-                String anchorId=record.optString("historical_anchor_id","");
-                if(!period.equals(lastPeriod)){
-                    TextView periodHeading=text(period,17,gold,true);
-                    periodHeading.setPadding(4,16,4,5);
-                    content.addView(periodHeading);
-                    lastPeriod=period;
-                    lastAnchorId="";
-                }
-                if(!anchorId.equals(lastAnchorId)){
-                    TextView eventHeading=text(record.optString("historical_anchor","Historical event or setting not established"),13,ink,true);
-                    eventHeading.setPadding(8,5,8,8);
-                    content.addView(eventHeading);
-                    lastAnchorId=anchorId;
-                }
-                LinearLayout row=new LinearLayout(this);row.setOrientation(1);row.setPadding(12,7,12,7);row.setBackground(shape(panel));
-                row.addView(text(title,15,ink,true));
-                row.addView(text("Collection relationship: "+record.optString("scope_relationship","not classified").replace("_"," "),11,muted,false));
-                String orderNote=record.optString("historical_order_note","");
-                if(!orderNote.isEmpty()&&!orderNote.startsWith("This is an event/context grouping")){TextView orderView=text("Event-order note: "+orderNote,11,muted,false);orderView.setMaxLines(3);row.addView(orderView);}
-                row.addView(text("Composition: "+date+"  •  "+genre,11,muted,false));
-                TextView status=text(attribution,12,muted,false);status.setMaxLines(3);row.addView(status);
-                LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,4,0,5);content.addView(row,rp);
-                row.setOnClickListener(v->showUnifiedWritingDetail(record));
+                TextView titleView=text(title,16,ink,true);
+                titleView.setPadding(14,13,14,13);
+                titleView.setBackground(shape(panel));
+                LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.setMargins(0,3,0,3);
+                content.addView(titleView,lp);
+                titleView.setOnClickListener(v->showUnifiedWritingDetail(record));
                 shown++;
             }
-            if(shown==0)content.addView(text("No matching writing records.",14,muted,false));
-            content.addView(text(shown+" records shown. Ordered by represented events and historical setting, not composition date.",12,muted,false));
-        }catch(Exception e){
-            content.addView(text("The unified writings catalogue could not be opened: "+e.getMessage(),13,muted,false));
-        }
+            if(shown==0)content.addView(text("No matching writing titles.",14,muted,false));
+        }catch(Exception e){content.addView(text("The unified writings catalogue could not be opened: "+e.getMessage(),13,muted,false));}
     }
 
     void showUnifiedWritingDetail(org.json.JSONObject record){
         StringBuilder detail=new StringBuilder();
+        detail.append(record.optString("description","Description not yet available.")).append("\n\n");
+        detail.append("Historical setting: ").append(record.optString("historical_anchor","Not established")).append("\n");
         boolean hasDate=!record.isNull("composition_date_start_ce")&&!record.isNull("composition_date_end_ce");
         String date=hasDate?(record.optInt("composition_date_start_ce")==record.optInt("composition_date_end_ce")?record.optInt("composition_date_start_ce")+" CE":record.optInt("composition_date_start_ce")+"–"+record.optInt("composition_date_end_ce")+" CE"):"Undetermined";
-        detail.append("Historical period: ").append(record.optString("historical_period","Unclassified")).append("\n");
-        detail.append("Historical event / setting: ").append(record.optString("historical_anchor","Not established")).append("\n");
-        detail.append("Event-order evidence: ").append(record.optString("historical_anchor_basis","Not specified")).append("\n");
-        detail.append("Event-order status: ").append(record.optString("historical_anchor_status","Not specified")).append("\n");
-        detail.append("Relative-order note: ").append(record.optString("historical_order_note","No exact relative order established")).append("\n");
-        detail.append("Historical order basis: ").append(record.optString("historical_order_basis","Not specified")).append("\n");
         detail.append("Estimated composition: ").append(date).append("\n");
-        detail.append("Date note: ").append(record.optString("date_precision")).append("\n\n");
-        detail.append("Genre: ").append(record.optString("genre")).append("\n\n");
-        detail.append("Collection relationship: ").append(record.optString("scope_relationship","Not classified")).append("\n\n");
-        detail.append("Attribution and authorship: ").append(record.optString("attribution_status")).append("\n\n");
-        detail.append("Textual / preservation status: ").append(record.optString("textual_status")).append("\n\n");
-        detail.append("Historical reference: ").append(record.optString("related_scriptural_reference","Not specified")).append("\n\n");
-        detail.append("Chronology basis: ").append(record.optString("chronology_basis")).append("\n\n");
-        detail.append("Later compilation classification: ").append(record.optString("later_canonical_compilation_status")).append("\n\n");
-        detail.append("Preservation category: ").append(record.optString("preservation_status","Not yet classified"));
-        org.json.JSONArray sources=record.optJSONArray("research_sources");
-        if(sources!=null&&sources.length()>0){
-            detail.append("\n\nResearch references:");
-            for(int i=0;i<sources.length();i++){
-                org.json.JSONObject source=sources.optJSONObject(i);
-                if(source!=null)detail.append("\n").append(source.optString("title","Source")).append("\n").append(source.optString("url",""));
+        detail.append("Genre: ").append(record.optString("genre","Not classified")).append("\n");
+        detail.append("Attribution and authorship: ").append(record.optString("attribution_status","Not established")).append("\n\n");
+        detail.append("Textual and preservation status: ").append(record.optString("textual_status","Not documented")).append("\n");
+        detail.append("Preservation category: ").append(record.optString("preservation_status","Not classified")).append("\n");
+        detail.append("Collection relationship: ").append(record.optString("scope_relationship","Not classified")).append("\n");
+        if(!record.optString("related_scriptural_reference","").isEmpty())detail.append("Related reference: ").append(record.optString("related_scriptural_reference")).append("\n");
+        org.json.JSONArray witnesses=record.optJSONArray("manuscript_witnesses");
+        if(witnesses!=null&&witnesses.length()>0){
+            detail.append("\nMANUSCRIPT AND TRANSMISSION WITNESSES\n");
+            for(int i=0;i<witnesses.length();i++){
+                org.json.JSONObject w=witnesses.optJSONObject(i);if(w==null)continue;
+                detail.append("\n").append(w.optString("siglum",w.optString("id",w.optString("name","Witness")))).append("\n");
+                for(String key:new String[]{"shelfmark","writing","material","date","provenance","current_location","contents","text_status","transcription_note","lacuna_policy","rights_note"}){
+                    String value=w.optString(key,"");if(!value.isEmpty())detail.append(key.replace("_"," ")).append(": ").append(value).append("\n");
+                }
+                org.json.JSONArray greek=w.optJSONArray("greek_transcription_lines");if(greek==null)greek=w.optJSONArray("greek_transcription_lines_recto");
+                if(greek!=null&&greek.length()>0){detail.append("Greek transcription (as recorded):\n");for(int k=0;k<greek.length();k++)detail.append(greek.optString(k)).append("\n");}
+                org.json.JSONArray verso=w.optJSONArray("greek_transcription_lines_verso");
+                if(verso!=null&&verso.length()>0){detail.append("Greek transcription, verso:\n");for(int k=0;k<verso.length();k++)detail.append(verso.optString(k)).append("\n");}
+                for(String key:new String[]{"english_translation","english_translation_recto","english_translation_verso","translation_note"}){String value=w.optString(key,"");if(!value.isEmpty())detail.append(key.replace("_"," ")).append(":\n").append(value).append("\n");}
+                org.json.JSONArray translations=w.optJSONArray("english_translation_lines");if(translations!=null&&translations.length()>0){detail.append("English rendering:\n");for(int k=0;k<translations.length();k++)detail.append(translations.optString(k)).append("\n");}
+                org.json.JSONArray srcs=w.optJSONArray("sources");if(srcs==null)srcs=w.optJSONArray("source_references");
+                if(srcs!=null)for(int k=0;k<srcs.length();k++){org.json.JSONObject src=srcs.optJSONObject(k);if(src!=null)detail.append("Source: ").append(src.optString("title","Reference")).append(" ").append(src.optString("url","")).append("\n");}
+                String source=w.optString("source","");if(!source.isEmpty())detail.append("Source: ").append(source).append("\n");
             }
         }
+        org.json.JSONArray sources=record.optJSONArray("research_sources");
+        if(sources!=null&&sources.length()>0){detail.append("\nRESEARCH REFERENCES\n");for(int i=0;i<sources.length();i++){org.json.JSONObject source=sources.optJSONObject(i);if(source!=null)detail.append(source.optString("title","Source")).append("\n").append(source.optString("url","")).append("\n");}}
         TextView view=text(detail.toString(),14,ink,false);view.setTextIsSelectable(true);
-        android.text.util.Linkify.addLinks(view,android.text.util.Linkify.WEB_URLS);
-        view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
+        android.text.util.Linkify.addLinks(view,android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
         ScrollView scroll=new ScrollView(this);scroll.setPadding(12,8,12,8);scroll.addView(view);
-        new android.app.AlertDialog.Builder(this).setTitle(record.optString("title","Writing record")).setView(scroll).setPositiveButton("Close",null).show();
+        new android.app.AlertDialog.Builder(this).setTitle(record.optString("title","Writing")).setView(scroll).setPositiveButton("Close",null).show();
     }
 
     String libraryCategory="Bookmarks";

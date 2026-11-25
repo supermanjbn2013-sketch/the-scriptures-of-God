@@ -205,7 +205,8 @@
           "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Vatican Library images have separate rights and are not bundled here.",
           "transcription_license": "INTF NTVMR diplomatic transcription: CC BY 4.0 as stated in the transcription file. Do not apply Bodmer Lab or Vatican image terms to the text transcription."
         }
-      ]
+      ],
+      "description": "Gospel of John is a gospel writing in the Unified Apostolic and Disciple collection. Anonymous narrative traditionally associated with the disciple John; authorship is not stated in the text. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. A P52 witness record now includes recto/verso Greek transcription with editorial restorations bracketed and an English rendering from that transcription. P66 now includes a first-hand Greek transcription sample for John 1:1–14 and a fresh English rendering from that transcription; P75 includes Luke 3:18–22 separately. The catalogue identifies 4 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "luke",
@@ -301,7 +302,8 @@
           "translation_note": "New English rendering from the Greek transcription, not a later English Bible translation. Square brackets mark supplied letters or words where the papyrus is damaged or illegible; underdots mark uncertain letters. Verse 22 continues beyond the surviving portion shown in this transcription.",
           "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Vatican Library images have separate rights and are not bundled here."
         }
-      ]
+      ],
+      "description": "Gospel of Luke is a gospel writing in the Unified Apostolic and Disciple collection. Anonymous narrative traditionally associated with Luke; authorship is not stated in the text. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P75 now includes the Greek transcription and fresh English rendering for Luke 3:18–22, with restorations bracketed and uncertain letters marked. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "mark",
@@ -360,7 +362,8 @@
           ],
           "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
         }
-      ]
+      ],
+      "description": "Gospel of Mark is a gospel writing in the Unified Apostolic and Disciple collection. Anonymous narrative traditionally associated with Mark; authorship is not stated in the text. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "matthew",
@@ -473,7 +476,8 @@
           ],
           "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
         }
-      ]
+      ],
+      "description": "Gospel of Matthew is a gospel writing in the Unified Apostolic and Disciple collection. Anonymous narrative traditionally associated with Matthew; authorship is not stated in the text. A manuscript-specific Greek transcription and an English rendering directly from that transcription are now recorded for P104, Matthew 21:34–37 (recto). This is one fragmentary witness, not a complete edition of Matthew. Other witnesses and the edited Greek text remain separate. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "gospel_peter",
@@ -537,7 +541,8 @@
           "text_status": "Identification is tentative and must remain labelled as such.",
           "source": "https://www.gospels.net/manuscript/"
         }
-      ]
+      ],
+      "description": "Gospel of Peter is a gospel or apocalypse writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Akhmim fragment text is known; papyrus fragments are separate, short witnesses and should not be merged into a continuous text without editorial marking. The catalogue identifies 3 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "gospel_hebrews",
@@ -595,7 +600,8 @@
           "content_scope": "Names the Gospel according to the Hebrews among disputed writings.",
           "status": "Ancient bibliographic testimony, not a quotation of the Gospel text."
         }
-      ]
+      ],
+      "description": "Gospel of the Hebrews is a fragmentary gospel writing in the Unified Apostolic and Disciple collection. Known through later patristic quotations; identity and extent disputed. No complete manuscript survives. Available material consists of separately attributed patristic quotations and reports. Keep the wording, attribution, and source locus attached to each fragment; do not merge these automatically with the Ebionite or Nazarene Gospel. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
     },
     {
       "id": "gospel_ebionites",
@@ -635,7 +641,8 @@
           "content_scope": "Seven principal fragment groups attributed to the Gospel used by the Ebionites.",
           "status": "Text survives only as quotations embedded in Epiphanius; the manuscript copies are manuscripts of Panarion, not of the Gospel of the Ebionites."
         }
-      ]
+      ],
+      "description": "Gospel of the Ebionites is a fragmentary gospel writing in the Unified Apostolic and Disciple collection. Modern scholarly title for a non-extant gospel known chiefly through Epiphanius. No independent manuscript of this Gospel survives. Its seven principal fragment groups are transmitted within Epiphanius, Panarion 30. Keep the fragments tied to the exact Panarion sections; do not treat manuscripts of Epiphanius as direct Gospel codices. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
     },
     {
       "id": "gospel_nazarenes",
@@ -693,7 +700,8 @@
           "content_scope": "Variant wording for the petition concerning daily bread.",
           "status": "Jerome's report/translation; identity of the underlying Gospel is debated."
         }
-      ]
+      ],
+      "description": "Gospel of the Nazarenes (hypothetical reconstruction) is a hypothetical fragmentary gospel writing in the Unified Apostolic and Disciple collection. A modern scholarly reconstruction from fragments Jerome associated with a Hebrew Gospel used by Nazarenes; separate identity disputed. This is a hypothetical scholarly reconstruction, not an independently established book with its own manuscript. The available material consists of Jerome's reports and attributed excerpts; attribution to a distinct Nazarene Gospel remains disputed. Do not merge with the Gospel of the Hebrews without qualification. The available manuscript evidence and its extent remain to be documented."
     },
     {
       "id": "gospel_judas",
@@ -734,7 +742,8 @@
           "text_status": "Primary surviving witness; page reconstructions remain editorial and must be labelled, not silently treated as intact papyrus.",
           "source": "https://www.gospels.net/manuscript"
         }
-      ]
+      ],
+      "description": "Gospel of Judas is a dialogue gospel writing in the Unified Apostolic and Disciple collection. Anonymous work using Judas Iscariot as its narrative frame; title does not establish his authorship. Damaged Coptic translation in Codex Tchacos; Greek original is inferred from ancient testimony. Manuscript witness identified as Codex Tchacos, tractate 3; damaged Coptic codex with editorial page reconstruction, not a surviving Greek manuscript. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "apocalypse_peter_coptic",
@@ -777,7 +786,8 @@
           "text_status": "Coptic witness; distinct from the Greek Akhmim Apocalypse of Peter and from the Ethiopic version.",
           "source": "https://www.nasscal.com/manuscripta-apocryphorum/cairo-coptic-museum-inv-10546-nag-hammadi-codex-vii/"
         }
-      ]
+      ],
+      "description": "Apocalypse of Peter (Coptic; Nag Hammadi Codex VII,3) is a Coptic apocalypse / revelatory dialogue writing in the Unified Apostolic and Disciple collection. Pseudonymously attributed to Peter; a distinct work unrelated to the Greek/Ethiopic Apocalypse of Peter. Coptic witness in Nag Hammadi Codex VII,3; fourth-century codex. Witness register records NHC VII,3, pp. 70–84, as a fourth-century Sahidic Coptic papyrus codex. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "epistle_apostles",
@@ -849,7 +859,8 @@
           "text_status": "One witness in the Ethiopic manuscript tradition; preserve family affiliation and variants.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-the-apostles/"
         }
-      ]
+      ],
+      "description": "Epistle of the Apostles is a epistle-like revelatory dialogue writing in the Unified Apostolic and Disciple collection. Framed as a writing of the eleven apostles; collective authorship is not established. Available witnesses are now catalogued separately: a fragmentary fourth/fifth-century Akhmimic Coptic papyrus codex, a fifth-century-underwriting Latin palimpsest, and later Geʽez/Ethiopic manuscripts. Gaps in the Coptic witness remain lacunae; the fuller Ethiopic transmission is a separate version. The catalogue identifies 4 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "letter_peter_philip",
@@ -891,7 +902,8 @@
           "text_status": "Primary Coptic witness; preserve its readings separately from the Codex Tchacos witness.",
           "source": "https://www.cambridge.org/core/books/nag-hammadi-codices-and-their-ancient-readers/introduction/333084781B98EFDB225C0C6EC60D1F84"
         }
-      ]
+      ],
+      "description": "Letter of Peter to Philip is a epistle-framed revelatory dialogue writing in the Unified Apostolic and Disciple collection. Anonymous work framed as a letter from Peter to Philip; framing does not authenticate authorship. Coptic witnesses in Nag Hammadi Codex VIII and Codex Tchacos; preserve variants. Witness metadata added; no unverified transcription or translation has been inserted. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "gospel_mary",
@@ -956,7 +968,8 @@
           "text_status": "Fragmentary Greek witness; keep distinct from the Coptic codex.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-mary/"
         }
-      ]
+      ],
+      "description": "Gospel of Mary is a gospel or apocalypse writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Coptic and Greek witnesses are known; the two Greek fragments overlap portions also preserved in the Coptic codex. No complete Greek text survives. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
     },
     {
       "id": "acts",
@@ -1032,7 +1045,8 @@
           "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
           "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
         }
-      ]
+      ],
+      "description": "Acts is a narrative writing in the Unified Apostolic and Disciple collection. Anonymous narrative, conventionally linked with the author of Luke; authorship is not stated in the text. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "acts_barnabas",
@@ -1103,7 +1117,8 @@
           "text_status": "Greek witness to the same recension.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-barnabas/"
         }
-      ]
+      ],
+      "description": "Acts of Barnabas is a apocryphal acts narrative writing in the Unified Apostolic and Disciple collection. Later narrative about Barnabas and John Mark; attribution is not proof of eyewitness authorship. Survives in later manuscript transmission; recensions and witnesses require separate mapping. Greek manuscript witnesses to Recension Σ are now catalogued, including Cambridge Add. 4489 (8th c.), Batopediou 84 (9th/10th c.), Paris gr. 1219 (11th c.), and Vatican gr. 1667 (11th c.). The catalogue identifies 4 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "didache",
@@ -1171,7 +1186,8 @@
           "text_status": "The physical manuscript is lost; known through a published collation, not a directly inspectable codex.",
           "source": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/sources-date-and-transmission-of-didache-13b21/88EA36C9320BC22D892A2755EAB072C0"
         }
-      ]
+      ],
+      "description": "Didache (Teaching of the Twelve Apostles) is a instruction, letter, or related writing writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Greek edition text available offline; P.Oxy. 1782 is a fragmentary witness and not a complete papyrus copy. Manuscript witnesses now separately identify the 1056 Greek Codex Hierosolymitanus 54, late-fourth-century P.Oxy. 1782 fragments, and the lost Georgian witness known through collation. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
     },
     {
       "id": "james",
@@ -1231,7 +1247,8 @@
           "text_status": "Small fragment; only the cited verses survive.",
           "source": "https://www.islamic-awareness.org/bible/text/mss/p23"
         }
-      ]
+      ],
+      "description": "Letter of James is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to James; authorship and date are debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "1_thessalonians",
@@ -1329,7 +1346,8 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "1 Thessalonians is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Paul; commonly dated among the earliest surviving Christian writings. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "2_thessalonians",
@@ -1388,7 +1406,8 @@
           "text_status": "Major fourth-century Greek codex witness.",
           "source": "https://www.codexsinaiticus.org/en/manuscript.aspx"
         }
-      ]
+      ],
+      "description": "2 Thessalonians is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Paul; authorship and date are debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Codex Alexandrinus (fifth-century Greek parchment codex) is now recorded as a surviving witness; this is witness metadata, not a diplomatic transcription. Codex Sinaiticus (fourth-century Greek parchment codex) is also recorded as a witness. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "galatians",
@@ -1486,7 +1505,8 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "Galatians is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Paul; date depends partly on the reconstruction of Paul's chronology. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "paul_previous_corinthian_letter",
@@ -1528,7 +1548,8 @@
           "title": "The Rhetorical Situation of the Corinthian Correspondence",
           "url": "https://ora.ox.ac.uk/objects/uuid:9f613e23-7197-40d8-836c-d0e478be2636/files/mf311bf81e4a53ba099e46ddae88529b5"
         }
-      ]
+      ],
+      "description": "Paul's Previous Letter to Corinth (referenced in 1 Corinthians 5:9) is a letter writing in the Unified Apostolic and Disciple collection. Paul explicitly refers to a previous letter he had written to the Corinthian community; the writing itself is lost and its full contents cannot be recovered from the reference. Lost or unidentified; no independently identified manuscript witness or complete text is known. Do not reconstruct its wording from 1 Corinthians 5:9. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording. Related reference: 1 Corinthians 5:9."
     },
     {
       "id": "1_corinthians",
@@ -1630,7 +1651,8 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "1 Corinthians is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Paul. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "paul_sorrowful_corinthian_letter",
@@ -1672,7 +1694,8 @@
           "title": "The Rhetorical Situation of the Corinthian Correspondence",
           "url": "https://ora.ox.ac.uk/objects/uuid:9f613e23-7197-40d8-836c-d0e478be2636/files/mf311bf81e4a53ba099e46ddae88529b5"
         }
-      ]
+      ],
+      "description": "Paul's Sorrowful / Tearful Letter to Corinth is a letter writing in the Unified Apostolic and Disciple collection. Paul refers to a letter written with distress and many tears; many scholars identify it as a separate lost letter, while some propose that material now in 2 Corinthians may preserve it. Not independently preserved as a complete identifiable writing. Possible identification with portions of 2 Corinthians 10–13 is disputed and must not be treated as established. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording. Related reference: 2 Corinthians 2:1–4; 7:8–12."
     },
     {
       "id": "2_corinthians",
@@ -1774,7 +1797,8 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "2 Corinthians is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Paul; composition may incorporate more than one correspondence unit. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "romans",
@@ -1868,7 +1892,8 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "Romans is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Paul. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "1_peter",
@@ -1937,7 +1962,8 @@
           "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
           "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
         }
-      ]
+      ],
+      "description": "1 Peter is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Peter; authorship and date are debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "colossians",
@@ -2031,7 +2057,8 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "Colossians is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Paul; authorship is debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "ephesians",
@@ -2125,7 +2152,8 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "Ephesians is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Paul; authorship is debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "philemon",
@@ -2177,7 +2205,8 @@
           "text_status": "Very small fragment; only the specified verses survive.",
           "source": "https://www.islamic-awareness.org/bible/text/mss/p87"
         }
-      ]
+      ],
+      "description": "Philemon is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Paul. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "philippians",
@@ -2271,7 +2300,8 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "Philippians is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Paul; place and date of writing are debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "jude",
@@ -2332,7 +2362,8 @@
           "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
           "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
         }
-      ]
+      ],
+      "description": "Jude is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Jude; precise identity and date are debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "hebrews",
@@ -2430,7 +2461,8 @@
             }
           ]
         }
-      ]
+      ],
+      "description": "Letter to the Hebrews is a letter writing in the Unified Apostolic and Disciple collection. Anonymous composition; not identified as a letter written by Paul in its text. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "paul_laodicean_correspondence_referenced",
@@ -2464,7 +2496,8 @@
           "title": "Oxford Handbook of Early Christian Apocrypha — The Letter to the Laodiceans",
           "url": "https://gnosis.study/library/%D0%93%D0%BD%D0%BE%D0%B7%D0%B8%D1%81/%2B%20%D0%9D%D0%B5%20%D1%82%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%BE%20%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%81%D0%B5/ENG/The%20Oxford%20Handbook%20of%20Early%20Christian%20Apocrypha.pdf"
         }
-      ]
+      ],
+      "description": "Paul's Letter Associated with Laodicea (referenced in Colossians 4:16) is a letter writing in the Unified Apostolic and Disciple collection. Colossians refers to a letter associated with Laodicea, but the wording does not establish with certainty that Paul authored a separate letter addressed to Laodicea; it may refer to a letter to be exchanged or read there. The referenced writing has not been securely identified with any surviving text. Do not equate it automatically with the later Latin Epistle to the Laodiceans. The available manuscript evidence and its extent remain to be documented. Related reference: Colossians 4:16."
     },
     {
       "id": "third_corinthians",
@@ -2550,7 +2583,8 @@
           "text_status": "Historical witness reported in scholarship; current physical whereabouts and exact date are uncertain.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/3-corinthians/"
         }
-      ]
+      ],
+      "description": "3 Corinthians (within the Acts of Paul) is a letter writing in the Unified Apostolic and Disciple collection. A later composition placed in Paul's name and incorporated into the Acts of Paul; not established as an authentic letter by Paul. Witnesses now distinguish the third-century Greek P. Bodmer X (two letters only), sixth-century Coptic P. Heid. Kopt. 300+301 (letters with narrative framing), later Latin manuscripts, and Armenian transmission. These forms are related but not identical textual witnesses. The catalogue identifies 5 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "1_timothy",
@@ -2591,7 +2625,8 @@
           "text_status": "Major Greek codex witness; not a papyrus and not the earliest surviving witness for every passage.",
           "source": "https://www.csntm.org/manuscript/View/GA_02"
         }
-      ]
+      ],
+      "description": "1 Timothy is a letter writing in the Unified Apostolic and Disciple collection. Pastoral letter attributed to Paul; authorship and date are debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Codex Alexandrinus (fifth-century Greek parchment codex) is now recorded as a surviving witness; this is witness metadata, not a diplomatic transcription. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "titus",
@@ -2635,7 +2670,8 @@
           "text_status": "Only the cited Titus passages survive; text is damaged at the upper portion of the leaf.",
           "source": "https://www.cambridge.org/core/journals/new-testament-studies/article/papyrus-32-titus-as-a-multitext-codex-a-new-reconstruction/A323F29FD2839730ECB39B70801610AE/share/2ab086a243dd5ed779c1c2ec6f827faaf9caa1d5"
         }
-      ]
+      ],
+      "description": "Titus is a letter writing in the Unified Apostolic and Disciple collection. Pastoral letter attributed to Paul; authorship and date are debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "2_timothy",
@@ -2688,7 +2724,8 @@
           "text_status": "Major Greek codex witness; not a papyrus and not the earliest surviving witness for every passage.",
           "source": "https://www.csntm.org/manuscript/View/GA_02"
         }
-      ]
+      ],
+      "description": "2 Timothy is a letter writing in the Unified Apostolic and Disciple collection. Pastoral letter attributed to Paul; authorship and date are debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Codex Alexandrinus (fifth-century Greek parchment codex) is now recorded as a surviving witness; this is witness metadata, not a diplomatic transcription. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "1_john",
@@ -2736,7 +2773,8 @@
           "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
           "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
         }
-      ]
+      ],
+      "description": "1 John is a letter writing in the Unified Apostolic and Disciple collection. Anonymous or Johannine-community writing; exact author is not named. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "2_john",
@@ -2780,7 +2818,8 @@
           "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
           "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
         }
-      ]
+      ],
+      "description": "2 John is a letter writing in the Unified Apostolic and Disciple collection. Letter from 'the elder'; personal identity is not established by the text. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "3_john",
@@ -2824,7 +2863,8 @@
           "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
           "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
         }
-      ]
+      ],
+      "description": "3 John is a letter writing in the Unified Apostolic and Disciple collection. Letter from 'the elder'; personal identity is not established by the text. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "2_peter",
@@ -2885,7 +2925,8 @@
           "text_status": "Fragmentary witness. Only the passages listed in the manuscript catalog are present; this is not a complete Apostolos text.",
           "source": "https://manuscripts.csntm.org/Manuscript/Group/GA_P74"
         }
-      ]
+      ],
+      "description": "2 Peter is a letter writing in the Unified Apostolic and Disciple collection. Letter attributed to Peter; authorship and date are debated. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Additional manuscript witness metadata added for P72/P74/P23/P32/P87 as applicable; fragmentary coverage is explicitly limited to the recorded passages. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "papias_exposition",
@@ -2955,7 +2996,8 @@
           "content_scope": "Papias' report about the daughters of Philip, transmitted through Eusebius.",
           "status": "Ancient testimony attributed to Papias; not a complete text of his book."
         }
-      ]
+      ],
+      "description": "Papias — Exposition of the Sayings of the Lord is a exposition / collected traditions writing in the Unified Apostolic and Disciple collection. Attributed to Papias of Hierapolis. The original work is lost; surviving material consists of fragments quoted by later authors. No complete manuscript of the five-book Exposition survives. The available material is fragmentary quotation and testimony, especially Eusebius, Ecclesiastical History 3.39, and Irenaeus, Against Heresies 5.33.4. Preserve the exact speaker and separate quotations from later authors' summaries. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
     },
     {
       "id": "clement_1",
@@ -3043,7 +3085,8 @@
           "text_status": "Fragmentary Coptic witness.",
           "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
         }
-      ]
+      ],
+      "description": "1 Clement is a instruction, letter, or related writing writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Witnesses recorded separately: fifth-century Codex Alexandrinus (partial Greek), 1056 Codex Hierosolymitanus 54, fourth-century Coptic Berlin codex, fifth-century Coptic papyrus fragments, and Syriac transmission. This is manuscript coverage metadata, not a new diplomatic transcription. Witness metadata added; no unverified transcription or translation has been inserted. The catalogue identifies 5 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "barnabas",
@@ -3108,7 +3151,8 @@
           "text_status": "A versional witness, not Greek manuscript text; described as free and not sufficient by itself to restore the Greek.",
           "source": "https://www.newadvent.org/cathen/02299a.htm"
         }
-      ]
+      ],
+      "description": "Epistle of Barnabas is a instruction, letter, or related writing writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Greek text available offline in the archive from an edition; edition-derived text, not a new diplomatic transcription of Sinaiticus or PSI 7.757. Witness register now distinguishes Codex Sinaiticus, Codex Hierosolymitanus 54, and the Latin version. The catalogue identifies 3 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "hermas",
@@ -3179,7 +3223,8 @@
           "text_status": "Later Greek witness split between two libraries; sections must be collated as a divided codex.",
           "source": "https://libraryguides.helsinki.fi/apostolicfathers/hermas"
         }
-      ]
+      ],
+      "description": "Shepherd of Hermas is a instruction, letter, or related writing writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Greek edition text available offline; not a full diplomatic transcription of all witnesses. Witness register now includes Codex Sinaiticus, P.Mich. 917, Papyrus Bodmer 38, and the divided Grigoriou 96/Leipzig Cod. gr. 9 witness. The catalogue identifies 4 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "ignatius_ephesians",
@@ -3228,7 +3273,8 @@
           "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
           "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
         }
-      ]
+      ],
+      "description": "Letter of Ignatius to the Ephesians is a letter writing in the Unified Apostolic and Disciple collection. Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated. Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "ignatius_magnesians",
@@ -3277,7 +3323,8 @@
           "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
           "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
         }
-      ]
+      ],
+      "description": "Letter of Ignatius to the Magnesians is a letter writing in the Unified Apostolic and Disciple collection. Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated. Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "ignatius_romans",
@@ -3326,7 +3373,8 @@
           "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
           "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
         }
-      ]
+      ],
+      "description": "Letter of Ignatius to the Romans is a letter writing in the Unified Apostolic and Disciple collection. Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated. Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "ignatius_trallians",
@@ -3375,7 +3423,8 @@
           "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
           "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
         }
-      ]
+      ],
+      "description": "Letter of Ignatius to the Trallians is a letter writing in the Unified Apostolic and Disciple collection. Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated. Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "ignatius_polycarp",
@@ -3424,7 +3473,8 @@
           "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
           "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
         }
-      ]
+      ],
+      "description": "Letter of Ignatius to Polycarp is a letter writing in the Unified Apostolic and Disciple collection. Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated. Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "ignatius_philadelphians",
@@ -3473,7 +3523,8 @@
           "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
           "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
         }
-      ]
+      ],
+      "description": "Letter of Ignatius to the Philadelphians is a letter writing in the Unified Apostolic and Disciple collection. Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated. Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "ignatius_smyrnaeans",
@@ -3532,7 +3583,8 @@
           "text_status": "Fragmentary versional witness; it does not preserve the full Greek text.",
           "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
         }
-      ]
+      ],
+      "description": "Letter of Ignatius to the Smyrnaeans is a letter writing in the Unified Apostolic and Disciple collection. Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated. Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "aristides_apology",
@@ -3620,7 +3672,8 @@
           "text_status": "Later copy of the Armenian version.",
           "source": "https://www.academia.edu/29503347/The_Textual_Witnesses_to_the_Second-Century_Apology_of_Aristides"
         }
-      ]
+      ],
+      "description": "Apology of Aristides is a apology writing in the Unified Apostolic and Disciple collection. Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison. Manuscript witnesses now distinguish the seventh-century complete Syriac translation (Sinai Syr. 16), two fourth-century Greek papyrus fragments with shelfmarks not specified in the cited catalogue, and the partial Armenian witnesses. The complete Syriac translation is not the original Greek. The catalogue identifies 5 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "polycarp_philippians",
@@ -3681,7 +3734,8 @@
           "text_status": "Versional witness supplies material missing from the Greek copies; do not present it as Greek wording.",
           "source": "https://theosislibrary.com/library/verified-polycarp-philippians"
         }
-      ]
+      ],
+      "description": "Polycarp's Letter to the Philippians is a letter writing in the Unified Apostolic and Disciple collection. Attributed to Polycarp of Smyrna; whether the text combines more than one letter is debated. Greek text survives incompletely in the principal Greek witness; a Latin version preserves additional material. Witnesses and possible letter-division must be recorded separately. Witnesses now distinguish the Greek Vat. gr. 859, Eusebius quotation in Paris gr. 1431, and Latin Reg. lat. 81; Greek chapters 10–14 are not extant in the Greek manuscript tradition. Witness metadata added; no unverified transcription or translation has been inserted. The catalogue identifies 3 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "quadratus_apology",
@@ -3729,7 +3783,8 @@
           "content_scope": "The sole surviving paragraph from Quadratus' Apology, describing people healed and raised by the Saviour who remained alive for a time.",
           "status": "The fragment survives only as a quotation in Eusebius; manuscripts of Eusebius transmit this quotation, not an independent copy of Quadratus' Apology."
         }
-      ]
+      ],
+      "description": "Quadratus — Apology is a apology writing in the Unified Apostolic and Disciple collection. Attributed to Quadratus; only a brief fragment is preserved through Eusebius. The Apology itself is lost. Its sole surviving paragraph is quoted by Eusebius, Ecclesiastical History 4.3.2. The archive records the transmitted fragment and its exact source, not a fictitious independent manuscript of Quadratus. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
     },
     {
       "id": "martyrdom_polycarp",
@@ -3820,7 +3875,8 @@
           "text_status": "An ancient transmitting quotation, not an independent copy of the original letter.",
           "source": "https://christearlychurch.co.uk/text/the-martyrdom-of-polycarp/"
         }
-      ]
+      ],
+      "description": "Martyrdom of Polycarp is a martyrdom account writing in the Unified Apostolic and Disciple collection. An early account concerning Polycarp; its narrative and transmission must be evaluated as a historical source rather than treated as a verbatim eyewitness transcript. Now records six distinct transmission channels: five Greek manuscript witnesses (Moscow/Codex Mosquensis, Baroccianus, Mediceus, Parisinus, Vindobonensis) and Eusebius, Ecclesiastical History 4.15, as an ancient literary quotation. The Latin version is separate; Syriac, Armenian, and Coptic forms based on Eusebius are not direct translations from the original letter. The catalogue identifies 6 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "acts_paul",
@@ -3915,7 +3971,8 @@
           "text_status": "Fragmentary Coptic witness to the opening episode.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-paul/"
         }
-      ]
+      ],
+      "description": "Acts of Paul is a Episodic apocryphal acts narrative writing in the Unified Apostolic and Disciple collection. A later narrative about Paul; not authored by the apostle. The work includes the Acts of Paul and Thecla and 3 Corinthians as textual components in its transmission. Manuscript witnesses now separately include early Greek papyri (Hamburg Pap. bil. 1, P.Oxy. III 1602, P. Berol. 13893) and Coptic papyrus codices/fragments (P. Bodmer XLI, Heidelberg Kopt. 300+301 with BL leaf, and Rylands Copt. Suppl. 44). Individual episodes survive unevenly; no single witness gives the entire work. The catalogue identifies 6 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "acts_peter",
@@ -4190,7 +4247,8 @@
           "text_status": "Church Slavonic manuscript witness.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
         }
-      ]
+      ],
+      "description": "Acts of Peter is a Apocryphal acts narrative writing in the Unified Apostolic and Disciple collection. A later narrative attributed to Peter by its subject and tradition; not an authenticated composition by the apostle. The main narrative is preserved in Latin (Vercelli Acts); Greek witnesses preserve martyrdom material. Do not assume the surviving forms represent one complete identical text. Added the seventh-century Latin Vercelli MS 158 for the main narrative and fourth-century Greek P.Oxy. VI 849 for martyrdom material; they are distinct textual portions. The catalogue identifies 24 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "acts_john",
@@ -4365,7 +4423,8 @@
           "text_status": "Armenian version of the two-chapter unit.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
         }
-      ]
+      ],
+      "description": "Acts of John is a Apocryphal acts narrative writing in the Unified Apostolic and Disciple collection. A later narrative about John; not authenticated as a work written by the apostle. Beginning is missing; surviving material is reconstructed from multiple manuscript and quotation sources. Fragmentary transmission must be shown explicitly. Added Greek Papyrus Kellis 1 (fourth century) and medieval Greek codices preserving selected, discontinuous chapters. The catalogue identifies 14 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "acts_andrew",
@@ -4450,7 +4509,8 @@
           "text_status": "Latin versional witness, separate from Greek martyrdom recensions.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-andrew-latin/"
         }
-      ]
+      ],
+      "description": "Acts of Andrew is a Apocryphal acts narrative writing in the Unified Apostolic and Disciple collection. A later narrative about Andrew; not authenticated as a work written by the apostle. The original work is not fully extant; substantial portions are known through later summaries and versions. Do not present a later summary as the original manuscript text. Added P.Oxy. VI 851, Greek martyrdom recensions from Sinai gr. 526 and Hagiou Saba 103, Vatican gr. 808, and a separate Latin witness. The catalogue identifies 5 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "acts_thomas",
@@ -4895,7 +4955,8 @@
           "text_status": "Georgian version derived from Armenian, not an independent Greek witness.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
         }
-      ]
+      ],
+      "description": "Acts of Thomas is a Apocryphal acts narrative writing in the Unified Apostolic and Disciple collection. A later narrative about Thomas; not authenticated as a work written by the apostle. Survives in Syriac and Greek textual traditions; these must be treated as related but distinct witnesses and versions. Added fifth/sixth-century Syriac lower text in Sinai Syr. 30 and separate Syriac and Greek manuscript witnesses. The catalogue identifies 41 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "acts_matthias",
@@ -4956,7 +5017,8 @@
           "text_status": "Latin manuscript witness from Rein Abbey tradition.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-matthias/"
         }
-      ]
+      ],
+      "description": "Acts of Matthias is a apocryphal acts / martyrdom narrative writing in the Unified Apostolic and Disciple collection. Later narrative associated with Matthias; not authenticated as apostolic composition. Later Latin manuscript witnesses; not a first-century manuscript. Added three catalogued Latin manuscripts from Munich and Vienna. The catalogue identifies 3 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "acts_philip",
@@ -5037,7 +5099,8 @@
           "text_status": "Separate Armenian versional witness.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-philip/"
         }
-      ]
+      ],
+      "description": "Acts of Philip is a apocryphal acts and martyrdom narrative writing in the Unified Apostolic and Disciple collection. Later narrative attributed to Philip by tradition; not authenticated as written by the apostle. Multiple recensions and languages, including Greek and Armenian; some sections are missing and martyrdom transmission varies. Added Greek codices from Athos, Athens, Paris, and the Vatican, plus a separately identified Armenian recension. The catalogue identifies 5 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "clement_2",
@@ -5105,7 +5168,8 @@
           "text_status": "Syriac versional witness; keep separate from Greek witnesses.",
           "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
         }
-      ]
+      ],
+      "description": "2 Clement is a instruction, letter, or related writing writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Witnesses recorded separately: fifth-century Codex Alexandrinus (partial Greek), 1056 Codex Hierosolymitanus 54, and Syriac transmission. This is manuscript coverage metadata, not a new diplomatic transcription. Witness metadata added; no unverified transcription or translation has been inserted. The catalogue identifies 3 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "paul_seneca_correspondence",
@@ -5225,7 +5289,8 @@
           "text_status": "Early Latin manuscript witness.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
         }
-      ]
+      ],
+      "description": "Correspondence of Paul and Seneca is a letter collection writing in the Unified Apostolic and Disciple collection. A collection of letters attributed to Paul and Seneca; not regarded as authentic correspondence from Paul's lifetime. The Latin transmission is now represented by specifically catalogued witnesses including Brussels 2839–43 (ca. 830), Zurich C 129 (9th c.), Vienna 969 (9th c.), St Gall 197 (9th/10th c.), Einsiedeln 262 (10th c.), and Vatican lat. 251 (11th c.). Strasbourg C. VI. 5 was destroyed in 1870 but had been collated. The catalogue identifies 8 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "diognetus",
@@ -5279,7 +5344,8 @@
           "text_status": "Printed proxy, not an ancient manuscript witness.",
           "source": "https://christearlychurch.co.uk/text/the-epistle-to-diognetus/"
         }
-      ]
+      ],
+      "description": "Epistle to Diognetus is a apology / treatise writing in the Unified Apostolic and Disciple collection. Anonymous. The claim that the author was a disciple of apostles is textually present but does not securely identify the author or prove direct apostolic association. Greek text survives in a single medieval manuscript that was later lost; modern editions depend on earlier copies/transcriptions. The physical witness date must not be mistaken for composition date. Sole physical manuscript was Codex Argentoratensis Graecus 9 (13th/14th century), destroyed in 1870; the 1592 printed edition and earlier collations are proxies, not independent ancient witnesses. Witness metadata added; no unverified transcription or translation has been inserted. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
     },
     {
       "id": "epistle_to_laodiceans_latin",
@@ -5355,7 +5421,8 @@
           "text_status": "Later Latin text witness.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-to-the-laodiceans/"
         }
-      ]
+      ],
+      "description": "Epistle to the Laodiceans (Latin work) is a letter writing in the Unified Apostolic and Disciple collection. A later work presented under Paul's name; not established as an authentic letter written by Paul. Its identity with the letter mentioned in Colossians 4:16 is unproven. Manuscript witnesses now include Codex Fuldensis (541–546 CE), the title-only remnant in Codex Boernerianus, and later Latin copies. This surviving Latin pseudonymous letter is not evidence that the lost Laodicean correspondence mentioned in Colossians has been recovered. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
     },
     {
       "id": "gospel_egyptians_greek",
@@ -5431,7 +5498,8 @@
           "content_scope": "Reports sayings attributed to the Gospel of the Egyptians.",
           "status": "Later patristic testimony."
         }
-      ]
+      ],
+      "description": "Gospel of the Egyptians (Greek fragments) is a fragmentary sayings gospel writing in the Unified Apostolic and Disciple collection. Known through quotations by Clement, Hippolytus, Epiphanius and others; precise form and community remain debated. No complete Greek manuscript of this Gospel is known. The surviving Greek material consists of citations and reports in Clement, Hippolytus, and Epiphanius. These are fragments embedded in their works, not surviving Gospel codices; keep direct quotations distinct from an author's summary. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
     },
     {
       "id": "gospel_thomas",
@@ -5508,7 +5576,8 @@
           "text_status": "Fragmentary Greek witness; remains separate from P.Oxy. 1 and 654.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-thomas/"
         }
-      ]
+      ],
+      "description": "Gospel of Thomas is a gospel or apocalypse writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set. Witnesses now identify the complete Coptic copy in NHC II,2 and the three separate Greek Oxyrhynchus papyri (P.Oxy. 1, 654, 655). The catalogue identifies 4 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "paul_letter_to_alexandrians_reported",
@@ -5538,7 +5607,8 @@
         }
       ],
       "scope_relationship": "lost_or_reported_apostolic_correspondence",
-      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date.",
+      "description": "Letter to the Alexandrians (reported as a Pauline writing) is a letter writing in the Unified Apostolic and Disciple collection. The Muratorian Fragment mentions a letter to the Alexandrians as forged in Paul's name; no authentic Pauline authorship is established. No securely identified complete text or manuscript witness; retained as an ancient report of an attributed/forged writing, not as a recovered Pauline letter. The available manuscript evidence and its extent remain to be documented. Related reference: Muratorian Fragment."
     },
     {
       "id": "gospel_egyptians_coptic",
@@ -5580,7 +5650,8 @@
           "text_status": "Coptic witness; do not conflate with the separate Greek Gospel of the Egyptians fragments.",
           "source": "https://www.cambridge.org/core/books/nag-hammadi-codices-and-their-ancient-readers/introduction/333084781B98EFDB225C0C6EC60D1F84"
         }
-      ]
+      ],
+      "description": "Gospel of the Egyptians (Coptic; Holy Book of the Great Invisible Spirit) is a Coptic revelatory dialogue writing in the Unified Apostolic and Disciple collection. Anonymous Nag Hammadi work; title does not establish apostolic authorship. Coptic Nag Hammadi witness; record its codex and folio data separately. Witness metadata added; no unverified transcription or translation has been inserted. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "gospel_philip",
@@ -5623,7 +5694,8 @@
           "text_status": "Only surviving complete textual witness is Coptic; Greek original is inferred from composition history, not preserved as a complete Greek manuscript.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-philip/"
         }
-      ]
+      ],
+      "description": "Gospel of Philip is a Coptic sayings and theological collection writing in the Unified Apostolic and Disciple collection. Anonymous work associated with a Valentinian milieu; title does not prove authorship by Philip. Coptic text in Nag Hammadi Codex II; no complete Greek witness survives. Witness metadata added; no unverified transcription or translation has been inserted. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
     },
     {
       "id": "gospel_matthias",
@@ -5690,7 +5762,8 @@
           "content_scope": "Brief teaching attributed to Matthias traditions.",
           "status": "Fragmentary attribution."
         }
-      ]
+      ],
+      "description": "Gospel of Matthias / Traditions of Matthias is a reported sayings and fragments writing in the Unified Apostolic and Disciple collection. The existence of one coherent Gospel is uncertain; sayings are attributed to Matthias in scattered reports. No manuscript of a complete Gospel of Matthias survives, and even the existence of one coherent Gospel is uncertain. Four brief teachings in Clement's Stromateis are the principal alleged fragments; later heresiological lists are reports, not additional Gospel text. The available manuscript evidence and its extent remain to be documented."
     },
     {
       "id": "apocalypse_peter",
@@ -5776,7 +5849,8 @@
           "text_status": "Separate Ethiopic witness; date approximate.",
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-peter/"
         }
-      ]
+      ],
+      "description": "Apocalypse of Peter (Greek/Ethiopic) is a gospel or apocalypse writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript. Added three fragmentary Greek witnesses (Akhmîm, Bodleian, Rainer) and two distinct Ethiopic codices. The catalogue identifies 5 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "revelation",
@@ -5839,7 +5913,8 @@
           ],
           "transcription_note": "Manuscript inventory only; a diplomatic transcription and translation are not yet imported."
         }
-      ]
+      ],
+      "description": "Revelation is a apocalypse writing in the Unified Apostolic and Disciple collection. Apocalypse attributed internally to John; identifying him with the apostle is disputed. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
     }
   ],
   "historical_chronology_policy": "Use the events and historical setting represented in each writing as the organizing basis. For narratives, follow narrated events. For letters and instruction writings, use the historical situation, people, journeys, imprisonment, or community events they address. If an exact setting cannot be established, use a broad labelled period and mark placement provisional. Never use composition date as a substitute for event chronology. Revelation is the final catalogue record by explicit archive arrangement; the Greek/Ethiopic Apocalypse of Peter is immediately before it. The Coptic Apocalypse of Peter is a separate work placed by its own Jerusalem-before-crucifixion narrative setting.",
