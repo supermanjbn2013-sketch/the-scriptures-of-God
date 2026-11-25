@@ -120,29 +120,6 @@
       "historical_order_note": "This placement follows the event or scene represented by the writing, not its composition date. The narrative's historical reliability or authorship is assessed separately."
     },
     {
-      "id": "gospel_thomas",
-      "title": "Gospel of Thomas",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 200,
-      "date_precision": "Second-century composition commonly proposed; possible earlier sayings traditions and the date of the final collection are debated.",
-      "genre": "gospel or apocalypse",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Composition estimate is not the date of the Greek papyrus fragments or the Coptic Nag Hammadi manuscript.",
-      "existing_catalogue_id": "gospel_thomas",
-      "historical_sequence": 10,
-      "historical_period": "The Lord's life, ministry, death and resurrection",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "thomas_sayings",
-      "historical_anchor": "A sayings collection attributed to Thomas, presenting sayings of the Lord",
-      "historical_anchor_basis": "The sayings are presented as sayings of the Lord, but the collection does not narrate a continuous sequence or establish when each saying was spoken. It is grouped with the ministry period without assigning internal chronology.",
-      "historical_subsequence": 10,
-      "historical_anchor_status": "non_narrative_collection",
-      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This placement follows the event or scene represented by the writing, not its composition date. The narrative's historical reliability or authorship is assessed separately."
-    },
-    {
       "id": "gospel_mary",
       "title": "Gospel of Mary",
       "composition_date_start_ce": 100,
@@ -915,44 +892,6 @@
       "historical_order_note": "These works have different claimed settings and no securely established relative event order; they are grouped in a broad later-apostolic context."
     },
     {
-      "id": "paul_seneca_correspondence",
-      "title": "Correspondence of Paul and Seneca",
-      "composition_date_start_ce": 300,
-      "composition_date_end_ce": 400,
-      "date_precision": "commonly regarded as a later, probably fourth-century pseudepigraphal correspondence; exact date uncertain",
-      "genre": "letter collection",
-      "attribution_status": "A collection of letters attributed to Paul and Seneca; not regarded as authentic correspondence from Paul's lifetime.",
-      "textual_status": "Survives in Latin manuscript transmission; manuscript witnesses must be catalogued separately.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Date refers to the later composition of the pseudepigraphal correspondence.",
-      "related_scriptural_reference": "",
-      "preservation_status": "surviving_pseudepigraphal_collection",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "fictional_neronian_rome_exchange",
-      "historical_anchor": "A literary portrayal of an exchange between Paul and Seneca in Neronian Rome",
-      "historical_anchor_basis": "The correspondence is pseudonymous fiction, not evidence of an actual meeting or exchange. Its fictional setting borrows the lifetime overlap of Paul and Seneca; the later collection itself is not used to date Paul's events.",
-      "historical_subsequence": 180,
-      "historical_anchor_status": "fictional_setting_not_historical_event",
-      "research_sources": [
-        {
-          "title": "Epistles of Paul and Seneca — NASSCAL e-Clavis",
-          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
-        },
-        {
-          "title": "Letters of Paul and Seneca — Encyclopedia of the Bible",
-          "url": "https://search.biblegateway.com/resources/encyclopedia-of-the-bible/Letters-Paul-Seneca"
-        },
-        {
-          "title": "The Letters of Paul in their Roman Literary Context (2024)",
-          "url": "https://www.cambridge.org/core/books/abs/letters-of-paul-in-their-roman-literary-context/introduction/741173A76AD8D524CF0281B721EF9D97"
-        }
-      ],
-      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This placement follows the event or scene represented by the writing, not its composition date. The narrative's historical reliability or authorship is assessed separately."
-    },
-    {
       "id": "papias_exposition",
       "title": "Papias — Exposition of the Sayings of the Lord",
       "composition_date_start_ce": 100,
@@ -1065,39 +1004,6 @@
         {
           "title": "Oxford Bibliographies — Shepherd of Hermas",
           "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554114229"
-        }
-      ],
-      "scope_relationship": "anonymous_early_community_writing",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
-    },
-    {
-      "id": "clement_2",
-      "title": "2 Clement",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 199,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "instruction, letter, or related writing",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Catalogue entry; a dedicated witness-by-witness text import is not yet implemented.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "clement_2",
-      "historical_sequence": 50,
-      "historical_period": "The generation immediately following the apostles",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "second_clement_community_sermon",
-      "historical_anchor": "A public exhortation delivered to a Christian gathering",
-      "historical_anchor_basis": "The writing is a sermon or homily rather than a personal letter from Clement of Rome. It does not name a destination or one historical event; its references to civic games and moral exhortation provide only a broad social setting.",
-      "historical_subsequence": 114,
-      "historical_anchor_status": "undated_community_homily",
-      "research_sources": [
-        {
-          "title": "1 and 2 Clement — Cambridge Companion to the Apostolic Fathers",
-          "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-apostolic-fathers/1-and-2-clement/B7BF41A1B41D80762C13BF2A6ED63949"
-        },
-        {
-          "title": "The Roman Empire in the Era of the Apostolic Fathers",
-          "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-apostolic-fathers/roman-empire-in-the-era-of-the-apostolic-fathers/9BDA47F9266DDA1EC5252DCE6C111CA2"
         }
       ],
       "scope_relationship": "anonymous_early_community_writing",
@@ -1300,6 +1206,43 @@
       "historical_order_note": "All seven letters belong to Ignatius's journey toward martyrdom. Their exact relative order is not established."
     },
     {
+      "id": "aristides_apology",
+      "title": "Apology of Aristides",
+      "composition_date_start_ce": 125,
+      "composition_date_end_ce": 140,
+      "date_precision": "Approximate early to mid-second-century date",
+      "genre": "apology",
+      "attribution_status": "Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison.",
+      "textual_status": "Survives through Syriac and Armenian transmission and a Greek fragment incorporated into the later Barlaam and Josaphat tradition; do not conflate these witnesses.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date is approximate; language and date of surviving copies are separate evidence.",
+      "research_sources": [
+        {
+          "title": "Eusebius, Church History 4.3",
+          "url": "https://www.ccel.org/ccel/schaff/npnf201.iii.ix.iii.html"
+        },
+        {
+          "title": "Cambridge History of Early Christian Literature — Aristides",
+          "url": "https://www.cristoraul.org/ENGLISH/READINGHALL/CHRISTIANITY/nice-reading/The-Cambridge-History-of-Early-Christian-Literature.pdf"
+        },
+        {
+          "title": "Marcianus Aristides, On The Worship of God",
+          "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/marcianus-aristides-on-the-worship-of-god/E82BA3C0F42673A88421E2B27B8575E4"
+        }
+      ],
+      "preservation_status": "surviving_in_multiple_language_versions",
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "hadrian_apology_disputed",
+      "historical_anchor": "An apology associated by Eusebius with Hadrian",
+      "historical_anchor_basis": "Eusebius says Aristides addressed an apology to Hadrian, but the surviving Syriac form has a different imperial setting according to scholarly discussion. The historical address and textual forms must remain distinguished.",
+      "historical_subsequence": 130,
+      "historical_anchor_status": "attribution_and_historical_setting_disputed",
+      "scope_relationship": "broader_early_christian_context_association_unproven",
+      "historical_order_note": "Eusebius associates the apology with Hadrian, but the surviving textual forms give conflicting historical settings. It is grouped with the approximate Hadrian-era context; exact relation to Quadratus is not established."
+    },
+    {
       "id": "polycarp_philippians",
       "title": "Polycarp's Letter to the Philippians",
       "composition_date_start_ce": 110,
@@ -1386,109 +1329,6 @@
       "historical_subsequence": 140,
       "historical_anchor_status": "narrated_event",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
-    },
-    {
-      "id": "aristides_apology",
-      "title": "Apology of Aristides",
-      "composition_date_start_ce": 125,
-      "composition_date_end_ce": 140,
-      "date_precision": "Approximate early to mid-second-century date",
-      "genre": "apology",
-      "attribution_status": "Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison.",
-      "textual_status": "Survives through Syriac and Armenian transmission and a Greek fragment incorporated into the later Barlaam and Josaphat tradition; do not conflate these witnesses.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Composition date is approximate; language and date of surviving copies are separate evidence.",
-      "research_sources": [
-        {
-          "title": "Eusebius, Church History 4.3",
-          "url": "https://www.ccel.org/ccel/schaff/npnf201.iii.ix.iii.html"
-        },
-        {
-          "title": "Cambridge History of Early Christian Literature — Aristides",
-          "url": "https://www.cristoraul.org/ENGLISH/READINGHALL/CHRISTIANITY/nice-reading/The-Cambridge-History-of-Early-Christian-Literature.pdf"
-        },
-        {
-          "title": "Marcianus Aristides, On The Worship of God",
-          "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/marcianus-aristides-on-the-worship-of-god/E82BA3C0F42673A88421E2B27B8575E4"
-        }
-      ],
-      "preservation_status": "surviving_in_multiple_language_versions",
-      "historical_sequence": 60,
-      "historical_period": "Later accounts and writings about apostolic figures",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "hadrian_apology_disputed",
-      "historical_anchor": "An apology associated by Eusebius with Hadrian",
-      "historical_anchor_basis": "Eusebius says Aristides addressed an apology to Hadrian, but the surviving Syriac form has a different imperial setting according to scholarly discussion. The historical address and textual forms must remain distinguished.",
-      "historical_subsequence": 151,
-      "historical_anchor_status": "attribution_and_historical_setting_disputed",
-      "scope_relationship": "broader_early_christian_context_association_unproven",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
-    },
-    {
-      "id": "diognetus",
-      "title": "Epistle to Diognetus",
-      "composition_date_start_ce": 150,
-      "composition_date_end_ce": 200,
-      "date_precision": "Most scholarship favors a later second-century date; exact date and authorship unknown",
-      "genre": "apology / treatise",
-      "attribution_status": "Anonymous. The claim that the author was a disciple of apostles is textually present but does not securely identify the author or prove direct apostolic association.",
-      "textual_status": "Greek text survives in a single medieval manuscript that was later lost; modern editions depend on earlier copies/transcriptions. The physical witness date must not be mistaken for composition date.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Cambridge overview notes that most scholars favor a late-second-century date.",
-      "research_sources": [
-        {
-          "title": "The Epistle to Diognetus and the Fragment of Quadratus — Cambridge Companion",
-          "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-apostolic-fathers/epistle-to-diognetus-and-the-fragment-of-quadratus/4A2185691C2B84F510D7D3BEB54491EA"
-        },
-        {
-          "title": "Epistle to Diognetus 1 and 7–12 — Cambridge Edition",
-          "url": "https://www.cambridge.org/core/books/abs/cambridge-edition-of-early-christian-writings/epistle-to-diognetus-1-and-712/ACD00CFFECECC55B6238F662EE7E7DCA"
-        }
-      ],
-      "preservation_status": "surviving_text_from_lost_medieval_codex",
-      "historical_sequence": 60,
-      "historical_period": "Later accounts and writings about apostolic figures",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unknown_apologetic_addressee",
-      "historical_anchor": "An apologetic address to a person called Diognetus, whose identity and location are unknown",
-      "historical_anchor_basis": "The author, addressee, date and provenance cannot be securely identified. The work itself supplies no datable event; its apologetic address is retained as the only safe contextual description.",
-      "historical_subsequence": 152,
-      "historical_anchor_status": "historical_context_unlocated",
-      "scope_relationship": "broader_early_christian_context_association_unproven",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
-    },
-    {
-      "id": "apocalypse_peter",
-      "title": "Apocalypse of Peter",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 199,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "gospel or apocalypse",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "apocalypse_peter",
-      "historical_sequence": 60,
-      "historical_period": "Later accounts and writings about apostolic figures",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "apocalypse_peter_vision",
-      "historical_anchor": "A visionary tour of the afterlife attributed to Peter",
-      "historical_anchor_basis": "The work presents revelations about judgment and the afterlife, not a verifiable event witnessed by Peter. Scholarly proposals place its literary origin in Egypt, possibly Alexandria, around the middle of the second century; provenance and date remain debated. Keep this as a later visionary text, not apostolic-era event chronology.",
-      "historical_subsequence": 165,
-      "historical_anchor_status": "later_visionary_work_provenance_disputed",
-      "research_sources": [
-        {
-          "title": "The Apocalypse of Peter in Context — Jan N. Bremmer",
-          "url": "https://iris.unive.it/retrieve/9f755680-a043-4cce-a557-482e964abb3e/The%20Apocalypse%20of%20Peter%20in%20Context.pdf"
-        },
-        {
-          "title": "The Apocalypse of Peter as the Origin of the Christian Hell",
-          "url": "https://www.degruyterbrill.com/document/doi/10.1515/mill-2024-0004/html"
-        }
-      ],
-      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
     },
     {
@@ -1657,6 +1497,143 @@
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
     },
     {
+      "id": "clement_2",
+      "title": "2 Clement",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 199,
+      "date_precision": "provisional broad range; verify scholarly dating",
+      "genre": "instruction, letter, or related writing",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Catalogue entry; a dedicated witness-by-witness text import is not yet implemented.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
+      "existing_catalogue_id": "clement_2",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "second_clement_community_sermon",
+      "historical_anchor": "An anonymous homily addressed to a Christian gathering",
+      "historical_anchor_basis": "The homily provides moral exhortation and community instruction but names no city, journey or independently datable event. Its composition estimate is not used to place it in the event chronology.",
+      "historical_subsequence": 10,
+      "historical_anchor_status": "homily_no_specific_event_anchor",
+      "research_sources": [
+        {
+          "title": "1 and 2 Clement — Cambridge Companion to the Apostolic Fathers",
+          "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-apostolic-fathers/1-and-2-clement/B7BF41A1B41D80762C13BF2A6ED63949"
+        },
+        {
+          "title": "The Roman Empire in the Era of the Apostolic Fathers",
+          "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-apostolic-fathers/roman-empire-in-the-era-of-the-apostolic-fathers/9BDA47F9266DDA1EC5252DCE6C111CA2"
+        }
+      ],
+      "scope_relationship": "anonymous_early_community_writing",
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+    },
+    {
+      "id": "apocalypse_peter",
+      "title": "Apocalypse of Peter",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 199,
+      "date_precision": "provisional broad range; verify scholarly dating",
+      "genre": "gospel or apocalypse",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
+      "existing_catalogue_id": "apocalypse_peter",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "apocalypse_peter_vision",
+      "historical_anchor": "A visionary account of judgment and the afterlife attributed to Peter",
+      "historical_anchor_basis": "The work presents visionary revelations rather than an earthly event sequence in the apostolic mission. Its possible Alexandrian provenance and second-century date concern composition context, not a historical event narrated in Peter's life.",
+      "historical_subsequence": 10,
+      "historical_anchor_status": "visionary_text_no_earthly_event_sequence",
+      "research_sources": [
+        {
+          "title": "The Apocalypse of Peter in Context — Jan N. Bremmer",
+          "url": "https://iris.unive.it/retrieve/9f755680-a043-4cce-a557-482e964abb3e/The%20Apocalypse%20of%20Peter%20in%20Context.pdf"
+        },
+        {
+          "title": "The Apocalypse of Peter as the Origin of the Christian Hell",
+          "url": "https://www.degruyterbrill.com/document/doi/10.1515/mill-2024-0004/html"
+        }
+      ],
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+    },
+    {
+      "id": "paul_seneca_correspondence",
+      "title": "Correspondence of Paul and Seneca",
+      "composition_date_start_ce": 300,
+      "composition_date_end_ce": 400,
+      "date_precision": "commonly regarded as a later, probably fourth-century pseudepigraphal correspondence; exact date uncertain",
+      "genre": "letter collection",
+      "attribution_status": "A collection of letters attributed to Paul and Seneca; not regarded as authentic correspondence from Paul's lifetime.",
+      "textual_status": "Survives in Latin manuscript transmission; manuscript witnesses must be catalogued separately.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Date refers to the later composition of the pseudepigraphal correspondence.",
+      "related_scriptural_reference": "",
+      "preservation_status": "surviving_pseudepigraphal_collection",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "fictional_neronian_rome_exchange",
+      "historical_anchor": "A fictional portrayal of an exchange between Paul and Seneca",
+      "historical_anchor_basis": "The correspondence is pseudonymous fiction and cannot establish an actual meeting or event in Paul's life. Its literary setting is not treated as historical chronology.",
+      "historical_subsequence": 10,
+      "historical_anchor_status": "fictional_setting_not_historical_event",
+      "research_sources": [
+        {
+          "title": "Epistles of Paul and Seneca — NASSCAL e-Clavis",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
+        },
+        {
+          "title": "Letters of Paul and Seneca — Encyclopedia of the Bible",
+          "url": "https://search.biblegateway.com/resources/encyclopedia-of-the-bible/Letters-Paul-Seneca"
+        },
+        {
+          "title": "The Letters of Paul in their Roman Literary Context (2024)",
+          "url": "https://www.cambridge.org/core/books/abs/letters-of-paul-in-their-roman-literary-context/introduction/741173A76AD8D524CF0281B721EF9D97"
+        }
+      ],
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+    },
+    {
+      "id": "diognetus",
+      "title": "Epistle to Diognetus",
+      "composition_date_start_ce": 150,
+      "composition_date_end_ce": 200,
+      "date_precision": "Most scholarship favors a later second-century date; exact date and authorship unknown",
+      "genre": "apology / treatise",
+      "attribution_status": "Anonymous. The claim that the author was a disciple of apostles is textually present but does not securely identify the author or prove direct apostolic association.",
+      "textual_status": "Greek text survives in a single medieval manuscript that was later lost; modern editions depend on earlier copies/transcriptions. The physical witness date must not be mistaken for composition date.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Cambridge overview notes that most scholars favor a late-second-century date.",
+      "research_sources": [
+        {
+          "title": "The Epistle to Diognetus and the Fragment of Quadratus — Cambridge Companion",
+          "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-apostolic-fathers/epistle-to-diognetus-and-the-fragment-of-quadratus/4A2185691C2B84F510D7D3BEB54491EA"
+        },
+        {
+          "title": "Epistle to Diognetus 1 and 7–12 — Cambridge Edition",
+          "url": "https://www.cambridge.org/core/books/abs/cambridge-edition-of-early-christian-writings/epistle-to-diognetus-1-and-712/ACD00CFFECECC55B6238F662EE7E7DCA"
+        }
+      ],
+      "preservation_status": "surviving_text_from_lost_medieval_codex",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "unknown_apologetic_addressee",
+      "historical_anchor": "An apologetic address to an unidentified recipient",
+      "historical_anchor_basis": "The author, addressee, date and provenance cannot be securely identified. The text supplies no datable event or location, so it remains outside the ordered event sequence.",
+      "historical_subsequence": 10,
+      "historical_anchor_status": "historical_context_unlocated",
+      "scope_relationship": "broader_early_christian_context_association_unproven",
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+    },
+    {
       "id": "epistle_to_laodiceans_latin",
       "title": "Epistle to the Laodiceans (Latin work)",
       "composition_date_start_ce": 300,
@@ -1669,13 +1646,13 @@
       "chronology_basis": "Provisional date for the surviving pseudepigraphal work, not the date of the correspondence mentioned in Colossians.",
       "related_scriptural_reference": "",
       "preservation_status": "surviving_later_pseudepigraph",
-      "historical_sequence": 60,
-      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "later_latin_pauline_pastiche",
-      "historical_anchor": "A later Latin composition created from Pauline phrases and associated with the missing Laodicean correspondence",
-      "historical_anchor_basis": "The surviving Latin work is a pseudonymous compilation that appears to fill the gap mentioned in Colossians 4:16; it is not securely identical with the letter referred to there and is not evidence of an event in Paul's life.",
-      "historical_subsequence": 181,
+      "historical_anchor": "A later Latin pseudonymous compilation associated with the Laodicean letter reference",
+      "historical_anchor_basis": "The text appears to fill the gap mentioned in Colossians 4:16, but it is not securely identical with the letter referred to there and does not preserve an event from Paul's life.",
+      "historical_subsequence": 10,
       "historical_anchor_status": "later_pseudonymous_response_to_reference",
       "research_sources": [
         {
@@ -1688,7 +1665,30 @@
         }
       ],
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+    },
+    {
+      "id": "gospel_thomas",
+      "title": "Gospel of Thomas",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 200,
+      "date_precision": "Second-century composition commonly proposed; possible earlier sayings traditions and the date of the final collection are debated.",
+      "genre": "gospel or apocalypse",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Sahidic Coptic text available offline from Nag Hammadi Codex II; Greek papyrus fragments are not yet separately imported as a complete aligned witness set.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Composition estimate is not the date of the Greek papyrus fragments or the Coptic Nag Hammadi manuscript.",
+      "existing_catalogue_id": "gospel_thomas",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "thomas_sayings",
+      "historical_anchor": "Sayings attributed to the Lord, without a continuous narrative setting",
+      "historical_anchor_basis": "The collection does not locate individual sayings within a recoverable sequence of the Lord's ministry or identify a single event at which the sayings were delivered. It cannot be assigned a precise place in the event chronology.",
+      "historical_subsequence": 10,
+      "historical_anchor_status": "no_recoverable_event_sequence",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
     },
     {
       "id": "paul_letter_to_alexandrians_reported",
@@ -1703,13 +1703,13 @@
       "chronology_basis": "The Muratorian Fragment reports a forged letter under Paul's name but does not provide a secure composition date. Unknown dates are sorted after dated records.",
       "related_scriptural_reference": "Muratorian Fragment",
       "preservation_status": "reported_lost_or_unidentified",
-      "historical_sequence": 60,
-      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "muratorian_report_forged_letter",
-      "historical_anchor": "A Pauline letter to the Alexandrians reported as forged in the Muratorian Fragment",
-      "historical_anchor_basis": "The letter itself is not extant. The surviving report identifies it as a forged Pauline writing; there is no recoverable content, addressee situation or event chronology beyond that later report.",
-      "historical_subsequence": 182,
+      "historical_anchor": "A Pauline letter reported as forged in the Muratorian Fragment",
+      "historical_anchor_basis": "The letter itself is not extant. No contents, addressee situation or narrated event can be recovered from the later report.",
+      "historical_subsequence": 10,
       "historical_anchor_status": "reported_forgery_no_surviving_text",
       "research_sources": [
         {
@@ -1718,7 +1718,7 @@
         }
       ],
       "scope_relationship": "lost_or_reported_apostolic_correspondence",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
     }
   ],
   "historical_chronology_policy": "Use the events and historical setting represented in each writing as the organizing basis. For narratives, follow narrated events. For letters and instruction writings, use the historical situation, people, journeys, imprisonment, or community events they address. If an exact setting cannot be established, use a broad labelled period and mark placement provisional. Never use composition date as a substitute for event chronology.",
@@ -1730,7 +1730,8 @@
     "uncertainty": "An unresolved historical anchor must remain provisional; do not invent exact dates.",
     "subsequence": "historical_subsequence groups writings by event/context anchors. Equal values indicate no exact relative order is asserted; alphabetic title order is only a display tie-breaker.",
     "non_narrative": "Sayings collections, sermons and writings without a single event sequence are explicitly identified as not internally chronologically placeable.",
-    "later_claims": "Later pseudonymous narratives are placed by the scene they claim to narrate only where a scene is identifiable; this does not authenticate the event."
+    "later_claims": "Later pseudonymous narratives are placed by the scene they claim to narrate only where a scene is identifiable; this does not authenticate the event.",
+    "unplaced_group": "Writings without a sufficiently secure event sequence are shown in a separate final group. This group is not ordered by composition date."
   },
   "scope_policy": {
     "inclusion": "This unified catalogue is limited to writings attributed to, associated with, or reporting correspondence of apostles and early disciples, including later works written under their names. Inclusion does not prove authorship.",
