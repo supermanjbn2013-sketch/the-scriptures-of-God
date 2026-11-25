@@ -1006,7 +1006,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "epistle-framed revelatory dialogue",
       "attribution_status": "Anonymous work framed as a letter from Peter to Philip; framing does not authenticate authorship.",
-      "textual_status": "Coptic witnesses in Nag Hammadi Codex VIII and Codex Tchacos; preserve variants. Witness metadata added; no unverified transcription or translation has been inserted.",
+      "textual_status": "Two Coptic witnesses survive: Nag Hammadi Codex VIII, tractate 2 (NHC VIII, 132.10–140.27), and Codex Tchacos, tractate 1 (CT 1.1–9.17, with additional fragments identified from photographs). The versions are broadly comparable but contain variants. The Greek original is inferred; no Greek manuscript survives. Unpublished or incompletely transcribed Tchacos fragments are not treated as fully available text.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 15,
@@ -1021,8 +1021,24 @@
       "historical_order_note": "Keep the Coptic witnesses distinct and do not harmonize variants silently.",
       "research_sources": [
         {
-          "title": "NASSCAL — Letter of Peter to Philip",
+          "title": "NASSCAL — Letter of Peter to Philip: textual overview and critical editions",
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-peter-to-philip/"
+        },
+        {
+          "title": "NASSCAL — Cairo Coptic Museum Inv. 10550, Nag Hammadi Codex VIII",
+          "url": "https://www.nasscal.com/manuscripta-apocryphorum/cairo-coptic-museum-inv-10550-nag-hammadi-codex-viii/"
+        },
+        {
+          "title": "Oxford Handbook of Early Christian Apocrypha — Letter of Peter to Philip and its two witnesses",
+          "url": "https://gnosis.study/library/%D0%93%D0%BD%D0%BE%D0%B7%D0%B8%D1%81/%2B%20%D0%9D%D0%B5%20%D1%82%D0%BE%D0%BB%D1%8C%D0%BA%D0%BE%20%D0%BE%20%D0%B3%D0%BD%D0%BE%D0%B7%D0%B8%D1%81%D0%B5/ENG/The%20Oxford%20Handbook%20of%20Early%20Christian%20Apocrypha.pdf"
+        },
+        {
+          "title": "Lance Jenott — two versions of the Letter of Peter to Philip",
+          "url": "https://cas.au.dk/en/up-to-date/arrangementer/show/artikel/two-versions-of-the-letter-of-peter-to-philip-nhc-viii2-and-ct1"
+        },
+        {
+          "title": "Cambridge — Codex VIII marginal markings and the Letter of Peter to Philip",
+          "url": "https://www.cambridge.org/core/books/nag-hammadi-codices-and-their-ancient-readers/notes-made-by-monks-the-marginal-markings-in-codex-i-and-codex-viii/3294BDBB666A68D5DD328051022F5472"
         }
       ],
       "preservation_status": "surviving_in_two_coptic_manuscripts",
@@ -1030,16 +1046,53 @@
         {
           "id": "NHC_VIII_2",
           "siglum": "Nag Hammadi Codex VIII, tractate 2",
-          "writing": "Coptic",
+          "shelfmark": "Cairo Coptic Museum Inv. 10550",
+          "writing": "Sahidic Coptic",
           "material": "papyrus codex",
           "date": "Fourth century CE",
-          "provenance": "Jabal al-Tarif, near Nag Hammadi, Egypt",
-          "contents": "Letter of Peter to Philip",
-          "text_status": "Primary Coptic witness; preserve its readings separately from the Codex Tchacos witness.",
-          "source": "https://www.cambridge.org/core/books/nag-hammadi-codices-and-their-ancient-readers/introduction/333084781B98EFDB225C0C6EC60D1F84"
+          "provenance": "Jabal al-Taref, near Nag Hammadi, Egypt",
+          "contents": "Pages 132–140; final tractate of Codex VIII",
+          "text_status": "Primary and comparatively well-preserved Coptic witness. Some lacunae and damaged lines remain; the text begins with a letter framing the post-resurrection gathering.",
+          "source": "https://www.nasscal.com/manuscripta-apocryphorum/cairo-coptic-museum-inv-10550-nag-hammadi-codex-viii/"
+        },
+        {
+          "id": "Codex_Tchacos_1",
+          "siglum": "Codex Tchacos, tractate 1",
+          "writing": "Sahidic Coptic",
+          "material": "papyrus codex",
+          "date": "Fourth century CE",
+          "contents": "Pages 1.1–9.17 and additional fragments identified from photographs",
+          "text_status": "Second Coptic witness with variants. Published portions and later-identified fragments have differing editorial availability; do not claim that the whole witness is fully transcribed or published.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-peter-to-philip/"
         }
       ],
-      "description": "Letter of Peter to Philip is a epistle-framed revelatory dialogue writing in the Unified Apostolic and Disciple collection. Anonymous work framed as a letter from Peter to Philip; framing does not authenticate authorship. Coptic witnesses in Nag Hammadi Codex VIII and Codex Tchacos; preserve variants. Witness metadata added; no unverified transcription or translation has been inserted. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+      "description": "Letter of Peter to Philip is an anonymous post-resurrection revelatory dialogue framed at its opening as a letter from Peter to Philip. It survives in two Coptic witnesses: Nag Hammadi Codex VIII, tractate 2, and Codex Tchacos, tractate 1. The versions are broadly comparable but contain variants. The Greek original is inferred, not extant. The text depicts the disciples' reunion, prayer, revelation by the Saviour, and renewed mission. The title's letter framing does not authenticate apostolic authorship.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "LPP-NHC-VIII2-132-140",
+          "transmitting_author": "Anonymous Coptic translator and copyist; Nag Hammadi Codex VIII witness",
+          "source_work": "Nag Hammadi Codex VIII, tractate 2",
+          "passage": "NHC VIII, 132.10–140.27",
+          "language_of_surviving_source": "Sahidic Coptic",
+          "content_scope": "The work opens with a letter framed as Peter's message to Philip, urging the disciples to reunite and proclaim the salvation they received. The narrative then depicts the disciples gathering on the Mount of Olives, praying, and receiving a revelation from the Saviour. The dialogue discusses the nature of the rulers and the creation of the visible world, the Saviour's descent, and the disciples' mission. It closes with their return to Jerusalem and renewed proclamation.",
+          "status": "Principal Coptic witness; comparatively well preserved, with identified lacunae at several lines.",
+          "english_paraphrase": "Peter writes to Philip because Philip has been separated from the other disciples. After they reunite, the group prays and receives a revelation from the Saviour. The ensuing dialogue explains the opposition of the rulers, the Saviour's descent, and the disciples' commission to preach. The narrative ends by describing their return to Jerusalem to continue their mission.",
+          "text_type": "content_paraphrase_of_coptic_manuscript",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-peter-to-philip/"
+        },
+        {
+          "fragment_id": "LPP-CodexTchacos-1-9",
+          "transmitting_author": "Anonymous Coptic translator and copyist; Codex Tchacos witness",
+          "source_work": "Codex Tchacos, tractate 1",
+          "passage": "Codex Tchacos 1.1–9.17; further photographic fragments separately identified",
+          "language_of_surviving_source": "Sahidic Coptic",
+          "content_scope": "A second Coptic version of the work, broadly comparable to NHC VIII,2 but with textual variants. The surviving published text begins with the letter and continues through the revelatory dialogue. Additional fragments identified from photographs have expanded the known witness, but not all have been fully transcribed and published in a critical form.",
+          "status": "Second Coptic witness; preserve its distinct readings. The extent of unpublished or incompletely transcribed fragments must not be overstated.",
+          "english_paraphrase": "The Codex Tchacos version preserves the same basic frame: Peter's message to Philip, the disciples' reunion, and a revelation by the Saviour. Its differences from the Nag Hammadi version are evidence of textual transmission and should be recorded as variants rather than harmonized into a single text.",
+          "text_type": "version_summary_with_variant_caution",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-peter-to-philip/"
+        }
+      ]
     },
     {
       "id": "gospel_mary",
