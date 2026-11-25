@@ -709,7 +709,7 @@ def validate_witness_registers():
     unified_ids = [x["id"] for x in unified["records"]]
     assert len(unified_ids) == len(set(unified_ids)), "Duplicate unified writing identities"
     assert len(unified["records"]) > 27, "Unified collection must extend beyond the 27-item source dataset"
-    assert unified["records"] == sorted(unified["records"], key=lambda r: (r.get("historical_sequence", 999), r["title"].casefold())), "Unified writings are not sorted by historical event sequence"
+    assert unified["records"] == sorted(unified["records"], key=lambda r: (r.get("historical_sequence", 999), r.get("historical_subsequence", 999), r["title"].casefold())), "Unified writings are not sorted by historical event sequence"
     for record in unified["records"]:
         start = record.get("composition_date_start_ce")
         end = record.get("composition_date_end_ce")
@@ -718,6 +718,8 @@ def validate_witness_registers():
         assert start != 9999 and end != 9999, f"Do not use numeric sentinels for undated works: {record['id']}"
         assert record.get("attribution_status") and record.get("textual_status") and record.get("chronology_basis")
         assert isinstance(record.get("historical_sequence"), int) and record.get("historical_period") and record.get("historical_order_basis"), f"Missing event-based chronology metadata: {record['id']}"
+        assert record.get("historical_anchor_id") and record.get("historical_anchor") and record.get("historical_anchor_basis") and record.get("historical_anchor_status"), f"Missing event-anchor evidence: {record['id']}"
+        assert isinstance(record.get("historical_subsequence"), int), f"Missing event sub-sequence: {record['id']}"
         if record.get("research_sources") is not None:
             assert record["research_sources"] and all(s.get("title") and s.get("url", "").startswith("https://") for s in record["research_sources"]), f"Invalid research source metadata: {record['id']}"
     print(f"Validated unified chronological writings collection: {len(unified['records'])} entries; not restricted to 27.")

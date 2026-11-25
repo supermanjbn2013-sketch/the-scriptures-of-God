@@ -130,7 +130,7 @@ public class MainActivity extends Activity {
             org.json.JSONArray records=new org.json.JSONObject(raw.toString()).getJSONArray("records");
             java.util.ArrayList<org.json.JSONObject> ordered=new java.util.ArrayList<>();
             for(int i=0;i<records.length();i++)ordered.add(records.getJSONObject(i));
-            java.util.Collections.sort(ordered,(a,b)->(a.optInt("historical_sequence",999)!=b.optInt("historical_sequence",999)?Integer.compare(a.optInt("historical_sequence",999),b.optInt("historical_sequence",999)):a.optString("title","").compareToIgnoreCase(b.optString("title","")) ));
+            java.util.Collections.sort(ordered,(a,b)->{int p=Integer.compare(a.optInt("historical_sequence",999),b.optInt("historical_sequence",999));if(p!=0)return p;int q=Integer.compare(a.optInt("historical_subsequence",999),b.optInt("historical_subsequence",999));return q!=0?q:a.optString("title","").compareToIgnoreCase(b.optString("title",""));});
             int shown=0;
             for(int i=0;i<ordered.size();i++){
                 org.json.JSONObject record=ordered.get(i);
@@ -162,6 +162,9 @@ public class MainActivity extends Activity {
         boolean hasDate=!record.isNull("composition_date_start_ce")&&!record.isNull("composition_date_end_ce");
         String date=hasDate?(record.optInt("composition_date_start_ce")==record.optInt("composition_date_end_ce")?record.optInt("composition_date_start_ce")+" CE":record.optInt("composition_date_start_ce")+"–"+record.optInt("composition_date_end_ce")+" CE"):"Undetermined";
         detail.append("Historical period: ").append(record.optString("historical_period","Unclassified")).append("\\n");
+        detail.append("Historical event / setting: ").append(record.optString("historical_anchor","Not established")).append("\\n");
+        detail.append("Event-order evidence: ").append(record.optString("historical_anchor_basis","Not specified")).append("\\n");
+        detail.append("Event-order status: ").append(record.optString("historical_anchor_status","Not specified")).append("\\n");
         detail.append("Historical order basis: ").append(record.optString("historical_order_basis","Not specified")).append("\\n");
         detail.append("Estimated composition: ").append(date).append("\\n");
         detail.append("Date note: ").append(record.optString("date_precision")).append("\\n\\n");
