@@ -513,11 +513,21 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "paul_imprisonment",
       "historical_anchor": "Paul's imprisonment and the Colossian community",
-      "historical_anchor_basis": "Imprisonment is stated; authorship and place/date are debated.",
+      "historical_anchor_basis": "Colossians presents Paul as imprisoned (4:3, 10, 18) and names Tychicus as the courier with Onesimus (4:7–9). The personal names and circumstances overlap with Philemon (Phlm 1–2, 10, 23–24), making a shared correspondence episode plausible. The imprisonment location is not named; Ephesus, Caesarea and Rome have been proposed. Authorship is debated, so the narrative's self-presentation is recorded separately from historical certainty.",
       "historical_subsequence": 60,
       "historical_anchor_status": "disputed_imprisonment_context",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "These writings share an imprisonment setting in their presentation, but the location and relative order of the prison letters are disputed; no internal ranking is claimed."
+      "historical_order_note": "The links with Philemon—especially Onesimus, Archippus and the coworkers—support placing them in the same broad correspondence episode, without claiming which letter was written first. Ephesians also names Tychicus (Eph 6:21–22), but that shared courier does not by itself prove a single dispatch or identical authorship. No exact order among the prison letters is asserted.",
+      "research_sources": [
+        {
+          "title": "Cambridge University Press — Introduction to Colossians (authorship, imprisonment and courier links)",
+          "url": "https://www.cambridge.org/core/books/colossians-and-philemon/introduction-to-colossians/966C5826BB48CEB182E548108946FEAC"
+        },
+        {
+          "title": "Cambridge University Press — The Prison Epistles",
+          "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-new-testament/prison-epistles/FD071EEAAFBDCBCABEF57A040331494B"
+        }
+      ]
     },
     {
       "id": "ephesians",
@@ -535,11 +545,21 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "paul_imprisonment",
       "historical_anchor": "Paul's imprisonment and instruction to communities in Asia",
-      "historical_anchor_basis": "Imprisonment is stated; authorship, destination and location are debated.",
+      "historical_anchor_basis": "Ephesians presents the writer as a prisoner (3:1; 4:1; 6:20) and names Tychicus as the bearer who will report the writer's circumstances (6:21–22). Colossians 4:7–9 also names Tychicus, creating a literary and courier connection. However, the destination, authorship and relation to Colossians are debated; a shared name does not establish that the letters were composed or dispatched together.",
       "historical_subsequence": 60,
       "historical_anchor_status": "disputed_imprisonment_context",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "These writings share an imprisonment setting in their presentation, but the location and relative order of the prison letters are disputed; no internal ranking is claimed."
+      "historical_order_note": "The letter belongs in the broad imprisonment-context group because of its own presentation (3:1; 4:1; 6:20). Its relation to Colossians and the other prison letters is debated; the Tychicus reference alone cannot establish a common dispatch or relative order. No exact order is claimed.",
+      "research_sources": [
+        {
+          "title": "Cambridge University Press — The Prison Epistles",
+          "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-new-testament/prison-epistles/FD071EEAAFBDCBCABEF57A040331494B"
+        },
+        {
+          "title": "Cambridge University Press — Introduction to Colossians (Tychicus and related correspondence)",
+          "url": "https://www.cambridge.org/core/books/colossians-and-philemon/introduction-to-colossians/966C5826BB48CEB182E548108946FEAC"
+        }
+      ]
     },
     {
       "id": "philemon",
@@ -557,11 +577,25 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "paul_imprisonment",
       "historical_anchor": "Paul's imprisonment and appeal concerning Onesimus",
-      "historical_anchor_basis": "Imprisonment is explicit; its location and relation to other prison letters are disputed.",
+      "historical_anchor_basis": "Philemon presents Paul as a prisoner (vv. 1, 9–10, 13, 23) and appeals concerning Onesimus (vv. 10–21). Philemon, Timothy and the named coworkers overlap with Colossians (compare Phlm 1–2, 23–24 with Col 1:1; 4:7–17), and Colossians 4:9 identifies Onesimus as one of the Colossian community. These links support a close historical-literary connection, but the place of imprisonment—Ephesus, Caesarea or Rome—and the exact dispatch sequence remain disputed.",
       "historical_subsequence": 60,
       "historical_anchor_status": "imprisonment_context",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "These writings share an imprisonment setting in their presentation, but the location and relative order of the prison letters are disputed; no internal ranking is claimed."
+      "historical_order_note": "Philemon is closely linked with Colossians through Onesimus, Archippus and shared coworkers; the two may belong to the same correspondence episode. This does not establish an exact order between them or prove the location of Paul's imprisonment. No exact order relative to Philippians or Ephesians is claimed.",
+      "research_sources": [
+        {
+          "title": "Cambridge University Press — Introduction to Colossians (prison setting and links to Philemon)",
+          "url": "https://www.cambridge.org/core/books/colossians-and-philemon/introduction-to-colossians/966C5826BB48CEB182E548108946FEAC"
+        },
+        {
+          "title": "Oxford Bibliographies — Philemon",
+          "url": "https://academic.oup.com/reference/62341/reference-article/554108973"
+        },
+        {
+          "title": "Cambridge University Press — Prison Epistles: Philippians and Philemon",
+          "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/prison-epistles-1-philippians-and-philemon/DC2D9B05DF14C0253DE1FAD3804B6A91"
+        }
+      ]
     },
     {
       "id": "philippians",
@@ -579,11 +613,21 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "paul_imprisonment",
       "historical_anchor": "Paul's imprisonment and relationship with Philippi",
-      "historical_anchor_basis": "Imprisonment is explicit; Rome, Caesarea and Ephesus are debated settings.",
+      "historical_anchor_basis": "Philippians presents Paul as imprisoned (1:7, 12–14; 4:22) and describes movement between Paul and the Philippian community: Epaphroditus had come from them and was being sent back (2:25–30), while Paul hopes to send Timothy (2:19–24) and hopes to visit (1:25–26; 2:24). The location is unresolved: Rome, Caesarea and Ephesus have been proposed. The travel frequency may favor a nearer location, but it does not prove one.",
       "historical_subsequence": 60,
       "historical_anchor_status": "imprisonment_context",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "These writings share an imprisonment setting in their presentation, but the location and relative order of the prison letters are disputed; no internal ranking is claimed."
+      "historical_order_note": "Place this with the imprisonment-era correspondence because that is the situation represented by the letter. Do not assume it was written during the same imprisonment as Philemon, Colossians or Ephesians: its travel clues and proposed locations remain debated, and it has no secure internal sequence relative to those letters.",
+      "research_sources": [
+        {
+          "title": "USCCB — Introduction to Philippians (imprisonment location debate)",
+          "url": "https://bible.usccb.org/bible/philippians/0?bk=Philippians&ch="
+        },
+        {
+          "title": "Cambridge University Press — Prison Epistles: Philippians and Philemon",
+          "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/prison-epistles-1-philippians-and-philemon/DC2D9B05DF14C0253DE1FAD3804B6A91"
+        }
+      ]
     },
     {
       "id": "jude",
