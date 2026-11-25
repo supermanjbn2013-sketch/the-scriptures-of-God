@@ -580,6 +580,34 @@
             }
           ],
           "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
+        },
+        {
+          "id": "P103",
+          "siglum": "𝔓103",
+          "shelfmark": "P.Oxy. 4403",
+          "writing": "Greek",
+          "material": "papyrus codex leaf fragment",
+          "date": "Late second or early third century CE (palaeographic estimate; exact date disputed)",
+          "provenance": "Oxyrhynchus, Egypt",
+          "current_location": "Bodleian Art, Archaeology and Ancient World Library, Oxford, United Kingdom (Sackler Library collection)",
+          "contents": "Matthew 13:55–56 on the recto and Matthew 14:3–5 on the verso",
+          "physical_extent": "One small fragment from the upper corner of a codex leaf, approximately 5.8 × 4 cm; the reconstructed page is estimated at about 11 × 16 cm, with approximately 19–20 lines per page.",
+          "text_status": "Fragmentary Greek witness. The catalogue records portions of Matthew 13:55–56 and 14:3–5. These passage references identify the represented text and do not imply that complete verses or continuous lines survive. No diplomatic transcription is supplied in this record.",
+          "textual_relationship": "The fragment has been compared with P77 because of similarities in date, size, hand, and content. A possible relationship to the same codex has been proposed, but the identification is uncertain; the published discussion notes features that may distinguish the manuscripts. P103 is therefore catalogued as a separate witness.",
+          "transcription_note": "Manuscript inventory and passage coverage only. No Greek transcription or English translation is asserted here.",
+          "source_references": [
+            {
+              "title": "CSNTM — P103 manuscript record and digital images",
+              "url": "https://manuscripts.csntm.org/Manuscript/Group/GA_P103"
+            },
+            {
+              "title": "Peter M. Head, Some Recently Published NT Papyri from Oxyrhynchus: An Overview and Preliminary Assessment, Tyndale Bulletin 51 (2000), pp. 1–16",
+              "url": "https://www.tyndalebulletin.org/article/30281-some-recently-published-nt-papyri-from-oxyrhynchus-an-overview-and-preliminary-assessment"
+            },
+            {
+              "title": "E. W. Handley et al., The Oxyrhynchus Papyri, vol. LXIV (1997), no. 4403, pp. 5–7"
+            }
+          ]
         }
       ],
       "description": "Gospel of Matthew is a gospel writing in the Unified Apostolic and Disciple collection. Anonymous narrative traditionally associated with Matthew; authorship is not stated in the text. A manuscript-specific Greek transcription and an English rendering directly from that transcription are now recorded for P104, Matthew 21:34–37 (recto). This is one fragmentary witness, not a complete edition of Matthew. Other witnesses and the edited Greek text remain separate. The catalogue identifies 2 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
