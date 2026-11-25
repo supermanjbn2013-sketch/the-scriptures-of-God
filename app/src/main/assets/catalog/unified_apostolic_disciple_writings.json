@@ -359,11 +359,29 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "corinth_correspondence",
       "historical_anchor": "Paul's correspondence with Corinth before 1 Corinthians",
-      "historical_anchor_basis": "1 Corinthians 5:9 explicitly refers to an earlier letter; its contents and exact date are unknown.",
+      "historical_anchor_basis": "1 Corinthians 5:9 explicitly refers to a letter Paul had written to the Corinthian community before the present 1 Corinthians. The reference establishes relative priority, but the lost letter's contents, exact date and possible relation to any fragment in 2 Corinthians remain uncertain.",
       "historical_subsequence": 40,
       "historical_anchor_status": "explicit_relative_order",
       "scope_relationship": "lost_or_reported_apostolic_correspondence",
-      "historical_order_note": "Explicitly earlier than 1 Corinthians 5:9. Its contents, date and whether any fragment survives are not established."
+      "historical_order_note": "Explicitly earlier than 1 Corinthians (1 Corinthians 5:9). Its contents and exact date are unknown. Some reconstructions identify a fragment in 2 Corinthians 6:14–7:1 with this letter, but that identification is disputed.",
+      "research_sources": [
+        {
+          "title": "Appendix 2: Reconstructing Paul's Corinthian Correspondence: A Puzzle",
+          "url": "https://www.cambridge.org/core/books/abs/paul-the-apostle/appendix-2-reconstructing-pauls-corinthian-correspondence-a-puzzle/5807DDC4DAB825DCD825AE6F2820C553"
+        },
+        {
+          "title": "The Composition and Chronology of Second Corinthians",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X9101404406"
+        },
+        {
+          "title": "Paul’s Absence from Corinth as Voluntary Exile: Reading 2 Corinthians 1.1–2.13 and 7.5–16 as a Letter from Exile",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X20949382"
+        },
+        {
+          "title": "The Rhetorical Situation of the Corinthian Correspondence",
+          "url": "https://ora.ox.ac.uk/objects/uuid:9f613e23-7197-40d8-836c-d0e478be2636/files/mf311bf81e4a53ba099e46ddae88529b5"
+        }
+      ]
     },
     {
       "id": "1_corinthians",
@@ -381,11 +399,29 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "corinth_correspondence",
       "historical_anchor": "Paul's correspondence with Corinth after the earlier letter",
-      "historical_anchor_basis": "1 Corinthians 5:9 establishes that a previous letter preceded this one.",
+      "historical_anchor_basis": "The letter addresses the Corinthian community after Paul's earlier letter mentioned in 1 Corinthians 5:9. It also refers to Paul's intended and possible future visits (1 Corinthians 4:18–21; 16:5–9) and names Timothy's mission (4:17; 16:10–11), providing internal movement clues without fixing every stage of the correspondence.",
       "historical_subsequence": 41,
       "historical_anchor_status": "explicit_relative_order",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "Follows Paul's earlier, now-unidentified letter to Corinth (1 Corinthians 5:9). It precedes the painful correspondence mentioned in 2 Corinthians 2:1–4 only in the reconstructed sequence; the exact identity and placement of that letter remain debated."
+      "historical_order_note": "Follows Paul's earlier, now-unidentified letter to Corinth (1 Corinthians 5:9). It precedes the painful correspondence recalled in 2 Corinthians 2:1–4 and 7:8 in the usual reconstruction. The number of intervening visits and letters, and whether any lost correspondence survives inside 2 Corinthians, remain debated.",
+      "research_sources": [
+        {
+          "title": "Appendix 2: Reconstructing Paul's Corinthian Correspondence: A Puzzle",
+          "url": "https://www.cambridge.org/core/books/abs/paul-the-apostle/appendix-2-reconstructing-pauls-corinthian-correspondence-a-puzzle/5807DDC4DAB825DCD825AE6F2820C553"
+        },
+        {
+          "title": "The Composition and Chronology of Second Corinthians",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X9101404406"
+        },
+        {
+          "title": "Paul’s Absence from Corinth as Voluntary Exile: Reading 2 Corinthians 1.1–2.13 and 7.5–16 as a Letter from Exile",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X20949382"
+        },
+        {
+          "title": "The Rhetorical Situation of the Corinthian Correspondence",
+          "url": "https://ora.ox.ac.uk/objects/uuid:9f613e23-7197-40d8-836c-d0e478be2636/files/mf311bf81e4a53ba099e46ddae88529b5"
+        }
+      ]
     },
     {
       "id": "paul_sorrowful_corinthian_letter",
@@ -405,11 +441,29 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "corinth_correspondence",
       "historical_anchor": "Paul's painful visit and sorrowful correspondence with Corinth",
-      "historical_anchor_basis": "2 Corinthians 2:1–4 and 7:8 refer to a painful letter; whether it survives in part is disputed.",
+      "historical_anchor_basis": "2 Corinthians 2:1–4 describes a letter written amid distress and tears; 2 Corinthians 7:8–12 recalls its painful effect and the community's response. These references place the letter within the crisis after the correspondence represented by 1 Corinthians in common reconstructions. Whether the letter is lost or partly preserved in 2 Corinthians 10–13 is disputed.",
       "historical_subsequence": 42,
       "historical_anchor_status": "relative_order_with_identity_disputed",
       "scope_relationship": "lost_or_reported_apostolic_correspondence",
-      "historical_order_note": "The painful letter is referred to in 2 Corinthians 2:1–4 and 7:8, after the earlier letter mentioned in 1 Corinthians 5:9. Whether it survives as part of 2 Corinthians is disputed."
+      "historical_order_note": "Usually placed after 1 Corinthians and before the reconciliation report in 2 Corinthians 7:5–16. The text supports a painful letter and a later report through Titus, but scholars dispute whether the letter survives in 2 Corinthians 10–13 and whether the present 2 Corinthians combines multiple letters.",
+      "research_sources": [
+        {
+          "title": "Appendix 2: Reconstructing Paul's Corinthian Correspondence: A Puzzle",
+          "url": "https://www.cambridge.org/core/books/abs/paul-the-apostle/appendix-2-reconstructing-pauls-corinthian-correspondence-a-puzzle/5807DDC4DAB825DCD825AE6F2820C553"
+        },
+        {
+          "title": "The Composition and Chronology of Second Corinthians",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X9101404406"
+        },
+        {
+          "title": "Paul’s Absence from Corinth as Voluntary Exile: Reading 2 Corinthians 1.1–2.13 and 7.5–16 as a Letter from Exile",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X20949382"
+        },
+        {
+          "title": "The Rhetorical Situation of the Corinthian Correspondence",
+          "url": "https://ora.ox.ac.uk/objects/uuid:9f613e23-7197-40d8-836c-d0e478be2636/files/mf311bf81e4a53ba099e46ddae88529b5"
+        }
+      ]
     },
     {
       "id": "2_corinthians",
@@ -427,11 +481,29 @@
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "corinth_correspondence",
       "historical_anchor": "Paul's later correspondence with Corinth and Titus's report",
-      "historical_anchor_basis": "The letter refers back to the painful correspondence; exact travel chronology remains debated.",
+      "historical_anchor_basis": "2 Corinthians 7:5–16 reports Titus's arrival in Macedonia and the community's response to the earlier painful letter (2:1–4; 7:8–12). The present writing is commonly placed after that report, but the literary unity of 2 Corinthians is disputed: proposals range from one letter to a compilation of several correspondence units, with differing reconstructions of their dispatch order.",
       "historical_subsequence": 43,
       "historical_anchor_status": "contextual_order",
       "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "Refers back to the painful correspondence and Titus's report (2 Corinthians 7:5–16). Its placement after that letter is supported by the internal references; exact travel intervals and the composition history of the present text remain debated."
+      "historical_order_note": "The reconciliation material in 2 Corinthians 1:1–2:13 and 7:5–16 follows the painful correspondence in the narrative sequence and reports Titus's news. Do not treat the whole extant 2 Corinthians as one securely dated dispatch: its unity and the order of possible component letters remain disputed.",
+      "research_sources": [
+        {
+          "title": "Appendix 2: Reconstructing Paul's Corinthian Correspondence: A Puzzle",
+          "url": "https://www.cambridge.org/core/books/abs/paul-the-apostle/appendix-2-reconstructing-pauls-corinthian-correspondence-a-puzzle/5807DDC4DAB825DCD825AE6F2820C553"
+        },
+        {
+          "title": "The Composition and Chronology of Second Corinthians",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X9101404406"
+        },
+        {
+          "title": "Paul’s Absence from Corinth as Voluntary Exile: Reading 2 Corinthians 1.1–2.13 and 7.5–16 as a Letter from Exile",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X20949382"
+        },
+        {
+          "title": "The Rhetorical Situation of the Corinthian Correspondence",
+          "url": "https://ora.ox.ac.uk/objects/uuid:9f613e23-7197-40d8-836c-d0e478be2636/files/mf311bf81e4a53ba099e46ddae88529b5"
+        }
+      ]
     },
     {
       "id": "romans",

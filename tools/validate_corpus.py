@@ -721,7 +721,11 @@ def validate_witness_registers():
         "2_corinthians",
     ]
     corinthian_positions = [(by_id[x]["historical_sequence"], by_id[x]["historical_subsequence"]) for x in corinthian_order]
-    assert corinthian_positions == sorted(corinthian_positions) and len(set(corinthian_positions)) == 4, "Corinthian correspondence must retain its explicitly reconstructed event sequence"
+    assert corinthian_positions == sorted(corinthian_positions), "Corinthian correspondence must retain its qualified event sequence"
+    assert "1 Corinthians 5:9" in by_id["paul_previous_corinthian_letter"]["historical_anchor_basis"], "The earlier Corinthian letter must retain its explicit textual reference"
+    assert "2 Corinthians 2:1–4" in by_id["paul_sorrowful_corinthian_letter"]["historical_anchor_basis"] and "disputed" in by_id["paul_sorrowful_corinthian_letter"]["historical_anchor_basis"], "The painful letter must retain its internal references and disputed preservation"
+    assert "literary unity of 2 Corinthians is disputed" in by_id["2_corinthians"]["historical_anchor_basis"], "Do not treat extant 2 Corinthians as an uncontested single dispatch"
+    assert all(by_id[x].get("research_sources") for x in corinthian_order), "Corinthian correspondence chronology must include research sources"
     thessalonians = [by_id["1_thessalonians"], by_id["2_thessalonians"]]
     assert len({(r["historical_sequence"], r["historical_subsequence"]) for r in thessalonians}) == 1, "Do not force an exact order between the Thessalonian letters"
     assert "Timothy" in by_id["1_thessalonians"]["historical_anchor_basis"] and "Acts 17" in by_id["1_thessalonians"]["historical_anchor_basis"], "1 Thessalonians must retain its internal travel clues and qualified Acts correlation"
