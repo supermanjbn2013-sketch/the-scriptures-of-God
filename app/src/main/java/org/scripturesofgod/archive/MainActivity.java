@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
 
     void renderUnifiedWritings(String query){
         content.addView(text("ONE HISTORICAL COLLECTION • ORDERED BY EVENTS",12,gold,true));
-        content.addView(text("This collection is not limited by the later 27-writing compilation. It includes writings attributed to apostles and disciples, works associated with their communities, and later works bearing their names. Inclusion does not establish authorship or authority. The list follows represented events and historical settings. Equal event-order groups do not claim an exact order between their writings. Composition and manuscript dates are separate reference details.",13,muted,false));
+        content.addView(text("This collection is limited to writings attributed to, associated with, or reporting writings of apostles and early disciples; it is not a catalogue of all ancient writings. Later works using apostolic names are marked separately. A few contextual comparison records have disputed or unproven links and are clearly labeled; they are not treated as proven apostolic or disciple authorship. Inclusion does not establish authorship or authority. The list follows represented events and historical settings. Equal event-order groups do not claim an exact order between their writings. Composition and manuscript dates are separate reference details.",13,muted,false));
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/unified_apostolic_disciple_writings.json"),"UTF-8"));
             StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
