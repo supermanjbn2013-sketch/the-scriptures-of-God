@@ -417,23 +417,27 @@
           "writing": "Greek",
           "material": "papyrus bifolium",
           "date": "Fourth century CE (palaeographic estimate)",
-          "provenance": "Egypt; exact findspot not established in the consulted catalogue",
+          "provenance": "Unknown; the consulted manuscript catalogues do not establish a secure archaeological findspot.",
           "current_location": "Università Cattolica del Sacro Cuore, Milan, Italy",
           "contents": "Gospel of Mark 2:1–26, preserved on a papyrus bifolium comprising four pages",
-          "physical_extent": "One bifolium (four pages), single column, approximately 22–23 lines per page; published measurements vary slightly between catalogues",
-          "text_status": "Fragmentary Greek witness to Mark 2:1–26. The text is badly preserved in places; the passage range identifies the represented section and should not be treated as a guarantee that every letter is legible.",
+          "physical_extent": "One papyrus sheet folded as the central bifolium of a quire, producing four pages, approximately 24 × 15 cm. The pages are single-column, with 22–23 lines per page. The four pages represent Mark 2:1–8, 2:8–15, 2:15–19, and 2:20–26.",
+          "text_status": "Fragmentary Greek witness. The four surviving pages cover portions of Mark 2:1–26; the papyrus is in very poor physical condition in places. The represented passage range does not mean every word is legible. The published description reports corrections by two additional hands, distinct from the principal scribe. No diplomatic transcription is supplied in this record.",
           "source_references": [
             {
               "title": "CSNTM — P88 manuscript record and digital images",
               "url": "https://manuscripts.csntm.org/manuscript/View/GA_P88"
             },
             {
+              "title": "4CARE artefact record 1442 / TM 61757, Gregory-Aland P88",
+              "url": "https://4care-skos.mf.no/4care-artefacts/1442/"
+            },
+            {
               "title": "Peter M. Head, The Early Text of Mark, in The Early Text of the New Testament (2012), pp. 108–120",
               "url": "https://academic.oup.com/book/40383/chapter-abstract/347133830"
             },
             {
-              "title": "INTF manuscript catalogue listing P88",
-              "url": "https://ntvmr.uni-muenster.de/"
+              "title": "S. Daris, Papiri letterari dell' IV secolo. Marco, Vangelo 2, 1–26, Aegyptus 52 (1972), pp. 80–88 (editio princeps)",
+              "url": "https://www.jstor.org/stable/41214944"
             }
           ],
           "transcription_note": "No diplomatic Greek transcription is supplied in this record. The catalogue identifies the physical witness and its represented passage only."
@@ -459,11 +463,11 @@
           "source_work": "Gospel of Mark",
           "passage": "Mark 2:1–26 (represented across four pages of a papyrus bifolium)",
           "language_of_surviving_source": "Greek",
-          "content_scope": "The represented section includes the healing of the paralytic and the dispute about forgiveness, the call of Levi and meal with tax collectors, the question about fasting, and the sayings about new cloth and wineskins.",
-          "status": "P88 (P. Med. Inv. Nr. 69.24) is a separate fourth-century papyrus witness from the third-century P45 codex. It consists of a bifolium with four pages in one column. The papyrus is fragmentary and its physical preservation is poor; this summary does not imply that every word in Mark 2:1–26 is equally legible.",
+          "content_scope": "The four-page bifolium is divided across Mark 2:1–8, 2:8–15, 2:15–19, and 2:20–26. The represented episodes include the healing of the paralytic and the dispute about forgiveness, the call of Levi and the meal with tax collectors, the question about fasting, and the sayings about new cloth and wineskins.",
+          "status": "P88 (P. Med. Inv. Nr. 69.24) is a separate fourth-century papyrus witness from the third-century P45 codex. It is one papyrus sheet folded as the central bifolium of a quire, forming four pages of approximately 24 × 15 cm, in one column with 22–23 lines per page. The four pages represent Mark 2:1–8, 2:8–15, 2:15–19, and 2:20–26. The manuscript is poorly preserved in places, and two additional correcting hands have been reported. The fourth-century date is the standard catalogue dating, not an exact year.",
           "english_paraphrase": "The surviving section covers several connected episodes: a paralysed man is brought to the Lord and healed; the Lord calls Levi and eats with tax collectors; questions arise about fasting; and the Lord uses images of new cloth and new wine to address the mismatch between old and new forms. This is a content guide to the represented passage, not a translation of the papyrus.",
           "text_type": "Editorial content summary based on the published description of P88. It is not a verbatim transcription or a reconstruction of damaged wording.",
-          "source_url": "https://manuscripts.csntm.org/manuscript/View/GA_P88"
+          "source_url": "https://4care-skos.mf.no/4care-artefacts/1442/"
         }
       ]
     },
