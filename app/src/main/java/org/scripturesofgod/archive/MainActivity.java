@@ -200,7 +200,11 @@ public class MainActivity extends Activity {
             ScrollView scroll=new ScrollView(this);
             scroll.setPadding(10,8,10,8);
             scroll.addView(readingLayout);
-            String attribution=selected.optString("reading_source_note","");
+            String attribution=selected.optString("source_note","");
+            if(!selected.optString("text_basis","").isEmpty())attribution+="\\n\\nText basis: "+selected.optString("text_basis");
+            if(!selected.optString("translation_basis","").isEmpty())attribution+="\\n\\nTranslation basis: "+selected.optString("translation_basis");
+            org.json.JSONArray pending=selected.optJSONArray("witnesses_pending");
+            if(pending!=null&&pending.length()>0){attribution+="\\n\\nWitness collation still pending:";for(int i=0;i<pending.length();i++){org.json.JSONObject witness=pending.optJSONObject(i);if(witness!=null)attribution+="\\n"+witness.optString("id")+": "+witness.optString("task");}}
             android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this)
                 .setTitle("English reading")
                 .setView(scroll)
