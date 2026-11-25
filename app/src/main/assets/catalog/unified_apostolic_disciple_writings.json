@@ -6316,6 +6316,63 @@
         }
       ],
       "description": "Revelation is a apocalypse writing in the Unified Apostolic and Disciple collection. Apocalypse attributed internally to John; identifying him with the apostle is disputed. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+    },
+    {
+      "id": "theophilus_of_antioch",
+      "title": "Theophilus of Antioch — To Autolycus (Three Books)",
+      "composition_date_start_ce": 180,
+      "composition_date_end_ce": 185,
+      "date_precision": "Approximate late-second-century range; debated",
+      "genre": "Christian apologetic",
+      "attribution_status": "Attributed to Theophilus, bishop of Antioch; not an apostle or original disciple",
+      "textual_status": "Three books survive in Greek through a medieval manuscript tradition. Keep this later work distinct from apostolic and disciple writings.",
+      "later_canonical_compilation_status": "Not part of the apostolic writings; placed here only as a separately identified historical appendix at the user's request",
+      "chronology_basis": "Approximate composition period, not manuscript date",
+      "historical_sequence": 999,
+      "historical_period": "Later second-century Christian literature",
+      "historical_order_basis": "Explicitly appended after Revelation as a separate later historical writing",
+      "historical_anchor_id": "after_revelation",
+      "historical_anchor": "After Revelation",
+      "historical_anchor_basis": "User-requested final placement; not an assertion of apostolic authorship",
+      "historical_subsequence": 999,
+      "historical_anchor_status": "editorial_appendix",
+      "scope_relationship": "later_historical_writer_not_apostle_or_disciple",
+      "historical_order_note": "Final entry after Revelation by explicit user request. This placement does not classify Theophilus as an apostle or disciple.",
+      "research_sources": [
+        {
+          "title": "Theophilus of Antioch, To Autolycus — Greek text and manuscript discussion",
+          "url": "https://mignereadingroom.org/PG/6/ad_autolycum/"
+        },
+        {
+          "title": "Theophilus of Antioch — To Autolycus",
+          "url": "https://adfonteslibrary.org/work-theophilus-autolycus"
+        }
+      ],
+      "preservation_status": "survives_in_greek_medieval_manuscript_tradition",
+      "manuscript_witnesses": [
+        {
+          "id": "Venetus Marcianus graecus 496",
+          "writing": "Greek",
+          "material": "Medieval manuscript codex",
+          "date": "11th century",
+          "contents": "Principal witness to To Autolycus",
+          "text_status": "Manuscript witness to the later work; not an apostolic-era manuscript"
+        }
+      ],
+      "description": "Three-book apologetic work attributed to Theophilus, bishop of Antioch, addressed to Autolycus. It is preserved as a later second-century Christian writing and is not an apostolic or original disciple writing.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "Theophilus-To-Autolycus-Books-I-III",
+          "transmitting_author": "Theophilus of Antioch",
+          "source_work": "To Autolycus",
+          "passage": "Books I–III",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Three books defending Christian belief and discussing God, creation, the Word, Wisdom, and related subjects.",
+          "status": "Survives in Greek through a medieval manuscript tradition.",
+          "text_type": "Later Christian apologetic writing, not apostolic writing.",
+          "english_paraphrase": "Three books addressed to Autolycus; use a separately sourced translation and identify its translator and edition."
+        }
+      ]
     }
   ],
   "historical_chronology_policy": "Use the events and historical setting represented in each writing as the organizing basis. For narratives, follow narrated events. For letters and instruction writings, use the historical situation, people, journeys, imprisonment, or community events they address. If an exact setting cannot be established, use a broad labelled period and mark placement provisional. Never use composition date as a substitute for event chronology. Revelation is the final catalogue record by explicit archive arrangement; the Greek/Ethiopic Apocalypse of Peter is immediately before it. The Coptic Apocalypse of Peter is a separate work placed by its own Jerusalem-before-crucifixion narrative setting.",
