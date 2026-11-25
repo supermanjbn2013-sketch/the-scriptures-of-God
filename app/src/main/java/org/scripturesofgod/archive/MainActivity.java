@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         }).setNegativeButton("Cancel",null).show();
     }
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
-    String[] sections={"Home","Hebrew Scriptures","Prophets","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Archive","Papyrus Archive","Codex Vaticanus Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
+    String[] sections={"Home","Hebrew Scriptures","Prophets","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Archive","Papyrus Archive","Codex Vaticanus Archive","Codex Sinaiticus Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
     @Override public void onCreate(Bundle b){super.onCreate(b); applyTheme(); seed(); show();}
     void applyTheme(){String mode=getSharedPreferences("archive_settings",MODE_PRIVATE).getString("theme","dark");lightMode=mode.equals("light")||(mode.equals("system")&&((getResources().getConfiguration().uiMode&android.content.res.Configuration.UI_MODE_NIGHT_MASK)==android.content.res.Configuration.UI_MODE_NIGHT_NO));if(lightMode){bg=Color.rgb(247,245,239);panel=Color.rgb(255,255,255);gold=Color.rgb(133,94,38);ink=Color.rgb(35,39,42);muted=Color.rgb(105,110,113);}else{bg=Color.rgb(15,19,24);panel=Color.rgb(26,33,41);gold=Color.rgb(205,174,112);ink=Color.rgb(232,228,217);muted=Color.rgb(160,166,170);}}
     void saveTheme(String mode){getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("theme",mode).apply();applyTheme();show();}
@@ -57,6 +57,7 @@ public class MainActivity extends Activity {
         entries.put("DSS Archive",new ArrayList<>(Arrays.asList("Great Isaiah Scroll (1QIsaᵃ)","Pesher Habakkuk (1QpHab)","Genesis Apocryphon (1QapGen)","Community Rule (1QS)","Temple Scroll (11Q19)","War Scroll (1QM)")));
         entries.put("Papyrus Archive",new ArrayList<>(Arrays.asList("Papyrus 46 (P46)","Papyrus 52 (P52)","Papyrus 66 (P66)","Papyrus 72 (P72)","Papyrus 75 (P75)","Papyrus 76 (P76)","Papyrus 77 (P77)","Papyrus 103 (P103)","Papyrus 104 (P104)","Papyrus 45 (P45)","Papyrus 88 (P88)")));
         entries.put("Codex Vaticanus Archive",new ArrayList<>(Arrays.asList("Codex Vaticanus (GA 03)")));
+        entries.put("Codex Sinaiticus Archive",new ArrayList<>(Arrays.asList("Codex Sinaiticus (GA 01)")));
         entries.put("DSS Passage Concordance",new ArrayList<>(Arrays.asList("4Q26 Lev d — Leviticus","4Q27 Num b — Numbers","4Q31 Deut d — Deuteronomy","4Q47 Josh a — Joshua","4Q53 Sam c — Samuel")));
         entries.put("Translation Center",new ArrayList<>(Arrays.asList("Preferred translation language","Gemini AI translation")));
         entries.put("Manuscript Comparison",new ArrayList<>(Arrays.asList("Compare witness transcriptions","Review additions and omissions","Inspect textual variants","Trace quotations and parallels")));
