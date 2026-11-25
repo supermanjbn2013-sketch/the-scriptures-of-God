@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_type": "unified_apostolic_and_disciple_writings_catalog",
   "title": "Apostolic and Disciple Writings — Unified Historical Collection",
-  "ordering": "Ordered by represented events or historical circumstances addressed. Unresolved entries remain explicitly provisional. Composition and manuscript dates do not determine order.",
+  "ordering": "Primary order follows events narrated or historical situations addressed, recalled or explicitly represented. Records whose relationship to an apostle or disciple is uncertain are marked separately. Composition dates and manuscript dates do not determine order.",
   "scope": "All identifiable writings connected by historical attribution, claim, tradition, subject, or early community use to apostles and disciples, including gospels, letters, testimony, acts, instruction, apocalypses, and other related writings. Inclusion is not an endorsement of authenticity, apostolic authorship, inspiration, or historical accuracy.",
   "anti_compilation_rule": "Do not use the later 27-writing compilation as the archive boundary or as the ordering template. Preserve its history as one later classification only.",
   "date_policy": "Composition date estimates are stored separately from physical witness dates. Use null for undetermined dates; never use numeric sentinels. Where estimates overlap or are disputed, show a date band and mark sequence as approximate.",
@@ -26,7 +26,8 @@
       "historical_anchor": "The Lord's ministry, death and resurrection",
       "historical_anchor_basis": "Narrative overlaps the other Gospel accounts; no sequence among the four is asserted.",
       "historical_subsequence": 10,
-      "historical_anchor_status": "overlapping_narrative"
+      "historical_anchor_status": "overlapping_narrative",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "luke",
@@ -46,7 +47,8 @@
       "historical_anchor": "The Lord's ministry, death and resurrection",
       "historical_anchor_basis": "Narrative overlaps the other Gospel accounts; no sequence among the four is asserted.",
       "historical_subsequence": 10,
-      "historical_anchor_status": "overlapping_narrative"
+      "historical_anchor_status": "overlapping_narrative",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "mark",
@@ -66,7 +68,8 @@
       "historical_anchor": "The Lord's ministry, death and resurrection",
       "historical_anchor_basis": "Narrative overlaps the other Gospel accounts; no sequence among the four is asserted.",
       "historical_subsequence": 10,
-      "historical_anchor_status": "overlapping_narrative"
+      "historical_anchor_status": "overlapping_narrative",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "matthew",
@@ -86,7 +89,8 @@
       "historical_anchor": "The Lord's ministry, death and resurrection",
       "historical_anchor_basis": "Narrative overlaps the other Gospel accounts; no sequence among the four is asserted.",
       "historical_subsequence": 10,
-      "historical_anchor_status": "overlapping_narrative"
+      "historical_anchor_status": "overlapping_narrative",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "acts",
@@ -106,7 +110,8 @@
       "historical_anchor": "From the post-resurrection commission through Paul's arrival in Rome",
       "historical_anchor_basis": "The writing narrates an event sequence; its ending does not narrate the later deaths of the apostles.",
       "historical_subsequence": 20,
-      "historical_anchor_status": "narrative_sequence"
+      "historical_anchor_status": "narrative_sequence",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "james",
@@ -136,7 +141,8 @@
           "title": "Diaspora Discourse: The Construction of Ethos in James",
           "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/diaspora-discourse-the-construction-of-ethos-in-james/55842831E262E3D81892D8916E102858"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "didache",
@@ -163,7 +169,8 @@
           "title": "Oxford Bibliographies — Didache",
           "url": "https://academic.oup.com/reference/62341/reference-article-abstract/561741752"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "1_thessalonians",
@@ -183,7 +190,8 @@
       "historical_anchor": "Paul's mission in Thessalonica and separation from that community",
       "historical_anchor_basis": "The letter recalls the founding visit and Timothy's return; associated with Acts 17.",
       "historical_subsequence": 30,
-      "historical_anchor_status": "contextual_anchor"
+      "historical_anchor_status": "contextual_anchor",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "2_thessalonians",
@@ -203,7 +211,8 @@
       "historical_anchor": "The Thessalonian community and its continuing questions",
       "historical_anchor_basis": "Authorship and relative order to 1 Thessalonians are disputed; grouped by community context.",
       "historical_subsequence": 31,
-      "historical_anchor_status": "disputed_order"
+      "historical_anchor_status": "disputed_order",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "galatians",
@@ -229,7 +238,8 @@
           "title": "Galatians — Baker Exegetical Commentary, introduction",
           "url": "https://www.thetbs.org/study-materials/wp-content/uploads/2023/03/Galatians-Baker-Exegetical-Commentary-on-the-New-Testament-BECNT-by-Douglas-Moo-z-lib.org_.pdf"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "paul_previous_corinthian_letter",
@@ -251,7 +261,8 @@
       "historical_anchor": "Paul's correspondence with Corinth before 1 Corinthians",
       "historical_anchor_basis": "1 Corinthians 5:9 explicitly refers to an earlier letter; its contents and exact date are unknown.",
       "historical_subsequence": 40,
-      "historical_anchor_status": "explicit_relative_order"
+      "historical_anchor_status": "explicit_relative_order",
+      "scope_relationship": "lost_or_reported_apostolic_correspondence"
     },
     {
       "id": "1_corinthians",
@@ -271,7 +282,8 @@
       "historical_anchor": "Paul's correspondence with Corinth after the earlier letter",
       "historical_anchor_basis": "1 Corinthians 5:9 establishes that a previous letter preceded this one.",
       "historical_subsequence": 41,
-      "historical_anchor_status": "explicit_relative_order"
+      "historical_anchor_status": "explicit_relative_order",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "paul_sorrowful_corinthian_letter",
@@ -293,7 +305,8 @@
       "historical_anchor": "Paul's painful visit and sorrowful correspondence with Corinth",
       "historical_anchor_basis": "2 Corinthians 2:1–4 and 7:8 refer to a painful letter; whether it survives in part is disputed.",
       "historical_subsequence": 42,
-      "historical_anchor_status": "relative_order_with_identity_disputed"
+      "historical_anchor_status": "relative_order_with_identity_disputed",
+      "scope_relationship": "lost_or_reported_apostolic_correspondence"
     },
     {
       "id": "2_corinthians",
@@ -313,7 +326,8 @@
       "historical_anchor": "Paul's later correspondence with Corinth and Titus's report",
       "historical_anchor_basis": "The letter refers back to the painful correspondence; exact travel chronology remains debated.",
       "historical_subsequence": 43,
-      "historical_anchor_status": "contextual_order"
+      "historical_anchor_status": "contextual_order",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "romans",
@@ -333,7 +347,8 @@
       "historical_anchor": "Paul's planned journey to Jerusalem before his intended visit to Rome",
       "historical_anchor_basis": "Romans 15 describes the planned Jerusalem delivery and subsequent intended journey to Rome.",
       "historical_subsequence": 50,
-      "historical_anchor_status": "internal_future_reference"
+      "historical_anchor_status": "internal_future_reference",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "1_peter",
@@ -363,7 +378,8 @@
           "title": "The Address of 1 Peter",
           "url": "https://journals.sagepub.com/doi/10.1177/001452467808900805"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "philemon",
@@ -383,7 +399,8 @@
       "historical_anchor": "Paul's imprisonment and appeal concerning Onesimus",
       "historical_anchor_basis": "Imprisonment is explicit; its location and relation to other prison letters are disputed.",
       "historical_subsequence": 60,
-      "historical_anchor_status": "imprisonment_context"
+      "historical_anchor_status": "imprisonment_context",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "philippians",
@@ -403,7 +420,8 @@
       "historical_anchor": "Paul's imprisonment and relationship with Philippi",
       "historical_anchor_basis": "Imprisonment is explicit; Rome, Caesarea and Ephesus are debated settings.",
       "historical_subsequence": 61,
-      "historical_anchor_status": "imprisonment_context"
+      "historical_anchor_status": "imprisonment_context",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "colossians",
@@ -423,7 +441,8 @@
       "historical_anchor": "Paul's imprisonment and the Colossian community",
       "historical_anchor_basis": "Imprisonment is stated; authorship and place/date are debated.",
       "historical_subsequence": 62,
-      "historical_anchor_status": "disputed_imprisonment_context"
+      "historical_anchor_status": "disputed_imprisonment_context",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "ephesians",
@@ -443,7 +462,8 @@
       "historical_anchor": "Paul's imprisonment and instruction to communities in Asia",
       "historical_anchor_basis": "Imprisonment is stated; authorship, destination and location are debated.",
       "historical_subsequence": 63,
-      "historical_anchor_status": "disputed_imprisonment_context"
+      "historical_anchor_status": "disputed_imprisonment_context",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "hebrews",
@@ -469,7 +489,8 @@
           "title": "Hebrews — historical setting overview",
           "url": "https://www.bibleodyssey.org/articles/hebrews/"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "paul_laodicean_correspondence_referenced",
@@ -491,7 +512,8 @@
       "historical_anchor": "A letter exchange between the Colossian and Laodicean communities",
       "historical_anchor_basis": "Colossians 4:16 directs an exchange and public reading of letters. The identity and contents of the letter associated with Laodicea are not preserved.",
       "historical_subsequence": 66,
-      "historical_anchor_status": "explicit_reference_unidentified"
+      "historical_anchor_status": "explicit_reference_unidentified",
+      "scope_relationship": "lost_or_reported_apostolic_correspondence"
     },
     {
       "id": "jude",
@@ -511,7 +533,8 @@
       "historical_anchor": "A conflict involving intruding teachers and disputed conduct in the addressed community",
       "historical_anchor_basis": "Jude 4–19 describes the conflict that occasions the writing, but no location, journey or independently datable event is supplied.",
       "historical_subsequence": 70,
-      "historical_anchor_status": "internal_conflict_no_external_date"
+      "historical_anchor_status": "internal_conflict_no_external_date",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "1_timothy",
@@ -537,7 +560,8 @@
           "title": "Pastoral Epistles — historical setting and destination",
           "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Pastoral-Epistles"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "titus",
@@ -563,7 +587,8 @@
           "title": "Pastoral Epistles — historical setting and destination",
           "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Pastoral-Epistles"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "2_timothy",
@@ -589,7 +614,8 @@
           "title": "Pastoral Epistles — historical setting and destination",
           "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Pastoral-Epistles"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "1_john",
@@ -615,7 +641,8 @@
           "title": "Did the Johannine Community Exist?",
           "url": "https://journals.sagepub.com/doi/10.1177/0142064X19890490"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "2_john",
@@ -641,7 +668,8 @@
           "title": "Did the Johannine Community Exist?",
           "url": "https://journals.sagepub.com/doi/10.1177/0142064X19890490"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "3_john",
@@ -667,7 +695,8 @@
           "title": "Did the Johannine Community Exist?",
           "url": "https://journals.sagepub.com/doi/10.1177/0142064X19890490"
         }
-      ]
+      ],
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "revelation",
@@ -687,7 +716,8 @@
       "historical_anchor": "John's stated presence on Patmos and visions to seven assemblies",
       "historical_anchor_basis": "Patmos is the stated setting; historical dating is disputed.",
       "historical_subsequence": 90,
-      "historical_anchor_status": "stated_setting_date_disputed"
+      "historical_anchor_status": "stated_setting_date_disputed",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "2_peter",
@@ -707,7 +737,8 @@
       "historical_anchor": "A farewell warning presented as Peter's final testimony before death",
       "historical_anchor_basis": "The writing frames its message as a final reminder before departure (2 Peter 1:13–15). This is the text's claimed setting, not independent proof of authorship or a dated event.",
       "historical_subsequence": 91,
-      "historical_anchor_status": "farewell_narrative_setting_disputed"
+      "historical_anchor_status": "farewell_narrative_setting_disputed",
+      "scope_relationship": "attributed_to_apostle_or_disciple"
     },
     {
       "id": "papias_exposition",
@@ -731,45 +762,15 @@
         }
       ],
       "preservation_status": "fragmentary_quotations",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
       "historical_anchor_id": "papias_memory",
       "historical_anchor": "Papias's collection of sayings and reports received from earlier elders",
       "historical_anchor_basis": "A later collection about earlier testimony, not a datable apostolic event.",
       "historical_subsequence": 100,
-      "historical_anchor_status": "later_collection"
-    },
-    {
-      "id": "apocalypse_peter",
-      "title": "Apocalypse of Peter",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 199,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "gospel or apocalypse",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "apocalypse_peter",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "apocalypse_peter_vision",
-      "historical_anchor": "A visionary tour of the afterlife attributed to Peter",
-      "historical_anchor_basis": "The work presents revelations about judgment and the afterlife, not a verifiable event witnessed by Peter. Scholarly proposals place its literary origin in Egypt, possibly Alexandria, around the middle of the second century; provenance and date remain debated. Keep this as a later visionary text, not apostolic-era event chronology.",
-      "historical_subsequence": 165,
-      "historical_anchor_status": "later_visionary_work_provenance_disputed",
-      "research_sources": [
-        {
-          "title": "The Apocalypse of Peter in Context — Jan N. Bremmer",
-          "url": "https://iris.unive.it/retrieve/9f755680-a043-4cce-a557-482e964abb3e/The%20Apocalypse%20of%20Peter%20in%20Context.pdf"
-        },
-        {
-          "title": "The Apocalypse of Peter as the Origin of the Christian Hell",
-          "url": "https://www.degruyterbrill.com/document/doi/10.1515/mill-2024-0004/html"
-        }
-      ]
+      "historical_anchor_status": "later_collection",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "clement_1",
@@ -790,7 +791,8 @@
       "historical_anchor": "A Roman community's intervention in a conflict at Corinth",
       "historical_anchor_basis": "The letter describes a dispute and removal of presbyters; post-apostolic community context.",
       "historical_subsequence": 110,
-      "historical_anchor_status": "community_event"
+      "historical_anchor_status": "community_event",
+      "scope_relationship": "anonymous_early_community_writing"
     },
     {
       "id": "barnabas",
@@ -821,7 +823,8 @@
           "title": "Epistle of Barnabas — dating and Temple reference",
           "url": "https://heurist.huma-num.fr/heurist/judaism_and_rome/tpl/public-record/1327"
         }
-      ]
+      ],
+      "scope_relationship": "anonymous_early_community_writing"
     },
     {
       "id": "hermas",
@@ -848,7 +851,8 @@
           "title": "Oxford Bibliographies — Shepherd of Hermas",
           "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554114229"
         }
-      ]
+      ],
+      "scope_relationship": "anonymous_early_community_writing"
     },
     {
       "id": "clement_2",
@@ -879,7 +883,8 @@
           "title": "The Roman Empire in the Era of the Apostolic Fathers",
           "url": "https://www.cambridge.org/core/books/abs/cambridge-companion-to-the-apostolic-fathers/roman-empire-in-the-era-of-the-apostolic-fathers/9BDA47F9266DDA1EC5252DCE6C111CA2"
         }
-      ]
+      ],
+      "scope_relationship": "anonymous_early_community_writing"
     },
     {
       "id": "ignatius_polycarp",
@@ -905,7 +910,8 @@
       "historical_anchor": "Ignatius's communication with Polycarp during the martyrdom journey",
       "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey"
+      "historical_anchor_status": "shared_journey",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "ignatius_ephesians",
@@ -931,7 +937,8 @@
       "historical_anchor": "Ignatius's guarded journey toward martyrdom and letter to Ephesus",
       "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey"
+      "historical_anchor_status": "shared_journey",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "ignatius_magnesians",
@@ -957,7 +964,8 @@
       "historical_anchor": "Ignatius's guarded journey and letter to Magnesia",
       "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey"
+      "historical_anchor_status": "shared_journey",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "ignatius_philadelphians",
@@ -983,7 +991,8 @@
       "historical_anchor": "Ignatius's guarded journey and letter to Philadelphia",
       "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey"
+      "historical_anchor_status": "shared_journey",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "ignatius_romans",
@@ -1009,7 +1018,8 @@
       "historical_anchor": "Ignatius's journey toward Rome and appeal concerning martyrdom",
       "historical_anchor_basis": "Connected with the journey toward martyrdom; precise order relative to other letters is uncertain.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey"
+      "historical_anchor_status": "shared_journey",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "ignatius_smyrnaeans",
@@ -1035,7 +1045,8 @@
       "historical_anchor": "Ignatius's guarded journey and letter to Smyrna",
       "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey"
+      "historical_anchor_status": "shared_journey",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "ignatius_trallians",
@@ -1061,7 +1072,8 @@
       "historical_anchor": "Ignatius's guarded journey and letter to Tralles",
       "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey"
+      "historical_anchor_status": "shared_journey",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "polycarp_philippians",
@@ -1087,7 +1099,8 @@
       "historical_anchor": "Polycarp's correspondence with the Philippian community",
       "historical_anchor_basis": "Refers to Ignatius and companions, giving a relative connection; exact date debated.",
       "historical_subsequence": 130,
-      "historical_anchor_status": "relative_reference"
+      "historical_anchor_status": "relative_reference",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "martyrdom_polycarp",
@@ -1113,7 +1126,8 @@
       "historical_anchor": "Polycarp's arrest, trial and death at Smyrna",
       "historical_anchor_basis": "Narrative concerns the martyrdom event; the precise year is debated.",
       "historical_subsequence": 140,
-      "historical_anchor_status": "narrated_event"
+      "historical_anchor_status": "narrated_event",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "quadratus_apology",
@@ -1144,7 +1158,8 @@
       "historical_anchor": "Quadratus's apology presented to Emperor Hadrian during his Athenian visit",
       "historical_anchor_basis": "Eusebius associates the apology with Hadrian and dates the event in his Chronicle around 124–125 CE; scholarship notes uncertainty over the precise imperial visit and setting.",
       "historical_subsequence": 150,
-      "historical_anchor_status": "ancient_reported_event_date_approximate"
+      "historical_anchor_status": "ancient_reported_event_date_approximate",
+      "scope_relationship": "attributed_to_or_associated_with_early_disciple"
     },
     {
       "id": "aristides_apology",
@@ -1179,7 +1194,8 @@
       "historical_anchor": "An apology associated by Eusebius with Hadrian",
       "historical_anchor_basis": "Eusebius says Aristides addressed an apology to Hadrian, but the surviving Syriac form has a different imperial setting according to scholarly discussion. The historical address and textual forms must remain distinguished.",
       "historical_subsequence": 151,
-      "historical_anchor_status": "attribution_and_historical_setting_disputed"
+      "historical_anchor_status": "attribution_and_historical_setting_disputed",
+      "scope_relationship": "broader_early_christian_context_association_unproven"
     },
     {
       "id": "diognetus",
@@ -1210,7 +1226,8 @@
       "historical_anchor": "An apologetic address to a person called Diognetus, whose identity and location are unknown",
       "historical_anchor_basis": "The author, addressee, date and provenance cannot be securely identified. The work itself supplies no datable event; its apologetic address is retained as the only safe contextual description.",
       "historical_subsequence": 152,
-      "historical_anchor_status": "historical_context_unlocated"
+      "historical_anchor_status": "historical_context_unlocated",
+      "scope_relationship": "broader_early_christian_context_association_unproven"
     },
     {
       "id": "gospel_thomas",
@@ -1231,7 +1248,8 @@
       "historical_anchor": "A sayings collection attributed to Thomas",
       "historical_anchor_basis": "No continuous narrative event sequence can be established from the collection.",
       "historical_subsequence": 160,
-      "historical_anchor_status": "non_narrative_collection"
+      "historical_anchor_status": "non_narrative_collection",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "gospel_mary",
@@ -1252,7 +1270,8 @@
       "historical_anchor": "A post-resurrection discourse attributed to Mary",
       "historical_anchor_basis": "This is the scene represented by the later narrative; historicity and attribution are unverified.",
       "historical_subsequence": 161,
-      "historical_anchor_status": "later_narrative_claim"
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "gospel_peter",
@@ -1273,7 +1292,40 @@
       "historical_anchor": "A passion and resurrection narrative attributed to Peter",
       "historical_anchor_basis": "The text retells these events; attribution and historical relation to other accounts are unverified.",
       "historical_subsequence": 162,
-      "historical_anchor_status": "later_narrative_claim"
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
+    },
+    {
+      "id": "apocalypse_peter",
+      "title": "Apocalypse of Peter",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 199,
+      "date_precision": "provisional broad range; verify scholarly dating",
+      "genre": "gospel or apocalypse",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
+      "existing_catalogue_id": "apocalypse_peter",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "apocalypse_peter_vision",
+      "historical_anchor": "A visionary tour of the afterlife attributed to Peter",
+      "historical_anchor_basis": "The work presents revelations about judgment and the afterlife, not a verifiable event witnessed by Peter. Scholarly proposals place its literary origin in Egypt, possibly Alexandria, around the middle of the second century; provenance and date remain debated. Keep this as a later visionary text, not apostolic-era event chronology.",
+      "historical_subsequence": 165,
+      "historical_anchor_status": "later_visionary_work_provenance_disputed",
+      "research_sources": [
+        {
+          "title": "The Apocalypse of Peter in Context — Jan N. Bremmer",
+          "url": "https://iris.unive.it/retrieve/9f755680-a043-4cce-a557-482e964abb3e/The%20Apocalypse%20of%20Peter%20in%20Context.pdf"
+        },
+        {
+          "title": "The Apocalypse of Peter as the Origin of the Christian Hell",
+          "url": "https://www.degruyterbrill.com/document/doi/10.1515/mill-2024-0004/html"
+        }
+      ],
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "third_corinthians",
@@ -1305,7 +1357,8 @@
           "title": "Acts of Paul — NASSCAL e-Clavis",
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-paul/"
         }
-      ]
+      ],
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "acts_paul",
@@ -1336,7 +1389,8 @@
       "historical_anchor": "Later narrative about Paul's travels and martyrdom",
       "historical_anchor_basis": "Retells apostolic-era events from a later perspective; not verified eyewitness chronology.",
       "historical_subsequence": 170,
-      "historical_anchor_status": "later_narrative_claim"
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "acts_peter",
@@ -1367,7 +1421,8 @@
       "historical_anchor": "Later narrative about Peter and martyrdom",
       "historical_anchor_basis": "Retells apostolic-era events from a later perspective; not verified eyewitness chronology.",
       "historical_subsequence": 171,
-      "historical_anchor_status": "later_narrative_claim"
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "acts_john",
@@ -1398,7 +1453,8 @@
       "historical_anchor": "Later narrative about John's travels and deeds",
       "historical_anchor_basis": "Retells apostolic-era events from a later perspective; not verified eyewitness chronology.",
       "historical_subsequence": 172,
-      "historical_anchor_status": "later_narrative_claim"
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "acts_andrew",
@@ -1429,7 +1485,8 @@
       "historical_anchor": "Later narrative about Andrew's travels and martyrdom",
       "historical_anchor_basis": "Retells apostolic-era events from a later perspective; not verified eyewitness chronology.",
       "historical_subsequence": 173,
-      "historical_anchor_status": "later_narrative_claim"
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "acts_thomas",
@@ -1460,7 +1517,8 @@
       "historical_anchor": "Later narrative about Thomas's mission and martyrdom",
       "historical_anchor_basis": "Retells apostolic-era events from a later perspective; not verified eyewitness chronology.",
       "historical_subsequence": 174,
-      "historical_anchor_status": "later_narrative_claim"
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "paul_seneca_correspondence",
@@ -1496,7 +1554,8 @@
           "title": "The Letters of Paul in their Roman Literary Context (2024)",
           "url": "https://www.cambridge.org/core/books/abs/letters-of-paul-in-their-roman-literary-context/introduction/741173A76AD8D524CF0281B721EF9D97"
         }
-      ]
+      ],
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "epistle_to_laodiceans_latin",
@@ -1528,7 +1587,8 @@
           "title": "Epistle to Laodiceans — Encyclopedia of the Bible",
           "url": "https://search.biblegateway.com/resources/encyclopedia-of-the-bible/Epistle-Laodiceans"
         }
-      ]
+      ],
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name"
     },
     {
       "id": "paul_letter_to_alexandrians_reported",
@@ -1556,7 +1616,8 @@
           "title": "Dictionary of Paul and His Letters — apocryphal Pauline letters",
           "url": "https://www.thetbs.org/study-materials/wp-content/uploads/2023/03/Dictionary-of-Paul-and-His-Letters-by-Hawthorne-Gerald-F.-Martin-Ralph-P.-Reid-Daniel-G.-z-lib.org_.epub_.pdf"
         }
-      ]
+      ],
+      "scope_relationship": "lost_or_reported_apostolic_correspondence"
     }
   ],
   "historical_chronology_policy": "Use the events and historical setting represented in each writing as the organizing basis. For narratives, follow narrated events. For letters and instruction writings, use the historical situation, people, journeys, imprisonment, or community events they address. If an exact setting cannot be established, use a broad labelled period and mark placement provisional. Never use composition date as a substitute for event chronology.",
@@ -1567,5 +1628,16 @@
     "later_accounts": "Identify later retellings as later narrative claims, not verified eyewitness chronology.",
     "uncertainty": "An unresolved historical anchor must remain provisional; do not invent exact dates.",
     "subsequence": "historical_subsequence is an event/context ordering key, not a composition date."
+  },
+  "scope_policy": {
+    "inclusion": "This unified catalogue is limited to writings attributed to, associated with, or reporting correspondence of apostles and early disciples, including later works written under their names. Inclusion does not prove authorship.",
+    "relationship_labels": {
+      "attributed_to_apostle_or_disciple": "The work is attributed to an apostle or disciple in its text or established historical tradition; this label does not itself prove authorship.",
+      "attributed_to_or_associated_with_early_disciple": "The work is attributed to or historically associated with an early disciple or apostolic-era witness; the strength of the association is stated in its record.",
+      "anonymous_early_community_writing": "The work belongs to an early community but does not establish a named apostolic or disciple author.",
+      "later_work_under_apostolic_or_disciple_name": "A later work uses an apostle's or disciple's name or narrative persona; it is not treated as authentic eyewitness testimony.",
+      "lost_or_reported_apostolic_correspondence": "A writing is known only through a reference or report and is not preserved as a complete text.",
+      "broader_early_christian_context_association_unproven": "Included as a contextual comparison because an apostolic/disciple connection is claimed or discussed, but that connection is not established. It must not be presented as an apostolic or disciple-authored work."
+    }
   }
 }

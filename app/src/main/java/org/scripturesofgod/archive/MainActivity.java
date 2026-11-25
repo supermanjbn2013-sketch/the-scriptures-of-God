@@ -169,6 +169,7 @@ public class MainActivity extends Activity {
         detail.append("Estimated composition: ").append(date).append("\\n");
         detail.append("Date note: ").append(record.optString("date_precision")).append("\\n\\n");
         detail.append("Genre: ").append(record.optString("genre")).append("\\n\\n");
+        detail.append("Collection relationship: ").append(record.optString("scope_relationship","Not classified")).append("\\n\\n");
         detail.append("Attribution and authorship: ").append(record.optString("attribution_status")).append("\\n\\n");
         detail.append("Textual / preservation status: ").append(record.optString("textual_status")).append("\\n\\n");
         detail.append("Historical reference: ").append(record.optString("related_scriptural_reference","Not specified")).append("\\n\\n");
