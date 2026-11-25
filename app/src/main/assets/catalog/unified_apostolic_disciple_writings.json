@@ -177,36 +177,47 @@
           "shelfmark": "Pap. Hanna 1 (formerly P. Bodmer XIV–XV)",
           "writing": "Greek",
           "material": "papyrus codex",
-          "date": "Late second to early third century CE (c. 175–225)",
-          "provenance": "Egypt; provenance details debated",
-          "current_location": "Biblioteca Apostolica Vaticana, Vatican City",
-          "contents": "Large portions of Luke and John, with substantial lacunae",
-          "text_status": "Fragmentary witness; many pages damaged or missing.",
-          "sample_passage": "Luke 3:18–22, folio 7 recto (NTVMR page 20)",
-          "transcription_source": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10075&pageID=20&format=txt",
-          "greek_transcription_lines": [
-            "^{3:18} [μεν ουν και ετερα παρακαλω]ν",
-            "[ευηγγελι]ζ̣ε̣[το] τ̣ον λαον· ^{19} [ο δε η]ρω",
-            "[δης ο τ]ε̣τ̣ρ̣α̣ρχης ελεγχ̣ομ̣[ε]ν̣[ος] υπ",
-            "[αυτ]ο̣υ̣ π̣ερι ηρωδιαδος̣ της γυναι",
-            "[κο]ς̣ του αδελφου αυτου· και περι παν",
-            "των ων εποιησεν πονηρων ο η",
-            "ρωδης ^{20} προσεθ̣ηκεν και τουτο επι",
-            "πασιν· κατεκλεισεν [τ]ον ιω̣ανην",
-            "εν φυλακη· ^{21} εγεν̣[ε]τ̣[ο δε ε]ν̣ [τω]",
-            "β̣απτισθηναι απαν[τα τ]ο̣ν̣ λ̣α̣ον̣",
-            "[κ]αι ι̅υ̅ βαπτισ̣θε̣ντος [κ]α̣ι̣ π̣ροσ̣ευ",
-            "[χομ]ε̣νου. ανεωχθηνα̣ι τον̣ ουρα",
-            "[νο]ν̣ ^{22} και καταβηνα[ι το] π̅ν̅α̅ τ̣ο αγι̣",
-            "[ον σωματ]ι̣κ̣ω̣ [ειδει ως πε]ρ̣ι̣σ̣[τεραν]"
-          ],
-          "english_translation": "And while he was exhorting, he was proclaiming good news to the people. But Herod the tetrarch, being reproved by him concerning Herodias, the wife of his brother, and concerning all the evil things Herod had done, added this also to all the rest: he shut John up in prison. Now it happened, when all the people had been baptized, and Jesus also had been baptized and was praying, that heaven was opened, and the holy Spirit descended in bodily form, like a dove …",
-          "translation_note": "New English rendering from the Greek transcription, not a later English Bible translation. Square brackets mark supplied letters or words where the papyrus is damaged or illegible; underdots mark uncertain letters. Verse 22 continues beyond the surviving portion shown in this transcription.",
-          "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Vatican Library images have separate rights and are not bundled here.",
-          "transcription_license": "INTF NTVMR diplomatic transcription: CC BY 4.0 as stated in the transcription file. Do not apply Bodmer Lab or Vatican image terms to the text transcription."
+          "date": "Traditionally dated to the late second or early third century (often c. 175–225); a later fourth-century date has been proposed in recent scholarship, so the palaeographic date remains disputed.",
+          "provenance": "Probably Egypt; exact findspot and archaeological context are uncertain. A Dishna-area provenance has been proposed, but should not be treated as securely excavated context.",
+          "current_location": "Biblioteca Apostolica Vaticana, Vatican City (Pap. Hanna 1, Mater Verbi)",
+          "contents": "Originally contained the complete Gospels of Luke and John. Substantial portions survive from Luke 3:18–24:53 and John 1:1–15:8, with major gaps and damage.",
+          "text_status": "Fragmentary Greek papyrus codex. The extant John text includes scattered portions of John 1:1–15:8, not a continuous complete copy. Dating is debated: the Vatican Library describes it as early third century, while more recent scholarship has proposed a fourth-century date.",
+          "sample_passage": "John 1:1–18 (opening of the Gospel; folio shared with Luke's subscription and John's title)",
+          "source_references": [
+            {
+              "title": "Vatican Library, Notes on the History, Contents and Purpose of Papyrus Bodmer XIV–XV (P75)",
+              "url": "https://bav.vatican.va/moduli/BodmerVoicu_ing.pdf"
+            },
+            {
+              "title": "4CARE artefact record 1438 / TM 61743, P.Bodmer XIV–XV",
+              "url": "https://4care-skos.mf.no/artefacts/1438/"
+            },
+            {
+              "title": "CSNTM — P75 manuscript record and digital facsimiles",
+              "url": "https://manuscripts.csntm.org/manuscript/Group/GA_P75"
+            },
+            {
+              "title": "Nongbri, Reconsidering the Place of Papyrus Bodmer XIV–XV (P75) in Textual Criticism",
+              "url": "https://www.jstor.org/stable/10.15699/jbl.1352.2016.3026"
+            }
+          ]
         }
       ],
-      "description": "Gospel of John is a gospel writing in the Unified Apostolic and Disciple collection. Anonymous narrative traditionally associated with the disciple John; authorship is not stated in the text. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. A P52 witness record now includes recto/verso Greek transcription with editorial restorations bracketed and an English rendering from that transcription. P66 now includes a first-hand Greek transcription sample for John 1:1–14 and a fresh English rendering from that transcription; P75 includes Luke 3:18–22 separately. The catalogue identifies 4 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+      "description": "The Gospel of John is an anonymous narrative traditionally associated with John; the text itself does not name its author. Its early Greek papyrus evidence includes P75 (Papyrus Bodmer XV / Pap. Hanna 1), a codex originally containing Luke and John. The surviving John portions are extensive but discontinuous, with major gaps. The date of P75 is disputed, and the Luke transcription belonging to this same codex is catalogued separately under the Gospel of Luke.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "John-P75-BodmerXV-Hanna1-coverage",
+          "transmitting_author": "Anonymous Gospel of John; preserved in the Greek papyrus codex P75 (Papyrus Bodmer XV / Pap. Hanna 1)",
+          "source_work": "Gospel of John",
+          "passage": "John 1:1–11:45, 11:48–57, 12:3–13:1, 13:8–10, 14:8–29, 15:7–8",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "The surviving portions begin with the Gospel's opening and continue through substantial sections of the signs and teaching narratives, including the raising of Lazarus, portions of the final discourses, and a small fragment from John 15. The text has major gaps, including John 11:46–47, 12:1–2, 13:2–7, 13:11–14:7, and most of the text after 15:10.",
+          "status": "P75 originally contained Luke and John in one papyrus codex. This record describes only the John portion; the Luke transcription and translation are catalogued separately under the Gospel of Luke. The extant John passages are fragmentary, and some portions survive only in small or damaged fragments. The manuscript's date is debated, with traditional late-second/early-third-century dating and a proposed later fourth-century dating both noted in scholarship.",
+          "english_paraphrase": "The surviving John portions preserve the opening discourse about the Word, many episodes from the Lord's public ministry, the raising of Lazarus, and portions of the final teaching before the arrest. This is a guide to the passages represented in the papyrus, not a continuous translation and not a reconstruction of missing sections.",
+          "text_type": "Editorial content and coverage summary based on the published witness inventory. It is not a verbatim translation or a reconstruction of missing Greek.",
+          "source_url": "https://4care-skos.mf.no/artefacts/1438/"
+        }
+      ]
     },
     {
       "id": "luke",
