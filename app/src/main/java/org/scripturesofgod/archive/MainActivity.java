@@ -163,27 +163,27 @@ public class MainActivity extends Activity {
         StringBuilder detail=new StringBuilder();
         boolean hasDate=!record.isNull("composition_date_start_ce")&&!record.isNull("composition_date_end_ce");
         String date=hasDate?(record.optInt("composition_date_start_ce")==record.optInt("composition_date_end_ce")?record.optInt("composition_date_start_ce")+" CE":record.optInt("composition_date_start_ce")+"–"+record.optInt("composition_date_end_ce")+" CE"):"Undetermined";
-        detail.append("Historical period: ").append(record.optString("historical_period","Unclassified")).append("\\n");
-        detail.append("Historical event / setting: ").append(record.optString("historical_anchor","Not established")).append("\\n");
-        detail.append("Event-order evidence: ").append(record.optString("historical_anchor_basis","Not specified")).append("\\n");
-        detail.append("Event-order status: ").append(record.optString("historical_anchor_status","Not specified")).append("\\n");
-        detail.append("Historical order basis: ").append(record.optString("historical_order_basis","Not specified")).append("\\n");
-        detail.append("Estimated composition: ").append(date).append("\\n");
-        detail.append("Date note: ").append(record.optString("date_precision")).append("\\n\\n");
-        detail.append("Genre: ").append(record.optString("genre")).append("\\n\\n");
-        detail.append("Collection relationship: ").append(record.optString("scope_relationship","Not classified")).append("\\n\\n");
-        detail.append("Attribution and authorship: ").append(record.optString("attribution_status")).append("\\n\\n");
-        detail.append("Textual / preservation status: ").append(record.optString("textual_status")).append("\\n\\n");
-        detail.append("Historical reference: ").append(record.optString("related_scriptural_reference","Not specified")).append("\\n\\n");
-        detail.append("Chronology basis: ").append(record.optString("chronology_basis")).append("\\n\\n");
-        detail.append("Later compilation classification: ").append(record.optString("later_canonical_compilation_status")).append("\\n\\n");
+        detail.append("Historical period: ").append(record.optString("historical_period","Unclassified")).append("\n");
+        detail.append("Historical event / setting: ").append(record.optString("historical_anchor","Not established")).append("\n");
+        detail.append("Event-order evidence: ").append(record.optString("historical_anchor_basis","Not specified")).append("\n");
+        detail.append("Event-order status: ").append(record.optString("historical_anchor_status","Not specified")).append("\n");
+        detail.append("Historical order basis: ").append(record.optString("historical_order_basis","Not specified")).append("\n");
+        detail.append("Estimated composition: ").append(date).append("\n");
+        detail.append("Date note: ").append(record.optString("date_precision")).append("\n\n");
+        detail.append("Genre: ").append(record.optString("genre")).append("\n\n");
+        detail.append("Collection relationship: ").append(record.optString("scope_relationship","Not classified")).append("\n\n");
+        detail.append("Attribution and authorship: ").append(record.optString("attribution_status")).append("\n\n");
+        detail.append("Textual / preservation status: ").append(record.optString("textual_status")).append("\n\n");
+        detail.append("Historical reference: ").append(record.optString("related_scriptural_reference","Not specified")).append("\n\n");
+        detail.append("Chronology basis: ").append(record.optString("chronology_basis")).append("\n\n");
+        detail.append("Later compilation classification: ").append(record.optString("later_canonical_compilation_status")).append("\n\n");
         detail.append("Preservation category: ").append(record.optString("preservation_status","Not yet classified"));
         org.json.JSONArray sources=record.optJSONArray("research_sources");
         if(sources!=null&&sources.length()>0){
-            detail.append("\\n\\nResearch references:");
+            detail.append("\n\nResearch references:");
             for(int i=0;i<sources.length();i++){
                 org.json.JSONObject source=sources.optJSONObject(i);
-                if(source!=null)detail.append("\\n").append(source.optString("title","Source")).append("\\n").append(source.optString("url",""));
+                if(source!=null)detail.append("\n").append(source.optString("title","Source")).append("\n").append(source.optString("url",""));
             }
         }
         TextView view=text(detail.toString(),14,ink,false);view.setTextIsSelectable(true);
