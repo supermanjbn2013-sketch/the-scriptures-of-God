@@ -111,7 +111,15 @@ for collection_id, work, url in COLLECTIONS:
         try:
             root = ET.fromstring(raw)
         except ET.ParseError as exc:
-            raise RuntimeError(f"Invalid TEI XML {work}/{member.filename}: {exc}") from exc
+            # Preserve source integrity: do not repair or silently rewrite malformed
+            # provider XML. Record the exact archive member as excluded and continue.
+            manifest["excluded_files"].append({
+                "collection": collection_id,
+                "archive_member": member.filename,
+                "reason": f"Source XML is not well-formed and was not imported: {exc}",
+                "source_archive": url
+            })
+            continue
         if local_name(root.tag) != "TEI":
             raise RuntimeError(f"Unexpected XML root in {work}/{member.filename}: {root.tag}")
         header = root.find(f"{XML_NS}teiHeader")
