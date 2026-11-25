@@ -16,7 +16,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "gospel",
       "attribution_status": "Anonymous narrative traditionally associated with the disciple John; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. A P52 witness record now includes recto/verso Greek transcription with editorial restorations bracketed and an English rendering from that transcription.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. A P52 witness record now includes recto/verso Greek transcription with editorial restorations bracketed and an English rendering from that transcription. P66 now includes a first-hand Greek transcription sample for John 1:1–14 and a fresh English rendering from that transcription; P75 includes Luke 3:18–22 separately.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 10,
@@ -60,24 +60,44 @@
           "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
           "contents": "Gospel of John; substantial but not complete text",
           "text_status": "IGNTP diplomatic transcription exists as TEI XML. The transcription is a separate witness record and must not be silently conflated with an edited critical text.",
-          "transcription_source": "https://epapers.bham.ac.uk/id/eprint/1759/",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P66, docID 10066, pageID 10",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10066&pageID=10&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
           "transcription_license": "The deposited transcription specifies Creative Commons BY-NC-SA in its header; preserve attribution and non-commercial/share-alike conditions before redistribution.",
-          "image_and_catalogue_source": "https://manuscripts.csntm.org/"
-        },
-        {
-          "id": "P75",
-          "siglum": "𝔓75",
-          "shelfmark": "P. Bodmer XIV–XV",
-          "writing": "Greek",
-          "material": "papyrus codex",
-          "date": "Late second/early third century CE (palaeographic estimate)",
-          "provenance": "Egypt; exact findspot uncertain",
-          "current_location": "Biblioteca Apostolica Vaticana, Vatican City",
-          "contents": "Large portions of Luke and John, with lacunae",
-          "text_status": "IGNTP diplomatic transcription exists as TEI XML for John. Luke witness transcription and any editorial reconstruction must be recorded separately.",
-          "transcription_source": "https://epapers.bham.ac.uk/id/eprint/1742/",
-          "transcription_license": "The deposited transcription specifies Creative Commons BY-NC-SA in its header; preserve attribution and non-commercial/share-alike conditions before redistribution.",
-          "image_and_catalogue_source": "https://manuscripts.csntm.org/"
+          "image_and_catalogue_source": "https://manuscripts.csntm.org/",
+          "sample_passage": "John 1:1–14 (page 1; verse 14 continues onto page 2)",
+          "greek_transcription_lines": [
+            "εν αρχη ην ο λογος· και ο λογος ην προς το[ν θ̅ν̅]",
+            "και θ̅ς̅ ην ο λογος· ^{2} ουτος ην εν αρχη προς τ[ον θ̅ν̅]",
+            "^{3} παντα δι αυτου εγενετο· και χωρις α[υτου]",
+            "εγενετο ουδεν ο γεγονεν ^{4} αυτω ζω̣η̣ η̣[ν]",
+            "και η ζωη ην το φως των ανθρωπων",
+            "^{5} και το φως εν τη σκοτια φαινει· και η",
+            "σκοτια αυτο ου κατελαβεν·",
+            "^{6} [ε]γενετο ανθρωπος απεσταλμενος πα",
+            "ρα θ̅υ̅ ονομα αυτω ιωαννης ^{7} ουτος ηλ",
+            "θεν εις μαρτυριαν ινα μαρτυρηση",
+            "περι του φωτος· ινα παντες πιστευ",
+            "σωσιν δι αυτου· ^{8} ουκ ην εκεινος το",
+            "φως αλλα ινα μαρτυρηση περι του",
+            "φωτος ^{9} ην το φως το αληθινον̣ ο φω",
+            "τιζει πανταν ανθρωπον ερχομ̣ενον",
+            "εις τον κοσμον· ^{10} εν τω κο̣σμω ην και",
+            "ο κοσμος δι αυτου εγενετο και ο κοσ",
+            "μος αυτον ουκ εγνω ^{11} εις τα ιδια ηλθ[εν]",
+            "και οι ιδιοι αυτον ου παρελαβον· ^{12} οσο[ι]",
+            "δε ελαβον αυτον εδωκεν αυτοις ε",
+            "ξουσιαν τεκνα θ̅υ̅ γενεσθαι τοις",
+            "πιστευουσιν εις το ονομα αυτου ^{13} οι ου̣",
+            "κ εξ αιματων ουδε εκ θελημα̣[τος]",
+            "σαρκος ουδε εκ θεληματος αν[δρος]",
+            "αλλα εκ θ̅υ̅ εγεννηθησαν· ^{14} και [ο λογος]"
+          ],
+          "english_translation": "In the beginning the Word was, and the Word was toward [God]; and divine was the Word. This one was in the beginning toward [God]. All things came to be through him, and apart from him not one thing came to be that has come to be. In him was life, and the life was the light of human beings. And the light shines in the darkness, and the darkness did not overcome it. There came to be a man sent from God; his name was John. This one came for testimony, so that he might testify concerning the light, so that all might believe through him. He was not that light, but [came] so that he might testify concerning the light. The true light, which enlightens every human being, was coming into the world. He was in the world, and the world came to be through him, and the world did not know him. He came to his own things, and his own people did not receive him. But as many as received him, to them he gave authority to become children of God, to those believing in his name, who were born not from bloods, nor from the will of flesh, nor from the will of a man, but from God. And [the Word] …",
+          "translation_note": "New English rendering from the Greek transcription, not the KJV. The phrase και θ̅ς̅ ην ο λογος is rendered “and divine was the Word” as an explicitly lexical rendering of the anarthrous predicate; this is a translation choice, not a manuscript variant. The line ends at John 1:14 and continues on the next page. Square brackets indicate restoration; underdotted letters are uncertain.",
+          "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Bodmer Lab manuscript images have a separate CC BY-NC 4.0 license and are not bundled here."
         },
         {
           "id": "P52",
@@ -154,6 +174,43 @@
             }
           ],
           "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
+        },
+        {
+          "id": "P75",
+          "siglum": "𝔓75",
+          "shelfmark": "Pap. Hanna 1 (formerly P. Bodmer XIV–XV)",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (c. 175–225)",
+          "provenance": "Egypt; provenance details debated",
+          "current_location": "Biblioteca Apostolica Vaticana, Vatican City",
+          "contents": "Large portions of Luke and John, with substantial lacunae",
+          "text_status": "Fragmentary witness; many pages damaged or missing.",
+          "sample_passage": "Luke 3:18–22, folio 7 recto (NTVMR page 20)",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P75, docID 10075, pageID 20",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10075&pageID=20&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{3:18} [μεν ουν και ετερα παρακαλω]ν",
+            "[ευηγγελι]ζ̣ε̣[το] τ̣ον λαον· ^{19} [ο δε η]ρω",
+            "[δης ο τ]ε̣τ̣ρ̣α̣ρχης ελεγχ̣ομ̣[ε]ν̣[ος] υπ",
+            "[αυτ]ο̣υ̣ π̣ερι ηρωδιαδος̣ της γυναι",
+            "[κο]ς̣ του αδελφου αυτου· και περι παν",
+            "των ων εποιησεν πονηρων ο η",
+            "ρωδης ^{20} προσεθ̣ηκεν και τουτο επι",
+            "πασιν· κατεκλεισεν [τ]ον ιω̣ανην",
+            "εν φυλακη· ^{21} εγεν̣[ε]τ̣[ο δε ε]ν̣ [τω]",
+            "β̣απτισθηναι απαν[τα τ]ο̣ν̣ λ̣α̣ον̣",
+            "[κ]αι ι̅υ̅ βαπτισ̣θε̣ντος [κ]α̣ι̣ π̣ροσ̣ευ",
+            "[χομ]ε̣νου. ανεωχθηνα̣ι τον̣ ουρα",
+            "[νο]ν̣ ^{22} και καταβηνα[ι το] π̅ν̅α̅ τ̣ο αγι̣",
+            "[ον σωματ]ι̣κ̣ω̣ [ειδει ως πε]ρ̣ι̣σ̣[τεραν]"
+          ],
+          "english_translation": "And while he was exhorting, he was proclaiming good news to the people. But Herod the tetrarch, being reproved by him concerning Herodias, the wife of his brother, and concerning all the evil things Herod had done, added this also to all the rest: he shut John up in prison. Now it happened, when all the people had been baptized, and Jesus also had been baptized and was praying, that heaven was opened, and the holy Spirit descended in bodily form, like a dove …",
+          "translation_note": "New English rendering from the Greek transcription, not a later English Bible translation. Square brackets mark supplied letters or words where the papyrus is damaged or illegible; underdots mark uncertain letters. Verse 22 continues beyond the surviving portion shown in this transcription.",
+          "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Vatican Library images have separate rights and are not bundled here."
         }
       ]
     },
@@ -165,7 +222,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "gospel",
       "attribution_status": "Anonymous narrative traditionally associated with Luke; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P75 now includes the Greek transcription and fresh English rendering for Luke 3:18–22, with restorations bracketed and uncertain letters marked.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 10,
@@ -213,6 +270,43 @@
             }
           ],
           "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
+        },
+        {
+          "id": "P75",
+          "siglum": "𝔓75",
+          "shelfmark": "Pap. Hanna 1 (formerly P. Bodmer XIV–XV)",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Late second to early third century CE (c. 175–225)",
+          "provenance": "Egypt; provenance details debated",
+          "current_location": "Biblioteca Apostolica Vaticana, Vatican City",
+          "contents": "Large portions of Luke and John, with substantial lacunae",
+          "text_status": "Fragmentary witness; many pages damaged or missing.",
+          "sample_passage": "Luke 3:18–22, folio 7 recto (NTVMR page 20)",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P75, docID 10075, pageID 20",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10075&pageID=20&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{3:18} [μεν ουν και ετερα παρακαλω]ν",
+            "[ευηγγελι]ζ̣ε̣[το] τ̣ον λαον· ^{19} [ο δε η]ρω",
+            "[δης ο τ]ε̣τ̣ρ̣α̣ρχης ελεγχ̣ομ̣[ε]ν̣[ος] υπ",
+            "[αυτ]ο̣υ̣ π̣ερι ηρωδιαδος̣ της γυναι",
+            "[κο]ς̣ του αδελφου αυτου· και περι παν",
+            "των ων εποιησεν πονηρων ο η",
+            "ρωδης ^{20} προσεθ̣ηκεν και τουτο επι",
+            "πασιν· κατεκλεισεν [τ]ον ιω̣ανην",
+            "εν φυλακη· ^{21} εγεν̣[ε]τ̣[ο δε ε]ν̣ [τω]",
+            "β̣απτισθηναι απαν[τα τ]ο̣ν̣ λ̣α̣ον̣",
+            "[κ]αι ι̅υ̅ βαπτισ̣θε̣ντος [κ]α̣ι̣ π̣ροσ̣ευ",
+            "[χομ]ε̣νου. ανεωχθηνα̣ι τον̣ ουρα",
+            "[νο]ν̣ ^{22} και καταβηνα[ι το] π̅ν̅α̅ τ̣ο αγι̣",
+            "[ον σωματ]ι̣κ̣ω̣ [ειδει ως πε]ρ̣ι̣σ̣[τεραν]"
+          ],
+          "english_translation": "And while he was exhorting, he was proclaiming good news to the people. But Herod the tetrarch, being reproved by him concerning Herodias, the wife of his brother, and concerning all the evil things Herod had done, added this also to all the rest: he shut John up in prison. Now it happened, when all the people had been baptized, and Jesus also had been baptized and was praying, that heaven was opened, and the holy Spirit descended in bodily form, like a dove …",
+          "translation_note": "New English rendering from the Greek transcription, not a later English Bible translation. Square brackets mark supplied letters or words where the papyrus is damaged or illegible; underdots mark uncertain letters. Verse 22 continues beyond the surviving portion shown in this transcription.",
+          "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Vatican Library images have separate rights and are not bundled here."
         }
       ]
     },
