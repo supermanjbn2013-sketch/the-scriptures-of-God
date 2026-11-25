@@ -365,9 +365,41 @@
             }
           ],
           "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
+        },
+        {
+          "id": "P88",
+          "siglum": "𝔓88",
+          "shelfmark": "P. Med. Inv. Nr. 69.24",
+          "writing": "Greek",
+          "material": "papyrus bifolium",
+          "date": "Fourth century CE (palaeographic estimate)",
+          "provenance": "Egypt; exact findspot not established in the consulted catalogue",
+          "current_location": "Università Cattolica del Sacro Cuore, Milan, Italy",
+          "contents": "Gospel of Mark 2:1–26, preserved on a papyrus bifolium comprising four pages",
+          "physical_extent": "One bifolium (four pages), single column, approximately 22–23 lines per page; published measurements vary slightly between catalogues",
+          "text_status": "Fragmentary Greek witness to Mark 2:1–26. The text is badly preserved in places; the passage range identifies the represented section and should not be treated as a guarantee that every letter is legible.",
+          "source_references": [
+            {
+              "title": "CSNTM — P88 manuscript record and digital images",
+              "url": "https://manuscripts.csntm.org/manuscript/View/GA_P88"
+            },
+            {
+              "title": "Peter M. Head, The Early Text of Mark, in The Early Text of the New Testament (2012), pp. 108–120",
+              "url": "https://academic.oup.com/book/40383/chapter-abstract/347133830"
+            },
+            {
+              "title": "S. Daris, Papiri letterari dell' IV secolo: Marco, Vangelo 2,1–26, Aegyptus 52 (1972), pp. 80–88",
+              "url": "https://www.worldcat.org/title/"
+            },
+            {
+              "title": "INTF manuscript catalogue listing P88",
+              "url": "https://ntvmr.uni-muenster.de/"
+            }
+          ],
+          "transcription_note": "No diplomatic Greek transcription is supplied in this record. The catalogue identifies the physical witness and its represented passage only."
         }
       ],
-      "description": "The Gospel of Mark is an anonymous narrative traditionally associated with Mark; the text itself does not name its author. Its early Greek manuscript evidence includes P45, a third-century papyrus codex that also contained portions of Matthew, Luke, John, and Acts. The surviving Mark portions are scattered and fragmentary, so the archive identifies represented passages without implying that complete verses or continuous chapters survive.",
+      "description": "The Gospel of Mark is an anonymous narrative traditionally associated with Mark; the text itself does not name its author. Its surviving early Greek papyrus evidence includes P45 (third century), with scattered portions across Mark, and P88 (fourth century), a papyrus bifolium representing Mark 2:1–26. These witnesses are fragmentary and are described separately so that the limits of each surviving artifact remain clear.",
       "surviving_fragments": [
         {
           "fragment_id": "Mark-P45-Chester-Beatty-I",
@@ -380,6 +412,18 @@
           "english_paraphrase": "The surviving Mark fragments preserve portions of several episodes in the Lord's ministry, including the storm at sea, healings, the sending of the Twelve, the feeding accounts, disputes and teaching, and events in Jerusalem. This is only a thematic guide to the passages represented; it does not fill gaps or reproduce wording absent from the papyrus.",
           "text_type": "Editorial content summary based on the published list of surviving passages. It is not a verbatim translation, a reconstruction of missing lines, or a diplomatic transcription of P45.",
           "source_url": "https://jbtc.org/v13/Head2008.pdf"
+        },
+        {
+          "fragment_id": "Mark-P88-PMedInv6924",
+          "transmitting_author": "Anonymous Gospel of Mark; preserved in the fourth-century Greek papyrus witness P88",
+          "source_work": "Gospel of Mark",
+          "passage": "Mark 2:1–26 (represented across four pages of a papyrus bifolium)",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "The represented section includes the healing of the paralytic and the dispute about forgiveness, the call of Levi and meal with tax collectors, the question about fasting, and the sayings about new cloth and wineskins.",
+          "status": "P88 (P. Med. Inv. Nr. 69.24) is a separate fourth-century papyrus witness from the third-century P45 codex. It consists of a bifolium with four pages in one column. The papyrus is fragmentary and its physical preservation is poor; this summary does not imply that every word in Mark 2:1–26 is equally legible.",
+          "english_paraphrase": "The surviving section covers several connected episodes: a paralysed man is brought to the Lord and healed; the Lord calls Levi and eats with tax collectors; questions arise about fasting; and the Lord uses images of new cloth and new wine to address the mismatch between old and new forms. This is a content guide to the represented passage, not a translation of the papyrus.",
+          "text_type": "Editorial content summary based on the published description of P88. It is not a verbatim transcription or a reconstruction of damaged wording.",
+          "source_url": "https://manuscripts.csntm.org/manuscript/View/GA_P88"
         }
       ]
     },
