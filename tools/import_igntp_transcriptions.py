@@ -37,7 +37,7 @@ COLLECTIONS = [
 ]
 MAX_ARCHIVE = 80 * 1024 * 1024
 MAX_MEMBER = 8 * 1024 * 1024
-MAX_TOTAL_UNPACKED = 160 * 1024 * 1024
+MAX_TOTAL_UNPACKED = 512 * 1024 * 1024
 
 def download(url):
     # The Birmingham server rejects generic/custom client identifiers with HTTP 406.
