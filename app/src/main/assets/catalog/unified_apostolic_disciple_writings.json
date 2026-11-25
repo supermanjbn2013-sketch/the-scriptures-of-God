@@ -1106,7 +1106,7 @@
       "composition_date_end_ce": 117,
       "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
       "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "attribution_status": "Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated.",
       "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
@@ -1114,18 +1114,26 @@
         {
           "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        },
+        {
+          "title": "Vincent van Altena, “Investigations into the Logistics of Ignatius’s Itinerary,” Journal of Early Christian Studies 21:2 (2021)",
+          "url": "https://jebs.eu/ojs/index.php/jebs/article/download/926/778/"
+        },
+        {
+          "title": "Delbert Burkett, “The Letters of Ignatius,” Cambridge University Press",
+          "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/conflict-within-the-church-5-the-letters-of-ignatius/F0B07F1775DB38503BCD86541D359631"
         }
       ],
       "historical_sequence": 50,
       "historical_period": "The generation immediately following the apostles",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "ignatius_journey",
-      "historical_anchor": "Ignatius's communication with Polycarp during the martyrdom journey",
-      "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
-      "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey",
+      "historical_anchor_id": "ignatius_troas_dispatches",
+      "historical_anchor": "Ignatius's three dispatches from Troas after leaving Smyrna",
+      "historical_anchor_basis": "The letter belongs to the later Troas group: Philadelphians, Smyrnaeans and Polycarp. The itinerary is reconstructed from internal notices in the letters; the sequence among these three dispatches is not established.",
+      "historical_subsequence": 121,
+      "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "All seven letters belong to Ignatius's journey toward martyrdom. Their exact relative order is not established."
+      "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters."
     },
     {
       "id": "ignatius_ephesians",
@@ -1134,7 +1142,7 @@
       "composition_date_end_ce": 117,
       "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
       "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "attribution_status": "Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated.",
       "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
@@ -1142,18 +1150,26 @@
         {
           "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        },
+        {
+          "title": "Vincent van Altena, “Investigations into the Logistics of Ignatius’s Itinerary,” Journal of Early Christian Studies 21:2 (2021)",
+          "url": "https://jebs.eu/ojs/index.php/jebs/article/download/926/778/"
+        },
+        {
+          "title": "Delbert Burkett, “The Letters of Ignatius,” Cambridge University Press",
+          "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/conflict-within-the-church-5-the-letters-of-ignatius/F0B07F1775DB38503BCD86541D359631"
         }
       ],
       "historical_sequence": 50,
       "historical_period": "The generation immediately following the apostles",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "ignatius_journey",
-      "historical_anchor": "Ignatius's guarded journey toward martyrdom and letter to Ephesus",
-      "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
+      "historical_anchor_id": "ignatius_smyrna_dispatches",
+      "historical_anchor": "Ignatius's four dispatches from Smyrna during his guarded journey toward Rome",
+      "historical_anchor_basis": "The letter belongs to the Smyrna group: Ephesians, Magnesians, Trallians and Romans. The itinerary is reconstructed from internal notices in the letters; the sequence among these four dispatches is not established.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey",
+      "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "All seven letters belong to Ignatius's journey toward martyrdom. Their exact relative order is not established."
+      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters."
     },
     {
       "id": "ignatius_magnesians",
@@ -1162,7 +1178,7 @@
       "composition_date_end_ce": 117,
       "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
       "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "attribution_status": "Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated.",
       "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
@@ -1170,18 +1186,26 @@
         {
           "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        },
+        {
+          "title": "Vincent van Altena, “Investigations into the Logistics of Ignatius’s Itinerary,” Journal of Early Christian Studies 21:2 (2021)",
+          "url": "https://jebs.eu/ojs/index.php/jebs/article/download/926/778/"
+        },
+        {
+          "title": "Delbert Burkett, “The Letters of Ignatius,” Cambridge University Press",
+          "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/conflict-within-the-church-5-the-letters-of-ignatius/F0B07F1775DB38503BCD86541D359631"
         }
       ],
       "historical_sequence": 50,
       "historical_period": "The generation immediately following the apostles",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "ignatius_journey",
-      "historical_anchor": "Ignatius's guarded journey and letter to Magnesia",
-      "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
+      "historical_anchor_id": "ignatius_smyrna_dispatches",
+      "historical_anchor": "Ignatius's four dispatches from Smyrna during his guarded journey toward Rome",
+      "historical_anchor_basis": "The letter belongs to the Smyrna group: Ephesians, Magnesians, Trallians and Romans. The itinerary is reconstructed from internal notices in the letters; the sequence among these four dispatches is not established.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey",
+      "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "All seven letters belong to Ignatius's journey toward martyrdom. Their exact relative order is not established."
+      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters."
     },
     {
       "id": "ignatius_philadelphians",
@@ -1190,7 +1214,7 @@
       "composition_date_end_ce": 117,
       "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
       "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "attribution_status": "Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated.",
       "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
@@ -1198,18 +1222,26 @@
         {
           "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        },
+        {
+          "title": "Vincent van Altena, “Investigations into the Logistics of Ignatius’s Itinerary,” Journal of Early Christian Studies 21:2 (2021)",
+          "url": "https://jebs.eu/ojs/index.php/jebs/article/download/926/778/"
+        },
+        {
+          "title": "Delbert Burkett, “The Letters of Ignatius,” Cambridge University Press",
+          "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/conflict-within-the-church-5-the-letters-of-ignatius/F0B07F1775DB38503BCD86541D359631"
         }
       ],
       "historical_sequence": 50,
       "historical_period": "The generation immediately following the apostles",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "ignatius_journey",
-      "historical_anchor": "Ignatius's guarded journey and letter to Philadelphia",
-      "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
-      "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey",
+      "historical_anchor_id": "ignatius_troas_dispatches",
+      "historical_anchor": "Ignatius's three dispatches from Troas after leaving Smyrna",
+      "historical_anchor_basis": "The letter belongs to the later Troas group: Philadelphians, Smyrnaeans and Polycarp. The itinerary is reconstructed from internal notices in the letters; the sequence among these three dispatches is not established.",
+      "historical_subsequence": 121,
+      "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "All seven letters belong to Ignatius's journey toward martyrdom. Their exact relative order is not established."
+      "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters."
     },
     {
       "id": "ignatius_romans",
@@ -1218,7 +1250,7 @@
       "composition_date_end_ce": 117,
       "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
       "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "attribution_status": "Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated.",
       "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
@@ -1226,18 +1258,26 @@
         {
           "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        },
+        {
+          "title": "Vincent van Altena, “Investigations into the Logistics of Ignatius’s Itinerary,” Journal of Early Christian Studies 21:2 (2021)",
+          "url": "https://jebs.eu/ojs/index.php/jebs/article/download/926/778/"
+        },
+        {
+          "title": "Delbert Burkett, “The Letters of Ignatius,” Cambridge University Press",
+          "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/conflict-within-the-church-5-the-letters-of-ignatius/F0B07F1775DB38503BCD86541D359631"
         }
       ],
       "historical_sequence": 50,
       "historical_period": "The generation immediately following the apostles",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "ignatius_journey",
-      "historical_anchor": "Ignatius's journey toward Rome and appeal concerning martyrdom",
-      "historical_anchor_basis": "Connected with the journey toward martyrdom; precise order relative to other letters is uncertain.",
+      "historical_anchor_id": "ignatius_smyrna_dispatches",
+      "historical_anchor": "Ignatius's four dispatches from Smyrna during his guarded journey toward Rome",
+      "historical_anchor_basis": "The letter belongs to the Smyrna group: Ephesians, Magnesians, Trallians and Romans. The itinerary is reconstructed from internal notices in the letters; the sequence among these four dispatches is not established.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey",
+      "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "All seven letters belong to Ignatius's journey toward martyrdom. Their exact relative order is not established."
+      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters."
     },
     {
       "id": "ignatius_smyrnaeans",
@@ -1246,7 +1286,7 @@
       "composition_date_end_ce": 117,
       "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
       "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "attribution_status": "Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated.",
       "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
@@ -1254,18 +1294,26 @@
         {
           "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        },
+        {
+          "title": "Vincent van Altena, “Investigations into the Logistics of Ignatius’s Itinerary,” Journal of Early Christian Studies 21:2 (2021)",
+          "url": "https://jebs.eu/ojs/index.php/jebs/article/download/926/778/"
+        },
+        {
+          "title": "Delbert Burkett, “The Letters of Ignatius,” Cambridge University Press",
+          "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/conflict-within-the-church-5-the-letters-of-ignatius/F0B07F1775DB38503BCD86541D359631"
         }
       ],
       "historical_sequence": 50,
       "historical_period": "The generation immediately following the apostles",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "ignatius_journey",
-      "historical_anchor": "Ignatius's guarded journey and letter to Smyrna",
-      "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
-      "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey",
+      "historical_anchor_id": "ignatius_troas_dispatches",
+      "historical_anchor": "Ignatius's three dispatches from Troas after leaving Smyrna",
+      "historical_anchor_basis": "The letter belongs to the later Troas group: Philadelphians, Smyrnaeans and Polycarp. The itinerary is reconstructed from internal notices in the letters; the sequence among these three dispatches is not established.",
+      "historical_subsequence": 121,
+      "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "All seven letters belong to Ignatius's journey toward martyrdom. Their exact relative order is not established."
+      "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters."
     },
     {
       "id": "ignatius_trallians",
@@ -1274,7 +1322,7 @@
       "composition_date_end_ce": 117,
       "date_precision": "Common scholarly range during Trajan's reign; exact dating debated",
       "genre": "letter",
-      "attribution_status": "Attributed to Ignatius of Antioch; generally accepted as part of the middle recension, while the longer and shorter recensions have separate transmission histories.",
+      "attribution_status": "Attributed to Ignatius of Antioch; the seven-letter middle recension is widely accepted, though questions about authenticity, recension and the corpus remain debated.",
       "textual_status": "Greek text survives in multiple recensions and translations; each manuscript witness and recension must be distinguished in the textual archive.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Approximate composition range based on the commonly proposed Trajanic period; manuscript-copy dates are separate.",
@@ -1282,18 +1330,26 @@
         {
           "title": "Cambridge Companion to the Apostolic Fathers — dating overview",
           "url": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        },
+        {
+          "title": "Vincent van Altena, “Investigations into the Logistics of Ignatius’s Itinerary,” Journal of Early Christian Studies 21:2 (2021)",
+          "url": "https://jebs.eu/ojs/index.php/jebs/article/download/926/778/"
+        },
+        {
+          "title": "Delbert Burkett, “The Letters of Ignatius,” Cambridge University Press",
+          "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/conflict-within-the-church-5-the-letters-of-ignatius/F0B07F1775DB38503BCD86541D359631"
         }
       ],
       "historical_sequence": 50,
       "historical_period": "The generation immediately following the apostles",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "ignatius_journey",
-      "historical_anchor": "Ignatius's guarded journey and letter to Tralles",
-      "historical_anchor_basis": "Part of the same journey-letter cycle; exact order among the letters is uncertain.",
+      "historical_anchor_id": "ignatius_smyrna_dispatches",
+      "historical_anchor": "Ignatius's four dispatches from Smyrna during his guarded journey toward Rome",
+      "historical_anchor_basis": "The letter belongs to the Smyrna group: Ephesians, Magnesians, Trallians and Romans. The itinerary is reconstructed from internal notices in the letters; the sequence among these four dispatches is not established.",
       "historical_subsequence": 120,
-      "historical_anchor_status": "shared_journey",
+      "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
-      "historical_order_note": "All seven letters belong to Ignatius's journey toward martyrdom. Their exact relative order is not established."
+      "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters."
     },
     {
       "id": "aristides_apology",

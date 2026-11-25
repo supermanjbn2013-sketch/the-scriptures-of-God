@@ -727,6 +727,12 @@ def validate_witness_registers():
     assert "Timothy" in by_id["1_thessalonians"]["historical_anchor_basis"] and "Acts 17" in by_id["1_thessalonians"]["historical_anchor_basis"], "1 Thessalonians must retain its internal travel clues and qualified Acts correlation"
     assert "disputed" in by_id["2_thessalonians"]["historical_order_note"].lower(), "2 Thessalonians must retain its disputed relative order"
     assert "Romans 15:25" in by_id["romans"]["historical_anchor_basis"], "Romans must retain its Jerusalem-delivery journey anchor"
+    ignatius_smyrna = {"ignatius_ephesians", "ignatius_magnesians", "ignatius_trallians", "ignatius_romans"}
+    ignatius_troas = {"ignatius_philadelphians", "ignatius_smyrnaeans", "ignatius_polycarp"}
+    assert all(by_id[x]["historical_subsequence"] == 120 for x in ignatius_smyrna), "Ignatius's Smyrna dispatches must share one event position"
+    assert all(by_id[x]["historical_subsequence"] == 121 for x in ignatius_troas), "Ignatius's later Troas dispatches must share one event position"
+    assert all(by_id[x]["historical_anchor_status"] == "journey_stage_internal_order_unresolved" for x in ignatius_smyrna | ignatius_troas), "Ignatius letters must preserve unresolved order within each journey stage"
+    assert all("No exact order is claimed" in by_id[x]["historical_order_note"] for x in ignatius_smyrna | ignatius_troas), "Do not force a sequence among letters written at the same stop"
     for record in unified["records"]:
         start = record.get("composition_date_start_ce")
         end = record.get("composition_date_end_ce")
