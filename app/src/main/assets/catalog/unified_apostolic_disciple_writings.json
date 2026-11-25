@@ -985,7 +985,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Paul; commonly dated among the earliest surviving Christian writings.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1025,22 +1025,53 @@
           "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
           "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
           "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
-          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
-          "transcription_resources": [
+          "sample_passage": "Romans 5:17–6:4, folio 8 recto",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P46, docID 10046, pageID 10",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{5:17} δωρ̣εα̣ς̣ τ̣η̣ς̣ [δικαιοσυνης λαμβανοντες εν]",
+            "ζωη β̣α̣σ̣[ιλευσουσιν δια του ενος ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "^{18} αρα ουν̣ ως δι εν̣[ος παραπτωματος εις παν]",
+            "τα̣ς ανθρ̣ωπους ε̣[ις κατακριμα ουτως και]",
+            "δι ενο̣ς̣ δικα̣ιωμα̣τ̣[ος εις παντας ανθρωπους]",
+            "εις δικα̣ι̣ωσιν ζωης ^{19} ωσ̣π̣[ερ γαρ δια της παρα]",
+            "κ̣ο̣ης τ̣ο̣υ̣ ενος ανθρωπο̣υ̣ [αμαρτωλοι κατε]",
+            "στ̣ησαν̣ οι πολλοι ουτως̣ [και δια της υπακο]",
+            "ης του ενος δικαιοι κατ̣α̣[σταθησονται οι]",
+            "π̣ολλοι ^{20} νομος δε [παρεισηλθεν ινα πλεο]",
+            "[νασ]η το παραπτω̣[μα ου δε επλεονα]",
+            "[σεν] η αμαρτια̣ [υπερεπερισσευσεν η χαρις]",
+            "^{21} [ινα] ω̣σ̣π̣ερ ε̣βα̣σ̣[ιλευσεν η αμαρτια εν τω θανα]",
+            "[τ]ω̣ ο̣υτως̣ και η χαρ̣ις [βασιλευση δια δικαι]",
+            "[ο]συνη̣ς ε̣ις ζωην αι̣ω̣[νιον δια ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "τ̣ου κ̅υ̣̣̅ η̣μ̣ων ^{6:1} τι ουν ερ̣[ουμεν επιμενωμεν]",
+            "τ̣η αμαρ̣τια ινα η χαρις̣ [πλεοναση] ^{2} [μη γενοι]",
+            "τ̣ο οιτινες απεθανο̣μ[εν τη αμαρτια πως]",
+            "ετι ζη̣σωμεν εν α̣[υτη] ^{3} [η αγνοειτε οτι οσοι]",
+            "[ε]βαπτισθ̣η̣μεν̣ ε̣ι̣[ς χ̅ρ̅ν̅ ι̅η̅ν̅ εις τον θανατον]",
+            "[αυτ]ο̣υ̣ [ε]βαπ̣τι[σθημεν] ^{4} [συνεταφημεν ουν]",
+            "[αυτω δ]ια [του βαπτισματος εις τον θανατον]"
+          ],
+          "english_translation": "For if, by the trespass of the one, death reigned through that one, much more will those who receive the abundance of grace and the gift of righteousness reign in life through the one, Jesus Christ. Therefore, just as through one trespass the result came to all people unto condemnation, so also through one righteous act the result came to all people unto justification of life. For just as through the disobedience of the one man the many were constituted sinners, so also through the obedience of the one the many will be constituted righteous. But law entered alongside so that the trespass might increase; where sin increased, grace overflowed still more, so that just as sin reigned in death, grace might also reign through righteousness unto eternal life through Jesus Christ our Lord. What then shall we say? Shall we continue in sin so that grace may increase? Certainly not. We who died to sin, how shall we still live in it? Or do you not know that all of us who were baptized into Christ Jesus were baptized into his death? Therefore we were buried with him through baptism into death …",
+          "translation_note": "Fresh English rendering from the P46 Greek transcription, not copied from the KJV. Square brackets indicate editorial restoration of lost or illegible text; underdots mark uncertain letters. The surviving page ends mid-sentence at Romans 6:4; the ellipsis marks continuation beyond this page, not a conjectural completion.",
+          "text_status": "Substantial early Greek witness. This folio preserves portions of Romans 5:17–6:4; the manuscript's missing opening and ending remain lacunae. P46's contents and order are witness facts, not proof of authorship.",
+          "sources": [
             {
-              "title": "INTF New Testament Virtual Manuscript Room",
-              "url": "https://ntvmr.uni-muenster.de/"
+              "title": "INTF NTVMR — P46 diplomatic transcription",
+              "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt"
             },
             {
               "title": "CSNTM — P46 manuscript images and description",
               "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
             },
             {
-              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
-              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+              "title": "Theosis Library — P46 folio 8r image/text mapping",
+              "url": "https://theosislibrary.com/library/verified-p46-romans-5"
             }
-          ],
-          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+          ]
         }
       ]
     },
@@ -1089,7 +1120,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Paul; date depends partly on the reconstruction of Paul's chronology.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1129,22 +1160,53 @@
           "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
           "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
           "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
-          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
-          "transcription_resources": [
+          "sample_passage": "Romans 5:17–6:4, folio 8 recto",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P46, docID 10046, pageID 10",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{5:17} δωρ̣εα̣ς̣ τ̣η̣ς̣ [δικαιοσυνης λαμβανοντες εν]",
+            "ζωη β̣α̣σ̣[ιλευσουσιν δια του ενος ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "^{18} αρα ουν̣ ως δι εν̣[ος παραπτωματος εις παν]",
+            "τα̣ς ανθρ̣ωπους ε̣[ις κατακριμα ουτως και]",
+            "δι ενο̣ς̣ δικα̣ιωμα̣τ̣[ος εις παντας ανθρωπους]",
+            "εις δικα̣ι̣ωσιν ζωης ^{19} ωσ̣π̣[ερ γαρ δια της παρα]",
+            "κ̣ο̣ης τ̣ο̣υ̣ ενος ανθρωπο̣υ̣ [αμαρτωλοι κατε]",
+            "στ̣ησαν̣ οι πολλοι ουτως̣ [και δια της υπακο]",
+            "ης του ενος δικαιοι κατ̣α̣[σταθησονται οι]",
+            "π̣ολλοι ^{20} νομος δε [παρεισηλθεν ινα πλεο]",
+            "[νασ]η το παραπτω̣[μα ου δε επλεονα]",
+            "[σεν] η αμαρτια̣ [υπερεπερισσευσεν η χαρις]",
+            "^{21} [ινα] ω̣σ̣π̣ερ ε̣βα̣σ̣[ιλευσεν η αμαρτια εν τω θανα]",
+            "[τ]ω̣ ο̣υτως̣ και η χαρ̣ις [βασιλευση δια δικαι]",
+            "[ο]συνη̣ς ε̣ις ζωην αι̣ω̣[νιον δια ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "τ̣ου κ̅υ̣̣̅ η̣μ̣ων ^{6:1} τι ουν ερ̣[ουμεν επιμενωμεν]",
+            "τ̣η αμαρ̣τια ινα η χαρις̣ [πλεοναση] ^{2} [μη γενοι]",
+            "τ̣ο οιτινες απεθανο̣μ[εν τη αμαρτια πως]",
+            "ετι ζη̣σωμεν εν α̣[υτη] ^{3} [η αγνοειτε οτι οσοι]",
+            "[ε]βαπτισθ̣η̣μεν̣ ε̣ι̣[ς χ̅ρ̅ν̅ ι̅η̅ν̅ εις τον θανατον]",
+            "[αυτ]ο̣υ̣ [ε]βαπ̣τι[σθημεν] ^{4} [συνεταφημεν ουν]",
+            "[αυτω δ]ια [του βαπτισματος εις τον θανατον]"
+          ],
+          "english_translation": "For if, by the trespass of the one, death reigned through that one, much more will those who receive the abundance of grace and the gift of righteousness reign in life through the one, Jesus Christ. Therefore, just as through one trespass the result came to all people unto condemnation, so also through one righteous act the result came to all people unto justification of life. For just as through the disobedience of the one man the many were constituted sinners, so also through the obedience of the one the many will be constituted righteous. But law entered alongside so that the trespass might increase; where sin increased, grace overflowed still more, so that just as sin reigned in death, grace might also reign through righteousness unto eternal life through Jesus Christ our Lord. What then shall we say? Shall we continue in sin so that grace may increase? Certainly not. We who died to sin, how shall we still live in it? Or do you not know that all of us who were baptized into Christ Jesus were baptized into his death? Therefore we were buried with him through baptism into death …",
+          "translation_note": "Fresh English rendering from the P46 Greek transcription, not copied from the KJV. Square brackets indicate editorial restoration of lost or illegible text; underdots mark uncertain letters. The surviving page ends mid-sentence at Romans 6:4; the ellipsis marks continuation beyond this page, not a conjectural completion.",
+          "text_status": "Substantial early Greek witness. This folio preserves portions of Romans 5:17–6:4; the manuscript's missing opening and ending remain lacunae. P46's contents and order are witness facts, not proof of authorship.",
+          "sources": [
             {
-              "title": "INTF New Testament Virtual Manuscript Room",
-              "url": "https://ntvmr.uni-muenster.de/"
+              "title": "INTF NTVMR — P46 diplomatic transcription",
+              "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt"
             },
             {
               "title": "CSNTM — P46 manuscript images and description",
               "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
             },
             {
-              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
-              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+              "title": "Theosis Library — P46 folio 8r image/text mapping",
+              "url": "https://theosislibrary.com/library/verified-p46-romans-5"
             }
-          ],
-          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+          ]
         }
       ]
     },
@@ -1198,7 +1260,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Paul.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1242,22 +1304,53 @@
           "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
           "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
           "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
-          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
-          "transcription_resources": [
+          "sample_passage": "Romans 5:17–6:4, folio 8 recto",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P46, docID 10046, pageID 10",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{5:17} δωρ̣εα̣ς̣ τ̣η̣ς̣ [δικαιοσυνης λαμβανοντες εν]",
+            "ζωη β̣α̣σ̣[ιλευσουσιν δια του ενος ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "^{18} αρα ουν̣ ως δι εν̣[ος παραπτωματος εις παν]",
+            "τα̣ς ανθρ̣ωπους ε̣[ις κατακριμα ουτως και]",
+            "δι ενο̣ς̣ δικα̣ιωμα̣τ̣[ος εις παντας ανθρωπους]",
+            "εις δικα̣ι̣ωσιν ζωης ^{19} ωσ̣π̣[ερ γαρ δια της παρα]",
+            "κ̣ο̣ης τ̣ο̣υ̣ ενος ανθρωπο̣υ̣ [αμαρτωλοι κατε]",
+            "στ̣ησαν̣ οι πολλοι ουτως̣ [και δια της υπακο]",
+            "ης του ενος δικαιοι κατ̣α̣[σταθησονται οι]",
+            "π̣ολλοι ^{20} νομος δε [παρεισηλθεν ινα πλεο]",
+            "[νασ]η το παραπτω̣[μα ου δε επλεονα]",
+            "[σεν] η αμαρτια̣ [υπερεπερισσευσεν η χαρις]",
+            "^{21} [ινα] ω̣σ̣π̣ερ ε̣βα̣σ̣[ιλευσεν η αμαρτια εν τω θανα]",
+            "[τ]ω̣ ο̣υτως̣ και η χαρ̣ις [βασιλευση δια δικαι]",
+            "[ο]συνη̣ς ε̣ις ζωην αι̣ω̣[νιον δια ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "τ̣ου κ̅υ̣̣̅ η̣μ̣ων ^{6:1} τι ουν ερ̣[ουμεν επιμενωμεν]",
+            "τ̣η αμαρ̣τια ινα η χαρις̣ [πλεοναση] ^{2} [μη γενοι]",
+            "τ̣ο οιτινες απεθανο̣μ[εν τη αμαρτια πως]",
+            "ετι ζη̣σωμεν εν α̣[υτη] ^{3} [η αγνοειτε οτι οσοι]",
+            "[ε]βαπτισθ̣η̣μεν̣ ε̣ι̣[ς χ̅ρ̅ν̅ ι̅η̅ν̅ εις τον θανατον]",
+            "[αυτ]ο̣υ̣ [ε]βαπ̣τι[σθημεν] ^{4} [συνεταφημεν ουν]",
+            "[αυτω δ]ια [του βαπτισματος εις τον θανατον]"
+          ],
+          "english_translation": "For if, by the trespass of the one, death reigned through that one, much more will those who receive the abundance of grace and the gift of righteousness reign in life through the one, Jesus Christ. Therefore, just as through one trespass the result came to all people unto condemnation, so also through one righteous act the result came to all people unto justification of life. For just as through the disobedience of the one man the many were constituted sinners, so also through the obedience of the one the many will be constituted righteous. But law entered alongside so that the trespass might increase; where sin increased, grace overflowed still more, so that just as sin reigned in death, grace might also reign through righteousness unto eternal life through Jesus Christ our Lord. What then shall we say? Shall we continue in sin so that grace may increase? Certainly not. We who died to sin, how shall we still live in it? Or do you not know that all of us who were baptized into Christ Jesus were baptized into his death? Therefore we were buried with him through baptism into death …",
+          "translation_note": "Fresh English rendering from the P46 Greek transcription, not copied from the KJV. Square brackets indicate editorial restoration of lost or illegible text; underdots mark uncertain letters. The surviving page ends mid-sentence at Romans 6:4; the ellipsis marks continuation beyond this page, not a conjectural completion.",
+          "text_status": "Substantial early Greek witness. This folio preserves portions of Romans 5:17–6:4; the manuscript's missing opening and ending remain lacunae. P46's contents and order are witness facts, not proof of authorship.",
+          "sources": [
             {
-              "title": "INTF New Testament Virtual Manuscript Room",
-              "url": "https://ntvmr.uni-muenster.de/"
+              "title": "INTF NTVMR — P46 diplomatic transcription",
+              "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt"
             },
             {
               "title": "CSNTM — P46 manuscript images and description",
               "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
             },
             {
-              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
-              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+              "title": "Theosis Library — P46 folio 8r image/text mapping",
+              "url": "https://theosislibrary.com/library/verified-p46-romans-5"
             }
-          ],
-          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+          ]
         }
       ]
     },
@@ -1311,7 +1404,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Paul; composition may incorporate more than one correspondence unit.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1355,22 +1448,53 @@
           "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
           "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
           "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
-          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
-          "transcription_resources": [
+          "sample_passage": "Romans 5:17–6:4, folio 8 recto",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P46, docID 10046, pageID 10",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{5:17} δωρ̣εα̣ς̣ τ̣η̣ς̣ [δικαιοσυνης λαμβανοντες εν]",
+            "ζωη β̣α̣σ̣[ιλευσουσιν δια του ενος ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "^{18} αρα ουν̣ ως δι εν̣[ος παραπτωματος εις παν]",
+            "τα̣ς ανθρ̣ωπους ε̣[ις κατακριμα ουτως και]",
+            "δι ενο̣ς̣ δικα̣ιωμα̣τ̣[ος εις παντας ανθρωπους]",
+            "εις δικα̣ι̣ωσιν ζωης ^{19} ωσ̣π̣[ερ γαρ δια της παρα]",
+            "κ̣ο̣ης τ̣ο̣υ̣ ενος ανθρωπο̣υ̣ [αμαρτωλοι κατε]",
+            "στ̣ησαν̣ οι πολλοι ουτως̣ [και δια της υπακο]",
+            "ης του ενος δικαιοι κατ̣α̣[σταθησονται οι]",
+            "π̣ολλοι ^{20} νομος δε [παρεισηλθεν ινα πλεο]",
+            "[νασ]η το παραπτω̣[μα ου δε επλεονα]",
+            "[σεν] η αμαρτια̣ [υπερεπερισσευσεν η χαρις]",
+            "^{21} [ινα] ω̣σ̣π̣ερ ε̣βα̣σ̣[ιλευσεν η αμαρτια εν τω θανα]",
+            "[τ]ω̣ ο̣υτως̣ και η χαρ̣ις [βασιλευση δια δικαι]",
+            "[ο]συνη̣ς ε̣ις ζωην αι̣ω̣[νιον δια ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "τ̣ου κ̅υ̣̣̅ η̣μ̣ων ^{6:1} τι ουν ερ̣[ουμεν επιμενωμεν]",
+            "τ̣η αμαρ̣τια ινα η χαρις̣ [πλεοναση] ^{2} [μη γενοι]",
+            "τ̣ο οιτινες απεθανο̣μ[εν τη αμαρτια πως]",
+            "ετι ζη̣σωμεν εν α̣[υτη] ^{3} [η αγνοειτε οτι οσοι]",
+            "[ε]βαπτισθ̣η̣μεν̣ ε̣ι̣[ς χ̅ρ̅ν̅ ι̅η̅ν̅ εις τον θανατον]",
+            "[αυτ]ο̣υ̣ [ε]βαπ̣τι[σθημεν] ^{4} [συνεταφημεν ουν]",
+            "[αυτω δ]ια [του βαπτισματος εις τον θανατον]"
+          ],
+          "english_translation": "For if, by the trespass of the one, death reigned through that one, much more will those who receive the abundance of grace and the gift of righteousness reign in life through the one, Jesus Christ. Therefore, just as through one trespass the result came to all people unto condemnation, so also through one righteous act the result came to all people unto justification of life. For just as through the disobedience of the one man the many were constituted sinners, so also through the obedience of the one the many will be constituted righteous. But law entered alongside so that the trespass might increase; where sin increased, grace overflowed still more, so that just as sin reigned in death, grace might also reign through righteousness unto eternal life through Jesus Christ our Lord. What then shall we say? Shall we continue in sin so that grace may increase? Certainly not. We who died to sin, how shall we still live in it? Or do you not know that all of us who were baptized into Christ Jesus were baptized into his death? Therefore we were buried with him through baptism into death …",
+          "translation_note": "Fresh English rendering from the P46 Greek transcription, not copied from the KJV. Square brackets indicate editorial restoration of lost or illegible text; underdots mark uncertain letters. The surviving page ends mid-sentence at Romans 6:4; the ellipsis marks continuation beyond this page, not a conjectural completion.",
+          "text_status": "Substantial early Greek witness. This folio preserves portions of Romans 5:17–6:4; the manuscript's missing opening and ending remain lacunae. P46's contents and order are witness facts, not proof of authorship.",
+          "sources": [
             {
-              "title": "INTF New Testament Virtual Manuscript Room",
-              "url": "https://ntvmr.uni-muenster.de/"
+              "title": "INTF NTVMR — P46 diplomatic transcription",
+              "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt"
             },
             {
               "title": "CSNTM — P46 manuscript images and description",
               "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
             },
             {
-              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
-              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+              "title": "Theosis Library — P46 folio 8r image/text mapping",
+              "url": "https://theosislibrary.com/library/verified-p46-romans-5"
             }
-          ],
-          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+          ]
         }
       ]
     },
@@ -1382,7 +1506,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Paul.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1418,22 +1542,53 @@
           "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
           "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
           "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
-          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
-          "transcription_resources": [
+          "sample_passage": "Romans 5:17–6:4, folio 8 recto",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P46, docID 10046, pageID 10",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{5:17} δωρ̣εα̣ς̣ τ̣η̣ς̣ [δικαιοσυνης λαμβανοντες εν]",
+            "ζωη β̣α̣σ̣[ιλευσουσιν δια του ενος ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "^{18} αρα ουν̣ ως δι εν̣[ος παραπτωματος εις παν]",
+            "τα̣ς ανθρ̣ωπους ε̣[ις κατακριμα ουτως και]",
+            "δι ενο̣ς̣ δικα̣ιωμα̣τ̣[ος εις παντας ανθρωπους]",
+            "εις δικα̣ι̣ωσιν ζωης ^{19} ωσ̣π̣[ερ γαρ δια της παρα]",
+            "κ̣ο̣ης τ̣ο̣υ̣ ενος ανθρωπο̣υ̣ [αμαρτωλοι κατε]",
+            "στ̣ησαν̣ οι πολλοι ουτως̣ [και δια της υπακο]",
+            "ης του ενος δικαιοι κατ̣α̣[σταθησονται οι]",
+            "π̣ολλοι ^{20} νομος δε [παρεισηλθεν ινα πλεο]",
+            "[νασ]η το παραπτω̣[μα ου δε επλεονα]",
+            "[σεν] η αμαρτια̣ [υπερεπερισσευσεν η χαρις]",
+            "^{21} [ινα] ω̣σ̣π̣ερ ε̣βα̣σ̣[ιλευσεν η αμαρτια εν τω θανα]",
+            "[τ]ω̣ ο̣υτως̣ και η χαρ̣ις [βασιλευση δια δικαι]",
+            "[ο]συνη̣ς ε̣ις ζωην αι̣ω̣[νιον δια ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "τ̣ου κ̅υ̣̣̅ η̣μ̣ων ^{6:1} τι ουν ερ̣[ουμεν επιμενωμεν]",
+            "τ̣η αμαρ̣τια ινα η χαρις̣ [πλεοναση] ^{2} [μη γενοι]",
+            "τ̣ο οιτινες απεθανο̣μ[εν τη αμαρτια πως]",
+            "ετι ζη̣σωμεν εν α̣[υτη] ^{3} [η αγνοειτε οτι οσοι]",
+            "[ε]βαπτισθ̣η̣μεν̣ ε̣ι̣[ς χ̅ρ̅ν̅ ι̅η̅ν̅ εις τον θανατον]",
+            "[αυτ]ο̣υ̣ [ε]βαπ̣τι[σθημεν] ^{4} [συνεταφημεν ουν]",
+            "[αυτω δ]ια [του βαπτισματος εις τον θανατον]"
+          ],
+          "english_translation": "For if, by the trespass of the one, death reigned through that one, much more will those who receive the abundance of grace and the gift of righteousness reign in life through the one, Jesus Christ. Therefore, just as through one trespass the result came to all people unto condemnation, so also through one righteous act the result came to all people unto justification of life. For just as through the disobedience of the one man the many were constituted sinners, so also through the obedience of the one the many will be constituted righteous. But law entered alongside so that the trespass might increase; where sin increased, grace overflowed still more, so that just as sin reigned in death, grace might also reign through righteousness unto eternal life through Jesus Christ our Lord. What then shall we say? Shall we continue in sin so that grace may increase? Certainly not. We who died to sin, how shall we still live in it? Or do you not know that all of us who were baptized into Christ Jesus were baptized into his death? Therefore we were buried with him through baptism into death …",
+          "translation_note": "Fresh English rendering from the P46 Greek transcription, not copied from the KJV. Square brackets indicate editorial restoration of lost or illegible text; underdots mark uncertain letters. The surviving page ends mid-sentence at Romans 6:4; the ellipsis marks continuation beyond this page, not a conjectural completion.",
+          "text_status": "Substantial early Greek witness. This folio preserves portions of Romans 5:17–6:4; the manuscript's missing opening and ending remain lacunae. P46's contents and order are witness facts, not proof of authorship.",
+          "sources": [
             {
-              "title": "INTF New Testament Virtual Manuscript Room",
-              "url": "https://ntvmr.uni-muenster.de/"
+              "title": "INTF NTVMR — P46 diplomatic transcription",
+              "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt"
             },
             {
               "title": "CSNTM — P46 manuscript images and description",
               "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
             },
             {
-              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
-              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+              "title": "Theosis Library — P46 folio 8r image/text mapping",
+              "url": "https://theosislibrary.com/library/verified-p46-romans-5"
             }
-          ],
-          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+          ]
         }
       ]
     },
@@ -1486,7 +1641,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Paul; authorship is debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1522,22 +1677,53 @@
           "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
           "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
           "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
-          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
-          "transcription_resources": [
+          "sample_passage": "Romans 5:17–6:4, folio 8 recto",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P46, docID 10046, pageID 10",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{5:17} δωρ̣εα̣ς̣ τ̣η̣ς̣ [δικαιοσυνης λαμβανοντες εν]",
+            "ζωη β̣α̣σ̣[ιλευσουσιν δια του ενος ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "^{18} αρα ουν̣ ως δι εν̣[ος παραπτωματος εις παν]",
+            "τα̣ς ανθρ̣ωπους ε̣[ις κατακριμα ουτως και]",
+            "δι ενο̣ς̣ δικα̣ιωμα̣τ̣[ος εις παντας ανθρωπους]",
+            "εις δικα̣ι̣ωσιν ζωης ^{19} ωσ̣π̣[ερ γαρ δια της παρα]",
+            "κ̣ο̣ης τ̣ο̣υ̣ ενος ανθρωπο̣υ̣ [αμαρτωλοι κατε]",
+            "στ̣ησαν̣ οι πολλοι ουτως̣ [και δια της υπακο]",
+            "ης του ενος δικαιοι κατ̣α̣[σταθησονται οι]",
+            "π̣ολλοι ^{20} νομος δε [παρεισηλθεν ινα πλεο]",
+            "[νασ]η το παραπτω̣[μα ου δε επλεονα]",
+            "[σεν] η αμαρτια̣ [υπερεπερισσευσεν η χαρις]",
+            "^{21} [ινα] ω̣σ̣π̣ερ ε̣βα̣σ̣[ιλευσεν η αμαρτια εν τω θανα]",
+            "[τ]ω̣ ο̣υτως̣ και η χαρ̣ις [βασιλευση δια δικαι]",
+            "[ο]συνη̣ς ε̣ις ζωην αι̣ω̣[νιον δια ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "τ̣ου κ̅υ̣̣̅ η̣μ̣ων ^{6:1} τι ουν ερ̣[ουμεν επιμενωμεν]",
+            "τ̣η αμαρ̣τια ινα η χαρις̣ [πλεοναση] ^{2} [μη γενοι]",
+            "τ̣ο οιτινες απεθανο̣μ[εν τη αμαρτια πως]",
+            "ετι ζη̣σωμεν εν α̣[υτη] ^{3} [η αγνοειτε οτι οσοι]",
+            "[ε]βαπτισθ̣η̣μεν̣ ε̣ι̣[ς χ̅ρ̅ν̅ ι̅η̅ν̅ εις τον θανατον]",
+            "[αυτ]ο̣υ̣ [ε]βαπ̣τι[σθημεν] ^{4} [συνεταφημεν ουν]",
+            "[αυτω δ]ια [του βαπτισματος εις τον θανατον]"
+          ],
+          "english_translation": "For if, by the trespass of the one, death reigned through that one, much more will those who receive the abundance of grace and the gift of righteousness reign in life through the one, Jesus Christ. Therefore, just as through one trespass the result came to all people unto condemnation, so also through one righteous act the result came to all people unto justification of life. For just as through the disobedience of the one man the many were constituted sinners, so also through the obedience of the one the many will be constituted righteous. But law entered alongside so that the trespass might increase; where sin increased, grace overflowed still more, so that just as sin reigned in death, grace might also reign through righteousness unto eternal life through Jesus Christ our Lord. What then shall we say? Shall we continue in sin so that grace may increase? Certainly not. We who died to sin, how shall we still live in it? Or do you not know that all of us who were baptized into Christ Jesus were baptized into his death? Therefore we were buried with him through baptism into death …",
+          "translation_note": "Fresh English rendering from the P46 Greek transcription, not copied from the KJV. Square brackets indicate editorial restoration of lost or illegible text; underdots mark uncertain letters. The surviving page ends mid-sentence at Romans 6:4; the ellipsis marks continuation beyond this page, not a conjectural completion.",
+          "text_status": "Substantial early Greek witness. This folio preserves portions of Romans 5:17–6:4; the manuscript's missing opening and ending remain lacunae. P46's contents and order are witness facts, not proof of authorship.",
+          "sources": [
             {
-              "title": "INTF New Testament Virtual Manuscript Room",
-              "url": "https://ntvmr.uni-muenster.de/"
+              "title": "INTF NTVMR — P46 diplomatic transcription",
+              "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt"
             },
             {
               "title": "CSNTM — P46 manuscript images and description",
               "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
             },
             {
-              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
-              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+              "title": "Theosis Library — P46 folio 8r image/text mapping",
+              "url": "https://theosislibrary.com/library/verified-p46-romans-5"
             }
-          ],
-          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+          ]
         }
       ]
     },
@@ -1549,7 +1735,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Paul; authorship is debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1585,22 +1771,53 @@
           "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
           "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
           "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
-          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
-          "transcription_resources": [
+          "sample_passage": "Romans 5:17–6:4, folio 8 recto",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P46, docID 10046, pageID 10",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{5:17} δωρ̣εα̣ς̣ τ̣η̣ς̣ [δικαιοσυνης λαμβανοντες εν]",
+            "ζωη β̣α̣σ̣[ιλευσουσιν δια του ενος ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "^{18} αρα ουν̣ ως δι εν̣[ος παραπτωματος εις παν]",
+            "τα̣ς ανθρ̣ωπους ε̣[ις κατακριμα ουτως και]",
+            "δι ενο̣ς̣ δικα̣ιωμα̣τ̣[ος εις παντας ανθρωπους]",
+            "εις δικα̣ι̣ωσιν ζωης ^{19} ωσ̣π̣[ερ γαρ δια της παρα]",
+            "κ̣ο̣ης τ̣ο̣υ̣ ενος ανθρωπο̣υ̣ [αμαρτωλοι κατε]",
+            "στ̣ησαν̣ οι πολλοι ουτως̣ [και δια της υπακο]",
+            "ης του ενος δικαιοι κατ̣α̣[σταθησονται οι]",
+            "π̣ολλοι ^{20} νομος δε [παρεισηλθεν ινα πλεο]",
+            "[νασ]η το παραπτω̣[μα ου δε επλεονα]",
+            "[σεν] η αμαρτια̣ [υπερεπερισσευσεν η χαρις]",
+            "^{21} [ινα] ω̣σ̣π̣ερ ε̣βα̣σ̣[ιλευσεν η αμαρτια εν τω θανα]",
+            "[τ]ω̣ ο̣υτως̣ και η χαρ̣ις [βασιλευση δια δικαι]",
+            "[ο]συνη̣ς ε̣ις ζωην αι̣ω̣[νιον δια ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "τ̣ου κ̅υ̣̣̅ η̣μ̣ων ^{6:1} τι ουν ερ̣[ουμεν επιμενωμεν]",
+            "τ̣η αμαρ̣τια ινα η χαρις̣ [πλεοναση] ^{2} [μη γενοι]",
+            "τ̣ο οιτινες απεθανο̣μ[εν τη αμαρτια πως]",
+            "ετι ζη̣σωμεν εν α̣[υτη] ^{3} [η αγνοειτε οτι οσοι]",
+            "[ε]βαπτισθ̣η̣μεν̣ ε̣ι̣[ς χ̅ρ̅ν̅ ι̅η̅ν̅ εις τον θανατον]",
+            "[αυτ]ο̣υ̣ [ε]βαπ̣τι[σθημεν] ^{4} [συνεταφημεν ουν]",
+            "[αυτω δ]ια [του βαπτισματος εις τον θανατον]"
+          ],
+          "english_translation": "For if, by the trespass of the one, death reigned through that one, much more will those who receive the abundance of grace and the gift of righteousness reign in life through the one, Jesus Christ. Therefore, just as through one trespass the result came to all people unto condemnation, so also through one righteous act the result came to all people unto justification of life. For just as through the disobedience of the one man the many were constituted sinners, so also through the obedience of the one the many will be constituted righteous. But law entered alongside so that the trespass might increase; where sin increased, grace overflowed still more, so that just as sin reigned in death, grace might also reign through righteousness unto eternal life through Jesus Christ our Lord. What then shall we say? Shall we continue in sin so that grace may increase? Certainly not. We who died to sin, how shall we still live in it? Or do you not know that all of us who were baptized into Christ Jesus were baptized into his death? Therefore we were buried with him through baptism into death …",
+          "translation_note": "Fresh English rendering from the P46 Greek transcription, not copied from the KJV. Square brackets indicate editorial restoration of lost or illegible text; underdots mark uncertain letters. The surviving page ends mid-sentence at Romans 6:4; the ellipsis marks continuation beyond this page, not a conjectural completion.",
+          "text_status": "Substantial early Greek witness. This folio preserves portions of Romans 5:17–6:4; the manuscript's missing opening and ending remain lacunae. P46's contents and order are witness facts, not proof of authorship.",
+          "sources": [
             {
-              "title": "INTF New Testament Virtual Manuscript Room",
-              "url": "https://ntvmr.uni-muenster.de/"
+              "title": "INTF NTVMR — P46 diplomatic transcription",
+              "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt"
             },
             {
               "title": "CSNTM — P46 manuscript images and description",
               "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
             },
             {
-              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
-              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+              "title": "Theosis Library — P46 folio 8r image/text mapping",
+              "url": "https://theosislibrary.com/library/verified-p46-romans-5"
             }
-          ],
-          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+          ]
         }
       ]
     },
@@ -1649,7 +1866,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Paul; place and date of writing are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1685,22 +1902,53 @@
           "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
           "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
           "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
-          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
-          "transcription_resources": [
+          "sample_passage": "Romans 5:17–6:4, folio 8 recto",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P46, docID 10046, pageID 10",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{5:17} δωρ̣εα̣ς̣ τ̣η̣ς̣ [δικαιοσυνης λαμβανοντες εν]",
+            "ζωη β̣α̣σ̣[ιλευσουσιν δια του ενος ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "^{18} αρα ουν̣ ως δι εν̣[ος παραπτωματος εις παν]",
+            "τα̣ς ανθρ̣ωπους ε̣[ις κατακριμα ουτως και]",
+            "δι ενο̣ς̣ δικα̣ιωμα̣τ̣[ος εις παντας ανθρωπους]",
+            "εις δικα̣ι̣ωσιν ζωης ^{19} ωσ̣π̣[ερ γαρ δια της παρα]",
+            "κ̣ο̣ης τ̣ο̣υ̣ ενος ανθρωπο̣υ̣ [αμαρτωλοι κατε]",
+            "στ̣ησαν̣ οι πολλοι ουτως̣ [και δια της υπακο]",
+            "ης του ενος δικαιοι κατ̣α̣[σταθησονται οι]",
+            "π̣ολλοι ^{20} νομος δε [παρεισηλθεν ινα πλεο]",
+            "[νασ]η το παραπτω̣[μα ου δε επλεονα]",
+            "[σεν] η αμαρτια̣ [υπερεπερισσευσεν η χαρις]",
+            "^{21} [ινα] ω̣σ̣π̣ερ ε̣βα̣σ̣[ιλευσεν η αμαρτια εν τω θανα]",
+            "[τ]ω̣ ο̣υτως̣ και η χαρ̣ις [βασιλευση δια δικαι]",
+            "[ο]συνη̣ς ε̣ις ζωην αι̣ω̣[νιον δια ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "τ̣ου κ̅υ̣̣̅ η̣μ̣ων ^{6:1} τι ουν ερ̣[ουμεν επιμενωμεν]",
+            "τ̣η αμαρ̣τια ινα η χαρις̣ [πλεοναση] ^{2} [μη γενοι]",
+            "τ̣ο οιτινες απεθανο̣μ[εν τη αμαρτια πως]",
+            "ετι ζη̣σωμεν εν α̣[υτη] ^{3} [η αγνοειτε οτι οσοι]",
+            "[ε]βαπτισθ̣η̣μεν̣ ε̣ι̣[ς χ̅ρ̅ν̅ ι̅η̅ν̅ εις τον θανατον]",
+            "[αυτ]ο̣υ̣ [ε]βαπ̣τι[σθημεν] ^{4} [συνεταφημεν ουν]",
+            "[αυτω δ]ια [του βαπτισματος εις τον θανατον]"
+          ],
+          "english_translation": "For if, by the trespass of the one, death reigned through that one, much more will those who receive the abundance of grace and the gift of righteousness reign in life through the one, Jesus Christ. Therefore, just as through one trespass the result came to all people unto condemnation, so also through one righteous act the result came to all people unto justification of life. For just as through the disobedience of the one man the many were constituted sinners, so also through the obedience of the one the many will be constituted righteous. But law entered alongside so that the trespass might increase; where sin increased, grace overflowed still more, so that just as sin reigned in death, grace might also reign through righteousness unto eternal life through Jesus Christ our Lord. What then shall we say? Shall we continue in sin so that grace may increase? Certainly not. We who died to sin, how shall we still live in it? Or do you not know that all of us who were baptized into Christ Jesus were baptized into his death? Therefore we were buried with him through baptism into death …",
+          "translation_note": "Fresh English rendering from the P46 Greek transcription, not copied from the KJV. Square brackets indicate editorial restoration of lost or illegible text; underdots mark uncertain letters. The surviving page ends mid-sentence at Romans 6:4; the ellipsis marks continuation beyond this page, not a conjectural completion.",
+          "text_status": "Substantial early Greek witness. This folio preserves portions of Romans 5:17–6:4; the manuscript's missing opening and ending remain lacunae. P46's contents and order are witness facts, not proof of authorship.",
+          "sources": [
             {
-              "title": "INTF New Testament Virtual Manuscript Room",
-              "url": "https://ntvmr.uni-muenster.de/"
+              "title": "INTF NTVMR — P46 diplomatic transcription",
+              "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt"
             },
             {
               "title": "CSNTM — P46 manuscript images and description",
               "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
             },
             {
-              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
-              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+              "title": "Theosis Library — P46 folio 8r image/text mapping",
+              "url": "https://theosislibrary.com/library/verified-p46-romans-5"
             }
-          ],
-          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+          ]
         }
       ]
     },
@@ -1745,7 +1993,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Anonymous composition; not identified as a letter written by Paul in its text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. P46 includes an actual folio transcription sample from Romans 5:17–6:4 with a fresh English rendering from the Greek and lacuna/restoration marks preserved.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1785,22 +2033,53 @@
           "current_location": "Chester Beatty Library, Dublin, Ireland (56 leaves) and University of Michigan Library, Ann Arbor, USA (30 leaves)",
           "contents": "Romans (from 5:17), Hebrews, 1 Corinthians, 2 Corinthians, Ephesians, Galatians, Philippians, Colossians, and 1 Thessalonians (ending around 5:28)",
           "physical_extent": "86 surviving leaves from a codex originally estimated at about 104 leaves; first and final portions lost",
-          "text_status": "Substantial early Greek witness. Individual pages preserve partial text; the missing opening of Romans and lost end of the codex are lacunae. P46 does not contain the Pastoral Epistles. Its contents and order are witness facts, not proof of authorship.",
-          "transcription_resources": [
+          "sample_passage": "Romans 5:17–6:4, folio 8 recto",
+          "transcription_source": {
+            "title": "INTF NTVMR diplomatic transcription of GA P46, docID 10046, pageID 10",
+            "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt",
+            "license": "CC BY 4.0 as stated in the transcription file"
+          },
+          "greek_transcription_lines": [
+            "^{5:17} δωρ̣εα̣ς̣ τ̣η̣ς̣ [δικαιοσυνης λαμβανοντες εν]",
+            "ζωη β̣α̣σ̣[ιλευσουσιν δια του ενος ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "^{18} αρα ουν̣ ως δι εν̣[ος παραπτωματος εις παν]",
+            "τα̣ς ανθρ̣ωπους ε̣[ις κατακριμα ουτως και]",
+            "δι ενο̣ς̣ δικα̣ιωμα̣τ̣[ος εις παντας ανθρωπους]",
+            "εις δικα̣ι̣ωσιν ζωης ^{19} ωσ̣π̣[ερ γαρ δια της παρα]",
+            "κ̣ο̣ης τ̣ο̣υ̣ ενος ανθρωπο̣υ̣ [αμαρτωλοι κατε]",
+            "στ̣ησαν̣ οι πολλοι ουτως̣ [και δια της υπακο]",
+            "ης του ενος δικαιοι κατ̣α̣[σταθησονται οι]",
+            "π̣ολλοι ^{20} νομος δε [παρεισηλθεν ινα πλεο]",
+            "[νασ]η το παραπτω̣[μα ου δε επλεονα]",
+            "[σεν] η αμαρτια̣ [υπερεπερισσευσεν η χαρις]",
+            "^{21} [ινα] ω̣σ̣π̣ερ ε̣βα̣σ̣[ιλευσεν η αμαρτια εν τω θανα]",
+            "[τ]ω̣ ο̣υτως̣ και η χαρ̣ις [βασιλευση δια δικαι]",
+            "[ο]συνη̣ς ε̣ις ζωην αι̣ω̣[νιον δια ι̅η̅υ̅ χ̅ρ̅υ̅]",
+            "τ̣ου κ̅υ̣̣̅ η̣μ̣ων ^{6:1} τι ουν ερ̣[ουμεν επιμενωμεν]",
+            "τ̣η αμαρ̣τια ινα η χαρις̣ [πλεοναση] ^{2} [μη γενοι]",
+            "τ̣ο οιτινες απεθανο̣μ[εν τη αμαρτια πως]",
+            "ετι ζη̣σωμεν εν α̣[υτη] ^{3} [η αγνοειτε οτι οσοι]",
+            "[ε]βαπτισθ̣η̣μεν̣ ε̣ι̣[ς χ̅ρ̅ν̅ ι̅η̅ν̅ εις τον θανατον]",
+            "[αυτ]ο̣υ̣ [ε]βαπ̣τι[σθημεν] ^{4} [συνεταφημεν ουν]",
+            "[αυτω δ]ια [του βαπτισματος εις τον θανατον]"
+          ],
+          "english_translation": "For if, by the trespass of the one, death reigned through that one, much more will those who receive the abundance of grace and the gift of righteousness reign in life through the one, Jesus Christ. Therefore, just as through one trespass the result came to all people unto condemnation, so also through one righteous act the result came to all people unto justification of life. For just as through the disobedience of the one man the many were constituted sinners, so also through the obedience of the one the many will be constituted righteous. But law entered alongside so that the trespass might increase; where sin increased, grace overflowed still more, so that just as sin reigned in death, grace might also reign through righteousness unto eternal life through Jesus Christ our Lord. What then shall we say? Shall we continue in sin so that grace may increase? Certainly not. We who died to sin, how shall we still live in it? Or do you not know that all of us who were baptized into Christ Jesus were baptized into his death? Therefore we were buried with him through baptism into death …",
+          "translation_note": "Fresh English rendering from the P46 Greek transcription, not copied from the KJV. Square brackets indicate editorial restoration of lost or illegible text; underdots mark uncertain letters. The surviving page ends mid-sentence at Romans 6:4; the ellipsis marks continuation beyond this page, not a conjectural completion.",
+          "text_status": "Substantial early Greek witness. This folio preserves portions of Romans 5:17–6:4; the manuscript's missing opening and ending remain lacunae. P46's contents and order are witness facts, not proof of authorship.",
+          "sources": [
             {
-              "title": "INTF New Testament Virtual Manuscript Room",
-              "url": "https://ntvmr.uni-muenster.de/"
+              "title": "INTF NTVMR — P46 diplomatic transcription",
+              "url": "https://ntvmr.uni-muenster.de/community/vmr/api/transcript/get/?docID=10046&pageID=10&format=txt"
             },
             {
               "title": "CSNTM — P46 manuscript images and description",
               "url": "https://manuscripts.csntm.org/manuscript/View/GA_P46"
             },
             {
-              "title": "E. B. Ebojo, A Scribe and His Manuscript: P46 (University of Birmingham thesis)",
-              "url": "https://etheses.bham.ac.uk/id/eprint/4838/9/Ebojo14PhD.pdf"
+              "title": "Theosis Library — P46 folio 8r image/text mapping",
+              "url": "https://theosislibrary.com/library/verified-p46-romans-5"
             }
-          ],
-          "transcription_note": "This record identifies the witness and its extent. It does not substitute an edited Greek text for a diplomatic transcription. A full page-by-page Greek transcription and translation must be imported from a verified, reusable transcription dataset before being labelled manuscript text."
+          ]
         }
       ]
     },
