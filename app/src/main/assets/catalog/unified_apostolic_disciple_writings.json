@@ -504,12 +504,24 @@
       "preservation_status": "surviving_in_akmim_greek_fragment_and_oxyrhynchus_fragments",
       "research_sources": [
         {
-          "title": "Gospels.net — Gospel of Peter manuscript information",
-          "url": "https://www.gospels.net/manuscript/"
+          "title": "NASSCAL — Gospel of Peter: manuscript and textual overview",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-peter/"
         },
         {
-          "title": "NASSCAL — e-Clavis Christian Apocrypha",
-          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/"
+          "title": "NASSCAL — Papyrus Oxyrhynchus 2949",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/papyrus-oxyrhynchus-2949/"
+        },
+        {
+          "title": "NASSCAL — Papyrus Oxyrhynchus 4009",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/papyrus-oxyrhynchus-4009/"
+        },
+        {
+          "title": "Paul Foster, Are There Any Early Fragments of the So-Called Gospel of Peter? (2006)",
+          "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/are-there-any-early-fragments-of-the-socalled-gospel-of-peter/EABB56E06177F05CEFA90ACF397F0B82"
+        },
+        {
+          "title": "Brill — The Gospel of Peter: Greek text with facing English translation and discussion of the Oxyrhynchus fragments",
+          "url": "https://brill.com/previewpdf/display/book/9789004180994/Bej.9789004180949.i-556_004.xml"
         }
       ],
       "manuscript_witnesses": [
@@ -542,7 +554,45 @@
           "source": "https://www.gospels.net/manuscript/"
         }
       ],
-      "description": "Gospel of Peter is a gospel or apocalypse writing in the Unified Apostolic and Disciple collection. Historical attribution must be evaluated independently; traditional title is not proof of authorship. Akhmim fragment text is known; papyrus fragments are separate, short witnesses and should not be merged into a continuous text without editorial marking. The catalogue identifies 3 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+      "description": "Gospel of Peter is a fragmentary gospel writing in the Unified Apostolic and Disciple collection. The principal narrative witness is the Greek Akhmim codex fragment, conventionally numbered 1–60; the manuscript itself does not preserve an original title. P.Oxy. 2949 and P.Oxy. 4009 are separate, very fragmentary papyri whose identification with this Gospel is disputed. Their surviving words must not be combined into a continuous text with the Akhmim witness. The detail page distinguishes the principal narrative from tentative papyrus attributions.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "GPet-Akhmim-PCair10759",
+          "transmitting_author": "Anonymous compiler; manuscript witness",
+          "source_work": "Akhmim codex, P.Cair. 10759",
+          "passage": "Conventional divisions 1–60",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "The principal continuous witness opens during the proceedings before Pilate and continues through the crucifixion, burial, guarding of the tomb, discovery of the empty tomb, and resurrection appearances. The manuscript begins and ends abruptly; chapter and verse divisions are modern editorial numbering.",
+          "status": "Principal surviving narrative witness, conventionally identified as the Gospel of Peter; the manuscript itself does not preserve an original title identifying the work.",
+          "english_paraphrase": "The surviving narrative recounts the final proceedings against Jesus, his crucifixion and burial, the guarding of the tomb, and the discovery and proclamation of the resurrection. It includes distinctive narrative details not found in the canonical Gospel accounts. This is a content summary, not a translation of the entire fragment.",
+          "text_type": "manuscript_narrative_summary_not_verbatim_translation",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-peter/"
+        },
+        {
+          "fragment_id": "GPet-POxy2949",
+          "transmitting_author": "Anonymous papyrus text",
+          "source_work": "Oxyrhynchus Papyrus 2949",
+          "passage": "17 surviving lines across two fragments",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Two small fragments from a papyrus roll. A relationship to Gospel of Peter 3–5 has been proposed, but the identification and reconstructions are disputed; the fragments do not preserve a complete sentence or a secure continuous passage.",
+          "status": "Possible parallel or alternative version; attribution to the Gospel of Peter remains disputed. Do not merge with the Akhmim narrative.",
+          "english_paraphrase": "No continuous narrative paraphrase is supplied because the surviving text is too fragmentary and its identification is disputed. The archive records the physical witness and the scholarly attribution question without reconstructing missing wording.",
+          "text_type": "fragment_metadata_no_reconstructed_text",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/papyrus-oxyrhynchus-2949/"
+        },
+        {
+          "fragment_id": "GPet-POxy4009",
+          "transmitting_author": "Anonymous papyrus text",
+          "source_work": "Oxyrhynchus Papyrus 4009",
+          "passage": "Single folio fragment, recto and verso",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "The recto preserves scattered words including harvest, innocent (uncertain), doves (uncertain), wise, and wolves. A saying resembling the instruction to be wise as serpents and innocent as doves has been proposed, but identification as Gospel of Peter remains uncertain; the verso is more fragmentary.",
+          "status": "Tentatively associated with the Gospel of Peter; attribution is disputed and extensive reconstruction is not justified.",
+          "english_paraphrase": "The surviving letters on the recto may reflect a saying involving harvest, innocence, doves, wisdom, and wolves. Since the text is incomplete and some readings are uncertain, no continuous saying or definite Gospel of Peter attribution is asserted.",
+          "text_type": "cautious_summary_of_fragmentary_readings",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/papyrus-oxyrhynchus-4009/"
+        }
+      ]
     },
     {
       "id": "gospel_hebrews",
