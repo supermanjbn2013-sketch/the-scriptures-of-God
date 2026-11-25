@@ -168,6 +168,10 @@ public class MainActivity extends Activity {
                 for(String key:new String[]{"transmitting_author","source_work","passage","language_of_surviving_source","content_scope","status"}){
                     String value=fragment.optString(key,"");if(!value.isEmpty())detail.append(key.replace("_"," ")).append(": ").append(value).append("\n");
                 }
+                String fragmentText=fragment.optString("english_paraphrase","");
+                if(!fragmentText.isEmpty())detail.append("Surviving content (English paraphrase):\\n").append(fragmentText).append("\\n");
+                String fragmentType=fragment.optString("text_type","");if(!fragmentType.isEmpty())detail.append("Text note: ").append(fragmentType).append("\\n");
+                String fragmentSource=fragment.optString("source_url","");if(!fragmentSource.isEmpty())detail.append("Fragment source: ").append(fragmentSource).append("\\n");
             }
         }
         org.json.JSONArray witnesses=record.optJSONArray("manuscript_witnesses");
