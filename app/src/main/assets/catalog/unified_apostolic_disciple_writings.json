@@ -718,7 +718,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "epistle-like revelatory dialogue",
       "attribution_status": "Framed as a writing of the eleven apostles; collective authorship is not established.",
-      "textual_status": "Coptic, Latin fragments, and fuller Ethiopic transmission; identify versions and manuscripts separately.",
+      "textual_status": "Available witnesses are now catalogued separately: a fragmentary fourth/fifth-century Akhmimic Coptic papyrus codex, a fifth-century-underwriting Latin palimpsest, and later Geʽez/Ethiopic manuscripts. Gaps in the Coptic witness remain lacunae; the fuller Ethiopic transmission is a separate version.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 15,
@@ -737,7 +737,50 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-the-apostles/"
         }
       ],
-      "preservation_status": "surviving_in_multiple_versions"
+      "preservation_status": "surviving_in_multiple_versions",
+      "manuscript_witnesses": [
+        {
+          "id": "IFAO_P416",
+          "siglum": "IFAO P. 416 / LDAB 107969",
+          "writing": "Akhmimic Coptic",
+          "material": "papyrus codex",
+          "date": "Fourth/fifth century CE",
+          "repository": "Institut Français d’Archéologie Orientale, Cairo",
+          "contents": "Fols. 1–16; substantial lacunae include sections 1–7, 19, 31–38, and 49–51",
+          "text_status": "Fragmentary Coptic witness; page numbering permits an estimate of the original codex length, but missing text remains missing.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-the-apostles/"
+        },
+        {
+          "id": "Naples_Lat_2",
+          "siglum": "Naples, Biblioteca Nazionale Vittorio Emanuele III, Lat. 2 (formerly Vienna Cod. Pal. Vind. 16)",
+          "writing": "Latin",
+          "material": "palimpsest leaf",
+          "date": "Underlying script fifth century CE",
+          "contents": "Fragments of sections 12:1; 13:1–5; 17:2–5",
+          "text_status": "Very fragmentary Latin witness; only the cited passages survive.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-the-apostles/"
+        },
+        {
+          "id": "Ethiopic_family_1_A",
+          "siglum": "BnF Éthiopien d’Abbadie 51",
+          "writing": "Geʽez / Ethiopic",
+          "material": "parchment codex",
+          "date": "15th/16th century CE",
+          "contents": "Fols. 113v–130v; fuller text transmission",
+          "text_status": "Versional witness; Geʽez text must not be labelled Coptic or Greek.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-the-apostles/"
+        },
+        {
+          "id": "Ethiopic_family_1_E",
+          "siglum": "Dāgā Esṭifānos 66 (Tanasee 177; EMML 8744)",
+          "writing": "Geʽez / Ethiopic",
+          "material": "parchment codex",
+          "date": "14th/15th century CE",
+          "contents": "Ethiopic witness to the Epistle of the Apostles",
+          "text_status": "One witness in the Ethiopic manuscript tradition; preserve family affiliation and variants.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-the-apostles/"
+        }
+      ]
     },
     {
       "id": "letter_peter_philip",
@@ -1185,7 +1228,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Letter attributed to Paul; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Codex Alexandrinus (fifth-century Greek parchment codex) is now recorded as a surviving witness; this is witness metadata, not a diplomatic transcription. Codex Sinaiticus (fourth-century Greek parchment codex) is also recorded as a witness.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 30,
@@ -1212,7 +1255,29 @@
           "url": "https://www.odbm.org/en/discovery-series/understanding-the-bible-the-letters-of-paul/pauls-letters-in-context"
         }
       ],
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "Codex_Alexandrinus",
+          "siglum": "A / GA 02 / Codex Alexandrinus",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Fifth century CE",
+          "contents": "Pauline letters, including 2 Thessalonians and the Pastoral Epistles",
+          "text_status": "Major Greek codex witness; not a papyrus and not the earliest surviving witness for every passage.",
+          "source": "https://www.csntm.org/manuscript/View/GA_02"
+        },
+        {
+          "id": "Codex_Sinaiticus",
+          "siglum": "א / GA 01 / Codex Sinaiticus",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Fourth century CE",
+          "contents": "Pauline letters including 2 Thessalonians",
+          "text_status": "Major fourth-century Greek codex witness.",
+          "source": "https://www.codexsinaiticus.org/en/manuscript.aspx"
+        }
+      ]
     },
     {
       "id": "galatians",
@@ -2298,7 +2363,7 @@
       "date_precision": "approximate second-century range; exact date disputed",
       "genre": "letter",
       "attribution_status": "A later composition placed in Paul's name and incorporated into the Acts of Paul; not established as an authentic letter by Paul.",
-      "textual_status": "Survives in Greek and other ancient-language manuscript traditions as part of the Acts of Paul; witness records and textual alignment require separate work.",
+      "textual_status": "Witnesses now distinguish the third-century Greek P. Bodmer X (two letters only), sixth-century Coptic P. Heid. Kopt. 300+301 (letters with narrative framing), later Latin manuscripts, and Armenian transmission. These forms are related but not identical textual witnesses.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Date refers to the apocryphal composition, not to the date of any surviving manuscript witness.",
       "related_scriptural_reference": "",
@@ -2322,7 +2387,59 @@
         }
       ],
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This placement follows the event or scene represented by the writing, not its composition date. The narrative's historical reliability or authorship is assessed separately."
+      "historical_order_note": "This placement follows the event or scene represented by the writing, not its composition date. The narrative's historical reliability or authorship is assessed separately.",
+      "manuscript_witnesses": [
+        {
+          "id": "P_Bodmer_X",
+          "siglum": "P. Bodmer X / Bodmer Miscellaneous Codex",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third century CE",
+          "contents": "The two letters of the Corinthian correspondence",
+          "text_status": "Earliest Greek witness; it preserves the letters but not the narrative framing found in other traditions.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/3-corinthians/"
+        },
+        {
+          "id": "Heidelberg_Kopt_300_301",
+          "siglum": "P. Heid. inv. Kopt. 300+301",
+          "writing": "Coptic",
+          "material": "papyrus codex",
+          "date": "Sixth century CE",
+          "contents": "The correspondence embedded in the Philippian episode of Acts of Paul, with narrative framing",
+          "text_status": "More extensive Coptic form; keep its narrative context distinct from the standalone Greek letters.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/3-corinthians/"
+        },
+        {
+          "id": "Ambrosiana_E53_inf",
+          "siglum": "Milan, Biblioteca Ambrosiana, E 53 inf., fols. 169r–169v",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "Tenth century CE",
+          "contents": "Latin correspondence",
+          "text_status": "Versional Latin witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/3-corinthians/"
+        },
+        {
+          "id": "Laon_45",
+          "siglum": "Laon, Bibliothèque municipale, MS 45",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "Thirteenth century CE",
+          "contents": "Latin correspondence",
+          "text_status": "Separate Latin witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/3-corinthians/"
+        },
+        {
+          "id": "Armenian_Smyrna",
+          "siglum": "Armenian manuscript from Smyrna (historically reported)",
+          "writing": "Classical Armenian",
+          "material": "manuscript; present location/status uncertain",
+          "date": "Not securely dated in the catalogue entry",
+          "contents": "Armenian form of the two letters",
+          "text_status": "Historical witness reported in scholarship; current physical whereabouts and exact date are uncertain.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/3-corinthians/"
+        }
+      ]
     },
     {
       "id": "1_timothy",
@@ -2332,7 +2449,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Codex Alexandrinus (fifth-century Greek parchment codex) is now recorded as a surviving witness; this is witness metadata, not a diplomatic transcription.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 40,
@@ -2351,7 +2468,19 @@
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "The letter places Timothy in Ephesus during Paul's stated departure for Macedonia and anticipates Paul's possible visit. This does not securely establish a position before or after Titus; the two are grouped without an exact relative order.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "Codex_Alexandrinus",
+          "siglum": "A / GA 02 / Codex Alexandrinus",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Fifth century CE",
+          "contents": "Pauline letters, including 2 Thessalonians and the Pastoral Epistles",
+          "text_status": "Major Greek codex witness; not a papyrus and not the earliest surviving witness for every passage.",
+          "source": "https://www.csntm.org/manuscript/View/GA_02"
+        }
+      ]
     },
     {
       "id": "titus",
@@ -2405,7 +2534,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "letter",
       "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. Codex Alexandrinus (fifth-century Greek parchment codex) is now recorded as a surviving witness; this is witness metadata, not a diplomatic transcription.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 40,
@@ -2436,7 +2565,19 @@
       ],
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "The sequence represented is: recent travel through Troas and Miletus; Paul's present imprisonment and first defense; urgent request for Timothy and the cloak and writings before winter. The text names Rome (1:17), but the relationship of this imprisonment to Acts 28 is disputed. Do not automatically place this after Acts' ending or after the other imprisonment letters. The farewell tone does not prove the writer's historical identity or a precise date.",
-      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses"
+      "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "Codex_Alexandrinus",
+          "siglum": "A / GA 02 / Codex Alexandrinus",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Fifth century CE",
+          "contents": "Pauline letters, including 2 Thessalonians and the Pastoral Epistles",
+          "text_status": "Major Greek codex witness; not a papyrus and not the earliest surviving witness for every passage.",
+          "source": "https://www.csntm.org/manuscript/View/GA_02"
+        }
+      ]
     },
     {
       "id": "1_john",
@@ -3253,7 +3394,7 @@
       "date_precision": "Approximate early to mid-second-century date",
       "genre": "apology",
       "attribution_status": "Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison.",
-      "textual_status": "Survives through Syriac and Armenian transmission and a Greek fragment incorporated into the later Barlaam and Josaphat tradition; do not conflate these witnesses.",
+      "textual_status": "Manuscript witnesses now distinguish the seventh-century complete Syriac translation (Sinai Syr. 16), two fourth-century Greek papyrus fragments with shelfmarks not specified in the cited catalogue, and the partial Armenian witnesses. The complete Syriac translation is not the original Greek.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date is approximate; language and date of surviving copies are separate evidence.",
       "research_sources": [
@@ -3280,7 +3421,58 @@
       "historical_subsequence": 130,
       "historical_anchor_status": "attribution_and_historical_setting_disputed",
       "scope_relationship": "broader_early_christian_context_association_unproven",
-      "historical_order_note": "Eusebius associates the apology with Hadrian, but the surviving textual forms give conflicting historical settings. It is grouped with the approximate Hadrian-era context; exact relation to Quadratus is not established."
+      "historical_order_note": "Eusebius associates the apology with Hadrian, but the surviving textual forms give conflicting historical settings. It is grouped with the approximate Hadrian-era context; exact relation to Quadratus is not established.",
+      "manuscript_witnesses": [
+        {
+          "id": "Sinai_Syr_16",
+          "siglum": "St Catherine’s Monastery, Sinai Syr. 16",
+          "writing": "Syriac",
+          "material": "parchment manuscript",
+          "date": "Seventh century CE",
+          "contents": "Complete Syriac version of the Apology",
+          "text_status": "The complete text survives in this Syriac translation; this is not the original Greek.",
+          "source": "https://gedsh.bethmardutho.org/Aristides-of-Athens"
+        },
+        {
+          "id": "Greek_papyrus_fragments",
+          "writing": "Greek",
+          "material": "two fragmentary papyri",
+          "date": "Fourth century CE",
+          "contents": "Small portions of the original Greek Apology",
+          "text_status": "Only fragments of the Greek original survive; the source summary does not identify exact shelfmarks, so none are guessed here.",
+          "source": "https://gedsh.bethmardutho.org/Aristides-of-Athens"
+        },
+        {
+          "id": "Matenadaran_2679",
+          "siglum": "Yerevan, Matenadaran 2679",
+          "writing": "Armenian",
+          "material": "parchment manuscript",
+          "date": "981 CE",
+          "contents": "Armenian translation, chapters 1–2",
+          "text_status": "Partial Armenian versional witness.",
+          "source": "https://www.academia.edu/29503347/The_Textual_Witnesses_to_the_Second-Century_Apology_of_Aristides"
+        },
+        {
+          "id": "Matenadaran_6228",
+          "siglum": "Yerevan, Matenadaran 6228",
+          "writing": "Armenian",
+          "material": "manuscript",
+          "date": "19th century CE",
+          "contents": "Armenian translation, chapters 1–2",
+          "text_status": "Later copy of the Armenian version.",
+          "source": "https://www.academia.edu/29503347/The_Textual_Witnesses_to_the_Second-Century_Apology_of_Aristides"
+        },
+        {
+          "id": "Venice_San_Lazzaro_218",
+          "siglum": "Venice, San Lazzaro 218",
+          "writing": "Armenian",
+          "material": "manuscript",
+          "date": "1835 CE",
+          "contents": "Armenian translation, chapters 1–2",
+          "text_status": "Later copy of the Armenian version.",
+          "source": "https://www.academia.edu/29503347/The_Textual_Witnesses_to_the_Second-Century_Apology_of_Aristides"
+        }
+      ]
     },
     {
       "id": "polycarp_philippians",
@@ -3413,7 +3605,7 @@
       "date_precision": "Second-century work; broad date estimate",
       "genre": "Episodic apocryphal acts narrative",
       "attribution_status": "A later narrative about Paul; not authored by the apostle. The work includes the Acts of Paul and Thecla and 3 Corinthians as textual components in its transmission.",
-      "textual_status": "Second-century apocryphal work; surviving in fragmentary Greek, Coptic, and other versions. Components and recensions must be mapped separately.",
+      "textual_status": "Manuscript witnesses now separately include early Greek papyri (Hamburg Pap. bil. 1, P.Oxy. III 1602, P. Berol. 13893) and Coptic papyrus codices/fragments (P. Bodmer XLI, Heidelberg Kopt. 300+301 with BL leaf, and Rylands Copt. Suppl. 44). Individual episodes survive unevenly; no single witness gives the entire work.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Oxford Reference dates the five earliest apocryphal Acts broadly to the late second through early third centuries; individual dating and textual histories remain distinct.",
       "research_sources": [
@@ -3436,7 +3628,69 @@
       "historical_subsequence": 170,
       "historical_anchor_status": "later_narrative_claim",
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "manuscript_witnesses": [
+        {
+          "id": "Hamburg_Pap_bil_1",
+          "siglum": "Hamburg, Staats- und Universitätsbibliothek, Pap. bil. 1",
+          "writing": "Greek",
+          "material": "papyrus codex",
+          "date": "Third/fourth century CE",
+          "contents": "Pages 1–11; fragments of Acts of Paul",
+          "text_status": "Early Greek papyrus witness, fragmentary; the surviving pages do not constitute the complete work.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-paul/"
+        },
+        {
+          "id": "P_Oxy_1602",
+          "siglum": "P.Oxy. III 1602; Ghent inv. 62",
+          "writing": "Greek",
+          "material": "papyrus leaf",
+          "date": "Fourth/fifth century CE",
+          "contents": "One folio fragment of Acts of Paul",
+          "text_status": "Fragmentary Greek witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-paul/"
+        },
+        {
+          "id": "P_Berolinensis_13893",
+          "siglum": "P. Berol. 13893",
+          "writing": "Greek",
+          "material": "papyrus fragment",
+          "date": "Third/fourth century CE",
+          "contents": "Fragment of Acts of Paul",
+          "text_status": "Fragmentary Greek witness; edition listed by NASSCAL.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-paul/"
+        },
+        {
+          "id": "P_Bodmer_XLI",
+          "siglum": "P. Bodmer XLI",
+          "writing": "Coptic",
+          "material": "papyrus codex",
+          "date": "Fourth century CE",
+          "contents": "Episode 9, Ephesus",
+          "text_status": "Coptic episode witness; does not represent the entire Acts of Paul.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-paul/"
+        },
+        {
+          "id": "Heidelberg_Kopt_300_301",
+          "siglum": "Heidelberg inv. Kopt. 300+301; additional leaf BL Or. 6943(19)",
+          "writing": "Coptic",
+          "material": "papyrus codex",
+          "date": "Sixth century CE",
+          "contents": "Acts of Paul including 3 Corinthians / Philippian episode",
+          "text_status": "Fragmentary Coptic witness; parts are dispersed across Heidelberg and British Library holdings.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-paul/"
+        },
+        {
+          "id": "Rylands_Copt_Suppl_44",
+          "siglum": "John Rylands Library, Copt. Suppl. 44",
+          "writing": "Coptic",
+          "material": "papyrus manuscript",
+          "date": "Fourth century CE",
+          "contents": "Episode 1",
+          "text_status": "Fragmentary Coptic witness to the opening episode.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-paul/"
+        }
+      ]
     },
     {
       "id": "acts_peter",
@@ -3796,7 +4050,7 @@
       "date_precision": "broad provisional late-antique range; exact date and origin disputed",
       "genre": "letter",
       "attribution_status": "A later work presented under Paul's name; not established as an authentic letter written by Paul. Its identity with the letter mentioned in Colossians 4:16 is unproven.",
-      "textual_status": "A Latin text survives in later manuscript transmission; it is not evidence that the lost Laodicean correspondence mentioned in Colossians has been recovered.",
+      "textual_status": "Manuscript witnesses now include Codex Fuldensis (541–546 CE), the title-only remnant in Codex Boernerianus, and later Latin copies. This surviving Latin pseudonymous letter is not evidence that the lost Laodicean correspondence mentioned in Colossians has been recovered.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Provisional date for the surviving pseudepigraphal work, not the date of the correspondence mentioned in Colossians.",
       "related_scriptural_reference": "",
@@ -3820,7 +4074,49 @@
         }
       ],
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date.",
+      "manuscript_witnesses": [
+        {
+          "id": "Codex_Fuldensis",
+          "siglum": "Fulda, Hochschul- und Landesbibliothek, Bonifatianus 1",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "541–546 CE",
+          "contents": "Folios 317v–318r; Epistle to the Laodiceans",
+          "text_status": "Earliest and most important surviving Latin manuscript witness to this pseudonymous letter; not the unidentified letter mentioned in Colossians.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-to-the-laodiceans/"
+        },
+        {
+          "id": "Codex_Boernerianus",
+          "siglum": "Dresden, SLUB, Mscr. Dresd. A. 145b",
+          "writing": "Greek and Latin paratext",
+          "material": "parchment codex",
+          "date": "Ninth century CE",
+          "contents": "Folio 99v; Pauline letters, with only the title of Epistle to Laodiceans remaining",
+          "text_status": "The letter text is not preserved here; only the title survives. Do not use it as a full text witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-to-the-laodiceans/"
+        },
+        {
+          "id": "Paris_lat_5288",
+          "siglum": "Paris, BnF, lat. 5288",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "Tenth/eleventh century CE",
+          "contents": "Folios 32r–33r",
+          "text_status": "Later Latin text witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-to-the-laodiceans/"
+        },
+        {
+          "id": "Ambrosiana_E53_inf_Laod",
+          "siglum": "Milan, Biblioteca Ambrosiana, E 53 inf.",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "Tenth century CE",
+          "contents": "Section 2, folios 169r–169v",
+          "text_status": "Later Latin text witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-to-the-laodiceans/"
+        }
+      ]
     },
     {
       "id": "gospel_egyptians_greek",
