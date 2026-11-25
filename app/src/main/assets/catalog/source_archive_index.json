@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "record_type": "separate_primary_source_archives",
+  "principle": "The physical source witness archives are separate from the continuous English reading archive. A manuscript witness is never confused with a complete book, a study description, or an editorial reconstruction.",
+  "archives": [
+    {
+      "id": "dead_sea_scrolls",
+      "title": "Dead Sea Scrolls Archive",
+      "scope": "Qumran manuscripts and scroll witnesses",
+      "metadata_file": "catalog/dead_sea_scrolls_register.json",
+      "transcription_archive": "DSS Transcription Archive",
+      "passage_index": "catalog/dss_passage_concordance.json",
+      "languages": [
+        "Hebrew",
+        "Aramaic",
+        "Greek"
+      ],
+      "coverage_rule": "Only passages actually preserved by each identified scroll are presented as witness text. Restored letters, editorial reconstructions, and lacunae remain identified.",
+      "priority": "Hebrew writings and Qumran witnesses where relevant",
+      "sources": [
+        "https://www.deadseascrolls.org.il/",
+        "https://dss.collections.imj.org.il/"
+      ]
+    },
+    {
+      "id": "greek_papyri",
+      "title": "Papyrus Archive",
+      "scope": "Individual Greek papyrus manuscripts, codices, and fragments",
+      "metadata_file": "catalog/greek_manuscript_register.json",
+      "witness_data": "manuscript_witnesses in catalog/unified_apostolic_disciple_writings.json",
+      "offline_transcription_roots": [
+        "papyri/p46/",
+        "papyri/p52/"
+      ],
+      "coverage_rule": "Every papyrus is a distinct physical witness. Fragmentary verse coverage never means a complete verse or book is preserved. Greek witness transcription and its English translation remain paired and clearly labelled.",
+      "sources": [
+        "https://ntvmr.uni-muenster.de/",
+        "https://manuscripts.csntm.org/"
+      ]
+    },
+    {
+      "id": "codex_vaticanus",
+      "title": "Codex Vaticanus Archive",
+      "scope": "Codex Vaticanus (GA 03) as an individual Greek parchment codex",
+      "metadata_file": "catalog/greek_manuscript_register.json",
+      "offline_transcription_root": "vaticanus/",
+      "coverage_rule": "Show the Vaticanus transcription independently. Missing leaves and lacunae remain missing in the witness archive; other manuscripts may supply those passages only in the separate reconstructed English reading, with source attribution.",
+      "sources": [
+        "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "https://ntvmr.uni-muenster.de/"
+      ]
+    },
+    {
+      "id": "codex_sinaiticus",
+      "title": "Codex Sinaiticus Archive",
+      "scope": "Codex Sinaiticus (GA 01) as an individual Greek parchment codex",
+      "metadata_file": "catalog/greek_manuscript_register.json",
+      "coverage_rule": "A separate witness archive; do not merge its readings into Vaticanus or papyrus transcriptions.",
+      "sources": [
+        "https://www.codexsinaiticus.org/"
+      ]
+    },
+    {
+      "id": "english_readings",
+      "title": "Unified English Readings",
+      "scope": "Continuous English reading text for each writing in the Unified Apostolic and Disciple Writings collection",
+      "reading_file": "catalog/unified_readings.json",
+      "coverage_rule": "Reader contains only the actual English reading. It is distinct from study notes and manuscript archives. Missing passages are supplied only from a named, verified witness or critical edition that preserves the passage; otherwise the gap is identified, not invented.",
+      "priority": "Highest content-development priority"
+    }
+  ],
+  "reading_workflow": [
+    "Establish the full extent of the writing and chapter/section structure.",
+    "Inventory early and trusted witnesses for every passage, with priority to the earliest extant manuscripts and relevant ancient versions.",
+    "Transcribe or consult each witness independently; preserve its original language and siglum in its own archive.",
+    "Collate overlapping witnesses and record significant variants, omissions, additions, and uncertain readings.",
+    "Translate the complete recoverable text into clear English, using a declared Greek or Hebrew base text and documented witness support.",
+    "Where the primary witness is missing a passage, use another identified witness that preserves that exact passage; record the source of the supplied segment.",
+    "Keep study descriptions, dates, and manuscript notes outside the reading body.",
+    "Mark a writing complete only after every chapter and known gap has been audited."
+  ]
+}
