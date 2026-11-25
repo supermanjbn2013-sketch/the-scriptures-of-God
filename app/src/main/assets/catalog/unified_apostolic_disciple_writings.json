@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_type": "unified_apostolic_and_disciple_writings_catalog",
   "title": "Apostolic and Disciple Writings — Unified Historical Collection",
-  "ordering": "The records array itself is physically ordered by historical_sequence, then historical_subsequence, then title as a neutral display tie-breaker. This is event/history order, never composition-date order. Equal sequence/subsequence values mean no exact relative order is asserted; uncertain works remain in the final unplaced group.",
+  "ordering": "Historical events and settings represented by the apostolic- and disciple-associated writings control the order, never composition dates. The Greek/Ethiopic Apocalypse of Peter is immediately before Revelation. Revelation is the final record. The Coptic Apocalypse of Peter is a separate work, placed by its own narrative setting.",
   "scope": "All identifiable writings connected by historical attribution, claim, tradition, subject, or early community use to apostles and disciples, including gospels, letters, testimony, acts, instruction, apocalypses, and other related writings. Inclusion is not an endorsement of authenticity, apostolic authorship, inspiration, or historical accuracy.",
   "anti_compilation_rule": "Do not use the later 27-writing compilation as the archive boundary or as the ordering template. Preserve its history as one later classification only.",
   "date_policy": "Composition date estimates are stored separately from physical witness dates. Use null for undetermined dates; never use numeric sentinels. Where estimates overlap or are disputed, show a date band and mark sequence as approximate.",
@@ -120,6 +120,209 @@
       "historical_order_note": "This placement follows the event or scene represented by the writing, not its composition date. The narrative's historical reliability or authorship is assessed separately."
     },
     {
+      "id": "gospel_hebrews",
+      "title": "Gospel of the Hebrews",
+      "composition_date_start_ce": null,
+      "composition_date_end_ce": null,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "fragmentary gospel",
+      "attribution_status": "Known through later patristic quotations; identity and extent disputed.",
+      "textual_status": "No complete manuscript; preserve each attributed fragment with its quoting source.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 10,
+      "historical_period": "The Lord's life, ministry, death and resurrection",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Fragments attributed to a Jewish-Christian Gospel",
+      "historical_anchor": "Fragments attributed to a Jewish-Christian Gospel",
+      "historical_anchor_basis": "Quotations concern sayings and episodes associated with Jesus, but do not establish a continuous narrative.",
+      "historical_subsequence": 10,
+      "historical_anchor_status": "fragmentary_narrative_claim",
+      "scope_relationship": "broader_early_christian_context_association_unproven",
+      "historical_order_note": "Do not merge automatically with the Gospel of the Nazarenes or Ebionites.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Gospel of the Hebrews",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-hebrews/"
+        }
+      ],
+      "preservation_status": "lost_or_fragmentary"
+    },
+    {
+      "id": "gospel_ebionites",
+      "title": "Gospel of the Ebionites",
+      "composition_date_start_ce": null,
+      "composition_date_end_ce": null,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "fragmentary gospel",
+      "attribution_status": "Modern scholarly title for a non-extant gospel known chiefly through Epiphanius.",
+      "textual_status": "Seven principal fragments are attributed through Epiphanius; no complete manuscript survives.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 10,
+      "historical_period": "The Lord's life, ministry, death and resurrection",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Fragments concerning Jesus' ministry and the calling of disciples",
+      "historical_anchor": "Fragments concerning Jesus' ministry and the calling of disciples",
+      "historical_anchor_basis": "The fragments preserve episodes from Jesus' ministry but no continuous event sequence.",
+      "historical_subsequence": 11,
+      "historical_anchor_status": "fragmentary_narrative_claim",
+      "scope_relationship": "broader_early_christian_context_association_unproven",
+      "historical_order_note": "Keep distinct from the Gospel of the Hebrews unless evidence establishes identity.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Gospel of the Ebionites",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-ebionites/"
+        }
+      ],
+      "preservation_status": "lost_or_fragmentary"
+    },
+    {
+      "id": "gospel_nazarenes",
+      "title": "Gospel of the Nazarenes (hypothetical reconstruction)",
+      "composition_date_start_ce": null,
+      "composition_date_end_ce": null,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "hypothetical fragmentary gospel",
+      "attribution_status": "A modern scholarly reconstruction from fragments Jerome associated with a Hebrew Gospel used by Nazarenes; separate identity disputed.",
+      "textual_status": "No independent complete manuscript; proposed fragments may overlap with the Gospel of the Hebrews or a Hebrew form of Matthew.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 10,
+      "historical_period": "The Lord's life, ministry, death and resurrection",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Fragments assigned to a Hebrew Gospel used by Nazarenes",
+      "historical_anchor": "Fragments assigned to a Hebrew Gospel used by Nazarenes",
+      "historical_anchor_basis": "The proposed fragments concern Jesus' teaching and gospel narrative but do not form an independently established continuous text.",
+      "historical_subsequence": 12,
+      "historical_anchor_status": "hypothetical_text_identity_disputed",
+      "scope_relationship": "broader_early_christian_context_association_unproven",
+      "historical_order_note": "Catalogue as a disputed research identity, not as a proven separate Gospel.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Gospel of the Nazarenes",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-nazarenes/"
+        }
+      ],
+      "preservation_status": "hypothetical_reconstruction"
+    },
+    {
+      "id": "gospel_judas",
+      "title": "Gospel of Judas",
+      "composition_date_start_ce": 140,
+      "composition_date_end_ce": 180,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "dialogue gospel",
+      "attribution_status": "Anonymous work using Judas Iscariot as its narrative frame; title does not establish his authorship.",
+      "textual_status": "Damaged Coptic translation in Codex Tchacos; Greek original is inferred from ancient testimony.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 10,
+      "historical_period": "The Lord's life, ministry, death and resurrection",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Dialogues set in the days before Passover and the Last Supper",
+      "historical_anchor": "Dialogues set in the days before Passover and the Last Supper",
+      "historical_anchor_basis": "Its narrative explicitly places the dialogues before Passover; this is story chronology, not composition chronology.",
+      "historical_subsequence": 20,
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "Place by the claimed pre-Passover setting while marking it as later anonymous literature.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Gospel of Judas",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-judas/"
+        }
+      ],
+      "preservation_status": "surviving_in_fragmentary_coptic_translation"
+    },
+    {
+      "id": "apocalypse_peter_coptic",
+      "title": "Apocalypse of Peter (Coptic; Nag Hammadi Codex VII,3)",
+      "composition_date_start_ce": 200,
+      "composition_date_end_ce": 350,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "Coptic apocalypse / revelatory dialogue",
+      "attribution_status": "Pseudonymously attributed to Peter; a distinct work unrelated to the Greek/Ethiopic Apocalypse of Peter.",
+      "textual_status": "Coptic witness in Nag Hammadi Codex VII,3; fourth-century codex.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 10,
+      "historical_period": "The Lord's life, ministry, death and resurrection",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Jesus instructs Peter at the Jerusalem temple on the eve of the crucifixion",
+      "historical_anchor": "Jesus instructs Peter at the Jerusalem temple on the eve of the crucifixion",
+      "historical_anchor_basis": "The opening narrative is set in Jerusalem before the crucifixion; this is the work's narrative claim, not historical verification.",
+      "historical_subsequence": 30,
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "Keep separate from the Greek/Ethiopic Apocalypse of Peter; their contents, narrative settings, and manuscript traditions differ.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Coptic Apocalypse of Peter",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-of-peter-coptic/"
+        }
+      ],
+      "preservation_status": "surviving_in_coptic_nag_hammadi_codex"
+    },
+    {
+      "id": "epistle_apostles",
+      "title": "Epistle of the Apostles",
+      "composition_date_start_ce": 150,
+      "composition_date_end_ce": 200,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "epistle-like revelatory dialogue",
+      "attribution_status": "Framed as a writing of the eleven apostles; collective authorship is not established.",
+      "textual_status": "Coptic, Latin fragments, and fuller Ethiopic transmission; identify versions and manuscripts separately.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 15,
+      "historical_period": "Post-resurrection appearances and disciple gatherings",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Resurrected Christ's dialogue with the apostles through the ascension",
+      "historical_anchor": "Resurrected Christ's dialogue with the apostles through the ascension",
+      "historical_anchor_basis": "After a summary of Jesus' life, the work's extended dialogue and final scene are post-resurrection.",
+      "historical_subsequence": 10,
+      "historical_anchor_status": "later_apostolic_collective_attribution",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "The apostolic voice is an attribution claim, not proof of joint apostolic composition.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Epistle of the Apostles",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-the-apostles/"
+        }
+      ],
+      "preservation_status": "surviving_in_multiple_versions"
+    },
+    {
+      "id": "letter_peter_philip",
+      "title": "Letter of Peter to Philip",
+      "composition_date_start_ce": 150,
+      "composition_date_end_ce": 300,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "epistle-framed revelatory dialogue",
+      "attribution_status": "Anonymous work framed as a letter from Peter to Philip; framing does not authenticate authorship.",
+      "textual_status": "Coptic witnesses in Nag Hammadi Codex VIII and Codex Tchacos; preserve variants.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 15,
+      "historical_period": "Post-resurrection appearances and disciple gatherings",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Post-resurrection reunion and revelation to the disciples",
+      "historical_anchor": "Post-resurrection reunion and revelation to the disciples",
+      "historical_anchor_basis": "The narrative depicts a gathering and revelation after the resurrection.",
+      "historical_subsequence": 11,
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "Keep the Coptic witnesses distinct and do not harmonize variants silently.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Letter of Peter to Philip",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-peter-to-philip/"
+        }
+      ],
+      "preservation_status": "surviving_in_two_coptic_manuscripts"
+    },
+    {
       "id": "gospel_mary",
       "title": "Gospel of Mary",
       "composition_date_start_ce": 100,
@@ -163,6 +366,35 @@
       "historical_anchor_status": "narrative_sequence",
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+    },
+    {
+      "id": "acts_barnabas",
+      "title": "Acts of Barnabas",
+      "composition_date_start_ce": null,
+      "composition_date_end_ce": null,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "apocryphal acts narrative",
+      "attribution_status": "Later narrative about Barnabas and John Mark; attribution is not proof of eyewitness authorship.",
+      "textual_status": "Survives in later manuscript transmission; recensions and witnesses require separate mapping.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 20,
+      "historical_period": "The first disciples and the early Jerusalem community",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Barnabas and John Mark in the post-resurrection community and mission",
+      "historical_anchor": "Barnabas and John Mark in the post-resurrection community and mission",
+      "historical_anchor_basis": "The story concerns figures joining the community after the Lord's death and later missionary activity.",
+      "historical_subsequence": 20,
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "Treat the narrated itinerary as a later tradition, not independent verification.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Acts of Barnabas",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-barnabas/"
+        }
+      ],
+      "preservation_status": "surviving_in_manuscript_transmission"
     },
     {
       "id": "didache",
@@ -1052,42 +1284,6 @@
       "historical_order_note": "These works have different claimed settings and no securely established relative event order; they are grouped in a broad later-apostolic context."
     },
     {
-      "id": "revelation",
-      "title": "Revelation",
-      "composition_date_start_ce": 90,
-      "composition_date_end_ce": 100,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "apocalypse",
-      "attribution_status": "Apocalypse attributed internally to John; identifying him with the apostle is disputed.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "patmos_vision",
-      "historical_anchor": "John's Patmos setting and messages to seven assemblies in Roman Asia",
-      "historical_anchor_basis": "Revelation 1:4 identifies seven assemblies in the province of Asia; 1:9 places John on Patmos because of the word of God and the witness of Jesus; 1:11 names the seven destinations. Chapters 2–3 address those assemblies, while 22:16 again frames the work as testimony for the assemblies. The text does not identify John as the son of Zebedee, so that identification must remain separate from the stated name. The date is disputed: a late-first-century setting, often associated with Domitian, is widely argued, while some scholarship proposes a date around 68–69 CE under Nero. The language of suffering does not by itself prove an empire-wide official persecution; local pressures and conflicts are also considered. Patmos is the stated location of John's vision, but whether every stage of composition occurred there is not certain.",
-      "historical_subsequence": 90,
-      "historical_anchor_status": "stated_patmos_setting_author_identity_and_date_disputed",
-      "scope_relationship": "attributed_to_apostle_or_disciple",
-      "historical_order_note": "The historical setting represented is John's vision on Patmos and the messages directed to seven assemblies in Roman Asia. This is a later-apostolic setting, but the date remains disputed (including proposals around 68–69 CE and the later first-century period). The text does not establish an exact event-order relationship with 2 Peter or the other writings in this broad group. Do not identify this John with the apostle son of Zebedee as a settled fact.",
-      "research_sources": [
-        {
-          "title": "Introduction to Revelation’s Social Setting, Theological Perspective, and Literary Design",
-          "url": "https://academic.oup.com/edited-volume/34244/chapter/290344459"
-        },
-        {
-          "title": "Sarah Emanuel, Humor, Resistance, and Jewish Cultural Persistence in the Book of Revelation — Cambridge University Press excerpt",
-          "url": "https://assets.cambridge.org/97811084/96599/excerpt/9781108496599_excerpt.pdf"
-        },
-        {
-          "title": "Gonzalo Rojas-Flores, The Book of Revelation and the First Years of Nero’s Reign",
-          "url": "https://www.bsw.org/biblica/vol-85-2004/the-book-of-revelation-and-the-first-years-of-nero-s-reign/181/article-p377.html"
-        }
-      ]
-    },
-    {
       "id": "papias_exposition",
       "title": "Papias — Exposition of the Sayings of the Lord",
       "composition_date_start_ce": 100,
@@ -1749,6 +1945,64 @@
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
     },
     {
+      "id": "acts_matthias",
+      "title": "Acts of Matthias",
+      "composition_date_start_ce": null,
+      "composition_date_end_ce": null,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "apocryphal acts / martyrdom narrative",
+      "attribution_status": "Later narrative associated with Matthias; not authenticated as apostolic composition.",
+      "textual_status": "Later Latin manuscript witnesses; not a first-century manuscript.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Later narrative about Matthias' mission and fate",
+      "historical_anchor": "Later narrative about Matthias' mission and fate",
+      "historical_anchor_basis": "A later retelling of apostolic-era events; precise historical sequence is not independently established.",
+      "historical_subsequence": 180,
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "Keep distinct from the reported Gospel/Traditions of Matthias.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Acts of Matthias",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-matthias/"
+        }
+      ],
+      "preservation_status": "surviving_in_later_latin_manuscripts"
+    },
+    {
+      "id": "acts_philip",
+      "title": "Acts of Philip",
+      "composition_date_start_ce": null,
+      "composition_date_end_ce": null,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "apocryphal acts and martyrdom narrative",
+      "attribution_status": "Later narrative attributed to Philip by tradition; not authenticated as written by the apostle.",
+      "textual_status": "Multiple recensions and languages, including Greek and Armenian; some sections are missing and martyrdom transmission varies.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Later narrative of Philip's mission and martyrdom",
+      "historical_anchor": "Later narrative of Philip's mission and martyrdom",
+      "historical_anchor_basis": "Place among later apostolic retellings, not as a verified first-century itinerary.",
+      "historical_subsequence": 181,
+      "historical_anchor_status": "later_narrative_claim",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "Record recensions and missing sections separately.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Acts of Philip",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-philip/"
+        }
+      ],
+      "preservation_status": "surviving_in_multiple_recensions"
+    },
+    {
       "id": "clement_2",
       "title": "2 Clement",
       "composition_date_start_ce": 100,
@@ -1779,39 +2033,6 @@
         }
       ],
       "scope_relationship": "anonymous_early_community_writing",
-      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
-    },
-    {
-      "id": "apocalypse_peter",
-      "title": "Apocalypse of Peter",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 199,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "gospel or apocalypse",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "apocalypse_peter",
-      "historical_sequence": 90,
-      "historical_period": "No single historical event sequence can be established",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "apocalypse_peter_vision",
-      "historical_anchor": "A visionary account of judgment and the afterlife attributed to Peter",
-      "historical_anchor_basis": "The work presents visionary revelations rather than an earthly event sequence in the apostolic mission. Its possible Alexandrian provenance and second-century date concern composition context, not a historical event narrated in Peter's life.",
-      "historical_subsequence": 10,
-      "historical_anchor_status": "visionary_text_no_earthly_event_sequence",
-      "research_sources": [
-        {
-          "title": "The Apocalypse of Peter in Context — Jan N. Bremmer",
-          "url": "https://iris.unive.it/retrieve/9f755680-a043-4cce-a557-482e964abb3e/The%20Apocalypse%20of%20Peter%20in%20Context.pdf"
-        },
-        {
-          "title": "The Apocalypse of Peter as the Origin of the Christian Hell",
-          "url": "https://www.degruyterbrill.com/document/doi/10.1515/mill-2024-0004/html"
-        }
-      ],
-      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
       "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
     },
     {
@@ -1920,6 +2141,35 @@
       "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
     },
     {
+      "id": "gospel_egyptians_greek",
+      "title": "Gospel of the Egyptians (Greek fragments)",
+      "composition_date_start_ce": null,
+      "composition_date_end_ce": null,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "fragmentary sayings gospel",
+      "attribution_status": "Known through quotations by Clement, Hippolytus, Epiphanius and others; precise form and community remain debated.",
+      "textual_status": "No complete manuscript; fragments survive in quotations by later writers.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Sayings and dialogue fragments attributed to the Greek Gospel of the Egyptians",
+      "historical_anchor": "Sayings and dialogue fragments attributed to the Greek Gospel of the Egyptians",
+      "historical_anchor_basis": "The quotations do not establish a continuous event narrative; keep in the unplaced group.",
+      "historical_subsequence": 10,
+      "historical_anchor_status": "fragmentary_sayings_no_event_sequence",
+      "scope_relationship": "broader_early_christian_context_association_unproven",
+      "historical_order_note": "Keep separate from the Coptic Gospel of the Egyptians.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Gospel of the Egyptians",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-egyptians/"
+        }
+      ],
+      "preservation_status": "lost_or_fragmentary"
+    },
+    {
       "id": "gospel_thomas",
       "title": "Gospel of Thomas",
       "composition_date_start_ce": 100,
@@ -1971,9 +2221,165 @@
       ],
       "scope_relationship": "lost_or_reported_apostolic_correspondence",
       "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+    },
+    {
+      "id": "gospel_egyptians_coptic",
+      "title": "Gospel of the Egyptians (Coptic; Holy Book of the Great Invisible Spirit)",
+      "composition_date_start_ce": null,
+      "composition_date_end_ce": null,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "Coptic revelatory dialogue",
+      "attribution_status": "Anonymous Nag Hammadi work; title does not establish apostolic authorship.",
+      "textual_status": "Coptic Nag Hammadi witness; record its codex and folio data separately.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Revelatory and mythological dialogue",
+      "historical_anchor": "Revelatory and mythological dialogue",
+      "historical_anchor_basis": "Not a chronological earthly narrative; retain as a distinct Coptic work.",
+      "historical_subsequence": 11,
+      "historical_anchor_status": "revelatory_text_no_event_sequence",
+      "scope_relationship": "broader_early_christian_context_association_unproven",
+      "historical_order_note": "Do not merge with the Greek Gospel of the Egyptians.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Coptic Gospel of the Egyptians",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-egyptians-coptic/"
+        }
+      ],
+      "preservation_status": "surviving_in_coptic_codex"
+    },
+    {
+      "id": "gospel_philip",
+      "title": "Gospel of Philip",
+      "composition_date_start_ce": 175,
+      "composition_date_end_ce": 250,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "Coptic sayings and theological collection",
+      "attribution_status": "Anonymous work associated with a Valentinian milieu; title does not prove authorship by Philip.",
+      "textual_status": "Coptic text in Nag Hammadi Codex II; no complete Greek witness survives.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Sayings and theological reflections",
+      "historical_anchor": "Sayings and theological reflections",
+      "historical_anchor_basis": "Not a continuous account of Philip's life or Jesus' ministry; place in the unplaced group.",
+      "historical_subsequence": 12,
+      "historical_anchor_status": "non_narrative_collection",
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "Do not order by Philip's lifetime merely because of the title.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Gospel of Philip",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-philip/"
+        }
+      ],
+      "preservation_status": "surviving_in_coptic_codex"
+    },
+    {
+      "id": "gospel_matthias",
+      "title": "Gospel of Matthias / Traditions of Matthias",
+      "composition_date_start_ce": null,
+      "composition_date_end_ce": null,
+      "date_precision": "Not securely established; see cited research.",
+      "genre": "reported sayings and fragments",
+      "attribution_status": "The existence of one coherent Gospel is uncertain; sayings are attributed to Matthias in scattered reports.",
+      "textual_status": "No complete manuscript; fragments and reports survive through later authors.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
+      "historical_sequence": 90,
+      "historical_period": "No single historical event sequence can be established",
+      "historical_order_basis": "Placed by narrated event or historical setting, not composition date; disputed or fragmentary evidence remains labelled.",
+      "historical_anchor_id": "Scattered sayings attributed to Matthias",
+      "historical_anchor": "Scattered sayings attributed to Matthias",
+      "historical_anchor_basis": "The fragments do not form a continuous event narrative; keep identity and attribution uncertain.",
+      "historical_subsequence": 13,
+      "historical_anchor_status": "reported_fragments_identity_uncertain",
+      "scope_relationship": "broader_early_christian_context_association_unproven",
+      "historical_order_note": "Do not present as a verified complete Gospel.",
+      "research_sources": [
+        {
+          "title": "NASSCAL — Gospel of Matthias",
+          "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-matthias/"
+        }
+      ],
+      "preservation_status": "reported_fragments_only"
+    },
+    {
+      "id": "apocalypse_peter",
+      "title": "Apocalypse of Peter (Greek/Ethiopic)",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 199,
+      "date_precision": "provisional broad range; verify scholarly dating",
+      "genre": "gospel or apocalypse",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
+      "existing_catalogue_id": "apocalypse_peter",
+      "historical_sequence": 999,
+      "historical_period": "Final visionary writings",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "apocalypse_peter_vision",
+      "historical_anchor": "Peter's visionary revelation of judgment and the afterlife",
+      "historical_anchor_basis": "Greek and Ethiopic forms of this work transmit a visionary revelation about judgment and the afterlife; keep the versional witnesses distinct. It is not the Coptic Apocalypse of Peter.",
+      "historical_subsequence": 1,
+      "historical_anchor_status": "visionary_text_no_earthly_event_sequence",
+      "research_sources": [
+        {
+          "title": "The Apocalypse of Peter in Context — Jan N. Bremmer",
+          "url": "https://iris.unive.it/retrieve/9f755680-a043-4cce-a557-482e964abb3e/The%20Apocalypse%20of%20Peter%20in%20Context.pdf"
+        },
+        {
+          "title": "The Apocalypse of Peter as the Origin of the Christian Hell",
+          "url": "https://www.degruyterbrill.com/document/doi/10.1515/mill-2024-0004/html"
+        }
+      ],
+      "scope_relationship": "later_work_under_apostolic_or_disciple_name",
+      "historical_order_note": "Placed immediately before Revelation by the archive's explicit final-section rule; this is an editorial ordering instruction, not proof of a historical sequence."
+    },
+    {
+      "id": "revelation",
+      "title": "Revelation",
+      "composition_date_start_ce": 90,
+      "composition_date_end_ce": 100,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "apocalypse",
+      "attribution_status": "Apocalypse attributed internally to John; identifying him with the apostle is disputed.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 1000,
+      "historical_period": "Final writing — Revelation",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "patmos_vision",
+      "historical_anchor": "John's Patmos setting and messages to seven assemblies in Roman Asia",
+      "historical_anchor_basis": "Revelation 1:4 identifies seven assemblies in the province of Asia; 1:9 places John on Patmos because of the word of God and the witness of Jesus; 1:11 names the seven destinations. Chapters 2–3 address those assemblies, while 22:16 again frames the work as testimony for the assemblies. The text does not identify John as the son of Zebedee, so that identification must remain separate from the stated name. The date is disputed: a late-first-century setting, often associated with Domitian, is widely argued, while some scholarship proposes a date around 68–69 CE under Nero. The language of suffering does not by itself prove an empire-wide official persecution; local pressures and conflicts are also considered. Patmos is the stated location of John's vision, but whether every stage of composition occurred there is not certain.",
+      "historical_subsequence": 1,
+      "historical_anchor_status": "stated_patmos_setting_author_identity_and_date_disputed",
+      "scope_relationship": "attributed_to_apostle_or_disciple",
+      "historical_order_note": "Final record in the collection by explicit archive arrangement. Its Patmos setting and disputed date remain separate; final placement is not a claim about the chronological fulfilment of every vision.",
+      "research_sources": [
+        {
+          "title": "Introduction to Revelation’s Social Setting, Theological Perspective, and Literary Design",
+          "url": "https://academic.oup.com/edited-volume/34244/chapter/290344459"
+        },
+        {
+          "title": "Sarah Emanuel, Humor, Resistance, and Jewish Cultural Persistence in the Book of Revelation — Cambridge University Press excerpt",
+          "url": "https://assets.cambridge.org/97811084/96599/excerpt/9781108496599_excerpt.pdf"
+        },
+        {
+          "title": "Gonzalo Rojas-Flores, The Book of Revelation and the First Years of Nero’s Reign",
+          "url": "https://www.bsw.org/biblica/vol-85-2004/the-book-of-revelation-and-the-first-years-of-nero-s-reign/181/article-p377.html"
+        }
+      ]
     }
   ],
-  "historical_chronology_policy": "Use the events and historical setting represented in each writing as the organizing basis. For narratives, follow narrated events. For letters and instruction writings, use the historical situation, people, journeys, imprisonment, or community events they address. If an exact setting cannot be established, use a broad labelled period and mark placement provisional. Never use composition date as a substitute for event chronology.",
+  "historical_chronology_policy": "Use the events and historical setting represented in each writing as the organizing basis. For narratives, follow narrated events. For letters and instruction writings, use the historical situation, people, journeys, imprisonment, or community events they address. If an exact setting cannot be established, use a broad labelled period and mark placement provisional. Never use composition date as a substitute for event chronology. Revelation is the final catalogue record by explicit archive arrangement; the Greek/Ethiopic Apocalypse of Peter is immediately before it. The Coptic Apocalypse of Peter is a separate work placed by its own Jerusalem-before-crucifixion narrative setting.",
   "chronology_policy": {
     "primary_rule": "Use events narrated or historical situations addressed, not composition or manuscript dates.",
     "overlapping_narratives": "Group accounts covering the same events rather than claiming an unsupported order among them.",
@@ -1986,7 +2392,7 @@
     "unplaced_group": "Writings without a sufficiently secure event sequence are shown in a separate final group. This group is not ordered by composition date."
   },
   "scope_policy": {
-    "inclusion": "This unified catalogue is limited to writings attributed to, associated with, or reporting correspondence of apostles and early disciples, including later works written under their names. Inclusion does not prove authorship.",
+    "inclusion": "This unified catalogue is limited to writings attributed to, associated with, or reporting correspondence of apostles and early disciples, including later works written under their names. Inclusion does not prove authorship. Include fragmentary, lost, hypothetical, pseudonymous, and later writings where an apostolic/disciple connection is claimed or studied, while labelling the strength of evidence. Inclusion does not prove authenticity.",
     "relationship_labels": {
       "attributed_to_apostle_or_disciple": "The work is attributed to an apostle or disciple in its text or established historical tradition; this label does not itself prove authorship.",
       "attributed_to_or_associated_with_early_disciple": "The work is attributed to or historically associated with an early disciple or apostolic-era witness; the strength of the association is stated in its record.",
