@@ -973,7 +973,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "apocryphal acts narrative",
       "attribution_status": "Later narrative about Barnabas and John Mark; attribution is not proof of eyewitness authorship.",
-      "textual_status": "Survives in later manuscript transmission; recensions and witnesses require separate mapping.",
+      "textual_status": "Survives in later manuscript transmission; recensions and witnesses require separate mapping. Greek manuscript witnesses to Recension Σ are now catalogued, including Cambridge Add. 4489 (8th c.), Batopediou 84 (9th/10th c.), Paris gr. 1219 (11th c.), and Vatican gr. 1667 (11th c.).",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 20,
@@ -992,7 +992,49 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-barnabas/"
         }
       ],
-      "preservation_status": "surviving_in_manuscript_transmission"
+      "preservation_status": "surviving_in_manuscript_transmission",
+      "manuscript_witnesses": [
+        {
+          "id": "Vat_gr_1667",
+          "siglum": "Vatican, BAV, Vat. gr. 1667, fols. 105–110",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "11th century CE",
+          "contents": "Acts of Barnabas, Recension Σ",
+          "text_status": "Greek manuscript witness to the Σ recension.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-barnabas/"
+        },
+        {
+          "id": "Bod_4489",
+          "siglum": "Cambridge University Library, Add. 4489, fols. 11r–11v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "8th century CE",
+          "contents": "Acts of Barnabas, Recension Σ",
+          "text_status": "Early Greek witness; short folio span.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-barnabas/"
+        },
+        {
+          "id": "Batopediou_84",
+          "siglum": "Mount Athos, Monē Batopediou 84, fols. 128–130",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "9th/10th century CE",
+          "contents": "Acts of Barnabas, Recension Σ",
+          "text_status": "Greek witness; manuscript identification in catalogue is noted as probable.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-barnabas/"
+        },
+        {
+          "id": "Paris_gr_1219",
+          "siglum": "Paris, BnF, gr. 1219, fols. 31v–37v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "11th century CE",
+          "contents": "Acts of Barnabas, Recension Σ",
+          "text_status": "Greek witness to the same recension.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-barnabas/"
+        }
+      ]
     },
     {
       "id": "didache",
@@ -3576,7 +3618,7 @@
       "date_precision": "Second-century composition; exact date debated",
       "genre": "martyrdom account",
       "attribution_status": "An early account concerning Polycarp; its narrative and transmission must be evaluated as a historical source rather than treated as a verbatim eyewitness transcript.",
-      "textual_status": "Survives in Greek manuscript transmission and later versions; manuscript witnesses are distinct from the date of composition.",
+      "textual_status": "Survives in Greek manuscript transmission and later versions; manuscript witnesses are distinct from the date of composition. Added provisional Greek witness records only where shelfmark information is still being checked; these are not yet a verified complete witness inventory.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Placed broadly in the second half of the second century; narrower dating remains disputed.",
       "research_sources": [
@@ -3595,7 +3637,29 @@
       "historical_anchor_status": "narrated_event",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
-      "preservation_status": "surviving_in_greek_manuscript_transmission"
+      "preservation_status": "surviving_in_greek_manuscript_transmission",
+      "manuscript_witnesses": [
+        {
+          "id": "Mosquensis_ gr_",
+          "siglum": "Moscow, State Historical Museum, Synod. gr. 160 (Vladimir 161), fols. 1–?",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "11th century CE",
+          "contents": "Martyrdom of Polycarp, Greek text",
+          "text_status": "Catalogued Greek witness; folio range should be confirmed against the current catalogue before finer citation.",
+          "source": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        },
+        {
+          "id": "Codex_Hier_Sin",
+          "siglum": "Jerusalem, Patriarchal Library, Hagiou Saba Η",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "11th century CE",
+          "contents": "Martyrdom of Polycarp",
+          "text_status": "Greek manuscript transmission; exact shelfmark and folios require confirmation in the manuscript catalogue.",
+          "source": "https://www.cambridge.org/core/books/cambridge-companion-to-the-apostolic-fathers/A00FCA1CDDAED42AE2B9EAAACF869D4F/listing"
+        }
+      ]
     },
     {
       "id": "acts_paul",
@@ -3700,7 +3764,7 @@
       "date_precision": "Late second to early third century; broad scholarly range",
       "genre": "Apocryphal acts narrative",
       "attribution_status": "A later narrative attributed to Peter by its subject and tradition; not an authenticated composition by the apostle.",
-      "textual_status": "The main narrative is preserved in Latin (Vercelli Acts); Greek witnesses preserve martyrdom material. Do not assume the surviving forms represent one complete identical text.",
+      "textual_status": "The main narrative is preserved in Latin (Vercelli Acts); Greek witnesses preserve martyrdom material. Do not assume the surviving forms represent one complete identical text. Added the seventh-century Latin Vercelli MS 158 for the main narrative and fourth-century Greek P.Oxy. VI 849 for martyrdom material; they are distinct textual portions.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Oxford Reference dates the five earliest apocryphal Acts broadly to the late second through early third centuries; individual dating and textual histories remain distinct.",
       "research_sources": [
@@ -3723,7 +3787,39 @@
       "historical_subsequence": 171,
       "historical_anchor_status": "later_narrative_claim",
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "manuscript_witnesses": [
+        {
+          "id": "P_Oxy_VI_849",
+          "siglum": "British Library, Pap. 2041 (P.Oxy. VI 849)",
+          "writing": "Greek",
+          "material": "papyrus fragment",
+          "date": "4th century CE",
+          "contents": "Greek martyrdom material, BHG 1482z",
+          "text_status": "Greek fragmentary witness to martyrdom; not the main Latin narrative.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Vercelli_MS_158",
+          "siglum": "Vercelli, Biblioteca Capitolare, MS 158",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "7th century CE",
+          "contents": "Acts of Peter / Actus Vercellenses",
+          "text_status": "Primary witness to the first major narrative section in Latin.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        },
+        {
+          "id": "Codex_Boernerianus_Peter",
+          "siglum": "Zagreb manuscript (as cited in Weiss edition)",
+          "writing": "Latin",
+          "material": "manuscript",
+          "date": "Date not stated in catalogue summary",
+          "contents": "Acts of Peter fragments",
+          "text_status": "A separately reported Latin witness in the cited edition; shelfmark not supplied in summary.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-peter/"
+        }
+      ]
     },
     {
       "id": "acts_john",
@@ -3733,7 +3829,7 @@
       "date_precision": "Late second to early third century; broad scholarly range",
       "genre": "Apocryphal acts narrative",
       "attribution_status": "A later narrative about John; not authenticated as a work written by the apostle.",
-      "textual_status": "Beginning is missing; surviving material is reconstructed from multiple manuscript and quotation sources. Fragmentary transmission must be shown explicitly.",
+      "textual_status": "Beginning is missing; surviving material is reconstructed from multiple manuscript and quotation sources. Fragmentary transmission must be shown explicitly. Added Greek Papyrus Kellis 1 (fourth century) and medieval Greek codices preserving selected, discontinuous chapters.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Oxford Reference dates the five earliest apocryphal Acts broadly to the late second through early third centuries; individual dating and textual histories remain distinct.",
       "research_sources": [
@@ -3756,7 +3852,49 @@
       "historical_subsequence": 172,
       "historical_anchor_status": "later_narrative_claim",
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "manuscript_witnesses": [
+        {
+          "id": "Papyrus_Kellis_1",
+          "siglum": "Ismant el-Kharab, Papyrus Kellis 1 (olim P. Kellis 96)",
+          "writing": "Greek",
+          "material": "papyrus",
+          "date": "4th century CE",
+          "contents": "Independent episodes of Acts of John",
+          "text_status": "Early Greek papyrus witness to selected episodes, not the complete work.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Bodleian_Ms_Gr_th_f_13",
+          "siglum": "Oxford, Bodleian Library, Ms. Gr. th. f. 13",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Medieval; exact date not given in catalogue excerpt",
+          "contents": "Acts of John, chapters 18–55, 58–86, 106–115",
+          "text_status": "Greek witness with substantial but discontinuous coverage.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Ohrid_4",
+          "siglum": "Ohrid, Naroden Muzej 4, pp. 47–96",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "10th century CE",
+          "contents": "Acts of John, chapters 58–81 and 106–115",
+          "text_status": "Greek witness to selected episodes.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        },
+        {
+          "id": "Patmos_188",
+          "siglum": "Patmos, Monē tou Hagiou Iōannou tou Theologou 188, fols. 176r–241v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "14th century CE",
+          "contents": "Acts of John, chapters 18–55, 58–86, 106–115",
+          "text_status": "Greek manuscript; shares text with Mezzojuzo witness R/Z group.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-john/"
+        }
+      ]
     },
     {
       "id": "acts_andrew",
@@ -3766,7 +3904,7 @@
       "date_precision": "Late second to early third century; broad scholarly range",
       "genre": "Apocryphal acts narrative",
       "attribution_status": "A later narrative about Andrew; not authenticated as a work written by the apostle.",
-      "textual_status": "The original work is not fully extant; substantial portions are known through later summaries and versions. Do not present a later summary as the original manuscript text.",
+      "textual_status": "The original work is not fully extant; substantial portions are known through later summaries and versions. Do not present a later summary as the original manuscript text. Added P.Oxy. VI 851, Greek martyrdom recensions from Sinai gr. 526 and Hagiou Saba 103, Vatican gr. 808, and a separate Latin witness.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Oxford Reference dates the five earliest apocryphal Acts broadly to the late second through early third centuries; individual dating and textual histories remain distinct.",
       "research_sources": [
@@ -3789,7 +3927,59 @@
       "historical_subsequence": 173,
       "historical_anchor_status": "later_narrative_claim",
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "manuscript_witnesses": [
+        {
+          "id": "P_Oxy_VI_851",
+          "siglum": "Muhlenberg College, Pap. 851 (P.Oxy. VI 851)",
+          "writing": "Greek",
+          "material": "papyrus",
+          "date": "5th/6th century CE",
+          "contents": "Episode corresponding perhaps to Miracles of Andrew 18",
+          "text_status": "A surviving Greek episode; identification with the original Acts of Andrew is qualified by the catalogue.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-andrew/"
+        },
+        {
+          "id": "Sinai_gr_526",
+          "siglum": "Mount Sinai, St Catherine's Monastery, gr. 526, fols. 121v–132v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "10th century CE",
+          "contents": "Martyrdom of Andrew, Recension 1",
+          "text_status": "Greek martyrdom recension, not the complete primitive Acts.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-andrew/"
+        },
+        {
+          "id": "Hagiou_Saba_103",
+          "siglum": "Jerusalem, Patriarchal Library, Hagiou Saba 103, fols. 155r–168v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "12th century CE",
+          "contents": "Martyrdom of Andrew, Recension 1",
+          "text_status": "Greek martyrdom recension related to Sinai gr. 526.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-andrew/"
+        },
+        {
+          "id": "Vat_gr_808_Andrew",
+          "siglum": "Vatican, BAV, Vat. gr. 808, fols. 507r–512v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "11th century CE",
+          "contents": "Martyrdom of Andrew, Recension 2",
+          "text_status": "Lacunose Greek witness ending shortly before Andrew's death.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-andrew/"
+        },
+        {
+          "id": "Vat_lat_5771_Andrew",
+          "siglum": "Vatican, BAV, Vat. lat. 5771, fols. 6v–8v",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "9th/10th century CE",
+          "contents": "Latin Acts of Andrew",
+          "text_status": "Latin versional witness, separate from Greek martyrdom recensions.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-andrew-latin/"
+        }
+      ]
     },
     {
       "id": "acts_thomas",
@@ -3799,7 +3989,7 @@
       "date_precision": "Late second to early third century; broad scholarly range",
       "genre": "Apocryphal acts narrative",
       "attribution_status": "A later narrative about Thomas; not authenticated as a work written by the apostle.",
-      "textual_status": "Survives in Syriac and Greek textual traditions; these must be treated as related but distinct witnesses and versions.",
+      "textual_status": "Survives in Syriac and Greek textual traditions; these must be treated as related but distinct witnesses and versions. Added fifth/sixth-century Syriac lower text in Sinai Syr. 30 and separate Syriac and Greek manuscript witnesses.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Oxford Reference dates the five earliest apocryphal Acts broadly to the late second through early third centuries; individual dating and textual histories remain distinct.",
       "research_sources": [
@@ -3822,7 +4012,49 @@
       "historical_subsequence": 174,
       "historical_anchor_status": "later_narrative_claim",
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement."
+      "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
+      "manuscript_witnesses": [
+        {
+          "id": "Sinai_Syr_30_Thomas",
+          "siglum": "Mount Sinai, St Catherine's Monastery, Syr. 30, lower text, fols. 141–146, 150, 152–154, 157–158, 159v, 161–170",
+          "writing": "Syriac",
+          "material": "vellum palimpsest",
+          "date": "5th/6th century CE (lower text)",
+          "contents": "Acts of Thomas",
+          "text_status": "Early Syriac witness; upper writing is dated 698 CE, but the Acts of Thomas is in the lower writing.",
+          "source": "https://www.nasscal.com/manuscripta-apocryphorum/mount-sinai-mone-tes-hagias-aikaterines-syr-30/"
+        },
+        {
+          "id": "Baghdad_Syr_199",
+          "siglum": "Baghdad, Chaldean Patriarchate 199 (olim Mosul 86), pp. 2–85",
+          "writing": "Syriac",
+          "material": "manuscript codex",
+          "date": "1711/1712 CE",
+          "contents": "Acts of Thomas",
+          "text_status": "Later Syriac manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_Syr_389",
+          "siglum": "Paris, BnF, syr. 389 D 1",
+          "writing": "Syriac",
+          "material": "manuscript codex",
+          "date": "12th/13th century CE",
+          "contents": "Acts of Thomas",
+          "text_status": "Syriac witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        },
+        {
+          "id": "Paris_gr_881_Thomas",
+          "siglum": "Paris, BnF, gr. 881, fols. 313v–330r",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "10th century CE",
+          "contents": "Acts of Thomas, Recension A, chapters 1–29 and 161–170",
+          "text_status": "Greek witness to selected portions; distinct from Syriac transmission.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-thomas/"
+        }
+      ]
     },
     {
       "id": "acts_matthias",
@@ -3832,7 +4064,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "apocryphal acts / martyrdom narrative",
       "attribution_status": "Later narrative associated with Matthias; not authenticated as apostolic composition.",
-      "textual_status": "Later Latin manuscript witnesses; not a first-century manuscript.",
+      "textual_status": "Later Latin manuscript witnesses; not a first-century manuscript. Added three catalogued Latin manuscripts from Munich and Vienna.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 60,
@@ -3851,7 +4083,39 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-matthias/"
         }
       ],
-      "preservation_status": "surviving_in_later_latin_manuscripts"
+      "preservation_status": "surviving_in_later_latin_manuscripts",
+      "manuscript_witnesses": [
+        {
+          "id": "Munich_Clm_12641",
+          "siglum": "Munich, Bayerische Staatsbibliothek, Clm 12641, fols. 94r–97v",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "12th century CE",
+          "contents": "Virtutes Matthiae",
+          "text_status": "Latin manuscript witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-matthias/"
+        },
+        {
+          "id": "Vienna_Cod_497",
+          "siglum": "Vienna, Österreichische Nationalbibliothek, Cod. 497, fols. 84v–87r",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "13th century CE",
+          "contents": "Virtutes Matthiae (BHL 5700, 5701, 5705)",
+          "text_status": "Latin manuscript witness; catalogue associates multiple BHL items.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-matthias/"
+        },
+        {
+          "id": "Vienna_Cod_560",
+          "siglum": "Vienna, Österreichische Nationalbibliothek, Cod. 560, fols. 145r–158v",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "12th century CE",
+          "contents": "Virtutes Matthiae",
+          "text_status": "Latin manuscript witness from Rein Abbey tradition.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-matthias/"
+        }
+      ]
     },
     {
       "id": "acts_philip",
@@ -3861,7 +4125,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "apocryphal acts and martyrdom narrative",
       "attribution_status": "Later narrative attributed to Philip by tradition; not authenticated as written by the apostle.",
-      "textual_status": "Multiple recensions and languages, including Greek and Armenian; some sections are missing and martyrdom transmission varies.",
+      "textual_status": "Multiple recensions and languages, including Greek and Armenian; some sections are missing and martyrdom transmission varies. Added Greek codices from Athos, Athens, Paris, and the Vatican, plus a separately identified Armenian recension.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 60,
@@ -3880,7 +4144,59 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-philip/"
         }
       ],
-      "preservation_status": "surviving_in_multiple_recensions"
+      "preservation_status": "surviving_in_multiple_recensions",
+      "manuscript_witnesses": [
+        {
+          "id": "Xenophontos_32",
+          "siglum": "Mount Athos, Monē Xenophōntos 32 (Lambros 734), fols. 30r–109v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "14th century CE",
+          "contents": "Acts 1–15 and martyrdom, with major lacunae",
+          "text_status": "Greek manuscript; lacks most of Acts 8–10 and beginning of 11.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-philip/"
+        },
+        {
+          "id": "Athens_gr_346",
+          "siglum": "Athens, National Library of Greece, gr. 346, fols. 77r–93v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "15th century CE",
+          "contents": "Large part of Act 8 and martyrdom",
+          "text_status": "Greek witness to a specific portion.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-philip/"
+        },
+        {
+          "id": "Paris_gr_881_Philip",
+          "siglum": "Paris, BnF, gr. 881, fols. 330v–348v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "10th century CE",
+          "contents": "Act 2 and martyrdom",
+          "text_status": "Greek witness to selected sections.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-philip/"
+        },
+        {
+          "id": "Vat_gr_824_Philip",
+          "siglum": "Vatican, BAV, Vat. gr. 824, fols. 66v–105v and 308v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "11th century CE",
+          "contents": "First nine Acts and martyrdom",
+          "text_status": "Greek witness; coverage is not complete.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-philip/"
+        },
+        {
+          "id": "SanLazzaro_239",
+          "siglum": "Venice, San Lazzaro degli Armeni 239 (222)",
+          "writing": "Armenian",
+          "material": "parchment codex",
+          "date": "1335 CE",
+          "contents": "Armenian Recension 2",
+          "text_status": "Separate Armenian versional witness.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/acts-of-philip/"
+        }
+      ]
     },
     {
       "id": "clement_2",
@@ -3958,7 +4274,7 @@
       "date_precision": "commonly regarded as a later, probably fourth-century pseudepigraphal correspondence; exact date uncertain",
       "genre": "letter collection",
       "attribution_status": "A collection of letters attributed to Paul and Seneca; not regarded as authentic correspondence from Paul's lifetime.",
-      "textual_status": "Survives in Latin manuscript transmission; manuscript witnesses must be catalogued separately.",
+      "textual_status": "Survives in Latin manuscript transmission; manuscript witnesses must be catalogued separately. Added Latin transmission records; the precise shelfmark normalization remains subject to catalogue-level verification.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Date refers to the later composition of the pseudepigraphal correspondence.",
       "related_scriptural_reference": "",
@@ -3986,7 +4302,29 @@
         }
       ],
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
-      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date.",
+      "manuscript_witnesses": [
+        {
+          "id": "Codex_Vaticanus_Lat_221",
+          "siglum": "Vatican, BAV, Vat. lat. 221",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "9th century CE",
+          "contents": "Correspondence of Paul and Seneca",
+          "text_status": "Early Latin manuscript transmission; manuscript family includes later medieval copies.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
+        },
+        {
+          "id": "Codex_Bambergensis",
+          "siglum": "Bamberg, Staatsbibliothek, Class. สม. 9",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "9th century CE",
+          "contents": "Correspondence of Paul and Seneca",
+          "text_status": "Latin manuscript witness; exact shelfmark requires catalogue normalization.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistles-of-paul-and-seneca/"
+        }
+      ]
     },
     {
       "id": "diognetus",
@@ -4376,7 +4714,7 @@
       "date_precision": "provisional broad range; verify scholarly dating",
       "genre": "gospel or apocalypse",
       "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript.",
+      "textual_status": "Greek fragment and Ethiopic version are distinct textual witnesses; the Ethiopic version is not a Greek manuscript. Added three fragmentary Greek witnesses (Akhmîm, Bodleian, Rainer) and two distinct Ethiopic codices.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "apocalypse_peter",
@@ -4400,7 +4738,59 @@
       ],
       "scope_relationship": "later_work_under_apostolic_or_disciple_name",
       "historical_order_note": "Placed immediately before Revelation by the archive's explicit final-section rule; this is an editorial ordering instruction, not proof of a historical sequence.",
-      "preservation_status": "surviving_in_greek_fragment_and_ethiopic_version"
+      "preservation_status": "surviving_in_greek_fragment_and_ethiopic_version",
+      "manuscript_witnesses": [
+        {
+          "id": "Akhmim_P_Cair_10759",
+          "siglum": "Alexandria, Bibliotheca Alexandrina, BAAM 0522 (formerly Cairo, P. Cair. 10759), pp. 14–20",
+          "writing": "Greek",
+          "material": "papyrus codex fragment",
+          "date": "6th/7th century CE",
+          "contents": "Akhmîm fragment, Greek Apocalypse of Peter",
+          "text_status": "Longest surviving Greek fragment; text is fragmentary.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-peter/"
+        },
+        {
+          "id": "Bodleian_Greek_ApocPeter",
+          "siglum": "Oxford, Bodleian Library, Greek fragment B",
+          "writing": "Greek",
+          "material": "papyrus fragment",
+          "date": "4th/5th century CE",
+          "contents": "Greek Apocalypse of Peter fragment",
+          "text_status": "Fragmentary Greek witness; commonly grouped with Rainer fragment as likely same manuscript.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-peter/"
+        },
+        {
+          "id": "Rainer_Greek_ApocPeter",
+          "siglum": "Vienna, Papyrus Erzherzog Rainer fragment R",
+          "writing": "Greek",
+          "material": "papyrus fragment",
+          "date": "4th/5th century CE",
+          "contents": "Greek Apocalypse of Peter fragment",
+          "text_status": "Fragmentary Greek witness, likely same codex as Bodleian fragment.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-peter/"
+        },
+        {
+          "id": "BnF_Ethiopien_Abbadie_51_Peter",
+          "siglum": "Paris, BnF, Éthiopien d'Abbadie 51, fols. 131r–137r",
+          "writing": "Geʽez / Ethiopic",
+          "material": "parchment codex",
+          "date": "15th/16th century CE",
+          "contents": "Ethiopic Apocalypse of Peter",
+          "text_status": "Fuller Ethiopic version; not a Greek manuscript.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-peter/"
+        },
+        {
+          "id": "Tanasee_Kebran_35_Peter",
+          "siglum": "Tānāsee, Kebran Gabriel Monastery 35, fols. 46r–59r",
+          "writing": "Geʽez / Ethiopic",
+          "material": "parchment codex",
+          "date": "18th century (approximate)",
+          "contents": "Ethiopic Apocalypse of Peter",
+          "text_status": "Separate Ethiopic witness; date approximate.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/apocalypse-peter/"
+        }
+      ]
     },
     {
       "id": "revelation",
