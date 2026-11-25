@@ -5546,7 +5546,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "Coptic sayings and theological collection",
       "attribution_status": "Anonymous work associated with a Valentinian milieu; title does not prove authorship by Philip.",
-      "textual_status": "Coptic text in Nag Hammadi Codex II; no complete Greek witness survives. Witness metadata added; no unverified transcription or translation has been inserted.",
+      "textual_status": "The principal text survives in Sahidic Coptic in Nag Hammadi Codex II, tractate 3 (pages 51.29–86.19). No complete Greek manuscript survives. Epiphanius, Panarion 26.13.2–3, quotes a passage from a Gospel in Philip's name about the soul's ascent; this passage is absent from NHC II,3 and is treated separately because it may derive from another work.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 90,
@@ -5561,8 +5561,24 @@
       "historical_order_note": "Do not order by Philip's lifetime merely because of the title.",
       "research_sources": [
         {
-          "title": "NASSCAL — Gospel of Philip",
+          "title": "NASSCAL — Gospel of Philip, scholarly overview",
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-philip/"
+        },
+        {
+          "title": "Coptic Gnostic Library Online — Nag Hammadi Codex II, tractate 3, critical Coptic text and translations",
+          "url": "https://scholarlyeditions.brill.com/cglo/"
+        },
+        {
+          "title": "Claremont, Coptic Encyclopedia — Gospel of Philip, distinction between the two works",
+          "url": "https://ccdl.claremont.edu/digital/api/collection/cce/id/900/download"
+        },
+        {
+          "title": "Paul Foster, The Gospel of Philip (2007)",
+          "url": "https://journals.sagepub.com/doi/10.1177/0014524607079667"
+        },
+        {
+          "title": "Gospels.net — manuscript witness and codex pages",
+          "url": "https://www.gospels.net/manuscript/"
         }
       ],
       "preservation_status": "surviving_in_coptic_codex",
@@ -5580,7 +5596,57 @@
           "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-philip/"
         }
       ],
-      "description": "Gospel of Philip is a Coptic sayings and theological collection writing in the Unified Apostolic and Disciple collection. Anonymous work associated with a Valentinian milieu; title does not prove authorship by Philip. Coptic text in Nag Hammadi Codex II; no complete Greek witness survives. Witness metadata added; no unverified transcription or translation has been inserted. No complete independent manuscript text is known; the record preserves the ancient reference or surviving quotations without reconstructing missing wording."
+      "description": "Gospel of Philip is a Coptic collection of sayings and theological reflections preserved in Nag Hammadi Codex II, tractate 3 (pages 51.29–86.19). It is not a continuous narrative gospel, and its title does not establish authorship by Philip. The Coptic codex is the sole complete textual witness; the original Greek is inferred, not extant. Epiphanius separately quotes a Gospel bearing Philip's name in Panarion 26.13.2–3. That soul-ascent passage does not occur in NHC II,3 and is not inserted into this work.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "GPhil-NHCII3-pages51-60",
+          "transmitting_author": "Anonymous compiler; Nag Hammadi Codex II, tractate 3",
+          "source_work": "Nag Hammadi Codex II, tractate 3",
+          "passage": "NHC II, 51.29–60 (opening section)",
+          "language_of_surviving_source": "Sahidic Coptic",
+          "content_scope": "The opening portion is a collection of short sayings, comparisons, and reflections. Topics include spiritual transformation, the relationship between the living and the dead, the status of believers, the role of the Saviour, and the interpretation of names and images. It is not a continuous narrative of Philip's life.",
+          "status": "Surviving portion of the sole complete Coptic witness; individual damaged lines and editorial restorations must be checked against the codex edition.",
+          "english_paraphrase": "The opening sayings contrast outward status with inward transformation, and repeatedly use images of birth, inheritance, light, and recognition to describe spiritual life. Several sayings are attributed to the Lord or Saviour, while other passages are explanatory reflections by the compiler. This is a section-level summary, not a line-by-line translation.",
+          "text_type": "section_summary_from_coptic_witness",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-philip/"
+        },
+        {
+          "fragment_id": "GPhil-NHCII3-pages61-74",
+          "transmitting_author": "Anonymous compiler; Nag Hammadi Codex II, tractate 3",
+          "source_work": "Nag Hammadi Codex II, tractate 3",
+          "passage": "NHC II, 61–74 (middle section)",
+          "language_of_surviving_source": "Sahidic Coptic",
+          "content_scope": "The middle portion develops reflections on images, names, truth, and the rites of baptism and anointing (chrism). It includes short sayings and interpretive passages concerning the Saviour, the cross, spiritual rebirth, and the relationship between visible signs and their spiritual realities.",
+          "status": "Surviving portion of the Coptic codex; paragraph divisions and saying numbers vary among modern editions.",
+          "english_paraphrase": "The compiler connects ritual actions with transformation and knowledge: baptism and anointing are discussed as meaningful spiritual realities rather than merely external acts. The text also uses images and names to explain how visible things can point beyond themselves. The paraphrase summarizes themes and does not supply missing wording.",
+          "text_type": "section_summary_from_coptic_witness",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-philip/"
+        },
+        {
+          "fragment_id": "GPhil-NHCII3-pages75-86",
+          "transmitting_author": "Anonymous compiler; Nag Hammadi Codex II, tractate 3",
+          "source_work": "Nag Hammadi Codex II, tractate 3",
+          "passage": "NHC II, 75–86.19 (closing section)",
+          "language_of_surviving_source": "Sahidic Coptic",
+          "content_scope": "The closing portion continues reflections on redemption, the bridal chamber, the separation and reunion of human realities, and the relationship between Mary Magdalene and the Saviour. It ends with the title written at the conclusion of the codex text. Some lines in the codex are damaged; reconstructions in translations are editorial.",
+          "status": "Surviving closing portion of the sole complete Coptic witness; damaged places must remain distinguished from preserved text.",
+          "english_paraphrase": "The closing sayings discuss redemption and the bridal chamber through symbolic language of union, restoration, and spiritual completion. Mary Magdalene is described in a special relationship to the Saviour, but the manuscript's damaged wording does not justify filling gaps with popular speculative claims. The text concludes with its title, 'The Gospel according to Philip,' at the end of the work.",
+          "text_type": "section_summary_from_coptic_witness",
+          "source_url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-philip/"
+        },
+        {
+          "fragment_id": "GPhil-Epiphanius-Panarion-26.13.2-3",
+          "transmitting_author": "Epiphanius of Salamis",
+          "source_work": "Panarion",
+          "passage": "26.13.2–3",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "Epiphanius quotes a passage he attributes to a Gospel in the name of Philip, describing the soul's ascent past hostile powers after death. This quoted passage is not found in the surviving Gospel of Philip in Nag Hammadi Codex II. Most reference works treat Epiphanius' cited writing as a distinct work with the same or a similar title; its relationship to the Nag Hammadi tractate remains debated.",
+          "status": "Ancient quotation from a separately transmitted work attributed to Philip; not part of NHC II,3 and not a missing passage that can be inserted into it.",
+          "english_paraphrase": "In Epiphanius' report, the ascending soul answers hostile heavenly powers by declaring that it has come to know itself, has gathered itself together, and has not produced offspring for the ruler of this world. Epiphanius presents this as a quotation from a Gospel bearing Philip's name. It is kept separate from the Nag Hammadi Gospel of Philip because it does not occur in that Coptic text.",
+          "text_type": "ancient_quotation_from_distinct_or_uncertain_work",
+          "source_url": "https://www.biblicaltraining.org/library/gospel-of-philip"
+        }
+      ]
     },
     {
       "id": "gospel_matthias",
