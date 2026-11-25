@@ -132,6 +132,8 @@ public class MainActivity extends Activity {
             for(int i=0;i<records.length();i++)ordered.add(records.getJSONObject(i));
             java.util.Collections.sort(ordered,(a,b)->{int p=Integer.compare(a.optInt("historical_sequence",999),b.optInt("historical_sequence",999));if(p!=0)return p;int q=Integer.compare(a.optInt("historical_subsequence",999),b.optInt("historical_subsequence",999));return q!=0?q:a.optString("title","").compareToIgnoreCase(b.optString("title",""));});
             int shown=0;
+            String lastPeriod="";
+            String lastAnchorId="";
             for(int i=0;i<ordered.size();i++){
                 org.json.JSONObject record=ordered.get(i);
                 String title=record.optString("title","Untitled record");
@@ -141,10 +143,23 @@ public class MainActivity extends Activity {
                 String date=hasDate?(record.optInt("composition_date_start_ce")==record.optInt("composition_date_end_ce")?record.optInt("composition_date_start_ce")+" CE":record.optInt("composition_date_start_ce")+"–"+record.optInt("composition_date_end_ce")+" CE"):"Date undetermined";
                 String hay=(title+" "+genre+" "+attribution+" "+record.optString("textual_status","")+" "+record.optString("historical_anchor","")+" "+record.optString("historical_period","")+" "+record.optString("scope_relationship","")).toLowerCase(java.util.Locale.ROOT);
                 if(!query.isEmpty()&&!hay.contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
+                String period=record.optString("historical_period","Historical setting not classified");
+                String anchorId=record.optString("historical_anchor_id","");
+                if(!period.equals(lastPeriod)){
+                    TextView periodHeading=text(period,17,gold,true);
+                    periodHeading.setPadding(4,16,4,5);
+                    content.addView(periodHeading);
+                    lastPeriod=period;
+                    lastAnchorId="";
+                }
+                if(!anchorId.equals(lastAnchorId)){
+                    TextView eventHeading=text(record.optString("historical_anchor","Historical event or setting not established"),13,ink,true);
+                    eventHeading.setPadding(8,5,8,8);
+                    content.addView(eventHeading);
+                    lastAnchorId=anchorId;
+                }
                 LinearLayout row=new LinearLayout(this);row.setOrientation(1);row.setPadding(12,7,12,7);row.setBackground(shape(panel));
                 row.addView(text(title,15,ink,true));
-                row.addView(text(record.optString("historical_period","Historical setting not classified"),12,gold,false));
-                row.addView(text(record.optString("historical_anchor","Historical event or setting not established"),12,ink,false));
                 row.addView(text("Collection relationship: "+record.optString("scope_relationship","not classified").replace("_"," "),11,muted,false));
                 row.addView(text("Composition: "+date+"  •  "+genre,11,muted,false));
                 TextView status=text(attribution,12,muted,false);status.setMaxLines(3);row.addView(status);
