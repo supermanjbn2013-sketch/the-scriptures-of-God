@@ -109,6 +109,36 @@
       "historical_anchor_status": "narrative_sequence"
     },
     {
+      "id": "james",
+      "title": "Letter of James",
+      "composition_date_start_ce": 60,
+      "composition_date_end_ce": 90,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Letter attributed to James; authorship and date are debated.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 20,
+      "historical_period": "The first disciples and the early Jerusalem community",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "diaspora_audience",
+      "historical_anchor": "A circular address to Jewish followers of the Lord living outside their homeland",
+      "historical_anchor_basis": "James 1:1 names the twelve tribes in the diaspora. Recent scholarship cautions that this does not prove the author was the Lord's brother or establish a Jerusalem origin; the historical situation is debated.",
+      "historical_subsequence": 25,
+      "historical_anchor_status": "geographic_audience_not_event",
+      "research_sources": [
+        {
+          "title": "James as a Diaspora Letter? A Reconsideration (2025)",
+          "url": "https://www.jstage.jst.go.jp/article/jsnts/53/0/53_31/_article/-char/en"
+        },
+        {
+          "title": "Diaspora Discourse: The Construction of Ethos in James",
+          "url": "https://www.cambridge.org/core/journals/new-testament-studies/article/abs/diaspora-discourse-the-construction-of-ethos-in-james/55842831E262E3D81892D8916E102858"
+        }
+      ]
+    },
+    {
       "id": "didache",
       "title": "Didache (Teaching of the Twelve Apostles)",
       "composition_date_start_ce": 90,
@@ -123,31 +153,17 @@
       "historical_sequence": 20,
       "historical_period": "The first disciples and the early Jerusalem community",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_20",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: The first disciples and the early Jerusalem community",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 920,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "james",
-      "title": "Letter of James",
-      "composition_date_start_ce": 60,
-      "composition_date_end_ce": 90,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Letter attributed to James; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 20,
-      "historical_period": "The first disciples and the early Jerusalem community",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_20",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: The first disciples and the early Jerusalem community",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 920,
-      "historical_anchor_status": "undetermined"
+      "historical_anchor_id": "community_instruction",
+      "historical_anchor": "Community instruction for worship, ethics, itinerant ministers and local leadership",
+      "historical_anchor_basis": "The text describes community roles and practices, including itinerant apostles and prophets (chapters 11–15), but identifies no single datable event. This is a broad historical setting, not a precise event date.",
+      "historical_subsequence": 26,
+      "historical_anchor_status": "undated_community_setting",
+      "research_sources": [
+        {
+          "title": "Oxford Bibliographies — Didache",
+          "url": "https://academic.oup.com/reference/62341/reference-article-abstract/561741752"
+        }
+      ]
     },
     {
       "id": "1_thessalonians",
@@ -188,6 +204,32 @@
       "historical_anchor_basis": "Authorship and relative order to 1 Thessalonians are disputed; grouped by community context.",
       "historical_subsequence": 31,
       "historical_anchor_status": "disputed_order"
+    },
+    {
+      "id": "galatians",
+      "title": "Galatians",
+      "composition_date_start_ce": 50,
+      "composition_date_end_ce": 55,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Letter attributed to Paul; date depends partly on the reconstruction of Paul's chronology.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "paul_jerusalem_antioch",
+      "historical_anchor": "Paul's Jerusalem meeting and confrontation with Peter at Antioch as recalled in Galatians 1–2",
+      "historical_anchor_basis": "The relation of Galatians 2:1–10 to the famine-relief visit in Acts 11 or the Jerusalem meeting in Acts 15 is disputed. The letter's own sequence is preserved without forcing an Acts correlation.",
+      "historical_subsequence": 32,
+      "historical_anchor_status": "internal_sequence_external_correlation_disputed",
+      "research_sources": [
+        {
+          "title": "Galatians — Baker Exegetical Commentary, introduction",
+          "url": "https://www.thetbs.org/study-materials/wp-content/uploads/2023/03/Galatians-Baker-Exegetical-Commentary-on-the-New-Testament-BECNT-by-Douglas-Moo-z-lib.org_.pdf"
+        }
+      ]
     },
     {
       "id": "paul_previous_corinthian_letter",
@@ -294,6 +336,36 @@
       "historical_anchor_status": "internal_future_reference"
     },
     {
+      "id": "1_peter",
+      "title": "1 Peter",
+      "composition_date_start_ce": 60,
+      "composition_date_end_ce": 100,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Letter attributed to Peter; authorship and date are debated.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "asia_minor_recipients",
+      "historical_anchor": "Communities addressed in Pontus, Galatia, Cappadocia, Asia and Bithynia",
+      "historical_anchor_basis": "The geographical addressees are explicit in 1 Peter 1:1. The letter's date, place of writing and whether the persecution references describe a specific imperial event remain disputed.",
+      "historical_subsequence": 55,
+      "historical_anchor_status": "geographic_audience_date_disputed",
+      "research_sources": [
+        {
+          "title": "The Setting for 1 Peter",
+          "url": "https://www.uibk.ac.at/iup/buch_pdfs/matthew_paul_others/10.152033187-66-5-12.pdf"
+        },
+        {
+          "title": "The Address of 1 Peter",
+          "url": "https://journals.sagepub.com/doi/10.1177/001452467808900805"
+        }
+      ]
+    },
+    {
       "id": "philemon",
       "title": "Philemon",
       "composition_date_start_ce": 55,
@@ -374,66 +446,6 @@
       "historical_anchor_status": "disputed_imprisonment_context"
     },
     {
-      "id": "1_peter",
-      "title": "1 Peter",
-      "composition_date_start_ce": 60,
-      "composition_date_end_ce": 100,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Letter attributed to Peter; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 30,
-      "historical_period": "The apostles' journeys and the mission among the nations",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_30",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: The apostles' journeys and the mission among the nations",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 930,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "galatians",
-      "title": "Galatians",
-      "composition_date_start_ce": 50,
-      "composition_date_end_ce": 55,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Letter attributed to Paul; date depends partly on the reconstruction of Paul's chronology.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 30,
-      "historical_period": "The apostles' journeys and the mission among the nations",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_30",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: The apostles' journeys and the mission among the nations",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 930,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "jude",
-      "title": "Jude",
-      "composition_date_start_ce": 70,
-      "composition_date_end_ce": 110,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Letter attributed to Jude; precise identity and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 30,
-      "historical_period": "The apostles' journeys and the mission among the nations",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_30",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: The apostles' journeys and the mission among the nations",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 930,
-      "historical_anchor_status": "undetermined"
-    },
-    {
       "id": "hebrews",
       "title": "Letter to the Hebrews",
       "composition_date_start_ce": 60,
@@ -447,11 +459,17 @@
       "historical_sequence": 30,
       "historical_period": "The apostles' journeys and the mission among the nations",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_30",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: The apostles' journeys and the mission among the nations",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 930,
-      "historical_anchor_status": "undetermined"
+      "historical_anchor_id": "community_suffering",
+      "historical_anchor": "A community recalling earlier suffering and facing renewed pressure",
+      "historical_anchor_basis": "Hebrews 10:32–34 recalls earlier public abuse, imprisonment and confiscation of property. The writing does not identify the city, date or a single external event.",
+      "historical_subsequence": 65,
+      "historical_anchor_status": "remembered_community_experience",
+      "research_sources": [
+        {
+          "title": "Hebrews — historical setting overview",
+          "url": "https://www.bibleodyssey.org/articles/hebrews/"
+        }
+      ]
     },
     {
       "id": "paul_laodicean_correspondence_referenced",
@@ -469,11 +487,187 @@
       "historical_sequence": 30,
       "historical_period": "The apostles' journeys and the mission among the nations",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_30",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: The apostles' journeys and the mission among the nations",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 930,
-      "historical_anchor_status": "undetermined"
+      "historical_anchor_id": "colossae_laodicea_exchange",
+      "historical_anchor": "A letter exchange between the Colossian and Laodicean communities",
+      "historical_anchor_basis": "Colossians 4:16 directs an exchange and public reading of letters. The identity and contents of the letter associated with Laodicea are not preserved.",
+      "historical_subsequence": 66,
+      "historical_anchor_status": "explicit_reference_unidentified"
+    },
+    {
+      "id": "jude",
+      "title": "Jude",
+      "composition_date_start_ce": 70,
+      "composition_date_end_ce": 110,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Letter attributed to Jude; precise identity and date are debated.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 30,
+      "historical_period": "The apostles' journeys and the mission among the nations",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "community_intruders",
+      "historical_anchor": "A conflict involving intruding teachers and disputed conduct in the addressed community",
+      "historical_anchor_basis": "Jude 4–19 describes the conflict that occasions the writing, but no location, journey or independently datable event is supplied.",
+      "historical_subsequence": 70,
+      "historical_anchor_status": "internal_conflict_no_external_date"
+    },
+    {
+      "id": "1_timothy",
+      "title": "1 Timothy",
+      "composition_date_start_ce": 80,
+      "composition_date_end_ce": 110,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "timothy_ephesus_paul_macedonia",
+      "historical_anchor": "Timothy's assignment in Ephesus while Paul is described as departing for Macedonia",
+      "historical_anchor_basis": "1 Timothy 1:3 supplies this travel setting directly. Its place in Paul's lifetime chronology depends on disputed authorship and on whether the itinerary belongs after Acts 28 or to another reconstruction.",
+      "historical_subsequence": 80,
+      "historical_anchor_status": "internal_travel_setting_disputed",
+      "research_sources": [
+        {
+          "title": "Pastoral Epistles — historical setting and destination",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Pastoral-Epistles"
+        }
+      ]
+    },
+    {
+      "id": "titus",
+      "title": "Titus",
+      "composition_date_start_ce": 80,
+      "composition_date_end_ce": 110,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "titus_crete_nicopolis",
+      "historical_anchor": "Titus left in Crete and Paul's stated plan to spend winter at Nicopolis",
+      "historical_anchor_basis": "Titus 1:5 and 3:12 give the itinerary in the letter. Its fit with the known Acts chronology depends on the disputed reconstruction of Paul's later travels and authorship.",
+      "historical_subsequence": 81,
+      "historical_anchor_status": "internal_itinerary_disputed",
+      "research_sources": [
+        {
+          "title": "Pastoral Epistles — historical setting and destination",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Pastoral-Epistles"
+        }
+      ]
+    },
+    {
+      "id": "2_timothy",
+      "title": "2 Timothy",
+      "composition_date_start_ce": 80,
+      "composition_date_end_ce": 110,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "paul_final_imprisonment_setting",
+      "historical_anchor": "Paul's imprisonment, anticipated death and requests for Timothy's visit",
+      "historical_anchor_basis": "2 Timothy 4:6–13 presents an imprisonment and final-departure setting, mentioning Troas and a request for Timothy to come. Its historical authenticity and chronology are disputed.",
+      "historical_subsequence": 82,
+      "historical_anchor_status": "internal_travel_and_imprisonment_setting_disputed",
+      "research_sources": [
+        {
+          "title": "Pastoral Epistles — historical setting and destination",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Pastoral-Epistles"
+        }
+      ]
+    },
+    {
+      "id": "1_john",
+      "title": "1 John",
+      "composition_date_start_ce": 90,
+      "composition_date_end_ce": 110,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Anonymous or Johannine-community writing; exact author is not named.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "community_secession",
+      "historical_anchor": "A dispute after some members departed from the addressed community",
+      "historical_anchor_basis": "1 John 2:18–19 explicitly refers to people who went out from the community. This anchors the writing to a reported division, without proving a particular location or date.",
+      "historical_subsequence": 85,
+      "historical_anchor_status": "internal_community_event",
+      "research_sources": [
+        {
+          "title": "Did the Johannine Community Exist?",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X19890490"
+        }
+      ]
+    },
+    {
+      "id": "2_john",
+      "title": "2 John",
+      "composition_date_start_ce": 90,
+      "composition_date_end_ce": 110,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Letter from 'the elder'; personal identity is not established by the text.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "elder_warning_letter",
+      "historical_anchor": "The Elder's warning to the chosen lady and her children about deceivers",
+      "historical_anchor_basis": "The text describes a specific warning and intended visit, but the recipient's identity, location and relation to 1 John are not securely established.",
+      "historical_subsequence": 86,
+      "historical_anchor_status": "internal_letter_context",
+      "research_sources": [
+        {
+          "title": "Did the Johannine Community Exist?",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X19890490"
+        }
+      ]
+    },
+    {
+      "id": "3_john",
+      "title": "3 John",
+      "composition_date_start_ce": 90,
+      "composition_date_end_ce": 110,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Letter from 'the elder'; personal identity is not established by the text.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "diotrephes_dispute",
+      "historical_anchor": "A local dispute involving Gaius, Diotrephes and Demetrius",
+      "historical_anchor_basis": "3 John 9–12 names the conflict and people involved. The place and date are not supplied, so the event is identifiable but not externally dated.",
+      "historical_subsequence": 87,
+      "historical_anchor_status": "named_internal_community_conflict",
+      "research_sources": [
+        {
+          "title": "Did the Johannine Community Exist?",
+          "url": "https://journals.sagepub.com/doi/10.1177/0142064X19890490"
+        }
+      ]
     },
     {
       "id": "revelation",
@@ -494,6 +688,26 @@
       "historical_anchor_basis": "Patmos is the stated setting; historical dating is disputed.",
       "historical_subsequence": 90,
       "historical_anchor_status": "stated_setting_date_disputed"
+    },
+    {
+      "id": "2_peter",
+      "title": "2 Peter",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 130,
+      "date_precision": "approximate scholarly range; debated",
+      "genre": "letter",
+      "attribution_status": "Letter attributed to Peter; authorship and date are debated.",
+      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
+      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
+      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
+      "historical_sequence": 40,
+      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "peter_farewell_setting",
+      "historical_anchor": "A farewell warning presented as Peter's final testimony before death",
+      "historical_anchor_basis": "The writing frames its message as a final reminder before departure (2 Peter 1:13–15). This is the text's claimed setting, not independent proof of authorship or a dated event.",
+      "historical_subsequence": 91,
+      "historical_anchor_status": "farewell_narrative_setting_disputed"
     },
     {
       "id": "papias_exposition",
@@ -527,126 +741,6 @@
       "historical_anchor_status": "later_collection"
     },
     {
-      "id": "1_john",
-      "title": "1 John",
-      "composition_date_start_ce": 90,
-      "composition_date_end_ce": 110,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Anonymous or Johannine-community writing; exact author is not named.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_40",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: Later apostolic ministry, imprisonment and final testimony",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 940,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "1_timothy",
-      "title": "1 Timothy",
-      "composition_date_start_ce": 80,
-      "composition_date_end_ce": 110,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_40",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: Later apostolic ministry, imprisonment and final testimony",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 940,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "2_john",
-      "title": "2 John",
-      "composition_date_start_ce": 90,
-      "composition_date_end_ce": 110,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Letter from 'the elder'; personal identity is not established by the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_40",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: Later apostolic ministry, imprisonment and final testimony",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 940,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "2_peter",
-      "title": "2 Peter",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 130,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Letter attributed to Peter; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_40",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: Later apostolic ministry, imprisonment and final testimony",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 940,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "2_timothy",
-      "title": "2 Timothy",
-      "composition_date_start_ce": 80,
-      "composition_date_end_ce": 110,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_40",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: Later apostolic ministry, imprisonment and final testimony",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 940,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "3_john",
-      "title": "3 John",
-      "composition_date_start_ce": 90,
-      "composition_date_end_ce": 110,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Letter from 'the elder'; personal identity is not established by the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_40",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: Later apostolic ministry, imprisonment and final testimony",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 940,
-      "historical_anchor_status": "undetermined"
-    },
-    {
       "id": "apocalypse_peter",
       "title": "Apocalypse of Peter",
       "composition_date_start_ce": 100,
@@ -658,26 +752,6 @@
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "apocalypse_peter",
-      "historical_sequence": 40,
-      "historical_period": "Later apostolic ministry, imprisonment and final testimony",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_40",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: Later apostolic ministry, imprisonment and final testimony",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 940,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "titus",
-      "title": "Titus",
-      "composition_date_start_ce": 80,
-      "composition_date_end_ce": 110,
-      "date_precision": "approximate scholarly range; debated",
-      "genre": "letter",
-      "attribution_status": "Pastoral letter attributed to Paul; authorship and date are debated.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage.",
-      "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
-      "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 40,
       "historical_period": "Later apostolic ministry, imprisonment and final testimony",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
@@ -707,6 +781,64 @@
       "historical_anchor_basis": "The letter describes a dispute and removal of presbyters; post-apostolic community context.",
       "historical_subsequence": 110,
       "historical_anchor_status": "community_event"
+    },
+    {
+      "id": "barnabas",
+      "title": "Epistle of Barnabas",
+      "composition_date_start_ce": 90,
+      "composition_date_end_ce": 110,
+      "date_precision": "provisional broad range; verify scholarly dating",
+      "genre": "instruction, letter, or related writing",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Greek text available offline in the archive from an edition; edition-derived text, not a new diplomatic transcription of Sinaiticus or PSI 7.757.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
+      "existing_catalogue_id": "barnabas",
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "temple_destruction_reflection",
+      "historical_anchor": "The destruction of the Jerusalem Temple in 70 CE as a past event interpreted by the author",
+      "historical_anchor_basis": "Epistle of Barnabas 16 refers to the Temple's destruction. The text therefore responds retrospectively to that event; the author's identity and exact later date remain uncertain.",
+      "historical_subsequence": 112,
+      "historical_anchor_status": "explicit_historical_event_reference",
+      "research_sources": [
+        {
+          "title": "Cambridge — Epistle of Barnabas, historical setting",
+          "url": "https://www.cambridge.org/highereducation/books/an-introduction-to-the-new-testament-and-the-origins-of-christianity/32A6751C4FE08D443DC4BDD934A3C343/relation-of-christianity-to-judaism-2-the-epistle-of-barnabas/8CFBFC873E049D17CE44BE51B169F8BC"
+        },
+        {
+          "title": "Epistle of Barnabas — dating and Temple reference",
+          "url": "https://heurist.huma-num.fr/heurist/judaism_and_rome/tpl/public-record/1327"
+        }
+      ]
+    },
+    {
+      "id": "hermas",
+      "title": "Shepherd of Hermas",
+      "composition_date_start_ce": 100,
+      "composition_date_end_ce": 199,
+      "date_precision": "provisional broad range; verify scholarly dating",
+      "genre": "instruction, letter, or related writing",
+      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
+      "textual_status": "Greek edition text available offline; not a full diplomatic transcription of all witnesses.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
+      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
+      "existing_catalogue_id": "hermas",
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "rome_community_setting",
+      "historical_anchor": "Hermas's experiences and revelations in a Roman Christian community",
+      "historical_anchor_basis": "The work names Rome-related circumstances and refers to Clement's role in sending writings to other cities (Vision 2.4.3). It is a developing collection of visions, commandments and parables, not one datable event.",
+      "historical_subsequence": 113,
+      "historical_anchor_status": "roman_community_context",
+      "research_sources": [
+        {
+          "title": "Oxford Bibliographies — Shepherd of Hermas",
+          "url": "https://academic.oup.com/reference/62341/reference-article-abstract/554114229"
+        }
+      ]
     },
     {
       "id": "ignatius_polycarp",
@@ -943,6 +1075,37 @@
       "historical_anchor_status": "narrated_event"
     },
     {
+      "id": "quadratus_apology",
+      "title": "Quadratus — Apology",
+      "composition_date_start_ce": 117,
+      "composition_date_end_ce": 130,
+      "date_precision": "Early second-century estimate; exact date uncertain",
+      "genre": "apology",
+      "attribution_status": "Attributed to Quadratus; only a brief fragment is preserved through Eusebius.",
+      "textual_status": "The work is lost apart from a short quotation. The quotation must remain linked to Eusebius as its transmitting source.",
+      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
+      "chronology_basis": "Approximate date inferred from the historical setting of Quadratus's reported address to Hadrian.",
+      "research_sources": [
+        {
+          "title": "Transformation of the Classical genre: Quadratus and beginnings of Christian apology",
+          "url": "https://www.journals.vu.lt/literatura/en/article/view/15812"
+        },
+        {
+          "title": "Eusebius, Church History 4.3",
+          "url": "https://www.ccel.org/ccel/schaff/npnf201.iii.ix.iii.html"
+        }
+      ],
+      "preservation_status": "fragmentary_quotation",
+      "historical_sequence": 50,
+      "historical_period": "The generation immediately following the apostles",
+      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
+      "historical_anchor_id": "hadrian_athens_visit",
+      "historical_anchor": "Quadratus's apology presented to Emperor Hadrian during his Athenian visit",
+      "historical_anchor_basis": "Eusebius associates the apology with Hadrian and dates the event in his Chronicle around 124–125 CE; scholarship notes uncertainty over the precise imperial visit and setting.",
+      "historical_subsequence": 150,
+      "historical_anchor_status": "ancient_reported_event_date_approximate"
+    },
+    {
       "id": "clement_2",
       "title": "2 Clement",
       "composition_date_start_ce": 100,
@@ -964,73 +1127,39 @@
       "historical_anchor_status": "undetermined"
     },
     {
-      "id": "barnabas",
-      "title": "Epistle of Barnabas",
-      "composition_date_start_ce": 90,
-      "composition_date_end_ce": 110,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "instruction, letter, or related writing",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek text available offline in the archive from an edition; edition-derived text, not a new diplomatic transcription of Sinaiticus or PSI 7.757.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "barnabas",
-      "historical_sequence": 50,
-      "historical_period": "The generation immediately following the apostles",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_50",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: The generation immediately following the apostles",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 950,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "quadratus_apology",
-      "title": "Quadratus — Apology",
-      "composition_date_start_ce": 117,
-      "composition_date_end_ce": 130,
-      "date_precision": "Early second-century estimate; exact date uncertain",
+      "id": "aristides_apology",
+      "title": "Apology of Aristides",
+      "composition_date_start_ce": 125,
+      "composition_date_end_ce": 140,
+      "date_precision": "Approximate early to mid-second-century date",
       "genre": "apology",
-      "attribution_status": "Attributed to Quadratus; only a brief fragment is preserved through Eusebius.",
-      "textual_status": "The work is lost apart from a short quotation. The quotation must remain linked to Eusebius as its transmitting source.",
+      "attribution_status": "Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison.",
+      "textual_status": "Survives through Syriac and Armenian transmission and a Greek fragment incorporated into the later Barlaam and Josaphat tradition; do not conflate these witnesses.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Approximate date inferred from the historical setting of Quadratus's reported address to Hadrian.",
+      "chronology_basis": "Composition date is approximate; language and date of surviving copies are separate evidence.",
       "research_sources": [
         {
-          "title": "Oxford Bibliographies — Apostolic Fathers",
-          "url": "https://academic.oup.com/reference/62341/reference-article-abstract/561741752"
+          "title": "Eusebius, Church History 4.3",
+          "url": "https://www.ccel.org/ccel/schaff/npnf201.iii.ix.iii.html"
+        },
+        {
+          "title": "Cambridge History of Early Christian Literature — Aristides",
+          "url": "https://www.cristoraul.org/ENGLISH/READINGHALL/CHRISTIANITY/nice-reading/The-Cambridge-History-of-Early-Christian-Literature.pdf"
+        },
+        {
+          "title": "Marcianus Aristides, On The Worship of God",
+          "url": "https://www.cambridge.org/core/journals/harvard-theological-review/article/abs/marcianus-aristides-on-the-worship-of-god/E82BA3C0F42673A88421E2B27B8575E4"
         }
       ],
-      "preservation_status": "fragmentary_quotation",
-      "historical_sequence": 50,
-      "historical_period": "The generation immediately following the apostles",
+      "preservation_status": "surviving_in_multiple_language_versions",
+      "historical_sequence": 60,
+      "historical_period": "Later accounts and writings about apostolic figures",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_50",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: The generation immediately following the apostles",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 950,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "hermas",
-      "title": "Shepherd of Hermas",
-      "composition_date_start_ce": 100,
-      "composition_date_end_ce": 199,
-      "date_precision": "provisional broad range; verify scholarly dating",
-      "genre": "instruction, letter, or related writing",
-      "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Greek edition text available offline; not a full diplomatic transcription of all witnesses.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
-      "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
-      "existing_catalogue_id": "hermas",
-      "historical_sequence": 50,
-      "historical_period": "The generation immediately following the apostles",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_50",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: The generation immediately following the apostles",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 950,
-      "historical_anchor_status": "undetermined"
+      "historical_anchor_id": "hadrian_apology_disputed",
+      "historical_anchor": "An apology associated by Eusebius with Hadrian",
+      "historical_anchor_basis": "Eusebius says Aristides addressed an apology to Hadrian, but the surviving Syriac form has a different imperial setting according to scholarly discussion. The historical address and textual forms must remain distinguished.",
+      "historical_subsequence": 151,
+      "historical_anchor_status": "attribution_and_historical_setting_disputed"
     },
     {
       "id": "gospel_thomas",
@@ -1263,33 +1392,6 @@
       "chronology_basis": "Date refers to the apocryphal composition, not to the date of any surviving manuscript witness.",
       "related_scriptural_reference": "",
       "preservation_status": "surviving_pseudepigraph",
-      "historical_sequence": 60,
-      "historical_period": "Later accounts and writings about apostolic figures",
-      "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
-      "historical_anchor_id": "unresolved_60",
-      "historical_anchor": "Not yet securely tied to a specific event; broad setting only: Later accounts and writings about apostolic figures",
-      "historical_anchor_basis": "Event-level placement is not established. This entry remains provisional rather than being assigned an invented event date.",
-      "historical_subsequence": 960,
-      "historical_anchor_status": "undetermined"
-    },
-    {
-      "id": "aristides_apology",
-      "title": "Apology of Aristides",
-      "composition_date_start_ce": 125,
-      "composition_date_end_ce": 140,
-      "date_precision": "Approximate early to mid-second-century date",
-      "genre": "apology",
-      "attribution_status": "Attributed to Aristides of Athens; the relationship among the Greek, Syriac, and Armenian forms requires textual comparison.",
-      "textual_status": "Survives through Syriac and Armenian transmission and a Greek fragment incorporated into the later Barlaam and Josaphat tradition; do not conflate these witnesses.",
-      "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
-      "chronology_basis": "Composition date is approximate; language and date of surviving copies are separate evidence.",
-      "research_sources": [
-        {
-          "title": "Early Christian Fathers — CCEL historical introduction",
-          "url": "https://ccel.org/ccel/richardson/fathers.v.i.html"
-        }
-      ],
-      "preservation_status": "surviving_in_multiple_language_versions",
       "historical_sequence": 60,
       "historical_period": "Later accounts and writings about apostolic figures",
       "historical_order_basis": "Broad event/context grouping for the events or historical setting represented; not a composition-date ranking. Exact placement remains provisional where the writing's setting is uncertain.",
