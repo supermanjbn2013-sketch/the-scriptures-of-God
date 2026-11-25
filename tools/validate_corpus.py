@@ -788,7 +788,9 @@ def validate_igntp():
     for record in manifest["files"]:
         assert record["license"] == "CC BY 4.0"
         assert record["source_archive"].startswith("https://itseeweb.cal.bham.ac.uk/")
-        assert record["xml_id"] and record["title"] and record["sha256"]
+        assert record.get("archive_member") and record.get("title") and record.get("sha256")
+        # Some valid provider TEI files have no xml:id on the root; archive member
+        # plus collection is the preserved source identity in those cases.
         path = ROOT / record["offline_asset"]
         assert path.is_file(), f"Missing IGNTP TEI asset: {record['offline_asset']}"
         raw = path.read_bytes()
