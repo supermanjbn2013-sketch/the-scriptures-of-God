@@ -123,7 +123,7 @@ public class MainActivity extends Activity {
 
     void renderUnifiedWritings(String query){
         content.addView(text("ONE HISTORICAL COLLECTION • ORDERED BY EVENTS",12,gold,true));
-        content.addView(text("This collection is not limited by the later 27-writing compilation. It includes writings attributed to apostles and disciples, works associated with their communities, and later works bearing their names. Inclusion does not establish authorship or authority. The list follows represented events and historical settings. Composition and manuscript dates are separate reference details.",13,muted,false));
+        content.addView(text("This collection is not limited by the later 27-writing compilation. It includes writings attributed to apostles and disciples, works associated with their communities, and later works bearing their names. Inclusion does not establish authorship or authority. The list follows represented events and historical settings. Equal event-order groups do not claim an exact order between their writings. Composition and manuscript dates are separate reference details.",13,muted,false));
         try{
             java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/unified_apostolic_disciple_writings.json"),"UTF-8"));
             StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
@@ -167,6 +167,7 @@ public class MainActivity extends Activity {
         detail.append("Historical event / setting: ").append(record.optString("historical_anchor","Not established")).append("\n");
         detail.append("Event-order evidence: ").append(record.optString("historical_anchor_basis","Not specified")).append("\n");
         detail.append("Event-order status: ").append(record.optString("historical_anchor_status","Not specified")).append("\n");
+        detail.append("Relative-order note: ").append(record.optString("historical_order_note","No exact relative order established")).append("\n");
         detail.append("Historical order basis: ").append(record.optString("historical_order_basis","Not specified")).append("\n");
         detail.append("Estimated composition: ").append(date).append("\n");
         detail.append("Date note: ").append(record.optString("date_precision")).append("\n\n");
