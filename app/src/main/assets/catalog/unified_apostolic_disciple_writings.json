@@ -343,9 +343,9 @@
           "date": "Third century CE",
           "provenance": "Egypt; exact findspot uncertain",
           "current_location": "Chester Beatty Library, Dublin, Ireland, and Austrian National Library, Vienna, Austria",
-          "contents": "Fragmentary portions of Matthew, Mark, Luke, John, and Acts",
+          "contents": "The surviving P45 portions of Mark are Mark 4:36–40; 5:15–26; 5:38–6:3, 16–25, 36–50; 7:3–15; 7:25–8:1, 10–26; 8:34–9:9, 18–31; 11:27–12:1, 5–8, 13–19, 24–28. These are fragmentary representations; many verses survive only in part.",
           "physical_extent": "About 30 leaves survive from a much larger original codex; many surviving leaves are badly damaged and preserve only portions of lines",
-          "text_status": "Fragmentary Greek witness to the four Gospel narratives and Acts. Verse lists indicate partial representation only; they do not mean each verse is complete.",
+          "text_status": "Third-century Greek papyrus witness. The Mark passages listed are represented only in surviving fragments and damaged leaves; a verse range does not imply that every word or line survives. No diplomatic Greek transcription is supplied in this record.",
           "source_references": [
             {
               "title": "CSNTM — P45 manuscript images and description",
@@ -358,12 +358,30 @@
             {
               "title": "INTF New Testament Virtual Manuscript Room",
               "url": "https://ntvmr.uni-muenster.de/"
+            },
+            {
+              "title": "Peter M. Head, The Gospel of Mark in Codex Sinaiticus: Textual and Reception-Historical Considerations (2008), manuscript discussion of P45",
+              "url": "https://jbtc.org/v13/Head2008.pdf"
             }
           ],
           "transcription_note": "Manuscript inventory and coverage metadata only; no diplomatic Greek text is asserted in this record yet."
         }
       ],
-      "description": "Gospel of Mark is a gospel writing in the Unified Apostolic and Disciple collection. Anonymous narrative traditionally associated with Mark; authorship is not stated in the text. SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. The catalogue identifies 1 manuscript or transmission witness record(s); their dates, languages, extent, and textual limits are kept separate."
+      "description": "The Gospel of Mark is an anonymous narrative traditionally associated with Mark; the text itself does not name its author. Its early Greek manuscript evidence includes P45, a third-century papyrus codex that also contained portions of Matthew, Luke, John, and Acts. The surviving Mark portions are scattered and fragmentary, so the archive identifies represented passages without implying that complete verses or continuous chapters survive.",
+      "surviving_fragments": [
+        {
+          "fragment_id": "Mark-P45-Chester-Beatty-I",
+          "transmitting_author": "Anonymous Gospel of Mark; surviving in the third-century Greek papyrus codex P45",
+          "source_work": "Gospel of Mark",
+          "passage": "Mark 4:36–40; 5:15–26; 5:38–6:3, 16–25, 36–50; 7:3–15; 7:25–8:1, 10–26; 8:34–9:9, 18–31; 11:27–12:1, 5–8, 13–19, 24–28",
+          "language_of_surviving_source": "Greek",
+          "content_scope": "The extant Mark portions include episodes from the Lord's ministry: the stilling of the storm; healings and restorations; the sending and reception of the Twelve; the feeding narratives; disputes and teachings; and material from the final Jerusalem period. The passage list identifies verses represented at least in part, not continuous or complete text.",
+          "status": "P45 is a single third-century papyrus codex containing portions of all four Gospel narratives and Acts. Approximately thirty leaves survive from a much larger original codex, and many are damaged. The Mark passage ranges are fragmentary; they must not be presented as complete chapters or continuous text.",
+          "english_paraphrase": "The surviving Mark fragments preserve portions of several episodes in the Lord's ministry, including the storm at sea, healings, the sending of the Twelve, the feeding accounts, disputes and teaching, and events in Jerusalem. This is only a thematic guide to the passages represented; it does not fill gaps or reproduce wording absent from the papyrus.",
+          "text_type": "Editorial content summary based on the published list of surviving passages. It is not a verbatim translation, a reconstruction of missing lines, or a diplomatic transcription of P45.",
+          "source_url": "https://jbtc.org/v13/Head2008.pdf"
+        }
+      ]
     },
     {
       "id": "matthew",
