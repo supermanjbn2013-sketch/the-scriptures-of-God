@@ -130,7 +130,7 @@ public class MainActivity extends Activity {
             org.json.JSONArray records=new org.json.JSONObject(raw.toString()).getJSONArray("records");
             java.util.ArrayList<org.json.JSONObject> ordered=new java.util.ArrayList<>();
             for(int i=0;i<records.length();i++)ordered.add(records.getJSONObject(i));
-            java.util.Collections.sort(ordered,(a,b)->Integer.compare(a.optInt("historical_sequence",999),b.optInt("historical_sequence",999)));
+            java.util.Collections.sort(ordered,(a,b)->(a.optInt("historical_sequence",999)!=b.optInt("historical_sequence",999)?Integer.compare(a.optInt("historical_sequence",999),b.optInt("historical_sequence",999)):a.optString("title","").compareToIgnoreCase(b.optString("title","")) ));
             int shown=0;
             for(int i=0;i<ordered.size();i++){
                 org.json.JSONObject record=ordered.get(i);

@@ -709,7 +709,7 @@ def validate_witness_registers():
     unified_ids = [x["id"] for x in unified["records"]]
     assert len(unified_ids) == len(set(unified_ids)), "Duplicate unified writing identities"
     assert len(unified["records"]) > 27, "Unified collection must extend beyond the 27-item source dataset"
-    assert unified["records"] == sorted(unified["records"], key=lambda r: r.get("historical_sequence", 999)), "Unified writings are not sorted by historical event sequence"
+    assert unified["records"] == sorted(unified["records"], key=lambda r: (r.get("historical_sequence", 999), r["title"].casefold())), "Unified writings are not sorted by historical event sequence"
     for record in unified["records"]:
         start = record.get("composition_date_start_ce")
         end = record.get("composition_date_end_ce")
