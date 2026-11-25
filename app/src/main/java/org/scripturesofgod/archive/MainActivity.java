@@ -147,59 +147,121 @@ public class MainActivity extends Activity {
     }
 
     void showUnifiedWritingDetail(org.json.JSONObject record){
+        String title=record.optString("title","Writing");
+        new android.app.AlertDialog.Builder(this)
+            .setTitle(title)
+            .setMessage("Choose what you want to open. The English reading and the research material are kept separate.")
+            .setPositiveButton("Read the complete English text",(dialog,which)->showUnifiedEnglishReading(record))
+            .setNegativeButton("Study and manuscript evidence",(dialog,which)->showUnifiedWritingStudy(record))
+            .setNeutralButton("Close",null)
+            .show();
+    }
+
+    void showUnifiedEnglishReading(org.json.JSONObject record){
+        String writingId=record.optString("id","");
+        String title=record.optString("title","Writing");
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/unified_readings.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;
+            while((line=reader.readLine())!=null)raw.append(line);
+            reader.close();
+            org.json.JSONObject rootObject=new org.json.JSONObject(raw.toString());
+            org.json.JSONArray readings=rootObject.optJSONArray("readings");
+            org.json.JSONObject selected=null;
+            if(readings!=null)for(int i=0;i<readings.length();i++){
+                org.json.JSONObject candidate=readings.optJSONObject(i);
+                if(candidate!=null&&writingId.equals(candidate.optString("writing_id",""))){selected=candidate;break;}
+            }
+            if(selected==null||selected.optString("english_text","").trim().isEmpty()){
+                showInfo("English reading not yet complete",
+                    "The complete English reading for "+title+" has not yet been added and verified. This entry currently contains research and manuscript records only. No missing wording will be invented or silently filled.");
+                return;
+            }
+            String readingText=selected.optString("english_text","");
+            TextView heading=text(title,21,gold,true);
+            TextView passage=text(readingText,18,ink,false);
+            passage.setTextIsSelectable(true);
+            passage.setLineSpacing(5f,1.12f);
+            int fontSize=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",18);
+            passage.setTextSize(fontSize);
+            LinearLayout readingLayout=new LinearLayout(this);
+            readingLayout.setOrientation(1);
+            readingLayout.setPadding(8,8,8,16);
+            readingLayout.addView(heading);
+            readingLayout.addView(passage);
+            ScrollView scroll=new ScrollView(this);
+            scroll.setPadding(10,8,10,8);
+            scroll.addView(readingLayout);
+            String attribution=selected.optString("reading_source_note","");
+            android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this)
+                .setTitle("English reading")
+                .setView(scroll)
+                .setPositiveButton("Close",null);
+            if(!attribution.isEmpty())builder.setNeutralButton("Text source",(dialog,which)->showInfo("Reading source",attribution));
+            builder.show();
+        }catch(Exception e){
+            showInfo("English reading not yet available",
+                "The separate reading-text archive could not provide a verified complete English text for "+title+". Research descriptions and manuscript notes are not substituted for the actual reading.");
+        }
+    }
+
+    void showUnifiedWritingStudy(org.json.JSONObject record){
         StringBuilder detail=new StringBuilder();
-        detail.append(record.optString("description","Description not yet available.")).append("\n\n");
-        detail.append("Historical setting: ").append(record.optString("historical_anchor","Not established")).append("\n");
+        detail.append(record.optString("description","Description not yet available.")).append("\\n\\n");
+        detail.append("Historical setting: ").append(record.optString("historical_anchor","Not established")).append("\\n");
         boolean hasDate=!record.isNull("composition_date_start_ce")&&!record.isNull("composition_date_end_ce");
         String date=hasDate?(record.optInt("composition_date_start_ce")==record.optInt("composition_date_end_ce")?record.optInt("composition_date_start_ce")+" CE":record.optInt("composition_date_start_ce")+"–"+record.optInt("composition_date_end_ce")+" CE"):"Undetermined";
-        detail.append("Estimated composition: ").append(date).append("\n");
-        detail.append("Genre: ").append(record.optString("genre","Not classified")).append("\n");
-        detail.append("Attribution and authorship: ").append(record.optString("attribution_status","Not established")).append("\n\n");
-        detail.append("Textual and preservation status: ").append(record.optString("textual_status","Not documented")).append("\n");
-        detail.append("Preservation category: ").append(record.optString("preservation_status","Not classified")).append("\n");
-        detail.append("Collection relationship: ").append(record.optString("scope_relationship","Not classified")).append("\n");
-        if(!record.optString("related_scriptural_reference","").isEmpty())detail.append("Related reference: ").append(record.optString("related_scriptural_reference")).append("\n");
+        detail.append("Estimated composition: ").append(date).append("\\n");
+        detail.append("Genre: ").append(record.optString("genre","Not classified")).append("\\n");
+        detail.append("Attribution and authorship: ").append(record.optString("attribution_status","Not established")).append("\\n\\n");
+        detail.append("Textual and preservation status: ").append(record.optString("textual_status","Not documented")).append("\\n");
+        detail.append("Preservation category: ").append(record.optString("preservation_status","Not classified")).append("\\n");
+        detail.append("Collection relationship: ").append(record.optString("scope_relationship","Not classified")).append("\\n");
+        if(!record.optString("related_scriptural_reference","").isEmpty())detail.append("Related reference: ").append(record.optString("related_scriptural_reference")).append("\\n");
         org.json.JSONArray fragments=record.optJSONArray("surviving_fragments");
         if(fragments!=null&&fragments.length()>0){
-            detail.append("\nSURVIVING FRAGMENTS AND ANCIENT CITATIONS\n");
+            detail.append("\\nSURVIVING FRAGMENTS AND ANCIENT CITATIONS\\n");
             for(int i=0;i<fragments.length();i++){
                 org.json.JSONObject fragment=fragments.optJSONObject(i);if(fragment==null)continue;
-                detail.append("\n").append(fragment.optString("fragment_id","Fragment")).append("\n");
+                detail.append("\\n").append(fragment.optString("fragment_id","Fragment")).append("\\n");
                 for(String key:new String[]{"transmitting_author","source_work","passage","language_of_surviving_source","content_scope","status"}){
-                    String value=fragment.optString(key,"");if(!value.isEmpty())detail.append(key.replace("_"," ")).append(": ").append(value).append("\n");
+                    String value=fragment.optString(key,"");if(!value.isEmpty())detail.append(key.replace("_"," ")).append(": ").append(value).append("\\n");
                 }
                 String fragmentText=fragment.optString("english_paraphrase","");
-                if(!fragmentText.isEmpty())detail.append("Surviving content (English paraphrase):\n").append(fragmentText).append("\n");
-                String fragmentType=fragment.optString("text_type","");if(!fragmentType.isEmpty())detail.append("Text note: ").append(fragmentType).append("\n");
-                String fragmentSource=fragment.optString("source_url","");if(!fragmentSource.isEmpty())detail.append("Fragment source: ").append(fragmentSource).append("\n");
+                if(!fragmentText.isEmpty())detail.append("Study summary (not the text):\\n").append(fragmentText).append("\\n");
+                String fragmentType=fragment.optString("text_type","");if(!fragmentType.isEmpty())detail.append("Text note: ").append(fragmentType).append("\\n");
+                String fragmentSource=fragment.optString("source_url","");if(!fragmentSource.isEmpty())detail.append("Fragment source: ").append(fragmentSource).append("\\n");
             }
         }
         org.json.JSONArray witnesses=record.optJSONArray("manuscript_witnesses");
         if(witnesses!=null&&witnesses.length()>0){
-            detail.append("\nMANUSCRIPT AND TRANSMISSION WITNESSES\n");
+            detail.append("\\nMANUSCRIPT AND TRANSMISSION WITNESSES\\n");
             for(int i=0;i<witnesses.length();i++){
                 org.json.JSONObject w=witnesses.optJSONObject(i);if(w==null)continue;
-                detail.append("\n").append(w.optString("siglum",w.optString("id",w.optString("name","Witness")))).append("\n");
+                detail.append("\\n").append(w.optString("siglum",w.optString("id",w.optString("name","Witness")))).append("\\n");
                 for(String key:new String[]{"shelfmark","writing","material","date","provenance","current_location","contents","text_status","transcription_note","lacuna_policy","rights_note"}){
-                    String value=w.optString(key,"");if(!value.isEmpty())detail.append(key.replace("_"," ")).append(": ").append(value).append("\n");
+                    String value=w.optString(key,"");if(!value.isEmpty())detail.append(key.replace("_"," ")).append(": ").append(value).append("\\n");
                 }
                 org.json.JSONArray greek=w.optJSONArray("greek_transcription_lines");if(greek==null)greek=w.optJSONArray("greek_transcription_lines_recto");
-                if(greek!=null&&greek.length()>0){detail.append("Greek transcription (as recorded):\n");for(int k=0;k<greek.length();k++)detail.append(greek.optString(k)).append("\n");}
+                if(greek!=null&&greek.length()>0){detail.append("Greek transcription (as recorded):\\n");for(int k=0;k<greek.length();k++)detail.append(greek.optString(k)).append("\\n");}
                 org.json.JSONArray verso=w.optJSONArray("greek_transcription_lines_verso");
-                if(verso!=null&&verso.length()>0){detail.append("Greek transcription, verso:\n");for(int k=0;k<verso.length();k++)detail.append(verso.optString(k)).append("\n");}
-                for(String key:new String[]{"english_translation","english_translation_recto","english_translation_verso","translation_note"}){String value=w.optString(key,"");if(!value.isEmpty())detail.append(key.replace("_"," ")).append(":\n").append(value).append("\n");}
-                org.json.JSONArray translations=w.optJSONArray("english_translation_lines");if(translations!=null&&translations.length()>0){detail.append("English rendering:\n");for(int k=0;k<translations.length();k++)detail.append(translations.optString(k)).append("\n");}
+                if(verso!=null&&verso.length()>0){detail.append("Greek transcription, verso:\\n");for(int k=0;k<verso.length();k++)detail.append(verso.optString(k)).append("\\n");}
+                for(String key:new String[]{"english_translation","english_translation_recto","english_translation_verso","translation_note"}){
+                    String value=w.optString(key,"");if(!value.isEmpty())detail.append(key.replace("_"," ")+":\\n").append(value).append("\\n");
+                }
+                org.json.JSONArray translations=w.optJSONArray("english_translation_lines");
+                if(translations!=null&&translations.length()>0){detail.append("English rendering of this witness excerpt:\\n");for(int k=0;k<translations.length();k++)detail.append(translations.optString(k)).append("\\n");}
                 org.json.JSONArray srcs=w.optJSONArray("sources");if(srcs==null)srcs=w.optJSONArray("source_references");
-                if(srcs!=null)for(int k=0;k<srcs.length();k++){org.json.JSONObject src=srcs.optJSONObject(k);if(src!=null)detail.append("Source: ").append(src.optString("title","Reference")).append(" ").append(src.optString("url","")).append("\n");}
-                String source=w.optString("source","");if(!source.isEmpty())detail.append("Source: ").append(source).append("\n");
+                if(srcs!=null)for(int k=0;k<srcs.length();k++){org.json.JSONObject src=srcs.optJSONObject(k);if(src!=null)detail.append("Source: ").append(src.optString("title","Reference")).append(" ").append(src.optString("url","")).append("\\n");}
+                String source=w.optString("source","");if(!source.isEmpty())detail.append("Source: ").append(source).append("\\n");
             }
         }
         org.json.JSONArray sources=record.optJSONArray("research_sources");
-        if(sources!=null&&sources.length()>0){detail.append("\nRESEARCH REFERENCES\n");for(int i=0;i<sources.length();i++){org.json.JSONObject source=sources.optJSONObject(i);if(source!=null)detail.append(source.optString("title","Source")).append("\n").append(source.optString("url","")).append("\n");}}
+        if(sources!=null&&sources.length()>0){detail.append("\\nRESEARCH REFERENCES\\n");for(int i=0;i<sources.length();i++){org.json.JSONObject source=sources.optJSONObject(i);if(source!=null)detail.append(source.optString("title","Source")).append("\\n").append(source.optString("url","")).append("\\n");}}
         TextView view=text(detail.toString(),14,ink,false);view.setTextIsSelectable(true);
         android.text.util.Linkify.addLinks(view,android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
         ScrollView scroll=new ScrollView(this);scroll.setPadding(12,8,12,8);scroll.addView(view);
-        new android.app.AlertDialog.Builder(this).setTitle(record.optString("title","Writing")).setView(scroll).setPositiveButton("Close",null).show();
+        new android.app.AlertDialog.Builder(this).setTitle(record.optString("title","Study and manuscript evidence")).setView(scroll).setPositiveButton("Close",null).show();
     }
 
     String libraryCategory="Bookmarks";
