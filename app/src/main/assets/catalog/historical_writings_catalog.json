@@ -14,6 +14,10 @@
     {
       "id": "early_gospels",
       "name": "Early Christian Gospels and Related Writings"
+    },
+    {
+      "id": "later_antiochene_writer",
+      "name": "Later Early Christian Writers"
     }
   ],
   "records": [
@@ -344,6 +348,29 @@
       "note": "The Ethiopic text survives in a later versional tradition; do not claim that the Akhmim fragment is the only witness or merge the two forms without apparatus.",
       "sources": [
         "https://www.earlychristianwritings.com/apocalypsepeter.html"
+      ]
+    },
+    {
+      "id": "theophilus_of_antioch",
+      "title": "Theophilus of Antioch — To Autolycus (Three Books)",
+      "category": "later_antiochene_writer",
+      "reference": "No claim that this work is an apostolic or disciple writing.",
+      "preservation": "Greek text survives through a medieval manuscript tradition; the oldest independently valuable witness is Venetus Marcianus graecus 496, dated to the 11th century. Later copies are dependent witnesses.",
+      "languages": [
+        "Greek"
+      ],
+      "date": "Books 1–2 likely earlier; Book 3 after 180 CE. Commonly placed around 180–185 CE; exact dating is debated.",
+      "witnesses": [
+        "Venetus Marcianus graecus 496 (11th century; principal independent witness)",
+        "Two later manuscript copies, one incomplete, reported as dependent on the principal witness"
+      ],
+      "text_status": "Three books survive in Greek. This is a later second-century Christian apologetic writing, not a manuscript of the apostolic writings. A separate English translation may be provided with its edition and translator identified.",
+      "note": "Attributed to Theophilus, bishop of Antioch in the later second century. The work is addressed to Autolycus. In Book II, chapters 15 and 18, Theophilus uses the Greek term trias for God, the Word, and Wisdom. This terminology should be presented in its own historical context and must not be silently equated with later Nicene or fully developed Trinitarian formulations. Theophilus is not classified as an apostle or one of the original disciples; this record belongs only in the separate later-writers archive.",
+      "sources": [
+        "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/E6D74F9BBBFFBA26F468F42420E68CDB/S0017816000026420a.pdf/theophilus-of-antioch-to-autolycus.pdf",
+        "https://api.repository.cam.ac.uk/server/api/core/bitstreams/a08f3516-fe5c-4909-8690-efc7e2fb3960/content",
+        "https://mignereadingroom.org/PG/6/ad_autolycum/",
+        "https://adfonteslibrary.org/work-theophilus-autolycus"
       ]
     }
   ]
