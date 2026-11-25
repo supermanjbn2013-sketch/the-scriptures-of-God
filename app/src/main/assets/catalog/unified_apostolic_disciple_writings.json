@@ -747,7 +747,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "epistle-framed revelatory dialogue",
       "attribution_status": "Anonymous work framed as a letter from Peter to Philip; framing does not authenticate authorship.",
-      "textual_status": "Coptic witnesses in Nag Hammadi Codex VIII and Codex Tchacos; preserve variants.",
+      "textual_status": "Coptic witnesses in Nag Hammadi Codex VIII and Codex Tchacos; preserve variants. Witness metadata added; no unverified transcription or translation has been inserted.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 15,
@@ -766,7 +766,20 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/epistle-of-peter-to-philip/"
         }
       ],
-      "preservation_status": "surviving_in_two_coptic_manuscripts"
+      "preservation_status": "surviving_in_two_coptic_manuscripts",
+      "manuscript_witnesses": [
+        {
+          "id": "NHC_VIII_2",
+          "siglum": "Nag Hammadi Codex VIII, tractate 2",
+          "writing": "Coptic",
+          "material": "papyrus codex",
+          "date": "Fourth century CE",
+          "provenance": "Jabal al-Tarif, near Nag Hammadi, Egypt",
+          "contents": "Letter of Peter to Philip",
+          "text_status": "Primary Coptic witness; preserve its readings separately from the Codex Tchacos witness.",
+          "source": "https://www.cambridge.org/core/books/nag-hammadi-codices-and-their-ancient-readers/introduction/333084781B98EFDB225C0C6EC60D1F84"
+        }
+      ]
     },
     {
       "id": "gospel_mary",
@@ -2464,7 +2477,7 @@
       "date_precision": "provisional broad range; verify scholarly dating",
       "genre": "instruction, letter, or related writing",
       "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Catalogue entry; a dedicated witness-by-witness text import is not yet implemented.",
+      "textual_status": "Witnesses recorded separately: fifth-century Codex Alexandrinus (partial Greek), 1056 Codex Hierosolymitanus 54, fourth-century Coptic Berlin codex, fifth-century Coptic papyrus fragments, and Syriac transmission. This is manuscript coverage metadata, not a new diplomatic transcription. Witness metadata added; no unverified transcription or translation has been inserted.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "clement_1",
@@ -2487,6 +2500,60 @@
         {
           "title": "David Lincicum, Two Overlooked Greek Manuscripts of 1 Clement (2019)",
           "url": "https://www.academia.edu/39503798/Two_Overlooked_Greek_Manuscripts_of_1_Clement_submitted_version"
+        }
+      ],
+      "manuscript_witnesses": [
+        {
+          "id": "Alexandrinus",
+          "siglum": "Codex Alexandrinus",
+          "shelfmark": "British Library Royal MS 1 D VIII",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Fifth century CE",
+          "contents": "1 Clement 1.1–57.6 and 63.3–65.2; 2 Clement 1.1–12.5",
+          "text_status": "Important Greek witness, but portions of both writings are absent from this codex.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        },
+        {
+          "id": "Hierosolymitanus_54",
+          "siglum": "H54",
+          "shelfmark": "Jerusalem, Library of the Greek Patriarchate, Panagios Taphos 54",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "1056 CE",
+          "contents": "1 Clement folios 51v–70r; 2 Clement folios 70r–76r",
+          "text_status": "Continuous later Greek witness to both writings.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        },
+        {
+          "id": "Berlin_orient_3065",
+          "shelfmark": "Berlin Staatsbibliothek, orient. fol. 3065",
+          "writing": "Coptic",
+          "material": "parchment codex",
+          "date": "Fourth century CE",
+          "contents": "1 Clement 1.1–35.5 and 42.5–65.2",
+          "text_status": "Coptic version with gaps; not Greek manuscript text.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        },
+        {
+          "id": "Cambridge_Add_1700",
+          "shelfmark": "Cambridge University Library, Add. 1700",
+          "writing": "Syriac",
+          "material": "manuscript codex",
+          "date": "1170 CE",
+          "contents": "1 Clement and 2 Clement",
+          "text_status": "Syriac versional witness; keep separate from Greek witnesses.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        },
+        {
+          "id": "Strasbourg_Coptic_fragments",
+          "shelfmark": "Strasbourg BNU P. Copt. 375–379 et al.",
+          "writing": "Coptic",
+          "material": "papyrus fragments",
+          "date": "Fifth century CE",
+          "contents": "Fragments of 1 Clement 1.1–26.2",
+          "text_status": "Fragmentary Coptic witness.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
         }
       ]
     },
@@ -2661,7 +2728,19 @@
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
       "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters.",
-      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts",
+      "manuscript_witnesses": [
+        {
+          "id": "Mediceo_Laurentianus_57_7",
+          "siglum": "Codex Mediceo-Laurentianus 57.7",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Eleventh century CE",
+          "contents": "Middle recension of six Ignatian letters",
+          "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
+          "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
+        }
+      ]
     },
     {
       "id": "ignatius_magnesians",
@@ -2698,7 +2777,19 @@
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
       "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters.",
-      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts",
+      "manuscript_witnesses": [
+        {
+          "id": "Mediceo_Laurentianus_57_7",
+          "siglum": "Codex Mediceo-Laurentianus 57.7",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Eleventh century CE",
+          "contents": "Middle recension of six Ignatian letters",
+          "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
+          "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
+        }
+      ]
     },
     {
       "id": "ignatius_romans",
@@ -2735,7 +2826,19 @@
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
       "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters.",
-      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts",
+      "manuscript_witnesses": [
+        {
+          "id": "Mediceo_Laurentianus_57_7",
+          "siglum": "Codex Mediceo-Laurentianus 57.7",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Eleventh century CE",
+          "contents": "Middle recension of six Ignatian letters",
+          "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
+          "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
+        }
+      ]
     },
     {
       "id": "ignatius_trallians",
@@ -2772,7 +2875,19 @@
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
       "historical_order_note": "Placed before the Troas dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the four Smyrna letters.",
-      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts",
+      "manuscript_witnesses": [
+        {
+          "id": "Mediceo_Laurentianus_57_7",
+          "siglum": "Codex Mediceo-Laurentianus 57.7",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Eleventh century CE",
+          "contents": "Middle recension of six Ignatian letters",
+          "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
+          "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
+        }
+      ]
     },
     {
       "id": "ignatius_polycarp",
@@ -2809,7 +2924,19 @@
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
       "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters.",
-      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts",
+      "manuscript_witnesses": [
+        {
+          "id": "Mediceo_Laurentianus_57_7",
+          "siglum": "Codex Mediceo-Laurentianus 57.7",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Eleventh century CE",
+          "contents": "Middle recension of six Ignatian letters",
+          "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
+          "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
+        }
+      ]
     },
     {
       "id": "ignatius_philadelphians",
@@ -2846,7 +2973,19 @@
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
       "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters.",
-      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts",
+      "manuscript_witnesses": [
+        {
+          "id": "Mediceo_Laurentianus_57_7",
+          "siglum": "Codex Mediceo-Laurentianus 57.7",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Eleventh century CE",
+          "contents": "Middle recension of six Ignatian letters",
+          "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
+          "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
+        }
+      ]
     },
     {
       "id": "ignatius_smyrnaeans",
@@ -2883,7 +3022,29 @@
       "historical_anchor_status": "journey_stage_internal_order_unresolved",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
       "historical_order_note": "Placed after the Smyrna dispatches because Ignatius's route proceeds from Smyrna to Troas. No exact order is claimed among the three Troas letters.",
-      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts"
+      "preservation_status": "surviving_in_multiple_recensions_and_manuscripts",
+      "manuscript_witnesses": [
+        {
+          "id": "Mediceo_Laurentianus_57_7",
+          "siglum": "Codex Mediceo-Laurentianus 57.7",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Eleventh century CE",
+          "contents": "Middle recension of six Ignatian letters",
+          "text_status": "Principal Greek witness to the middle recension; not evidence for every letter or every recension.",
+          "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
+        },
+        {
+          "id": "Berlin_10581",
+          "shelfmark": "Papyrus Berlin 10581",
+          "writing": "Coptic",
+          "material": "papyrus fragments",
+          "date": "Fifth century CE",
+          "contents": "Fragments of the Letter to the Smyrnaeans",
+          "text_status": "Fragmentary versional witness; it does not preserve the full Greek text.",
+          "source": "https://christearlychurch.co.uk/text/the-seven-epistles-of-ignatius/"
+        }
+      ]
     },
     {
       "id": "aristides_apology",
@@ -2930,7 +3091,7 @@
       "date_precision": "Broad scholarly range; unity and dating debated",
       "genre": "letter",
       "attribution_status": "Attributed to Polycarp of Smyrna; whether the text combines more than one letter is debated.",
-      "textual_status": "Greek text survives incompletely in the principal Greek witness; a Latin version preserves additional material. Witnesses and possible letter-division must be recorded separately.",
+      "textual_status": "Greek text survives incompletely in the principal Greek witness; a Latin version preserves additional material. Witnesses and possible letter-division must be recorded separately. Witnesses now distinguish the Greek Vat. gr. 859, Eusebius quotation in Paris gr. 1431, and Latin Reg. lat. 81; Greek chapters 10–14 are not extant in the Greek manuscript tradition. Witness metadata added; no unverified transcription or translation has been inserted.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Cambridge scholarship notes a range around 110–140 depending on the unity of the letter.",
       "research_sources": [
@@ -2949,7 +3110,39 @@
       "historical_anchor_status": "relative_reference",
       "scope_relationship": "attributed_to_or_associated_with_early_disciple",
       "historical_order_note": "The approximate settings overlap in the early-to-mid second century; the sources do not establish which event should be placed first.",
-      "preservation_status": "surviving_in_incomplete_greek_and_latin_witnesses"
+      "preservation_status": "surviving_in_incomplete_greek_and_latin_witnesses",
+      "manuscript_witnesses": [
+        {
+          "id": "Vat_gr_859",
+          "shelfmark": "Vatican, Biblioteca Apostolica Vaticana, Vat. gr. 859, fols. 195r–198r",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "End of twelfth century CE",
+          "contents": "Greek text of chapters 1–9",
+          "text_status": "Principal Greek witness; Greek transmission is defective after chapter 9.",
+          "source": "https://theosislibrary.com/library/verified-polycarp-philippians"
+        },
+        {
+          "id": "Paris_gr_1431",
+          "shelfmark": "Paris, BnF, grec 1431, fol. 78v",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Eleventh century CE",
+          "contents": "Eusebius quotation preserving Polycarp Philippians 9 and 13",
+          "text_status": "Indirect Greek witness through Eusebius, not a direct continuous copy of the letter.",
+          "source": "https://theosislibrary.com/library/verified-polycarp-philippians"
+        },
+        {
+          "id": "Reg_lat_81",
+          "shelfmark": "Vatican, Reg. lat. 81, fols. 89r–95r",
+          "writing": "Latin",
+          "material": "parchment codex",
+          "date": "Ninth century CE",
+          "contents": "Latin version preserving chapters 10–14 and other sections",
+          "text_status": "Versional witness supplies material missing from the Greek copies; do not present it as Greek wording.",
+          "source": "https://theosislibrary.com/library/verified-polycarp-philippians"
+        }
+      ]
     },
     {
       "id": "quadratus_apology",
@@ -3244,7 +3437,7 @@
       "date_precision": "provisional broad range; verify scholarly dating",
       "genre": "instruction, letter, or related writing",
       "attribution_status": "Historical attribution must be evaluated independently; traditional title is not proof of authorship.",
-      "textual_status": "Catalogue entry; a dedicated witness-by-witness text import is not yet implemented.",
+      "textual_status": "Witnesses recorded separately: fifth-century Codex Alexandrinus (partial Greek), 1056 Codex Hierosolymitanus 54, and Syriac transmission. This is manuscript coverage metadata, not a new diplomatic transcription. Witness metadata added; no unverified transcription or translation has been inserted.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; classification is historical metadata only",
       "chronology_basis": "Approximate composition estimate from current catalogue; manuscript date is separately recorded.",
       "existing_catalogue_id": "clement_2",
@@ -3268,7 +3461,41 @@
       ],
       "scope_relationship": "anonymous_early_community_writing",
       "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date.",
-      "preservation_status": "manuscript_transmission_known_text_import_pending"
+      "preservation_status": "manuscript_transmission_known_text_import_pending",
+      "manuscript_witnesses": [
+        {
+          "id": "Alexandrinus",
+          "siglum": "Codex Alexandrinus",
+          "shelfmark": "British Library Royal MS 1 D VIII",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Fifth century CE",
+          "contents": "1 Clement 1.1–57.6 and 63.3–65.2; 2 Clement 1.1–12.5",
+          "text_status": "Important Greek witness, but portions of both writings are absent from this codex.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        },
+        {
+          "id": "Hierosolymitanus_54",
+          "siglum": "H54",
+          "shelfmark": "Jerusalem, Library of the Greek Patriarchate, Panagios Taphos 54",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "1056 CE",
+          "contents": "1 Clement folios 51v–70r; 2 Clement folios 70r–76r",
+          "text_status": "Continuous later Greek witness to both writings.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        },
+        {
+          "id": "Cambridge_Add_1700",
+          "shelfmark": "Cambridge University Library, Add. 1700",
+          "writing": "Syriac",
+          "material": "manuscript codex",
+          "date": "1170 CE",
+          "contents": "1 Clement and 2 Clement",
+          "text_status": "Syriac versional witness; keep separate from Greek witnesses.",
+          "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
+        }
+      ]
     },
     {
       "id": "paul_seneca_correspondence",
@@ -3316,7 +3543,7 @@
       "date_precision": "Most scholarship favors a later second-century date; exact date and authorship unknown",
       "genre": "apology / treatise",
       "attribution_status": "Anonymous. The claim that the author was a disciple of apostles is textually present but does not securely identify the author or prove direct apostolic association.",
-      "textual_status": "Greek text survives in a single medieval manuscript that was later lost; modern editions depend on earlier copies/transcriptions. The physical witness date must not be mistaken for composition date.",
+      "textual_status": "Greek text survives in a single medieval manuscript that was later lost; modern editions depend on earlier copies/transcriptions. The physical witness date must not be mistaken for composition date. Sole physical manuscript was Codex Argentoratensis Graecus 9 (13th/14th century), destroyed in 1870; the 1592 printed edition and earlier collations are proxies, not independent ancient witnesses. Witness metadata added; no unverified transcription or translation has been inserted.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Cambridge overview notes that most scholars favor a late-second-century date.",
       "research_sources": [
@@ -3339,7 +3566,28 @@
       "historical_subsequence": 10,
       "historical_anchor_status": "historical_context_unlocated",
       "scope_relationship": "broader_early_christian_context_association_unproven",
-      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date."
+      "historical_order_note": "This writing is retained in the collection, but its content does not provide a sufficiently secure, continuous historical event sequence. Its position in this separate group is not based on composition date.",
+      "manuscript_witnesses": [
+        {
+          "id": "Codex_Argentoratensis_Gr9",
+          "shelfmark": "Strasbourg, Codex Argentoratensis Graecus 9",
+          "writing": "Greek",
+          "material": "parchment codex",
+          "date": "Thirteenth/fourteenth century CE",
+          "contents": "Sole manuscript containing the Epistle to Diognetus",
+          "text_status": "Destroyed in 1870; text now depends on earlier collations and printed editions. The manuscript date is not the composition date.",
+          "source": "https://ccel.org/ccel/richardson/fathers/fathers.x.i.i.html"
+        },
+        {
+          "id": "Stephanus_1592",
+          "writing": "Greek",
+          "material": "printed edition based on the lost manuscript",
+          "date": "1592 CE",
+          "contents": "Editio princeps",
+          "text_status": "Printed proxy, not an ancient manuscript witness.",
+          "source": "https://christearlychurch.co.uk/text/the-epistle-to-diognetus/"
+        }
+      ]
     },
     {
       "id": "epistle_to_laodiceans_latin",
@@ -3519,7 +3767,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "Coptic revelatory dialogue",
       "attribution_status": "Anonymous Nag Hammadi work; title does not establish apostolic authorship.",
-      "textual_status": "Coptic Nag Hammadi witness; record its codex and folio data separately.",
+      "textual_status": "Coptic Nag Hammadi witness; record its codex and folio data separately. Witness metadata added; no unverified transcription or translation has been inserted.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 90,
@@ -3538,7 +3786,20 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-the-egyptians-coptic/"
         }
       ],
-      "preservation_status": "surviving_in_coptic_codex"
+      "preservation_status": "surviving_in_coptic_codex",
+      "manuscript_witnesses": [
+        {
+          "id": "NHC_III_2",
+          "siglum": "Nag Hammadi Codex III, tractate 2",
+          "writing": "Sahidic Coptic",
+          "material": "papyrus codex",
+          "date": "Fourth century CE",
+          "provenance": "Jabal al-Tarif, near Nag Hammadi, Egypt",
+          "contents": "Holy Book of the Great Invisible Spirit",
+          "text_status": "Coptic witness; do not conflate with the separate Greek Gospel of the Egyptians fragments.",
+          "source": "https://www.cambridge.org/core/books/nag-hammadi-codices-and-their-ancient-readers/introduction/333084781B98EFDB225C0C6EC60D1F84"
+        }
+      ]
     },
     {
       "id": "gospel_philip",
@@ -3548,7 +3809,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "Coptic sayings and theological collection",
       "attribution_status": "Anonymous work associated with a Valentinian milieu; title does not prove authorship by Philip.",
-      "textual_status": "Coptic text in Nag Hammadi Codex II; no complete Greek witness survives.",
+      "textual_status": "Coptic text in Nag Hammadi Codex II; no complete Greek witness survives. Witness metadata added; no unverified transcription or translation has been inserted.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 90,
@@ -3567,7 +3828,21 @@
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-philip/"
         }
       ],
-      "preservation_status": "surviving_in_coptic_codex"
+      "preservation_status": "surviving_in_coptic_codex",
+      "manuscript_witnesses": [
+        {
+          "id": "NHC_II_3",
+          "siglum": "Nag Hammadi Codex II, tractate 3",
+          "shelfmark": "Cairo Coptic Museum Inv. 10544",
+          "writing": "Sahidic Coptic",
+          "material": "papyrus codex",
+          "date": "Fourth century CE",
+          "provenance": "Jabal al-Tarif, near Nag Hammadi, Egypt",
+          "contents": "Pages 51–86",
+          "text_status": "Only surviving complete textual witness is Coptic; Greek original is inferred from composition history, not preserved as a complete Greek manuscript.",
+          "source": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-philip/"
+        }
+      ]
     },
     {
       "id": "gospel_matthias",
