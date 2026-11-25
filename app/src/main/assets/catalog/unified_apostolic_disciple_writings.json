@@ -5448,7 +5448,7 @@
       "date_precision": "Not securely established; see cited research.",
       "genre": "reported sayings and fragments",
       "attribution_status": "The existence of one coherent Gospel is uncertain; sayings are attributed to Matthias in scattered reports.",
-      "textual_status": "No manuscript of a complete Gospel of Matthias survives, and even the existence of one coherent Gospel is uncertain. Four brief teachings in Clement's Stromateis are the principal alleged fragments; later heresiological lists are reports, not additional Gospel text.",
+      "textual_status": "No manuscript of a complete Gospel of Matthias survives, and the relationship between the title Gospel of Matthias and the Traditions of Matthias is uncertain. Clement of Alexandria preserves three identifiable sayings attributed to Matthias in Stromateis 2.9.45, 3.4.26, and 7.13.82. Stromateis 7.17.108 is a report about groups claiming Matthias' authority, not a quotation from the work.",
       "later_canonical_compilation_status": "not part of the later 27-writing collection; historical classification only",
       "chronology_basis": "Composition date does not control event order; manuscript witnesses are recorded separately.",
       "historical_sequence": 90,
@@ -5463,11 +5463,27 @@
       "historical_order_note": "Do not present as a verified complete Gospel.",
       "research_sources": [
         {
+          "title": "Clement of Alexandria, Stromateis 2.9.45 — Greek text and separate attributions to Matthias and the Gospel according to the Hebrews",
+          "url": "https://sophiascriptura.com/fathers/clement-stromata/2-8-36/"
+        },
+        {
+          "title": "Clement of Alexandria, Stromateis 3.4.26 — Matthias saying on self-control",
+          "url": "https://sophiascriptura.com/fathers/clement-stromata/3-4-25/"
+        },
+        {
+          "title": "Clement of Alexandria, Stromateis 7.13.82 — Matthias saying on moral example",
+          "url": "https://sophiascriptura.com/fathers/clement-stromata/7-12-69/"
+        },
+        {
+          "title": "Clement of Alexandria, Stromateis 7.17.108 — report of groups claiming Matthias' tradition",
+          "url": "https://sophiascriptura.com/fathers/stromata/7-16-93/"
+        },
+        {
           "title": "NASSCAL — Gospel of Matthias",
           "url": "https://www.nasscal.com/e-clavis-christian-apocrypha/gospel-of-matthias/"
         }
       ],
-      "preservation_status": "reported_fragments_only",
+      "preservation_status": "three_sayings_and_one_later_report",
       "surviving_fragments": [
         {
           "fragment_id": "GM-Clement-Strom-2.9.45",
@@ -5475,17 +5491,23 @@
           "source_work": "Stromateis",
           "passage": "2.9.45",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Brief teaching attributed to the Traditions of Matthias.",
-          "status": "One of four principal Clementine fragment loci."
+          "content_scope": "Clement attributes to the Traditions of Matthias the exhortation to marvel at what is present, describing it as the first step toward knowledge beyond. In the same paragraph Clement separately quotes a saying from the Gospel according to the Hebrews about the one who marvels, reigns, and then rests; that second saying must not be assigned to Matthias.",
+          "status": "Direct saying attributed to the Traditions of Matthias; the nearby Gospel of the Hebrews quotation is a separate source.",
+          "english_paraphrase": "Clement says that Matthias, in the Traditions, urges the hearer to marvel at what is present and presents this wonder as the first step toward knowledge of what lies beyond. Clement then introduces a separate saying from the Gospel according to the Hebrews about the one who marvels, reigns, and rests.",
+          "text_type": "mixed_context_with_distinct_attributions",
+          "source_url": "https://sophiascriptura.com/fathers/clement-stromata/2-8-36/"
         },
         {
-          "fragment_id": "GM-Clement-Strom-3.4.6",
+          "fragment_id": "GM-Clement-Strom-3.4.26",
           "transmitting_author": "Clement of Alexandria",
           "source_work": "Stromateis",
-          "passage": "3.4.6",
+          "passage": "3.4.26",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Brief saying attributed to Matthias traditions.",
-          "status": "Attribution to a single coherent Gospel remains uncertain."
+          "content_scope": "Clement reports that Matthias taught disciplined resistance to bodily impulses, refusing to yield to uncontrolled pleasure, so that the soul may grow through faith and knowledge.",
+          "status": "Indirectly introduced saying attributed to Matthias; the wording is preserved by Clement.",
+          "english_paraphrase": "Clement says that Matthias taught people to struggle against the flesh and not surrender to uncontrolled pleasure, but to strengthen or increase the soul through faith and knowledge. The phrase about 'abusing' the flesh is contextually explained by Clement as self-control, not as permission for harm.",
+          "text_type": "reported_saying",
+          "source_url": "https://sophiascriptura.com/fathers/clement-stromata/3-4-25/"
         },
         {
           "fragment_id": "GM-Clement-Strom-7.13.82",
@@ -5493,8 +5515,11 @@
           "source_work": "Stromateis",
           "passage": "7.13.82",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Brief teaching attributed to Matthias traditions.",
-          "status": "Fragmentary attribution."
+          "content_scope": "Clement explicitly says that Matthias the apostle taught this saying about the responsibility of an elect person for the example set before a neighbor.",
+          "status": "Direct saying introduced as a teaching from the Traditions of Matthias.",
+          "english_paraphrase": "Clement attributes to Matthias the teaching that when a neighbor of an elect person sins, the elect person is also implicated: if the elect person lived according to the teaching, the neighbor would be ashamed by that example and refrain from sinning.",
+          "text_type": "reported_saying",
+          "source_url": "https://sophiascriptura.com/fathers/clement-stromata/7-12-69/"
         },
         {
           "fragment_id": "GM-Clement-Strom-7.17.108",
@@ -5502,11 +5527,14 @@
           "source_work": "Stromateis",
           "passage": "7.17.108",
           "language_of_surviving_source": "Greek",
-          "content_scope": "Brief teaching attributed to Matthias traditions.",
-          "status": "Fragmentary attribution."
+          "content_scope": "Clement reports that certain groups, including Basilideans, claimed an association with Matthias' teaching or tradition; he does not quote a Matthias saying here.",
+          "status": "Heresiological/bibliographic report only; not a surviving fragment of the Traditions of Matthias.",
+          "english_paraphrase": "Clement notes that some groups claimed to follow the teaching or tradition of Matthias, while arguing that apostolic teaching and tradition were one. This passage documents a later claim of affiliation; it does not preserve a saying from Matthias.",
+          "text_type": "later_report_not_work_fragment",
+          "source_url": "https://sophiascriptura.com/fathers/stromata/7-16-93/"
         }
       ],
-      "description": "Gospel of Matthias / Traditions of Matthias is a reported sayings and fragments writing in the Unified Apostolic and Disciple collection. The existence of one coherent Gospel is uncertain; sayings are attributed to Matthias in scattered reports. No manuscript of a complete Gospel of Matthias survives, and even the existence of one coherent Gospel is uncertain. Four brief teachings in Clement's Stromateis are the principal alleged fragments; later heresiological lists are reports, not additional Gospel text. The available manuscript evidence and its extent remain to be documented."
+      "description": "Gospel of Matthias / Traditions of Matthias is a reported sayings collection in the Unified Apostolic and Disciple collection. No complete manuscript survives, and whether the title Gospel of Matthias refers to the same work as the Traditions of Matthias remains uncertain. Clement of Alexandria preserves three sayings attributed to Matthias in Stromateis 2.9.45, 3.4.26, and 7.13.82. Stromateis 7.17.108 is retained only as a later report about groups claiming Matthias' authority, not as a quotation from the work. In Stromateis 2.9.45, Clement also quotes the Gospel according to the Hebrews; the two attributions are kept separate."
     },
     {
       "id": "apocalypse_peter",
