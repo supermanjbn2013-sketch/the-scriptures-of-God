@@ -40,9 +40,18 @@ MAX_MEMBER = 8 * 1024 * 1024
 MAX_TOTAL_UNPACKED = 160 * 1024 * 1024
 
 def download(url):
+    # The Birmingham server rejects generic/custom client identifiers with HTTP 406.
+    # Use a conventional browser request and identify the official download page.
+    referer = ("https://itseeweb.cal.bham.ac.uk/iohannes/download.html"
+               if "/iohannes/" in url else
+               "https://itseeweb.cal.bham.ac.uk/epistulae/download.html")
     req = urllib.request.Request(url, headers={
-        "User-Agent": "The-Scriptures-of-God-Archive/1.0",
-        "Accept": "application/zip,application/octet-stream"
+        "User-Agent": ("Mozilla/5.0 (X11; Linux x86_64; rv:128.0) "
+                       "Gecko/20100101 Firefox/128.0"),
+        "Accept": "application/zip,application/octet-stream,*/*",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Referer": referer,
+        "Connection": "keep-alive"
     })
     last = None
     for attempt in range(5):
