@@ -83,6 +83,11 @@
   ],
   "display_modes": [
     {
+      "id": "english_reading",
+      "label": "Actual English reading",
+      "description": "Display only the continuous English text of the writing. Do not insert study descriptions, manuscript metadata, translation notes, or research commentary into the reading. Keep source attribution outside the reading body."
+    },
+    {
       "id": "witness_only",
       "label": "Manuscript witness only",
       "description": "Show only text directly preserved by the selected witness; leave damaged or missing areas visibly blank."
@@ -90,12 +95,17 @@
     {
       "id": "reconstructed_reading",
       "label": "Reconstructed reading",
-      "description": "Show a continuous reading where supported, with every supplied segment visibly marked and linked to its actual source witness."
+      "description": "Show a continuous reading where supported, with every supplied segment linked to its actual source witness in the reading's separate source record."
     },
     {
       "id": "witness_comparison",
       "label": "Compare witnesses",
       "description": "Show each witness independently so differences, omissions, additions, and translation effects remain visible."
+    },
+    {
+      "id": "study_and_manuscripts",
+      "label": "Study and manuscript evidence",
+      "description": "Display descriptions, dating, authorship, historical setting, preservation, manuscript metadata, variants, and research references separately from the actual reading."
     }
   ],
   "reconstruction_workflow": [
@@ -112,5 +122,51 @@
     "The DSS do not preserve every writing or every passage; absence from the DSS is not evidence that a passage never existed.",
     "A continuous reconstructed display is an editorial aid, not a claim that one ancient manuscript contained the complete displayed text.",
     "No reconstruction is populated by guessing; passage-level evidence and source coordinates are prerequisites."
-  ]
+  ],
+  "reader_requirements": {
+    "reading_and_study_must_be_separate": true,
+    "reader_body_contains_only_english_reading": true,
+    "source_attribution_displayed_outside_reading_body": true,
+    "reading_must_cover_entire_work_where_extant": true,
+    "missing_passages_may_only_be_supplied_from_named_witnesses_preserving_the_same_passage": true,
+    "every_supplied_segment_must_record_source_witness_and_location": true,
+    "do_not_invent_unattested_missing_text": true,
+    "do_not_call_paraphrase_or_study_summary_an_actual_reading": true,
+    "do_not_mark_a_writing_complete_until_all_chapters_and_known_gaps_are_audited": true
+  },
+  "reading_data_schema": {
+    "file": "catalog/unified_readings.json",
+    "required_record_fields": [
+      "writing_id",
+      "reading_status",
+      "english_text",
+      "text_basis",
+      "translation_basis",
+      "source_note",
+      "segments"
+    ],
+    "reading_status_values": [
+      "complete_verified",
+      "partially_complete",
+      "fragmentary_only",
+      "not_yet_available"
+    ],
+    "segment_required_fields": [
+      "passage_reference",
+      "segment_order",
+      "english_text",
+      "segment_status",
+      "source_witness_id",
+      "source_location",
+      "transcription_or_edition_basis",
+      "editorial_note"
+    ],
+    "segment_status_values": [
+      "directly_preserved",
+      "supplied_from_named_witness",
+      "editorial_restoration",
+      "uncertain_reading",
+      "unrecoverable_gap"
+    ]
+  }
 }
