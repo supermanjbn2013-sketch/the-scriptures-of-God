@@ -299,7 +299,7 @@ def validate_android():
         'titleView.setOnClickListener(v->showUnifiedWritingDetail(record));',
         '.setPositiveButton("Read complete English text",(dialog,which)->showUnifiedEnglishReading(record))',
         "boolean hasUnifiedSourceArchive(String writingId)", "void openUnifiedSourceArchive(org.json.JSONObject record)",
-        'builder.setNeutralButton("Open original-language archive",(dialog,which)->openUnifiedSourceArchive(record))', "Book of Giants (fragmentarily preserved)", "void openBookOfGiantsFragments()", "4Q203", "4Q530", "4Q533", "openEtcbcDssScroll(ids.get(which))",
+        'builder.setNeutralButton("Open available source text",(dialog,which)->openUnifiedSourceArchive(record))', "Book of Giants (fragmentarily preserved)", "void openBookOfGiantsFragments()", "4Q203", "4Q530", "4Q533", "openEtcbcDssScroll(ids.get(which))",
         "void openVaticanusArchive()", "void openVaticanusPage(String pageId)", "vaticanus/vaticanus_index.json",
         "void openPapyrus46Archive()", "void openPapyrus46Page(String pageId)", "papyri/p46/p46_index.json",
         "void openPapyrus52Archive()", "void openPapyrus52Page(String pageId)", "papyri/p52/p52_index.json",
