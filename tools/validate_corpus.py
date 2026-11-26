@@ -343,6 +343,11 @@ def validate_android():
         "Book of the Wars of the LORD", "Book of Jashar", "Acts of Solomon",
         "Chronicles of the Kings of Israel", "Chronicles of the Kings of Judah",
         "Records of Samuel, Nathan, and Gad", "Book of Laments for Josiah",
+        "Chronicles of King David", "Samuel's Book of the Kingdom",
+        "Records of Samuel the Seer", "Records of Nathan the Prophet",
+        "Records of Gad the Seer", "Words or Records of the Kings of Israel",
+        "Commentary (Midrash) on the Book of Kings",
+        "Writings or Decrees of David and Solomon",
         "Book of Giants (fragmentarily preserved)"
     }
     assert required_lost.issubset(lost_titles), f"Missing lost/referenced writing records: {required_lost - lost_titles}"
