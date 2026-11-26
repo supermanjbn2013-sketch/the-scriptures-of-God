@@ -685,6 +685,12 @@ public class MainActivity extends Activity {
                 meta.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);
                 meta.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
                 reader.addView(meta);
+                reader.addView(text("Original-language text only. Long-press to select a word or passage, adjust the selection handles, then Copy. The available source edition supplies text where no DSS passage survives; its source is identified above. DSS manuscript lines remain separate and are never silently presented as DSS wording.",12,muted,false));
+                if("DSS Hebrew Archive".equals(section)){
+                    Button dssEvidence=new Button(MainActivity.this);dssEvidence.setText("View surviving DSS manuscript lines");
+                    dssEvidence.setOnClickListener(v->openDssBookEntry(bookName));
+                    reader.addView(dssEvidence);
+                }
                 LinearLayout chapterBar=new LinearLayout(MainActivity.this);chapterBar.setGravity(Gravity.CENTER_VERTICAL);
                 Button previous=new Button(MainActivity.this);previous.setText("‹ Previous");
                 Spinner chapterPicker=new Spinner(MainActivity.this);
@@ -758,6 +764,15 @@ public class MainActivity extends Activity {
         return titles;
     }
 
+    void openDssArchiveBook(String title){
+        String code=codeFor(title);
+        if(code!=null){
+            openBook(title);
+            return;
+        }
+        openDssBookEntry(title);
+    }
+
     void renderDssArchiveGroup(String heading,ArrayList<String> titles,String query){
         if(titles==null||titles.isEmpty())return;
         content.addView(text(heading,12,gold,true));
@@ -765,7 +780,7 @@ public class MainActivity extends Activity {
             if(!query.isEmpty()&&!title.toLowerCase(java.util.Locale.ROOT).contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
             TextView row=text(title+"   ›",15,ink,true);row.setPadding(13,12,13,12);row.setBackground(shape(panel));
             LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,3,0,3);content.addView(row,p);
-            row.setOnClickListener(v->openDssBookEntry(title));
+            row.setOnClickListener(v->openDssArchiveBook(title));
         }
     }
 
