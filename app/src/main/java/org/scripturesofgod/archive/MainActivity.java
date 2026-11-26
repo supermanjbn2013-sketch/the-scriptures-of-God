@@ -113,6 +113,16 @@ public class MainActivity extends Activity {
         if(section.equals("Settings")){content.addView(text("Appearance, reading and privacy",14,muted,false));addHomeTile("Appearance and reading settings","Theme, font size and language",()->openSettings());return;}
         if(section.equals("Personal Library")||section.equals("Favorites")||section.equals("Reading History")){renderLibrary();return;}
         if(section.equals("Search")){EditText query=new EditText(this);query.setSingleLine(true);query.setHint("Exact word or phrase");content.addView(query);Button go=new Button(this);go.setText("Search offline corpus");content.addView(go);go.setOnClickListener(v->{String searchTerm=query.getText().toString().trim();if(!searchTerm.isEmpty())searchCorpus(searchTerm);});return;}
+        if(section.equals("Manuscript Comparison")){
+            content.addView(text("JOHN · GREEK MANUSCRIPT COMPARISON",12,gold,true));
+            content.addView(text("Compare the imported diplomatic transcriptions by chapter and verse. Each witness remains separate; spelling, supplied letters, and correction notes are not silently harmonized.",14,muted,false));
+            EditText reference=new EditText(this);reference.setSingleLine(true);reference.setHint("Enter chapter:verse, for example 17:11");reference.setTextColor(ink);reference.setHintTextColor(muted);reference.setPadding(16,10,16,10);reference.setBackground(shape(panel));
+            LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,14,0,10);content.addView(reference,rp);
+            Button compare=new Button(this);compare.setText("Compare Greek witnesses");compare.setTextColor(ink);compare.setBackground(shape(panel));content.addView(compare,new LinearLayout.LayoutParams(-1,-2));
+            compare.setOnClickListener(v->openJohnWitnessComparison(reference.getText().toString()));
+            content.addView(text("Available indexed witnesses: P52, P66, P75, Codex Vaticanus, and Codex Sinaiticus. A missing entry is not automatically proof of a textual omission; the manuscript page and source apparatus must be checked.",12,muted,false));
+            return;
+        }
         if(section.equals("DSS Transcription Archive")){renderEtcbcDssIndex(q);return;}
         if(section.equals("Papyrus Archive")){content.addView(text("GREEK PAPYRUS WITNESSES",12,gold,true));content.addView(text("Each papyrus is a separate physical witness. A fragment's passage coverage is not a complete book. Open a witness to inspect its surviving transcription and source record.",13,muted,false));}
         if(section.equals("Codex Vaticanus Archive")){content.addView(text("CODEX VATICANUS · GA 03",12,gold,true));content.addView(text("This archive contains the Codex Vaticanus transcription independently of other manuscript archives. Only the witness text is shown; missing leaves are not silently filled.",13,muted,false));}
@@ -1858,6 +1868,104 @@ public class MainActivity extends Activity {
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Codex Vaticanus")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openVaticanusArchive())
+                    .setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    void openJohnWitnessComparison(){
+        openJohnWitnessComparison("");
+    }
+
+    void openJohnWitnessComparison(String initialReference){
+        EditText input=new EditText(this);
+        input.setSingleLine(true);
+        input.setHint("Chapter:verse, for example 17:11");
+        input.setText(initialReference==null?"":initialReference);
+        input.setTextColor(ink);
+        input.setHintTextColor(muted);
+        new android.app.AlertDialog.Builder(this)
+            .setTitle("Compare a passage in John")
+            .setView(input)
+            .setNegativeButton("Cancel",null)
+            .setPositiveButton("Compare",(dialog,which)->{
+                java.util.regex.Matcher match=java.util.regex.Pattern.compile("^\\s*(\\d{1,2})\\s*:\\s*(\\d{1,2})\\s*$").matcher(input.getText().toString());
+                if(!match.matches()){
+                    showInfo("Reference required","Enter a chapter and verse, such as 17:11.");
+                    return;
+                }
+                int chapter=Integer.parseInt(match.group(1));
+                int verse=Integer.parseInt(match.group(2));
+                if(chapter<1||chapter>21||verse<1||verse>60){
+                    showInfo("Reference out of range","Enter a verse from John chapters 1–21.");
+                    return;
+                }
+                showJohnWitnessVerse(chapter,verse);
+            }).show();
+    }
+
+    void showJohnWitnessVerse(int chapter,int verse){
+        final int selectedChapter=chapter;
+        final int selectedVerse=verse;
+        final String reference="John "+chapter+":"+verse;
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/john_witness_index.json"),"UTF-8"),8192);
+                    StringBuilder raw=new StringBuilder();String line;
+                    while((line=reader.readLine())!=null)raw.append(line);
+                    reader.close();
+                    org.json.JSONObject index=new org.json.JSONObject(raw.toString());
+                    org.json.JSONArray verses=index.getJSONArray("verses");
+                    org.json.JSONObject selected=null;
+                    for(int i=0;i<verses.length();i++){
+                        org.json.JSONObject item=verses.getJSONObject(i);
+                        if(selectedChapter==item.optInt("chapter")&&selectedVerse==item.optInt("verse")){selected=item;break;}
+                    }
+                    if(selected==null){
+                        return reference+"\\n\\nNo verse-indexed transcription record was found for this reference among the imported witnesses. This does not by itself establish whether the verse was absent from a manuscript, physically lost, illegible, or omitted from the source transcription. Check the page archive and source apparatus.\\n\\n"+index.optString("absence_policy");
+                    }
+                    StringBuilder out=new StringBuilder();
+                    out.append(reference).append("\\n\\n");
+                    out.append("Diplomatic Greek transcriptions are shown separately. Brackets, spelling, and source notation are retained where supplied by the source importer.\\n\\n");
+                    org.json.JSONObject witnessRecords=selected.getJSONObject("witnesses");
+                    org.json.JSONObject metadata=index.getJSONObject("witness_metadata");
+                    String[] order={"P52","P66","P75","Vaticanus","Sinaiticus"};
+                    int shown=0;
+                    for(String witness:order){
+                        if(!witnessRecords.has(witness))continue;
+                        org.json.JSONObject record=witnessRecords.getJSONObject(witness);
+                        org.json.JSONObject source=metadata.optJSONObject(witness);
+                        out.append(witness).append("\\n");
+                        out.append(record.optString("text","[No text record]")).append("\\n");
+                        if(source!=null){
+                            out.append("Source: ").append(source.optString("source_url","")).append("\\n");
+                            out.append("Licence: ").append(source.optString("license","")).append("\\n");
+                        }
+                        org.json.JSONArray pages=record.optJSONArray("pages");
+                        if(pages!=null&&pages.length()>0)out.append("Page(s): ").append(pages.join(", ")).append("\\n");
+                        org.json.JSONArray labels=record.optJSONArray("source_labels");
+                        if(labels!=null&&labels.length()>0)out.append("Source label(s): ").append(labels.join(", ")).append("\\n");
+                        org.json.JSONArray lineIds=record.optJSONArray("line_ids");
+                        if(lineIds!=null&&lineIds.length()>0)out.append("Line(s): ").append(lineIds.join(", ")).append("\\n");
+                        org.json.JSONArray notes=record.optJSONArray("correction_notes");
+                        if(notes!=null)for(int i=0;i<notes.length();i++)out.append("Correction note: ").append(notes.optString(i)).append("\\n");
+                        out.append("\\n");
+                        shown++;
+                    }
+                    if(shown==0)out.append("No witness text is indexed for this verse.\\n");
+                    out.append("Caution: a missing witness entry is not automatically a textual omission. Consult the manuscript image and the full diplomatic transcription before deciding why the text is not represented.");
+                    return out.toString();
+                }catch(Exception e){
+                    return "Unable to open the offline John witness index: "+e.getMessage();
+                }
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                ScrollView scroll=new ScrollView(MainActivity.this);scroll.setPadding(12,8,12,8);scroll.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(reference+" · Witness comparison")
+                    .setView(scroll)
+                    .setNegativeButton("Compare another",(dialog,which)->openJohnWitnessComparison(reference.substring(5)))
                     .setPositiveButton("Close",null).show();
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
