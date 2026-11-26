@@ -7,6 +7,7 @@ on:
       - "tools/import_samaritan_pentateuch.py"
       - "tools/build_dss_book_index.py"
       - "tools/build_dss_passage_evidence.py"
+      - "tools/build_dss_witness_inventory.py"
       - "tools/build_dss_reconstructions.py"
       - "tools/import_codex_sinaiticus.py"
       - "tools/import_codex_vaticanus.py"
