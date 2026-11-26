@@ -748,7 +748,7 @@ public class MainActivity extends Activity {
 
     void renderDssHebrewArchive(String query){
         content.addView(text("ONE ARCHIVE · ORIGINAL-LANGUAGE READINGS AND DSS WITNESSES",12,gold,true));
-        content.addView(text("The archive groups Hebrew Scriptures, apocryphal and related writings, and lost or referenced titles. Open a title to read the available original-language text in the same chapter-by-chapter reader. Where the DSS does not preserve a passage, the best available bundled source edition supplies the reading and is identified by its own metadata. Use the DSS-lines control to inspect only surviving Qumran transcription lines.",13,muted,false));
+        content.addView(text("The archive groups Hebrew Scriptures, apocryphal and related writings, and lost or referenced titles. For the 39 Hebrew Scripture writings, DSS words are used only where word-level alignment is strong; the Westminster Leningrad Codex supplies remaining word positions or whole verses, and each verse is labelled. The WLC is a medieval codex and is not claimed to be the next-oldest physical witness. Greek and Ge'ez editions remain separate language texts. Use the DSS-lines control to inspect only surviving Qumran transcription lines.",13,muted,false));
         content.addView(text("Source: ETCBC / CACCHT Dead Sea Scrolls corpus, Martin G. Abegg transcriptions distributed through Qumran Digital Reader. CC BY-NC 4.0 — non-commercial use only. Each line retains its scroll, fragment and line identifier.",12,muted,false));
         renderDssArchiveGroup("HEBREW SCRIPTURES",entries.get("Hebrew Scriptures"),query);
         renderDssArchiveGroup("APOCRYPHA AND DEUTEROCANONICAL WRITINGS",entries.get("Apocrypha and Deuterocanonical Writings"),query);
