@@ -777,45 +777,6 @@
         "Digital display-line labels are not automatically physical manuscript column/line coordinates.",
         "CC BY-SA 4.0 attribution and share-alike terms apply."
       ]
-    },
-    {
-      "id": "igntp-greek-manuscript-transcriptions",
-      "name": "International Greek New Testament Project manuscript transcriptions",
-      "language": "Ancient Greek",
-      "coverage": [
-        "Gospel according to John — IGNTP Greek manuscript transcriptions",
-        "Gospel according to John — Byzantine Greek manuscript transcriptions",
-        "Gospel according to John — Family 1 Greek manuscript transcriptions",
-        "Gospel according to John — Latin manuscript transcriptions",
-        "Gospel according to John — Coptic manuscript transcriptions",
-        "Romans",
-        "1 Corinthians",
-        "Galatians",
-        "Ephesians",
-        "Philippians",
-        "Colossians",
-        "Philemon",
-        "Hebrews"
-      ],
-      "record_type": "TEI XML diplomatic manuscript transcriptions; individual manuscript witnesses kept as separate source files",
-      "edition": "IGNTP electronic manuscript transcriptions prepared for textual research and the Editio Critica Maior projects",
-      "license": "CC BY 4.0 where licensed by the official IGNTP download collection; files explicitly marked with a more restrictive licence in their own TEI header are excluded from the offline import and listed in the import manifest.",
-      "repository": "https://itseeweb.cal.bham.ac.uk/igntp/transcriptions.html",
-      "source_pages": [
-        "https://itseeweb.cal.bham.ac.uk/iohannes/download.html",
-        "https://itseeweb.cal.bham.ac.uk/epistulae/download.html"
-      ],
-      "attribution": "International Greek New Testament Project (IGNTP), Institute for Textual Scholarship and Electronic Editing, University of Birmingham. Preserve manuscript-level TEI headers and attribution.",
-      "status": "Official bulk archives downloaded during corpus preparation; original manuscript TEI XML retained separately with a source manifest, witness identifiers and checksums.",
-      "limitations": [
-        "These are electronic transcriptions of individual manuscript witnesses or versional witnesses, not photographs or one reconstructed text.",
-        "The files are not all equally complete or equally proofread; retain each file's TEI metadata and source status.",
-        "A manuscript's date, contents and completeness must be taken from its own header or independently verified catalogue, not inferred from its filename.",
-        "Files explicitly marked with a more restrictive licence in their own header are not included in the offline import.",
-        "Do not merge readings from different manuscripts into one text without a separate collation and apparatus.",
-        "The 1 Corinthians project remains ongoing; its downloadable individual transcriptions are described by IGNTP as proofread, but the collection is not a completed critical edition.",
-        "John's Byzantine, Family 1, Latin and Coptic transcriptions are distinct datasets and must not be merged with the IGNTP Greek manuscript witnesses."
-      ]
     }
   ],
   "not_yet_integrated": [
