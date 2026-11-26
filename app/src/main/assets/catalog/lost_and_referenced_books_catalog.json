@@ -57,18 +57,14 @@
         "1 Kings 16:27",
         "2 Kings 10:34",
         "2 Kings 13:8",
-        "2 Kings 14:28",
-        "2 Chronicles 33:18",
-        "1 Chronicles 9:1",
-        "2 Chronicles 20:34",
-        "2 Chronicles 23:18"
+        "2 Kings 14:28"
       ],
       "status": "Lost royal annals or source records; no independent manuscript copy is known.",
       "language": "Hebrew is likely, but no manuscript survives to confirm the language.",
       "date": "Compiled during or after the monarchic period; exact dates and stages are unknown.",
       "witnesses": [],
       "recoverable": "The surviving royal notices quote or summarize information attributed to these records. The annals themselves are not preserved.",
-      "note": "The royal-history source is also referenced in 2 Chronicles 33:18. It may represent an archive or source tradition rather than one fixed-volume book.",
+      "note": "These are the royal annals repeatedly cited in the account of the northern kings. Other similarly worded royal-source notices in Chronicles are catalogued separately because their exact relationship to this source is not established.",
       "caution": "Do not equate these records with the later canonical Books of Chronicles."
     },
     {
@@ -81,21 +77,14 @@
         "1 Kings 22:45",
         "2 Kings 8:23",
         "2 Kings 12:19",
-        "2 Kings 14:18",
-        "2 Chronicles 24:27",
-        "2 Chronicles 25:26",
-        "2 Chronicles 27:7",
-        "2 Chronicles 32:32",
-        "2 Chronicles 35:27",
-        "2 Chronicles 16:11",
-        "2 Chronicles 28:26"
+        "2 Kings 14:18"
       ],
       "status": "Lost royal annals or source records; no independent manuscript copy is known.",
       "language": "Hebrew is likely, but no manuscript survives to confirm the language.",
       "date": "Compiled during or after the monarchic period; exact dates and stages are unknown.",
       "witnesses": [],
       "recoverable": "The surviving royal notices preserve summaries and cross-references, not the full annals.",
-      "note": "The royal-history source is described with more than one title, including records or a scroll of the kings of Judah and Israel. These references may point to one evolving archive or related source collections; the precise relationship is not established. The Chronicler also refers to a vision of Isaiah within the royal-history record (2 Chronicles 32:32).",
+      "note": "These are the royal annals repeatedly cited in the account of the kings of Judah. The differently worded royal-history titles in 2 Chronicles are catalogued separately; their relationship to this source is uncertain.",
       "caution": "Do not assume every differently worded reference denotes a separate book, or that every source named in Chronicles survives in the canonical Books of Chronicles."
     },
     {
@@ -499,7 +488,7 @@
       "date": "Undetermined; associated with the monarchic period.",
       "witnesses": [],
       "recoverable": "The notice in 2 Chronicles 23:18 refers to written or recorded material associated with the kings of Israel. No separate text is preserved under a secure title.",
-      "note": "The expression may overlap with the royal annals cited elsewhere, but the wording alone does not establish that identity.",
+      "note": "The notice refers to words or records associated with the kings of Israel. It may overlap with official royal annals, but the wording does not prove that it is the same source as the Chronicles of the Kings of Israel.",
       "caution": "Do not automatically treat this as a distinct volume from the royal chronicles, nor collapse it into them without textual evidence.",
       "research_sources": [
         {
@@ -547,6 +536,68 @@
           "url": "https://paultanner.org/English%20Docs/OT%203/Teacher%20-%202024%20PDFs/Sess24-Chron.pdf"
         }
       ]
+    },
+    {
+      "id": "book_kings_israel",
+      "title": "Book of the Kings of Israel (Chronicles source)",
+      "references": [
+        "1 Chronicles 9:1",
+        "2 Chronicles 20:34"
+      ],
+      "status": "A royal-history source is cited; no independently identified manuscript copy survives.",
+      "language": "Hebrew is likely; no separate witness confirms the language.",
+      "date": "Undetermined; associated with the monarchic period.",
+      "witnesses": [],
+      "recoverable": "1 Chronicles 9:1 refers to a book of the kings of Israel. 2 Chronicles 20:34 says Jehoshaphat's acts were recorded in Jehu's records, which were incorporated into the book of the kings of Israel. The source itself is not independently preserved.",
+      "note": "This title is kept distinct from the Chronicles of the Kings of Israel cited repeatedly in 1 and 2 Kings. They may be related or overlapping royal archives, but identity is not proven.",
+      "caution": "Do not identify this source automatically with the canonical Books of Kings or the Chronicles of the Kings of Israel."
+    },
+    {
+      "id": "annals_kings_israel",
+      "title": "Annals of the Kings of Israel (Manasseh source)",
+      "references": [
+        "2 Chronicles 33:18"
+      ],
+      "status": "A royal annal source is explicitly cited; no independent copy is identified.",
+      "language": "Hebrew is likely; no manuscript witness confirms the language.",
+      "date": "Associated with the reign of Manasseh; exact date and compilation history unknown.",
+      "witnesses": [],
+      "recoverable": "2 Chronicles 33:18 attributes further records of Manasseh's reign to the annals of the kings of Israel. The source is not independently preserved.",
+      "note": "The title may refer to the same northern or Judahite royal archive under a conventional name, but the wording and historical setting should remain visible.",
+      "caution": "Do not assume that the source is identical with every other royal chronicle mentioned in Kings and Chronicles."
+    },
+    {
+      "id": "book_kings_judah_israel",
+      "title": "Book of the Kings of Judah and Israel",
+      "references": [
+        "2 Chronicles 16:11",
+        "2 Chronicles 25:26",
+        "2 Chronicles 28:26",
+        "2 Chronicles 32:32"
+      ],
+      "status": "A royal-history source is repeatedly cited; no independent manuscript copy is known.",
+      "language": "Hebrew is likely; no surviving witness confirms the language.",
+      "date": "Undetermined; the cited records cover several Judahite reigns.",
+      "witnesses": [],
+      "recoverable": "The passages refer readers to a book of the kings of Judah and Israel. The cited book itself is not preserved as a separate manuscript.",
+      "note": "The title order is preserved as given in these references and kept distinct from the differently worded Book of the Kings of Israel and Judah. Whether the two titles denote separate archives or variant naming remains uncertain.",
+      "caution": "Do not merge this title with the Book of the Kings of Israel and Judah or the Chronicles of the Kings of Judah without evidence."
+    },
+    {
+      "id": "book_kings_israel_judah",
+      "title": "Book of the Kings of Israel and Judah",
+      "references": [
+        "2 Chronicles 27:7",
+        "2 Chronicles 35:27",
+        "2 Chronicles 36:8"
+      ],
+      "status": "A royal-history source is repeatedly cited; no independent manuscript copy is known.",
+      "language": "Hebrew is likely; no surviving witness confirms the language.",
+      "date": "Undetermined; the cited references span the reigns of Jotham, Josiah, and Jehoiakim.",
+      "witnesses": [],
+      "recoverable": "The cited passages refer to a book of the kings of Israel and Judah. Its text is not independently preserved.",
+      "note": "The title order is preserved as given in these references and kept distinct from the Book of the Kings of Judah and Israel. Their relationship is uncertain.",
+      "caution": "Do not silently treat the two differently ordered titles as one proven source."
     }
   ]
 }
