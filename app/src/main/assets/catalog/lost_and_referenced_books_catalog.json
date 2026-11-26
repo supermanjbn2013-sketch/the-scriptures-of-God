@@ -58,7 +58,10 @@
         "2 Kings 10:34",
         "2 Kings 13:8",
         "2 Kings 14:28",
-        "2 Chronicles 33:18"
+        "2 Chronicles 33:18",
+        "1 Chronicles 9:1",
+        "2 Chronicles 20:34",
+        "2 Chronicles 23:18"
       ],
       "status": "Lost royal annals or source records; no independent manuscript copy is known.",
       "language": "Hebrew is likely, but no manuscript survives to confirm the language.",
@@ -83,7 +86,9 @@
         "2 Chronicles 25:26",
         "2 Chronicles 27:7",
         "2 Chronicles 32:32",
-        "2 Chronicles 35:27"
+        "2 Chronicles 35:27",
+        "2 Chronicles 16:11",
+        "2 Chronicles 28:26"
       ],
       "status": "Lost royal annals or source records; no independent manuscript copy is known.",
       "language": "Hebrew is likely, but no manuscript survives to confirm the language.",
@@ -104,8 +109,8 @@
       "date": "Undetermined; associated with accounts of David's reign and acts.",
       "witnesses": [],
       "recoverable": "The surviving verse names records associated with Samuel the seer, Nathan the prophet, and Gad the seer. It does not preserve the contents of those records.",
-      "note": "The grammar names source records associated with three figures. It does not establish that three complete books survive or that their exact titles and boundaries are known.",
-      "caution": "Keep the three names and their source descriptions distinct; do not invent three reconstructed books."
+      "note": "This grouped index points to three separately named prophetic records. Separate catalogue entries for Samuel, Nathan, and Gad preserve the distinction; this grouped record remains only as a cross-reference to 1 Chronicles 29:29.",
+      "caution": "Do not treat this grouped index as proof that the three records were one combined book."
     },
     {
       "id": "ahijah",
@@ -211,7 +216,9 @@
       "references": [
         "Esther 10:2",
         "Compare Ezra 4:15",
-        "Ezra 6:1–2"
+        "Ezra 6:1–2",
+        "Esther 2:23",
+        "Esther 6:1"
       ],
       "status": "Royal records are referenced, but the exact identity and scope of the cited archive are uncertain.",
       "language": "Unknown; Persian and/or Aramaic administrative records are historically possible, but no identified source copy is established by these references.",
@@ -377,6 +384,167 @@
         {
           "title": "NET Bible notes and text for 2 Chronicles 35:25 and related royal-source notices",
           "url": "https://classic.net.bible.org/passage.php?mode=print&passage=2ch+9%3A29%3B12%3A15%3B13%3A22%3B20%3A34%3B24%3A27%3B26%3A22%3B32%3A32%3B33%3A18%2C19%3B27%3A7%3B35%3A25"
+        }
+      ]
+    },
+    {
+      "id": "chronicles_king_david",
+      "title": "Chronicles of King David",
+      "references": [
+        "1 Chronicles 27:24"
+      ],
+      "status": "A public or royal record is explicitly referenced; no independently identified manuscript copy survives.",
+      "language": "Hebrew is likely from the context; no witness confirms the language.",
+      "date": "Associated with David's reign or its later archival record; exact date and compilation history are unknown.",
+      "witnesses": [],
+      "recoverable": "1 Chronicles 27:24 refers to the record of the chronicles of King David in connection with Joab's census. The source itself is not preserved as an independently identified work.",
+      "note": "This is distinct in the source notice from the prophetic records of Samuel, Nathan, and Gad in 1 Chronicles 29:29, though the records may have overlapped in subject matter.",
+      "caution": "Do not equate this royal administrative record with the canonical Books of Chronicles.",
+      "research_sources": [
+        {
+          "title": "Encyclopedia of the Bible — Books of Chronicles, literary sources",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Books-Chronicles"
+        }
+      ]
+    },
+    {
+      "id": "samuel_book_kingdom",
+      "title": "Samuel's Book of the Kingdom",
+      "references": [
+        "1 Samuel 10:25"
+      ],
+      "status": "A written record of the rights or manner of the kingdom is explicitly described; its independent survival and relationship to the present Samuel narrative are uncertain.",
+      "language": "Hebrew is likely; no separate manuscript is identified.",
+      "date": "Associated with the establishment of kingship under Saul; exact date unknown.",
+      "witnesses": [],
+      "recoverable": "The passage says Samuel declared the rights of the kingdom, wrote them in a book, and placed the book before the LORD. The written document is not independently preserved under a secure identity.",
+      "note": "The record may have been incorporated in, used by, or remained distinct from later historical accounts. Its exact contents and relation to the Samuel narrative cannot be determined.",
+      "caution": "Do not assume the entire contents of this written record are preserved in 1 Samuel 8–12.",
+      "research_sources": [
+        {
+          "title": "The Book of Samuel: Its Composition, Structure and Significance as a Historical Source",
+          "url": "https://epe.lac-bac.gc.ca/100/201/300/journal_hebrew/pdf/2010/article_133.pdf"
+        }
+      ]
+    },
+    {
+      "id": "samuel_seer_record",
+      "title": "Records of Samuel the Seer",
+      "references": [
+        "1 Chronicles 29:29"
+      ],
+      "status": "A prophetic-historical record is separately named; no independent manuscript copy is identified.",
+      "language": "Hebrew is likely; no surviving witness confirms the language.",
+      "date": "Associated with Samuel and the history leading into the monarchy; exact date unknown.",
+      "witnesses": [],
+      "recoverable": "Only the source reference in 1 Chronicles 29:29 survives. The record's full wording and scope are not preserved as a separate text.",
+      "note": "This is one of three distinct records named alongside the records of Nathan and Gad. It must not be conflated with the canonical Book of Samuel without evidence.",
+      "caution": "The source notice does not establish the precise boundaries, authorship history, or contents of the record.",
+      "research_sources": [
+        {
+          "title": "The Book of Samuel: Its Composition, Structure and Significance as a Historical Source",
+          "url": "https://epe.lac-bac.gc.ca/100/201/300/journal_hebrew/pdf/2010/article_133.pdf"
+        }
+      ]
+    },
+    {
+      "id": "nathan_prophetic_record",
+      "title": "Records of Nathan the Prophet",
+      "references": [
+        "1 Chronicles 29:29",
+        "2 Chronicles 9:29"
+      ],
+      "status": "A prophetic-historical record is separately named; no independent manuscript copy is identified.",
+      "language": "Hebrew is likely; no surviving witness confirms the language.",
+      "date": "Associated with David and Solomon; exact date unknown.",
+      "witnesses": [],
+      "recoverable": "The source notices name records or words associated with Nathan. No separate continuous text is securely identified as the cited record.",
+      "note": "The reference in 2 Chronicles 9:29 places Nathan's record alongside the prophecy of Ahijah and visions of Iddo. The wording does not prove that all were one volume.",
+      "caution": "Do not identify every Nathan tradition or narrative with this lost record.",
+      "research_sources": [
+        {
+          "title": "Encyclopedia of the Bible — Books of Chronicles, literary sources",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Books-Chronicles"
+        }
+      ]
+    },
+    {
+      "id": "gad_seer_record",
+      "title": "Records of Gad the Seer",
+      "references": [
+        "1 Chronicles 29:29"
+      ],
+      "status": "A prophetic-historical record is separately named; no independent manuscript copy is identified.",
+      "language": "Hebrew is likely; no surviving witness confirms the language.",
+      "date": "Associated with David's reign; exact date unknown.",
+      "witnesses": [],
+      "recoverable": "Only the source reference in 1 Chronicles 29:29 survives. No independent copy or continuous text of the record is identified.",
+      "note": "Gad is named separately from Samuel and Nathan in the source notice. The three records should not be merged into one reconstructed book.",
+      "caution": "Do not mistake references to Gad elsewhere for surviving portions of this particular record.",
+      "research_sources": [
+        {
+          "title": "Encyclopedia of the Bible — Books of Chronicles, literary sources",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Books-Chronicles"
+        }
+      ]
+    },
+    {
+      "id": "words_kings_israel",
+      "title": "Words or Records of the Kings of Israel",
+      "references": [
+        "2 Chronicles 23:18"
+      ],
+      "status": "A source record is referred to in a textual notice; its exact title and identity are uncertain.",
+      "language": "Hebrew is likely; no independent witness is known.",
+      "date": "Undetermined; associated with the monarchic period.",
+      "witnesses": [],
+      "recoverable": "The notice in 2 Chronicles 23:18 refers to written or recorded material associated with the kings of Israel. No separate text is preserved under a secure title.",
+      "note": "The expression may overlap with the royal annals cited elsewhere, but the wording alone does not establish that identity.",
+      "caution": "Do not automatically treat this as a distinct volume from the royal chronicles, nor collapse it into them without textual evidence.",
+      "research_sources": [
+        {
+          "title": "Encyclopedia of the Bible — Books of Chronicles, literary sources",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Books-Chronicles"
+        }
+      ]
+    },
+    {
+      "id": "midrash_book_kings",
+      "title": "Commentary (Midrash) on the Book of Kings",
+      "references": [
+        "2 Chronicles 24:27"
+      ],
+      "status": "A commentary or explanatory record is referenced; no independent copy is identified.",
+      "language": "Hebrew is likely; no manuscript witness is known.",
+      "date": "Undetermined; the cited work was available to the Chronicler or the source tradition represented by the passage.",
+      "witnesses": [],
+      "recoverable": "2 Chronicles 24:27 refers to a midrash or commentary associated with the Book of Kings. The commentary itself is not independently preserved as a separate text.",
+      "note": "The wording may describe a commentary on the royal history rather than another copy of the Book of Kings. Its precise literary form is uncertain.",
+      "caution": "Do not treat this commentary as identical with the canonical Books of Kings or the later Books of Chronicles.",
+      "research_sources": [
+        {
+          "title": "Encyclopedia of the Bible — Books of Chronicles, literary sources",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Books-Chronicles"
+        }
+      ]
+    },
+    {
+      "id": "decrees_david_solomon",
+      "title": "Writings or Decrees of David and Solomon",
+      "references": [
+        "2 Chronicles 35:4"
+      ],
+      "status": "Written instructions or decrees are referenced; whether these formed a separate book is uncertain.",
+      "language": "Hebrew is likely; no separate manuscript is identified.",
+      "date": "Associated with the reigns of David and Solomon; exact date and transmission history are unknown.",
+      "witnesses": [],
+      "recoverable": "2 Chronicles 35:4 refers to written directions associated with David and Solomon in the arrangement of service. The source wording is not preserved as an independently identified document.",
+      "note": "The reference may concern administrative or liturgical instructions rather than a literary book. It is catalogued as a referenced written source, not as a confirmed lost volume.",
+      "caution": "Do not expand the reference into a complete book or claim that its full wording is lost if it may be embedded in surviving instructions.",
+      "research_sources": [
+        {
+          "title": "Dr. J. Paul Tanner — I and II Chronicles, source references",
+          "url": "https://paultanner.org/English%20Docs/OT%203/Teacher%20-%202024%20PDFs/Sess24-Chron.pdf"
         }
       ]
     }
