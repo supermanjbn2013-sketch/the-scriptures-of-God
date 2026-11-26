@@ -116,6 +116,22 @@ def validate_dss():
                     found_major.add(required)
     assert actual_lines == index["total_line_records"], f"DSS line count mismatch: {actual_lines}"
     assert found_major == set(required_witnesses), f"Major DSS witness missing from transcription lines: {set(required_witnesses)-found_major}"
+    book_index_path = ROOT / "dss/dss_book_index.json"
+    assert book_index_path.exists(), "DSS-attested book index was not generated"
+    book_index = json.loads(book_index_path.read_text(encoding="utf-8"))
+    assert book_index["record_type"] == "DSS-attested writings index"
+    assert book_index["license"] == "CC BY-NC 4.0"
+    assert book_index["scroll_identifier_count"] == len(indexed_scrolls)
+    assert book_index["total_line_records"] == actual_lines
+    assert len(book_index["books"]) >= 1, "No DSS-attested Hebrew books were indexed"
+    for book in book_index["books"]:
+        assert book["book_code"] in WLC_EXPECTED_BOOK_CODES
+        assert book["title"] and book["preserved_line_count"] > 0 and book["witness_count"] > 0
+        assert book["witnesses"] and all(w in indexed_scrolls for w in book["witnesses"])
+    for work in book_index["related_writings"]:
+        assert work["title"] and work["preserved_line_count"] > 0 and work["witnesses"]
+        assert all(w["scroll"] in indexed_scrolls for w in work["witnesses"])
+    print(f"Validated DSS evidence index: {len(book_index['books'])} Hebrew books and {len(book_index['related_writings'])} additional writings.")
     dss = json.loads((ROOT / "catalog/dead_sea_scrolls_register.json").read_text(encoding="utf-8"))
     assert dss["record_type"] == "dead_sea_scrolls_manuscript_metadata_catalog"
     assert len(dss["records"]) >= 6
