@@ -3,7 +3,6 @@ on:
   push:
     paths:
       - "tools/prepare_corpus.py"
-      - "tools/import_igntp_collections.py"
       - "tools/import_etcbc_dss.py"
       - "tools/import_codex_sinaiticus.py"
       - "tools/import_codex_vaticanus.py"
@@ -64,8 +63,6 @@ jobs:
         run: python tools/import_papyrus_77.py
       - name: Import Codex Sinaiticus manuscript transcription
         run: python tools/import_codex_sinaiticus.py
-      - name: Import 13 IGNTP TEI transcription collections
-        run: python tools/import_igntp_collections.py
       - name: Build verse-level John manuscript comparison index
         run: python tools/build_john_witness_index.py
       - name: Import Greek Didache reference text
@@ -96,8 +93,6 @@ jobs:
         run: python tools/import_ascension_isaiah.py
       - name: Validate imported papyrus page indexes and text records
         run: python tools/validate_corpus.py papyri
-      - name: Validate 13 IGNTP TEI transcription collections
-        run: python tools/validate_corpus.py igntp
       - name: Validate base Hebrew and Greek corpus
         run: python tools/validate_corpus.py base
       - name: Validate complete Apocrypha texts
