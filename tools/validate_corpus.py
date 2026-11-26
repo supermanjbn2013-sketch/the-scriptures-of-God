@@ -253,10 +253,10 @@ def validate_john():
         selected = verse.get("priority_witness")
         assert selected in verse["witnesses"], f"Missing papyrus-first selection: {verse['reference']}"
         assert verse.get("priority_text") == verse["witnesses"][selected]["text"]
-        assert verse.get("priority_status") in {"earliest_complete_witness", "earliest_available_witness_is_partial"}
-        if verse["priority_status"] == "earliest_complete_witness":
+        assert verse.get("priority_status") in {"earliest_unbracketed_text", "earliest_available_text_contains_editorial_supply"}
+        if verse["priority_status"] == "earliest_unbracketed_text":
             assert "[" not in verse["priority_text"] and "]" not in verse["priority_text"], f"Editorial supply selected as complete text: {verse['reference']}"
-        assert isinstance(verse.get("earlier_partial_witnesses"), list)
+        assert isinstance(verse.get("earlier_witnesses_with_editorial_supply"), list)
         for witness, record in verse["witnesses"].items():
             assert witness in metadata and record["text"].strip()
             assert record["pages"] or record["line_ids"], f"Missing source coordinates: {verse['reference']} / {witness}"
