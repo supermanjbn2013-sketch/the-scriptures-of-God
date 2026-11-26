@@ -163,9 +163,13 @@ def main():
             record["reconstruction_reference"] = ref
             record["reconstruction_method"] = "ordered exact-token alignment; DSS replaces only aligned word positions; WLC supplies unaligned positions"
             record["reconstruction_threshold"] = 0.70
-            record["license"] = "DSS transcription CC BY-NC 4.0; WLC base text public domain; OSHB annotations CC BY 4.0"
-            record["attribution"] = (record.get("attribution","") +
-                "; DSS transcription attribution: Martin G. Abegg Jr.; ETCBC/CACCHT; Qumran Digital Reader, CC BY-NC 4.0.")
+            if candidates:
+                record["license"] = "DSS transcription CC BY-NC 4.0; WLC base text public domain; OSHB annotations CC BY 4.0"
+                record["attribution"] = (record.get("attribution","") +
+                    "; DSS transcription attribution: Martin G. Abegg Jr.; ETCBC/CACCHT; Qumran Digital Reader, CC BY-NC 4.0.")
+                record["dss_source_url"] = "https://github.com/evenderekh/QDR"
+            else:
+                record["license"] = "WLC base text is public domain; OSHB annotations CC BY 4.0"
             target.write(json.dumps(record, ensure_ascii=False, separators=(",",":")) + "\n")
             total += 1
 
