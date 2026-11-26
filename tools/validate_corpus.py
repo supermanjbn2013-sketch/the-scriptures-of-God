@@ -304,6 +304,17 @@ def validate_john():
         if chapter_number == 5:
             expected.remove(4)
         assert verse_numbers == expected, f"Unexpected verse sequence in John {chapter_number}: {verse_numbers}"
+    for chapter_number in (7, 10, 11, 12, 13, 14, 15):
+        segment = next(item for item in segments if item["segment_id"] == f"john-chapter-{chapter_number}")
+        assert "P75" in segment["source_witness_id"], f"Missing P75 provenance for John {chapter_number}"
+    for chapter_number in (15, 16, 17, 19, 20, 21):
+        segment = next(item for item in segments if item["segment_id"] == f"john-chapter-{chapter_number}")
+        assert "P66" in segment["source_witness_id"], f"Missing P66 fragment provenance for John {chapter_number}"
+    assert "not of this world" in next(item for item in segments if item["segment_id"] == "john-chapter-15")["english_text"]
+    assert "from God" in next(item for item in segments if item["segment_id"] == "john-chapter-16")["english_text"].split("27 ", 1)[1].split("\\n", 1)[0]
+    assert "knew not that it was the Lord" in next(item for item in segments if item["segment_id"] == "john-chapter-20")["english_text"]
+    chapter21 = next(item for item in segments if item["segment_id"] == "john-chapter-21")
+    assert "toiled through the whole night" in chapter21["english_text"] and "at thy word we will cast" in chapter21["english_text"], "Preserve the P66 addition at John 21:6"
     print("Validated verse-level John manuscript index:", index["verse_count"], "verse references;", index["witness_verse_counts"])
 
 
