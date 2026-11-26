@@ -64,7 +64,7 @@ def main():
             "id": "dss_" + normalize(scroll),
             "shelfmark": scroll,
             "corpus_part": indexed.get("corpus_part"),
-            "fragment_count": len(stat["fragment_ids"]),
+            "fragment_count": indexed["fragment_count"],
             "line_count": stat["line_count"],
             "parallel_reference_count": len(stat["parallel_refs"]),
             "parallel_reference_writing_ids": sorted(stat["parallel_book_ids"]),
