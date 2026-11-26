@@ -785,6 +785,26 @@ def validate_reconstruction_policy():
     assert policy["reconstruction_rules"]["never_invent_missing_text"] is True
     assert policy["reconstruction_rules"]["unresolved_gaps_remain_blank"] is True
     assert policy["required_segment_fields"]
+    algorithm = policy.get("algorithmic_reconstruction", {})
+    assert algorithm.get("id") == "dss_wlc_hebrew_word_alignment_v1"
+    assert "not necessarily the next-oldest physical witness" in " ".join(algorithm.get("limitations", []))
+    reconstruction_file = ROOT / "corpus/reconstructed_verses.jsonl"
+    reconstruction_index = ROOT / "corpus/reconstruction_index.json"
+    assert reconstruction_file.exists() and reconstruction_index.exists(), "Generated Hebrew reconstruction assets are missing"
+    index = json.loads(reconstruction_index.read_text(encoding="utf-8"))
+    assert index.get("record_type") == "verse_level_dss_led_hebrew_reconstruction_index"
+    assert index.get("hebrew_verse_records", 0) >= 20000, "Hebrew reconstruction is unexpectedly incomplete"
+    actual = 0
+    with reconstruction_file.open(encoding="utf-8") as stream:
+        for line in stream:
+            if not line.strip():
+                continue
+            record = json.loads(line)
+            if record.get("language") == "he" and "Westminster Leningrad Codex" in record.get("witness_basis", ""):
+                actual += 1
+                assert record.get("text") and record.get("reconstruction_note") and record.get("reconstruction_method")
+    assert actual == index["hebrew_verse_records"], f"Reconstruction index count mismatch: {actual}"
+    print("Validated generated verse-level Hebrew reconstruction:", actual, "verses;", sum(x["dss_aligned"] for x in index["books"].values()), "DSS/WLC hybrids.")
     wlc = next(item for item in source_catalog["datasets"] if item["id"] == "oshb-wlc")
     assert "Masoretic witness" in wlc["coverage"]
     assert "does not define the archive's scope" in " ".join(wlc["limitations"])
