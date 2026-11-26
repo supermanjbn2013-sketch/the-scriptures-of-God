@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         }).setNegativeButton("Cancel",null).show();
     }
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
-    String[] sections={"Home","Hebrew Scriptures","Prophets","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Archive","Papyrus Archive","Codex Vaticanus Archive","Codex Sinaiticus Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
+    String[] sections={"Home","Hebrew Scriptures","DSS Hebrew Archive","Prophets","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Archive","Papyrus Archive","Codex Vaticanus Archive","Codex Sinaiticus Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
     @Override public void onCreate(Bundle b){super.onCreate(b); applyTheme(); seed(); show();}
     void applyTheme(){String mode=getSharedPreferences("archive_settings",MODE_PRIVATE).getString("theme","dark");lightMode=mode.equals("light")||(mode.equals("system")&&((getResources().getConfiguration().uiMode&android.content.res.Configuration.UI_MODE_NIGHT_MASK)==android.content.res.Configuration.UI_MODE_NIGHT_NO));if(lightMode){bg=Color.rgb(247,245,239);panel=Color.rgb(255,255,255);gold=Color.rgb(133,94,38);ink=Color.rgb(35,39,42);muted=Color.rgb(105,110,113);}else{bg=Color.rgb(15,19,24);panel=Color.rgb(26,33,41);gold=Color.rgb(205,174,112);ink=Color.rgb(232,228,217);muted=Color.rgb(160,166,170);}}
     void saveTheme(String mode){getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("theme",mode).apply();applyTheme();show();}
@@ -122,6 +122,7 @@ public class MainActivity extends Activity {
             TextView searchTile=text("⌕   Search the Scriptures and manuscript records",15,ink,true);searchTile.setBackground(shape(panel));content.addView(searchTile);searchTile.setOnClickListener(v->navigateTo("Search"));
             content.addView(text("SCRIPTURE COLLECTIONS",12,gold,true));
             addHomeTile("Hebrew Scriptures","39 writings",() -> navigateTo("Hebrew Scriptures"));
+            addHomeTile("DSS Hebrew Archive","Hebrew Scripture books, DSS-preserved apocrypha, and referenced writings — manuscript text only",() -> navigateTo("DSS Hebrew Archive"));
             addHomeTile("Unified Apostolic and Disciple Writings","All catalogued letters, gospels, acts, testimony and related works in estimated chronological order",() -> navigateTo("Unified Apostolic and Disciple Writings"));
             addHomeTile("Apocrypha and Deuterocanonical Writings","Greek and Latin textual forms",() -> navigateTo("Apocrypha and Deuterocanonical Writings"));
             addHomeTile("Lost and Referenced Books","Other ancient records, fragmentary works and disputed identifications",() -> navigateTo("Lost and Referenced Books"));
@@ -150,6 +151,7 @@ public class MainActivity extends Activity {
             return;
         }
         if(section.equals("DSS Transcription Archive")){renderEtcbcDssIndex(q);return;}
+        if(section.equals("DSS Hebrew Archive")){renderDssHebrewArchive(q);return;}
         if(section.equals("Papyrus Archive")){content.addView(text("GREEK PAPYRUS WITNESSES",12,gold,true));content.addView(text("Each papyrus is a separate physical witness. A fragment's passage coverage is not a complete book. Open a witness to inspect its surviving transcription and source record.",13,muted,false));}
         if(section.equals("Codex Vaticanus Archive")){content.addView(text("CODEX VATICANUS · GA 03",12,gold,true));content.addView(text("This archive contains the Codex Vaticanus transcription independently of other manuscript archives. Only the witness text is shown; missing leaves are not silently filled.",13,muted,false));}
         if(section.equals("DSS Archive")){content.addView(text("DEAD SEA SCROLLS · QUMRAN MANUSCRIPTS",12,gold,true));content.addView(text("This archive is limited to actual DSS witnesses and their source records. A scroll's preserved text is distinguished from restored or missing portions.",13,muted,false));}
@@ -732,6 +734,124 @@ public class MainActivity extends Activity {
     private void appendLibraryEntry(String key,String entry){android.content.SharedPreferences p=getSharedPreferences("archive_library",MODE_PRIVATE);String old=p.getString(key,"");for(String line:old.split("\n"))if(line.equals(entry))return;p.edit().putString(key,entry+(old.isEmpty()?"":"\n"+old)).apply();}
     private void showPassageActions(String reference,String body,String sourceLanguage){String[] actions={"AI translate / analyze","Bookmark passage","Highlight full passage","Add or edit personal note","Copy full passage","Paste clipboard text into translator","Share passage"};new android.app.AlertDialog.Builder(this).setTitle(reference).setItems(actions,(d,w)->{if(w==0){openAiTranslator(reference,body,sourceLanguage);}else if(w==1){appendLibraryEntry("bookmarks",reference+"  "+body);showInfo("Bookmark saved",reference+" was saved to your personal library.");}else if(w==2){appendLibraryEntry("highlights",reference+"  "+body);showInfo("Highlight saved",reference+" was added to your highlights.");}else if(w==3){android.content.SharedPreferences p=getSharedPreferences("archive_library",MODE_PRIVATE);EditText note=new EditText(this);note.setMinLines(3);note.setText(p.getString("note:"+reference,""));new android.app.AlertDialog.Builder(this).setTitle("Personal note · "+reference).setView(note).setNegativeButton("Cancel",null).setPositiveButton("Save",(a,b)->p.edit().putString("note:"+reference,note.getText().toString()).apply()).show();}else if(w==4){((android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(android.content.ClipData.newPlainText(reference,reference+" "+body));showInfo("Copied",reference+" copied to clipboard.");}else if(w==5){android.content.ClipboardManager clipboard=(android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE);if(clipboard==null||!clipboard.hasPrimaryClip()||clipboard.getPrimaryClip().getItemCount()==0){showInfo("Clipboard empty","Copy text first, then choose Paste.");return;}CharSequence pasted=clipboard.getPrimaryClip().getItemAt(0).coerceToText(this);if(pasted==null||pasted.toString().trim().isEmpty()){showInfo("Clipboard empty","There is no text to paste.");return;}openAiTranslator(reference,pasted.toString(),sourceLanguage);}else{android.content.Intent intent=new android.content.Intent(Intent.ACTION_SEND);intent.setType("text/plain");intent.putExtra(Intent.EXTRA_TEXT,reference+"\\n"+body);startActivity(Intent.createChooser(intent,"Share passage"));}}).show();}
     void openAiTranslator(String reference,String sourceText,String sourceLanguage){Intent intent=new Intent(this,AiTranslatorActivity.class);intent.putExtra("passage_reference",reference);intent.putExtra("passage_text",sourceText);intent.putExtra("source_language",sourceLanguage);intent.putExtra("preferred_target_language",targetLanguageName());startActivity(intent);}
+
+    void renderDssHebrewArchive(String query){
+        content.addView(text("ONE ARCHIVE · DSS WITNESS TEXT ONLY",12,gold,true));
+        content.addView(text("The archive groups the existing Hebrew Scripture book list, apocryphal and related writings, and lost or referenced titles. Open a title to see only line records whose DSS parallel-reference metadata matches it. Fragmentary lines remain fragmentary; missing chapters and verses are not reconstructed.",13,muted,false));
+        content.addView(text("Source: ETCBC / CACCHT Dead Sea Scrolls corpus, Martin G. Abegg transcriptions distributed through Qumran Digital Reader. CC BY-NC 4.0 — non-commercial use only. Each line retains its scroll, fragment and line identifier.",12,muted,false));
+        renderDssArchiveGroup("HEBREW SCRIPTURES",entries.get("Hebrew Scriptures"),query);
+        renderDssArchiveGroup("APOCRYPHA AND DEUTEROCANONICAL WRITINGS",entries.get("Apocrypha and Deuterocanonical Writings"),query);
+        ArrayList<String> related=new ArrayList<>(Arrays.asList("1 Enoch","Jubilees","Book of Giants","Book of Noah","Genesis Apocryphon","Prayer of Nabonidus"));
+        renderDssArchiveGroup("OTHER DSS-PRESERVED OR FRAGMENTARILY ATTESTED WRITINGS",related,query);
+        renderDssArchiveGroup("LOST AND REFERENCED BOOKS",entries.get("Lost and Referenced Books"),query);
+        content.addView(text("Important: a title appearing here is an archive index entry, not proof that a DSS copy survives. If no matching line is found, the entry will say so. The existing Masoretic and Greek datasets are not used to fill DSS gaps.",12,gold,false));
+    }
+
+    void renderDssArchiveGroup(String heading,ArrayList<String> titles,String query){
+        if(titles==null||titles.isEmpty())return;
+        content.addView(text(heading,12,gold,true));
+        for(String title:titles){
+            if(!query.isEmpty()&&!title.toLowerCase(java.util.Locale.ROOT).contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
+            TextView row=text(title+"   ›",15,ink,true);row.setPadding(13,12,13,12);row.setBackground(shape(panel));
+            LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,3,0,3);content.addView(row,p);
+            row.setOnClickListener(v->openDssBookEntry(title));
+        }
+    }
+
+    String[] dssReferenceAliases(String title){
+        String t=title.toLowerCase(java.util.Locale.ROOT);
+        if(t.equals("genesis"))return new String[]{"genesis","gen."};
+        if(t.equals("exodus"))return new String[]{"exodus","exod","ex."};
+        if(t.equals("leviticus"))return new String[]{"leviticus","lev."};
+        if(t.equals("numbers"))return new String[]{"numbers","num."};
+        if(t.equals("deuteronomy"))return new String[]{"deuteronomy","deut","deu."};
+        if(t.equals("joshua"))return new String[]{"joshua","josh."};
+        if(t.equals("judges"))return new String[]{"judges","judg."};
+        if(t.equals("ruth"))return new String[]{"ruth","ruth."};
+        if(t.equals("1 samuel"))return new String[]{"1 samuel","1sam","1 sam."};
+        if(t.equals("2 samuel"))return new String[]{"2 samuel","2sam","2 sam."};
+        if(t.equals("1 kings"))return new String[]{"1 kings","1kgs","1 kgs"};
+        if(t.equals("2 kings"))return new String[]{"2 kings","2kgs","2 kgs"};
+        if(t.equals("1 chronicles"))return new String[]{"1 chronicles","1chr","1 chr"};
+        if(t.equals("2 chronicles"))return new String[]{"2 chronicles","2chr","2 chr"};
+        if(t.equals("ezra"))return new String[]{"ezra","ezr."};
+        if(t.equals("nehemiah"))return new String[]{"nehemiah","neh."};
+        if(t.equals("esther"))return new String[]{"esther","esth."};
+        if(t.equals("job"))return new String[]{"job","job."};
+        if(t.equals("psalms"))return new String[]{"psalms","psalm","ps."};
+        if(t.equals("proverbs"))return new String[]{"proverbs","prov."};
+        if(t.equals("ecclesiastes"))return new String[]{"ecclesiastes","eccl."};
+        if(t.equals("song of songs"))return new String[]{"song of songs","song","canticles"};
+        if(t.equals("isaiah"))return new String[]{"isaiah","isa."};
+        if(t.equals("jeremiah"))return new String[]{"jeremiah","jer."};
+        if(t.equals("lamentations"))return new String[]{"lamentations","lam."};
+        if(t.equals("ezekiel"))return new String[]{"ezekiel","ezek."};
+        if(t.equals("daniel"))return new String[]{"daniel","dan."};
+        if(t.equals("hosea"))return new String[]{"hosea","hos."};
+        if(t.equals("joel"))return new String[]{"joel","joel."};
+        if(t.equals("amos"))return new String[]{"amos","amos."};
+        if(t.equals("obadiah"))return new String[]{"obadiah","obad."};
+        if(t.equals("jonah"))return new String[]{"jonah","jon."};
+        if(t.equals("micah"))return new String[]{"micah","mic."};
+        if(t.equals("nahum"))return new String[]{"nahum","nah."};
+        if(t.equals("habakkuk"))return new String[]{"habakkuk","hab."};
+        if(t.equals("zephaniah"))return new String[]{"zephaniah","zeph."};
+        if(t.equals("haggai"))return new String[]{"haggai","hag."};
+        if(t.equals("zechariah"))return new String[]{"zechariah","zech."};
+        if(t.equals("malachi"))return new String[]{"malachi","mal."};
+        if(t.contains("tobit"))return new String[]{"tobit","tob."};
+        if(t.contains("judith"))return new String[]{"judith","jdt."};
+        if(t.contains("sirach"))return new String[]{"sirach","ecclesiasticus","sir."};
+        if(t.contains("baruch"))return new String[]{"baruch","bar."};
+        if(t.contains("letter of jeremiah"))return new String[]{"letter of jeremiah","epistle of jeremiah"};
+        if(t.contains("1 enoch")||t.equals("enoch"))return new String[]{"1 enoch","enoch"};
+        if(t.contains("jubilees"))return new String[]{"jubilees","jub."};
+        if(t.contains("psalm 151"))return new String[]{"psalm 151","ps 151"};
+        return new String[]{t};
+    }
+
+    void openDssBookEntry(String bookTitle){
+        final String title=bookTitle;
+        final String[] aliases=dssReferenceAliases(title);
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;java.util.LinkedHashSet<String> witnesses=new java.util.LinkedHashSet<>();
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/etcbc_transcriptions.jsonl"),"UTF-8"),65536);
+                    String raw;
+                    while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        String scroll=record.optString("scroll");String refs="";
+                        org.json.JSONArray parallel=record.optJSONArray("parallel_references");
+                        if(parallel!=null)for(int i=0;i<parallel.length();i++){if(i>0)refs+="; ";refs+=parallel.optString(i);}
+                        boolean match=false;
+                        for(String alias:aliases){if(!alias.isEmpty()&&(refs.toLowerCase(java.util.Locale.ROOT).contains(alias.toLowerCase(java.util.Locale.ROOT)))){match=true;break;}}
+                        if(!match)continue;
+                        if(count==0){
+                            out.append("DSS transcription source: Martin G. Abegg Jr. / ETCBC-CACCHT, distributed through Qumran Digital Reader.\n");
+                            out.append("License: CC BY-NC 4.0 — non-commercial use only.\n");
+                            out.append("This view contains only matching manuscript line records. Parallel references are indexing aids, not reconstructed Scripture text.\n\n");
+                        }
+                        witnesses.add(scroll);
+                        out.append(scroll).append(" · Fragment ").append(record.optString("fragment")).append(" · Line ").append(record.optString("line")).append("\n");
+                        out.append(record.optString("transcription_text")).append("\n");
+                        String normalized=record.optString("normalized_text");
+                        if(!normalized.isEmpty()&&!normalized.equals(record.optString("transcription_text")))out.append("Normalized tokens: ").append(normalized).append("\n");
+                        if(!refs.isEmpty())out.append("Parallel reference: ").append(refs).append("\n");
+                        out.append("\n");count++;
+                    }
+                    reader.close();
+                }catch(Exception e){return "The bundled DSS transcription could not be read: "+e.getMessage();}
+                if(count==0)return "No matching line-level record for "+title+" was found in the currently bundled ETCBC/Abegg DSS dataset. This does not prove that no DSS fragment exists; it means this import has no line record mapped to the title. No later manuscript or edition has been used to fill the gap.\n\nArchive index entry: "+title;
+                return count+" preserved DSS line records from "+witnesses.size()+" witness identifiers.\n\n"+out.toString();
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(title+" · DSS witness text").setView(sv).setNegativeButton("Back to archive",(d,w)->navigateTo("DSS Hebrew Archive")).setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
 
     void renderEtcbcDssIndex(String query){
         try{
