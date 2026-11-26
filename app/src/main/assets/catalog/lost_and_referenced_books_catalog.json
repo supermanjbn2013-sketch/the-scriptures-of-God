@@ -642,6 +642,84 @@
           "url": "https://classic.net.bible.org/dictionary.php?word=Chronicles%2C+Books+of"
         }
       ]
+    },
+    {
+      "id": "marcionite_alexandrian_letter",
+      "title": "Epistle to the Alexandrians (Muratorian Fragment)",
+      "references": [
+        "Muratorian Fragment, lines 63–67 (numbering varies by edition)"
+      ],
+      "status": "Named in the Muratorian Fragment as a letter circulating under Paul's name and rejected as forged; no text survives.",
+      "language": "Unknown; Greek is possible, but the surviving notice is in Latin and does not establish the lost letter's language.",
+      "date": "The letter predates the Muratorian Fragment; its own date is unknown. The fragment is traditionally dated to the late second century, though its date is debated.",
+      "witnesses": [
+        "The Muratorian Fragment survives in a damaged eighth-century Latin manuscript; it preserves only the notice about the letter, not the letter itself."
+      ],
+      "recoverable": "Only the title and the ancient report about its claimed Pauline attribution and rejection survive. Its contents are unknown.",
+      "note": "The fragment associates the letter with writings said to be forged in Paul's name in connection with Marcionite teaching. No surviving text permits reconstruction.",
+      "caution": "Do not confuse this lost letter with Hebrews or any other surviving writing. The identification with another extant text is speculative.",
+      "research_sources": [
+        {
+          "title": "Muratorian Fragment — surviving Latin text and translation",
+          "url": "https://www.ccel.org/ccel/wace/biodict.html?term=Muratorian+Fragment"
+        },
+        {
+          "title": "Oxford Academic — study of early Pauline pseudepigraphal letters and the Muratorian Fragment",
+          "url": "https://ora.ox.ac.uk/objects/uuid:cdc17076-98b3-4085-9c49-022041e9bd29/files/m153a26430c4688d353acdd81d02cba82"
+        }
+      ]
+    },
+    {
+      "id": "marcionite_laodicean_letter",
+      "title": "Marcionite Epistle to the Laodiceans (Muratorian Fragment)",
+      "references": [
+        "Muratorian Fragment, lines 63–67 (numbering varies by edition)"
+      ],
+      "status": "A letter under Paul's name is reported and rejected in the Muratorian Fragment; no text of this particular letter survives.",
+      "language": "Unknown; Greek is possible, but the surviving notice is in Latin and does not establish the lost letter's language.",
+      "date": "The letter predates the Muratorian Fragment; its own date is unknown. The fragment is traditionally dated to the late second century, though its date is debated.",
+      "witnesses": [
+        "The Muratorian Fragment survives in a damaged eighth-century Latin manuscript; it preserves only the notice about the letter, not the letter itself."
+      ],
+      "recoverable": "Only the title and the report that the letter was circulating under Paul's name survive. Its wording and contents are unknown.",
+      "note": "This is distinct from the unidentified letter associated with Laodicea in Colossians 4:16 and from the extant Latin Epistle to the Laodiceans. The Muratorian Fragment's Laodicean letter is described as a forgery connected with Marcionite teaching.",
+      "caution": "Do not combine the three Laodicean letter traditions or treat the surviving Latin Epistle to the Laodiceans as a copy of the lost Marcionite letter.",
+      "research_sources": [
+        {
+          "title": "Muratorian Fragment — surviving Latin text and translation",
+          "url": "https://www.ccel.org/ccel/wace/biodict.html?term=Muratorian+Fragment"
+        },
+        {
+          "title": "Oxford Academic — study of early Pauline pseudepigraphal letters and the Muratorian Fragment",
+          "url": "https://ora.ox.ac.uk/objects/uuid:cdc17076-98b3-4085-9c49-022041e9bd29/files/m153a26430c4688d353acdd81d02cba82"
+        }
+      ]
+    },
+    {
+      "id": "marcionite_psalms",
+      "title": "Marcionite Book of Psalms (unnamed collection)",
+      "references": [
+        "Muratorian Fragment, lines 81–85 (numbering varies by edition)"
+      ],
+      "status": "A book or collection of psalms associated with Marcion is mentioned in the Muratorian Fragment; no text or exact title survives.",
+      "language": "Unknown; the surviving notice is Latin and does not establish the collection's original language.",
+      "date": "The collection predates the Muratorian Fragment; its composition date is unknown.",
+      "witnesses": [
+        "The Muratorian Fragment survives in a damaged eighth-century Latin manuscript; only the notice about the collection remains."
+      ],
+      "recoverable": "The ancient notice reports a new book of psalms associated with Marcion and named teachers. No individual psalm or manuscript of that collection is independently identified.",
+      "note": "The fragment names several teachers in a polemical rejection notice. The precise authorship, contents, and form of the collection are not recoverable from this brief reference.",
+      "caution": "Do not reconstruct the psalms or attribute the whole collection to one named author without further evidence.",
+      "research_sources": [
+        {
+          "title": "Muratorian Fragment — surviving Latin text and translation",
+          "url": "https://www.ccel.org/ccel/wace/biodict.html?term=Muratorian+Fragment"
+        },
+        {
+          "title": "Oxford Academic — study of early Pauline pseudepigraphal letters and the Muratorian Fragment",
+          "url": "https://ora.ox.ac.uk/objects/uuid:cdc17076-98b3-4085-9c49-022041e9bd29/files/m153a26430c4688d353acdd81d02cba82"
+        }
+      ]
     }
   ]
 }
