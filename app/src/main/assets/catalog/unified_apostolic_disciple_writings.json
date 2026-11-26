@@ -16,7 +16,7 @@
       "date_precision": "approximate scholarly range; debated",
       "genre": "gospel",
       "attribution_status": "Anonymous narrative traditionally associated with the disciple John; authorship is not stated in the text.",
-      "textual_status": "SBLGNT is an edited Greek source for this writing where included; manuscript witnesses must be linked separately and readings verified passage by passage. A P52 witness record now includes recto/verso Greek transcription with editorial restorations bracketed and an English rendering from that transcription. P66 now includes a first-hand Greek transcription sample for John 1:1–14 and a fresh English rendering from that transcription; P75 includes Luke 3:18–22 separately.",
+      "textual_status": "The app keeps edited Greek source texts distinct from individual manuscript witnesses. P52, P66, and P75 are separately imported from the INTF New Testament Virtual Manuscript Room as page-indexed transcription records. P66 and P75 remain separate witnesses; their imported transcriptions are opened from the individual papyrus archive. Readings must still be checked passage by passage against the oldest surviving witness that actually preserves each passage. No bulk transcription collection is used.",
       "later_canonical_compilation_status": "included in the later 27-writing collection; this label is historical metadata only and does not define archive scope",
       "chronology_basis": "Composition estimate, not date of surviving manuscript witness.",
       "historical_sequence": 10,
@@ -42,9 +42,11 @@
           "provenance": "Egypt; exact findspot uncertain",
           "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
           "contents": "Gospel of John; substantial but not complete text",
-          "text_status": "P66 remains catalogued as an individual papyrus witness. No bulk transcription archive is used or bundled here; no full diplomatic transcription is claimed in this record.",
+          "text_status": "INTF NTVMR diplomatic transcription is imported as page-indexed records in the separate P66 archive. This unified record keeps the witness metadata distinct and does not duplicate the full transcription.",
           "image_and_catalogue_source": "https://manuscripts.csntm.org/",
-          "sample_passage": "John 1:1–14 (page 1; verse 14 continues onto page 2)"
+          "sample_passage": "John 1:1–14 (page 1; verse 14 continues onto page 2)",
+          "transcription_source": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10066&pageID=ALL&format=teiraw",
+          "transcription_license": "CC BY 4.0; attribute INTF/NTVMR."
         },
         {
           "id": "P52",
@@ -132,7 +134,7 @@
           "provenance": "Probably Egypt; exact findspot and archaeological context are uncertain. A Dishna-area provenance has been proposed, but should not be treated as securely excavated context.",
           "current_location": "Biblioteca Apostolica Vaticana, Vatican City (Pap. Hanna 1, Mater Verbi)",
           "contents": "Originally contained the complete Gospels of Luke and John. Substantial portions survive from Luke 3:18–24:53 and John 1:1–15:8, with major gaps and damage.",
-          "text_status": "P75 remains catalogued as an individual papyrus witness. The former IGNTP transcription-archive source is not used or bundled here; no full diplomatic transcription is claimed in this record.",
+          "text_status": "INTF NTVMR diplomatic transcription is imported as page-indexed records in the separate P75 archive. This unified record keeps the witness metadata distinct and does not duplicate the full transcription.",
           "sample_passage": "John 1:1–18 (opening of the Gospel; folio shared with Luke's subscription and John's title)",
           "source_references": [
             {
@@ -151,7 +153,9 @@
               "title": "Nongbri, Reconsidering the Place of Papyrus Bodmer XIV–XV (P75) in Textual Criticism",
               "url": "https://www.jstor.org/stable/10.15699/jbl.1352.2016.3026"
             }
-          ]
+          ],
+          "transcription_source": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10075&pageID=ALL&format=teiraw",
+          "transcription_license": "CC BY 4.0; attribute INTF/NTVMR."
         }
       ],
       "description": "The Gospel of John is an anonymous narrative traditionally associated with John; the text itself does not name its author. Its early Greek papyrus evidence includes P75 (Papyrus Bodmer XV / Pap. Hanna 1), a codex originally containing Luke and John. The surviving John portions are extensive but discontinuous, with major gaps. The date of P75 is disputed, and the Luke transcription belonging to this same codex is catalogued separately under the Gospel of Luke.",
