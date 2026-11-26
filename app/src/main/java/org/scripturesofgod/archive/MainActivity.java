@@ -327,7 +327,7 @@ public class MainActivity extends Activity {
             .setPositiveButton("Read complete English text",(dialog,which)->showUnifiedEnglishReading(record))
             .setNegativeButton("Close",null);
         if(hasUnifiedSourceArchive(record.optString("id","")))
-            builder.setNeutralButton("Open original-language archive",(dialog,which)->openUnifiedSourceArchive(record));
+            builder.setNeutralButton("Open available source text",(dialog,which)->openUnifiedSourceArchive(record));
         builder.show();
     }
 
