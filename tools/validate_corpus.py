@@ -355,6 +355,7 @@ def validate_android():
         "Annals of the Kings of Israel (Manasseh source)",
         "Book of the Kings of Judah and Israel",
         "Book of the Kings of Israel and Judah",
+        "Chronicles of the Levites",
         "Book of Giants (fragmentarily preserved)"
     }
     assert required_lost.issubset(lost_titles), f"Missing lost/referenced writing records: {required_lost - lost_titles}"
