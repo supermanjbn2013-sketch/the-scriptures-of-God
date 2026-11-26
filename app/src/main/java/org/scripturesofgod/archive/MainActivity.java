@@ -192,14 +192,7 @@ public class MainActivity extends Activity {
     }
 
     void showUnifiedWritingDetail(org.json.JSONObject record){
-        String title=record.optString("title","Writing");
-        new android.app.AlertDialog.Builder(this)
-            .setTitle(title)
-            .setMessage("Choose what you want to open. The English reading and the research material are kept separate.")
-            .setPositiveButton("Read the complete English text",(dialog,which)->showUnifiedEnglishReading(record))
-            .setNegativeButton("Study and manuscript evidence",(dialog,which)->showUnifiedWritingStudy(record))
-            .setNeutralButton("Close",null)
-            .show();
+        showUnifiedWritingStudy(record);
     }
 
     void showUnifiedEnglishReading(org.json.JSONObject record){
@@ -311,7 +304,12 @@ public class MainActivity extends Activity {
         TextView view=text(detail.toString(),14,ink,false);enablePassageSelection(view);
         android.text.util.Linkify.addLinks(view,android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
         ScrollView scroll=new ScrollView(this);scroll.setPadding(12,8,12,8);scroll.addView(view);
-        new android.app.AlertDialog.Builder(this).setTitle(record.optString("title","Study and manuscript evidence")).setView(scroll).setPositiveButton("Close",null).show();
+        new android.app.AlertDialog.Builder(this)
+            .setTitle(record.optString("title","Writing"))
+            .setView(scroll)
+            .setPositiveButton("Read complete English text",(dialog,which)->showUnifiedEnglishReading(record))
+            .setNegativeButton("Close",null)
+            .show();
     }
 
     String libraryCategory="Bookmarks";
