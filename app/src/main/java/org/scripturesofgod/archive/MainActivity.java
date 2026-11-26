@@ -249,6 +249,10 @@ public class MainActivity extends Activity {
             }
             org.json.JSONArray pending=selected.optJSONArray("witnesses_pending");
             if(pending!=null&&pending.length()>0){attribution+="\\n\\nWitness collation still pending:";for(int i=0;i<pending.length();i++){org.json.JSONObject witness=pending.optJSONObject(i);if(witness!=null)attribution+="\\n"+witness.optString("id")+": "+witness.optString("task");}}
+            if("john".equals(writingId)){
+                showJohnChapterReader(title,readingText,attribution);
+                return;
+            }
             android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this)
                 .setTitle("English reading")
                 .setView(scroll)
@@ -260,6 +264,90 @@ public class MainActivity extends Activity {
             showInfo("English reading not yet available",
                 "The separate reading-text archive could not provide a verified complete English text for "+title+". Research descriptions and manuscript notes are not substituted for the actual reading.");
         }
+    }
+
+    void showJohnChapterReader(String title,String readingText,String attribution){
+        java.util.ArrayList<String> chapterTexts=new java.util.ArrayList<>();
+        java.util.regex.Matcher matcher=java.util.regex.Pattern.compile("(?m)^John (\\d+)\\s*$").matcher(readingText);
+        java.util.ArrayList<Integer> starts=new java.util.ArrayList<>();
+        java.util.ArrayList<Integer> numbers=new java.util.ArrayList<>();
+        while(matcher.find()){starts.add(matcher.start());numbers.add(Integer.parseInt(matcher.group(1)));}
+        for(int i=0;i<starts.size();i++){
+            int end=i+1<starts.size()?starts.get(i+1):readingText.length();
+            chapterTexts.add(readingText.substring(starts.get(i),end).trim());
+        }
+        if(chapterTexts.isEmpty()){
+            showInfo("John chapter index unavailable","The chapter headings could not be identified in the reading text.");
+            return;
+        }
+        final int[] selected={0};
+        LinearLayout reader=new LinearLayout(this);
+        reader.setOrientation(1);
+        reader.setPadding(10,8,10,8);
+        reader.addView(text("SELECT A CHAPTER",12,gold,true));
+        android.widget.GridLayout chapterGrid=new android.widget.GridLayout(this);
+        chapterGrid.setColumnCount(4);
+        chapterGrid.setUseDefaultMargins(true);
+        TextView[] chapterButtons=new TextView[chapterTexts.size()];
+        ScrollView passageScroll=new ScrollView(this);
+        TextView passage=text(chapterTexts.get(0),18,ink,false);
+        passage.setLineSpacing(5f,1.12f);
+        passage.setTextSize(getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",18));
+        enablePassageSelection(passage);
+        passageScroll.addView(passage);
+        Runnable refreshSelection=()->{
+            for(int i=0;i<chapterButtons.length;i++){
+                TextView button=chapterButtons[i];
+                if(button!=null){
+                    button.setTextColor(i==selected[0]?gold:ink);
+                    button.setBackground(shape(i==selected[0]?bg:panel));
+                }
+            }
+            passage.setText(chapterTexts.get(selected[0]));
+            passageScroll.scrollTo(0,0);
+        };
+        for(int i=0;i<chapterTexts.size();i++){
+            final int index=i;
+            TextView button=text(String.valueOf(numbers.get(i)),16,ink,true);
+            button.setGravity(Gravity.CENTER);
+            button.setPadding(8,12,8,12);
+            button.setBackground(shape(panel));
+            android.widget.GridLayout.LayoutParams params=new android.widget.GridLayout.LayoutParams();
+            params.width=0;
+            params.height=-2;
+            params.columnSpec=android.widget.GridLayout.spec(i%4,1f);
+            params.setMargins(3,3,3,3);
+            chapterGrid.addView(button,params);
+            chapterButtons[i]=button;
+            button.setOnClickListener(v->{selected[0]=index;refreshSelection.run();});
+        }
+        reader.addView(chapterGrid,new LinearLayout.LayoutParams(-1,-2));
+        LinearLayout.LayoutParams passageParams=new LinearLayout.LayoutParams(-1,0,1);
+        passageParams.setMargins(0,10,0,0);
+        reader.addView(passageScroll,passageParams);
+        LinearLayout controls=new LinearLayout(this);
+        controls.setGravity(Gravity.CENTER);
+        Button previous=new Button(this);
+        previous.setText("Previous");
+        previous.setOnClickListener(v->{if(selected[0]>0){selected[0]--;refreshSelection.run();}});
+        Button next=new Button(this);
+        next.setText("Next");
+        next.setOnClickListener(v->{if(selected[0]<chapterTexts.size()-1){selected[0]++;refreshSelection.run();}});
+        TextView source=text("Text source",13,gold,true);
+        source.setGravity(Gravity.CENTER);
+        source.setOnClickListener(v->showInfo("John manuscript and translation notes",attribution));
+        controls.addView(previous,new LinearLayout.LayoutParams(0,-2,1));
+        controls.addView(source,new LinearLayout.LayoutParams(0,-2,1));
+        controls.addView(next,new LinearLayout.LayoutParams(0,-2,1));
+        reader.addView(controls);
+        refreshSelection.run();
+        android.app.AlertDialog dialog=new android.app.AlertDialog.Builder(this)
+            .setTitle(title+" · Chapter 1 of "+chapterTexts.size())
+            .setView(reader)
+            .setPositiveButton("Close",null)
+            .create();
+        dialog.show();
+        dialog.getWindow().setLayout(-1,(int)(getResources().getDisplayMetrics().heightPixels*0.88));
     }
 
     boolean hasUnifiedSourceArchive(String writingId){
