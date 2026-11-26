@@ -57,14 +57,15 @@
         "1 Kings 16:27",
         "2 Kings 10:34",
         "2 Kings 13:8",
-        "2 Kings 14:28"
+        "2 Kings 14:28",
+        "2 Chronicles 33:18"
       ],
       "status": "Lost royal annals or source records; no independent manuscript copy is known.",
       "language": "Hebrew is likely, but no manuscript survives to confirm the language.",
       "date": "Compiled during or after the monarchic period; exact dates and stages are unknown.",
       "witnesses": [],
       "recoverable": "The surviving royal notices quote or summarize information attributed to these records. The annals themselves are not preserved.",
-      "note": "Repeated formulae refer readers to records of the kings of Israel. This may represent a continuing royal archive or a source tradition rather than one fixed-volume book.",
+      "note": "The royal-history source is also referenced in 2 Chronicles 33:18. It may represent an archive or source tradition rather than one fixed-volume book.",
       "caution": "Do not equate these records with the later canonical Books of Chronicles."
     },
     {
@@ -77,15 +78,20 @@
         "1 Kings 22:45",
         "2 Kings 8:23",
         "2 Kings 12:19",
-        "2 Kings 14:18"
+        "2 Kings 14:18",
+        "2 Chronicles 24:27",
+        "2 Chronicles 25:26",
+        "2 Chronicles 27:7",
+        "2 Chronicles 32:32",
+        "2 Chronicles 35:27"
       ],
       "status": "Lost royal annals or source records; no independent manuscript copy is known.",
       "language": "Hebrew is likely, but no manuscript survives to confirm the language.",
       "date": "Compiled during or after the monarchic period; exact dates and stages are unknown.",
       "witnesses": [],
       "recoverable": "The surviving royal notices preserve summaries and cross-references, not the full annals.",
-      "note": "The repeated source formula may refer to a royal archive or a continuing set of records.",
-      "caution": "Do not confuse these records with the extant canonical Books of Chronicles."
+      "note": "The royal-history source is described with more than one title, including records or a scroll of the kings of Judah and Israel. These references may point to one evolving archive or related source collections; the precise relationship is not established. The Chronicler also refers to a vision of Isaiah within the royal-history record (2 Chronicles 32:32).",
+      "caution": "Do not assume every differently worded reference denotes a separate book, or that every source named in Chronicles survives in the canonical Books of Chronicles."
     },
     {
       "id": "samuel_nathan_gad",
@@ -353,6 +359,26 @@
       "recoverable": "Colossians preserves an instruction to exchange and read a letter associated with Laodicea. The letter itself is not securely identified.",
       "note": "The wording can be understood as a letter to the Laodiceans or a letter from Laodicea. The later Latin Epistle to the Laodiceans is not established as the letter referred to here.",
       "caution": "Do not identify the referenced letter with the later Latin Epistle to the Laodiceans without evidence."
+    },
+    {
+      "id": "book_laments_josiah",
+      "title": "Book of Laments for Josiah",
+      "references": [
+        "2 Chronicles 35:25"
+      ],
+      "status": "A named collection or record of laments is referenced; no independent copy is securely identified.",
+      "language": "Unknown; Hebrew is likely in the historical context, but no surviving manuscript of this source is identified.",
+      "date": "The laments originated in connection with the death of King Josiah; the date and compilation history of the cited collection are undetermined.",
+      "witnesses": [],
+      "recoverable": "2 Chronicles 35:25 reports that Jeremiah composed laments for Josiah and that male and female singers continued to sing them; the passage says they were recorded in a book of laments. The text of that cited collection is not independently preserved under a secure identification.",
+      "note": "The reference may indicate a collection of mourning songs or a written record of the laments for Josiah. Its relationship, if any, to the extant Book of Lamentations is uncertain.",
+      "caution": "Do not identify this source automatically with the canonical Book of Lamentations, and do not assume that the extant Book of Lamentations contains the specific laments for Josiah.",
+      "research_sources": [
+        {
+          "title": "NET Bible notes and text for 2 Chronicles 35:25 and related royal-source notices",
+          "url": "https://classic.net.bible.org/passage.php?mode=print&passage=2ch+9%3A29%3B12%3A15%3B13%3A22%3B20%3A34%3B24%3A27%3B26%3A22%3B32%3A32%3B33%3A18%2C19%3B27%3A7%3B35%3A25"
+        }
+      ]
     }
   ]
 }
