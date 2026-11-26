@@ -4,6 +4,7 @@ on:
     paths:
       - "tools/prepare_corpus.py"
       - "tools/import_etcbc_dss.py"
+      - "tools/import_samaritan_pentateuch.py"
       - "tools/build_dss_book_index.py"
       - "tools/build_dss_passage_evidence.py"
       - "tools/build_dss_reconstructions.py"
@@ -31,6 +32,7 @@ on:
       - "tools/import_odes_of_solomon.py"
       - "tools/import_jubilees_geez.py"
       - "tools/validate_corpus.py"
+      - "app/src/main/assets/corpus/**"
       - "app/src/main/java/org/scripturesofgod/archive/MainActivity.java"
       - "app/src/main/assets/catalog/**"
       - ".github/workflows/validate-corpus.yml"
@@ -47,6 +49,13 @@ jobs:
           python-version: '3.12'
       - name: Fetch and prepare licensed source texts
         run: python tools/prepare_corpus.py
+      - name: Prepare CACCHT Samaritan Pentateuch source
+        run: |
+          python -m pip install --disable-pip-version-check text-fabric
+          git clone --depth 1 https://github.com/DT-UCPH/sp.git build/samaritan-sp
+          test -f build/samaritan-sp/tf/7.4.1/otype.tf
+      - name: Import Samaritan Pentateuch as a separate witness
+        run: python tools/import_samaritan_pentateuch.py
       - name: Download featured Qumran-Digital transcription source pages
         run: python tools/download_qumran_digital_sources.py
       - name: Import offline Dead Sea Scrolls transcriptions
@@ -107,6 +116,8 @@ jobs:
         run: python tools/import_ascension_isaiah.py
       - name: Validate imported papyrus page indexes and text records
         run: python tools/validate_corpus.py papyri
+      - name: Validate separate Samaritan Pentateuch witness
+        run: python tools/validate_corpus.py samaritan
       - name: Validate base Hebrew and Greek corpus
         run: python tools/validate_corpus.py base
       - name: Validate complete Apocrypha texts
