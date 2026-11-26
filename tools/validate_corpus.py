@@ -291,6 +291,19 @@ def validate_john():
     chapter8 = next(item for item in segments if item["segment_id"] == "john-chapter-8")
     assert "not present in the early continuous witnesses" in chapter7["english_text"]
     assert chapter8["english_text"].startswith("John 8\\n\\n12 "), "John chapter 8 must begin at verse 12 in the early-witness reading"
+    assert len(segments) == 21, "All 21 John chapter segments must be present"
+    for chapter_number in range(1, 22):
+        segment = next(item for item in segments if item["segment_id"] == f"john-chapter-{chapter_number}")
+        assert segment["english_text"].startswith(f"John {chapter_number}\\n\\n"), f"Missing chapter heading: John {chapter_number}"
+        assert segment.get("segment_status") and segment.get("source_witness_id"), f"Missing source status for John {chapter_number}"
+        assert segment.get("source_location") and segment.get("transcription_or_edition_basis") and segment.get("editorial_note"), f"Missing source notes for John {chapter_number}"
+        verse_numbers = [int(match.group(1)) for line in segment["english_text"].splitlines() if (match := re.match(r"^(\\d+)\\s", line))]
+        assert verse_numbers, f"No verse-by-verse text in John {chapter_number}"
+        start = 12 if chapter_number == 8 else 1
+        expected = list(range(start, max(verse_numbers) + 1))
+        if chapter_number == 5:
+            expected.remove(4)
+        assert verse_numbers == expected, f"Unexpected verse sequence in John {chapter_number}: {verse_numbers}"
     print("Validated verse-level John manuscript index:", index["verse_count"], "verse references;", index["witness_verse_counts"])
 
 
