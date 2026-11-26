@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
     void chooseFontSize(){int size=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",16);final SeekBar bar=new SeekBar(this);bar.setMax(16);bar.setProgress(Math.max(0,Math.min(16,size-12)));new android.app.AlertDialog.Builder(this).setTitle("Reading font size").setMessage("Adjust passage text size").setView(bar).setPositiveButton("Save",(d,w)->getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putInt("font_size",12+bar.getProgress()).apply()).setNegativeButton("Cancel",null).show();}
     void showInfo(String title,String message){new android.app.AlertDialog.Builder(this).setTitle(title).setMessage(message).setPositiveButton("Close",null).show();}
     void enablePassageSelection(TextView view){
-        enablePassageSelection(view);
+        view.setTextIsSelectable(true);
         view.setCustomSelectionActionModeCallback(new android.view.ActionMode.Callback(){
             public boolean onCreateActionMode(android.view.ActionMode mode,android.view.Menu menu){
                 menu.add(0,7341,100,"Translate selected text").setShowAsAction(android.view.MenuItem.SHOW_AS_ACTION_IF_ROOM);
