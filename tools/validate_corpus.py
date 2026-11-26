@@ -859,6 +859,18 @@ def validate_witness_registers():
     assert len(coverage_ids) == len(set(coverage_ids))
     writing_set, witness_set = set(writing_ids), set(witness_ids)
     assert {"leviticus","numbers","deuteronomy","joshua","1_samuel","2_samuel"}.issubset(writing_set)
+    # Every OSHB/WLC source file must resolve to a distinct writing identity.
+    # This validates only this source edition's scope, not the full archive or a canon.
+    wlc_manifest = json.loads((ROOT / "catalog/wlc_source_file_manifest.json").read_text(encoding="utf-8"))
+    assert wlc_manifest["record_type"] == "source_witness_file_manifest"
+    assert len(wlc_manifest["books"]) == 39
+    writing_by_title = {x["title"]: x for x in catalog["records"]}
+    for source_book in wlc_manifest["books"]:
+        writing = writing_by_title.get(source_book["writing_title"])
+        assert writing is not None, f"Missing writing identity for WLC source: {source_book['writing_title']}"
+        editions = writing.get("source_editions", [])
+        assert any(e.get("source_file") == source_book["source_file"] and e.get("witness_basis") == "Westminster Leningrad Codex" for e in editions), f"Missing WLC source link for {source_book['writing_title']}"
+    assert "does not define the complete Unified Hebrew Scriptures collection" in wlc_manifest["scope_note"]
     for witness in witnesses["records"]:
         assert witness["writing_ids"] and set(witness["writing_ids"]).issubset(writing_set)
         assert witness["catalogue_record_id"] and witness["source_catalogue"]
