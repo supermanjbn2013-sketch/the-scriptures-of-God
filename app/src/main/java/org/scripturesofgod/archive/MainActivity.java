@@ -782,6 +782,10 @@ public class MainActivity extends Activity {
             openBookOfGiantsFragments();
             return;
         }
+        if("Book of Noah".equalsIgnoreCase(title)){
+            openReferencedBookEntry("Book of Noah (Jubilees reference)");
+            return;
+        }
         if("Genesis Apocryphon".equalsIgnoreCase(title)||"Prayer of Nabonidus".equalsIgnoreCase(title)){
             openDssBookEntry(title);
             return;
