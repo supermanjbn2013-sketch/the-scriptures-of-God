@@ -29,7 +29,24 @@
       "historical_anchor_status": "overlapping_narrative",
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
-      "research_sources": [],
+      "research_sources": [
+        {
+          "title": "INTF New Testament Virtual Manuscript Room — Papyrus 66 (GA P66), transcription",
+          "url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10066&pageID=ALL&format=teiraw"
+        },
+        {
+          "title": "INTF New Testament Virtual Manuscript Room — Papyrus 75 (GA P75), transcription",
+          "url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10075&pageID=ALL&format=teiraw"
+        },
+        {
+          "title": "Codex Sinaiticus Project — manuscript transcription and images",
+          "url": "https://www.codexsinaiticus.org/"
+        },
+        {
+          "title": "Biblioteca Apostolica Vaticana — Codex Vaticanus digital collection",
+          "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209"
+        }
+      ],
       "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
       "manuscript_witnesses": [
         {
@@ -195,7 +212,20 @@
       "historical_anchor_status": "overlapping_narrative",
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
-      "research_sources": [],
+      "research_sources": [
+        {
+          "title": "INTF New Testament Virtual Manuscript Room — Papyrus 75 (GA P75), transcription",
+          "url": "https://ntvmr.uni-muenster.de/community/api/transcript/get/?docID=10075&pageID=ALL&format=teiraw"
+        },
+        {
+          "title": "Codex Sinaiticus Project — manuscript transcription and images",
+          "url": "https://www.codexsinaiticus.org/"
+        },
+        {
+          "title": "Biblioteca Apostolica Vaticana — Codex Vaticanus digital collection",
+          "url": "https://digi.vatlib.it/view/MSS_Vat.gr.1209"
+        }
+      ],
       "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
       "manuscript_witnesses": [
         {
