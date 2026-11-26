@@ -281,8 +281,8 @@ def validate_john():
     assert "manuscript verification and textual audit remain incomplete" in john["coverage"]["completion_note"]
     assert "John 5:4" not in refs, "John 5:4 is absent from the indexed early witnesses and must not be fabricated"
     chapter5 = next(item for item in segments if item["segment_id"] == "john-chapter-5")
-    chapter5_body = chapter5["english_text"].split("\\n[The verse numbered", 1)[0]
-    assert not re.search(r"(?m)^4\\s", chapter5_body), "Do not insert a verse 4 absent from the early witnesses"
+    chapter5_body = chapter5["english_text"].split("\n[The verse numbered", 1)[0]
+    assert not re.search(r"(?m)^4\s", chapter5_body), "Do not insert a verse 4 absent from the early witnesses"
     assert "in the wilderness" in chapter5_body.lower(), "Preserve the P66 reading at John 5:28"
     assert "tombs" in chapter5.get("editorial_note", "").lower(), "Record the later codex variant at John 5:28"
     assert "John 7:53" not in refs and "John 8:1" not in refs, "Do not insert the pericope adulterae into the early continuous text"
@@ -290,11 +290,11 @@ def validate_john():
     chapter7 = next(item for item in segments if item["segment_id"] == "john-chapter-7")
     chapter8 = next(item for item in segments if item["segment_id"] == "john-chapter-8")
     assert "not present in the early continuous witnesses" in chapter7["english_text"]
-    assert chapter8["english_text"].startswith("John 8\\n\\n12 "), "John chapter 8 must begin at verse 12 in the early-witness reading"
+    assert chapter8["english_text"].startswith("John 8\n\n12 "), "John chapter 8 must begin at verse 12 in the early-witness reading"
     assert len(segments) == 21, "All 21 John chapter segments must be present"
     for chapter_number in range(1, 22):
         segment = next(item for item in segments if item["segment_id"] == f"john-chapter-{chapter_number}")
-        assert segment["english_text"].startswith(f"John {chapter_number}\\n\\n"), f"Missing chapter heading: John {chapter_number}"
+        assert segment["english_text"].startswith(f"John {chapter_number}\n\n"), f"Missing chapter heading: John {chapter_number}"
         assert segment.get("segment_status") and segment.get("source_witness_id"), f"Missing source status for John {chapter_number}"
         assert segment.get("source_location") and segment.get("transcription_or_edition_basis") and segment.get("editorial_note"), f"Missing source notes for John {chapter_number}"
         verse_numbers = [int(match.group(1)) for line in segment["english_text"].splitlines() if (match := re.match(r"^(\\d+)\\s", line))]
