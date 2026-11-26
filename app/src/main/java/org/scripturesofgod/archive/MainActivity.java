@@ -2449,37 +2449,11 @@ public class MainActivity extends Activity {
             if("P66".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus66Archive());
             if("P75".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus75Archive());
             if("P77".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus77Archive());
-            if("P76".equalsIgnoreCase(match.optString("id"))){
-                builder.setNegativeButton("View transcription online",(d,w)->openP76Online());
-                builder.setNeutralButton("Download P76 XML",(d,w)->downloadP76Transcription());
-            }
             if("P72".equalsIgnoreCase(match.optString("id")))builder.setNeutralButton("Open offline transcription",(d,w)->openPapyrus72Archive());
             builder.show();
         }catch(Exception e){
             new android.app.AlertDialog.Builder(this).setTitle("Manuscript catalogue unavailable").setMessage("The metadata register is not present in this build yet.").setPositiveButton("Close",null).show();
         }
-    }
-
-    void openP76Online(){
-        String url="https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml";
-        try{
-            Intent intent=new Intent(Intent.ACTION_VIEW,android.net.Uri.parse(url));
-            startActivity(intent);
-        }catch(Exception ex){showInfo("P76 online source unavailable","Open the IGNTP transcription directly: "+url);}
-    }
-
-    void downloadP76Transcription(){
-        try{
-            String url="https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml";
-            android.app.DownloadManager manager=(android.app.DownloadManager)getSystemService(DOWNLOAD_SERVICE);
-            android.app.DownloadManager.Request request=new android.app.DownloadManager.Request(android.net.Uri.parse(url));
-            request.setTitle("Papyrus 76 transcription (P76)");
-            request.setDescription("Downloading the IGNTP XML transcription for offline reference.");
-            request.setNotificationVisibility(android.app.DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
-            request.setDestinationInExternalPublicDir(android.os.Environment.DIRECTORY_DOWNLOADS,"04_P76.xml");
-            manager.enqueue(request);
-            Toast.makeText(this,"P76 XML download started. Check the download notification when complete.",Toast.LENGTH_LONG).show();
-        }catch(Exception ex){showInfo("P76 download unavailable","The source could not be downloaded on this device. Open the source manually: https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml");}
     }
 
 }
