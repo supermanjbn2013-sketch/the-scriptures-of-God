@@ -735,7 +735,6 @@ public class MainActivity extends Activity {
                     intent.putExtra("preferred_target_language",targetLanguageName());
                     startActivity(intent);
                 });
-                clearSelected.setOnClickListener(v->{selectedPassages.clear();selectedLanguages.clear();refreshSelection.run();renderChapter.run();});
                 Runnable renderChapter=()->{
                     int selected=Math.max(0,chapterPicker.getSelectedItemPosition());
                     String selectedChapter=chapters.get(selected);
@@ -771,6 +770,7 @@ public class MainActivity extends Activity {
                     }
                     previous.setEnabled(selected>0);next.setEnabled(selected<chapters.size()-1);refreshSelection.run();
                 };
+                clearSelected.setOnClickListener(v->{selectedPassages.clear();selectedLanguages.clear();refreshSelection.run();renderChapter.run();});
                 chapterPicker.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener(){
                     public void onItemSelected(android.widget.AdapterView<?> parent,View view,int position,long id){if(pickerReady[0])renderChapter.run();}
                     public void onNothingSelected(android.widget.AdapterView<?> parent){}
