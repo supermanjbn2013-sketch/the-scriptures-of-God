@@ -105,6 +105,8 @@ jobs:
         run: python tools/validate_corpus.py apocrypha
       - name: Validate Dead Sea Scrolls catalogue and concordance
         run: python tools/validate_corpus.py dss
+      - name: Validate generated Hebrew reconstruction
+        run: python tools/validate_corpus.py reconstruction
       - name: Validate John witness index and complete reading sequence
         run: python tools/validate_corpus.py john
       - name: Validate Android book navigation and search
