@@ -41,6 +41,8 @@ jobs:
         run: python3 tools/import_etcbc_dss.py
       - name: Index every book and writing actually attested in imported DSS lines
         run: python3 tools/build_dss_book_index.py
+      - name: Build line-level DSS passage evidence from curated fragment concordance
+        run: python3 tools/build_dss_passage_evidence.py
       - name: Reconstruct Hebrew readings from DSS witnesses and fill aligned gaps from WLC
         run: python3 tools/build_dss_reconstructions.py
       - name: Import Codex Vaticanus manuscript transcription
