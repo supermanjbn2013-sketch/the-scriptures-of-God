@@ -237,6 +237,7 @@ def validate_john():
     assert "no record for a witness" in index["absence_policy"].lower()
     metadata = index["witness_metadata"]
     assert {"P52", "P66", "P75", "Vaticanus", "Sinaiticus"}.issubset(metadata)
+    assert index.get("witness_priority_order") == ["P52", "P66", "P75", "Vaticanus", "Sinaiticus"], "John witness priority must remain papyrus-first"
     expected_minimums = {"P66": 700, "P75": 500, "Vaticanus": 850, "Sinaiticus": 850}
     for witness, minimum in expected_minimums.items():
         assert index["witness_verse_counts"][witness] >= minimum, f"{witness} verse index is incomplete"
@@ -249,6 +250,13 @@ def validate_john():
     for verse in index["verses"]:
         assert verse["reference"] == f"John {verse['chapter']}:{verse['verse']}"
         assert verse["witnesses"]
+        selected = verse.get("priority_witness")
+        assert selected in verse["witnesses"], f"Missing papyrus-first selection: {verse['reference']}"
+        assert verse.get("priority_text") == verse["witnesses"][selected]["text"]
+        assert verse.get("priority_status") in {"earliest_complete_witness", "earliest_available_witness_is_partial"}
+        if verse["priority_status"] == "earliest_complete_witness":
+            assert "[" not in verse["priority_text"] and "]" not in verse["priority_text"], f"Editorial supply selected as complete text: {verse['reference']}"
+        assert isinstance(verse.get("earlier_partial_witnesses"), list)
         for witness, record in verse["witnesses"].items():
             assert witness in metadata and record["text"].strip()
             assert record["pages"] or record["line_ids"], f"Missing source coordinates: {verse['reference']} / {witness}"
