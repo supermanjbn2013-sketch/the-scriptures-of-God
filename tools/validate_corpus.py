@@ -356,6 +356,9 @@ def validate_android():
         "Book of the Kings of Judah and Israel",
         "Book of the Kings of Israel and Judah",
         "Chronicles of the Levites",
+        "Epistle to the Alexandrians (Muratorian Fragment)",
+        "Marcionite Epistle to the Laodiceans (Muratorian Fragment)",
+        "Marcionite Book of Psalms (unnamed collection)",
         "Book of Giants (fragmentarily preserved)"
     }
     assert required_lost.issubset(lost_titles), f"Missing lost/referenced writing records: {required_lost - lost_titles}"
