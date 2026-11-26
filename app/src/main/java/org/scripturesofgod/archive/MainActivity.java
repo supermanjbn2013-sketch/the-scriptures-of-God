@@ -682,59 +682,94 @@ public class MainActivity extends Activity {
                 if(chapters.isEmpty())chapters.add("1");
                 String savedChapter=readingPrefs.getString("last_chapter:"+bookName,chapters.get(0));
                 int initialChapter=Math.max(0,chapters.indexOf(savedChapter));
-                LinearLayout reader=new LinearLayout(MainActivity.this);reader.setOrientation(1);reader.setPadding(12,8,12,8);
-                reader.addView(text(count+" verses loaded from the offline corpus",13,gold,true));
-                TextView meta=text(result.optString("metadata"),12,muted,false);
-                meta.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);
-                meta.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
-                reader.addView(meta);
-                reader.addView(text(useDssReconstruction?"Reconstructed Hebrew reading, verse by verse. DSS words replace WLC words only when their ordered alignment meets the 70% threshold; the WLC supplies remaining word positions. Each verse identifies whether it is hybrid, fragment-only, or WLC-only. Long-press to select and Copy.":"Original-language text only. Long-press to select and Copy. The source edition and witness basis are identified above.",12,muted,false));
-                if("DSS Hebrew Archive".equals(section)){
-                    Button dssEvidence=new Button(MainActivity.this);dssEvidence.setText("View surviving DSS manuscript lines");
-                    dssEvidence.setOnClickListener(v->openDssBookEntry(bookName));
-                    reader.addView(dssEvidence);
-                }
+                chapters.add("Manuscript Sources and Textual Notes");
+                final String notesPage="Manuscript Sources and Textual Notes";
+                final java.util.LinkedHashMap<String,String> selectedPassages=new java.util.LinkedHashMap<>();
+                final java.util.LinkedHashMap<String,String> selectedLanguages=new java.util.LinkedHashMap<>();
+                LinearLayout reader=new LinearLayout(MainActivity.this);reader.setOrientation(1);reader.setPadding(8,4,8,4);
                 LinearLayout chapterBar=new LinearLayout(MainActivity.this);chapterBar.setGravity(Gravity.CENTER_VERTICAL);
                 Button previous=new Button(MainActivity.this);previous.setText("‹ Previous");
                 Spinner chapterPicker=new Spinner(MainActivity.this);
                 ArrayAdapter<String> chapterAdapter=new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_spinner_item,chapters);
                 chapterAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);chapterPicker.setAdapter(chapterAdapter);
-                if(java.util.Arrays.asList("Gen","Exod","Lev","Num","Deut").contains(code)){
-                    Button samaritanWitness=new Button(MainActivity.this);
-                    samaritanWitness.setText("Compare Samaritan Pentateuch witness");
-                    samaritanWitness.setOnClickListener(v->openSamaritanChapterWitness(code,chapters.get(Math.max(0,chapterPicker.getSelectedItemPosition()))));
-                    reader.addView(samaritanWitness);
-                }
                 Button next=new Button(MainActivity.this);next.setText("Next ›");
                 chapterBar.addView(previous,new LinearLayout.LayoutParams(0,-2,1));
                 chapterBar.addView(chapterPicker,new LinearLayout.LayoutParams(0,-2,1));
                 chapterBar.addView(next,new LinearLayout.LayoutParams(0,-2,1));
                 reader.addView(chapterBar);
-                ScrollView sv=new ScrollView(MainActivity.this);sv.setFillViewport(true);sv.setPadding(8,8,8,8);
+                LinearLayout selectionBar=new LinearLayout(MainActivity.this);selectionBar.setGravity(Gravity.CENTER_VERTICAL);
+                Button copySelected=new Button(MainActivity.this);copySelected.setText("Copy selected");
+                Button translateSelected=new Button(MainActivity.this);translateSelected.setText("Translate selected");
+                Button clearSelected=new Button(MainActivity.this);clearSelected.setText("Clear");
+                selectionBar.addView(copySelected,new LinearLayout.LayoutParams(0,-2,1));
+                selectionBar.addView(translateSelected,new LinearLayout.LayoutParams(0,-2,1));
+                selectionBar.addView(clearSelected,new LinearLayout.LayoutParams(0,-2,1));
+                reader.addView(selectionBar);
+                TextView selectionStatus=text("Tap verses to select a passage.",12,muted,false);reader.addView(selectionStatus);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setFillViewport(true);sv.setPadding(4,4,4,4);
                 LinearLayout chapterContent=new LinearLayout(MainActivity.this);chapterContent.setOrientation(1);sv.addView(chapterContent);
                 reader.addView(sv,new LinearLayout.LayoutParams(-1,0,1));
                 final boolean[] pickerReady={false};
+                Runnable refreshSelection=()->{
+                    selectionStatus.setText(selectedPassages.isEmpty()?"Tap verses to select a passage.":selectedPassages.size()+" verses selected");
+                    copySelected.setEnabled(!selectedPassages.isEmpty());translateSelected.setEnabled(!selectedPassages.isEmpty());
+                };
+                copySelected.setOnClickListener(v->{
+                    if(selectedPassages.isEmpty())return;
+                    StringBuilder passage=new StringBuilder();
+                    for(java.util.Map.Entry<String,String> entry:selectedPassages.entrySet())passage.append(entry.getKey()).append(" ").append(entry.getValue()).append("\\n");
+                    ((android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(android.content.ClipData.newPlainText(bookName+" selected verses",passage.toString().trim()));
+                    Toast.makeText(MainActivity.this,selectedPassages.size()+" verses copied.",Toast.LENGTH_SHORT).show();
+                });
+                translateSelected.setOnClickListener(v->{
+                    if(selectedPassages.isEmpty())return;
+                    StringBuilder passage=new StringBuilder();String sourceLanguage="auto";
+                    for(java.util.Map.Entry<String,String> entry:selectedPassages.entrySet()){
+                        passage.append(entry.getKey()).append(" ").append(entry.getValue()).append("\\n");
+                        String lang=selectedLanguages.get(entry.getKey());if(lang!=null&&!lang.isEmpty())sourceLanguage=lang;
+                    }
+                    Intent intent=new Intent(MainActivity.this,AiTranslatorActivity.class);
+                    intent.putExtra("passage_reference",bookName+" · "+selectedPassages.size()+" selected verses");
+                    intent.putExtra("passage_text",passage.toString().trim());
+                    intent.putExtra("source_language",sourceLanguage);
+                    intent.putExtra("preferred_target_language",targetLanguageName());
+                    startActivity(intent);
+                });
+                clearSelected.setOnClickListener(v->{selectedPassages.clear();selectedLanguages.clear();refreshSelection.run();renderChapter.run();});
                 Runnable renderChapter=()->{
                     int selected=Math.max(0,chapterPicker.getSelectedItemPosition());
                     String selectedChapter=chapters.get(selected);
                     readingPrefs.edit().putString("last_book",bookName).putString("last_chapter:"+bookName,selectedChapter).apply();
                     chapterContent.removeAllViews();
-                    chapterContent.addView(text(bookName+" — Chapter "+selectedChapter,19,gold,true));
-                    int readingSize=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",16);
-                    for(int i=0;i<count;i++){
-                        org.json.JSONObject verse=verses.optJSONObject(i);if(verse==null)continue;
-                        String reference=verse.optString("reference"),body=verse.optString("text"),language=verse.optString("language");
-                        String verseChapter=reference.contains(":")?reference.substring(0,reference.indexOf(':')):"1";
-                        if(!selectedChapter.equals(verseChapter))continue;
-                        LinearLayout passageCard=new LinearLayout(MainActivity.this);passageCard.setOrientation(1);passageCard.setPadding(10,6,10,6);passageCard.setBackground(shape(panel));
-                        TextView row=text(reference+"\\n"+body,readingSize,ink,false);row.setTag(reference);enablePassageSelection(row);
-                        LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);passageCard.addView(row,p);
-                        String reconstructionNote=verse.optString("reconstruction_note","");
-                        if(!reconstructionNote.isEmpty()){TextView sourceNote=text(reconstructionNote,11,muted,false);sourceNote.setPadding(14,0,14,7);passageCard.addView(sourceNote);}
-                        TextView tools=text("Passage tools  ·  Tap to translate with Gemini AI",12,gold,true);tools.setOnClickListener(v->showPassageActions(reference,body,language));passageCard.addView(tools);
-                        passageCard.setOnClickListener(v->openAiTranslator(reference,body,language));chapterContent.addView(passageCard);
+                    if(notesPage.equals(selectedChapter)){
+                        chapterContent.addView(text(bookName+" — Manuscript Sources and Textual Notes",19,gold,true));
+                        TextView meta=text(result.optString("metadata","No separate source metadata is available for this book."),14,ink,false);
+                        meta.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);meta.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());enablePassageSelection(meta);
+                        chapterContent.addView(meta);
+                        chapterContent.addView(text("Textual notes and manuscript evidence are kept on this final page. They are not inserted between the verses.",13,muted,false));
+                        if("DSS Hebrew Archive".equals(section)){
+                            Button dssEvidence=new Button(MainActivity.this);dssEvidence.setText("View surviving DSS manuscript lines");
+                            dssEvidence.setOnClickListener(v->openDssBookEntry(bookName));chapterContent.addView(dssEvidence);
+                        }
+                    }else{
+                        chapterContent.addView(text(bookName+" — Chapter "+selectedChapter,19,gold,true));
+                        int readingSize=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",16);
+                        for(int i=0;i<count;i++){
+                            org.json.JSONObject verse=verses.optJSONObject(i);if(verse==null)continue;
+                            String reference=verse.optString("reference"),body=verse.optString("text"),language=verse.optString("language");
+                            String verseChapter=reference.contains(":")?reference.substring(0,reference.indexOf(':')):"1";
+                            if(!selectedChapter.equals(verseChapter))continue;
+                            TextView row=text(reference+"\\n"+body,readingSize,selectedPassages.containsKey(reference)?gold:ink,false);
+                            row.setTag(reference);row.setPadding(10,10,10,10);row.setBackground(shape(selectedPassages.containsKey(reference)?Color.rgb(55,49,35):panel));
+                            row.setOnClickListener(v->{
+                                if(selectedPassages.containsKey(reference)){selectedPassages.remove(reference);selectedLanguages.remove(reference);}
+                                else{selectedPassages.put(reference,body);selectedLanguages.put(reference,language);}
+                                row.setTextColor(selectedPassages.containsKey(reference)?gold:ink);row.setBackground(shape(selectedPassages.containsKey(reference)?Color.rgb(55,49,35):panel));refreshSelection.run();
+                            });
+                            LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,3,0,3);chapterContent.addView(row,p);
+                        }
                     }
-                    previous.setEnabled(selected>0);next.setEnabled(selected<chapters.size()-1);
+                    previous.setEnabled(selected>0);next.setEnabled(selected<chapters.size()-1);refreshSelection.run();
                 };
                 chapterPicker.setOnItemSelectedListener(new android.widget.AdapterView.OnItemSelectedListener(){
                     public void onItemSelected(android.widget.AdapterView<?> parent,View view,int position,long id){if(pickerReady[0])renderChapter.run();}
@@ -742,8 +777,14 @@ public class MainActivity extends Activity {
                 });
                 previous.setOnClickListener(v->{int p=chapterPicker.getSelectedItemPosition();if(p>0)chapterPicker.setSelection(p-1);});
                 next.setOnClickListener(v->{int p=chapterPicker.getSelectedItemPosition();if(p<chapters.size()-1)chapterPicker.setSelection(p+1);});
+                if(java.util.Arrays.asList("Gen","Exod","Lev","Num","Deut").contains(code)){
+                    Button samaritanWitness=new Button(MainActivity.this);samaritanWitness.setText("Compare Samaritan Pentateuch witness");
+                    samaritanWitness.setOnClickListener(v->openSamaritanChapterWitness(code,chapters.get(Math.max(0,chapterPicker.getSelectedItemPosition()))));
+                    reader.addView(samaritanWitness,1);
+                }
                 chapterPicker.setSelection(initialChapter);pickerReady[0]=true;renderChapter.run();
-                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName+" — "+count+" verses").setView(reader).setNegativeButton("Back to "+returnSection,(d,w)->{navigateTo(returnSection);}).setNeutralButton("Home",(d,w)->{previousSection="Home";section="Home";show();}).setPositiveButton("Close",null).show();
+
+                android.app.AlertDialog readerDialog=new android.app.AlertDialog.Builder(MainActivity.this).setTitle(bookName).setView(reader).setNegativeButton("Back to "+returnSection,(d,w)->{navigateTo(returnSection);}).setNeutralButton("Home",(d,w)->{previousSection="Home";section="Home";show();}).setPositiveButton("Close",null).create();readerDialog.setOnShowListener(d->{android.view.Window window=readerDialog.getWindow();if(window!=null)window.setLayout(-1,-1);});readerDialog.show();readerDialog.getWindow().setLayout(-1,-1);
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
