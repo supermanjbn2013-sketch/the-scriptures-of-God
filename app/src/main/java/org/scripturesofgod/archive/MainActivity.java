@@ -743,8 +743,19 @@ public class MainActivity extends Activity {
         renderDssArchiveGroup("APOCRYPHA AND DEUTEROCANONICAL WRITINGS",entries.get("Apocrypha and Deuterocanonical Writings"),query);
         ArrayList<String> related=new ArrayList<>(Arrays.asList("1 Enoch","Jubilees","Book of Giants","Book of Noah","Genesis Apocryphon","Prayer of Nabonidus"));
         renderDssArchiveGroup("OTHER DSS-PRESERVED OR FRAGMENTARILY ATTESTED WRITINGS",related,query);
-        renderDssArchiveGroup("LOST AND REFERENCED BOOKS",entries.get("Lost and Referenced Books"),query);
+        renderDssArchiveGroup("LOST AND REFERENCED BOOKS",readDssLostBookTitles(),query);
         content.addView(text("Important: a title appearing here is an archive index entry, not proof that a DSS copy survives. If no matching line is found, the entry will say so. The existing Masoretic and Greek datasets are not used to fill DSS gaps.",12,gold,false));
+    }
+
+    ArrayList<String> readDssLostBookTitles(){
+        ArrayList<String> titles=new ArrayList<>();
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/lost_and_referenced_books_catalog.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray records=new org.json.JSONObject(raw.toString()).getJSONArray("records");
+            for(int i=0;i<records.length();i++){String title=records.getJSONObject(i).optString("title","");if(!title.isEmpty())titles.add(title);}
+        }catch(Exception e){if(entries.get("Lost and Referenced Books")!=null)titles.addAll(entries.get("Lost and Referenced Books"));}
+        return titles;
     }
 
     void renderDssArchiveGroup(String heading,ArrayList<String> titles,String query){
