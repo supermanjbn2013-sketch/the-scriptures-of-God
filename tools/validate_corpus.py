@@ -226,6 +226,38 @@ def validate_papyri():
             assert actual_records >= 5 and index["page_count"] >= 1, "P77 source output unexpectedly incomplete"
     print("Validated six papyrus witnesses against their generated offline page records.")
 
+def validate_john():
+    """Validate the verse-level manuscript index generated from imported witnesses."""
+    path = ROOT / "catalog/john_witness_index.json"
+    assert path.exists(), "John manuscript comparison index was not generated"
+    index = json.loads(path.read_text(encoding="utf-8"))
+    assert index["record_type"] == "john_verse_witness_index"
+    assert index["book"] == "John" and index["verse_count"] == len(index["verses"])
+    assert index["verse_count"] >= 860, f"John witness index unexpectedly small: {index['verse_count']}"
+    assert "no record for a witness" in index["absence_policy"].lower()
+    metadata = index["witness_metadata"]
+    assert {"P52", "P66", "P75", "Vaticanus", "Sinaiticus"}.issubset(metadata)
+    expected_minimums = {"P66": 700, "P75": 500, "Vaticanus": 850, "Sinaiticus": 850}
+    for witness, minimum in expected_minimums.items():
+        assert index["witness_verse_counts"][witness] >= minimum, f"{witness} verse index is incomplete"
+        assert metadata[witness].get("source_url") and metadata[witness].get("license")
+    refs = [item["reference"] for item in index["verses"]]
+    assert len(refs) == len(set(refs)), "Duplicate John verse references in witness index"
+    assert {f"John {chapter}:1" for chapter in range(1, 22)}.issubset(set(refs))
+    for verse in index["verses"]:
+        assert verse["reference"] == f"John {verse['chapter']}:{verse['verse']}"
+        assert verse["witnesses"]
+        for witness, record in verse["witnesses"].items():
+            assert witness in metadata and record["text"].strip()
+            assert record["pages"] or record["line_ids"], f"Missing source coordinates: {verse['reference']} / {witness}"
+            assert isinstance(record["correction_notes"], list)
+    assert "P66" in next(v for v in index["verses"] if v["reference"] == "John 1:1")["witnesses"]
+    assert "P75" in next(v for v in index["verses"] if v["reference"] == "John 1:1")["witnesses"]
+    assert "Vaticanus" in next(v for v in index["verses"] if v["reference"] == "John 17:11")["witnesses"]
+    assert "Sinaiticus" in next(v for v in index["verses"] if v["reference"] == "John 21:25")["witnesses"]
+    print("Validated verse-level John manuscript index:", index["verse_count"], "verse references;", index["witness_verse_counts"])
+
+
 def validate_android():
     source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
     for required in (
@@ -772,7 +804,7 @@ def validate_witness_registers():
     print(f"Validated unified chronological writings collection: {len(unified['records'])} entries; not restricted to 27.")
 
 
-sections = {"witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "android": validate_android}
+sections = {"witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "john": validate_john, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
-    raise SystemExit("Usage: python tools/validate_corpus.py witnesses|reconstruction|base|apocrypha|dss|papyri|android")
+    raise SystemExit("Usage: python tools/validate_corpus.py witnesses|reconstruction|base|apocrypha|dss|papyri|john|android")
 sections[sys.argv[1]]()
