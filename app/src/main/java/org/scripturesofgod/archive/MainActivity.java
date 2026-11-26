@@ -1988,7 +1988,7 @@ public class MainActivity extends Activity {
                 .setItems(labels,(dialog,which)->openPapyrus46Page(ids[which]))
                 .setNegativeButton("Close",null).show();
         }catch(Exception e){
-            showInfo("Papyrus 46 transcription unavailable","The offline P46 transcription was not generated in this build. "+e.getMessage());
+            showInfo("Papyrus 46 transcription unavailable","The offline P66 transcription was not generated in this build. "+e.getMessage());
         }
     }
 
@@ -2052,7 +2052,7 @@ public class MainActivity extends Activity {
                 .setItems(labels,(dialog,which)->openPapyrus66Page(ids[which]))
                 .setNegativeButton("Close",null).show();
         }catch(Exception e){
-            showInfo("Papyrus 66 transcription unavailable","The offline P46 transcription was not generated in this build. "+e.getMessage());
+            showInfo("Papyrus 66 transcription unavailable","The offline P75 transcription was not generated in this build. "+e.getMessage());
         }
     }
 
@@ -2072,7 +2072,7 @@ public class MainActivity extends Activity {
                     String raw;
                     while((raw=reader.readLine())!=null){
                         org.json.JSONObject record=new org.json.JSONObject(raw);
-                        if(count==0)out.append("Source: Papyrus 66 (GA P46), INTF / New Testament Virtual Manuscript Room, document 10066\n")
+                        if(count==0)out.append("Source: Papyrus 66 (GA P66), INTF / New Testament Virtual Manuscript Room, document 10066\n")
                             .append("Licence: Creative Commons Attribution 4.0 International (CC BY 4.0)\n")
                             .append("Original source labels and page/column/line identifiers are retained where present.\n")
                             .append("Only surviving manuscript text is included. Supplied readings are bracketed where the source encodes them; missing portions are not reconstructed.\n\n");
