@@ -1,0 +1,315 @@
+{
+  "schema_version": 1,
+  "record_type": "lost_and_referenced_writings_catalog",
+  "policy": "Preserve the distinction between a lost source, a surviving fragmentary work, an epitome, a quotation embedded in another work, and a disputed identification. Never invent missing contents. Every witness must be identified independently; no fragments are silently combined.",
+  "records": [
+    {
+      "id": "wars_of_yhwh",
+      "title": "Book of the Wars of the LORD",
+      "references": [
+        "Numbers 21:14–15"
+      ],
+      "status": "Lost or unidentified; no independently verified manuscript copy is known.",
+      "language": "Unknown; Hebrew is possible from the context but is not proven.",
+      "date": "Undetermined; the citation belongs to an ancient Israelite textual tradition.",
+      "witnesses": [],
+      "recoverable": "Only the brief quotation or citation embedded in Numbers is recoverable. The rest of the work, its structure, and its authorship are unknown.",
+      "note": "The title is quoted as the name of a source. The wording of the surviving citation does not permit reconstruction of the book.",
+      "caution": "Do not identify this work with the later War Scroll (1QM) from Qumran; similar subject matter does not establish identity."
+    },
+    {
+      "id": "jashar",
+      "title": "Book of Jashar",
+      "references": [
+        "Joshua 10:13",
+        "2 Samuel 1:18"
+      ],
+      "status": "Lost or unidentified source; later works with similar titles are not established as the same work.",
+      "language": "Unknown; Hebrew is possible but not directly witnessed.",
+      "date": "Undetermined.",
+      "witnesses": [],
+      "recoverable": "The two scriptural citations and the short poetic material quoted with them survive in those passages. No verified complete copy of the cited work is known.",
+      "note": "The name is also rendered Book of the Upright. The medieval Sefer haYashar and other later works bearing this title must not be treated as the ancient source without evidence.",
+      "caution": "Do not import text from later books titled Jasher as though it were the original cited work."
+    },
+    {
+      "id": "acts_solomon",
+      "title": "Acts of Solomon",
+      "references": [
+        "1 Kings 11:41"
+      ],
+      "status": "Lost or unidentified royal source; no independent copy is identified.",
+      "language": "Unknown; likely composed or transmitted in Hebrew, but this is not directly established.",
+      "date": "Undetermined; cited in the account of Solomon.",
+      "witnesses": [],
+      "recoverable": "The notice in 1 Kings identifies a source for further acts of Solomon. Its contents are not preserved as a separate text.",
+      "note": "The reference may point to a royal record or literary source. The title alone does not establish whether it was a single book or a larger record collection.",
+      "caution": "Do not confuse it with the extant biblical narrative about Solomon or later legendary works."
+    },
+    {
+      "id": "kings_israel",
+      "title": "Chronicles of the Kings of Israel",
+      "references": [
+        "1 Kings 14:19",
+        "1 Kings 15:31",
+        "1 Kings 16:5",
+        "1 Kings 16:20",
+        "1 Kings 16:27",
+        "2 Kings 10:34",
+        "2 Kings 13:8",
+        "2 Kings 14:28"
+      ],
+      "status": "Lost royal annals or source records; no independent manuscript copy is known.",
+      "language": "Hebrew is likely, but no manuscript survives to confirm the language.",
+      "date": "Compiled during or after the monarchic period; exact dates and stages are unknown.",
+      "witnesses": [],
+      "recoverable": "The surviving royal notices quote or summarize information attributed to these records. The annals themselves are not preserved.",
+      "note": "Repeated formulae refer readers to records of the kings of Israel. This may represent a continuing royal archive or a source tradition rather than one fixed-volume book.",
+      "caution": "Do not equate these records with the later canonical Books of Chronicles."
+    },
+    {
+      "id": "kings_judah",
+      "title": "Chronicles of the Kings of Judah",
+      "references": [
+        "1 Kings 14:29",
+        "1 Kings 15:7",
+        "1 Kings 15:23",
+        "1 Kings 22:45",
+        "2 Kings 8:23",
+        "2 Kings 12:19",
+        "2 Kings 14:18"
+      ],
+      "status": "Lost royal annals or source records; no independent manuscript copy is known.",
+      "language": "Hebrew is likely, but no manuscript survives to confirm the language.",
+      "date": "Compiled during or after the monarchic period; exact dates and stages are unknown.",
+      "witnesses": [],
+      "recoverable": "The surviving royal notices preserve summaries and cross-references, not the full annals.",
+      "note": "The repeated source formula may refer to a royal archive or a continuing set of records.",
+      "caution": "Do not confuse these records with the extant canonical Books of Chronicles."
+    },
+    {
+      "id": "samuel_nathan_gad",
+      "title": "Records of Samuel, Nathan, and Gad",
+      "references": [
+        "1 Chronicles 29:29"
+      ],
+      "status": "Named records; no independently identified complete copies survive.",
+      "language": "Unknown; Hebrew is a reasonable contextual possibility, not a surviving witness.",
+      "date": "Undetermined; associated with accounts of David's reign and acts.",
+      "witnesses": [],
+      "recoverable": "The surviving verse names records associated with Samuel the seer, Nathan the prophet, and Gad the seer. It does not preserve the contents of those records.",
+      "note": "The grammar names source records associated with three figures. It does not establish that three complete books survive or that their exact titles and boundaries are known.",
+      "caution": "Keep the three names and their source descriptions distinct; do not invent three reconstructed books."
+    },
+    {
+      "id": "ahijah",
+      "title": "Prophecy of Ahijah",
+      "references": [
+        "2 Chronicles 9:29"
+      ],
+      "status": "Lost or unidentified source cited by the Chronicler.",
+      "language": "Unknown; Hebrew is possible but unconfirmed.",
+      "date": "Undetermined.",
+      "witnesses": [],
+      "recoverable": "The citation identifies prophetic material associated with Ahijah the Shilonite. No separate text is securely identified as the cited source.",
+      "note": "The reference occurs in a source notice concerning Solomon. The surviving notice does not give the work's full title, extent, or contents.",
+      "caution": "Do not assume that every extant passage about Ahijah is copied from this lost source."
+    },
+    {
+      "id": "visions_iddo",
+      "title": "Visions of Iddo",
+      "references": [
+        "2 Chronicles 9:29"
+      ],
+      "status": "Lost or unidentified source cited in a source notice.",
+      "language": "Unknown; Hebrew is possible but unconfirmed.",
+      "date": "Undetermined.",
+      "witnesses": [],
+      "recoverable": "Only the source notice survives. No independently identified text of the visions is available.",
+      "note": "The Chronicler associates this source with Iddo the seer and the account of Solomon.",
+      "caution": "Keep this title distinct from the History of Iddo and the records of Iddo; the references may describe related but not demonstrably identical materials."
+    },
+    {
+      "id": "shemaiah_records",
+      "title": "Records of Shemaiah",
+      "references": [
+        "2 Chronicles 12:15"
+      ],
+      "status": "Lost or unidentified record source.",
+      "language": "Unknown; Hebrew is possible but unconfirmed.",
+      "date": "Undetermined.",
+      "witnesses": [],
+      "recoverable": "The source notice survives, but no separate manuscript or continuous text is identified.",
+      "note": "The passage refers to records associated with Shemaiah the prophet in a notice about Rehoboam.",
+      "caution": "The wording and scope of the record should not be expanded beyond what the source notice states."
+    },
+    {
+      "id": "iddos_records",
+      "title": "Records of Iddo",
+      "references": [
+        "2 Chronicles 12:15"
+      ],
+      "status": "Lost or unidentified record source.",
+      "language": "Unknown; Hebrew is possible but unconfirmed.",
+      "date": "Undetermined.",
+      "witnesses": [],
+      "recoverable": "The source notice survives; the records themselves are not independently preserved.",
+      "note": "The passage mentions Iddo in a source or genealogical-record notice. Its relationship to the Visions of Iddo and History of Iddo is uncertain.",
+      "caution": "Do not merge the differently worded Iddo references into one reconstructed work."
+    },
+    {
+      "id": "iddos_history",
+      "title": "History of Iddo",
+      "references": [
+        "2 Chronicles 13:22"
+      ],
+      "status": "Lost or unidentified source.",
+      "language": "Unknown; Hebrew is possible but unconfirmed.",
+      "date": "Undetermined.",
+      "witnesses": [],
+      "recoverable": "The verse refers to a record or exposition associated with Iddo. No separate copy survives.",
+      "note": "The cited source is connected with the acts of Abijah. Its exact title and contents cannot be recovered from the notice.",
+      "caution": "Keep separate from the Visions of Iddo and Records of Iddo unless evidence establishes identity."
+    },
+    {
+      "id": "jehu",
+      "title": "Book of Jehu",
+      "references": [
+        "2 Chronicles 20:34"
+      ],
+      "status": "Lost or unidentified source; no independent copy is known.",
+      "language": "Unknown; Hebrew is possible but unconfirmed.",
+      "date": "Undetermined.",
+      "witnesses": [],
+      "recoverable": "The Chronicler says Jehoshaphat's acts were recorded in the book of Jehu son of Hanani, which is incorporated into the book of the kings of Israel. The cited book itself is not preserved.",
+      "note": "The reference may describe a prophetic or historical source used in the royal-history tradition.",
+      "caution": "Do not assume it was a separate canonical book or equate it with another work named Jehu."
+    },
+    {
+      "id": "seers_hozai",
+      "title": "Records of the Seers (Hozai)",
+      "references": [
+        "2 Chronicles 33:19"
+      ],
+      "status": "Lost or unidentified source; the underlying wording and personal-name interpretation vary.",
+      "language": "Unknown; Hebrew is possible but unconfirmed.",
+      "date": "Undetermined.",
+      "witnesses": [],
+      "recoverable": "The source notice concerning Manasseh survives. No independent text of the records is known.",
+      "note": "Some textual and translation traditions understand the term as a personal name, Hozai; others render it as 'the seers'. The ambiguity must remain visible.",
+      "caution": "Do not present Hozai as a certain author's name without noting the textual uncertainty."
+    },
+    {
+      "id": "media_persia_chronicles",
+      "title": "Chronicles of the Kings of Media and Persia",
+      "references": [
+        "Esther 10:2",
+        "Compare Ezra 4:15",
+        "Ezra 6:1–2"
+      ],
+      "status": "Royal records are referenced, but the exact identity and scope of the cited archive are uncertain.",
+      "language": "Unknown; Persian and/or Aramaic administrative records are historically possible, but no identified source copy is established by these references.",
+      "date": "Undetermined.",
+      "witnesses": [],
+      "recoverable": "Esther preserves a reference to royal chronicles. Ezra describes searches in royal archives. These passages do not supply the contents of one identifiable book.",
+      "note": "The Esther and Ezra references may concern related imperial record-keeping, but they should not be collapsed into one proven work.",
+      "caution": "Distinguish the general existence of Persian royal archives from a specific surviving manuscript of this title."
+    },
+    {
+      "id": "assumption_moses",
+      "title": "Assumption of Moses (identification debated)",
+      "references": [
+        "Jude 1:9"
+      ],
+      "status": "Possible literary allusion; identification with the surviving Testament of Moses is debated.",
+      "language": "The surviving principal witness is Latin; an earlier Greek or Semitic form is possible but not extant as a complete witness.",
+      "date": "Usually placed around the turn of the era or early 1st century CE; dating remains debated.",
+      "witnesses": [
+        "Incomplete Latin manuscript tradition of the Testament of Moses; the surviving text breaks off before its expected ending."
+      ],
+      "recoverable": "A related Testament of Moses survives incompletely in Latin. Jude's account of Michael and the devil disputing over Moses' body is often compared with this tradition, but the identification is not certain.",
+      "note": "The title Assumption of Moses is often used for the lost ending or a related work; the relationship between the titles and the extant Latin text is disputed.",
+      "caution": "Do not label the surviving incomplete Latin Testament as a complete copy of the Assumption of Moses."
+    },
+    {
+      "id": "book_noah",
+      "title": "Book of Noah (Jubilees reference)",
+      "references": [
+        "Jubilees 10:13–14",
+        "Compare 1 Enoch 106–107"
+      ],
+      "status": "A Noah-writing tradition is referenced; the existence, title, and extent of a separate book are uncertain.",
+      "language": "Unknown for any proposed independent work; surviving related material is transmitted in other works and fragments.",
+      "date": "Undetermined.",
+      "witnesses": [
+        "No independently identified complete manuscript of a separate Book of Noah is established by the cited references."
+      ],
+      "recoverable": "Jubilees refers to writings associated with Noah. Related Noah traditions occur in other ancient works, but they cannot be assembled into a single verified Book of Noah.",
+      "note": "The reference may preserve a tradition about Noah's writings rather than the title of a discrete book. Related passages in 1 Enoch and the Genesis Apocryphon are not automatically fragments of one lost volume.",
+      "caution": "Do not combine all ancient Noah material or label it as a recovered Book of Noah."
+    },
+    {
+      "id": "book_giants",
+      "title": "Book of Giants (fragmentarily preserved)",
+      "references": [
+        "Dead Sea Scrolls: 1Q23, 1Q24, 2Q26, 4Q203, 4Q530–533, 6Q8"
+      ],
+      "status": "Fragmentarily preserved in Aramaic among the Dead Sea Scrolls; no complete continuous copy survives.",
+      "language": "Aramaic; later Manichaean versions also transmit a related tradition in other languages.",
+      "date": "Second Temple period composition; exact date and stages are debated.",
+      "witnesses": [
+        "Qumran fragments: 1Q23, 1Q24, 2Q26, 4Q203, 4Q530, 4Q531, 4Q532, 4Q533, 6Q8.",
+        "The app's ETCBC/Abegg index records 594 transcribed line records across the nine listed Qumran witness identifiers; these remain fragment-level records, not a continuous reconstruction."
+      ],
+      "recoverable": "Aramaic fragments survive and can be read individually by manuscript and fragment identifier. The archive's indexed lines are searchable, but gaps between fragments remain gaps.",
+      "note": "The Book of Giants is not wholly lost: fragments survive. Its relationship to Enochic traditions and later Manichaean versions must be studied without conflating distinct witnesses.",
+      "caution": "Do not join fragments into a continuous text or silently supply missing words. Preserve each manuscript's siglum and line coordinates."
+    },
+    {
+      "id": "nehemiah_library",
+      "title": "Nehemiah's Library and Collected Records",
+      "references": [
+        "2 Maccabees 2:13–15"
+      ],
+      "status": "A library and collection are described; the individual works are not fully catalogued in the passage.",
+      "language": "The report is preserved in Greek; the language of the collected source materials varied or is unknown.",
+      "date": "The account is associated with the Second Temple period; the exact history of the collection is not independently verifiable from this notice.",
+      "witnesses": [
+        "The description survives within 2 Maccabees; no separate manuscript catalogue of Nehemiah's collection is identified."
+      ],
+      "recoverable": "The passage says Nehemiah founded a library and collected writings concerning kings and prophets, writings of David, and royal letters. It does not provide a complete list or the texts of those materials.",
+      "note": "This is a report about a collection, not the title of one lost book.",
+      "caution": "Do not invent a list of the library's contents beyond the categories actually named."
+    },
+    {
+      "id": "jason_cyrene",
+      "title": "Jason of Cyrene's Five-Book History",
+      "references": [
+        "2 Maccabees 2:23"
+      ],
+      "status": "Lost source work; a later epitome survives as 2 Maccabees.",
+      "language": "Greek is stated or strongly implied for Jason's work and its epitome.",
+      "date": "Jason's work predates the epitome; exact composition date is uncertain.",
+      "witnesses": [
+        "2 Maccabees, whose author describes the work as an epitome of Jason of Cyrene's five books."
+      ],
+      "recoverable": "The epitome preserves a retelling and selection of Jason's history, not the complete wording of the five books. The original five-book work is not independently extant.",
+      "note": "The surviving 2 Maccabees is not a manuscript copy of Jason's original; it is an abridgment based on it.",
+      "caution": "Do not reverse-engineer the full five books from the epitome or treat the epitome as a verbatim transcription."
+    },
+    {
+      "id": "john_hyrcanus",
+      "title": "Chronicles of John Hyrcanus",
+      "references": [
+        "1 Maccabees 16:23–24"
+      ],
+      "status": "Lost or unidentified historical record.",
+      "language": "Unknown; a Semitic source is possible, but not established by a surviving witness.",
+      "date": "The cited record concerns the high priesthood of John Hyrcanus; exact composition date is unknown.",
+      "witnesses": [],
+      "recoverable": "1 Maccabees states that the acts, wars, and achievements of John Hyrcanus were written in the chronicles of his high priesthood. The cited record itself is not preserved as an independent work.",
+      "note": "The notice points to a historical record or archive, not necessarily a single book with a fixed title.",
+      "caution": "Do not confuse the source notice with later histories of the Hasmonean period."
+    }
+  ]
+}
