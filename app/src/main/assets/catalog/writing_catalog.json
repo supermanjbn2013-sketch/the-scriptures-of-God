@@ -1,8 +1,50 @@
 {
   "schema_version": 1,
   "record_type": "master_writing_catalog",
-  "policy": "One identity per distinct writing. Canonical grouping is not fixed by a modern book count. Multiple manuscripts and translations link to the same writing where identity is established; distinct compositions and retellings remain separate.",
+  "policy": "One identity per distinct writing. Canonical grouping is not fixed by a modern book count. Multiple manuscripts and translations link to the same writing where identity is established; distinct compositions and retellings remain separate. The WLC source-edition field is populated only for writings actually supplied in OSHB v2.2. It is a later comparison witness and is never used to infer that an earlier DSS, Samaritan, or other manuscript survives for a passage.",
   "records": [
+    {
+      "id": "1_chronicles",
+      "title": "1 Chronicles",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/1Chr.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/1Chr.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "1_kings",
+      "title": "1 Kings",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/1Kgs.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/1Kgs.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
     {
       "id": "1_samuel",
       "title": "1 Samuel",
@@ -11,7 +53,61 @@
       ],
       "primary_reference_tradition": "dss",
       "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
-      "status": "witness_inventory_started"
+      "status": "wlc_source_file_included; DSS and other witness mapping remains separate",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/1Sam.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/1Sam.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "2_chronicles",
+      "title": "2 Chronicles",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/2Chr.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/2Chr.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "2_kings",
+      "title": "2 Kings",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/2Kgs.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/2Kgs.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
     },
     {
       "id": "2_samuel",
@@ -21,7 +117,62 @@
       ],
       "primary_reference_tradition": "dss",
       "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
-      "status": "witness_inventory_started"
+      "status": "wlc_source_file_included; DSS and other witness mapping remains separate",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/2Sam.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/2Sam.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "amos",
+      "title": "Amos",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Amos.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Amos.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "daniel",
+      "title": "Daniel",
+      "language_scope": [
+        "Hebrew",
+        "Aramaic"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Dan.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Dan.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
     },
     {
       "id": "deuteronomy",
@@ -31,7 +182,313 @@
       ],
       "primary_reference_tradition": "dss",
       "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
-      "status": "witness_inventory_started"
+      "status": "wlc_source_file_included; DSS and other witness mapping remains separate",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Deut.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Deut.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "ecclesiastes",
+      "title": "Ecclesiastes",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Eccl.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Eccl.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "esther",
+      "title": "Esther",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Esth.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Esth.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "exodus",
+      "title": "Exodus",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Exod.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Exod.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "ezekiel",
+      "title": "Ezekiel",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Ezek.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Ezek.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "ezra",
+      "title": "Ezra",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Ezra.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Ezra.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "genesis",
+      "title": "Genesis",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Gen.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Gen.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "habakkuk",
+      "title": "Habakkuk",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Hab.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Hab.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "haggai",
+      "title": "Haggai",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Hag.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Hag.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "hosea",
+      "title": "Hosea",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Hos.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Hos.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "isaiah",
+      "title": "Isaiah",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Isa.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Isa.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "jeremiah",
+      "title": "Jeremiah",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Jer.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Jer.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "job",
+      "title": "Job",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Job.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Job.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "joel",
+      "title": "Joel",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Joel.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Joel.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "jonah",
+      "title": "Jonah",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Jonah.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Jonah.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
     },
     {
       "id": "joshua",
@@ -41,7 +498,61 @@
       ],
       "primary_reference_tradition": "dss",
       "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
-      "status": "witness_inventory_started"
+      "status": "wlc_source_file_included; DSS and other witness mapping remains separate",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Josh.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Josh.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "judges",
+      "title": "Judges",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Judg.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Judg.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "lamentations",
+      "title": "Lamentations",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Lam.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Lam.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
     },
     {
       "id": "leviticus",
@@ -51,7 +562,103 @@
       ],
       "primary_reference_tradition": "dss",
       "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
-      "status": "witness_inventory_started"
+      "status": "wlc_source_file_included; DSS and other witness mapping remains separate",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Lev.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Lev.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "malachi",
+      "title": "Malachi",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Mal.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Mal.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "micah",
+      "title": "Micah",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Mic.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Mic.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "nahum",
+      "title": "Nahum",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Nah.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Nah.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "nehemiah",
+      "title": "Nehemiah",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Neh.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Neh.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
     },
     {
       "id": "numbers",
@@ -61,7 +668,166 @@
       ],
       "primary_reference_tradition": "dss",
       "description": "A single writing identity. Manuscript witnesses are linked separately; this entry does not assert a fixed canon or complete surviving text.",
-      "status": "witness_inventory_started"
+      "status": "wlc_source_file_included; DSS and other witness mapping remains separate",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Num.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Num.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "obadiah",
+      "title": "Obadiah",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Obad.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Obad.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "proverbs",
+      "title": "Proverbs",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Prov.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Prov.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "psalms",
+      "title": "Psalms",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Ps.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Ps.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "ruth",
+      "title": "Ruth",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Ruth.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Ruth.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "song_of_songs",
+      "title": "Song of Songs",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Song.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Song.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "zechariah",
+      "title": "Zechariah",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Zech.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Zech.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
+    },
+    {
+      "id": "zephaniah",
+      "title": "Zephaniah",
+      "language_scope": [
+        "Hebrew"
+      ],
+      "description": "A distinct writing identity. The WLC-based OSHB v2.2 electronic text is imported as one comparison edition; it does not define the full collection or replace earlier manuscript witnesses.",
+      "status": "wlc_source_file_included; passage_level_witness_comparison_pending",
+      "source_editions": [
+        {
+          "source_id": "oshb-wlc-v2.2",
+          "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+          "source_file": "wlc/Zeph.xml",
+          "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Zeph.xml",
+          "source_status": "included_in_OSHB_v2.2_source_set",
+          "witness_basis": "Westminster Leningrad Codex",
+          "transcription_type": "annotated electronic edition, not diplomatic transcription of DSS or all ancient witnesses",
+          "license": "WLC base text public domain; OSHB annotations CC BY 4.0"
+        }
+      ]
     }
   ]
 }
