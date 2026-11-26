@@ -52,6 +52,16 @@ with data_path.open("w", encoding="utf-8", newline="\n") as target:
                         "transcription_text": " ".join(diplomatic),
                         "normalized_text": " ".join(normalized),
                         "parallel_references": refs,
+                        "word_records": [
+                            {
+                                "surface": str(w[0]) if len(w) > 0 else "",
+                                "surface_full": str(w[1]) if len(w) > 1 else "",
+                                "parallel_reference": str(w[5]).strip() if len(w) > 5 else "",
+                                "word_index": word_index
+                            }
+                            for word_index, w in enumerate(words)
+                            if len(w) > 5 and str(w[5]).strip() and len(w) > 1 and str(w[1]).strip()
+                        ],
                         "source": "ETCBC/DSS (Martin Abegg transcriptions), distributed in QDR structured data",
                         "source_revision": REV,
                         "source_file": filename,
