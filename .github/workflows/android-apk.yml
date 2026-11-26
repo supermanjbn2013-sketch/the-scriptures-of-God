@@ -85,6 +85,7 @@ jobs:
           python3 tools/validate_corpus.py base
           python3 tools/validate_corpus.py apocrypha
           python3 tools/validate_corpus.py dss
+          python3 tools/validate_corpus.py reconstruction
           python3 tools/validate_corpus.py papyri
           python3 tools/validate_corpus.py john
           python3 tools/validate_corpus.py android
