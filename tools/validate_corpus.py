@@ -262,6 +262,7 @@ def validate_android():
     source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
     for required in (
         "void openDssCatalogEntry(String item)", "void openDssConcordanceEntry(String item)",
+        "void openJohnWitnessComparison()", "void openJohnWitnessComparison(String initialReference)", "void showJohnWitnessVerse(int chapter,int verse)", "catalog/john_witness_index.json", "Compare Greek witnesses", "john_witness_index.json",
         "DSS Passage Concordance", "DSS Transcription Archive", "void renderEtcbcDssIndex(String query)", "void openEtcbcDssScroll(String scrollId)", "dss/etcbc_transcriptions.jsonl", "dss/etcbc_scroll_index.json", "openDssConcordanceEntry(item)", "openDssCatalogEntry(item)",
         "void searchCorpus(String query)", "void openBook(String name)", "ref.startsWith(bookName+\" \")", "boolean matchesExact(String text, String needle)", "matchesExact(body,needle)", "matchesExact(reference,needle)", "matchesExact(sourceReference,needle)", "passageRefs", "executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR)", "Search complete text corpus",
         "catalog/dss_passage_concordance.json", "transcription_text", "additional_transcription_sources", "PDF text layer",
