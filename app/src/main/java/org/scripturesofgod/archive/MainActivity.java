@@ -43,6 +43,34 @@ public class MainActivity extends Activity {
     void openSettings(){String[] items={"System default","Light","Dark","Reading font size","Preferred translation language","About this application","Privacy information"};new android.app.AlertDialog.Builder(this).setTitle("Settings").setItems(items,(d,w)->{if(w==0)saveTheme("system");else if(w==1)saveTheme("light");else if(w==2)saveTheme("dark");else if(w==3)chooseFontSize();else if(w==4)chooseTranslationLanguage();else if(w==5)showInfo("About","The Scriptures of God is an offline-first Scripture and manuscript research archive. Texts are displayed with source and edition attribution.");else showInfo("Privacy","Reading history, bookmarks, notes, preferred language and the encrypted Gemini API key are stored locally on this device. When you request AI translation, the submitted passage is sent to Google Gemini over the internet.");}).show();}
     void chooseFontSize(){int size=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",16);final SeekBar bar=new SeekBar(this);bar.setMax(16);bar.setProgress(Math.max(0,Math.min(16,size-12)));new android.app.AlertDialog.Builder(this).setTitle("Reading font size").setMessage("Adjust passage text size").setView(bar).setPositiveButton("Save",(d,w)->getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putInt("font_size",12+bar.getProgress()).apply()).setNegativeButton("Cancel",null).show();}
     void showInfo(String title,String message){new android.app.AlertDialog.Builder(this).setTitle(title).setMessage(message).setPositiveButton("Close",null).show();}
+    void enablePassageSelection(TextView view){
+        enablePassageSelection(view);
+        view.setCustomSelectionActionModeCallback(new android.view.ActionMode.Callback(){
+            public boolean onCreateActionMode(android.view.ActionMode mode,android.view.Menu menu){
+                menu.add(0,7341,100,"Translate selected text").setShowAsAction(android.view.MenuItem.SHOW_AS_ACTION_IF_ROOM);
+                return true;
+            }
+            public boolean onPrepareActionMode(android.view.ActionMode mode,android.view.Menu menu){return true;}
+            public boolean onActionItemClicked(android.view.ActionMode mode,android.view.MenuItem item){
+                if(item.getItemId()!=7341)return false;
+                int start=view.getSelectionStart(),end=view.getSelectionEnd();
+                if(start<0||end<0||start==end){Toast.makeText(MainActivity.this,"Select the passage first.",Toast.LENGTH_SHORT).show();return true;}
+                String passage=view.getText().subSequence(Math.min(start,end),Math.max(start,end)).toString().trim();
+                if(passage.isEmpty())return true;
+                String sourceLanguage="auto";
+                if(passage.matches("(?s).*[֐-׿].*"))sourceLanguage="he";
+                else if(passage.matches("(?s).*[Ͱ-Ͽ].*"))sourceLanguage="grc";
+                Intent intent=new Intent(MainActivity.this,AiTranslatorActivity.class);
+                intent.putExtra("passage_text",passage);
+                intent.putExtra("source_language",sourceLanguage);
+                intent.putExtra("preferred_target_language",targetLanguageName());
+                startActivity(intent);
+                mode.finish();
+                return true;
+            }
+            public void onDestroyActionMode(android.view.ActionMode mode){}
+        });
+    }
     void seed(){
         entries.put("Hebrew Scriptures",new ArrayList<>(Arrays.asList("Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Songs","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi")));
         entries.put("Prophets",new ArrayList<>(Arrays.asList("Isaiah","Jeremiah","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi")));
@@ -280,7 +308,7 @@ public class MainActivity extends Activity {
         }
         org.json.JSONArray sources=record.optJSONArray("research_sources");
         if(sources!=null&&sources.length()>0){detail.append("\nRESEARCH REFERENCES\n");for(int i=0;i<sources.length();i++){org.json.JSONObject source=sources.optJSONObject(i);if(source!=null)detail.append(source.optString("title","Source")).append("\n").append(source.optString("url","")).append("\n");}}
-        TextView view=text(detail.toString(),14,ink,false);view.setTextIsSelectable(true);
+        TextView view=text(detail.toString(),14,ink,false);enablePassageSelection(view);
         android.text.util.Linkify.addLinks(view,android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
         ScrollView scroll=new ScrollView(this);scroll.setPadding(12,8,12,8);scroll.addView(view);
         new android.app.AlertDialog.Builder(this).setTitle(record.optString("title","Study and manuscript evidence")).setView(scroll).setPositiveButton("Close",null).show();
@@ -452,7 +480,7 @@ public class MainActivity extends Activity {
                 StringBuilder result=new StringBuilder();
                 for(String hit:hits)result.append(hit).append("\n\n");
                 if(hits.size()==100)result.append("Results capped at 100. Refine the phrase to narrow the search.");
-                TextView view=text(result.toString(),14,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result.toString(),14,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(14,8,14,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Exact text search: "+exact).setView(sv).setNegativeButton("Back to "+returnSection,(d,w)->{navigateTo(returnSection);}).setNeutralButton("Home",(d,w)->{previousSection="Home";section="Home";show();}).setPositiveButton("Close",null).show();
             }
@@ -641,7 +669,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline DSS transcription: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · ETCBC / Abegg").setView(sv)
                     .setNegativeButton("Back to scroll index",(d,w)->navigateTo("DSS Transcription Archive"))
@@ -899,7 +927,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Codex Sinaiticus transcription: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Codex Sinaiticus")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openSinaiticusArchive())
@@ -970,7 +998,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Didache text: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Didache · Chapter "+chapter)
                     .setView(sv).setNegativeButton("Back to chapters",(d,w)->openDidacheArchive())
@@ -1024,7 +1052,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Coptic text: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Gospel of Thomas · Page "+page)
                     .setView(sv).setNegativeButton("Back to pages",(d,w)->openThomasArchive())
@@ -1097,7 +1125,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Shepherd of Hermas text: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Shepherd of Hermas · Book "+book)
                     .setView(sv).setNegativeButton("Back to divisions",(d,w)->openHermasArchive())
@@ -1144,7 +1172,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Ge'ez Jubilees text: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Jubilees · Chapter "+chapter).setView(sv).setNegativeButton("Back to chapters",(d,w)->openJubileesGeezEdition(edition)).setPositiveButton("Close",null).show();
             }
@@ -1193,7 +1221,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Greek text: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Testament of "+testament+" · "+chapter).setView(sv)
                     .setNegativeButton("Back to chapters",(d,w)->openTwelvePatriarchsTestament(testament)).setPositiveButton("Close",null).show();
@@ -1246,7 +1274,7 @@ public class MainActivity extends Activity {
                 return count==0?"No sections were found for this chapter.":count+" sections\n\n"+out.toString()+"\nNo missing wording is reconstructed.";
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Barnabas · Chapter "+chapter).setView(sv)
                     .setNegativeButton("Back to chapters",(d,w)->openBarnabasArchive()).setPositiveButton("Close",null).show();
@@ -1319,7 +1347,7 @@ public class MainActivity extends Activity {
                 return count==0?"No sections were found for this letter and chapter.":count+" sections\n\n"+out.toString()+"\nNo missing wording is reconstructed.";
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Ignatius · "+chapter).setView(sv)
                     .setNegativeButton("Back to chapters",(d,w)->openIgnatiusLetter(letterNo)).setPositiveButton("Close",null).show();
@@ -1357,7 +1385,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Syriac text: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,16,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,16,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Ode "+ode+" · Syriac").setView(sv)
                     .setNegativeButton("Back to Odes",(d,w)->openOdesOfSolomonArchive()).setPositiveButton("Close",null).show();
@@ -1392,7 +1420,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Greek text: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("3 Baruch · "+chapter).setView(sv)
                     .setNegativeButton("Back to chapters",(d,w)->openThreeBaruchArchive()).setPositiveButton("Close",null).show();
@@ -1447,7 +1475,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Syriac text: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("2 Baruch · Chapter "+chapter)
                     .setView(sv).setNegativeButton("Back to chapters",(d,w)->openTwoBaruchWitness(witness))
@@ -1493,7 +1521,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Ge'ez text: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Ascension of Isaiah · section "+section)
                     .setView(sv).setNegativeButton("Back to sections",(d,w)->openAscensionIsaiahArchive())
@@ -1541,7 +1569,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Greek Enoch text: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("1 Enoch · Greek page "+page)
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openGreekEnochArchive())
@@ -1658,7 +1686,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read Testament of Abraham: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("Recension "+recension+" · Chapter "+chapter)
                     .setView(sv).setNegativeButton("Back to chapters",(d,w)->openTestamentAbrahamRecension(recension))
@@ -1688,7 +1716,7 @@ public class MainActivity extends Activity {
             else for(int i=0;i<witnesses.length();i++)detail.append("- ").append(witnesses.optString(i)).append("\n");
             detail.append("\nText availability in this app:\n").append(selected.optString("text_status"));
             detail.append("\n\nResearch note:\n").append(selected.optString("note"));
-            TextView view=text(detail.toString(),14,ink,false);view.setTextIsSelectable(true);
+            TextView view=text(detail.toString(),14,ink,false);enablePassageSelection(view);
             ScrollView scroll=new ScrollView(this);scroll.setPadding(12,8,12,8);scroll.addView(view);
             new android.app.AlertDialog.Builder(this).setTitle(title).setView(scroll).setPositiveButton("Close",null).show();
         }catch(Exception e){showInfo("Catalogue unavailable","Unable to read the historical writings catalogue: "+e.getMessage());}
@@ -1862,7 +1890,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Codex Vaticanus transcription: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Codex Vaticanus")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openVaticanusArchive())
@@ -1959,7 +1987,7 @@ public class MainActivity extends Activity {
                 }
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView scroll=new ScrollView(MainActivity.this);scroll.setPadding(12,8,12,8);scroll.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(reference+" · Witness comparison")
                     .setView(scroll)
@@ -2024,7 +2052,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Papyrus 46 transcription: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Papyrus 46")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openPapyrus46Archive())
@@ -2088,7 +2116,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Papyrus 66 transcription: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Papyrus 66")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openPapyrus66Archive())
@@ -2152,7 +2180,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Papyrus 75 transcription: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Papyrus 75")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openPapyrus75Archive())
@@ -2216,7 +2244,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Papyrus 77 transcription: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Papyrus 77")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openPapyrus77Archive())
@@ -2280,7 +2308,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Papyrus 72 transcription: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Papyrus 72")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openPapyrus72Archive())
@@ -2344,7 +2372,7 @@ public class MainActivity extends Activity {
                 }catch(Exception e){return "Unable to read the offline Papyrus 52 transcription: "+e.getMessage();}
             }
             protected void onPostExecute(String result){
-                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Papyrus 52")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openPapyrus52Archive())
