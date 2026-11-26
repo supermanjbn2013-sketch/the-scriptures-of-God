@@ -748,14 +748,43 @@ public class MainActivity extends Activity {
 
     void renderDssHebrewArchive(String query){
         content.addView(text("ONE ARCHIVE · ORIGINAL-LANGUAGE READINGS AND DSS WITNESSES",12,gold,true));
-        content.addView(text("The archive groups Hebrew Scriptures, apocryphal and related writings, and lost or referenced titles. For the 39 Hebrew Scripture writings, DSS words are used only where word-level alignment is strong; the Westminster Leningrad Codex supplies remaining word positions or whole verses, and each verse is labelled. The WLC is a medieval codex and is not claimed to be the next-oldest physical witness. Greek and Ge'ez editions remain separate language texts. Use the DSS-lines control to inspect only surviving Qumran transcription lines.",13,muted,false));
-        content.addView(text("Source: ETCBC / CACCHT Dead Sea Scrolls corpus, Martin G. Abegg transcriptions distributed through Qumran Digital Reader. CC BY-NC 4.0 — non-commercial use only. Each line retains its scroll, fragment and line identifier.",12,muted,false));
-        renderDssArchiveGroup("HEBREW SCRIPTURES",entries.get("Hebrew Scriptures"),query);
-        renderDssArchiveGroup("APOCRYPHA AND DEUTEROCANONICAL WRITINGS",entries.get("Apocrypha and Deuterocanonical Writings"),query);
-        ArrayList<String> related=new ArrayList<>(Arrays.asList("1 Enoch","Jubilees","Book of Giants","Book of Noah","Genesis Apocryphon","Prayer of Nabonidus"));
-        renderDssArchiveGroup("OTHER DSS-PRESERVED OR FRAGMENTARILY ATTESTED WRITINGS",related,query);
-        renderDssArchiveGroup("LOST AND REFERENCED BOOKS",readDssLostBookTitles(),query);
-        content.addView(text("Important: a title appearing here is an archive index entry, not proof that a DSS copy survives. WLC Hebrew, Greek Septuagint editions, Latin transmission texts, Ge’ez editions, and other imported source texts remain identified as their own witnesses or editions; they are not relabelled as DSS. If no surviving text is available for a lost writing, its missing contents remain unavailable and are never invented.",12,gold,false));
+        content.addView(text("This section now lists only writings with evidence in the imported Dead Sea Scrolls transcriptions. Hebrew Scripture titles appear only when an actual imported DSS line has a mapped parallel reference. Additional writings appear only when an identified Qumran witness is present. Open a book to read the reconstructed text separately, then use the DSS-lines control to inspect the surviving manuscript lines.",13,muted,false));
+        content.addView(text("Source: ETCBC / CACCHT Dead Sea Scrolls corpus, Martin G. Abegg transcriptions distributed through Qumran Digital Reader. CC BY-NC 4.0 — non-commercial use only.",12,muted,false));
+        renderDssEvidenceIndex(query);
+        content.addView(text("The DSS lines are the primary archive evidence. Missing portions are reconstructed only in a separate reading layer from a named, reliable witness; supplied wording is never labelled as DSS. If no reliable witness preserves a missing passage, the gap remains identified rather than invented.",12,gold,false));
+    }
+
+    void renderDssEvidenceIndex(String query){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("dss/dss_book_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONObject index=new org.json.JSONObject(raw.toString());
+            content.addView(text("HEBREW SCRIPTURE BOOKS WITH DSS EVIDENCE",12,gold,true));
+            org.json.JSONArray books=index.optJSONArray("books");
+            int shown=0;
+            if(books!=null)for(int i=0;i<books.length();i++){
+                org.json.JSONObject book=books.getJSONObject(i);String title=book.optString("title");
+                if(!query.isEmpty()&&!title.toLowerCase(java.util.Locale.ROOT).contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
+                String label=title+"  ·  "+book.optInt("preserved_line_count")+" DSS lines · "+book.optInt("witness_count")+" witnesses";
+                TextView row=text(label+"   ›",15,ink,true);row.setPadding(13,12,13,12);row.setBackground(shape(panel));
+                LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,3,0,3);content.addView(row,p);
+                row.setOnClickListener(v->openDssArchiveBook(title));shown++;
+            }
+            content.addView(text("ADDITIONAL WRITINGS PRESERVED IN DSS",12,gold,true));
+            org.json.JSONArray related=index.optJSONArray("related_writings");
+            if(related!=null)for(int i=0;i<related.length();i++){
+                org.json.JSONObject work=related.getJSONObject(i);String title=work.optString("title");
+                if(!query.isEmpty()&&!title.toLowerCase(java.util.Locale.ROOT).contains(query.toLowerCase(java.util.Locale.ROOT)))continue;
+                String label=title+"  ·  "+work.optInt("preserved_line_count")+" preserved lines";
+                TextView row=text(label+"   ›",15,ink,true);row.setPadding(13,12,13,12);row.setBackground(shape(panel));
+                LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,3,0,3);content.addView(row,p);
+                row.setOnClickListener(v->openDssArchiveBook(title));shown++;
+            }
+            content.addView(text("Separate manuscript archive: "+index.optInt("scroll_identifier_count")+" scroll identifiers and "+index.optInt("total_line_records")+" imported line records. Open DSS Transcription Archive to inspect every imported scroll, including non-scriptural compositions.",12,muted,false));
+            if(shown==0)content.addView(text("No DSS-attested book matches this search.",14,muted,false));
+        }catch(Exception e){
+            content.addView(text("The DSS book index is unavailable in this build. "+e.getMessage(),13,muted,false));
+        }
     }
 
     ArrayList<String> readDssLostBookTitles(){
