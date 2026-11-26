@@ -243,7 +243,9 @@ def validate_john():
         assert metadata[witness].get("source_url") and metadata[witness].get("license")
     refs = [item["reference"] for item in index["verses"]]
     assert len(refs) == len(set(refs)), "Duplicate John verse references in witness index"
-    assert {f"John {chapter}:1" for chapter in range(1, 22)}.issubset(set(refs))
+    expected_starts = {f"John {chapter}:1" for chapter in range(1, 22) if chapter != 8}
+    expected_starts.add("John 8:12")  # The pericope adulterae is absent from the early continuous witnesses.
+    assert expected_starts.issubset(set(refs))
     for verse in index["verses"]:
         assert verse["reference"] == f"John {verse['chapter']}:{verse['verse']}"
         assert verse["witnesses"]
