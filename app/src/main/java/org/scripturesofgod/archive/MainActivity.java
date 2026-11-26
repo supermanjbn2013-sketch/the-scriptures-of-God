@@ -714,7 +714,7 @@ public class MainActivity extends Activity {
                         LinearLayout passageCard=new LinearLayout(MainActivity.this);passageCard.setOrientation(1);passageCard.setPadding(10,6,10,6);passageCard.setBackground(shape(panel));
                         TextView row=text(reference+"\\n"+body,readingSize,ink,false);row.setTag(reference);enablePassageSelection(row);
                         LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);passageCard.addView(row,p);
-                        TextView tools=text("Passage tools  ·  Tap to translate",12,gold,true);tools.setOnClickListener(v->showPassageActions(reference,body,language));passageCard.addView(tools);
+                        TextView tools=text("Passage tools  ·  Tap to translate with Gemini AI",12,gold,true);tools.setOnClickListener(v->showPassageActions(reference,body,language));passageCard.addView(tools);
                         passageCard.setOnClickListener(v->openAiTranslator(reference,body,language));chapterContent.addView(passageCard);
                     }
                     previous.setEnabled(selected>0);next.setEnabled(selected<chapters.size()-1);
