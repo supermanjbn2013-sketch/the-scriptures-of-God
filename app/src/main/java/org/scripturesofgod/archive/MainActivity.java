@@ -47,30 +47,30 @@ public class MainActivity extends Activity {
         view.setTextIsSelectable(true);
         view.setCustomSelectionActionModeCallback(new android.view.ActionMode.Callback(){
             public boolean onCreateActionMode(android.view.ActionMode mode,android.view.Menu menu){
-                menu.add(0,7341,100,"Translate selected text").setShowAsAction(android.view.MenuItem.SHOW_AS_ACTION_IF_ROOM);
+                menu.add(0,7342,10,"Select all");
+                menu.add(0,7343,20,"Copy");
+                menu.add(0,7344,30,"Highlight selected");
+                menu.add(0,7341,40,"Translate selected text").setShowAsAction(android.view.MenuItem.SHOW_AS_ACTION_IF_ROOM);
                 return true;
             }
             public boolean onPrepareActionMode(android.view.ActionMode mode,android.view.Menu menu){return true;}
             public boolean onActionItemClicked(android.view.ActionMode mode,android.view.MenuItem item){
-                if(item.getItemId()!=7341)return false;
+                int id=item.getItemId();
+                if(id==7342){view.selectAll();return true;}
                 int start=view.getSelectionStart(),end=view.getSelectionEnd();
-                if(start<0||end<0||start==end){Toast.makeText(MainActivity.this,"Select the passage first.",Toast.LENGTH_SHORT).show();return true;}
-                String passage=view.getText().subSequence(Math.min(start,end),Math.max(start,end)).toString().trim();
-                if(passage.isEmpty())return true;
-                String sourceLanguage="auto";
-                if(passage.matches("(?s).*[֐-׿].*"))sourceLanguage="he";
-                else if(passage.matches("(?s).*[Ͱ-Ͽ].*"))sourceLanguage="grc";
-                Intent intent=new Intent(MainActivity.this,AiTranslatorActivity.class);
-                intent.putExtra("passage_text",passage);
-                intent.putExtra("source_language",sourceLanguage);
-                intent.putExtra("preferred_target_language",targetLanguageName());
-                startActivity(intent);
-                mode.finish();
-                return true;
+                if(start<0||end<0||start==end){Toast.makeText(MainActivity.this,"Select text first.",Toast.LENGTH_SHORT).show();return true;}
+                String selected=view.getText().subSequence(Math.min(start,end),Math.max(start,end)).toString().trim();
+                if(selected.isEmpty())return true;
+                if(id==7343){((android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(android.content.ClipData.newPlainText("Selected passage",selected));Toast.makeText(MainActivity.this,"Selected text copied.",Toast.LENGTH_SHORT).show();mode.finish();return true;}
+                if(id==7344){String reference=view.getTag()==null?"Selected passage":String.valueOf(view.getTag());appendLibraryEntry("highlights",reference+"  "+selected);Toast.makeText(MainActivity.this,"Selected text highlighted and saved.",Toast.LENGTH_SHORT).show();mode.finish();return true;}
+                if(id!=7341)return false;
+                String sourceLanguage="auto";if(selected.matches("(?s).*[֐-׿].*"))sourceLanguage="he";else if(selected.matches("(?s).*[Ͱ-Ͽ].*"))sourceLanguage="grc";
+                Intent intent=new Intent(MainActivity.this,AiTranslatorActivity.class);intent.putExtra("passage_text",selected);intent.putExtra("source_language",sourceLanguage);intent.putExtra("preferred_target_language",targetLanguageName());startActivity(intent);mode.finish();return true;
             }
             public void onDestroyActionMode(android.view.ActionMode mode){}
         });
     }
+
     void seed(){
         entries.put("Hebrew Scriptures",new ArrayList<>(Arrays.asList("Genesis","Exodus","Leviticus","Numbers","Deuteronomy","Joshua","Judges","Ruth","1 Samuel","2 Samuel","1 Kings","2 Kings","1 Chronicles","2 Chronicles","Ezra","Nehemiah","Esther","Job","Psalms","Proverbs","Ecclesiastes","Song of Songs","Isaiah","Jeremiah","Lamentations","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi")));
         entries.put("Prophets",new ArrayList<>(Arrays.asList("Isaiah","Jeremiah","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi")));
@@ -709,11 +709,11 @@ public class MainActivity extends Activity {
                         String reference=verse.optString("reference"),body=verse.optString("text"),language=verse.optString("language");
                         String verseChapter=reference.contains(":")?reference.substring(0,reference.indexOf(':')):"1";
                         if(!selectedChapter.equals(verseChapter))continue;
-                        TextView row=text(reference+"\n"+body+"\n\nTap to translate with Gemini AI  ·  Long press for passage tools",readingSize,ink,false);
-                        row.setBackground(shape(panel));
-                        LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);chapterContent.addView(row,p);
-                        row.setOnClickListener(v->openAiTranslator(reference,body,language));
-                        row.setOnLongClickListener(v->{showPassageActions(reference,body,language);return true;});
+                        LinearLayout passageCard=new LinearLayout(MainActivity.this);passageCard.setOrientation(1);passageCard.setPadding(10,6,10,6);passageCard.setBackground(shape(panel));
+                        TextView row=text(reference+"\\n"+body,readingSize,ink,false);row.setTag(reference);enablePassageSelection(row);
+                        LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);passageCard.addView(row,p);
+                        TextView tools=text("Passage tools  ·  Tap to translate",12,gold,true);tools.setOnClickListener(v->showPassageActions(reference,body,language));passageCard.addView(tools);
+                        passageCard.setOnClickListener(v->openAiTranslator(reference,body,language));chapterContent.addView(passageCard);
                     }
                     previous.setEnabled(selected>0);next.setEnabled(selected<chapters.size()-1);
                 };
@@ -730,7 +730,7 @@ public class MainActivity extends Activity {
     }
 
     private void appendLibraryEntry(String key,String entry){android.content.SharedPreferences p=getSharedPreferences("archive_library",MODE_PRIVATE);String old=p.getString(key,"");for(String line:old.split("\n"))if(line.equals(entry))return;p.edit().putString(key,entry+(old.isEmpty()?"":"\n"+old)).apply();}
-    private void showPassageActions(String reference,String body,String sourceLanguage){String[] actions={"AI translate / analyze","Bookmark passage","Highlight passage","Add or edit personal note","Copy passage","Share passage"};new android.app.AlertDialog.Builder(this).setTitle(reference).setItems(actions,(d,w)->{if(w==0){openAiTranslator(reference,body,sourceLanguage);}else if(w==1){appendLibraryEntry("bookmarks",reference+"  "+body);showInfo("Bookmark saved",reference+" was saved to your personal library.");}else if(w==2){appendLibraryEntry("highlights",reference+"  "+body);showInfo("Highlight saved",reference+" was added to your highlights.");}else if(w==3){android.content.SharedPreferences p=getSharedPreferences("archive_library",MODE_PRIVATE);EditText note=new EditText(this);note.setMinLines(3);note.setText(p.getString("note:"+reference,""));new android.app.AlertDialog.Builder(this).setTitle("Personal note · "+reference).setView(note).setNegativeButton("Cancel",null).setPositiveButton("Save",(a,b)->p.edit().putString("note:"+reference,note.getText().toString()).apply()).show();}else if(w==4){((android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(android.content.ClipData.newPlainText(reference,reference+" "+body));showInfo("Copied",reference+" copied to clipboard.");}else{android.content.Intent intent=new android.content.Intent(android.content.Intent.ACTION_SEND);intent.setType("text/plain");intent.putExtra(android.content.Intent.EXTRA_TEXT,reference+"\n"+body);startActivity(Intent.createChooser(intent,"Share passage"));}}).show();}
+    private void showPassageActions(String reference,String body,String sourceLanguage){String[] actions={"AI translate / analyze","Bookmark passage","Highlight full passage","Add or edit personal note","Copy full passage","Paste clipboard text into translator","Share passage"};new android.app.AlertDialog.Builder(this).setTitle(reference).setItems(actions,(d,w)->{if(w==0){openAiTranslator(reference,body,sourceLanguage);}else if(w==1){appendLibraryEntry("bookmarks",reference+"  "+body);showInfo("Bookmark saved",reference+" was saved to your personal library.");}else if(w==2){appendLibraryEntry("highlights",reference+"  "+body);showInfo("Highlight saved",reference+" was added to your highlights.");}else if(w==3){android.content.SharedPreferences p=getSharedPreferences("archive_library",MODE_PRIVATE);EditText note=new EditText(this);note.setMinLines(3);note.setText(p.getString("note:"+reference,""));new android.app.AlertDialog.Builder(this).setTitle("Personal note · "+reference).setView(note).setNegativeButton("Cancel",null).setPositiveButton("Save",(a,b)->p.edit().putString("note:"+reference,note.getText().toString()).apply()).show();}else if(w==4){((android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE)).setPrimaryClip(android.content.ClipData.newPlainText(reference,reference+" "+body));showInfo("Copied",reference+" copied to clipboard.");}else if(w==5){android.content.ClipboardManager clipboard=(android.content.ClipboardManager)getSystemService(CLIPBOARD_SERVICE);if(clipboard==null||!clipboard.hasPrimaryClip()||clipboard.getPrimaryClip().getItemCount()==0){showInfo("Clipboard empty","Copy text first, then choose Paste.");return;}CharSequence pasted=clipboard.getPrimaryClip().getItemAt(0).coerceToText(this);if(pasted==null||pasted.toString().trim().isEmpty()){showInfo("Clipboard empty","There is no text to paste.");return;}openAiTranslator(reference,pasted.toString(),sourceLanguage);}else{android.content.Intent intent=new android.content.Intent(Intent.ACTION_SEND);intent.setType("text/plain");intent.putExtra(Intent.EXTRA_TEXT,reference+"\\n"+body);startActivity(Intent.createChooser(intent,"Share passage"));}}).show();}
     void openAiTranslator(String reference,String sourceText,String sourceLanguage){Intent intent=new Intent(this,AiTranslatorActivity.class);intent.putExtra("passage_reference",reference);intent.putExtra("passage_text",sourceText);intent.putExtra("source_language",sourceLanguage);intent.putExtra("preferred_target_language",targetLanguageName());startActivity(intent);}
 
     void renderEtcbcDssIndex(String query){
