@@ -116,10 +116,8 @@ public class MainActivity extends Activity {
         if(section.equals("Manuscript Comparison")){
             content.addView(text("JOHN · GREEK MANUSCRIPT COMPARISON",12,gold,true));
             content.addView(text("Compare the imported diplomatic transcriptions by chapter and verse. Each witness remains separate; spelling, supplied letters, and correction notes are not silently harmonized.",14,muted,false));
-            EditText reference=new EditText(this);reference.setSingleLine(true);reference.setHint("Enter chapter:verse, for example 17:11");reference.setTextColor(ink);reference.setHintTextColor(muted);reference.setPadding(16,10,16,10);reference.setBackground(shape(panel));
-            LinearLayout.LayoutParams rp=new LinearLayout.LayoutParams(-1,-2);rp.setMargins(0,14,0,10);content.addView(reference,rp);
-            Button compare=new Button(this);compare.setText("Compare Greek witnesses");compare.setTextColor(ink);compare.setBackground(shape(panel));content.addView(compare,new LinearLayout.LayoutParams(-1,-2));
-            compare.setOnClickListener(v->openJohnWitnessComparison(reference.getText().toString()));
+            Button compare=new Button(this);compare.setText("Compare a John passage");compare.setTextColor(ink);compare.setBackground(shape(panel));content.addView(compare,new LinearLayout.LayoutParams(-1,-2));
+            compare.setOnClickListener(v->openJohnWitnessComparison());
             content.addView(text("Available indexed witnesses: P52, P66, P75, Codex Vaticanus, and Codex Sinaiticus. A missing entry is not automatically proof of a textual omission; the manuscript page and source apparatus must be checked.",12,muted,false));
             return;
         }
