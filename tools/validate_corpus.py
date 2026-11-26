@@ -297,7 +297,7 @@ def validate_john():
         assert segment["english_text"].startswith(f"John {chapter_number}\n\n"), f"Missing chapter heading: John {chapter_number}"
         assert segment.get("segment_status") and segment.get("source_witness_id"), f"Missing source status for John {chapter_number}"
         assert segment.get("source_location") and segment.get("transcription_or_edition_basis") and segment.get("editorial_note"), f"Missing source notes for John {chapter_number}"
-        verse_numbers = [int(match.group(1)) for line in segment["english_text"].splitlines() if (match := re.match(r"^(\\d+)\\s", line))]
+        verse_numbers = [int(match.group(1)) for line in segment["english_text"].splitlines() if (match := re.match(r"^(\d+)\s", line))]
         assert verse_numbers, f"No verse-by-verse text in John {chapter_number}"
         start = 12 if chapter_number == 8 else 1
         expected = list(range(start, max(verse_numbers) + 1))
