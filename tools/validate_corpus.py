@@ -44,7 +44,7 @@ def validate_base():
     assert hebrew_codes == WLC_EXPECTED_BOOK_CODES, f"WLC base-witness coverage mismatch: missing={WLC_EXPECTED_BOOK_CODES - hebrew_codes}, unexpected={hebrew_codes - WLC_EXPECTED_BOOK_CODES}"
     assert greek_codes == GREEK_BOOK_CODES, f"SBLGNT book coverage mismatch: missing={GREEK_BOOK_CODES - greek_codes}, unexpected={greek_codes - GREEK_BOOK_CODES}"
     assert all(r.get("attribution") for r in hebrew + greek + latin)
-    septuagint = [r for r in greek if r.get("source") == "Swete Septuagint (Greek edition)"]
+    septuagint = [r for r in greek if r.get("source") == "Swete Septuagint (First1KGreek digital transcription)"]
     septuagint_report_path = ROOT / "corpus/septuagint_coverage.json"
     assert septuagint_report_path.exists(), "Pinned Swete Septuagint coverage report is missing"
     septuagint_report = json.loads(septuagint_report_path.read_text(encoding="utf-8"))
