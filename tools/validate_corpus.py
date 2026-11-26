@@ -351,6 +351,10 @@ def validate_android():
         "Records of Gad the Seer", "Words or Records of the Kings of Israel",
         "Commentary (Midrash) on the Book of Kings",
         "Writings or Decrees of David and Solomon",
+        "Book of the Kings of Israel (Chronicles source)",
+        "Annals of the Kings of Israel (Manasseh source)",
+        "Book of the Kings of Judah and Israel",
+        "Book of the Kings of Israel and Judah",
         "Book of Giants (fragmentarily preserved)"
     }
     assert required_lost.issubset(lost_titles), f"Missing lost/referenced writing records: {required_lost - lost_titles}"
