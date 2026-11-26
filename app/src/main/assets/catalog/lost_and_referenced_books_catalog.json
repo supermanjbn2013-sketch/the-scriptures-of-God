@@ -550,7 +550,13 @@
       "witnesses": [],
       "recoverable": "1 Chronicles 9:1 refers to a book of the kings of Israel. 2 Chronicles 20:34 says Jehoshaphat's acts were recorded in Jehu's records, which were incorporated into the book of the kings of Israel. The source itself is not independently preserved.",
       "note": "This title is kept distinct from the Chronicles of the Kings of Israel cited repeatedly in 1 and 2 Kings. They may be related or overlapping royal archives, but identity is not proven.",
-      "caution": "Do not identify this source automatically with the canonical Books of Kings or the Chronicles of the Kings of Israel."
+      "caution": "Do not identify this source automatically with the canonical Books of Kings or the Chronicles of the Kings of Israel.",
+      "research_sources": [
+        {
+          "title": "Encyclopedia of the Bible — Books of Chronicles, literary sources",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Books-Chronicles"
+        }
+      ]
     },
     {
       "id": "annals_kings_israel",
@@ -564,7 +570,13 @@
       "witnesses": [],
       "recoverable": "2 Chronicles 33:18 attributes further records of Manasseh's reign to the annals of the kings of Israel. The source is not independently preserved.",
       "note": "The title may refer to the same northern or Judahite royal archive under a conventional name, but the wording and historical setting should remain visible.",
-      "caution": "Do not assume that the source is identical with every other royal chronicle mentioned in Kings and Chronicles."
+      "caution": "Do not assume that the source is identical with every other royal chronicle mentioned in Kings and Chronicles.",
+      "research_sources": [
+        {
+          "title": "Encyclopedia of the Bible — Books of Chronicles, literary sources",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Books-Chronicles"
+        }
+      ]
     },
     {
       "id": "book_kings_judah_israel",
@@ -581,7 +593,13 @@
       "witnesses": [],
       "recoverable": "The passages refer readers to a book of the kings of Judah and Israel. The cited book itself is not preserved as a separate manuscript.",
       "note": "The title order is preserved as given in these references and kept distinct from the differently worded Book of the Kings of Israel and Judah. Whether the two titles denote separate archives or variant naming remains uncertain.",
-      "caution": "Do not merge this title with the Book of the Kings of Israel and Judah or the Chronicles of the Kings of Judah without evidence."
+      "caution": "Do not merge this title with the Book of the Kings of Israel and Judah or the Chronicles of the Kings of Judah without evidence.",
+      "research_sources": [
+        {
+          "title": "Encyclopedia of the Bible — Books of Chronicles, literary sources",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Books-Chronicles"
+        }
+      ]
     },
     {
       "id": "book_kings_israel_judah",
@@ -597,7 +615,33 @@
       "witnesses": [],
       "recoverable": "The cited passages refer to a book of the kings of Israel and Judah. Its text is not independently preserved.",
       "note": "The title order is preserved as given in these references and kept distinct from the Book of the Kings of Judah and Israel. Their relationship is uncertain.",
-      "caution": "Do not silently treat the two differently ordered titles as one proven source."
+      "caution": "Do not silently treat the two differently ordered titles as one proven source.",
+      "research_sources": [
+        {
+          "title": "Encyclopedia of the Bible — Books of Chronicles, literary sources",
+          "url": "https://www.biblegateway.com/resources/encyclopedia-of-the-bible/Books-Chronicles"
+        }
+      ]
+    },
+    {
+      "id": "levitical_chronicles",
+      "title": "Chronicles of the Levites",
+      "references": [
+        "Nehemiah 12:23"
+      ],
+      "status": "A genealogical or administrative record is referenced; no separate surviving copy is identified.",
+      "language": "Hebrew is likely; no independent manuscript witness is known.",
+      "date": "The record continued at least to the time identified in Nehemiah 12:23; exact compilation date unknown.",
+      "witnesses": [],
+      "recoverable": "Nehemiah 12:23 refers to the heads of the Levite families being recorded in the book of the chronicles. The cited register is not preserved as a separately identified document.",
+      "note": "This may be a genealogical or administrative register rather than a literary book. It is included because the passage explicitly refers to a written chronicle.",
+      "caution": "Do not identify this register with the royal chronicles or assume it contained a narrative history.",
+      "research_sources": [
+        {
+          "title": "NET Bible Dictionary — Chronicles, Books of",
+          "url": "https://classic.net.bible.org/dictionary.php?word=Chronicles%2C+Books+of"
+        }
+      ]
     }
   ]
 }
