@@ -66,6 +66,8 @@ jobs:
         run: python3 tools/import_gospel_of_thomas.py
       - name: Import Greek 1 Enoch fragment edition
         run: python3 tools/import_enoch_greek.py
+      - name: Import complete EOTC Ge'ez 1 Enoch edition
+        run: python3 tools/import_enoch_geez.py
       - name: Import Ge'ez Jubilees editions
         run: python3 tools/import_jubilees_geez.py
       - name: Import Syriac Odes of Solomon text
