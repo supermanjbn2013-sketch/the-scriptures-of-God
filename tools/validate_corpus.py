@@ -156,6 +156,27 @@ def validate_dss():
         else:
             assert record["status"] == "metadata catalogued; no matching line-level transcription in the imported dataset"
     witness_ids_for_evidence = {r["id"] for r in json.loads((ROOT / "catalog/manuscript_witness_register.json").read_text(encoding="utf-8"))["records"]}
+    inventory_path = ROOT / "dss/dss_witness_inventory.json"
+    scroll_index_path = ROOT / "dss/etcbc_scroll_index.json"
+    assert inventory_path.exists(), "Imported DSS witness inventory was not generated"
+    witness_inventory = json.loads(inventory_path.read_text(encoding="utf-8"))
+    scroll_index = json.loads(scroll_index_path.read_text(encoding="utf-8"))
+    inventory_rows = witness_inventory["records"]
+    assert witness_inventory["record_type"] == "Imported DSS scroll witness inventory"
+    assert witness_inventory["source_revision"] == index["source_revision"]
+    assert witness_inventory["license"] == index["license"]
+    assert witness_inventory["scroll_count"] == len(indexed_scrolls) == len(inventory_rows)
+    assert witness_inventory["total_line_count"] == actual_lines
+    assert len({row["shelfmark"] for row in inventory_rows}) == len(inventory_rows)
+    for row in inventory_rows:
+        assert row["shelfmark"] in indexed_scrolls
+        assert row["line_count"] == indexed_scrolls[row["shelfmark"]]["line_count"] > 0
+        assert row["fragment_count"] == indexed_scrolls[row["shelfmark"]]["fragment_count"] > 0
+        assert row["transcription_asset"] == "dss/etcbc_transcriptions.jsonl"
+        assert row["language"] == "not specified by this imported index"
+        assert isinstance(row["parallel_reference_writing_ids"], list)
+        assert isinstance(row["directly_identified_writing_ids"], list)
+    print(f"Validated imported DSS witness inventory: {len(inventory_rows)} scroll identifiers, {actual_lines} lines.")
     concordance = json.loads((ROOT / "catalog/dss_passage_concordance.json").read_text(encoding="utf-8"))
     assert concordance["record_type"] == "dss_manuscript_passage_concordance"
     assert len(concordance["records"]) >= 5
