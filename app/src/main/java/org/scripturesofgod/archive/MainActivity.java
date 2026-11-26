@@ -527,7 +527,7 @@ public class MainActivity extends Activity {
                 ArrayList<String> hits=new ArrayList<>();
                 String needle=exact.toLowerCase(java.util.Locale.ROOT);
                 try{
-                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/verses.jsonl"),"UTF-8"));
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open(corpusAsset),"UTF-8"));
                     String line;
                     while((line=reader.readLine())!=null && hits.size()<100){
                         org.json.JSONObject obj=new org.json.JSONObject(line);
@@ -613,6 +613,8 @@ public class MainActivity extends Activity {
         final String bookName=name;
         final String code=codeFor(bookName);
         if(code==null){new android.app.AlertDialog.Builder(this).setMessage("No text mapping is registered for "+bookName+".").setPositiveButton("Close",null).show();return;}
+        final boolean useDssReconstruction=java.util.Arrays.asList("Gen","Exod","Lev","Num","Deut","Josh","Judg","Ruth","1Sam","2Sam","1Kgs","2Kgs","1Chr","2Chr","Ezra","Neh","Esth","Job","Ps","Prov","Eccl","Song","Isa","Jer","Lam","Ezek","Dan","Hos","Joel","Amos","Obad","Jonah","Mic","Nah","Hab","Zeph","Hag","Zech","Mal").contains(code);
+        final String corpusAsset=useDssReconstruction?"corpus/reconstructed_verses.jsonl":"corpus/verses.jsonl";
         new android.os.AsyncTask<Void,Void,org.json.JSONObject>(){
             protected org.json.JSONObject doInBackground(Void... ignored){
                 org.json.JSONObject result=new org.json.JSONObject();
@@ -649,6 +651,7 @@ public class MainActivity extends Activity {
                         verse.put("reference",displayRef);
                         verse.put("text",obj.optString("text"));
                         verse.put("language",obj.optString("language"));
+                        if(obj.has("reconstruction_note"))verse.put("reconstruction_note",obj.optString("reconstruction_note"));
                         verses.put(verse);
                     }
                     reader.close();
@@ -685,7 +688,7 @@ public class MainActivity extends Activity {
                 meta.setAutoLinkMask(android.text.util.Linkify.WEB_URLS);
                 meta.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
                 reader.addView(meta);
-                reader.addView(text("Original-language text only. Long-press to select a word or passage, adjust the selection handles, then Copy. The available source edition supplies text where no DSS passage survives; its source is identified above. DSS manuscript lines remain separate and are never silently presented as DSS wording.",12,muted,false));
+                reader.addView(text(useDssReconstruction?"Reconstructed Hebrew reading, verse by verse. DSS words replace WLC words only when their ordered alignment meets the 70% threshold; the WLC supplies remaining word positions. Each verse identifies whether it is hybrid, fragment-only, or WLC-only. Long-press to select and Copy.":"Original-language text only. Long-press to select and Copy. The source edition and witness basis are identified above.",12,muted,false));
                 if("DSS Hebrew Archive".equals(section)){
                     Button dssEvidence=new Button(MainActivity.this);dssEvidence.setText("View surviving DSS manuscript lines");
                     dssEvidence.setOnClickListener(v->openDssBookEntry(bookName));
@@ -720,6 +723,8 @@ public class MainActivity extends Activity {
                         LinearLayout passageCard=new LinearLayout(MainActivity.this);passageCard.setOrientation(1);passageCard.setPadding(10,6,10,6);passageCard.setBackground(shape(panel));
                         TextView row=text(reference+"\\n"+body,readingSize,ink,false);row.setTag(reference);enablePassageSelection(row);
                         LinearLayout.LayoutParams p=new LinearLayout.LayoutParams(-1,-2);p.setMargins(0,4,0,4);passageCard.addView(row,p);
+                        String reconstructionNote=verse.optString("reconstruction_note","");
+                        if(!reconstructionNote.isEmpty()){TextView sourceNote=text(reconstructionNote,11,muted,false);sourceNote.setPadding(14,0,14,7);passageCard.addView(sourceNote);}
                         TextView tools=text("Passage tools  ·  Tap to translate with Gemini AI",12,gold,true);tools.setOnClickListener(v->showPassageActions(reference,body,language));passageCard.addView(tools);
                         passageCard.setOnClickListener(v->openAiTranslator(reference,body,language));chapterContent.addView(passageCard);
                     }
