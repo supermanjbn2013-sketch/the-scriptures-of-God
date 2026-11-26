@@ -26,6 +26,13 @@ BOOKS = {
     "Joel":"Joel","Amos":"Amos","Obad":"Obadiah","Jonah":"Jonah","Mic":"Micah",
     "Nah":"Nahum","Hab":"Habakkuk","Zeph":"Zephaniah","Hag":"Haggai","Zech":"Zechariah","Mal":"Malachi"
 }
+DIRECT_SCROLL_BOOKS = {
+    "1qisaa":"Isa",       # Great Isaiah Scroll, 1QIsaᵃ
+    "arugleviticus":"Lev",
+    "xjoshua":"Josh",
+    "xjudges":"Judg"
+}
+
 RELATED = [
     {"title":"1 Enoch","ids":["4Q201","4Q202","4Q204","4Q205","4Q206","4Q207","4Q208","4Q209","4Q210","4Q211","4Q212"],"language":"Aramaic"},
     {"title":"Jubilees","ids":["1Q17","1Q18","2Q19","3Q5","4Q216","4Q217","4Q218","4Q219","4Q220","4Q221","4Q222","4Q223_224","4Q225"],"language":"Hebrew"},
@@ -50,7 +57,7 @@ def ref_code(value):
 def main():
     if not DSS.exists() or not SCROLL_INDEX.exists():
         raise SystemExit("DSS transcription or scroll index is missing.")
-    stats = defaultdict(lambda: {"line_keys":set(), "references":set(), "scrolls":set(), "word_records":0})
+    stats = defaultdict(lambda: {"line_keys":set(), "references":set(), "scrolls":set(), "direct_scrolls":set(), "word_records":0})
     with DSS.open(encoding="utf-8") as source:
         for raw in source:
             if not raw.strip():
@@ -58,6 +65,11 @@ def main():
             row = json.loads(raw)
             scroll, fragment, line = row.get("scroll",""), row.get("fragment",""), row.get("line","")
             line_key = f"{scroll}|{fragment}|{line}"
+            direct_code = DIRECT_SCROLL_BOOKS.get(norm_id(scroll))
+            if direct_code:
+                stats[direct_code]["line_keys"].add(line_key)
+                stats[direct_code]["scrolls"].add(scroll)
+                stats[direct_code]["direct_scrolls"].add(scroll)
             refs = set()
             for word in row.get("word_records", []):
                 code = ref_code(word.get("parallel_reference"))
@@ -91,7 +103,8 @@ def main():
             "word_record_count":item["word_records"],
             "witness_count":len(item["scrolls"]),
             "witnesses":sorted(item["scrolls"]),
-            "evidence_type":"DSS line transcription with QDR parallel-reference mapping",
+            "direct_witnesses":sorted(item["direct_scrolls"]),
+            "evidence_type":"Direct DSS manuscript identity plus QDR parallel-reference mapping" if item["direct_scrolls"] else "DSS line transcription with QDR parallel-reference mapping",
             "caution":"The parallel reference locates a textual parallel; it does not make the DSS line a complete verse or prove identical wording."
         })
     related = []
@@ -119,7 +132,7 @@ def main():
         "source":"ETCBC/CACCHT Dead Sea Scrolls transcriptions, Martin G. Abegg data distributed through Qumran Digital Reader",
         "source_revision":"f54f38464e18409eed8286fe24dd24f88d4735dd",
         "license":"CC BY-NC 4.0",
-        "selection_rule":"A Hebrew Scripture book is listed only when at least one imported DSS line has a QDR parallel reference to that book. Additional writings are listed only when an explicitly identified witness is present in the imported scroll index.",
+        "selection_rule":"A Hebrew Scripture book is listed when an imported DSS line has a QDR parallel reference to that book or a directly identified biblical manuscript witness is present. Additional writings are listed only when an explicitly identified witness is present in the imported scroll index.",
         "books":books,
         "related_writings":related,
         "scroll_identifier_count":len(scroll_data.get("scrolls",[])),
