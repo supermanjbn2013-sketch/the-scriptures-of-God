@@ -175,21 +175,21 @@ def main():
         complete = [name for name in present if "[" not in witnesses[name]["text"] and "]" not in witnesses[name]["text"]]
         if complete:
             selected = complete[0]
-            selection_status = "earliest_complete_witness"
+            selection_status = "earliest_unbracketed_text"
         elif present:
             selected = present[0]
-            selection_status = "earliest_available_witness_is_partial"
+            selection_status = "earliest_available_text_contains_editorial_supply"
         else:
             selected = None
             selection_status = "no_witness_text"
 
-        earlier_partial = []
+        earlier_with_supply = []
         if selected:
             for name in present:
                 if name == selected:
                     break
                 if "[" in witnesses[name]["text"] or "]" in witnesses[name]["text"]:
-                    earlier_partial.append(name)
+                    earlier_with_supply.append(name)
 
         verses.append({
             "reference": f"John {chapter}:{verse}",
@@ -199,8 +199,8 @@ def main():
             "priority_witness": selected,
             "priority_text": witnesses[selected]["text"] if selected else "",
             "priority_status": selection_status,
-            "earlier_partial_witnesses": earlier_partial,
-            "priority_note": "Verse-level aid: choose the earliest witness with a fully unbracketed indexed reading. If an earlier witness is only partially preserved or contains editorial supply, retain it separately and use the next earliest complete witness for this verse. This does not resolve variants or replace passage-level collation."
+            "earlier_witnesses_with_editorial_supply": earlier_with_supply,
+            "priority_note": "Verse-level selection aid: this is the earliest indexed witness reading without explicit square-bracket editorial supply. Absence of brackets does not prove that the whole verse survives; physical gaps and partial verses must still be checked against page, column, line, and facsimile evidence. Earlier witnesses containing editorial supply remain separately visible. This is not a completed collation or translation."
         })
 
     if len(verses) < 800 or not {"P66", "P75", "Vaticanus", "Sinaiticus"}.issubset(metadata):
