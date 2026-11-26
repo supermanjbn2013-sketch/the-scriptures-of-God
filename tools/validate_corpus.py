@@ -198,7 +198,9 @@ def validate_dss():
     for row in evidence_rows:
         assert row["witness_id"] in witness_ids_for_evidence
         assert row["writing_ids"] and row["manuscript_id"] and row["fragment_group"]
-        assert row["transcription_text"].strip() and row["source_reference"]
+        assert row["source_reference"]
+        assert row["transcription_status"] in {"transcription_present", "line_reference_only_no_text_supplied"}
+        assert bool(row["transcription_text"].strip()) == (row["transcription_status"] == "transcription_present")
         assert row["passage_mapping_status"] in {"source_explicitly_mapped", "source_unassigned"}
         assert (bool(row["passage_references"]) == (row["passage_mapping_status"] == "source_explicitly_mapped"))
         key = (row["witness_id"], row["fragment_group"], row["digital_line"])
