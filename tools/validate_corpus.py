@@ -279,6 +279,12 @@ def validate_john():
     assert all(item.get("source_witness_id") and item.get("source_location") and item.get("transcription_or_edition_basis") for item in segments)
     assert not re.search(r"\bLord Jesus\b", john["english_text"], re.IGNORECASE), "Do not insert 'Lord' into a translated verse where Greek κύριος is absent"
     assert "manuscript verification and textual audit remain incomplete" in john["coverage"]["completion_note"]
+    assert "John 5:4" not in refs, "John 5:4 is absent from the indexed early witnesses and must not be fabricated"
+    chapter5 = next(item for item in segments if item["segment_id"] == "john-chapter-5")
+    chapter5_body = chapter5["english_text"].split("\\n[The verse numbered", 1)[0]
+    assert not re.search(r"(?m)^4\\s", chapter5_body), "Do not insert a verse 4 absent from the early witnesses"
+    assert "in the wilderness" in chapter5_body.lower(), "Preserve the P66 reading at John 5:28"
+    assert "tombs" in chapter5.get("editorial_note", "").lower(), "Record the later codex variant at John 5:28"
     print("Validated verse-level John manuscript index:", index["verse_count"], "verse references;", index["witness_verse_counts"])
 
 
