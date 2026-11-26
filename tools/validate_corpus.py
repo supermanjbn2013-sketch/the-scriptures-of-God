@@ -765,7 +765,18 @@ def validate_android():
     assert all(r["language"] == "grc" and r["text"].strip() and r["printed_page"] and r["chapter"] and r["section"] for r in enoch_greek_records)
     assert all(r["license"] == "CC BY-SA 4.0" and r["source_revision"] == enoch_greek_index["source_revision"] for r in enoch_greek_records)
     assert all("not a diplomatic transcription" in r["editorial_basis"].lower() for r in enoch_greek_records)
-    print("Validated Android navigation, manuscript transcriptions, Didache, Shepherd of Hermas both Testament of Abraham recensions and the Coptic Gospel of Thomas and Greek 1 Enoch")
+    enoch_geez_path = ROOT / "other_reference/enoch_geez/enoch_geez_index.json"
+    assert enoch_geez_path.exists(), "Offline Ge'ez 1 Enoch index was not generated"
+    enoch_geez_index = json.loads(enoch_geez_path.read_text(encoding="utf-8"))
+    assert enoch_geez_index["source_revision"] == "ff9d4981eba2084c4914ca840ff323d85cbd2a1d"
+    assert enoch_geez_index["license"] == "CC BY-SA 4.0"
+    assert enoch_geez_index["chapter_count"] == 108 and enoch_geez_index["record_count"] > 800
+    enoch_geez_records = [json.loads(line) for line in (ROOT / "other_reference/enoch_geez/enoch_geez.jsonl").read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(enoch_geez_records) == enoch_geez_index["record_count"]
+    assert all(r["language"] == "gez" and r["text"].strip() and r["edition"] == "eotc_printed" for r in enoch_geez_records)
+    assert "void openEnochWitnessMenu()" in source and "void openEnochGeezArchive()" in source and "void openEnochGeezChapter(int chapter)" in source
+    assert datasets["1-enoch-geez-eotc-beta-masaheft"]["license"] == "CC BY-SA 4.0"
+    print("Validated Android navigation, manuscript transcriptions, Greek and Ge'ez 1 Enoch, Didache, Shepherd of Hermas, Testament of Abraham and Coptic Gospel of Thomas")
 
 
 def validate_reconstruction_policy():
