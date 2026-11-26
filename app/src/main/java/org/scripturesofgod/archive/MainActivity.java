@@ -910,7 +910,7 @@ public class MainActivity extends Activity {
                 TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(MainActivity.this).setTitle(title+" · DSS witness text").setView(sv).setNegativeButton("Back to archive",(d,w)->navigateTo("DSS Hebrew Archive")).setPositiveButton("Close",null);
-                if("1 Enoch".equalsIgnoreCase(title))builder.setNeutralButton("Greek fragments",(d,w)->openGreekEnochArchive());
+                if("1 Enoch".equalsIgnoreCase(title))builder.setNeutralButton("Other text witnesses",(d,w)->openEnochWitnessMenu());
                 if("Jubilees".equalsIgnoreCase(title))builder.setNeutralButton("Ge'ez editions",(d,w)->openJubileesGeezArchive());
                 builder.show();
             }
@@ -1877,6 +1877,55 @@ public class MainActivity extends Activity {
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle("1 Enoch · Greek page "+page)
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openGreekEnochArchive())
                     .setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    void openEnochWitnessMenu(){
+        String[] choices={"Complete Ge'ez edition · 108 chapters","Greek edition fragments"};
+        new android.app.AlertDialog.Builder(this).setTitle("1 Enoch · Other language witnesses")
+            .setItems(choices,(dialog,which)->{if(which==0)openEnochGeezArchive();else openGreekEnochArchive();})
+            .setNegativeButton("Close",null).show();
+    }
+
+    void openEnochGeezArchive(){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/enoch_geez/enoch_geez_index.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONObject index=new org.json.JSONObject(raw.toString());
+            org.json.JSONArray chapters=index.getJSONArray("chapters");
+            String[] labels=new String[chapters.length()];int[] numbers=new int[chapters.length()];
+            for(int i=0;i<chapters.length();i++){numbers[i]=chapters.getInt(i);labels[i]="Chapter "+numbers[i];}
+            new android.app.AlertDialog.Builder(this).setTitle("1 Enoch · Ge'ez EOTC edition")
+                .setItems(labels,(dialog,which)->openEnochGeezChapter(numbers[which]))
+                .setNegativeButton("Back to witnesses",(dialog,which)->openEnochWitnessMenu()).show();
+        }catch(Exception e){showInfo("Ge'ez Enoch text unavailable","The offline EOTC Ge'ez edition was not generated in this build. "+e.getMessage());}
+    }
+
+    void openEnochGeezChapter(int chapter){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("other_reference/enoch_geez/enoch_geez.jsonl"),"UTF-8"),8192);
+                    String raw;while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);
+                        if(record.optInt("chapter")!=chapter)continue;
+                        if(count==0)out.append("Work: 1 Enoch\nLanguage: Classical Ethiopic (Ge'ez)\n")
+                            .append("Edition: Ethiopian Orthodox Tewahedo Church printed edition (EOTCed)\n")
+                            .append("Source: Beta maṣāḥǝft, LIT1340EnochE.xml\nLicence: CC BY-SA 4.0\n")
+                            .append("This is a complete edition-based Ge'ez text, not a fresh diplomatic transcription of one named ancient codex. The separate Dillmann/Jerabek edition division is excluded because it carries a distinct non-commercial permission notice. Qumran Aramaic fragments and Greek fragments remain separate witnesses; Ge'ez does not restore Hebrew or Aramaic wording.\n\n");
+                        out.append(record.optString("reference")).append("\n").append(record.optString("text")).append("\n\n");count++;
+                    }
+                    reader.close();
+                    return count==0?"No Ge'ez text records found for 1 Enoch chapter "+chapter+".":count+" numbered text records\n\n"+out.toString();
+                }catch(Exception e){return "Unable to read the offline Ge'ez Enoch text: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);enablePassageSelection(view);
+                ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle("1 Enoch · Ge'ez Chapter "+chapter)
+                    .setView(sv).setNegativeButton("Back to chapters",(d,w)->openEnochGeezArchive()).setPositiveButton("Close",null).show();
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
