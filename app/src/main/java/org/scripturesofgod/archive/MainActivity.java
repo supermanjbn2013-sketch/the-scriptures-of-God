@@ -36,7 +36,7 @@ public class MainActivity extends Activity {
         }).setNegativeButton("Cancel",null).show();
     }
     Map<String,ArrayList<String>> entries=new LinkedHashMap<>();
-    String[] sections={"Home","Hebrew Scriptures","Prophets","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Archive","Papyrus Archive","Codex Vaticanus Archive","Codex Sinaiticus Archive","DSS Passage Concordance","DSS Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
+    String[] sections={"Home","Hebrew Scriptures","Prophets","Unified Apostolic and Disciple Writings","Apocrypha and Deuterocanonical Writings","Writings Mentioned in the Scriptures","Lost and Referenced Books","Other Reference Books","Manuscript Archive","DSS Archive","Papyrus Archive","Codex Vaticanus Archive","Codex Sinaiticus Archive","DSS Passage Concordance","DSS Transcription Archive","IGNTP Transcription Archive","Translation Center","Manuscript Comparison","Research Archive","Favorites","Reading History","Personal Library","Settings"};
     @Override public void onCreate(Bundle b){super.onCreate(b); applyTheme(); seed(); show();}
     void applyTheme(){String mode=getSharedPreferences("archive_settings",MODE_PRIVATE).getString("theme","dark");lightMode=mode.equals("light")||(mode.equals("system")&&((getResources().getConfiguration().uiMode&android.content.res.Configuration.UI_MODE_NIGHT_MASK)==android.content.res.Configuration.UI_MODE_NIGHT_NO));if(lightMode){bg=Color.rgb(247,245,239);panel=Color.rgb(255,255,255);gold=Color.rgb(133,94,38);ink=Color.rgb(35,39,42);muted=Color.rgb(105,110,113);}else{bg=Color.rgb(15,19,24);panel=Color.rgb(26,33,41);gold=Color.rgb(205,174,112);ink=Color.rgb(232,228,217);muted=Color.rgb(160,166,170);}}
     void saveTheme(String mode){getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("theme",mode).apply();applyTheme();show();}
@@ -101,6 +101,7 @@ public class MainActivity extends Activity {
             content.addView(text("MANUSCRIPT RESEARCH",12,gold,true));
             addHomeTile("Dead Sea Scrolls Archive","Dedicated archive for DSS manuscripts and transcriptions",() -> navigateTo("DSS Archive"));
             addHomeTile("Papyrus Archive","Greek papyrus witnesses, transcriptions and English readings",() -> navigateTo("Papyrus Archive"));
+            addHomeTile("IGNTP Transcription Archive","Greek, Latin and Coptic TEI witnesses with source coordinates",() -> navigateTo("IGNTP Transcription Archive"));
             addHomeTile("Codex Vaticanus Archive","Dedicated archive for Codex Vaticanus witness text",() -> navigateTo("Codex Vaticanus Archive"));
             addHomeTile("DSS Transcription Archive","Offline line-level readings from the ETCBC / Abegg corpus",() -> navigateTo("DSS Transcription Archive"));
             addHomeTile("Greek Manuscripts","Papyrus and codex registers",()->{section="Manuscript Archive";show();});
@@ -122,6 +123,7 @@ public class MainActivity extends Activity {
             return;
         }
         if(section.equals("DSS Transcription Archive")){renderEtcbcDssIndex(q);return;}
+        if(section.equals("IGNTP Transcription Archive")){renderIgntpCollections(q);return;}
         if(section.equals("Papyrus Archive")){content.addView(text("GREEK PAPYRUS WITNESSES",12,gold,true));content.addView(text("Each papyrus is a separate physical witness. A fragment's passage coverage is not a complete book. Open a witness to inspect its surviving transcription and source record.",13,muted,false));}
         if(section.equals("Codex Vaticanus Archive")){content.addView(text("CODEX VATICANUS · GA 03",12,gold,true));content.addView(text("This archive contains the Codex Vaticanus transcription independently of other manuscript archives. Only the witness text is shown; missing leaves are not silently filled.",13,muted,false));}
         if(section.equals("DSS Archive")){content.addView(text("DEAD SEA SCROLLS · QUMRAN MANUSCRIPTS",12,gold,true));content.addView(text("This archive is limited to actual DSS witnesses and their source records. A scroll's preserved text is distinguished from restored or missing portions.",13,muted,false));}
@@ -2348,6 +2350,81 @@ public class MainActivity extends Activity {
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
                 new android.app.AlertDialog.Builder(MainActivity.this).setTitle(selected+" · Papyrus 52")
                     .setView(sv).setNegativeButton("Back to page index",(d,w)->openPapyrus52Archive())
+                    .setPositiveButton("Close",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+
+    void renderIgntpCollections(String query){
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("igntp/igntp_manifest.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;while((line=reader.readLine())!=null)raw.append(line);reader.close();
+            org.json.JSONArray collections=new org.json.JSONObject(raw.toString()).getJSONArray("collections");
+            for(int i=0;i<collections.length();i++){
+                org.json.JSONObject item=collections.getJSONObject(i);
+                String label=item.optString("title")+" · "+item.optString("language").toUpperCase()+" · "+item.optInt("witness_count")+" witnesses";
+                if(query!=null&&!query.trim().isEmpty()&&!label.toLowerCase().contains(query.trim().toLowerCase())&&!item.optString("work").toLowerCase().contains(query.trim().toLowerCase()))continue;
+                TextView row=text(label,15,ink,false);row.setBackground(shape(panel));
+                LinearLayout.LayoutParams lp=new LinearLayout.LayoutParams(-1,-2);lp.setMargins(0,5,0,5);content.addView(row,lp);
+                row.setOnClickListener(v->openIgntpCollection(item));
+            }
+            content.addView(text("Original TEI XML is retained in each collection archive. The searchable JSONL index is a navigation aid, not a replacement for the diplomatic transcription.",12,muted,false));
+        }catch(Exception e){content.addView(text("IGNTP archive is not available in this installation. "+e.getMessage(),13,muted,false));}
+    }
+
+    void openIgntpCollection(org.json.JSONObject collection){
+        final String collectionTitle=collection.optString("title"),indexPath=collection.optString("offline_index"),license=collection.optString("license","CC BY 4.0");
+        new android.os.AsyncTask<Void,Void,java.util.ArrayList<String>>(){
+            java.util.LinkedHashMap<String,String> titles=new java.util.LinkedHashMap<>();
+            java.util.LinkedHashMap<String,Integer> counts=new java.util.LinkedHashMap<>();
+            String error="";
+            protected java.util.ArrayList<String> doInBackground(Void... ignored){
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(new java.util.zip.GZIPInputStream(getAssets().open(indexPath)),"UTF-8"),8192);
+                    String raw;while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);String id=record.optString("witness_id","unknown");
+                        if(!titles.containsKey(id))titles.put(id,record.optString("witness_title",id));
+                        counts.put(id,counts.containsKey(id)?counts.get(id)+1:1);
+                    }reader.close();return new java.util.ArrayList<>(titles.keySet());
+                }catch(Exception e){error=e.getMessage();return new java.util.ArrayList<>();}
+            }
+            protected void onPostExecute(java.util.ArrayList<String> ids){
+                if(!error.isEmpty()){showInfo(collectionTitle,"Unable to read the offline collection index: "+error);return;}
+                if(ids.isEmpty()){showInfo(collectionTitle,"No indexed witness records are available.");return;}
+                String[] labels=new String[ids.size()];
+                for(int i=0;i<ids.size();i++){String id=ids.get(i);labels[i]=id+" · "+titles.get(id)+" · "+counts.get(id)+" text blocks";}
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(collectionTitle+" · Witnesses")
+                    .setItems(labels,(dialog,which)->openIgntpWitness(collectionTitle,indexPath,license,ids.get(which),titles.get(ids.get(which))))
+                    .setNegativeButton("Back",null).show();
+            }
+        }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
+    }
+
+    void openIgntpWitness(String collectionTitle,String indexPath,String license,String witnessId,String witnessTitle){
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();int count=0;
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(new java.util.zip.GZIPInputStream(getAssets().open(indexPath)),"UTF-8"),8192);
+                    String raw;while((raw=reader.readLine())!=null){
+                        org.json.JSONObject record=new org.json.JSONObject(raw);if(!witnessId.equals(record.optString("witness_id")))continue;
+                        if(count==0)out.append("Collection: ").append(collectionTitle).append("\nWitness: ").append(witnessTitle).append(" (").append(witnessId).append(")\nLicence: ").append(license).append("\n\n")
+                            .append("Source: International Greek New Testament Project (IGNTP) TEI transcription\n")
+                            .append("Original TEI XML is preserved unchanged in the collection ZIP archive. This indexed view is a flattened search aid.\n")
+                            .append("Coordinates are shown only when encoded in the source TEI. Missing physical text is not reconstructed.\n\n");
+                        out.append("Source block: ").append(record.optString("source_label")).append("\nXML member: ").append(record.optString("xml_member")).append("\n");
+                        out.append("Page identifiers: ").append(record.optJSONArray("page_ids")==null?"":record.optJSONArray("page_ids").toString()).append("\n");
+                        out.append("Column identifiers: ").append(record.optJSONArray("column_ids")==null?"":record.optJSONArray("column_ids").toString()).append("\n");
+                        out.append("Line identifiers: ").append(record.optJSONArray("line_ids")==null?"":record.optJSONArray("line_ids").toString()).append("\n");
+                        out.append(record.optString("text")).append("\n\n");count++;
+                    }reader.close();return count==0?"No indexed text blocks were found for this witness.":count+" indexed text blocks\n\n"+out.toString();
+                }catch(Exception e){return "Unable to open the IGNTP witness: "+e.getMessage();}
+            }
+            protected void onPostExecute(String result){
+                TextView view=text(result,15,ink,false);view.setTextIsSelectable(true);ScrollView scroll=new ScrollView(MainActivity.this);scroll.setPadding(12,8,12,8);scroll.addView(view);
+                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(witnessId+" · "+collectionTitle).setView(scroll)
+                    .setNegativeButton("Back to witnesses",(d,w)->{try{org.json.JSONObject item=new org.json.JSONObject();item.put("title",collectionTitle);item.put("offline_index",indexPath);item.put("license",license);openIgntpCollection(item);}catch(Exception ignored){}})
                     .setPositiveButton("Close",null).show();
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
