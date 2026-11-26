@@ -115,13 +115,17 @@
     "Display the oldest directly preserved text first, while allowing an earlier or more reliable parallel witness to take precedence where evidence warrants.",
     "When a witness does not preserve a segment, supplement only from a named witness preserving the same passage; record the source and textual relationship.",
     "If no reliable witness supplies the segment, retain an explicit unrecoverable gap.",
-    "Keep reconstructed reading, diplomatic witness text, and editorial translation as separate data layers."
+    "Keep reconstructed reading, diplomatic witness text, and editorial translation as separate data layers.",
+    "For the first Hebrew phase, use the pinned word-level ETCBC/Abegg DSS export and align each mapped DSS token sequence to the WLC verse. Apply only high-confidence ordered matches; retain lower-coverage DSS fragments as separate witness text.",
+    "Continue with witness-specific reconstruction for apocryphal writings and versional traditions. A Ge'ez or Greek text may be displayed as its own versional reading, but must never be inserted as Hebrew or Aramaic wording."
   ],
   "notes": [
     "The age of a textual tradition, the estimated date of composition, and the date of a surviving physical manuscript are separate facts.",
     "The DSS do not preserve every writing or every passage; absence from the DSS is not evidence that a passage never existed.",
     "A continuous reconstructed display is an editorial aid, not a claim that one ancient manuscript contained the complete displayed text.",
-    "No reconstruction is populated by guessing; passage-level evidence and source coordinates are prerequisites."
+    "No reconstruction is populated by guessing; passage-level evidence and source coordinates are prerequisites.",
+    "The first automated DSS/WLC reconstruction layer is conservative and verse-level. It is not a complete collation against all ancient versions and must not be described as always using the next-oldest physical manuscript.",
+    "1 Enoch's complete EOTC Ge'ez edition is a separate versional text; it complements but does not replace the Aramaic Qumran fragments or Greek fragments."
   ],
   "reader_requirements": {
     "reading_and_study_must_be_separate": true,
@@ -167,6 +171,23 @@
       "editorial_restoration",
       "uncertain_reading",
       "unrecoverable_gap"
+    ]
+  },
+  "algorithmic_reconstruction": {
+    "id": "dss_wlc_hebrew_word_alignment_v1",
+    "status": "implemented_first_phase",
+    "coverage": "39 Hebrew Scripture writings represented in the bundled WLC corpus",
+    "base_witness": "Westminster Leningrad Codex, separately identified as a medieval Masoretic codex witness",
+    "primary_evidence": "ETCBC/CACCHT Dead Sea Scrolls word-level transcriptions derived from Martin Abegg data and distributed through Qumran Digital Reader",
+    "alignment_method": "DSS word tokens are grouped by their parallel passage reference and physical scroll. An ordered longest-common-subsequence alignment is performed against the WLC verse after removing vowel/cantillation marks and normalizing final Hebrew letter forms for comparison only. The displayed DSS token form is retained.",
+    "insertion_rule": "DSS tokens replace only matched WLC word positions when at least three words match and at least 70 percent of the WLC verse word positions are aligned. WLC supplies all remaining word positions.",
+    "below_threshold_rule": "If DSS evidence is too fragmentary for the threshold, the WLC verse remains the continuous text and the DSS fragment is kept separately in the witness archive with an explanatory note.",
+    "source_label_rule": "Every verse is labelled as a DSS/WLC hybrid, WLC with fragment-only DSS evidence, or WLC-only. A hybrid is never represented as one complete ancient manuscript.",
+    "limitations": [
+      "The WLC is not necessarily the next-oldest physical witness; it is the continuous Hebrew base currently bundled for this first phase.",
+      "The alignment layer does not yet compare every available Samaritan, Greek, Syriac, Latin, or other versional witness passage by passage.",
+      "This first phase does not complete the apocryphal, deuterocanonical, or lost/referenced writings; each requires its own manuscript and language-specific reconstruction.",
+      "Where no surviving witness preserves a lost writing, no text is invented."
     ]
   }
 }
