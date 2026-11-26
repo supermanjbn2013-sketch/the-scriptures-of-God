@@ -770,7 +770,23 @@ public class MainActivity extends Activity {
             openBook(title);
             return;
         }
-        openDssBookEntry(title);
+        if("1 Enoch".equalsIgnoreCase(title)){
+            openGreekEnochArchive();
+            return;
+        }
+        if("Jubilees".equalsIgnoreCase(title)){
+            openJubileesGeezArchive();
+            return;
+        }
+        if("Book of Giants".equalsIgnoreCase(title)){
+            openBookOfGiantsFragments();
+            return;
+        }
+        if("Genesis Apocryphon".equalsIgnoreCase(title)||"Prayer of Nabonidus".equalsIgnoreCase(title)){
+            openDssBookEntry(title);
+            return;
+        }
+        openReferencedBookEntry(title);
     }
 
     void renderDssArchiveGroup(String heading,ArrayList<String> titles,String query){
@@ -864,8 +880,8 @@ public class MainActivity extends Activity {
                         String scroll=record.optString("scroll");String refs="";
                         org.json.JSONArray parallel=record.optJSONArray("parallel_references");
                         if(parallel!=null)for(int i=0;i<parallel.length();i++){if(i>0)refs+="; ";refs+=parallel.optString(i);}
-                        boolean match=false;
-                        for(String alias:aliases){if(!alias.isEmpty()&&(refs.toLowerCase(java.util.Locale.ROOT).contains(alias.toLowerCase(java.util.Locale.ROOT)))){match=true;break;}}
+                        boolean match=dssScrollMatchesTitle(title,scroll);
+                        for(String alias:aliases){if(!match&&!alias.isEmpty()&&(refs.toLowerCase(java.util.Locale.ROOT).contains(alias.toLowerCase(java.util.Locale.ROOT)))){match=true;break;}}
                         if(!match)continue;
                         if(count==0){
                             out.append("DSS transcription source: Martin G. Abegg Jr. / ETCBC-CACCHT, distributed through Qumran Digital Reader.\n");
