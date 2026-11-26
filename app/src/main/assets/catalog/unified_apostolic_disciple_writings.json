@@ -1549,7 +1549,7 @@
           "source": "https://www.jamesclarke.co/storage/extracts/didache-ch1.pdf"
         }
       ],
-      "description": "An early Christian instruction writing traditionally titled “Teaching of the Twelve Apostles.” The title does not establish apostolic authorship. The collection survives principally in a nearly complete Greek medieval codex, with earlier Greek and Coptic fragments preserving limited passages. The lost Georgian witness is known only through a published collation. The manuscript evidence is presented separately and does not reconstruct missing wording.",
+      "description": "An early Christian instruction text traditionally titled “Teaching of the Twelve Apostles.” The title does not establish apostolic authorship. The collection survives principally in a nearly complete Greek medieval codex, with earlier Greek and Coptic fragments preserving limited passages. The lost Georgian witness is known only through a published collation. The manuscript evidence is presented separately and does not reconstruct missing wording.",
       "surviving_fragments": [
         {
           "fragment_id": "Did-BrMusOr9271",
@@ -3276,7 +3276,7 @@
           "source": "https://www.newadvent.org/cathen/02299a.htm"
         }
       ],
-      "description": "Historical attribution must be evaluated independently; traditional title is not proof of authorship. Greek text available offline in the archive from an edition; edition-derived text, not a new diplomatic transcription of Sinaiticus or PSI 7.757. Witness register now distinguishes Codex Sinaiticus, Codex Hierosolymitanus 54, and the Latin version. The catalogue records 3 manuscript or transmission witness records; dates, languages, extent, and textual limits are kept separate."
+      "description": "An early Christian theological exhortation that interprets the Hebrew Scriptures and gives ethical instruction. The traditional title does not establish authorship. Greek text is available offline from an edition; this is not a new diplomatic transcription of Codex Sinaiticus or PSI 7.757. The witness register distinguishes Codex Sinaiticus, Codex Hierosolymitanus 54, and the Latin version. The catalogue records 3 manuscript or transmission witness records; dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "hermas",
@@ -3348,7 +3348,7 @@
           "source": "https://libraryguides.helsinki.fi/apostolicfathers/hermas"
         }
       ],
-      "description": "Historical attribution must be evaluated independently; traditional title is not proof of authorship. Greek edition text available offline; not a full diplomatic transcription of all witnesses. Witness register now includes Codex Sinaiticus, P.Mich. 917, Papyrus Bodmer 38, and the divided Grigoriou 96/Leipzig Cod. gr. 9 witness. The catalogue records 4 manuscript or transmission witness records; dates, languages, extent, and textual limits are kept separate."
+      "description": "An early Christian apocalyptic and moral instruction work traditionally associated with Hermas. The traditional attribution is not proof of authorship. Greek edition text is available offline; it is not a full diplomatic transcription of all witnesses. The witness register includes Codex Sinaiticus, P.Mich. 917, Papyrus Bodmer 38, and the divided Grigoriou 96/Leipzig Cod. gr. 9 witness. The catalogue records 4 manuscript or transmission witness records; dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "ignatius_ephesians",
@@ -5349,7 +5349,7 @@
           "source": "https://libraryguides.helsinki.fi/apostolicfathers/clemens"
         }
       ],
-      "description": "Historical attribution must be evaluated independently; traditional title is not proof of authorship. Witnesses recorded separately: fifth-century Codex Alexandrinus (partial Greek), 1056 Codex Hierosolymitanus 54, and Syriac transmission. This is manuscript coverage metadata, not a new diplomatic transcription. Witness metadata added; no unverified transcription or translation has been inserted. The catalogue records 3 manuscript or transmission witness records; dates, languages, extent, and textual limits are kept separate."
+      "description": "An early Christian homily rather than a letter securely authored by Clement. The traditional title does not establish authorship. Witnesses are recorded separately: fifth-century Codex Alexandrinus (partial Greek), the 1056 Codex Hierosolymitanus 54, and Syriac transmission. This is manuscript-coverage metadata, not a new diplomatic transcription. Witness metadata is included; no unverified transcription or translation has been inserted. The catalogue records 3 manuscript or transmission witness records; dates, languages, extent, and textual limits are kept separate."
     },
     {
       "id": "paul_seneca_correspondence",
