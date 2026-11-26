@@ -281,7 +281,7 @@ def validate_john():
     assert "manuscript verification and textual audit remain incomplete" in john["coverage"]["completion_note"]
     assert "John 5:4" not in refs, "John 5:4 is absent from the indexed early witnesses and must not be fabricated"
     chapter5 = next(item for item in segments if item["segment_id"] == "john-chapter-5")
-    chapter5_body = chapter5["english_text"].split("\n[The verse numbered", 1)[0]
+    chapter5_body = chapter5["english_text"]
     assert not re.search(r"(?m)^4\s", chapter5_body), "Do not insert a verse 4 absent from the early witnesses"
     assert "in the wilderness" in chapter5_body.lower(), "Preserve the P66 reading at John 5:28"
     assert "tombs" in chapter5.get("editorial_note", "").lower(), "Record the later codex variant at John 5:28"
