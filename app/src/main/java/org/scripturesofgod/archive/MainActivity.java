@@ -1990,8 +1990,8 @@ public class MainActivity extends Activity {
                         out.append("Papyrus-first reading aid\\n");
                         out.append("Selected witness: ").append(priorityWitness).append(" (").append(selected.optString("priority_status","")).append(")\\n");
                         out.append(selected.optString("priority_text","")).append("\\n");
-                        org.json.JSONArray partials=selected.optJSONArray("earlier_partial_witnesses");
-                        if(partials!=null&&partials.length()>0)out.append("Earlier partial witness(es): ").append(partials.join(", ")).append("\\n");
+                        org.json.JSONArray partials=selected.optJSONArray("earlier_witnesses_with_editorial_supply");
+                        if(partials!=null&&partials.length()>0)out.append("Earlier witness(es) with editorial supply: ").append(partials.join(", ")).append("\\n");
                         out.append(selected.optString("priority_note","")).append("\\n\\n");
                     }
                     String[] order={"P52","P66","P75","Vaticanus","Sinaiticus"};
