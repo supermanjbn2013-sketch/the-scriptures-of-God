@@ -128,6 +128,8 @@ def validate_dss():
         assert book["book_code"] in WLC_EXPECTED_BOOK_CODES
         assert book["title"] and book["preserved_line_count"] > 0 and book["witness_count"] > 0
         assert book["witnesses"] and all(w in indexed_scrolls for w in book["witnesses"])
+    isaiah_dss = next((b for b in book_index["books"] if b["title"] == "Isaiah"), None)
+    assert isaiah_dss is not None and "1Qisaa" in isaiah_dss.get("direct_witnesses", []), "Great Isaiah Scroll must be indexed from its direct manuscript identity"
     for work in book_index["related_writings"]:
         assert work["title"] and work["preserved_line_count"] > 0 and work["witnesses"]
         assert all(w["scroll"] in indexed_scrolls for w in work["witnesses"])
