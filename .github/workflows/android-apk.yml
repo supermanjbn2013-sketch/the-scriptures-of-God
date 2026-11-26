@@ -28,6 +28,13 @@ jobs:
           gradle-version: '8.9'
       - name: Prepare offline Scripture corpus
         run: python3 tools/prepare_corpus.py
+      - name: Prepare CACCHT Samaritan Pentateuch source
+        run: |
+          python3 -m pip install --disable-pip-version-check text-fabric
+          git clone --depth 1 https://github.com/DT-UCPH/sp.git build/samaritan-sp
+          test -f build/samaritan-sp/tf/7.4.1/otype.tf
+      - name: Import Samaritan Pentateuch as a separate witness
+        run: python3 tools/import_samaritan_pentateuch.py
       - name: Download featured Qumran-Digital transcription source pages
         run: python3 tools/download_qumran_digital_sources.py
       - name: Import offline Dead Sea Scrolls transcriptions
@@ -85,6 +92,7 @@ jobs:
       - name: Validate complete corpus before any APK build
         run: |
           python3 tools/validate_corpus.py base
+          python3 tools/validate_corpus.py samaritan
           python3 tools/validate_corpus.py apocrypha
           python3 tools/validate_corpus.py dss
           python3 tools/validate_corpus.py reconstruction
