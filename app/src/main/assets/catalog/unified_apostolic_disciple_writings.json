@@ -29,24 +29,7 @@
       "historical_anchor_status": "overlapping_narrative",
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
-      "research_sources": [
-        {
-          "title": "IGNTP — Electronic transcriptions of the Gospel of John",
-          "url": "https://itseeweb.cal.bham.ac.uk/igntp/transcriptions.html"
-        },
-        {
-          "title": "IGNTP — John transcription and apparatus downloads",
-          "url": "https://itseeweb.cal.bham.ac.uk/iohannes/download.html"
-        },
-        {
-          "title": "IGNTP — P66 transcription (University of Birmingham repository)",
-          "url": "https://epapers.bham.ac.uk/id/eprint/1759/"
-        },
-        {
-          "title": "IGNTP — P75 transcription (University of Birmingham repository)",
-          "url": "https://epapers.bham.ac.uk/id/eprint/1742/"
-        }
-      ],
+      "research_sources": [],
       "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
       "manuscript_witnesses": [
         {
@@ -59,41 +42,9 @@
           "provenance": "Egypt; exact findspot uncertain",
           "current_location": "Bibliotheca Bodmeriana, Cologny, Switzerland",
           "contents": "Gospel of John; substantial but not complete text",
-          "text_status": "IGNTP diplomatic transcription exists as TEI XML. The transcription is a separate witness record and must not be silently conflated with an edited critical text.",
-          "transcription_source": "https://epapers.bham.ac.uk/id/eprint/1759/",
-          "transcription_license": "INTF NTVMR diplomatic transcription: CC BY 4.0 as stated in the transcription file. Do not apply Bodmer Lab or Vatican image terms to the text transcription.",
+          "text_status": "P66 remains catalogued as an individual papyrus witness. The former IGNTP transcription-archive source is not used or bundled here; no full diplomatic transcription is claimed in this record.",
           "image_and_catalogue_source": "https://manuscripts.csntm.org/",
-          "sample_passage": "John 1:1–14 (page 1; verse 14 continues onto page 2)",
-          "greek_transcription_lines": [
-            "εν αρχη ην ο λογος· και ο λογος ην προς το[ν θ̅ν̅]",
-            "και θ̅ς̅ ην ο λογος· ^{2} ουτος ην εν αρχη προς τ[ον θ̅ν̅]",
-            "^{3} παντα δι αυτου εγενετο· και χωρις α[υτου]",
-            "εγενετο ουδεν ο γεγονεν ^{4} αυτω ζω̣η̣ η̣[ν]",
-            "και η ζωη ην το φως των ανθρωπων",
-            "^{5} και το φως εν τη σκοτια φαινει· και η",
-            "σκοτια αυτο ου κατελαβεν·",
-            "^{6} [ε]γενετο ανθρωπος απεσταλμενος πα",
-            "ρα θ̅υ̅ ονομα αυτω ιωαννης ^{7} ουτος ηλ",
-            "θεν εις μαρτυριαν ινα μαρτυρηση",
-            "περι του φωτος· ινα παντες πιστευ",
-            "σωσιν δι αυτου· ^{8} ουκ ην εκεινος το",
-            "φως αλλα ινα μαρτυρηση περι του",
-            "φωτος ^{9} ην το φως το αληθινον̣ ο φω",
-            "τιζει πανταν ανθρωπον ερχομ̣ενον",
-            "εις τον κοσμον· ^{10} εν τω κο̣σμω ην και",
-            "ο κοσμος δι αυτου εγενετο και ο κοσ",
-            "μος αυτον ουκ εγνω ^{11} εις τα ιδια ηλθ[εν]",
-            "και οι ιδιοι αυτον ου παρελαβον· ^{12} οσο[ι]",
-            "δε ελαβον αυτον εδωκεν αυτοις ε",
-            "ξουσιαν τεκνα θ̅υ̅ γενεσθαι τοις",
-            "πιστευουσιν εις το ονομα αυτου ^{13} οι ου̣",
-            "κ εξ αιματων ουδε εκ θελημα̣[τος]",
-            "σαρκος ουδε εκ θεληματος αν[δρος]",
-            "αλλα εκ θ̅υ̅ εγεννηθησαν· ^{14} και [ο λογος]"
-          ],
-          "english_translation": "In the beginning the Word was, and the Word was toward [God]; and divine was the Word. This one was in the beginning toward [God]. All things came to be through him, and apart from him not one thing came to be that has come to be. In him was life, and the life was the light of human beings. And the light shines in the darkness, and the darkness did not overcome it. There came to be a man sent from God; his name was John. This one came for testimony, so that he might testify concerning the light, so that all might believe through him. He was not that light, but [came] so that he might testify concerning the light. The true light, which enlightens every human being, was coming into the world. He was in the world, and the world came to be through him, and the world did not know him. He came to his own things, and his own people did not receive him. But as many as received him, to them he gave authority to become children of God, to those believing in his name, who were born not from bloods, nor from the will of flesh, nor from the will of a man, but from God. And [the Word] …",
-          "translation_note": "New English rendering from the Greek transcription, not the KJV. The phrase και θ̅ς̅ ην ο λογος is rendered “and divine was the Word” as an explicitly lexical rendering of the anarthrous predicate; this is a translation choice, not a manuscript variant. The line ends at John 1:14 and continues on the next page. Square brackets indicate restoration; underdotted letters are uncertain.",
-          "rights_note": "INTF transcription is CC BY 4.0; attribute INTF/NTVMR and retain source link. Bodmer Lab manuscript images have a separate CC BY-NC 4.0 license and are not bundled here."
+          "sample_passage": "John 1:1–14 (page 1; verse 14 continues onto page 2)"
         },
         {
           "id": "P52",
@@ -181,7 +132,7 @@
           "provenance": "Probably Egypt; exact findspot and archaeological context are uncertain. A Dishna-area provenance has been proposed, but should not be treated as securely excavated context.",
           "current_location": "Biblioteca Apostolica Vaticana, Vatican City (Pap. Hanna 1, Mater Verbi)",
           "contents": "Originally contained the complete Gospels of Luke and John. Substantial portions survive from Luke 3:18–24:53 and John 1:1–15:8, with major gaps and damage.",
-          "text_status": "Fragmentary Greek papyrus codex. The extant John text includes scattered portions of John 1:1–15:8, not a continuous complete copy. Dating is debated: the Vatican Library describes it as early third century, while more recent scholarship has proposed a fourth-century date.",
+          "text_status": "P75 remains catalogued as an individual papyrus witness. The former IGNTP transcription-archive source is not used or bundled here; no full diplomatic transcription is claimed in this record.",
           "sample_passage": "John 1:1–18 (opening of the Gospel; folio shared with Luke's subscription and John's title)",
           "source_references": [
             {
@@ -240,12 +191,7 @@
       "historical_anchor_status": "overlapping_narrative",
       "scope_relationship": "attributed_to_apostle_or_disciple",
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
-      "research_sources": [
-        {
-          "title": "IGNTP — Project publications and Greek editions",
-          "url": "https://itseeweb.cal.bham.ac.uk/igntp/publications.html"
-        }
-      ],
+      "research_sources": [],
       "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
       "manuscript_witnesses": [
         {
@@ -1396,10 +1342,6 @@
       "historical_order_note": "This is an event/context grouping, not a claim of exact chronological order relative to every other writing. Consult the event-order evidence and status for the limits of this placement.",
       "preservation_status": "surviving_in_multiple_greek_manuscript_witnesses",
       "research_sources": [
-        {
-          "title": "IGNTP — Greek New Testament transcriptions and project publications",
-          "url": "https://itseeweb.cal.bham.ac.uk/igntp/transcriptions.html"
-        },
         {
           "title": "INTF — New Testament Virtual Manuscript Room",
           "url": "https://ntvmr.uni-muenster.de/"
