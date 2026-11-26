@@ -300,7 +300,7 @@ def validate_android():
         "void openThomasArchive()", "void openThomasPage(int page)", "other_reference/thomas/thomas_index.json", "other_reference/thomas/thomas_coptic.jsonl", "Open Coptic text",
         "void openGreekEnochArchive()", "void openGreekEnochPage(int page)", "other_reference/enoch_greek/enoch_greek_index.json", "other_reference/enoch_greek/enoch_greek.jsonl", "Open Greek fragments",
         "void openTestamentAbrahamArchive()", "void openTestamentAbrahamRecension(String recension)", "void openTestamentAbrahamChapter(String recension,int chapter,String assetFile)", "other_reference/testament_abraham/testament_abraham_index.json", "Open Greek recensions",
-        "594 line records across these nine Qumran witness identifiers", "not a continuous reconstructed text or an English translation", "ClickableSpan", "openAiTranslator(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate with Gemini AI", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "targetLanguage()"
+        "not a continuous reconstructed text or an English translation", "ClickableSpan", "openAiTranslator(selectedReference,selectedText,\"he\")", "additional_transcription_sources", "pdf_text_lines", "sourceTitle", "chooseTranslationLanguage()", "Tap to translate with Gemini AI", "showPassageActions(", "Bookmark passage", "Highlight passage", "Personal note", "archive_library", "font_size", "last_book", "target_language", "Back to ", "targetLanguage()"
     ):
         assert required in source, f"Android source is missing: {required}"
     for book in REQUIRED_GREEK | REQUIRED_LATIN:
@@ -353,6 +353,8 @@ def validate_android():
     assert required_lost.issubset(lost_titles), f"Missing lost/referenced writing records: {required_lost - lost_titles}"
     assert "lost_and_referenced_books_catalog.json" in source
     assert "Book of Laments for Josiah" in source
+    giants_record = next(record for record in lost_catalog["records"] if record["id"] == "book_giants")
+    assert any("594 transcribed line records" in witness for witness in giants_record["witnesses"]), "Book of Giants fragment count and scope note is missing"
     assert "P.Oxy. 1782 (late 4th century Greek fragment)" in historical_json
     assert "P.Oxy. 3528" in historical_json and "not be casually assigned to Barnabas" in historical_json
     assert "must not automatically be identified as Paul's referenced letter" in historical_json
