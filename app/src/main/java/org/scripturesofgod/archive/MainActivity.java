@@ -742,15 +742,15 @@ public class MainActivity extends Activity {
     void openAiTranslator(String reference,String sourceText,String sourceLanguage){Intent intent=new Intent(this,AiTranslatorActivity.class);intent.putExtra("passage_reference",reference);intent.putExtra("passage_text",sourceText);intent.putExtra("source_language",sourceLanguage);intent.putExtra("preferred_target_language",targetLanguageName());startActivity(intent);}
 
     void renderDssHebrewArchive(String query){
-        content.addView(text("ONE ARCHIVE · DSS WITNESS TEXT ONLY",12,gold,true));
-        content.addView(text("The archive groups the existing Hebrew Scripture book list, apocryphal and related writings, and lost or referenced titles. Open a title to see only line records whose DSS parallel-reference metadata matches it. Fragmentary lines remain fragmentary; missing chapters and verses are not reconstructed.",13,muted,false));
+        content.addView(text("ONE ARCHIVE · ORIGINAL-LANGUAGE READINGS AND DSS WITNESSES",12,gold,true));
+        content.addView(text("The archive groups Hebrew Scriptures, apocryphal and related writings, and lost or referenced titles. Open a title to read the available original-language text in the same chapter-by-chapter reader. Where the DSS does not preserve a passage, the best available bundled source edition supplies the reading and is identified by its own metadata. Use the DSS-lines control to inspect only surviving Qumran transcription lines.",13,muted,false));
         content.addView(text("Source: ETCBC / CACCHT Dead Sea Scrolls corpus, Martin G. Abegg transcriptions distributed through Qumran Digital Reader. CC BY-NC 4.0 — non-commercial use only. Each line retains its scroll, fragment and line identifier.",12,muted,false));
         renderDssArchiveGroup("HEBREW SCRIPTURES",entries.get("Hebrew Scriptures"),query);
         renderDssArchiveGroup("APOCRYPHA AND DEUTEROCANONICAL WRITINGS",entries.get("Apocrypha and Deuterocanonical Writings"),query);
         ArrayList<String> related=new ArrayList<>(Arrays.asList("1 Enoch","Jubilees","Book of Giants","Book of Noah","Genesis Apocryphon","Prayer of Nabonidus"));
         renderDssArchiveGroup("OTHER DSS-PRESERVED OR FRAGMENTARILY ATTESTED WRITINGS",related,query);
         renderDssArchiveGroup("LOST AND REFERENCED BOOKS",readDssLostBookTitles(),query);
-        content.addView(text("Important: a title appearing here is an archive index entry, not proof that a DSS copy survives. If no matching line is found, the entry will say so. The existing Masoretic and Greek datasets are not used to fill DSS gaps.",12,gold,false));
+        content.addView(text("Important: a title appearing here is an archive index entry, not proof that a DSS copy survives. WLC Hebrew, Greek Septuagint editions, Latin transmission texts, Ge’ez editions, and other imported source texts remain identified as their own witnesses or editions; they are not relabelled as DSS. If no surviving text is available for a lost writing, its missing contents remain unavailable and are never invented.",12,gold,false));
     }
 
     ArrayList<String> readDssLostBookTitles(){
