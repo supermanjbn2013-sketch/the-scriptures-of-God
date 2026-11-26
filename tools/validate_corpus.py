@@ -816,6 +816,7 @@ def validate_reconstruction_policy():
                 assert record.get("text") and record.get("reconstruction_note") and record.get("reconstruction_method")
     assert actual == index["hebrew_verse_records"], f"Reconstruction index count mismatch: {actual}"
     print("Validated generated verse-level Hebrew reconstruction:", actual, "verses;", sum(x["dss_aligned"] for x in index["books"].values()), "DSS/WLC hybrids.")
+    source_catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
     wlc = next(item for item in source_catalog["datasets"] if item["id"] == "oshb-wlc")
     assert "Masoretic witness" in wlc["coverage"]
     assert "does not define the archive's scope" in " ".join(wlc["limitations"])
