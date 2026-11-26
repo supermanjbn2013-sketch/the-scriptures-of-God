@@ -30,8 +30,6 @@ for manuscript in concordance.get("records", []):
     for line in manuscript.get("transcription_line_map", []):
         passages = list(line.get("passages") or [])
         text = str(line.get("transcription_text") or "")
-        if not text.strip():
-            raise ValueError(f"Empty transcription line: {manuscript['manuscript_id']} {line.get('group')}:{line.get('digital_line')}")
         records.append({
             "id": f"{witness['id']}__{str(line['group']).replace(' ', '_')}__line_{line['digital_line']}",
             "writing_ids": witness["writing_ids"],
@@ -43,6 +41,7 @@ for manuscript in concordance.get("records", []):
             "passage_references": passages,
             "passage_mapping_status": "source_explicitly_mapped" if passages else "source_unassigned",
             "transcription_text": text,
+            "transcription_status": "transcription_present" if text.strip() else "line_reference_only_no_text_supplied",
             "source_reference": line["source_reference"],
             "editorial_note": line.get("note", ""),
             "transcription_source": source.get("title", "Curated manuscript concordance transcription"),
