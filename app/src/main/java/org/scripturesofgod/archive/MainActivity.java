@@ -1811,6 +1811,14 @@ public class MainActivity extends Activity {
             detail.append("\nWhat can actually be recovered\n").append(selected.optString("recoverable","No verified surviving text is recorded."));
             detail.append("\n\nResearch note\n").append(selected.optString("note",""));
             detail.append("\n\nTextual caution\n").append(selected.optString("caution","Do not reconstruct missing wording."));
+            org.json.JSONArray researchSources=selected.optJSONArray("research_sources");
+            if(researchSources!=null&&researchSources.length()>0){
+                detail.append("\n\nResearch sources");
+                for(int i=0;i<researchSources.length();i++){
+                    org.json.JSONObject source=researchSources.optJSONObject(i);
+                    if(source!=null)detail.append("\n").append(source.optString("title","Source")).append("\n").append(source.optString("url",""));
+                }
+            }
             detail.append("\n\nArchive rule\nA quotation, source notice, fragment, or later abridgment is not the complete lost work. Missing wording is never invented.");
             TextView view=text(detail.toString(),14,ink,false);enablePassageSelection(view);
             ScrollView scroll=new ScrollView(this);scroll.setPadding(12,8,12,8);scroll.addView(view);
