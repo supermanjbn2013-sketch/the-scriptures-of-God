@@ -233,6 +233,18 @@ public class MainActivity extends Activity {
             String attribution=selected.optString("source_note","");
             if(!selected.optString("text_basis","").isEmpty())attribution+="\\n\\nText basis: "+selected.optString("text_basis");
             if(!selected.optString("translation_basis","").isEmpty())attribution+="\\n\\nTranslation basis: "+selected.optString("translation_basis");
+            org.json.JSONArray segments=selected.optJSONArray("segments");
+            if(segments!=null&&segments.length()>0){
+                attribution+="\\n\\nChapter-by-chapter source and editorial notes:";
+                for(int i=0;i<segments.length();i++){
+                    org.json.JSONObject segment=segments.optJSONObject(i);if(segment==null)continue;
+                    attribution+="\\n\\n"+segment.optString("passage_reference",segment.optString("segment_id","Chapter"));
+                    attribution+="\\nStatus: "+segment.optString("segment_status","Not stated");
+                    for(String key:new String[]{"source_witness_id","source_location","transcription_or_edition_basis","editorial_note"}){
+                        String value=segment.optString(key,"");if(!value.isEmpty())attribution+="\\n"+key.replace("_"," ")+": "+value;
+                    }
+                }
+            }
             org.json.JSONArray pending=selected.optJSONArray("witnesses_pending");
             if(pending!=null&&pending.length()>0){attribution+="\\n\\nWitness collation still pending:";for(int i=0;i<pending.length();i++){org.json.JSONObject witness=pending.optJSONObject(i);if(witness!=null)attribution+="\\n"+witness.optString("id")+": "+witness.optString("task");}}
             android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this)
