@@ -721,5 +721,8 @@
         }
       ]
     }
-  ]
+  ],
+  "scope": "A research catalogue of writings explicitly named or described in the Hebrew Scriptures, Apostolic Writings, and early Christian source documents that are lost, unidentified, fragmentarily preserved, epitomized, or disputed. Inclusion does not imply canonical status, authenticity, apostolic authorship, or that each source was a separate bound book.",
+  "source_policy": "A scriptural or ancient-source citation is the primary evidence for a referenced work. Research links provide context only. Preserve the exact title wording and reference; similar titles are not merged unless identity is established.",
+  "reconstruction_policy": "Do not invent a lost work's contents. Record only extant quotations, fragments, summaries, or independent witnesses, each with its own provenance. Distinguish lost works from extant fragments, later homonymous works, and works known only through a later epitome."
 }
