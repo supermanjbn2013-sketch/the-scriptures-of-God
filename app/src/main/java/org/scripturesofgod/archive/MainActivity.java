@@ -217,8 +217,9 @@ public class MainActivity extends Activity {
             }
             String readingText=selected.optString("english_text","");
             TextView heading=text(title,21,gold,true);
+            TextView status=text("Working translation — manuscript collation is not yet complete.",13,muted,false);
             TextView passage=text(readingText,18,ink,false);
-            passage.setTextIsSelectable(true);
+            enablePassageSelection(passage);
             passage.setLineSpacing(5f,1.12f);
             int fontSize=getSharedPreferences("archive_settings",MODE_PRIVATE).getInt("font_size",18);
             passage.setTextSize(fontSize);
@@ -226,6 +227,7 @@ public class MainActivity extends Activity {
             readingLayout.setOrientation(1);
             readingLayout.setPadding(8,8,8,16);
             readingLayout.addView(heading);
+            readingLayout.addView(status);
             readingLayout.addView(passage);
             ScrollView scroll=new ScrollView(this);
             scroll.setPadding(10,8,10,8);
