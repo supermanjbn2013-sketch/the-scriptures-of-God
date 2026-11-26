@@ -144,9 +144,10 @@ def validate_dss():
         assert record["source_urls"]
         coverage = record.get("transcription_coverage")
         if coverage:
-            key = "".join(ch.lower() for ch in coverage["scroll_identifier"] if ch.isalnum())
-            assert key in {"".join(ch.lower() for ch in item["scroll"] if ch.isalnum()) for item in index["scrolls"]}
-            indexed = next(item for item in index["scrolls"] if "".join(ch.lower() for ch in item["scroll"] if ch.isalnum()) == key)
+            # The importer stores the exact source scroll identifier. Use that exact
+            # key here; normalized aliases can collide across distinct shelfmarks.
+            assert coverage["scroll_identifier"] in indexed_scrolls
+            indexed = indexed_scrolls[coverage["scroll_identifier"]]
             assert coverage["line_count"] == indexed["line_count"] > 0
             assert coverage["fragment_count"] == indexed["fragment_count"] > 0
             assert coverage["license"] == "CC BY-NC 4.0"
