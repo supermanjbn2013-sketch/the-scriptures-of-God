@@ -821,7 +821,64 @@ def validate_witness_registers():
     print(f"Validated unified chronological writings collection: {len(unified['records'])} entries; not restricted to 27.")
 
 
-sections = {"witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "john": validate_john, "android": validate_android}
+
+def validate_igntp():
+    import zipfile
+    import gzip
+    manifest_path = ROOT / "igntp/igntp_manifest.json"
+    assert manifest_path.exists(), "IGNTP collection manifest is missing"
+    manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+    assert manifest.get("record_type") == "igntp_tei_transcription_collection_manifest"
+    assert manifest.get("license") == "CC BY 4.0"
+    collections = manifest.get("collections", [])
+    assert len(collections) == 13 and manifest.get("collection_count") == 13, "Expected all 13 IGNTP collections"
+    seen_ids = set()
+    total_witnesses = 0
+    total_blocks = 0
+    for collection in collections:
+        cid = collection["id"]
+        assert cid not in seen_ids, f"Duplicate IGNTP collection: {cid}"
+        seen_ids.add(cid)
+        archive_path = ROOT / collection["offline_archive"]
+        index_path = ROOT / collection["offline_index"]
+        assert archive_path.exists() and index_path.exists(), f"Missing offline IGNTP assets: {cid}"
+        with zipfile.ZipFile(archive_path) as archive:
+            assert archive.testzip() is None, f"Corrupt IGNTP XML archive: {cid}"
+            members = [name for name in archive.namelist() if name.lower().endswith(".xml")]
+            assert members and len(members) == len(archive.namelist()), f"Non-XML or empty archive: {cid}"
+            assert set(members) == set(collection["accepted_xml_members"]), f"Archive membership mismatch: {cid}"
+        witness_ids = [w["witness_id"] for w in collection["witnesses"]]
+        assert len(witness_ids) == len(set(witness_ids)), f"Duplicate witness identifiers: {cid}"
+        assert len(witness_ids) == collection["witness_count"] > 0
+        with gzip.open(index_path, "rt", encoding="utf-8") as source:
+            block_count = 0
+            for raw in source:
+                if not raw.strip():
+                    continue
+                row = json.loads(raw)
+                assert row.get("collection_id") == cid
+                assert row.get("witness_id") and row.get("xml_member") in members
+                assert row.get("text") and row.get("source_label")
+                assert row.get("license") == "CC BY 4.0" and row.get("license_basis")
+                assert isinstance(row.get("page_ids"), list)
+                assert isinstance(row.get("column_ids"), list)
+                assert isinstance(row.get("line_ids"), list)
+                block_count += 1
+        assert block_count == collection["text_block_count"] > 0, f"IGNTP text index count mismatch: {cid}"
+        assert all(w.get("license") == "CC BY 4.0" and w.get("xml_sha256") for w in collection["witnesses"])
+        total_witnesses += len(witness_ids)
+        total_blocks += block_count
+    assert total_witnesses == manifest.get("witness_count")
+    assert total_blocks == manifest.get("text_block_count")
+    assert seen_ids == {
+        "paul-romans", "paul-galatians", "paul-ephesians", "paul-philippians",
+        "paul-colossians", "paul-philemon", "paul-hebrews", "paul-1-corinthians",
+        "john-igntp-greek", "john-byzantine-greek", "john-family-1-greek",
+        "john-latin", "john-coptic"
+    }
+    print(f"Validated 13 IGNTP collections: {total_witnesses} licensed witnesses and {total_blocks} indexed text blocks.")
+
+sections = {"witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "john": validate_john, "android": validate_android, "igntp": validate_igntp}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
-    raise SystemExit("Usage: python tools/validate_corpus.py witnesses|reconstruction|base|apocrypha|dss|papyri|john|android")
+    raise SystemExit("Usage: python tools/validate_corpus.py witnesses|reconstruction|base|apocrypha|dss|papyri|john|android|igntp")
 sections[sys.argv[1]]()
