@@ -277,6 +277,7 @@ def validate_john():
 def validate_android():
     source = Path("app/src/main/java/org/scripturesofgod/archive/MainActivity.java").read_text(encoding="utf-8")
     for required in (
+        "void renderIgntpCollections(String query)", "void openIgntpCollection(org.json.JSONObject collection)", "void openIgntpWitness(String collectionTitle,String indexPath,String license,String witnessId,String witnessTitle)", "IGNTP Transcription Archive", "igntp/igntp_manifest.json", "igntp/archives/", "igntp/indexes/",
         "void openDssCatalogEntry(String item)", "void openDssConcordanceEntry(String item)",
         "void openJohnWitnessComparison()", "void openJohnWitnessComparison(String initialReference)", "void showJohnWitnessVerse(int chapter,int verse)", "catalog/john_witness_index.json", "Compare a John passage", "john_witness_index.json",
         "DSS Passage Concordance", "DSS Transcription Archive", "void renderEtcbcDssIndex(String query)", "void openEtcbcDssScroll(String scrollId)", "dss/etcbc_transcriptions.jsonl", "dss/etcbc_scroll_index.json", "openDssConcordanceEntry(item)", "openDssCatalogEntry(item)",
