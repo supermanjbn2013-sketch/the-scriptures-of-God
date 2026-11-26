@@ -261,13 +261,13 @@ def validate_john():
     john = next((item for item in catalogue["readings"] if item.get("writing_id") == "john"), None)
     assert john is not None, "John reading record is missing"
     segments = john["segments"]
-    chapter_numbers = sorted(int(re.search(r"john-chapter-(\\d+)$", item["segment_id"]).group(1)) for item in segments)
+    chapter_numbers = sorted(int(re.search(r"john-chapter-(\d+)$", item["segment_id"]).group(1)) for item in segments)
     assert chapter_numbers == list(range(1, 22)), f"John chapter sequence incomplete: {chapter_numbers}"
     assert john["coverage"]["completed_chapters"] == list(range(1, 22))
     assert john["coverage"]["remaining_chapters"] == []
-    assert john["english_text"] == "\\n\\n".join(item["english_text"] for item in segments)
+    assert john["english_text"] == "\n\n".join(item["english_text"] for item in segments)
     assert all(item.get("source_witness_id") and item.get("source_location") and item.get("transcription_or_edition_basis") for item in segments)
-    assert not re.search(r"\\bLord Jesus\\b", john["english_text"], re.IGNORECASE), "Do not insert 'Lord' into a translated verse where Greek κύριος is absent"
+    assert not re.search(r"\bLord Jesus\b", john["english_text"], re.IGNORECASE), "Do not insert 'Lord' into a translated verse where Greek κύριος is absent"
     assert "manuscript verification and textual audit remain incomplete" in john["coverage"]["completion_note"]
     print("Validated verse-level John manuscript index:", index["verse_count"], "verse references;", index["witness_verse_counts"])
 
