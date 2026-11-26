@@ -821,6 +821,20 @@ public class MainActivity extends Activity {
         return new String[]{t};
     }
 
+    boolean dssScrollMatchesTitle(String title,String scroll){
+        String t=title.toLowerCase(java.util.Locale.ROOT);String id=scroll.toLowerCase(java.util.Locale.ROOT).replaceAll("[^a-z0-9]","");
+        String[] ids=new String[0];
+        if(t.contains("1 enoch")||t.equals("enoch"))ids=new String[]{"4q201","4q202","4q204","4q205","4q206","4q207","4q208","4q209","4q210","4q211","4q212"};
+        else if(t.contains("jubilees"))ids=new String[]{"1q17","1q18","2q19","3q5","4q216","4q217","4q218","4q219","4q220","4q221","4q222","4q223","4q224"};
+        else if(t.contains("book of giants"))ids=new String[]{"1q23","2q26","4q203","4q530","4q531","4q532","4q533","6q8"};
+        else if(t.contains("tobit"))ids=new String[]{"4q196","4q197","4q198","4q199","4q200"};
+        else if(t.contains("sirach"))ids=new String[]{"2q18","11q5"};
+        else if(t.contains("genesis apocryphon"))ids=new String[]{"1q20"};
+        else if(t.contains("prayer of nabonidus"))ids=new String[]{"4q242"};
+        for(String witness:ids)if(id.contains(witness))return true;
+        return false;
+    }
+
     void openDssBookEntry(String bookTitle){
         final String title=bookTitle;
         final String[] aliases=dssReferenceAliases(title);
