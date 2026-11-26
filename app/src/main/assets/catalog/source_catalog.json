@@ -777,6 +777,21 @@
         "Digital display-line labels are not automatically physical manuscript column/line coordinates.",
         "CC BY-SA 4.0 attribution and share-alike terms apply."
       ]
+    },
+    {
+      "id": "1-enoch-geez-eotc-beta-masaheft",
+      "name": "1 Enoch — EOTC printed Ge'ez edition (EOTCed)",
+      "language": "Classical Ethiopic (Ge'ez)",
+      "coverage": "Complete 1 Enoch, 108 chapters, as encoded in the EOTCed division of Beta maṣāḥǝft LIT1340EnochE.xml.",
+      "record_type": "edition text / versional witness",
+      "license": "CC BY-SA 4.0",
+      "repository": "https://github.com/BetaMasaheft/Works/blob/ff9d4981eba2084c4914ca840ff323d85cbd2a1d/1001-2000/LIT1340EnochE.xml",
+      "limitations": [
+        "This is an edition-based Ge'ez text, not a fresh diplomatic transcription of one named ancient codex.",
+        "Only the EOTCed division is imported; the separate Dillmann/Jerabek division carries a distinct non-commercial permission notice and is excluded.",
+        "Ge'ez is a versional witness and does not supply Hebrew or Aramaic wording.",
+        "Qumran Aramaic fragments and Greek fragments remain separate; no language layers are silently merged."
+      ]
     }
   ],
   "not_yet_integrated": [
