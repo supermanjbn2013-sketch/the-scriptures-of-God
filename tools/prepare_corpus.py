@@ -81,7 +81,7 @@ def clean(parts):
     return " ".join(" ".join(parts).split())
 
 def extract_hebrew(book):
-    url = f"https://raw.githubusercontent.com/openscriptures/morphhb/master/wlc/{book}.xml"
+    url = f"https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/{book}.xml"
     root = ET.fromstring(fetch(url))
     out = []
     for verse in root.iter():
