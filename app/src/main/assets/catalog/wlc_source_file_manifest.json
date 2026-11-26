@@ -1,0 +1,333 @@
+{
+  "schema_version": 1,
+  "record_type": "source_witness_file_manifest",
+  "project": "The Scriptures of God",
+  "dataset_id": "oshb-wlc",
+  "source_name": "Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex",
+  "source_version": "v.2.2",
+  "source_commit": "6a5db28",
+  "source_repository": "https://github.com/openscriptures/morphhb",
+  "source_license": {
+    "wlc_base_text": "Public Domain",
+    "oshb_lemma_and_morphology": "CC BY 4.0",
+    "required_attribution": "Original work of the Open Scriptures Hebrew Bible available at https://github.com/openscriptures/morphhb"
+  },
+  "scope_note": "This manifest inventories the book-divided XML files supplied by this one WLC-based source edition. It does not define the complete Unified Hebrew Scriptures collection, establish a canon, or limit the archive to these files. Other Hebrew and Aramaic writings and manuscript witnesses must be catalogued separately.",
+  "transcription_note": "OSHB XML is an annotated electronic edition based on the Westminster Leningrad Codex; it is not a diplomatic transcription of a Dead Sea Scroll or of every ancient Hebrew witness.",
+  "ingestion_note": "tools/prepare_corpus.py downloads these source files during the Android APK build and extracts verse records into app/src/main/assets/corpus/verses.jsonl. The generated corpus is a build-time asset, not currently committed as raw XML under app/src/main/assets.",
+  "source_file_pattern": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/{code}.xml",
+  "books": [
+    {
+      "writing_title": "Genesis",
+      "source_file": "wlc/Gen.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Gen.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Exodus",
+      "source_file": "wlc/Exod.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Exod.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Leviticus",
+      "source_file": "wlc/Lev.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Lev.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Numbers",
+      "source_file": "wlc/Num.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Num.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Deuteronomy",
+      "source_file": "wlc/Deut.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Deut.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Joshua",
+      "source_file": "wlc/Josh.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Josh.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Judges",
+      "source_file": "wlc/Judg.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Judg.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Ruth",
+      "source_file": "wlc/Ruth.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Ruth.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "1 Samuel",
+      "source_file": "wlc/1Sam.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/1Sam.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "2 Samuel",
+      "source_file": "wlc/2Sam.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/2Sam.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "1 Kings",
+      "source_file": "wlc/1Kgs.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/1Kgs.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "2 Kings",
+      "source_file": "wlc/2Kgs.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/2Kgs.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "1 Chronicles",
+      "source_file": "wlc/1Chr.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/1Chr.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "2 Chronicles",
+      "source_file": "wlc/2Chr.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/2Chr.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Ezra",
+      "source_file": "wlc/Ezra.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Ezra.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Nehemiah",
+      "source_file": "wlc/Neh.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Neh.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Esther",
+      "source_file": "wlc/Esth.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Esth.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Job",
+      "source_file": "wlc/Job.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Job.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Psalms",
+      "source_file": "wlc/Ps.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Ps.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Proverbs",
+      "source_file": "wlc/Prov.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Prov.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Ecclesiastes",
+      "source_file": "wlc/Eccl.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Eccl.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Song of Songs",
+      "source_file": "wlc/Song.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Song.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Isaiah",
+      "source_file": "wlc/Isa.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Isa.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Jeremiah",
+      "source_file": "wlc/Jer.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Jer.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Lamentations",
+      "source_file": "wlc/Lam.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Lam.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Ezekiel",
+      "source_file": "wlc/Ezek.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Ezek.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Daniel",
+      "source_file": "wlc/Dan.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Dan.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Hosea",
+      "source_file": "wlc/Hos.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Hos.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Joel",
+      "source_file": "wlc/Joel.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Joel.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Amos",
+      "source_file": "wlc/Amos.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Amos.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Obadiah",
+      "source_file": "wlc/Obad.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Obad.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Jonah",
+      "source_file": "wlc/Jonah.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Jonah.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Micah",
+      "source_file": "wlc/Mic.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Mic.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Nahum",
+      "source_file": "wlc/Nah.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Nah.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Habakkuk",
+      "source_file": "wlc/Hab.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Hab.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Zephaniah",
+      "source_file": "wlc/Zeph.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Zeph.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Haggai",
+      "source_file": "wlc/Hag.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Hag.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Zechariah",
+      "source_file": "wlc/Zech.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Zech.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    },
+    {
+      "writing_title": "Malachi",
+      "source_file": "wlc/Mal.xml",
+      "source_url": "https://raw.githubusercontent.com/openscriptures/morphhb/v.2.2/wlc/Mal.xml",
+      "source_status": "included_in_OSHB_v2.2_source_set",
+      "manuscript_basis": "Westminster Leningrad Codex",
+      "record_status": "source_file_imported_at_build_time; passage-level witness comparison remains separate"
+    }
+  ]
+}
