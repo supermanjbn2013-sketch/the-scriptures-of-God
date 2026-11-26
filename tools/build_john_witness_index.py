@@ -157,6 +157,7 @@ def main():
 
     verses = []
     counts = {witness: 0 for witness in metadata}
+    priority_order = ["P52", "P66", "P75", "Vaticanus", "Sinaiticus"]
     for (chapter, verse), witness_records in sorted(indexed.items()):
         witnesses = {}
         for witness, record in witness_records.items():
@@ -169,11 +170,37 @@ def main():
                 "correction_notes": record["correction_notes"],
             }
             counts[witness] = counts.get(witness, 0) + 1
+
+        present = [name for name in priority_order if name in witnesses and witnesses[name]["text"].strip()]
+        complete = [name for name in present if "[" not in witnesses[name]["text"] and "]" not in witnesses[name]["text"]]
+        if complete:
+            selected = complete[0]
+            selection_status = "earliest_complete_witness"
+        elif present:
+            selected = present[0]
+            selection_status = "earliest_available_witness_is_partial"
+        else:
+            selected = None
+            selection_status = "no_witness_text"
+
+        earlier_partial = []
+        if selected:
+            for name in present:
+                if name == selected:
+                    break
+                if "[" in witnesses[name]["text"] or "]" in witnesses[name]["text"]:
+                    earlier_partial.append(name)
+
         verses.append({
             "reference": f"John {chapter}:{verse}",
             "chapter": chapter,
             "verse": verse,
             "witnesses": witnesses,
+            "priority_witness": selected,
+            "priority_text": witnesses[selected]["text"] if selected else "",
+            "priority_status": selection_status,
+            "earlier_partial_witnesses": earlier_partial,
+            "priority_note": "Verse-level aid: choose the earliest witness with a fully unbracketed indexed reading. If an earlier witness is only partially preserved or contains editorial supply, retain it separately and use the next earliest complete witness for this verse. This does not resolve variants or replace passage-level collation."
         })
 
     if len(verses) < 800 or not {"P66", "P75", "Vaticanus", "Sinaiticus"}.issubset(metadata):
@@ -187,9 +214,9 @@ def main():
         "record_type": "john_verse_witness_index",
         "book": "John",
         "purpose": "Offline verse-level navigation across independently preserved Greek manuscript transcriptions.",
-        "text_policy": "Diplomatic witness text is preserved as imported. No spelling normalization, harmonization, reconstruction, preferred-reading selection, or translation is performed by this index.",
+        "text_policy": "Diplomatic witness text is preserved as imported. A separate verse-level priority aid selects the earliest fully unbracketed witness reading, falling forward to the next witness when an earlier witness is absent or contains editorial supply. Original witness records remain unchanged; no spelling normalization, harmonization, reconstruction, variant resolution, or translation is performed.",
         "absence_policy": "No record for a witness at a verse does not by itself establish textual omission. Consult the page image and source transcription to distinguish physical loss, illegibility, omitted text, and indexing gaps.",
-        "witness_metadata": metadata,
+        "witness_priority_order": priority_order,\n        "witness_metadata": metadata,
         "witness_verse_counts": counts,
         "verse_count": len(verses),
         "verses": verses,
