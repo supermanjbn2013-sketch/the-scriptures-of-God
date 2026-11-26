@@ -53,6 +53,8 @@ jobs:
         run: python tools/import_etcbc_dss.py
       - name: Index every book and writing actually attested in imported DSS lines
         run: python tools/build_dss_book_index.py
+      - name: Build inventory of all imported DSS scroll witnesses
+        run: python tools/build_dss_witness_inventory.py
       - name: Build line-level DSS passage evidence from curated fragment concordance
         run: python tools/build_dss_passage_evidence.py
       - name: Reconstruct Hebrew readings from DSS witnesses and fill aligned gaps from WLC
