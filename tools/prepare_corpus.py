@@ -49,8 +49,46 @@ APOCRYPHA_EXTRACTS = [
 ]
 LATIN_LIBRARY_BASE = "https://raw.githubusercontent.com/cltk/lat_text_latin_library/master/bible/"
 LATIN_LIBRARY_REPO = "https://github.com/cltk/lat_text_latin_library"
-SWETE_BASE = "https://raw.githubusercontent.com/nathans/lxx-swete/master/data/"
+SWETE_REVISION = "26bad3eb42bba98471d154c954e36a6f30a0279d"
+SWETE_BASE = f"https://raw.githubusercontent.com/nathans/lxx-swete/{SWETE_REVISION}/data/"
 SWETE_REPO = "https://github.com/nathans/lxx-swete"
+SEPTUAGINT_BOOKS = [
+    ("01.Genesis.txt", "Genesis (Greek Septuagint)", "Genesis (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("02.Exodus.txt", "Exodus (Greek Septuagint)", "Exodus (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("03.Leviticus.txt", "Leviticus (Greek Septuagint)", "Leviticus (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("04.Numeri.txt", "Numbers (Greek Septuagint)", "Numbers (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("05.Deuteronomium.txt", "Deuteronomy (Greek Septuagint)", "Deuteronomy (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("06.Josue.txt", "Joshua (Greek Septuagint)", "Joshua (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("08.Judices.txt", "Judges (Greek Septuagint)", "Judges (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("10.Ruth.txt", "Ruth (Greek Septuagint)", "Ruth (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("11.Regnorum_I.txt", "1 Kingdoms (Greek Septuagint)", "1 Kingdoms (Greek Septuagint)", "Swete Greek Kingdoms text; corresponds broadly to 1 Samuel; edition text, not one codex"),
+    ("12.Regnorum_II.txt", "2 Kingdoms (Greek Septuagint)", "2 Kingdoms (Greek Septuagint)", "Swete Greek Kingdoms text; corresponds broadly to 2 Samuel; edition text, not one codex"),
+    ("13.Regnorum_III.txt", "3 Kingdoms (Greek Septuagint)", "3 Kingdoms (Greek Septuagint)", "Swete Greek Kingdoms text; corresponds broadly to 1 Kings; edition text, not one codex"),
+    ("14.Regnorum_IV.txt", "4 Kingdoms (Greek Septuagint)", "4 Kingdoms (Greek Septuagint)", "Swete Greek Kingdoms text; corresponds broadly to 2 Kings; edition text, not one codex"),
+    ("15.Paralipomenon_I.txt", "1 Chronicles (Greek Septuagint)", "1 Chronicles (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("16.Paralipomenon_II.txt", "2 Chronicles (Greek Septuagint)", "2 Chronicles (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("18.Esdras_B.txt", "Ezra-Nehemiah (Greek Esdras B)", "Ezra-Nehemiah (Greek Esdras B)", "Swete Esdras B edition; preserve as this source's combined work"),
+    ("27.Psalmi.txt", "Psalms (Greek Septuagint)", "Psalms (Greek Septuagint)", "Swete Greek Psalter; Psalm 151 is separately indexed from its source when present"),
+    ("29.Proverbia.txt", "Proverbs (Greek Septuagint)", "Proverbs (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("31.Canticum.txt", "Song of Songs (Greek Septuagint)", "Song of Songs (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("32.Job.txt", "Job (Greek Septuagint)", "Job (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("36.Osee.txt", "Hosea (Greek Septuagint)", "Hosea (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("37.Amos.txt", "Amos (Greek Septuagint)", "Amos (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("38.Michaeas.txt", "Micah (Greek Septuagint)", "Micah (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("39.Joel.txt", "Joel (Greek Septuagint)", "Joel (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("40.Abdias.txt", "Obadiah (Greek Septuagint)", "Obadiah (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("41.Jonas.txt", "Jonah (Greek Septuagint)", "Jonah (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("42.Nahum.txt", "Nahum (Greek Septuagint)", "Nahum (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("43.Habacuc.txt", "Habakkuk (Greek Septuagint)", "Habakkuk (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("44.Sophonias.txt", "Zephaniah (Greek Septuagint)", "Zephaniah (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("45.Aggaeus.txt", "Haggai (Greek Septuagint)", "Haggai (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("46.Zacharias.txt", "Zechariah (Greek Septuagint)", "Zechariah (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("47.Malachias.txt", "Malachi (Greek Septuagint)", "Malachi (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("48.Isaias.txt", "Isaiah (Greek Septuagint)", "Isaiah (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("49.Jeremias.txt", "Jeremiah (Greek Septuagint)", "Jeremiah (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("51.Threni_seu_Lamentationes.txt", "Lamentations (Greek Septuagint)", "Lamentations (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
+    ("53.Ezechiel.txt", "Ezekiel (Greek Septuagint)", "Ezekiel (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices")
+]
 SWETE_LICENSE = "CC BY-SA 4.0"
 SWETE_ATTRIBUTION = "Henry Barclay Swete, ed., The Old Testament in Greek according to the Septuagint; digital transcription from Open Greek and Latin First1KGreek via nathans/lxx-swete. https://github.com/nathans/lxx-swete"
 
@@ -213,6 +251,13 @@ def extract_latin_library(filename, title, book_code, textual_form):
     return out
 
 records = []
+septuagint_counts = {}
+for filename, title, code, note in SEPTUAGINT_BOOKS:
+    rows = extract_swete(filename, title, code, note)
+    if not rows:
+        raise RuntimeError(f"Missing Septuagint source records for {title}")
+    records.extend(rows)
+    septuagint_counts[title] = len(rows)
 for book in HEBREW:
     records.extend(extract_hebrew(book))
 for book in GREEK:
@@ -324,4 +369,21 @@ for title in apocrypha_counts:
         "scope_note": "Coverage of this named digital source file only; not a claim of universal canonical status or complete survival in ancient manuscripts."
     }
 (ROOT / "apocrypha_coverage.json").write_text(json.dumps(coverage, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+septuagint_coverage = {
+    "source": "Henry Barclay Swete, The Old Testament in Greek according to the Septuagint",
+    "repository": SWETE_REPO,
+    "source_revision": SWETE_REVISION,
+    "license": SWETE_LICENSE,
+    "record_type": "edited Greek Septuagint edition text; not a diplomatic transcription of one surviving codex",
+    "books": septuagint_counts,
+    "total_verse_records": sum(septuagint_counts.values()),
+    "limitations": [
+        "This is the coverage of the listed files in the pinned Swete digital edition, not a claim that the Septuagint canon or all ancient Greek witnesses are exhausted.",
+        "Ecclesiastes is not supplied by this source-file list and is not fabricated or filled from another edition.",
+        "1–4 Kingdoms and Esdras B retain the source edition's Greek book divisions and are not silently renamed to match Hebrew divisions.",
+        "The edited text is not a diplomatic transcription of Codex Vaticanus, Codex Sinaiticus, or any other single manuscript.",
+        "No missing wording is reconstructed."
+    ]
+}
+(ROOT / "septuagint_coverage.json").write_text(json.dumps(septuagint_coverage, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 print(f"Created {len(records)} attributed text records, including {sum(apocrypha_counts.values())} Apocrypha/Deuterocanonical records across {len(apocrypha_counts)} source files.")
