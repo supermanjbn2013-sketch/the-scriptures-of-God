@@ -814,6 +814,10 @@ def validate_reconstruction_policy():
             if record.get("language") == "he" and "Westminster Leningrad Codex" in record.get("witness_basis", ""):
                 actual += 1
                 assert record.get("text") and record.get("reconstruction_note") and record.get("reconstruction_method")
+                if record.get("dss_witnesses"):
+                    assert record.get("dss_source_url") and "DSS transcription CC BY-NC 4.0" in record.get("license", "")
+                else:
+                    assert not record.get("dss_source_url") and "DSS transcription" not in record.get("license", "")
     assert actual == index["hebrew_verse_records"], f"Reconstruction index count mismatch: {actual}"
     print("Validated generated verse-level Hebrew reconstruction:", actual, "verses;", sum(x["dss_aligned"] for x in index["books"].values()), "DSS/WLC hybrids.")
     source_catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
