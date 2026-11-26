@@ -341,6 +341,7 @@ def validate_android():
     assert lost_catalog["record_type"] == "lost_and_referenced_writings_catalog"
     lost_ids = [record["id"] for record in lost_catalog["records"]]
     assert len(lost_ids) == len(set(lost_ids)), "Duplicate lost-book record IDs"
+    assert len(lost_catalog["records"]) == 40, "Lost and referenced writings catalogue is incomplete"
     lost_titles = {record["title"] for record in lost_catalog["records"]}
     required_lost = {
         "Book of the Wars of the LORD", "Book of Jashar", "Acts of Solomon",
