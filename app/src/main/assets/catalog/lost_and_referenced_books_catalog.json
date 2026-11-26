@@ -310,6 +310,49 @@
       "recoverable": "1 Maccabees states that the acts, wars, and achievements of John Hyrcanus were written in the chronicles of his high priesthood. The cited record itself is not preserved as an independent work.",
       "note": "The notice points to a historical record or archive, not necessarily a single book with a fixed title.",
       "caution": "Do not confuse the source notice with later histories of the Hasmonean period."
+    },
+    {
+      "id": "paul_earlier_corinthian_letter",
+      "title": "Paul's Earlier Letter to Corinth",
+      "references": [
+        "1 Corinthians 5:9"
+      ],
+      "status": "A previous letter is explicitly mentioned, but it is not preserved as a separately identified document.",
+      "language": "Greek is strongly expected from Paul's correspondence; no manuscript of this letter is identified.",
+      "date": "Before the composition of 1 Corinthians; exact date unknown.",
+      "witnesses": [],
+      "recoverable": "Only Paul's reference to the earlier letter survives in 1 Corinthians 5:9. Its wording and full contents are not preserved.",
+      "note": "This is evidence of earlier correspondence with Corinth. It should not be reconstructed from 1 Corinthians or assumed to be identical with the severe letter.",
+      "caution": "Do not treat the surviving reference as the text of the letter."
+    },
+    {
+      "id": "paul_severe_corinthian_letter",
+      "title": "Paul's Severe / Sorrowful Letter to Corinth",
+      "references": [
+        "2 Corinthians 2:3–4",
+        "2 Corinthians 7:8–12"
+      ],
+      "status": "A painful letter is described; whether it is a distinct lost letter and how it relates to other Corinthian correspondence are debated.",
+      "language": "Greek is strongly expected; no separate manuscript is identified.",
+      "date": "Before the relevant correspondence preserved in 2 Corinthians; exact date unknown.",
+      "witnesses": [],
+      "recoverable": "The surviving passages describe Paul's sorrowful writing and its effect. They do not preserve the letter's complete text.",
+      "note": "Scholars debate the relationship between this letter, the earlier letter mentioned in 1 Corinthians 5:9, and the material now preserved in 2 Corinthians. Do not assert a settled reconstruction.",
+      "caution": "Keep the existence, number, and sequence of letters qualified where the evidence is uncertain."
+    },
+    {
+      "id": "laodicean_letter",
+      "title": "Letter Associated with Laodicea",
+      "references": [
+        "Colossians 4:16"
+      ],
+      "status": "Unidentified letter; it may be a letter to Laodicea or one coming from Laodicea. Its identity is uncertain.",
+      "language": "Greek is expected from the context, but no independently identified original is extant.",
+      "date": "Undetermined.",
+      "witnesses": [],
+      "recoverable": "Colossians preserves an instruction to exchange and read a letter associated with Laodicea. The letter itself is not securely identified.",
+      "note": "The wording can be understood as a letter to the Laodiceans or a letter from Laodicea. The later Latin Epistle to the Laodiceans is not established as the letter referred to here.",
+      "caution": "Do not identify the referenced letter with the later Latin Epistle to the Laodiceans without evidence."
     }
   ]
 }
