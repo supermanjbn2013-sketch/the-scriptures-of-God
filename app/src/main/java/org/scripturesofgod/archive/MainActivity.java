@@ -76,7 +76,7 @@ public class MainActivity extends Activity {
         entries.put("Prophets",new ArrayList<>(Arrays.asList("Isaiah","Jeremiah","Ezekiel","Daniel","Hosea","Joel","Amos","Obadiah","Jonah","Micah","Nahum","Habakkuk","Zephaniah","Haggai","Zechariah","Malachi")));
         entries.put("Disciples and Apostles Writings",new ArrayList<>(Arrays.asList("Matthew","Mark","Luke","John","Acts","Romans","1 Corinthians","2 Corinthians","Galatians","Ephesians","Philippians","Colossians","1 Thessalonians","2 Thessalonians","1 Timothy","2 Timothy","Titus","Philemon","Hebrews","James","1 Peter","2 Peter","1 John","2 John","3 John","Jude","Revelation")));
         entries.put("Apocrypha and Deuterocanonical Writings",new ArrayList<>(Arrays.asList("1 Esdras","Tobit","Judith","Esther (Greek)","Wisdom of Solomon","Sirach","Baruch","Letter of Jeremiah","1 Maccabees","2 Maccabees","3 Maccabees","4 Maccabees","Susanna (Old Greek)","Susanna (Theodotion)","Daniel (Old Greek)","Daniel (Theodotion)","Bel and the Dragon (Old Greek)","Bel and the Dragon (Theodotion)","Odes","Prayer of Manasseh (Greek)","Psalm 151","2 Esdras / 4 Ezra (Latin)","Prayer of Manasseh (Latin)")));
-        entries.put("Writings Mentioned in the Scriptures",new ArrayList<>(Arrays.asList("Book of the Wars of the Lord","Book of Jashar","Records of Samuel, Nathan, and Gad","Paul's Earlier Letter to Corinth","Paul's Severe / Sorrowful Letter to Corinth","Letter Associated with Laodicea","Prophecy / Book of Enoch (1 Enoch)")));
+        entries.put("Writings Mentioned in the Scriptures",new ArrayList<>(Arrays.asList("Book of the Wars of the LORD","Book of Jashar","Records of Samuel, Nathan, and Gad","Paul's Earlier Letter to Corinth","Paul's Severe / Sorrowful Letter to Corinth","Letter Associated with Laodicea","Prophecy / Book of Enoch (1 Enoch)")));
         entries.put("Early Disciple and Apostolic Writings",new ArrayList<>(Arrays.asList("Epistle of Barnabas","Shepherd of Hermas","1 Clement","2 Clement","Didache","Letters of Ignatius of Antioch")));
         entries.put("Early Christian Gospels and Related Writings",new ArrayList<>(Arrays.asList("Gospel of Peter","Gospel of Thomas","Gospel of Mary","Apocalypse of Peter")));
         entries.put("Other Reference Books",new ArrayList<>(Arrays.asList("Jubilees","Protoevangelium of James (Nativity and Infancy of Jesus)","Infancy Gospel of Thomas","Gospel of Pseudo-Matthew","Arabic Infancy Gospel","Gospel of Philip","Gospel of Truth","Gospel of Judas","Acts of Peter","Acts of Paul","Acts of John","Acts of Thomas","Apocalypse of Paul","Ascension of Isaiah","Testament of Abraham","Testament of the Twelve Patriarchs","2 Baruch","3 Baruch","Life of Adam and Eve","Apocalypse of Moses","Dormition of Mary (Transitus Mariae traditions)","Six Books Dormition Apocryphon","Book of Mary's Repose","Odes of Solomon","Pseudo-Philo: Biblical Antiquities","Zohar")));
@@ -1785,35 +1785,39 @@ public class MainActivity extends Activity {
     }
 
     void openReferencedBookEntry(String item){
-        String reference="";String status="Lost; no complete independent copy is currently identified.";String note="";
-        if(item.equals("Book of the Wars of YHWH")){reference="Numbers 21:14–15";note="The passage quotes or refers to a source called the Book of the Wars of YHWH. Its contents beyond the cited wording are not recoverable from this reference.";}
-        else if(item.equals("Book of Jashar")){reference="Joshua 10:13; 2 Samuel 1:18";note="A work of Jashar is cited in two passages. The surviving references do not establish its full contents or date.";}
-        else if(item.equals("Acts of Solomon")){reference="1 Kings 11:41";note="The source is cited for further acts and wisdom of Solomon; the work itself is not extant as an independently identified book.";}
-        else if(item.equals("Chronicles of the Kings of Israel")){reference="1 Kings 14:19; 15:31; 16:5, 20, 27; and other royal notices";note="A cited royal record source for the reigns of Israel's kings. It may represent court annals or a continuing record, not necessarily one single bound volume.";}
-        else if(item.equals("Chronicles of the Kings of Judah")){reference="1 Kings 14:29; 15:7, 23; 22:45; and other royal notices";note="A cited royal record source for the reigns of Judah's kings. Do not confuse it with the extant canonical books of Chronicles.";}
-        else if(item.equals("Records of Samuel the Seer")){reference="1 Chronicles 29:29";note="Named among records associated with Samuel's acts and the reign of David; the source is not independently extant.";}
-        else if(item.equals("Records of Nathan the Prophet")){reference="1 Chronicles 29:29; 2 Chronicles 9:29";note="Nathan's records or history are cited in connection with David and Solomon.";}
-        else if(item.equals("Records of Gad the Seer")){reference="1 Chronicles 29:29";note="Named among the records of David's acts. The cited work is not independently extant.";}
-        else if(item.equals("Prophecy of Ahijah")){reference="2 Chronicles 9:29";note="The source is associated with the prophecy of Ahijah concerning Solomon and Jeroboam.";}
-        else if(item.equals("Visions of Iddo")){reference="2 Chronicles 9:29";note="A source associated with visions of Iddo the seer; its contents are not independently preserved.";}
-        else if(item.equals("Records of Shemaiah")){reference="2 Chronicles 12:15";note="The Chronicler refers to records or genealogical accounts of Shemaiah the prophet.";}
-        else if(item.equals("Records of Iddo")){reference="2 Chronicles 12:15";note="Named in a source notice concerning the genealogies or records of Iddo the seer.";}
-        else if(item.equals("History of Iddo")){reference="2 Chronicles 13:22";note="A record or exposition associated with Iddo the prophet; no complete independent copy is known.";}
-        else if(item.equals("Book of Jehu")){reference="2 Chronicles 20:34";note="The acts of Jehoshaphat are said to be recorded in the book of Jehu son of Hanani, incorporated into the book of the kings of Israel.";}
-        else if(item.equals("Records of the Seers (Hozai)")){reference="2 Chronicles 33:19";status="Lost or unidentified source; wording and identification vary among textual traditions.";note="The passage refers to records of the seers. Some translations render the name as Hozai; retain the textual and translation uncertainty.";}
-        else if(item.equals("Chronicles of the Kings of Media and Persia")){reference="Esther 10:2; compare Ezra 4:15; 6:1–2";status="Lost or unidentified royal archive; the exact source title and scope are uncertain.";note="Esther refers to the chronicles of the kings of Media and Persia. Ezra also describes searching royal records in the archives. These references may concern related court records, but should not be collapsed into one proven book.";}
-        else if(item.equals("Earlier Letter to the Corinthians")){reference="1 Corinthians 5:9";note="Paul refers to a previous letter to the Corinthian assembly. It is not preserved as a separately identified letter in the surviving collection.";}
-        else if(item.equals("Letter to the Laodiceans (identity uncertain)")){reference="Colossians 4:16";status="Unidentified; its identity and survival are disputed.";note="The instruction refers to a letter associated with Laodicea. It may be a lost letter, a letter sent from Laodicea, or a work otherwise identified; do not assume certainty.";}
-        else if(item.equals("Assumption of Moses (identification debated)")){reference="Jude 9";status="Possible literary allusion; identification is debated. A related Testament of Moses survives incompletely.";note="Jude's account of Michael and the devil disputing over Moses' body is commonly compared with the Assumption/Testament of Moses tradition. The surviving Latin Testament is incomplete, and the exact relationship is not certain.";}
-        else if(item.equals("Book of Noah (Jubilees reference)")){reference="Jubilees 10:13–14; compare 1 Enoch 106–107";status="Ancient Noah writing tradition; the precise extent and identity of a separate book are uncertain.";note="Jubilees refers to writings or books associated with Noah. Related Noah material survives in later and fragmentary traditions; do not treat all Noah material as one securely reconstructed book.";}
-        else if(item.equals("Chronicles of John Hyrcanus")){reference="1 Maccabees 16:23–24";status="Lost or unidentified historical record.";note="First Maccabees says the acts of John Hyrcanus, his wars and achievements, were written in the chronicles of his high priesthood. The cited record is not preserved as an independently identified work.";}
-        else if(item.equals("Nehemiah's Library and Collected Records")){reference="2 Maccabees 2:13";status="Library and collection described; individual works are not all identified.";note="Second Maccabees reports that Nehemiah founded a library and collected writings about kings and prophets, writings of David, and royal letters. The passage does not give a complete catalogue of titles.";}
-        else if(item.equals("Jason of Cyrene's Five-Book History")){reference="2 Maccabees 2:23";status="Lost source work; Second Maccabees survives as an abridgment.";note="The author says the present work is an epitome of Jason of Cyrene's five books. Jason's full five-volume history is not preserved as a complete independent work.";}
-        else if(item.equals("Book of Giants (fragmentarily preserved)")){reference="Dead Sea Scrolls: 1Q23, 1Q24, 2Q26, 4Q203, 4Q530–533, 6Q8; compare later Manichaean witnesses";status="Partially preserved in fragmentary Aramaic manuscripts; no complete continuous copy is known.";note="The offline archive contains 594 line records across these nine Qumran witness identifiers, from the ETCBC/Abegg structured transcription distributed through QDR. The display preserves fragment and line identifiers. It is a diplomatic transcription record, not a continuous reconstruction or an English translation. The relationship of individual fragments and later witnesses must be assessed separately.";}
-        String detail="Ancient referenced writing\n\nSource reference: "+reference+"\nStatus: "+status+"\n\nRecord: "+note+"\n\nArchive policy: A citation or allusion does not supply the full lost text. No missing wording is reconstructed or presented as an original manuscript reading.";
-        android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(item).setMessage(detail).setPositiveButton("Close",null);
-        if(item.equals("Book of Giants (fragmentarily preserved)"))builder.setNeutralButton("Open surviving DSS fragments",(dialog,which)->openBookOfGiantsFragments());
-        builder.show();
+        try{
+            java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("catalog/lost_and_referenced_books_catalog.json"),"UTF-8"));
+            StringBuilder raw=new StringBuilder();String line;
+            while((line=reader.readLine())!=null)raw.append(line);
+            reader.close();
+            org.json.JSONArray records=new org.json.JSONObject(raw.toString()).getJSONArray("records");
+            org.json.JSONObject selected=null;
+            for(int i=0;i<records.length();i++){
+                org.json.JSONObject record=records.getJSONObject(i);
+                if(item.equalsIgnoreCase(record.optString("title"))){selected=record;break;}
+            }
+            if(selected==null){showInfo("Lost-book record unavailable","No verified structured record is available for "+item+".");return;}
+            StringBuilder detail=new StringBuilder();
+            detail.append("Preservation status\n").append(selected.optString("status","Not yet verified")).append("\n\n");
+            detail.append("Ancient references\n");
+            org.json.JSONArray refs=selected.optJSONArray("references");
+            if(refs!=null)for(int i=0;i<refs.length();i++)detail.append("• ").append(refs.optString(i)).append("\n");
+            detail.append("\nLanguage\n").append(selected.optString("language","Unknown")).append("\n\n");
+            detail.append("Date\n").append(selected.optString("date","Undetermined")).append("\n\n");
+            detail.append("Surviving manuscript witnesses\n");
+            org.json.JSONArray witnesses=selected.optJSONArray("witnesses");
+            if(witnesses==null||witnesses.length()==0)detail.append("No independently identified surviving manuscript witness is recorded.\n");
+            else for(int i=0;i<witnesses.length();i++)detail.append("• ").append(witnesses.optString(i)).append("\n");
+            detail.append("\nWhat can actually be recovered\n").append(selected.optString("recoverable","No verified surviving text is recorded."));
+            detail.append("\n\nResearch note\n").append(selected.optString("note",""));
+            detail.append("\n\nTextual caution\n").append(selected.optString("caution","Do not reconstruct missing wording."));
+            detail.append("\n\nArchive rule\nA quotation, source notice, fragment, or later abridgment is not the complete lost work. Missing wording is never invented.");
+            TextView view=text(detail.toString(),14,ink,false);enablePassageSelection(view);
+            ScrollView scroll=new ScrollView(this);scroll.setPadding(12,8,12,8);scroll.addView(view);
+            android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this).setTitle(item).setView(scroll).setPositiveButton("Close",null);
+            if("book_giants".equals(selected.optString("id")))builder.setNeutralButton("Open surviving DSS fragments",(dialog,which)->openBookOfGiantsFragments());
+            builder.show();
+        }catch(Exception e){showInfo("Lost-book catalogue unavailable","Unable to read the lost and referenced books catalogue: "+e.getMessage());}
     }
 
     void openBookOfGiantsFragments(){
