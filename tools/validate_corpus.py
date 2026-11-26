@@ -285,6 +285,12 @@ def validate_john():
     assert not re.search(r"(?m)^4\\s", chapter5_body), "Do not insert a verse 4 absent from the early witnesses"
     assert "in the wilderness" in chapter5_body.lower(), "Preserve the P66 reading at John 5:28"
     assert "tombs" in chapter5.get("editorial_note", "").lower(), "Record the later codex variant at John 5:28"
+    assert "John 7:53" not in refs and "John 8:1" not in refs, "Do not insert the pericope adulterae into the early continuous text"
+    assert not any(f"John 8:{verse}" in refs for verse in range(1, 12)), "The early continuous John 8 reading begins at verse 12"
+    chapter7 = next(item for item in segments if item["segment_id"] == "john-chapter-7")
+    chapter8 = next(item for item in segments if item["segment_id"] == "john-chapter-8")
+    assert "not present in the early continuous witnesses" in chapter7["english_text"]
+    assert chapter8["english_text"].startswith("John 8\\n\\n12 "), "John chapter 8 must begin at verse 12 in the early-witness reading"
     print("Validated verse-level John manuscript index:", index["verse_count"], "verse references;", index["witness_verse_counts"])
 
 
