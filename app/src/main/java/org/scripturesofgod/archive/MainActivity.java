@@ -527,7 +527,7 @@ public class MainActivity extends Activity {
                 ArrayList<String> hits=new ArrayList<>();
                 String needle=exact.toLowerCase(java.util.Locale.ROOT);
                 try{
-                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open(corpusAsset),"UTF-8"));
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/verses.jsonl"),"UTF-8"));
                     String line;
                     while((line=reader.readLine())!=null && hits.size()<100){
                         org.json.JSONObject obj=new org.json.JSONObject(line);
@@ -622,7 +622,7 @@ public class MainActivity extends Activity {
                 StringBuilder metadata=new StringBuilder();
                 int scanned=0;
                 try{
-                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/verses.jsonl"),"UTF-8"),65536);
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open(corpusAsset),"UTF-8"),65536);
                     String line;
                     while((line=reader.readLine())!=null){
                         scanned++;
