@@ -953,7 +953,41 @@ def validate_witness_registers():
 
 
 
-sections = {"witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "john": validate_john, "android": validate_android}
+def validate_samaritan():
+    """Verify the Samaritan Pentateuch stays a distinct transliterated witness."""
+    path = ROOT / "corpus/samaritan_pentateuch.jsonl"
+    index_path = ROOT / "corpus/samaritan_pentateuch_index.json"
+    assert path.exists() and index_path.exists(), "Samaritan Pentateuch offline witness assets are missing"
+    summary = json.loads(index_path.read_text(encoding="utf-8"))
+    assert summary["record_type"] == "separate_samaritan_pentateuch_witness_index"
+    assert summary["source_version"] == "7.4.1"
+    assert summary["license"] == "CC BY-NC 4.0"
+    assert summary["feature"] == "g_cons_raw"
+    assert "MS Dublin Chester Beatty Library 751" in summary["manuscript_basis"]
+    assert "MS Garizim 1" in summary["manuscript_basis"]
+    expected = {"Gen", "Exod", "Lev", "Num", "Deut"}
+    assert set(summary["books"]) == expected, f"Unexpected Samaritan Pentateuch book coverage: {summary['books']}"
+    count = 0
+    refs = set()
+    with path.open(encoding="utf-8") as source:
+        for raw in source:
+            if not raw.strip():
+                continue
+            row = json.loads(raw)
+            assert row["language"] == "he-x-samaritan-transliteration"
+            assert row["transcription_type"] == "Samaritan Hebrew consonantal scholarly transliteration"
+            assert row["witness_basis"] == summary["manuscript_basis"]
+            assert row["source_version"] == "7.4.1" and row["license"] == "CC BY-NC 4.0"
+            assert row["text"].strip() and row["ref"] not in refs
+            assert row["book_code"] in expected
+            assert "not converted into Hebrew script" in row["text_status"]
+            refs.add(row["ref"])
+            count += 1
+    assert count == summary["verse_record_count"] >= 5000
+    print(f"Validated {count} separate Samaritan Pentateuch verse records; no readings merged into DSS or WLC.")
+
+
+sections = {"samaritan": validate_samaritan, "witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "john": validate_john, "android": validate_android}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
-    raise SystemExit("Usage: python tools/validate_corpus.py witnesses|reconstruction|base|apocrypha|dss|papyri|john|android")
+    raise SystemExit("Usage: python tools/validate_corpus.py samaritan|witnesses|reconstruction|base|apocrypha|dss|papyri|john|android")
 sections[sys.argv[1]]()
