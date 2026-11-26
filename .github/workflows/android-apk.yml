@@ -48,6 +48,8 @@ jobs:
         run: python3 tools/import_papyrus_77.py
       - name: Import Codex Sinaiticus manuscript transcription
         run: python3 tools/import_codex_sinaiticus.py
+      - name: Import 13 IGNTP TEI transcription collections
+        run: python3 tools/import_igntp_collections.py
       - name: Build verse-level John manuscript comparison index
         run: python3 tools/build_john_witness_index.py
       - name: Import Greek Didache reference text
@@ -82,6 +84,7 @@ jobs:
           python3 tools/validate_corpus.py apocrypha
           python3 tools/validate_corpus.py dss
           python3 tools/validate_corpus.py papyri
+          python3 tools/validate_corpus.py igntp
           python3 tools/validate_corpus.py john
           python3 tools/validate_corpus.py android
       - name: Build debug APK
