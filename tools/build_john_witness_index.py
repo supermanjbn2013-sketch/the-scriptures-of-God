@@ -214,7 +214,7 @@ def main():
         "record_type": "john_verse_witness_index",
         "book": "John",
         "purpose": "Offline verse-level navigation across independently preserved Greek manuscript transcriptions.",
-        "text_policy": "Diplomatic witness text is preserved as imported. A separate verse-level priority aid selects the earliest fully unbracketed witness reading, falling forward to the next witness when an earlier witness is absent or contains editorial supply. Original witness records remain unchanged; no spelling normalization, harmonization, reconstruction, variant resolution, or translation is performed.",
+        "text_policy": "Diplomatic witness text is preserved as imported. A separate verse-level priority aid identifies the earliest indexed witness reading without explicit square-bracket editorial supply. Original witness records remain unchanged; this does not prove verse completeness or resolve variants. No spelling normalization, harmonization, reconstruction, or translation is performed.",
         "absence_policy": "No record for a witness at a verse does not by itself establish textual omission. Consult the page image and source transcription to distinguish physical loss, illegibility, omitted text, and indexing gaps.",
         "witness_priority_order": priority_order,
         "witness_metadata": metadata,
