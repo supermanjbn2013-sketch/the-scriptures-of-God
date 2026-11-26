@@ -248,6 +248,23 @@ public class MainActivity extends Activity {
         }
     }
 
+    boolean hasUnifiedSourceArchive(String writingId){
+        return "john".equals(writingId)||"didache".equals(writingId)||"hermas".equals(writingId)
+            ||"barnabas".equals(writingId)||writingId.startsWith("ignatius_")
+            ||"gospel_thomas".equals(writingId);
+    }
+
+    void openUnifiedSourceArchive(org.json.JSONObject record){
+        String writingId=record.optString("id","");
+        if("john".equals(writingId)){openJohnWitnessComparison();return;}
+        if("didache".equals(writingId)){openDidacheArchive();return;}
+        if("hermas".equals(writingId)){openHermasArchive();return;}
+        if("barnabas".equals(writingId)){openBarnabasArchive();return;}
+        if(writingId.startsWith("ignatius_")){openIgnatiusArchive();return;}
+        if("gospel_thomas".equals(writingId)){openThomasArchive();return;}
+        showInfo("Source text unavailable","No separately imported original-language archive is connected to this writing yet.");
+    }
+
     void showUnifiedWritingStudy(org.json.JSONObject record){
         StringBuilder detail=new StringBuilder();
         detail.append(record.optString("description","Description not yet available.")).append("\n\n");
@@ -304,12 +321,14 @@ public class MainActivity extends Activity {
         TextView view=text(detail.toString(),14,ink,false);enablePassageSelection(view);
         android.text.util.Linkify.addLinks(view,android.text.util.Linkify.WEB_URLS);view.setMovementMethod(android.text.method.LinkMovementMethod.getInstance());
         ScrollView scroll=new ScrollView(this);scroll.setPadding(12,8,12,8);scroll.addView(view);
-        new android.app.AlertDialog.Builder(this)
+        android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(this)
             .setTitle(record.optString("title","Writing"))
             .setView(scroll)
             .setPositiveButton("Read complete English text",(dialog,which)->showUnifiedEnglishReading(record))
-            .setNegativeButton("Close",null)
-            .show();
+            .setNegativeButton("Close",null);
+        if(hasUnifiedSourceArchive(record.optString("id","")))
+            builder.setNeutralButton("Open original-language archive",(dialog,which)->openUnifiedSourceArchive(record));
+        builder.show();
     }
 
     String libraryCategory="Bookmarks";
