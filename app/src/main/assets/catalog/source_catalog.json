@@ -817,6 +817,30 @@
         "Some non-biblical and biblical scrolls may be absent from the export; absence here does not establish absence from the Qumran collection.",
         "The CC BY-NC 4.0 restriction means this imported corpus cannot be included in a commercial distribution without separate permission."
       ]
+    },
+    {
+      "id": "swete-septuagint-greek-core",
+      "name": "Swete Septuagint — Greek edition texts for Hebrew Scripture writings",
+      "language": "Ancient Greek",
+      "coverage": "35 separate source-file texts in the pinned Swete edition: Genesis–Deuteronomy, Joshua, Judges, Ruth, 1–4 Kingdoms, 1–2 Chronicles, Esdras B, Psalms, Proverbs, Song of Songs, Job, selected Prophets, Isaiah, Jeremiah, Lamentations and Ezekiel. Ecclesiastes is not supplied in this source-file set.",
+      "record_type": "edited Greek Septuagint edition text with verse coordinates; not a diplomatic transcription of one surviving codex",
+      "edition": "Henry Barclay Swete, The Old Testament in Greek according to the Septuagint; digital transcription from Open Greek and Latin First1KGreek",
+      "source_revision": "26bad3eb42bba98471d154c954e36a6f30a0279d",
+      "license": "CC BY-SA 4.0",
+      "repository": "https://github.com/nathans/lxx-swete",
+      "attribution": "Henry Barclay Swete, ed.; Open Greek and Latin First1KGreek digital transcription distributed by nathans/lxx-swete.",
+      "build_import": "tools/prepare_corpus.py",
+      "generated_assets": [
+        "corpus/verses.jsonl",
+        "corpus/septuagint_coverage.json"
+      ],
+      "limitations": [
+        "The imported text is an edited Greek edition, not a diplomatic transcription of Codex Vaticanus, Codex Sinaiticus, or another single manuscript.",
+        "The coverage report records only the 35 source files explicitly imported; Ecclesiastes is absent from this source-file set and is not fabricated or supplied from an untracked source.",
+        "1–4 Kingdoms and Esdras B retain the Greek edition's book divisions and are not silently forced into Hebrew book numbering.",
+        "Greek readings remain distinct from WLC, Samaritan Pentateuch, Dead Sea Scrolls, and codex-specific transcriptions.",
+        "No missing wording is reconstructed."
+      ]
     }
   ],
   "not_yet_integrated": [
