@@ -192,26 +192,10 @@
       "shelfmark": "Pap. G. 36102",
       "source_urls": [
         "https://manuscripts.csntm.org/Manuscript/View/GA_P76_digital",
-        "https://data.onb.ac.at/rec/RZ00002179",
-        "https://epapers.bham.ac.uk/view/divisions/col=5Fartl.type.html",
-        "https://epapers.bham.ac.uk/id/eprint/1760/",
-        "https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml",
-        "http://www.iohannes.com/XML/transcriptions/greek/04_P76.xml"
+        "https://data.onb.ac.at/rec/RZ00002179"
       ],
-      "status": "Offline personal-study catalogue record bundled; transcription text is not embedded because redistribution permission has not been verified.",
-      "caution": "Only a small fragment of John survives. Do not infer or reconstruct surrounding verses.",
-      "digital_transcription_source": {
-        "title": "International Greek New Testament Project (IGNTP), A transcription of P76",
-        "repository": "University of Birmingham ePapers Repository, item 1760",
-        "format": "TEI XML, downloadable file 04_P76.xml (6 kB)",
-        "source_url": "https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml",
-        "online_edition_url": "http://www.iohannes.com/XML/transcriptions/greek/04_P76.xml",
-        "status": "Source details and restriction notice are bundled offline. The original XML remains available for direct download; its text is not included in the app.",
-        "caution": "Do not describe the transcription as unavailable. Do not import until the header's exact license and encoding are verified. Distinguish the transcription from the manuscript images and preserve only source-attested readings.",
-        "license": "Not verified for redistribution; no licence is asserted by this archive.",
-        "use_restriction": "PERSONAL STUDY ONLY. Do not redistribute, republish, sublicense, or include the transcription in another product unless the rights holder grants permission. Downloading a copy does not grant redistribution rights. This notice is a precaution, not a claim that the rights holder has imposed these exact terms.",
-        "bundle_status": "Offline metadata and restriction notice only; transcription text not bundled."
-      }
+      "status": "Individual manuscript catalogue record retained; no transcription text is bundled. Former unauthorized transcription-source references removed.",
+      "caution": "Only a small fragment of John survives. Do not infer or reconstruct surrounding verses."
     },
     {
       "id": "P77",
