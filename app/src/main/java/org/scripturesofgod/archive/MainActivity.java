@@ -1988,7 +1988,7 @@ public class MainActivity extends Activity {
                 .setItems(labels,(dialog,which)->openPapyrus46Page(ids[which]))
                 .setNegativeButton("Close",null).show();
         }catch(Exception e){
-            showInfo("Papyrus 46 transcription unavailable","The offline P66 transcription was not generated in this build. "+e.getMessage());
+            showInfo("Papyrus 46 transcription unavailable","The offline P46 transcription was not generated in this build. "+e.getMessage());
         }
     }
 
@@ -2052,7 +2052,7 @@ public class MainActivity extends Activity {
                 .setItems(labels,(dialog,which)->openPapyrus66Page(ids[which]))
                 .setNegativeButton("Close",null).show();
         }catch(Exception e){
-            showInfo("Papyrus 66 transcription unavailable","The offline P75 transcription was not generated in this build. "+e.getMessage());
+            showInfo("Papyrus 66 transcription unavailable","The offline P66 transcription was not generated in this build. "+e.getMessage());
         }
     }
 
@@ -2116,7 +2116,7 @@ public class MainActivity extends Activity {
                 .setItems(labels,(dialog,which)->openPapyrus75Page(ids[which]))
                 .setNegativeButton("Close",null).show();
         }catch(Exception e){
-            showInfo("Papyrus 75 transcription unavailable","The offline P46 transcription was not generated in this build. "+e.getMessage());
+            showInfo("Papyrus 75 transcription unavailable","The offline P75 transcription was not generated in this build. "+e.getMessage());
         }
     }
 
@@ -2308,7 +2308,7 @@ public class MainActivity extends Activity {
                 .setItems(labels,(dialog,which)->openPapyrus52Page(ids[which]))
                 .setNegativeButton("Close",null).show();
         }catch(Exception e){
-            showInfo("Papyrus 52 transcription unavailable","The offline P46 transcription was not generated in this build. "+e.getMessage());
+            showInfo("Papyrus 52 transcription unavailable","The offline P52 transcription was not generated in this build. "+e.getMessage());
         }
     }
 
