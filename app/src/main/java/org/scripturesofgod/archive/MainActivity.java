@@ -804,7 +804,8 @@ public class MainActivity extends Activity {
             openBook(title);
             return;
         }
-        if("1 Enoch".equalsIgnoreCase(title)||"Jubilees".equalsIgnoreCase(title)){
+        if("1 Enoch".equalsIgnoreCase(title)||"Jubilees".equalsIgnoreCase(title)
+                ||"Tobit".equalsIgnoreCase(title)||"Sirach".equalsIgnoreCase(title)){
             openDssBookEntry(title);
             return;
         }
