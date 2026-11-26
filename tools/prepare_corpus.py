@@ -306,6 +306,12 @@ Open Scriptures Hebrew Bible (OSHB), based on the Westminster Leningrad Codex (W
 WLC base text is public domain; OSHB annotations are CC BY 4.0. These records are not Dead Sea Scrolls transcriptions.
 Source: https://github.com/openscriptures/morphhb
 
+GREEK SEPTUAGINT EDITION TEXTS
+Henry Barclay Swete, ed., The Old Testament in Greek according to the Septuagint.
+The pinned First1KGreek digital transcription at revision 26bad3eb42bba98471d154c954e36a6f30a0279d supplies 35 separately indexed source-file texts. These are edited Greek edition texts, not diplomatic transcriptions of Codex Vaticanus, Codex Sinaiticus, or another single codex. The source-file set does not supply Ecclesiastes; no placeholder or reconstructed text is added. Greek book divisions such as 1–4 Kingdoms and Esdras B are retained.
+License: CC BY-SA 4.0. Preserve attribution and share-alike terms.
+Source: https://github.com/nathans/lxx-swete
+
 APOCRYPHA / DEUTEROCANONICAL GREEK TEXTS
 Henry Barclay Swete, ed., The Old Testament in Greek according to the Septuagint.
 Digital transcription: Open Greek and Latin First1KGreek, distributed through nathans/lxx-swete.
