@@ -286,7 +286,7 @@ def validate_android():
         "Prayer of Manasseh (Greek)", "2 Esdras / 4 Ezra (Latin)", "Prayer of Manasseh (Latin)",
         "source_reference", "Temple Scroll (11Q19)", "War Scroll (1QM)",
         "Other Reference Books", "Protoevangelium of James (Nativity and Infancy of Jesus)", "Infancy Gospel of Thomas", "Gospel of Pseudo-Matthew", "Arabic Infancy Gospel", "Zohar", "Apocalypse of Moses", "Dormition of Mary (Transitus Mariae traditions)", "Six Books Dormition Apocryphon", "Book of Mary's Repose", "void openOtherReferenceBookEntry(String item)", "openOtherReferenceBookEntry(item)",
-        "Translation connection settings · Target: ", "showTranslationSettings()", "Connect Gemini API key", "openAiConnectionSettings()", "openAiTranslator(String reference,String sourceText,String sourceLanguage)", "AI translate / analyze", "preferred_target_language", "Disciples and Apostles Writings", "Lost and Referenced Books", "openReferencedBookEntry(item)", "Book of the Wars of YHWH", "Book of Giants (fragmentarily preserved)", "void openBookOfGiantsFragments()", "4Q203", "4Q530", "4Q533", "openEtcbcDssScroll(ids.get(which))",
+        "Translation connection settings · Target: ", "showTranslationSettings()", "Connect Gemini API key", "openAiConnectionSettings()", "openAiTranslator(String reference,String sourceText,String sourceLanguage)", "AI translate / analyze", "preferred_target_language", "Disciples and Apostles Writings", "Lost and Referenced Books", "openReferencedBookEntry(item)", "Book of the Wars of the LORD", "Book of Giants (fragmentarily preserved)", "void openBookOfGiantsFragments()", "4Q203", "4Q530", "4Q533", "openEtcbcDssScroll(ids.get(which))",
         "void openVaticanusArchive()", "void openVaticanusPage(String pageId)", "vaticanus/vaticanus_index.json",
         "void openPapyrus46Archive()", "void openPapyrus46Page(String pageId)", "papyri/p46/p46_index.json",
         "void openPapyrus52Archive()", "void openPapyrus52Page(String pageId)", "papyri/p52/p52_index.json",
@@ -334,20 +334,30 @@ def validate_android():
     ):
         assert required in source, f"Historical writings Android navigation is missing: {required}"
     historical_json = json.dumps(historical)
+    lost_catalog = json.loads((ROOT / "catalog/lost_and_referenced_books_catalog.json").read_text(encoding="utf-8"))
+    assert lost_catalog["record_type"] == "lost_and_referenced_writings_catalog"
+    lost_ids = [record["id"] for record in lost_catalog["records"]]
+    assert len(lost_ids) == len(set(lost_ids)), "Duplicate lost-book record IDs"
+    lost_titles = {record["title"] for record in lost_catalog["records"]}
+    required_lost = {
+        "Book of the Wars of the LORD", "Book of Jashar", "Acts of Solomon",
+        "Chronicles of the Kings of Israel", "Chronicles of the Kings of Judah",
+        "Records of Samuel, Nathan, and Gad", "Book of Laments for Josiah",
+        "Book of Giants (fragmentarily preserved)"
+    }
+    assert required_lost.issubset(lost_titles), f"Missing lost/referenced writing records: {required_lost - lost_titles}"
+    assert "lost_and_referenced_books_catalog.json" in source
+    assert "Book of Laments for Josiah" in source
     assert "P.Oxy. 1782 (late 4th century Greek fragment)" in historical_json
     assert "P.Oxy. 3528" in historical_json and "not be casually assigned to Barnabas" in historical_json
     assert "must not automatically be identified as Paul's referenced letter" in historical_json
 
     manuscript_register = json.loads((ROOT / "catalog/greek_manuscript_register.json").read_text(encoding="utf-8"))
     p76 = next((record for record in manuscript_register["records"] if record.get("id") == "P76"), None)
-    assert p76 is not None, "P76 offline catalogue record is missing"
-    p76_source = p76.get("digital_transcription_source", {})
-    assert "Source details and restriction notice are bundled offline" in p76_source.get("status", "")
-    assert "PERSONAL STUDY ONLY" in p76_source.get("use_restriction", "")
-    assert "transcription text is not embedded" in p76.get("status", "")
-    assert "use_restriction" in source and "bundle_status" in source
-    assert 'builder.setNegativeButton("View transcription online",(d,w)->openP76Online())' in source
-    assert "void openP76Online()" in source and "https://epapers.bham.ac.uk/id/eprint/1760/6/04_P76.xml" in source
+    assert p76 is not None, "P76 individual manuscript catalogue record is missing"
+    assert not p76.get("digital_transcription_source"), "Unauthorized P76 transcription source must not be bundled"
+    assert not any("bham.ac.uk" in url or "iohannes.com" in url for url in p76.get("source_urls", [])), "Unauthorized transcription source URL remains in P76 record"
+    assert "openP76Online" not in source and "downloadP76Transcription" not in source
 
     ai_source = Path("app/src/main/java/org/scripturesofgod/archive/AiTranslatorActivity.java").read_text(encoding="utf-8")
     for required in ("targetNames", "targetCodes", 'getSharedPreferences("archive_settings",MODE_PRIVATE).edit().putString("target_language",targetCodes[position]).apply()', "preferred_target_language"):
