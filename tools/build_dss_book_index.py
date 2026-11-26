@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Build a precise index of writings actually represented in imported DSS lines.
 
-Only QDR parallel references attached to preserved word records count as a
-biblical-book attestation. A title is never included merely because it appears
-in a modern collection. Non-biblical compositions are listed only when one of
-their explicitly mapped Qumran witness identifiers is present in the import.
+Only QDR parallel references or directly identified biblical manuscript
+witnesses count as a biblical-book attestation. A title is never included
+merely because it appears in a modern collection. Non-biblical compositions
+are listed only when an explicitly mapped Qumran witness is present.
 """
 import json
 import re
@@ -147,7 +147,7 @@ def main():
     if not books:
         raise SystemExit("No biblical book references found in DSS import; refusing to publish an empty index.")
     OUT.write_text(json.dumps(result,ensure_ascii=False,indent=2)+"\n",encoding="utf-8")
-    print(f"Indexed {len(books)} Hebrew Scripture books with actual DSS line-reference evidence.")
+    print(f"Indexed {len(books)} Hebrew Scripture books with actual DSS manuscript evidence.")
     print(f"Indexed {len(related)} additional writings with explicitly matched DSS witness identifiers.")
     print(f"Included all {result['scroll_identifier_count']} imported scroll identifiers in the separate transcription archive.")
 
