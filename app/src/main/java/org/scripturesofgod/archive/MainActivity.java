@@ -699,6 +699,12 @@ public class MainActivity extends Activity {
                 Spinner chapterPicker=new Spinner(MainActivity.this);
                 ArrayAdapter<String> chapterAdapter=new ArrayAdapter<>(MainActivity.this,android.R.layout.simple_spinner_item,chapters);
                 chapterAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);chapterPicker.setAdapter(chapterAdapter);
+                if(java.util.Arrays.asList("Gen","Exod","Lev","Num","Deut").contains(code)){
+                    Button samaritanWitness=new Button(MainActivity.this);
+                    samaritanWitness.setText("Compare Samaritan Pentateuch witness");
+                    samaritanWitness.setOnClickListener(v->openSamaritanChapterWitness(code,chapters.get(Math.max(0,chapterPicker.getSelectedItemPosition()))));
+                    reader.addView(samaritanWitness);
+                }
                 Button next=new Button(MainActivity.this);next.setText("Next ›");
                 chapterBar.addView(previous,new LinearLayout.LayoutParams(0,-2,1));
                 chapterBar.addView(chapterPicker,new LinearLayout.LayoutParams(0,-2,1));
@@ -899,6 +905,44 @@ public class MainActivity extends Activity {
         else if(t.contains("prayer of nabonidus"))ids=new String[]{"4q242"};
         for(String witness:ids)if(id.contains(witness))return true;
         return false;
+    }
+
+    void openSamaritanChapterWitness(String bookCode,String chapter){
+        final String code=bookCode, selectedChapter=chapter;
+        new android.os.AsyncTask<Void,Void,String>(){
+            protected String doInBackground(Void... ignored){
+                StringBuilder out=new StringBuilder();
+                try{
+                    java.io.BufferedReader reader=new java.io.BufferedReader(new java.io.InputStreamReader(getAssets().open("corpus/samaritan_pentateuch.jsonl"),"UTF-8"),65536);
+                    String line;int count=0;
+                    while((line=reader.readLine())!=null){
+                        org.json.JSONObject row=new org.json.JSONObject(line);
+                        if(!code.equals(row.optString("book_code")))continue;
+                        String ref=row.optString("ref");
+                        String prefix=code+" "+selectedChapter+":";
+                        if(!ref.startsWith(prefix))continue;
+                        out.append(ref.substring(code.length()).trim()).append("\\n");
+                        out.append(row.optString("text")).append("\\n\\n");
+                        count++;
+                    }
+                    reader.close();
+                    if(count==0)return "No imported Samaritan Pentateuch verse records were found for this chapter.";
+                    return "CACCHT Samaritan Pentateuch · Text-Fabric dataset v7.4.1\\n"+
+                        "Witness basis: MS Dublin Chester Beatty Library 751 (Genesis 1:1–Deuteronomy 32:36) and MS Garizim 1 (Deuteronomy 32:36b–34:10).\\n"+
+                        "CC BY-NC 4.0 · Separate Samaritan Hebrew scholarly transliteration (g_cons_raw).\\n"+
+                        "This is not a DSS reading or WLC text. Transliteration is retained as supplied; it is not converted into Hebrew characters.\\n\\n"+out.toString();
+                }catch(Exception e){return "Samaritan witness data unavailable: "+e.getMessage();}
+            }
+            protected void onPostExecute(String body){
+                TextView contentView=text(body,15,ink,false);
+                contentView.setTextIsSelectable(true);
+                android.widget.ScrollView scroll=new android.widget.ScrollView(MainActivity.this);
+                scroll.setPadding(18,12,18,12);scroll.addView(contentView);
+                new android.app.AlertDialog.Builder(MainActivity.this)
+                    .setTitle("Samaritan Pentateuch — "+code+" "+selectedChapter)
+                    .setView(scroll).setPositiveButton("Close",null).show();
+            }
+        }.execute();
     }
 
     void openDssBookEntry(String bookTitle){
