@@ -44,6 +44,18 @@ def validate_base():
     assert hebrew_codes == WLC_EXPECTED_BOOK_CODES, f"WLC base-witness coverage mismatch: missing={WLC_EXPECTED_BOOK_CODES - hebrew_codes}, unexpected={hebrew_codes - WLC_EXPECTED_BOOK_CODES}"
     assert greek_codes == GREEK_BOOK_CODES, f"SBLGNT book coverage mismatch: missing={GREEK_BOOK_CODES - greek_codes}, unexpected={greek_codes - GREEK_BOOK_CODES}"
     assert all(r.get("attribution") for r in hebrew + greek + latin)
+    septuagint = [r for r in greek if r.get("source") == "Swete Septuagint (Greek edition)"]
+    septuagint_report_path = ROOT / "corpus/septuagint_coverage.json"
+    assert septuagint_report_path.exists(), "Pinned Swete Septuagint coverage report is missing"
+    septuagint_report = json.loads(septuagint_report_path.read_text(encoding="utf-8"))
+    assert septuagint_report["source_revision"] == "26bad3eb42bba98471d154c954e36a6f30a0279d"
+    assert septuagint_report["license"] == "CC BY-SA 4.0"
+    assert len(septuagint_report["books"]) == 35
+    assert septuagint_report["total_verse_records"] == sum(septuagint_report["books"].values()) > 10000
+    for title, count in septuagint_report["books"].items():
+        source_rows = [r for r in septuagint if r["book"] == title]
+        assert len(source_rows) == count and all(r.get("source_reference") and r.get("witness_basis") for r in source_rows)
+    assert "Ecclesiastes is not supplied" in " ".join(septuagint_report["limitations"])
     refs = [(r["language"], r["ref"]) for r in rows]
     assert len(refs) == len(set(refs)), "Duplicate verse references detected within a language"
     print(f"Validated {len(rows)} text records; WLC base witness {len(hebrew)} records across {len(hebrew_codes)} book divisions, Greek {len(greek)} across {len(greek_codes)} SBLGNT books, Latin {len(latin)}")
