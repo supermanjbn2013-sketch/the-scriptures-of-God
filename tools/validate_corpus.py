@@ -311,7 +311,9 @@ def validate_john():
         segment = next(item for item in segments if item["segment_id"] == f"john-chapter-{chapter_number}")
         assert "P66" in segment["source_witness_id"], f"Missing P66 fragment provenance for John {chapter_number}"
     assert "not of this world" in next(item for item in segments if item["segment_id"] == "john-chapter-15")["english_text"]
-    assert "from God" in next(item for item in segments if item["segment_id"] == "john-chapter-16")["english_text"].split("27 ", 1)[1].split("\\n", 1)[0]
+    chapter16 = next(item for item in segments if item["segment_id"] == "john-chapter-16")
+    line16_27 = next(line for line in chapter16["english_text"].splitlines() if line.startswith("27 "))
+    assert "from God" in line16_27, "Preserve the P66 reading at John 16:27"
     assert "knew not that it was the Lord" in next(item for item in segments if item["segment_id"] == "john-chapter-20")["english_text"]
     chapter21 = next(item for item in segments if item["segment_id"] == "john-chapter-21")
     assert "toiled through the whole night" in chapter21["english_text"] and "at thy word we will cast" in chapter21["english_text"], "Preserve the P66 addition at John 21:6"
