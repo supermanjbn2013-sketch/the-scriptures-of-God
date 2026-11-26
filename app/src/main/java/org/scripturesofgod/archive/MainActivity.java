@@ -1985,6 +1985,15 @@ public class MainActivity extends Activity {
                     out.append("Diplomatic Greek transcriptions are shown separately. Brackets, spelling, and source notation are retained where supplied by the source importer.\\n\\n");
                     org.json.JSONObject witnessRecords=selected.getJSONObject("witnesses");
                     org.json.JSONObject metadata=index.getJSONObject("witness_metadata");
+                    String priorityWitness=selected.optString("priority_witness","");
+                    if(!priorityWitness.isEmpty()){
+                        out.append("Papyrus-first reading aid\\n");
+                        out.append("Selected witness: ").append(priorityWitness).append(" (").append(selected.optString("priority_status","")).append(")\\n");
+                        out.append(selected.optString("priority_text","")).append("\\n");
+                        org.json.JSONArray partials=selected.optJSONArray("earlier_partial_witnesses");
+                        if(partials!=null&&partials.length()>0)out.append("Earlier partial witness(es): ").append(partials.join(", ")).append("\\n");
+                        out.append(selected.optString("priority_note","")).append("\\n\\n");
+                    }
                     String[] order={"P52","P66","P75","Vaticanus","Sinaiticus"};
                     int shown=0;
                     for(String witness:order){
