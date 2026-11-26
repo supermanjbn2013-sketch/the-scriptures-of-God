@@ -792,6 +792,31 @@
         "Ge'ez is a versional witness and does not supply Hebrew or Aramaic wording.",
         "Qumran Aramaic fragments and Greek fragments remain separate; no language layers are silently merged."
       ]
+    },
+    {
+      "id": "etcbc-abegg-dss-qdr",
+      "name": "ETCBC/CACCHT Dead Sea Scrolls transcriptions distributed through Qumran Digital Reader",
+      "language": "Hebrew, Aramaic, and Greek as represented in individual transcribed witnesses",
+      "coverage": "Pinned QDR structured export revision f54f38464e18409eed8286fe24dd24f88d4735dd; imports biblical and non-biblical scroll records, fragment identifiers, line numbers, word forms, and QDR parallel references. Exact scroll and line counts are generated from the pinned export at build time and recorded in dss/etcbc_scroll_index.json.",
+      "record_type": "line-level scholarly transcription dataset and concordance metadata; not photographic facsimile",
+      "license": "CC BY-NC 4.0; non-commercial use only unless separate permission is obtained",
+      "repository": "https://github.com/ETCBC/dss; https://github.com/evenderekh/QDR",
+      "edition": "ETCBC/CACCHT Dead Sea Scrolls corpus (Martin G. Abegg Jr. transcriptions), QDR structured export",
+      "attribution": "Martin G. Abegg Jr.; ETCBC/CACCHT Dead Sea Scrolls corpus; QDR structured export.",
+      "build_import": "tools/import_etcbc_dss.py",
+      "generated_assets": [
+        "dss/etcbc_transcriptions.jsonl",
+        "dss/etcbc_scroll_index.json",
+        "dss/dss_book_index.json"
+      ],
+      "limitations": [
+        "The imported dataset is limited to records present in the pinned QDR export; it is not a complete catalogue or transcription of every Dead Sea Scroll.",
+        "Parallel references are concordance mappings, not proof that a complete verse or identical wording survives in the fragment.",
+        "A scroll line remains a separate physical witness; do not silently merge it into a continuous text.",
+        "The generated DSS book index lists only Hebrew Scripture writings with actual imported DSS line evidence and additional compositions with explicitly matched witness identifiers.",
+        "Some non-biblical and biblical scrolls may be absent from the export; absence here does not establish absence from the Qumran collection.",
+        "The CC BY-NC 4.0 restriction means this imported corpus cannot be included in a commercial distribution without separate permission."
+      ]
     }
   ],
   "not_yet_integrated": [
