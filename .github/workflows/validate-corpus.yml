@@ -4,6 +4,7 @@ on:
     paths:
       - "tools/prepare_corpus.py"
       - "tools/import_etcbc_dss.py"
+      - "tools/build_dss_book_index.py"
       - "tools/build_dss_reconstructions.py"
       - "tools/import_codex_sinaiticus.py"
       - "tools/import_codex_vaticanus.py"
@@ -49,6 +50,8 @@ jobs:
         run: python tools/download_qumran_digital_sources.py
       - name: Import offline Dead Sea Scrolls transcriptions
         run: python tools/import_etcbc_dss.py
+      - name: Index every book and writing actually attested in imported DSS lines
+        run: python tools/build_dss_book_index.py
       - name: Reconstruct Hebrew readings from DSS witnesses and fill aligned gaps from WLC
         run: python tools/build_dss_reconstructions.py
       - name: Import Codex Vaticanus manuscript transcription
