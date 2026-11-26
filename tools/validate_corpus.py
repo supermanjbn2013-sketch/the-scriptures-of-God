@@ -155,6 +155,7 @@ def validate_dss():
             assert record["status"] == "offline transcription imported; line-level text available"
         else:
             assert record["status"] == "metadata catalogued; no matching line-level transcription in the imported dataset"
+    witness_ids_for_evidence = {r["id"] for r in json.loads((ROOT / "catalog/manuscript_witness_register.json").read_text(encoding="utf-8"))["records"]}
     concordance = json.loads((ROOT / "catalog/dss_passage_concordance.json").read_text(encoding="utf-8"))
     assert concordance["record_type"] == "dss_manuscript_passage_concordance"
     assert len(concordance["records"]) >= 5
@@ -185,6 +186,28 @@ def validate_dss():
     assert all(item.get("pdf_text_lines") and item.get("passage_refs") for item in twty["sections"])
     assert "kept separate" in twty.get("caution", "") or "separate" in twty.get("caution", "")
     assert len(dss["archive_browse_index"]["qumran_sites"]) >= 9
+    evidence_path = ROOT / "dss/dss_passage_line_evidence.jsonl"
+    evidence_index_path = ROOT / "dss/dss_passage_line_evidence_index.json"
+    assert evidence_path.exists() and evidence_index_path.exists(), "Line-level DSS passage evidence assets were not generated"
+    evidence_index = json.loads(evidence_index_path.read_text(encoding="utf-8"))
+    evidence_rows = [json_module.loads(line) for line in evidence_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    source_line_count = sum(len(r.get("transcription_line_map", [])) for r in concordance["records"])
+    assert len(evidence_rows) == source_line_count == evidence_index["line_record_count"]
+    assert evidence_index["record_type"] == "DSS line-level passage evidence index"
+    evidence_keys = set()
+    for row in evidence_rows:
+        assert row["witness_id"] in witness_ids_for_evidence
+        assert row["writing_ids"] and row["manuscript_id"] and row["fragment_group"]
+        assert row["transcription_text"].strip() and row["source_reference"]
+        assert row["passage_mapping_status"] in {"source_explicitly_mapped", "source_unassigned"}
+        assert (bool(row["passage_references"]) == (row["passage_mapping_status"] == "source_explicitly_mapped"))
+        key = (row["witness_id"], row["fragment_group"], row["digital_line"])
+        assert key not in evidence_keys, f"Duplicate line-level evidence coordinate: {key}"
+        evidence_keys.add(key)
+    assert evidence_index["explicitly_mapped_line_count"] == sum(bool(r["passage_references"]) for r in evidence_rows)
+    assert evidence_index["unassigned_line_count"] == sum(not r["passage_references"] for r in evidence_rows)
+    assert evidence_index["explicitly_mapped_line_count"] + evidence_index["unassigned_line_count"] == len(evidence_rows)
+    print(f"Validated line-level DSS evidence: {len(evidence_rows)} lines; {evidence_index['explicitly_mapped_line_count']} source-mapped and {evidence_index['unassigned_line_count']} unassigned.")
     print("Validated DSS metadata and passage concordance:", len(dss["records"]), len(concordance["records"]))
 
 
