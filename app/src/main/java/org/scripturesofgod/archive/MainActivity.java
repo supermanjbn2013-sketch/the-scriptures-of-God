@@ -770,12 +770,8 @@ public class MainActivity extends Activity {
             openBook(title);
             return;
         }
-        if("1 Enoch".equalsIgnoreCase(title)){
-            openGreekEnochArchive();
-            return;
-        }
-        if("Jubilees".equalsIgnoreCase(title)){
-            openJubileesGeezArchive();
+        if("1 Enoch".equalsIgnoreCase(title)||"Jubilees".equalsIgnoreCase(title)){
+            openDssBookEntry(title);
             return;
         }
         if("Book of Giants".equalsIgnoreCase(title)){
@@ -908,7 +904,10 @@ public class MainActivity extends Activity {
             protected void onPostExecute(String result){
                 TextView view=text(result,15,ink,false);enablePassageSelection(view);
                 ScrollView sv=new ScrollView(MainActivity.this);sv.setPadding(12,8,12,8);sv.addView(view);
-                new android.app.AlertDialog.Builder(MainActivity.this).setTitle(title+" · DSS witness text").setView(sv).setNegativeButton("Back to archive",(d,w)->navigateTo("DSS Hebrew Archive")).setPositiveButton("Close",null).show();
+                android.app.AlertDialog.Builder builder=new android.app.AlertDialog.Builder(MainActivity.this).setTitle(title+" · DSS witness text").setView(sv).setNegativeButton("Back to archive",(d,w)->navigateTo("DSS Hebrew Archive")).setPositiveButton("Close",null);
+                if("1 Enoch".equalsIgnoreCase(title))builder.setNeutralButton("Greek fragments",(d,w)->openGreekEnochArchive());
+                if("Jubilees".equalsIgnoreCase(title))builder.setNeutralButton("Ge'ez editions",(d,w)->openJubileesGeezArchive());
+                builder.show();
             }
         }.executeOnExecutor(android.os.AsyncTask.THREAD_POOL_EXECUTOR);
     }
