@@ -124,7 +124,7 @@ def main():
             "chapter":chapter,
             "verse":verse,
             "hebrew_reading_status":status,
-            "hebrew_text":kh[0]["text"] if len(kh)==1 else None,
+            "hebrew_text":kh[0]["text"] if len(kh)==1 else (ks["text"] if not kh and ks else None),
             "hebrew_readings":[
                 {
                     "verse_label":x["verse_label"],
@@ -134,7 +134,31 @@ def main():
                     "source_url":x["source_url"],
                     "direct_manuscript_witness":False
                 } for x in kh
-            ],
+            ] + ([{
+                "verse_label":str(ks["verse_number"]),
+                "text":ks["text"],
+                "editorial_status":ks["editorial_status"],
+                "source_id":ks["source_id"],
+                "source_url":ks["source_url"],
+                "direct_manuscript_witness":False
+            }] if ks and not kh else []),
+            "kahana_sefaria_reading":{
+                "text":ks["text"],
+                "editorial_status":ks["editorial_status"],
+                "source_id":ks["source_id"],
+                "source_url":ks["source_url"],
+                "version_title":ks["edition"],
+                "direct_manuscript_witness":False
+            } if ks else None,
+            "kahana_sefaria_alignment_status":(
+                "different_digital_transcriptions_of_same_printed_edition"
+                if ks and kh and ks["text"] != kh[0]["text"] else
+                "same_text_in_both_digital_transcriptions"
+                if ks and kh else
+                "only_sefaria_digitization_available"
+                if ks and not kh else
+                "no_sefaria_record_for_reference"
+            ),
             "greek_text":gr.get("text") if gr else None,
             "greek_source":{
                 "source":gr.get("source"),
