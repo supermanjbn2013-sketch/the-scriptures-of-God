@@ -223,6 +223,20 @@ def validate_sirach():
             sinaiticus_count += 1
     assert sinaiticus_count == sinaiticus_index["verse_record_count"] > 0
     assert any(item["source_id"] == "codex-sinaiticus-sirach" for item in sirach["source_editions"])
+    cowley_path = ROOT / "corpus/sirach/cowley_neubauer_ms_b_pdf_pages.jsonl"
+    cowley_index_path = ROOT / "corpus/sirach/cowley_neubauer_ms_b_pdf_index.json"
+    assert cowley_path.exists() and cowley_index_path.exists(), "Cowley-Neubauer MS B OCR page archive is missing"
+    cowley_index = json.loads(cowley_index_path.read_text(encoding="utf-8"))
+    assert cowley_index["license"] == "Public domain"
+    assert len(cowley_index["source_sha256"]) == 64
+    assert cowley_index["pdf_page_count_extracted"] >= 40
+    assert cowley_index["pages_with_hebrew_count"] >= 5
+    cowley_rows = [json.loads(line) for line in cowley_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(cowley_rows) == cowley_index["pdf_page_count_extracted"]
+    assert all(row["witness_id"] == "Genizah-B" and row["manuscript_id"] == "MS B" for row in cowley_rows)
+    assert all(row["text_status"] == "raw_PDF_OCR_text_layer_not_verse_aligned_or_verified_against_facsimile" for row in cowley_rows)
+    assert sum(row["contains_hebrew_script"] for row in cowley_rows) == cowley_index["pages_with_hebrew_count"]
+    assert any(item["source_id"] == "cowley-neubauer-1897-ms-b" for item in sirach["source_editions"])
     qdr_manifest_path = ROOT / "dss/qumran_digital/source_manifest.json"
     assert qdr_manifest_path.exists()
     qdr_manifest = json.loads(qdr_manifest_path.read_text(encoding="utf-8"))
