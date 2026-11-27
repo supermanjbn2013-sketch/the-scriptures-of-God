@@ -206,7 +206,7 @@ def validate_sirach():
             assert row["writing_id"] == "sirach" and row["witness_id"] == "Codex Sinaiticus"
             assert row["manuscript_id"] == "GA 01" and row["language"] == "grc"
             assert row["source_coordinates"]
-            assert row["text"] or row["correction_readings"] or row["editorial_supplied_text"] or row["other_readings"]
+            assert row["text"] or row["correction_readings"] or row["editorial_supplied_text"] or row["marginal_text"] or row["note_text"] or row["other_readings"]
             assert row["text_status"].startswith("direct_Greek_manuscript_main_reading")
             assert all(item["reading_type"] == "corr" for item in row["correction_readings"])
             assert all(item["text"] for item in row["editorial_supplied_text"])
