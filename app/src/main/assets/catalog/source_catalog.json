@@ -952,6 +952,25 @@
         "The Sirach 23:1 phrase is reported by the reviewer from the paraphrase, not transcribed directly from the manuscript image in this repository.",
         "The source supports a separately labelled indirect evidence record only; it does not authorize filling the direct Hebrew text."
       ]
+    },
+    {
+      "id": "codex-sinaiticus-sirach",
+      "name": "Codex Sinaiticus Project — Greek Sirach transcription",
+      "language": "Ancient Greek",
+      "coverage": "Codex Sinaiticus Sirach section, from the grandson's Prologue at quire 68 folio 1r through quire 71 folio 2r; verse-level extraction is under validation.",
+      "record_type": "Direct Greek manuscript transcription from one physical codex; separate from the Swete Septuagint edition",
+      "edition": "Codex Sinaiticus Project electronic transcription, XML v1.95, pinned ITSEE repository revision",
+      "source_revision": "af1633b5102cbe6200e79053cc618ac447e1bb16",
+      "source_url": "https://github.com/itsee-birmingham/codex-sinaiticus",
+      "license": "CC BY-NC-SA 3.0 Unported; non-commercial, share-alike",
+      "attribution": "Codex Sinaiticus Project electronic transcription; XML maintained by ITSEE, University of Birmingham.",
+      "limitations": [
+        "This is the Greek version in Codex Sinaiticus, not a Hebrew manuscript.",
+        "Do not merge it with the Swete edition or the Syriac Peshitta.",
+        "Only manuscript text present in the transcription is retained; no missing words are supplied.",
+        "Original page, column, line and verse identifiers must be preserved.",
+        "CC BY-NC-SA 3.0 restrictions apply."
+      ]
     }
   ],
   "not_yet_integrated": [
