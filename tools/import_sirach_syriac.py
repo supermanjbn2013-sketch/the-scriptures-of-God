@@ -77,9 +77,9 @@ def main():
     if len(records) < 500:
         raise SystemExit(f"Unexpectedly low Syriac Sirach coverage: {len(records)} verses")
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    with OUT.open("w", encoding="utf-8", newline="\\n") as target:
+    with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for record in records:
-            target.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            target.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
     INDEX.write_text(json.dumps({
         "schema_version": 1,
         "record_type": "sirach_syrian_peshitta_version_index",
@@ -99,7 +99,7 @@ def main():
             "The Peshitta is an ancient versional witness; it must be compared passage by passage with Greek and Hebrew witnesses.",
             "The source is CC BY-NC 4.0 and is restricted to non-commercial use."
         ]
-    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Imported {len(records)} Syriac Peshitta Sirach verses across {len({r['chapter'] for r in records})} chapters.")
 
 
