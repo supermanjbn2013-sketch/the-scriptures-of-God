@@ -75,9 +75,18 @@ def main():
     for chapter, verse in sorted(keys):
         ref = f"Sirach {chapter}:{verse}"
         kh = sorted(kahana.get((chapter, verse), []), key=lambda x: x["verse_label"])
+        ks = kahana_sefaria.get((chapter, verse))
         gr = greek.get(ref)
         sy = syriac.get(ref)
         stats["kahana_retroversion_readings"] += sum(1 for item in kh if item["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac")
+        if ks and ks["editorial_status"] == "bracketed_hebrew_retroversion_in_kahana_edition":
+            stats["kahana_retroversion_readings"] += 1
+        if ks:
+            stats["with_sefaria_kahana"] += 1
+        if ks and not kh:
+            stats["kahana_sefaria_only"] += 1
+        if ks and kh and ks["text"] != kh[0]["text"]:
+            stats["kahana_digitizations_differ"] += 1
         if len(kh) > 1:
             status = "kahana_multiple_readings_preserved"
             stats["kahana_multiple_readings"] += 1
@@ -87,6 +96,10 @@ def main():
         elif kh:
             status = "kahana_manuscript_based_edition"
             stats["kahana_manuscript_based_edition"] += 1
+        elif ks and ks["editorial_status"] == "bracketed_hebrew_retroversion_in_kahana_edition":
+            status = "editorial_hebrew_retroversion_from_sefaria_kahana"
+        elif ks:
+            status = "kahana_sefaria_digitization_only"
         else:
             status = "no_kahana_text_in_current_import"
             stats["no_kahana_text_in_current_import"] += 1
