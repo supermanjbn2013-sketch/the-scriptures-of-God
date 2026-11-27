@@ -936,6 +936,22 @@
         "Use its apparatus and restorations as scholarly editorial evidence, not as direct manuscript text.",
         "No copyrighted transcription, translation or apparatus is copied into this repository."
       ]
+    },
+    {
+      "id": "joosten-2025-reymond-rey-review",
+      "name": "Jan Joosten — Review of Rey and Reymond's 2024 Ben Sira critical edition",
+      "language": "English; quotes a short Hebrew phrase",
+      "coverage": "Secondary scholarly report of the medieval Rhyming Paraphrase, including the Hebrew phrase associated with Sirach 23:1 in ENA 3053.3 verso, line 1.",
+      "record_type": "Secondary scholarly review; not a manuscript transcription or critical edition",
+      "edition": "Jan Joosten, Rivista Biblica 73 (2025), 576–581",
+      "source_url": "https://www.academia.edu/152613232/A_Critical_Edition_of_the_Hebrew_Manuscripts_of_Ben_Sira_With_Translations_and_Philological_Notes",
+      "license": "Copyrighted review; only a short quoted phrase is preserved with attribution",
+      "attribution": "Jan Joosten, review of Frédérique Michèle Rey and Eric D. Reymond, A Critical Edition of the Hebrew Manuscripts of Ben Sira (Brill, 2024).",
+      "limitations": [
+        "The Rhyming Paraphrase is not a direct witness to the wording of Ben Sira.",
+        "The Sirach 23:1 phrase is reported by the reviewer from the paraphrase, not transcribed directly from the manuscript image in this repository.",
+        "The source supports a separately labelled indirect evidence record only; it does not authorize filling the direct Hebrew text."
+      ]
     }
   ],
   "not_yet_integrated": [
