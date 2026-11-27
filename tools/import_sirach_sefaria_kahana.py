@@ -127,9 +127,9 @@ def main():
             f"{sum(1 for n in chapter_counts.values() if n)} chapters"
         )
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    with OUT.open("w", encoding="utf-8", newline="\\n") as target:
+    with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for record in records:
-            target.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            target.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
     INDEX.write_text(json.dumps({
         "schema_version": 1,
         "record_type": "sirach_sefaria_kahana_hebrew_edition",
@@ -152,12 +152,8 @@ def main():
             "The importer explicitly requests the named Kahana version and refuses a different/default version.",
             "Missing text in this digital version is not proof of an ancient manuscript lacuna."
         ]
-    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Imported {len(records)} Sefaria Kahana Hebrew verse records across {sum(1 for n in chapter_counts.values() if n)} chapters.")
-
-
-if __name__ == "__main__":
-    main()
 
 
 if __name__ == "__main__":
