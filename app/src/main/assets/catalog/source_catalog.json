@@ -923,17 +923,18 @@
       "id": "reymond-rey-2024-critical-hebrew-manuscripts",
       "name": "A Critical Edition of the Hebrew Manuscripts of Ben Sira (2024)",
       "language": "Hebrew, with French and English translations and commentary",
-      "coverage": "Critical edition of all nine Hebrew Ben Sira manuscript witnesses: Cairo Genizah A–F, the Rhyming Paraphrase, 2Q18, 11QPs-a and Masada.",
-      "record_type": "Scholarly critical edition and textual apparatus; not a freely redistributable digital transcription",
+      "coverage": "Critical edition of the nine direct Hebrew Ben Sira manuscript witnesses from the Cairo Genizah, Qumran and Masada; the volume also separately includes the medieval Rhyming Paraphrase, which is not a direct Ben Sira manuscript.",
+      "record_type": "Copyrighted scholarly critical edition and textual apparatus; nine direct Hebrew manuscript witnesses plus a separately edited medieval paraphrase; not a freely redistributable digital transcription",
       "edition": "Frédérique Michèle Rey and Eric D. Reymond, A Critical Edition of the Hebrew Manuscripts of Ben Sira, Brill, 2024",
       "source_url": "https://www.nli.org.il/en/books/NNL_ALEPH997012945170405171/NLI",
       "license": "Copyrighted scholarly edition; no redistribution license identified. Bibliographic reference only.",
       "attribution": "Frédérique Michèle Rey and Eric D. Reymond, editors, translators and commentators.",
       "limitations": [
+        "The nine direct Hebrew manuscript witnesses are Genizah A–F, 2Q18, 11QPs-a and Masada.",
+        "The Rhyming Paraphrase is separately included but is not a direct manuscript witness to the wording of Ben Sira.",
         "The edition presents each manuscript independently to preserve textual pluriformity.",
         "Use its apparatus and restorations as scholarly editorial evidence, not as direct manuscript text.",
-        "No copyrighted transcription, translation or apparatus is copied into this repository.",
-        "This edition is a required reference for future passage-by-passage comparison of the nine Hebrew witnesses."
+        "No copyrighted transcription, translation or apparatus is copied into this repository."
       ]
     }
   ],
