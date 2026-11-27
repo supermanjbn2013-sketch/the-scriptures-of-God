@@ -253,7 +253,7 @@ def validate_sirach():
     assert "36:22–37:26" in margoliouth["coverage"] and "Or. 5518.2" in margoliouth["manuscript_basis"]
     assert margoliouth["folio_mapping"]["quire_folio_IV_recto"] == "Sirach 31:12–21"
     assert margoliouth["folio_mapping"]["quire_folio_VII_recto"] == "Sirach 36:22–37:9"
-    assert "Do not silently reconcile" in margoliouth["boundary_discrepancy"]["handling"]
+    assert "Do not silently normalize" in margoliouth["boundary_discrepancy"]["handling"]
     assert margoliouth["boundary_discrepancy"]["british_library_catalogue_first_portion"] == "Sirach 34:12–31"
     assert margoliouth["boundary_discrepancy"]["nli_catalogue_first_portion"] == "Sirach 31:12–32:1"
     assert margoliouth["boundary_discrepancy"]["codicological_mapping_first_portion"] == "Sirach 31:12–31"
