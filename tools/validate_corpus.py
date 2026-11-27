@@ -254,6 +254,10 @@ def validate_sirach():
     assert margoliouth["folio_mapping"]["quire_folio_IV_recto"] == "Sirach 31:12–21"
     assert margoliouth["folio_mapping"]["quire_folio_VII_recto"] == "Sirach 36:22–37:9"
     assert "Do not silently reconcile" in margoliouth["boundary_discrepancy"]["handling"]
+    assert margoliouth["boundary_discrepancy"]["british_library_catalogue_first_portion"] == "Sirach 34:12–31"
+    assert margoliouth["boundary_discrepancy"]["nli_catalogue_first_portion"] == "Sirach 31:12–32:1"
+    assert margoliouth["boundary_discrepancy"]["codicological_mapping_first_portion"] == "Sirach 31:12–31"
+    assert "Do not infer" in margoliouth["boundary_discrepancy"]["first_portion_handling"]
     assert margoliouth["source_url"] == "https://www.jstor.org/stable/1450569"
     cowley_candidates_path = ROOT / "corpus/sirach/cowley_neubauer_ms_b_hebrew_line_candidates.jsonl"
     cowley_candidates_index_path = ROOT / "corpus/sirach/cowley_neubauer_ms_b_hebrew_line_candidates_index.json"
