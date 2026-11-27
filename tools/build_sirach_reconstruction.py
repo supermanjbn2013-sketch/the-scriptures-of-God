@@ -139,7 +139,7 @@ def main():
                 "No Hebrew reading is supplied by the imported Kahana transcription for this reference. Greek and/or Syriac parallels remain separate; the Hebrew gap is unresolved."
             ),
             "method":"Reference alignment only; no automatic retroversion or silent merging of Hebrew, Greek, and Syriac.",
-        "Chapter and verse labels are cross-reference anchors; different textual traditions may divide or number verses differently, so an aligned reference does not prove exact textual equivalence."
+            "alignment_caveat":"Chapter and verse labels are cross-reference anchors; different textual traditions may divide or number verses differently, so an aligned reference does not prove exact textual equivalence."
         })
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
