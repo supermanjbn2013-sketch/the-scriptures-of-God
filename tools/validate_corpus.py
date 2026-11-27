@@ -219,7 +219,7 @@ def validate_sirach():
             assert all(item["text"] for item in row["editorial_supplied_text"])
             assert all(item["text"] for item in row["marginal_text"])
             assert all(item["text"] for item in row["note_text"])
-            assert row["reconstruction_status"] == "preserved_text_only; no missing words supplied"
+            assert row["reconstruction_status"] == "preserved_main_reading_only; no_missing_words_supplied"
             sinaiticus_count += 1
     assert sinaiticus_count == sinaiticus_index["verse_record_count"] > 0
     assert any(item["source_id"] == "codex-sinaiticus-sirach" for item in sirach["source_editions"])
