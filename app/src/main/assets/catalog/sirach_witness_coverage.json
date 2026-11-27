@@ -193,12 +193,24 @@
         "Preserve the reported partial verse endpoints and do not infer complete verse coverage.",
         "The Bensira.org navigator reunites folios but does not make the manuscript a continuous complete copy.",
         "Do not bundle the site's transcription or images without permission from the relevant rights holders.",
-        "Use manuscript-specific folio and shelfmark details; passage ranges are locators and do not prove continuous text."
+        "Use manuscript-specific folio and shelfmark details; passage ranges are locators and do not prove continuous text.",
+        "The 1897 Cowley–Neubauer edition directly transcribes MS B for Sirach 39:15–49:11; it must be kept separate from Kahana's composite 1912 edition."
       ],
       "transcription_source": "Bensira.org manuscript navigator; transcriptions credited by the site to Martin G. Abegg and collaborators, with later readings by Shulamit Elizur and Michael Rand.",
       "source_url": "https://www.bensira.org/navigator.php?Manuscript=B&PageNum=1",
       "source_license": "Permission-based access; no explicit text redistribution license identified. External reference only.",
-      "transcription_status": "external manuscript transcription and image reference; not bundled pending redistribution permission"
+      "transcription_status": "external manuscript transcription and image reference; not bundled pending redistribution permission",
+      "additional_transcription_sources": [
+        {
+          "source_id": "cowley-neubauer-1897-ms-b",
+          "source_name": "Cowley and Neubauer, The Original Hebrew of a Portion of Ecclesiasticus (1897)",
+          "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/California_Digital_Library_%28IA_originalhebrewof00cowlrich%29.pdf",
+          "coverage": "Sirach 39:15–49:11",
+          "source_type": "public-domain printed diplomatic transcription of direct Hebrew manuscript B",
+          "license": "Public domain",
+          "status": "import pending; preserve dots for physical lacunae, square brackets for supplied letters, and marginal variants separately"
+        }
+      ]
     },
     {
       "witness_id": "Genizah-C",
