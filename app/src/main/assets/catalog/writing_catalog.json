@@ -822,15 +822,6 @@
           "transcription_type": "Hebrew scroll transcription with source damage markers and separately stored editorial parallel anchors",
           "source_revision": "Qumran-Digital transcription page 2025-03-11",
           "license": "CC BY-SA 4.0"
-        },
-        {
-          "source_id": "sefaria-kahana-ben-sira",
-          "source_name": "Sefaria — Ben Sira, David Kahana ed. -- Wikisource",
-          "source_file": "corpus/sirach/kahana_sefaria_hebrew.jsonl",
-          "source_status": "separate Sefaria digitization; import and passage-level comparison pending",
-          "witness_basis": "David Kahana's 1912 printed Hebrew edition, based on Cairo Genizah manuscripts and editorial retroversions",
-          "transcription_type": "digital edition transcription; not a direct manuscript transcription",
-          "license": "CC BY-SA (version not specified in Sefaria's version metadata)"
         }
       ],
       "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
