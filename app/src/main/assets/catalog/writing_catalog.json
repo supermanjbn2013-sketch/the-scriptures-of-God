@@ -812,6 +812,16 @@
           "transcription_type": "Syriac versional text; not a Hebrew manuscript",
           "source_revision": "0b6ded2b369c7d81589a98c92325290e24b20af6",
           "license": "CC BY-NC 4.0"
+        },
+        {
+          "source_id": "qumran-digital-featured-transcription-pages",
+          "source_name": "Qumran-Digital — 11Q5 Great Psalms Scroll transcription",
+          "source_file": "dss/qumran_digital/11Q5.html; catalog/sirach_11q5_source_lines.jsonl; corpus/sirach/11q5_sirach_51_lines.jsonl",
+          "source_status": "direct Hebrew Sirach hymn lines cross-linked from a Psalms scroll; not a dedicated Sirach codex",
+          "witness_basis": "11QPs-a (11Q5), columns XXI–XXII; QDR display-line labels preserved separately from physical coordinates",
+          "transcription_type": "Hebrew scroll transcription with source damage markers and separately stored editorial parallel anchors",
+          "source_revision": "Qumran-Digital transcription page 2025-03-11",
+          "license": "CC BY-SA 4.0"
         }
       ],
       "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
