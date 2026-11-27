@@ -53,7 +53,6 @@ SWETE_REVISION = "26bad3eb42bba98471d154c954e36a6f30a0279d"
 SWETE_BASE = f"https://raw.githubusercontent.com/nathans/lxx-swete/{SWETE_REVISION}/data/"
 SWETE_REPO = "https://github.com/nathans/lxx-swete"
 SEPTUAGINT_BOOKS = [
-    ("01.Genesis.txt", "Genesis (Greek Septuagint)", "Genesis (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
     ("02.Exodus.txt", "Exodus (Greek Septuagint)", "Exodus (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
     ("03.Leviticus.txt", "Leviticus (Greek Septuagint)", "Leviticus (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
     ("04.Numeri.txt", "Numbers (Greek Septuagint)", "Numbers (Greek Septuagint)", "Swete Greek edition; distinct from Hebrew WLC and individual Greek codices"),
