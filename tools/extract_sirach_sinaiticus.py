@@ -53,16 +53,8 @@ def main():
     index = json.loads(INDEX.read_text(encoding="utf-8"))
     if index.get("source_revision") != SOURCE_REVISION:
         raise SystemExit("Codex Sinaiticus source revision differs from the pinned manuscript transcription.")
-    sirach_book_labels = set()
-    for division in index.get("book_divisions", []):
-        xml_id = str(division.get("xml_id") or "")
-        if xml_id.upper().endswith("-SIR") or "SIRACH" in xml_id.upper() or "ECCLUS" in xml_id.upper():
-            for value in (division.get("n"), division.get("id"), division.get("xml_id")):
-                if value is not None:
-                    sirach_book_labels.add(str(value))
-    # The TEI index records the canonical book division as B-B31-31-SIR.
-    # Token context may expose only the numeric book n="31", so map that
-    # identifier explicitly instead of relying on a textual book name.
+    # The TEI index identifies Sirach as B-B31-31-SIR; token context may
+    # expose only the numeric book division (n="31").
     sirach_book_labels = set()
     for division in index.get("book_divisions", []):
         xml_id = str(division.get("xml_id") or "")
