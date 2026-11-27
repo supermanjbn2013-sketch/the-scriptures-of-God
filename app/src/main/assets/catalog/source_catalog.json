@@ -865,6 +865,25 @@
         "The Wikisource transcription is explicitly incomplete; it is not a complete machine-readable text.",
         "No manuscript shelfmark, fragment, column, or line coordinate is inferred from Kahana's printed text alone."
       ]
+    },
+    {
+      "id": "etcbc-syriac-peshitta-sirach",
+      "name": "ETCBC Syriac Corpus 0.92 — Peshitta Ben Sira",
+      "language": "Classical Syriac",
+      "coverage": "Sirach/Ben Sira in the preliminary Peshitta text distributed by ETCBC Syriac Corpus 0.92.",
+      "record_type": "Syriac versional text with word-level transcription; not a Hebrew manuscript",
+      "edition": "Vetus Testamentum Syriace, Peshitta Institute (Brill), without critical apparatus; preliminary Ben Sira text",
+      "source_revision": "0b6ded2b369c7d81589a98c92325290e24b20af6",
+      "license": "CC BY-NC 4.0; non-commercial use only",
+      "repository": "https://github.com/ETCBC/syriac",
+      "attribution": "ETCBC Syriac Corpus 0.92, ETCBC/CACCHT; compiled by Martijn Naaijer; base text from Vetus Testamentum Syriace, Peshitta Institute (Brill).",
+      "limitations": [
+        "The ETCBC project identifies its Ben Sira text as preliminary.",
+        "The Peshitta is a Syriac versional witness, not a direct Hebrew manuscript.",
+        "The Syriac translation is generally understood to derive from a Hebrew Vorlage, with possible interaction with Greek; do not use it as a mechanical Hebrew substitute.",
+        "The imported source omits the critical apparatus.",
+        "CC BY-NC 4.0 prohibits commercial use without separate permission."
+      ]
     }
   ],
   "not_yet_integrated": [
