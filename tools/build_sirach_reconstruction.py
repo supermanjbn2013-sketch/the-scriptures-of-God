@@ -13,6 +13,7 @@ from collections import defaultdict
 ROOT = pathlib.Path("app/src/main/assets")
 GREEK = ROOT / "corpus/verses.jsonl"
 KAHANA = ROOT / "corpus/sirach/kahana_1912_hebrew.jsonl"
+KAHANA_SEFARIA = ROOT / "corpus/sirach/kahana_sefaria_hebrew.jsonl"
 SYRIAC = ROOT / "corpus/sirach/peshitta_syriac.jsonl"
 Q2_INDEX = ROOT / "corpus/sirach/2q18_index.json"
 OUT = ROOT / "corpus/sirach/reconstructed_hebrew_comparison.jsonl"
@@ -39,12 +40,16 @@ def main():
         key = (int(row["chapter"]), int(row["verse_number"]))
         kahana[key].append(row)
 
+    kahana_sefaria = {}
+    for row in read_jsonl(KAHANA_SEFARIA):
+        kahana_sefaria[(int(row["chapter"]), int(row["verse_number"]))] = row
+
     syriac = {}
     for row in read_jsonl(SYRIAC):
         syriac[row["ref"]] = row
 
     q2_index = json.loads(Q2_INDEX.read_text(encoding="utf-8")) if Q2_INDEX.exists() else {}
-    keys = set(kahana)
+    keys = set(kahana) | set(kahana_sefaria)
     for ref in set(greek) | set(syriac):
         parts = ref.rsplit(" ", 1)[-1].split(":")
         if len(parts) == 2:
@@ -59,6 +64,9 @@ def main():
         "kahana_manuscript_based_edition": 0,
         "kahana_multiple_readings": 0,
         "kahana_retroversion_readings": 0,
+        "with_sefaria_kahana": 0,
+        "kahana_sefaria_only": 0,
+        "kahana_digitizations_differ": 0,
         "no_kahana_text_in_current_import": 0,
         "with_greek": 0,
         "with_syriac": 0,
