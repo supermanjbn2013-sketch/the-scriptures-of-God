@@ -12,7 +12,7 @@ import urllib.error
 import urllib.request
 
 VERSION = "2026-10-06"
-IDS = ("4Q26", "4Q27", "4Q31", "4Q47", "4Q53")
+IDS = ("4Q26", "4Q27", "4Q31", "4Q47", "4Q53", "11Q5")
 BASE = "https://lexicon.qumran-digital.org/transcriptions"
 OUT = pathlib.Path("app/src/main/assets/dss/qumran_digital")
 OUT.mkdir(parents=True, exist_ok=True)
@@ -42,7 +42,8 @@ def fetch(url):
     raise RuntimeError(f"Download failed: {url}: {last}")
 
 for manuscript_id in IDS:
-    url = f"{BASE}/{manuscript_id}/{VERSION}/index.html?v={VERSION}"
+    source_version = "2025-03-11" if manuscript_id == "11Q5" else VERSION
+    url = f"{BASE}/{manuscript_id}/{source_version}/index.html?v={source_version}"
     data = fetch(url)
     html = data.decode("utf-8", errors="strict")
     if len(data) < 3000 or f"#{manuscript_id}" not in html and manuscript_id not in html:
@@ -56,7 +57,7 @@ for manuscript_id in IDS:
     records.append({
         "manuscript_id": manuscript_id,
         "source_url": url,
-        "version": VERSION,
+        "version": source_version,
         "offline_asset": f"dss/qumran_digital/{manuscript_id}.html",
         "byte_count": len(data),
         "sha256": hashlib.sha256(data).hexdigest(),
