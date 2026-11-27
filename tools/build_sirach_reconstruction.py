@@ -82,7 +82,9 @@ def main():
         "no_kahana_text_in_current_import": 0,
         "with_greek": 0,
         "with_syriac": 0,
-        "with_hebrew_fragment_range_evidence": 0
+        "with_hebrew_fragment_range_evidence": 0,
+        "with_direct_2q18_line_evidence": 0,
+        "with_direct_11q5_line_evidence": 0
     }
     for chapter, verse in sorted(keys):
         ref = f"Sirach {chapter}:{verse}"
