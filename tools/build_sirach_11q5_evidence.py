@@ -27,7 +27,7 @@ def main():
             if str(item.get("scroll", "")).strip().replace(" ", "").lower() != "11q5":
                 continue
             refs = item.get("parallel_references", [])
-            sirach_refs = [r for r in refs if re.search(r"Sir\\w*\\s*51[.,]", str(r), re.I)]
+            sirach_refs = [r for r in refs if re.search(r"Sir\w*\s*51[.,]", str(r), re.I)]
             if not sirach_refs:
                 continue
             rows.append({
@@ -53,9 +53,9 @@ def main():
     if not rows:
         raise SystemExit("No Sirach 51 parallel lines found in 11Q5 QDR data; refusing to invent lines")
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    with OUT.open("w", encoding="utf-8", newline="\\n") as target:
+    with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for row in rows:
-            target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
     refs = sorted({r for row in rows for r in row["sirach_parallel_references"]})
     INDEX.write_text(json.dumps({
         "schema_version":1,
@@ -73,7 +73,7 @@ def main():
             "Only the actual QDR lines with Sirach parallel anchors are included.",
             "No missing words or verses are supplied from another witness in this asset."
         ]
-    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Imported {len(rows)} direct 11Q5 Sirach parallel line records.")
 
 
