@@ -127,25 +127,6 @@ def validate_sirach():
     assert count == index["records"] > 0
     assert bracketed == index["bracketed_retroversion_records"]
     assert "incomplete" in index["source_page_status"].lower()
-    sefaria_path = ROOT / "corpus/sirach/kahana_sefaria_hebrew.jsonl"
-    sefaria_index_path = ROOT / "corpus/sirach/kahana_sefaria_index.json"
-    assert sefaria_path.exists() and sefaria_index_path.exists(), "Sefaria Kahana Sirach import is missing"
-    sefaria_index = json.loads(sefaria_index_path.read_text(encoding="utf-8"))
-    assert sefaria_index["version_title"] == "Ben Sira, David Kahana ed. -- Wikisource"
-    assert sefaria_index["license"].startswith("CC BY-SA")
-    sefaria_count = 0
-    with sefaria_path.open(encoding="utf-8") as stream:
-        for raw in stream:
-            if not raw.strip():
-                continue
-            row = json.loads(raw)
-            assert row["writing_id"] == "sirach" and row["source_id"] == "sefaria-kahana-ben-sira"
-            assert row["text"] and row["direct_manuscript_witness"] is False
-            assert row["edition"] == sefaria_index["version_title"]
-            sefaria_count += 1
-    assert sefaria_count == sefaria_index["verse_record_count"] > 0
-    assert sefaria_index["chapter_count_with_text"] >= 1
-    assert sefaria_index["chapters_without_text_in_this_version"]
     coverage_path = ROOT / "catalog/sirach_witness_coverage.json"
     assert coverage_path.exists(), "Sirach Hebrew witness coverage inventory is missing"
     coverage = json.loads(coverage_path.read_text(encoding="utf-8"))
@@ -211,14 +192,13 @@ def validate_sirach():
             syriac_count += 1
     assert syriac_count == syriac_index["verse_record_count"] >= 500
     assert any(item["source_id"] == "etcbc-syriac-peshitta-sirach" for item in sirach["source_editions"])
-    assert any(item["source_id"] == "qumran-digital-featured-transcription-pages" for item in sirach["source_editions"])
     reconstruction_path = ROOT / "corpus/sirach/reconstructed_hebrew_comparison.jsonl"
     reconstruction_index_path = ROOT / "corpus/sirach/reconstructed_hebrew_comparison_index.json"
     assert reconstruction_path.exists() and reconstruction_index_path.exists(), "Sirach verse-aligned reconstruction layer is missing"
     reconstruction_index = json.loads(reconstruction_index_path.read_text(encoding="utf-8"))
     assert reconstruction_index["record_type"] == "sirach_verse_aligned_witness_comparison_and_hebrew_restoration_layer"
     assert reconstruction_index["record_count"] >= 1000
-    counts = {"editorial_hebrew_retroversion":0,"kahana_manuscript_based_edition":0,"kahana_multiple_readings_preserved":0,"editorial_hebrew_retroversion_from_sefaria_kahana":0,"kahana_sefaria_digitization_only":0,"no_kahana_text_in_current_import":0}
+    counts = {"editorial_hebrew_retroversion":0,"kahana_manuscript_based_edition":0,"kahana_multiple_readings_preserved":0,"no_kahana_text_in_current_import":0}
     reconstruction_count = 0
     with reconstruction_path.open(encoding="utf-8") as stream:
         for raw in stream:
@@ -228,9 +208,8 @@ def validate_sirach():
             assert row["writing_id"] == "sirach" and row["ref"].startswith("Sirach ")
             assert row["hebrew_reading_status"] in counts
             counts[row["hebrew_reading_status"]] += 1
-            if row["hebrew_reading_status"] in ("editorial_hebrew_retroversion", "editorial_hebrew_retroversion_from_sefaria_kahana"):
+            if row["hebrew_reading_status"] == "editorial_hebrew_retroversion":
                 assert row["hebrew_text"].startswith("[") and row["hebrew_text"].endswith("]")
-            assert row["kahana_sefaria_alignment_status"] in ("different_digital_transcriptions_of_same_printed_edition", "same_text_in_both_digital_transcriptions", "only_sefaria_digitization_available", "no_sefaria_record_for_reference")
             if row["hebrew_reading_status"] == "no_kahana_text_in_current_import":
                 assert row["hebrew_text"] is None and row["reconstruction_note"]
             assert row["greek_text"] is None or isinstance(row["greek_text"], str)
@@ -238,7 +217,7 @@ def validate_sirach():
             assert row["method"].startswith("Reference alignment only")
             reconstruction_count += 1
     assert reconstruction_count == reconstruction_index["record_count"]
-    print(f"Validated {count} Kahana Hebrew edition records ({bracketed} marked retroversions), {q2_count} direct 2Q18 lines, {q11_count} direct 11Q5 lines, {syriac_count} Syriac Peshitta verses, and {reconstruction_count} aligned Sirach references; digital source-coverage gaps remain separate from manuscript lacunae. Sefaria Kahana records: {sefaria_count}.")
+    print(f"Validated {count} Kahana Hebrew edition records ({bracketed} marked retroversions), {q2_count} direct 2Q18 lines, {q11_count} direct 11Q5 lines, {syriac_count} Syriac Peshitta verses, and {reconstruction_count} aligned Sirach references; unresolved Hebrew gaps remain explicit.")
 
 def validate_dss():
     import json as json_module
