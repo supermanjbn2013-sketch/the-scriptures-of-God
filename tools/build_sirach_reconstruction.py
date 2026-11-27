@@ -13,7 +13,6 @@ from collections import defaultdict
 ROOT = pathlib.Path("app/src/main/assets")
 GREEK = ROOT / "corpus/verses.jsonl"
 KAHANA = ROOT / "corpus/sirach/kahana_1912_hebrew.jsonl"
-KAHANA_SEFARIA = ROOT / "corpus/sirach/kahana_sefaria_hebrew.jsonl"
 SYRIAC = ROOT / "corpus/sirach/peshitta_syriac.jsonl"
 Q2_INDEX = ROOT / "corpus/sirach/2q18_index.json"
 OUT = ROOT / "corpus/sirach/reconstructed_hebrew_comparison.jsonl"
@@ -40,16 +39,12 @@ def main():
         key = (int(row["chapter"]), int(row["verse_number"]))
         kahana[key].append(row)
 
-    kahana_sefaria = {}
-    for row in read_jsonl(KAHANA_SEFARIA):
-        kahana_sefaria[(int(row["chapter"]), int(row["verse_number"]))] = row
-
     syriac = {}
     for row in read_jsonl(SYRIAC):
         syriac[row["ref"]] = row
 
     q2_index = json.loads(Q2_INDEX.read_text(encoding="utf-8")) if Q2_INDEX.exists() else {}
-    keys = set(kahana) | set(kahana_sefaria)
+    keys = set(kahana)
     for ref in set(greek) | set(syriac):
         parts = ref.rsplit(" ", 1)[-1].split(":")
         if len(parts) == 2:
@@ -64,9 +59,6 @@ def main():
         "kahana_manuscript_based_edition": 0,
         "kahana_multiple_readings": 0,
         "kahana_retroversion_readings": 0,
-        "with_sefaria_kahana": 0,
-        "kahana_sefaria_only": 0,
-        "kahana_digitizations_differ": 0,
         "no_kahana_text_in_current_import": 0,
         "with_greek": 0,
         "with_syriac": 0,
@@ -75,18 +67,9 @@ def main():
     for chapter, verse in sorted(keys):
         ref = f"Sirach {chapter}:{verse}"
         kh = sorted(kahana.get((chapter, verse), []), key=lambda x: x["verse_label"])
-        ks = kahana_sefaria.get((chapter, verse))
         gr = greek.get(ref)
         sy = syriac.get(ref)
         stats["kahana_retroversion_readings"] += sum(1 for item in kh if item["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac")
-        if ks and ks["editorial_status"] == "bracketed_hebrew_retroversion_in_kahana_edition":
-            stats["kahana_retroversion_readings"] += 1
-        if ks:
-            stats["with_sefaria_kahana"] += 1
-        if ks and not kh:
-            stats["kahana_sefaria_only"] += 1
-        if ks and kh and ks["text"] != kh[0]["text"]:
-            stats["kahana_digitizations_differ"] += 1
         if len(kh) > 1:
             status = "kahana_multiple_readings_preserved"
             stats["kahana_multiple_readings"] += 1
@@ -96,10 +79,6 @@ def main():
         elif kh:
             status = "kahana_manuscript_based_edition"
             stats["kahana_manuscript_based_edition"] += 1
-        elif ks and ks["editorial_status"] == "bracketed_hebrew_retroversion_in_kahana_edition":
-            status = "editorial_hebrew_retroversion_from_sefaria_kahana"
-        elif ks:
-            status = "kahana_sefaria_digitization_only"
         else:
             status = "no_kahana_text_in_current_import"
             stats["no_kahana_text_in_current_import"] += 1
@@ -124,7 +103,7 @@ def main():
             "chapter":chapter,
             "verse":verse,
             "hebrew_reading_status":status,
-            "hebrew_text":kh[0]["text"] if len(kh)==1 else (ks["text"] if not kh and ks else None),
+            "hebrew_text":kh[0]["text"] if len(kh)==1 else None,
             "hebrew_readings":[
                 {
                     "verse_label":x["verse_label"],
@@ -134,31 +113,7 @@ def main():
                     "source_url":x["source_url"],
                     "direct_manuscript_witness":False
                 } for x in kh
-            ] + ([{
-                "verse_label":str(ks["verse_number"]),
-                "text":ks["text"],
-                "editorial_status":ks["editorial_status"],
-                "source_id":ks["source_id"],
-                "source_url":ks["source_url"],
-                "direct_manuscript_witness":False
-            }] if ks and not kh else []),
-            "kahana_sefaria_reading":{
-                "text":ks["text"],
-                "editorial_status":ks["editorial_status"],
-                "source_id":ks["source_id"],
-                "source_url":ks["source_url"],
-                "version_title":ks["edition"],
-                "direct_manuscript_witness":False
-            } if ks else None,
-            "kahana_sefaria_alignment_status":(
-                "different_digital_transcriptions_of_same_printed_edition"
-                if ks and kh and ks["text"] != kh[0]["text"] else
-                "same_text_in_both_digital_transcriptions"
-                if ks and kh else
-                "only_sefaria_digitization_available"
-                if ks and not kh else
-                "no_sefaria_record_for_reference"
-            ),
+            ],
             "greek_text":gr.get("text") if gr else None,
             "greek_source":{
                 "source":gr.get("source"),
@@ -183,9 +138,7 @@ def main():
                 if status == "kahana_manuscript_based_edition" else
                 "Multiple Kahana readings are preserved separately; no preferred reading is selected automatically."
                 if status == "kahana_multiple_readings_preserved" else
-                "Sefaria's explicitly selected Kahana version supplies a Hebrew reading absent from the current Wikisource import; this remains Kahana's printed edition, not a direct manuscript reading."
-                if status in ("kahana_sefaria_digitization_only", "editorial_hebrew_retroversion_from_sefaria_kahana") else
-                "No Kahana text is present for this reference in either current digital import. This is an online source-coverage gap, not proof that no Hebrew manuscript text survives. Greek and/or Syriac parallels remain separate; no Hebrew wording is invented."
+                "No Kahana text is present for this reference in the current online transcription. This is an online source-coverage gap, not proof that no Hebrew manuscript text survives. Greek and/or Syriac parallels remain separate; no Hebrew wording is invented."
             ),
             "method":"Reference alignment only; no automatic retroversion or silent merging of Hebrew, Greek, and Syriac.",
             "alignment_caveat":"Chapter and verse labels are cross-reference anchors; different textual traditions may divide or number verses differently, so an aligned reference does not prove exact textual equivalence."
@@ -200,7 +153,7 @@ def main():
         "record_type":"sirach_verse_aligned_witness_comparison_and_hebrew_restoration_layer",
         "record_count":len(records),
         "sources":{
-            "hebrew":"David Kahana 1912 edition in separate Wikisource and Sefaria digital transcriptions; manuscript-based and bracketed editorial retroversion statuses kept distinct",
+            "hebrew":"David Kahana 1912 edition; manuscript-based and bracketed editorial retroversion statuses kept distinct",
             "greek":"Swete Septuagint Greek edition; edited text, not a diplomatic codex transcription",
             "syriac":"ETCBC Syriac Corpus 0.92 Peshitta; preliminary Ben Sira text, CC BY-NC 4.0",
             "qumran":"2Q18 and 11Q5 direct line evidence are stored separately; passage locators are linked here, with 11Q5 retained as a Psalms scroll"
@@ -213,8 +166,7 @@ def main():
             "Bracketed Kahana passages are editorial Hebrew retroversions from ancient versions, not direct Hebrew witness readings.",
             "Greek and Syriac are retained in their own languages and are never mechanically translated back into Hebrew.",
             "The Qumran 2Q18 range links are locators only; line-level fragments remain in their separate asset.",
-            "The Wikisource Kahana transcription is marked incomplete; missing online verses are not automatically ancient manuscript lacunae.",
-            "Sefaria's explicit Kahana version is retained as a separate digitization of the same printed edition; differences between the digital transcriptions are not treated as ancient manuscript variants."
+            "The online Kahana transcription is marked incomplete; missing online verses are not automatically ancient manuscript lacunae."
         ],
         "asset":"corpus/sirach/reconstructed_hebrew_comparison.jsonl"
     }
