@@ -226,7 +226,8 @@ def main():
             "Kahana's printed edition is not a diplomatic transcription of one manuscript.",
             "Bracketed Kahana passages are editorial Hebrew retroversions from ancient versions, not direct Hebrew witness readings.",
             "Greek and Syriac are retained in their own languages and are never mechanically translated back into Hebrew.",
-            "The Qumran 2Q18 range links are locators only; line-level fragments remain in their separate asset.",
+            "Direct 2Q18 and 11Q5 transcription lines are attached as separate evidence arrays to aligned passage records; their text is never merged into the Kahana Hebrew reading.",
+            "QDR passage references remain editorial anchors; display-line numbers are not manuscript physical line numbers.",
             "The online Kahana transcription is marked incomplete; missing online verses are not automatically ancient manuscript lacunae."
         ],
         "asset":"corpus/sirach/reconstructed_hebrew_comparison.jsonl"
