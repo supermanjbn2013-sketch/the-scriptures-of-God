@@ -767,6 +767,37 @@
       ]
     },
     {
+      "id": "sirach",
+      "title": "Sirach (Ben Sira)",
+      "language_scope": [
+        "Hebrew",
+        "Greek",
+        "Syriac"
+      ],
+      "description": "A distinct writing preserved in fragmentary Hebrew witnesses and ancient translations. Surviving Hebrew manuscript text, Greek and Syriac witnesses, and later editorial Hebrew restorations are kept as separate textual layers.",
+      "status": "source_layers_in_progress; passage_level_witness_comparison_and_reconstruction_pending",
+      "source_editions": [
+        {
+          "source_id": "swete-lxx-apocrypha",
+          "source_name": "Swete Septuagint — Greek Sirach",
+          "source_file": "verses.jsonl",
+          "source_status": "Greek edition source included; not a diplomatic transcription of one codex",
+          "witness_basis": "Greek Septuagint textual tradition as represented by the Swete edition",
+          "transcription_type": "edited Greek text; retained as a separate versional witness"
+        },
+        {
+          "source_id": "kahana-ben-sira-1912",
+          "source_name": "David Kahana, Ben Sira (1912), Hebrew edition",
+          "source_file": "sirach/kahana_1912_hebrew.jsonl",
+          "source_status": "source importer added; text extraction and passage-level verification required",
+          "witness_basis": "Kahana's edition based chiefly on Cairo Genizah Hebrew manuscripts; square-bracketed passages in the Wikisource transcription identify Hebrew retroversions where the Hebrew source was absent",
+          "transcription_type": "early printed Hebrew edition with manuscript-based readings and explicitly marked editorial Hebrew retroversions; not a diplomatic transcription of one manuscript",
+          "license": "1912 printed edition public domain; Wikisource transcription CC BY-SA 4.0"
+        }
+      ],
+      "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
+    },
+    {
       "id": "song_of_songs",
       "title": "Song of Songs",
       "language_scope": [
