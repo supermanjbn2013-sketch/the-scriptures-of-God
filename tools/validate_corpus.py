@@ -223,6 +223,14 @@ def validate_sirach():
                 )
             if row["hebrew_reading_status"] == "no_kahana_text_in_current_import":
                 assert row["hebrew_text"] is None and row["reconstruction_note"]
+            assert isinstance(row.get("direct_2q18_line_evidence"), list)
+            assert isinstance(row.get("direct_11q5_line_evidence"), list)
+            if row["ref"] in ("Sirach 6:14", "Sirach 6:15", "Sirach 6:20", "Sirach 6:21", "Sirach 6:22", "Sirach 6:23", "Sirach 6:24", "Sirach 6:25", "Sirach 6:26", "Sirach 6:27", "Sirach 6:28", "Sirach 6:29", "Sirach 6:30", "Sirach 6:31"):
+                assert row["direct_2q18_line_evidence"], f"Missing direct 2Q18 line evidence at {row['ref']}"
+            if row["ref"] in ("Sirach 51:13", "Sirach 51:14", "Sirach 51:15", "Sirach 51:16", "Sirach 51:17", "Sirach 51:18", "Sirach 51:19", "Sirach 51:20", "Sirach 51:30"):
+                assert row["direct_11q5_line_evidence"], f"Missing direct 11Q5 line evidence at {row['ref']}"
+            assert all(item["witness_id"] == "2Q18" for item in row["direct_2q18_line_evidence"])
+            assert all(item["witness_id"] == "11Q5" for item in row["direct_11q5_line_evidence"])
             assert row["greek_text"] is None or isinstance(row["greek_text"], str)
             assert row["syriac_text"] is None or isinstance(row["syriac_text"], str)
             assert row["method"].startswith("Reference alignment only")
