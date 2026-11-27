@@ -191,7 +191,7 @@ def validate_sirach():
     reconstruction_index = json.loads(reconstruction_index_path.read_text(encoding="utf-8"))
     assert reconstruction_index["record_type"] == "sirach_verse_aligned_witness_comparison_and_hebrew_restoration_layer"
     assert reconstruction_index["record_count"] >= 1000
-    counts = {"editorial_hebrew_retroversion":0,"kahana_manuscript_based_edition":0,"kahana_multiple_readings_preserved":0,"unresolved_hebrew_gap":0}
+    counts = {"editorial_hebrew_retroversion":0,"kahana_manuscript_based_edition":0,"kahana_multiple_readings_preserved":0,"no_kahana_text_in_current_import":0}
     reconstruction_count = 0
     with reconstruction_path.open(encoding="utf-8") as stream:
         for raw in stream:
@@ -203,7 +203,7 @@ def validate_sirach():
             counts[row["hebrew_reading_status"]] += 1
             if row["hebrew_reading_status"] == "editorial_hebrew_retroversion":
                 assert row["hebrew_text"].startswith("[") and row["hebrew_text"].endswith("]")
-            if row["hebrew_reading_status"] == "unresolved_hebrew_gap":
+            if row["hebrew_reading_status"] == "no_kahana_text_in_current_import":
                 assert row["hebrew_text"] is None and row["reconstruction_note"]
             assert row["greek_text"] is None or isinstance(row["greek_text"], str)
             assert row["syriac_text"] is None or isinstance(row["syriac_text"], str)
