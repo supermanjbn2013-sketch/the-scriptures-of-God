@@ -863,7 +863,9 @@
         "The edition is a printed scholarly compilation, not an original ancient manuscript.",
         "Kahana reports that some Hebrew portions absent from the manuscripts were supplied as Hebrew translations from Greek and Syriac by Kamenetsky.",
         "The Wikisource transcription is explicitly incomplete; it is not a complete machine-readable text.",
-        "No manuscript shelfmark, fragment, column, or line coordinate is inferred from Kahana's printed text alone."
+        "No manuscript shelfmark, fragment, column, or line coordinate is inferred from Kahana's printed text alone.",
+        "Kahana's own 1912 preface explicitly states that the first two chapters and some verses of chapter 3 were not preserved in Hebrew manuscripts and were translated into Hebrew from Greek and Syriac by Dr. Kamenetzky.",
+        "The printed Hebrew in those passages is editorial retroversion, not an ancient Hebrew manuscript witness; square brackets and the chapter-level source note must remain visible."
       ]
     },
     {
