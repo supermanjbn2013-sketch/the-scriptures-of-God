@@ -1014,22 +1014,36 @@
       "id": "margoliouth-1899-ms-b",
       "name": "G. Margoliouth — The Original Hebrew of Ecclesiasticus XXXI.12–31 and XXXVI.22–XXXVII.26",
       "language": "Hebrew, with English scholarly notes",
-      "coverage": "Sirach 31:12–31 and 36:22–37:26; printed transcription of Cairo Genizah manuscript B, folio VII, with scholarly notes.",
-      "record_type": "Public-domain scholarly transcription of direct Hebrew manuscript B; not the physical manuscript",
+      "coverage": "The published edition reports Sirach 31:12–31 and 36:22–37:26. The physical manuscript catalogue and modern critical edition give more specific, and not perfectly identical, boundary descriptions; retain those distinctions.",
+      "record_type": "Public-domain 1899 scholarly transcription of the British Library Or. 5518.2 bifolio of direct Hebrew manuscript B; not the physical manuscript",
       "edition": "G. Margoliouth, The Original Hebrew of Ecclesiasticus XXXI.12–31 and XXXVI.22–XXXVII.26, The Jewish Quarterly Review 12, no. 1 (October 1899), pp. 1–33.",
       "source_url": "https://www.jstor.org/stable/1450569",
       "doi": "https://doi.org/10.2307/1450569",
-      "license": "Public domain; 1899 journal article",
+      "license": "Public domain 1899 article; JSTOR identifies the article as Open Access",
       "attribution": "G. Margoliouth, The Original Hebrew of Ecclesiasticus XXXI.12–31 and XXXVI.22–XXXVII.26, The Jewish Quarterly Review 12, no. 1 (1899), 1–33.",
-      "manuscript_basis": "Cairo Genizah manuscript B, folio VII (British Library Or. 5518 fragment record); retain its manuscript identity separately from Genizah-D.",
+      "manuscript_basis": "British Library Or. 5518.2, a bifolio of Cairo Genizah manuscript B. The modern critical edition maps quire folio IV recto/verso to Sirach 31:12–31 and quire folio VII recto/verso to Sirach 36:22–37:26. These are two portions of one bifolio, not two independent manuscripts.",
       "limitations": [
-        "This is a printed scholarly transcription of manuscript B, not a diplomatic transcription newly made from the physical fragment in this project.",
-        "The article covers only Sirach 31:12–31 and 36:22–37:26; it does not fill all gaps in either chapter.",
-        "Margoliouth's transcription and notes must be preserved as an edition layer with folio and verse references; do not merge it silently with Kahana or Cowley–Neubauer.",
-        "The British Library/National Library of Israel catalogue describes Or. 5518 as two damaged paper folios with two columns and identifies its textual range as Sirach 34:12–31 and 36:24–37:24; the catalogue's scholarly note associates the fragment with manuscript B. The article's broader printed coverage includes the relevant manuscript B folio.",
+        "This is a printed scholarly transcription of the Or. 5518.2 bifolio of manuscript B, not a new diplomatic transcription of the physical fragment.",
+        "The 1899 article covers two separated portions: Sirach 31:12–31 and 36:22–37:26; it does not fill all gaps in either chapter.",
+        "The quire folio IV and VII labels are manuscript-structure foliation, not two separate witnesses.",
+        "The NLI/BL catalogue's physical-text description and the article/modern edition report differing verse endpoints for the second portion; do not silently reconcile them.",
+        "Margoliouth's transcription and notes must remain a distinct edition layer with page and folio references; do not merge silently with Kahana or Cowley–Neubauer.",
         "The separate Genizah-D manuscript remains an independent witness for overlapping Sirach 36:29–38:1a material."
       ],
-      "institutional_catalogue_url": "https://searcharchives.bl.uk/catalog/032-003393550"
+      "institutional_catalogue_url": "https://searcharchives.bl.uk/catalog/032-003393550",
+      "folio_mapping": {
+        "quire_folio_IV_recto": "Sirach 31:12–21",
+        "quire_folio_IV_verso": "Sirach 31:22–31",
+        "quire_folio_VII_recto": "Sirach 36:22–37:9",
+        "quire_folio_VII_verso": "Sirach 37:11–26",
+        "basis": "Modern codicological reconstruction and critical edition; preserve quire foliation separately from the British Library shelfmark."
+      },
+      "boundary_discrepancy": {
+        "published_article_title": "Sirach 36:22–37:26",
+        "British_Library_and_NLI_catalogue_description": "Sirach 36:24–37:24 (the NLI scholarly description also reports Margoliouth's broader printed boundary)",
+        "modern_critical_edition": "Sirach 36:22–37:26",
+        "handling": "Do not silently normalize these endpoints. The manuscript is damaged; retain physical fragment endpoints, printed-edition range, and critical-edition mapping as separately attributed claims pending direct page/facsimile collation."
+      }
     }
   ],
   "not_yet_integrated": [
