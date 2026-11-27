@@ -36,9 +36,9 @@ def main():
     if len(rows) != 9:
         raise SystemExit(f"Expected 9 curated Sirach 51 source lines, found {len(rows)}")
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    with OUT.open("w", encoding="utf-8", newline="\\n") as target:
+    with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for row in rows:
-            target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
     ranges = sorted({row["published_passage_range"] for row in rows})
     INDEX.write_text(json.dumps({
         "schema_version":1,
@@ -58,7 +58,7 @@ def main():
             "The Sirach 51:30 entry preserves only the first two words; the remainder of the QDR line belongs to another composition.",
             "No missing words or verses are supplied from another witness in this asset."
         ]
-    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Built {len(rows)} direct 11Q5 Sirach line records from the pinned QDR transcription.")
 
 
