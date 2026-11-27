@@ -254,7 +254,7 @@ def validate_sirach():
     assert all(row["text_status"].startswith("unverified_hebrew_script_OCR_candidate") for row in cowley_candidates)
     assert all(row["hebrew_script_character_count"] > 0 and row["raw_ocr_line"] for row in cowley_candidates)
     assert all(row["pdf_page_number"] > 0 and row["ocr_line_number"] > 0 for row in cowley_candidates)
-    assert "not verse aligned" in cowley_candidates_index["text_status"]
+    assert "no verse alignment" in cowley_candidates_index["text_status"]
     qdr_manifest_path = ROOT / "dss/qumran_digital/source_manifest.json"
     assert qdr_manifest_path.exists()
     qdr_manifest = json.loads(qdr_manifest_path.read_text(encoding="utf-8"))
