@@ -127,7 +127,31 @@ def validate_sirach():
     assert count == index["records"] > 0
     assert bracketed == index["bracketed_retroversion_records"]
     assert "incomplete" in index["source_page_status"].lower()
-    print(f"Validated {count} Kahana Hebrew Sirach edition records; {bracketed} marked editorial retroversions. No record is mislabelled as a direct manuscript transcription.")
+    coverage_path = ROOT / "catalog/sirach_witness_coverage.json"
+    assert coverage_path.exists(), "Sirach Hebrew witness coverage inventory is missing"
+    coverage = json.loads(coverage_path.read_text(encoding="utf-8"))
+    assert coverage["writing_id"] == "sirach"
+    assert set(coverage["chapter_summary"]["chapters_without_known_surviving_hebrew_manuscript_text"]) == {1, 2, 17, 24, 27, 28, 29}
+    witness_ids = {item["witness_id"] for item in coverage["witnesses"]}
+    assert {"2Q18", "Mas1h", "11Q5", "Genizah-A", "Genizah-B", "Genizah-C", "Genizah-D", "Genizah-E", "Genizah-F"}.issubset(witness_ids)
+    assert any(item["witness_id"] == "11Q5" and "not a separate Sirach codex" in " ".join(item["limitations"]) for item in coverage["witnesses"])
+    q2_path = ROOT / "corpus/sirach/2q18_hebrew_lines.jsonl"
+    q2_index_path = ROOT / "corpus/sirach/2q18_index.json"
+    assert q2_path.exists() and q2_index_path.exists(), "Direct 2Q18 Sirach fragment text is missing"
+    q2_index = json.loads(q2_index_path.read_text(encoding="utf-8"))
+    q2_count = 0
+    with q2_path.open(encoding="utf-8") as stream:
+        for raw in stream:
+            if not raw.strip():
+                continue
+            row = json.loads(raw)
+            assert row["writing_id"] == "sirach" and row["witness_id"] == "2Q18"
+            assert row["transcription_text"] and row["source_coordinate"]
+            assert row["reconstruction_status"] == "not_reconstructed; preserved_line_only"
+            q2_count += 1
+    assert q2_count == q2_index["line_records"] > 0
+    assert "CC BY-NC 4.0" == q2_index["license"]
+    print(f"Validated {count} Kahana Hebrew Sirach edition records ({bracketed} marked editorial retroversions) and {q2_count} direct 2Q18 manuscript lines; no editorial text is labelled as a direct witness.")
 
 def validate_dss():
     import json as json_module
