@@ -76,7 +76,8 @@ def main():
                     ]
                     if book_entries:
                         book_attrs = book_entries[-1].get("attributes", {})
-                        book_label = book_attrs.get("n") or book_attrs.get("id") or book_label
+                        book_candidates = [book_attrs.get("n"), book_attrs.get("id")]
+                        book_label = next((value for value in book_candidates if is_sirach(value)), book_candidates[0] or book_candidates[1] or book_label)
                     if book_label:
                         book_labels.add(str(book_label))
                     if not is_sirach(book_label):
