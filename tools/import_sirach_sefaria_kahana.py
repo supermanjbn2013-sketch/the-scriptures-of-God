@@ -70,7 +70,7 @@ def main():
             chapters_without_text.append(chapter)
             chapter_counts[str(chapter)] = 0
             continue
-        if chapter == 1:
+        if version_source is None:
             version_source = version_data.get("versionSource")
         hebrew = version_data.get("text")
         if isinstance(hebrew, str):
