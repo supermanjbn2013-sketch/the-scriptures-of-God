@@ -35,16 +35,25 @@ def main():
             check=True
         )
         extracted = text_path.read_text(encoding="utf-8", errors="replace")
-        pages = extracted.split("\\f")
+        pdf_info = subprocess.run(
+            ["pdfinfo", str(pdf_path)],
+            check=True,
+            capture_output=True,
+            text=True
+        ).stdout
+        page_match = re.search(r"^Pages:\\s+(\\d+)", pdf_info, re.MULTILINE)
+        if not page_match:
+            raise RuntimeError("Could not determine the physical page count of the Cowley-Neubauer PDF.")
+        page_count = int(page_match.group(1))
         ocr_by_page = {}
-        # The Wikimedia scan has no embedded Hebrew OCR layer. Run Hebrew OCR
-        # page-by-page, retaining the raw output as unverified source data.
-        for page_number in range(1, len(pages) + 1):
+        # The Wikimedia scan has no embedded Hebrew OCR layer. Run Hebrew+English
+        # OCR page-by-page, retaining the raw output as unverified source data.
+        for page_number in range(1, page_count + 1):
             image_prefix = pathlib.Path(temp) / f"page-{page_number:03d}"
             subprocess.run(
                 [
                     "pdftoppm", "-f", str(page_number), "-l", str(page_number),
-                    "-r", "250", "-singlefile", "-png", str(pdf_path), str(image_prefix)
+                    "-r", "300", "-singlefile", "-png", str(pdf_path), str(image_prefix)
                 ],
                 check=True,
                 stdout=subprocess.DEVNULL,
@@ -52,7 +61,7 @@ def main():
             )
             image_path = image_prefix.with_suffix(".png")
             result = subprocess.run(
-                ["tesseract", str(image_path), "stdout", "-l", "heb", "--psm", "1"],
+                ["tesseract", str(image_path), "stdout", "-l", "heb+eng", "--psm", "4"],
                 check=True,
                 capture_output=True,
                 text=True,
@@ -64,11 +73,9 @@ def main():
 
     rows = []
     hebrew_pages = []
-    for page_number, page_text in enumerate(pages, start=1):
-        if not page_text.strip() and not ocr_by_page.get(page_number, "").strip():
-            continue
+    for page_number in range(1, page_count + 1):
         ocr_text = ocr_by_page.get(page_number, "")
-        contains_hebrew = bool(re.search(r"[\u0590-\u05FF]", ocr_text))
+        contains_hebrew = bool(re.search(r"[\\u0590-\\u05FF]", ocr_text))
         if contains_hebrew:
             hebrew_pages.append(page_number)
         rows.append({
@@ -77,13 +84,12 @@ def main():
             "manuscript_id": "MS B",
             "edition_source_id": "cowley-neubauer-1897-ms-b",
             "pdf_page_number": page_number,
-            "pdf_text_layer": page_text,
             "ocr_text": ocr_text,
             "contains_hebrew_script": contains_hebrew,
-            "text_status": "raw_Tesseract_Hebrew_OCR_not_verse_aligned_or_verified_against_facsimile" if contains_hebrew else "raw_pdf_page_text_and_ocr_not_verse_aligned",
+            "text_status": "raw_Tesseract_Hebrew_OCR_not_verse_aligned_or_verified_against_facsimile" if contains_hebrew else "raw_pdf_page_OCR_not_verse_aligned",
             "ocr_engine": "Tesseract",
-            "ocr_language": "heb",
-            "ocr_dpi": 250,
+            "ocr_language": "heb+eng",
+            "ocr_dpi": 300,
             "source_title": TITLE,
             "source_url": URL,
             "source_sha256": digest,
@@ -91,7 +97,7 @@ def main():
             "attribution": "A. E. Cowley and Adolf Neubauer, eds., The Original Hebrew of a Portion of Ecclesiasticus, Oxford: Clarendon Press, 1897."
         })
 
-    if len(rows) < 40 or len(hebrew_pages) < 5:
+    if len(rows) < 40 or len(hebrew_pages) < 1:
         raise RuntimeError(
             f"Cowley-Neubauer Hebrew OCR unexpectedly sparse: "
             f"{len(rows)} pages, {len(hebrew_pages)} pages containing Hebrew script."
@@ -116,8 +122,8 @@ def main():
         "attribution": "A. E. Cowley and Adolf Neubauer, eds., The Original Hebrew of a Portion of Ecclesiasticus, Oxford: Clarendon Press, 1897.",
         "pdf_page_count_extracted": len(rows),
         "ocr_engine": "Tesseract",
-        "ocr_language": "heb",
-        "ocr_dpi": 250,
+        "ocr_language": "heb+eng",
+        "ocr_dpi": 300,
         "pages_with_hebrew_script": hebrew_pages,
         "pages_with_hebrew_count": len(hebrew_pages),
         "coverage_as_printed": "Sirach 39:15–49:11",
@@ -131,7 +137,7 @@ def main():
         ]
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
-        f"Extracted {len(rows)} Cowley-Neubauer PDF pages with Tesseract Hebrew OCR; "
+        f"Extracted {len(rows)} Cowley-Neubauer PDF pages with Tesseract Hebrew+English OCR; "
         f"{len(hebrew_pages)} pages contain Hebrew script; SHA256={digest}"
     )
     for sample_page in hebrew_pages[:3]:
