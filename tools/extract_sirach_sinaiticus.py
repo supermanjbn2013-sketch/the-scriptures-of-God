@@ -69,7 +69,6 @@ def main():
                 for token in line.get("token_markup", []):
                     context = token.get("context", [])
                     book_label = context_value(context, "div", "n")
-                    # Prefer the nearest book-level div if several nested divs carry n.
                     book_entries = [
                         item for item in context
                         if item.get("element") == "div"
@@ -110,6 +109,7 @@ def main():
                         token_text = ""
                     if not token_text:
                         continue
+
                     ref = f"Sirach {chapter}:{verse}"
                     row = records.setdefault(ref, {
                         "writing_id": "sirach",
@@ -118,6 +118,11 @@ def main():
                         "verse": verse,
                         "language": "grc",
                         "text": [],
+                        "correction_readings": [],
+                        "editorial_supplied_text": [],
+                        "marginal_text": [],
+                        "note_text": [],
+                        "other_readings": [],
                         "witness_id": "Codex Sinaiticus",
                         "manuscript_id": "GA 01",
                         "source_verse_marker": verse_marker,
@@ -127,10 +132,9 @@ def main():
                         "source_url": SOURCE_URL,
                         "license": LICENSE,
                         "attribution": ATTRIBUTION,
-                        "text_status": "direct_Greek_manuscript_transcription; separate_from_Hebrew_and_other_Greek_editions",
-                        "reconstruction_status": "preserved_manuscript_text_only; no_missing_words_supplied"
+                        "text_status": "direct_Greek_manuscript_main_reading; corrections_and_editorial_supply_separate",
+                        "reconstruction_status": "preserved_main_reading_only; no_missing_words_supplied"
                     })
-                    row["text"].append(token_text)
                     coordinate = {
                         "page_id": line.get("page_id"),
                         "column_id": line.get("column_id"),
@@ -138,6 +142,31 @@ def main():
                     }
                     if coordinate not in row["source_coordinates"]:
                         row["source_coordinates"].append(coordinate)
+
+                    context_elements = {item.get("element") for item in context}
+                    reading_entries = [item for item in context if item.get("element") == "rdg"]
+                    reading_attrs = reading_entries[-1].get("attributes", {}) if reading_entries else {}
+                    reading_type = reading_attrs.get("type", "")
+                    corrector = reading_attrs.get("n")
+                    token_record = {
+                        "text": token_text,
+                        "reading_type": reading_type or None,
+                        "corrector": corrector,
+                        "coordinate": coordinate
+                    }
+
+                    if "margin" in context_elements:
+                        row["marginal_text"].append(token_record)
+                    elif "note" in context_elements:
+                        row["note_text"].append(token_record)
+                    elif "supplied" in context_elements:
+                        row["editorial_supplied_text"].append(token_record)
+                    elif reading_entries and reading_type == "corr":
+                        row["correction_readings"].append(token_record)
+                    elif reading_entries and reading_type != "main-corr":
+                        row["other_readings"].append(token_record)
+                    else:
+                        row["text"].append(token_text)
 
     if not records:
         raise SystemExit(
@@ -170,10 +199,18 @@ def main():
         "chapters": chapters,
         "book_labels_observed_in_TEI": sorted(book_labels),
         "sirach_tokens_without_chapter_or_verse_marker": unmatched_sirach_markers,
+        "correction_token_count": sum(len(row["correction_readings"]) for row in final_rows),
+        "editorial_supplied_token_count": sum(len(row["editorial_supplied_text"]) for row in final_rows),
+        "marginal_token_count": sum(len(row["marginal_text"]) for row in final_rows),
+        "note_token_count": sum(len(row["note_text"]) for row in final_rows),
+        "other_reading_token_count": sum(len(row["other_readings"]) for row in final_rows),
+        "verses_without_main_reading": [row["ref"] for row in final_rows if not row["text"]],
         "asset": "corpus/sirach/codex_sinaiticus_greek.jsonl",
         "limitations": [
             "This is the Greek text of one physical codex, not a Hebrew manuscript and not the Swete critical edition.",
             "Verse labels are mapped from the TEI book, chapter and verse containers; source page, column and line identifiers are retained.",
+            "Only the main-corr/original reading is used as the base text. Corrector readings, editorial supplied text, marginal material and notes are stored separately.",
+            "TEI supplied text is editorial reconstruction, not direct manuscript writing; it is never silently included in the base text.",
             "Only text actually present in the imported transcription is included; absent manuscript text is not filled.",
             "The upstream transcription is CC BY-NC-SA 3.0; non-commercial and share-alike conditions apply.",
             "Any uncertain verse mapping must be resolved against the TEI source and manuscript page before being treated as final."
