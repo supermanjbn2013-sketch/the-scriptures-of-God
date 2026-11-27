@@ -44,6 +44,26 @@ def main():
         syriac[row["ref"]] = row
 
     q2_index = json.loads(Q2_INDEX.read_text(encoding="utf-8")) if Q2_INDEX.exists() else {}
+    q2_lines_path = ROOT / "corpus/sirach/2q18_hebrew_lines.jsonl"
+    q11_lines_path = ROOT / "corpus/sirach/11q5_sirach_51_lines.jsonl"
+    q2_lines = list(read_jsonl(q2_lines_path)) if q2_lines_path.exists() else []
+    q11_lines = list(read_jsonl(q11_lines_path)) if q11_lines_path.exists() else []
+
+    def range_contains(passage_range, chapter, verse):
+        if not passage_range:
+            return False
+        try:
+            chapter_part, verse_part = passage_range.replace("Sirach ", "").split(":")
+            if int(chapter_part) != chapter:
+                return False
+            first, last = verse_part.split("-") if "-" in verse_part else (verse_part, verse_part)
+            first = int(first)
+            last_match = __import__("re").match(r"\\d+", last)
+            last = int(last_match.group()) if last_match else first
+            return first <= verse <= last
+        except (ValueError, TypeError):
+            return False
+
     keys = set(kahana)
     for ref in set(greek) | set(syriac):
         parts = ref.rsplit(" ", 1)[-1].split(":")
@@ -95,8 +115,45 @@ def main():
             q2_ranges.append({"witness":"11Q5","manuscript_identity":"11QPs-a; Great Psalms Scroll","column_and_lines":"column XXI, lines 11-17","published_range":"Sirach 51:13-20","warning":"The Sirach hymn is preserved within a Psalms scroll; consult the separate line transcription and do not assume every word in each verse survives."})
         if chapter == 51 and verse == 30:
             q2_ranges.append({"witness":"11Q5","manuscript_identity":"11QPs-a; Great Psalms Scroll","column_and_lines":"column XXII, line 1","published_range":"Sirach 51:30","warning":"Only the first two words of Sirach 51:30 are preserved in the published transcription."})
+        q2_line_evidence = [
+            {
+                "witness_id": item["witness_id"],
+                "fragment": item["fragment"],
+                "source_coordinate": item["source_coordinate"],
+                "transcription_text": item["transcription_text"],
+                "normalized_text": item["normalized_text"],
+                "text_status": item["text_status"],
+                "source_revision": item["source_revision"],
+                "source_license": item["source_license"],
+                "warning": item["warning"]
+            }
+            for item in q2_lines
+            if range_contains(item.get("passage_range"), chapter, verse)
+        ]
+        q11_line_evidence = [
+            {
+                "witness_id": item["witness_id"],
+                "manuscript_identity": item["manuscript_identity"],
+                "column": item["column"],
+                "qdr_display_line": item["qdr_display_line"],
+                "text": item["text"],
+                "editorial_parallel_references": item["editorial_parallel_references"],
+                "published_passage_range": item["published_passage_range"],
+                "reference_status": item["reference_status"],
+                "source_url": item["source_url"],
+                "source_license": item["source_license"],
+                "reconstruction_status": item["reconstruction_status"],
+                "warning": item["warning"]
+            }
+            for item in q11_lines
+            if range_contains(item.get("published_passage_range"), chapter, verse)
+        ]
         if q2_ranges:
             stats["with_hebrew_fragment_range_evidence"] += 1
+        if q2_line_evidence:
+            stats["with_direct_2q18_line_evidence"] += 1
+        if q11_line_evidence:
+            stats["with_direct_11q5_line_evidence"] += 1
         records.append({
             "writing_id":"sirach",
             "ref":ref,
@@ -131,6 +188,8 @@ def main():
                 "license":sy.get("license")
             } if sy else None,
             "hebrew_fragment_range_evidence":q2_ranges,
+            "direct_2q18_line_evidence":q2_line_evidence,
+            "direct_11q5_line_evidence":q11_line_evidence,
             "reconstruction_note":(
                 "Kahana's bracketed Hebrew is an editorial retroversion, not surviving Hebrew manuscript text."
                 if status == "editorial_hebrew_retroversion" else
