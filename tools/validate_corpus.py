@@ -108,6 +108,9 @@ def validate_sirach():
     writings = json.loads((ROOT / "catalog/writing_catalog.json").read_text(encoding="utf-8"))
     sirach = next(item for item in writings["records"] if item["id"] == "sirach")
     assert any(item["source_id"] == "kahana-ben-sira-1912" for item in sirach["source_editions"])
+    assert any(item["source_id"] == "kahana-ben-sira-1912-scan" for item in sirach["source_editions"])
+    assert index["printed_scan_url"] == "https://upload.wikimedia.org/wikipedia/commons/3/3f/Ben-Sira-Kahana-1912.pdf"
+    assert index["printed_scan_status"].startswith("public-domain 120-page scan")
     count = 0
     bracketed = 0
     with path.open(encoding="utf-8") as stream:
