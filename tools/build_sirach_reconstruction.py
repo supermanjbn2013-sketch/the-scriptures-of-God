@@ -58,7 +58,8 @@ def main():
         "kahana_editorial_retroversion": 0,
         "kahana_manuscript_based_edition": 0,
         "kahana_multiple_readings": 0,
-        "unresolved_hebrew_gap": 0,
+        "kahana_retroversion_readings": 0,
+        "no_kahana_text_in_current_import": 0,
         "with_greek": 0,
         "with_syriac": 0,
         "with_2q18_passage_locator": 0
@@ -68,6 +69,7 @@ def main():
         kh = sorted(kahana.get((chapter, verse), []), key=lambda x: x["verse_label"])
         gr = greek.get(ref)
         sy = syriac.get(ref)
+        stats["kahana_retroversion_readings"] += sum(1 for item in kh if item["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac")
         if len(kh) > 1:
             status = "kahana_multiple_readings_preserved"
             stats["kahana_multiple_readings"] += 1
@@ -78,8 +80,8 @@ def main():
             status = "kahana_manuscript_based_edition"
             stats["kahana_manuscript_based_edition"] += 1
         else:
-            status = "unresolved_hebrew_gap"
-            stats["unresolved_hebrew_gap"] += 1
+            status = "no_kahana_text_in_current_import"
+            stats["no_kahana_text_in_current_import"] += 1
         if gr:
             stats["with_greek"] += 1
         if sy:
@@ -136,7 +138,7 @@ def main():
                 if status == "kahana_manuscript_based_edition" else
                 "Multiple Kahana readings are preserved separately; no preferred reading is selected automatically."
                 if status == "kahana_multiple_readings_preserved" else
-                "No Hebrew reading is supplied by the imported Kahana transcription for this reference. Greek and/or Syriac parallels remain separate; the Hebrew gap is unresolved."
+                "No Kahana text is present for this reference in the current online transcription. This is an online source-coverage gap, not proof that no Hebrew manuscript text survives. Greek and/or Syriac parallels remain separate; no Hebrew wording is invented."
             ),
             "method":"Reference alignment only; no automatic retroversion or silent merging of Hebrew, Greek, and Syriac.",
             "alignment_caveat":"Chapter and verse labels are cross-reference anchors; different textual traditions may divide or number verses differently, so an aligned reference does not prove exact textual equivalence."
@@ -157,7 +159,7 @@ def main():
             "qumran":"2Q18 and 11Q5 direct line evidence are stored separately; passage locators are linked here, with 11Q5 retained as a Psalms scroll"
         },
         "statistics":stats,
-        "unresolved_hebrew_references":[r["ref"] for r in records if r["hebrew_reading_status"]=="unresolved_hebrew_gap"],
+        "references_missing_from_current_kahana_import":[r["ref"] for r in records if r["hebrew_reading_status"]=="no_kahana_text_in_current_import"],
         "limitations":[
             "This is a verse-aligned research layer, not a claim that one complete ancient Hebrew manuscript survives.",
             "Kahana's printed edition is not a diplomatic transcription of one manuscript.",
