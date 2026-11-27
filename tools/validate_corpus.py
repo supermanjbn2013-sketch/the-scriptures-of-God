@@ -201,8 +201,13 @@ def validate_sirach():
             row = json.loads(raw)
             assert row["writing_id"] == "sirach" and row["witness_id"] == "Codex Sinaiticus"
             assert row["manuscript_id"] == "GA 01" and row["language"] == "grc"
-            assert row["text"] and row["source_coordinates"]
-            assert row["text_status"].startswith("direct_Greek_manuscript_transcription")
+            assert row["source_coordinates"]
+            assert row["text"] or row["correction_readings"] or row["editorial_supplied_text"] or row["other_readings"]
+            assert row["text_status"].startswith("direct_Greek_manuscript_main_reading")
+            assert all(item["reading_type"] == "corr" for item in row["correction_readings"])
+            assert all(item["text"] for item in row["editorial_supplied_text"])
+            assert all(item["text"] for item in row["marginal_text"])
+            assert all(item["text"] for item in row["note_text"])
             assert row["reconstruction_status"] == "preserved_manuscript_text_only; no_missing_words_supplied"
             sinaiticus_count += 1
     assert sinaiticus_count == sinaiticus_index["verse_record_count"] > 0
@@ -272,6 +277,8 @@ def validate_sirach():
                 assert row["sinaiticus_source"]["witness_id"] == "Codex Sinaiticus"
                 assert row["sinaiticus_source"]["manuscript_id"] == "GA 01"
                 assert row["sinaiticus_source"]["source_coordinates"]
+                assert isinstance(row["sinaiticus_source"]["correction_readings"], list)
+                assert isinstance(row["sinaiticus_source"]["editorial_supplied_text"], list)
                 sinaiticus_aligned_count += 1
             else:
                 assert row["sinaiticus_source"] is None
