@@ -130,6 +130,10 @@ def validate_sirach():
     assert count == index["records"] > 0
     assert bracketed == index["bracketed_retroversion_records"]
     assert index["fully_bracketed_retroversion_records"] + index["partially_bracketed_retroversion_records"] == bracketed
+    assert set(index["chapters_with_online_text"]).isdisjoint(index["chapters_without_online_text"])
+    assert set(index["chapters_with_online_text"]) | set(index["chapters_without_online_text"]) == set(range(1, 52))
+    assert sum(index["chapter_record_counts"].values()) == count
+    assert set(index["chapter_record_counts"]) == {str(chapter) for chapter in index["chapters_with_online_text"]}
     assert "incomplete" in index["source_page_status"].lower()
     coverage_path = ROOT / "catalog/sirach_witness_coverage.json"
     assert coverage_path.exists(), "Sirach Hebrew witness coverage inventory is missing"
