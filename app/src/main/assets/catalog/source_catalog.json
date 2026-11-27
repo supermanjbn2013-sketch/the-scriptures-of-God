@@ -901,6 +901,40 @@
         "A Cambridge repository study reports that the fragment containing Sirach 44:17 was no longer extant as of April 2015; its earlier published transcription remains a historical record.",
         "Use the site navigator to view each Masada section and its transcription; do not infer missing lines from adjacent sections."
       ]
+    },
+    {
+      "id": "bensira-genizah-manuscript-transcriptions",
+      "name": "Bensira.org — Cairo Genizah Ben Sira manuscripts A–F",
+      "language": "Hebrew",
+      "coverage": "Six medieval Cairo Genizah manuscript witnesses A–F, with folio images, manuscript navigation and scholarly transcriptions.",
+      "record_type": "External manuscript-image and transcription reference; text is not bundled in this corpus",
+      "edition": "The Book of Ben Sira, View the Manuscripts; transcriptions credited by the site to Martin G. Abegg and collaborators, with additional readings by Shulamit Elizur and Michael Rand",
+      "source_url": "https://www.bensira.org/navigator.php",
+      "license": "Permission-based access; no explicit text redistribution license identified. External reference only.",
+      "attribution": "Bensira.org, Gary A. Rendsburg and Jacob Binstein; transcription acknowledgements and institutional image permissions are listed on the site's introduction.",
+      "limitations": [
+        "The six manuscript witnesses A–F must remain separate; the site digitally reunites dispersed folios but does not turn them into one manuscript.",
+        "Do not bundle transcriptions or manuscript images without permission from the relevant rights holders.",
+        "The manuscript images are provided by multiple holding institutions under stated permissions.",
+        "Individual manuscript folios and their text coverage must be verified; the manuscript index's ranges do not prove continuous text."
+      ]
+    },
+    {
+      "id": "reymond-rey-2024-critical-hebrew-manuscripts",
+      "name": "A Critical Edition of the Hebrew Manuscripts of Ben Sira (2024)",
+      "language": "Hebrew, with French and English translations and commentary",
+      "coverage": "Critical edition of all nine Hebrew Ben Sira manuscript witnesses: Cairo Genizah A–F, the Rhyming Paraphrase, 2Q18, 11QPs-a and Masada.",
+      "record_type": "Scholarly critical edition and textual apparatus; not a freely redistributable digital transcription",
+      "edition": "Frédérique Michèle Rey and Eric D. Reymond, A Critical Edition of the Hebrew Manuscripts of Ben Sira, Brill, 2024",
+      "source_url": "https://www.nli.org.il/en/books/NNL_ALEPH997012945170405171/NLI",
+      "license": "Copyrighted scholarly edition; no redistribution license identified. Bibliographic reference only.",
+      "attribution": "Frédérique Michèle Rey and Eric D. Reymond, editors, translators and commentators.",
+      "limitations": [
+        "The edition presents each manuscript independently to preserve textual pluriformity.",
+        "Use its apparatus and restorations as scholarly editorial evidence, not as direct manuscript text.",
+        "No copyrighted transcription, translation or apparatus is copied into this repository.",
+        "This edition is a required reference for future passage-by-passage comparison of the nine Hebrew witnesses."
+      ]
     }
   ],
   "not_yet_integrated": [
