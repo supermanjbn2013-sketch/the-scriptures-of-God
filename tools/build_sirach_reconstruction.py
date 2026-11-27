@@ -183,7 +183,9 @@ def main():
                 if status == "kahana_manuscript_based_edition" else
                 "Multiple Kahana readings are preserved separately; no preferred reading is selected automatically."
                 if status == "kahana_multiple_readings_preserved" else
-                "No Kahana text is present for this reference in the current online transcription. This is an online source-coverage gap, not proof that no Hebrew manuscript text survives. Greek and/or Syriac parallels remain separate; no Hebrew wording is invented."
+                "Sefaria's explicitly selected Kahana version supplies a Hebrew reading absent from the current Wikisource import; this remains Kahana's printed edition, not a direct manuscript reading."
+                if status in ("kahana_sefaria_digitization_only", "editorial_hebrew_retroversion_from_sefaria_kahana") else
+                "No Kahana text is present for this reference in either current digital import. This is an online source-coverage gap, not proof that no Hebrew manuscript text survives. Greek and/or Syriac parallels remain separate; no Hebrew wording is invented."
             ),
             "method":"Reference alignment only; no automatic retroversion or silent merging of Hebrew, Greek, and Syriac.",
             "alignment_caveat":"Chapter and verse labels are cross-reference anchors; different textual traditions may divide or number verses differently, so an aligned reference does not prove exact textual equivalence."
@@ -198,7 +200,7 @@ def main():
         "record_type":"sirach_verse_aligned_witness_comparison_and_hebrew_restoration_layer",
         "record_count":len(records),
         "sources":{
-            "hebrew":"David Kahana 1912 edition; manuscript-based and bracketed editorial retroversion statuses kept distinct",
+            "hebrew":"David Kahana 1912 edition in separate Wikisource and Sefaria digital transcriptions; manuscript-based and bracketed editorial retroversion statuses kept distinct",
             "greek":"Swete Septuagint Greek edition; edited text, not a diplomatic codex transcription",
             "syriac":"ETCBC Syriac Corpus 0.92 Peshitta; preliminary Ben Sira text, CC BY-NC 4.0",
             "qumran":"2Q18 and 11Q5 direct line evidence are stored separately; passage locators are linked here, with 11Q5 retained as a Psalms scroll"
@@ -211,7 +213,8 @@ def main():
             "Bracketed Kahana passages are editorial Hebrew retroversions from ancient versions, not direct Hebrew witness readings.",
             "Greek and Syriac are retained in their own languages and are never mechanically translated back into Hebrew.",
             "The Qumran 2Q18 range links are locators only; line-level fragments remain in their separate asset.",
-            "The online Kahana transcription is marked incomplete; missing online verses are not automatically ancient manuscript lacunae."
+            "The Wikisource Kahana transcription is marked incomplete; missing online verses are not automatically ancient manuscript lacunae.",
+            "Sefaria's explicit Kahana version is retained as a separate digitization of the same printed edition; differences between the digital transcriptions are not treated as ancient manuscript variants."
         ],
         "asset":"corpus/sirach/reconstructed_hebrew_comparison.jsonl"
     }
