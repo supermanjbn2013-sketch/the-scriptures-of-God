@@ -19,15 +19,20 @@ def main():
     if not SOURCE.exists():
         raise SystemExit("ETCBC/QDR DSS transcription source is missing")
     rows = []
+    candidate_scrolls = set()
+    candidate_sirach_refs = set()
     with SOURCE.open(encoding="utf-8") as stream:
         for raw in stream:
             if not raw.strip():
                 continue
             item = json.loads(raw)
             scroll_key = re.sub(r"[^a-z0-9]", "", str(item.get("scroll", "")).lower())
-            if scroll_key not in {"11q5", "11qpsa"}:
+            if "11q" in scroll_key:
+                candidate_scrolls.add(scroll_key)
+            if scroll_key not in {"11q5", "11qpsa", "11qps"}:
                 continue
             refs = item.get("parallel_references", [])
+            candidate_sirach_refs.update(str(r) for r in refs if "sir" in str(r).lower())
             sirach_refs = [r for r in refs if re.search(r"Sir\w*\s*51[.,]", str(r), re.I)]
             fragment = str(item.get("fragment", "")).strip()
             fragment_numbers = re.findall(r"\d+", fragment)
@@ -66,7 +71,7 @@ def main():
                 "warning":"11Q5 is a Psalms scroll containing a Sirach hymn passage; it is not a dedicated Sirach codex. Parallel anchors do not prove that every word of the referenced verse survives."
             })
     if not rows:
-        raise SystemExit("No Sirach 51 parallel lines found in 11Q5/11QPsa QDR data; refusing to invent lines")
+        raise SystemExit(f"No Sirach 51 lines found in 11Q5/11QPsa QDR data; candidate scroll IDs={sorted(candidate_scrolls)}, Sirach anchors={sorted(candidate_sirach_refs)}; refusing to invent lines")
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for row in rows:
@@ -87,7 +92,7 @@ def main():
         "limitations":[
             "11Q5 is a Psalms scroll, not a dedicated Sirach manuscript.",
             "The preserved Sirach hymn is in column XXI, lines 11-17 (Sirach 51:13-20) and column XXII, line 1 (Sirach 51:30; first two words only in the published transcription).",
-            "Only the actual QDR lines with Sirach parallel anchors are included.",
+            "Only actual QDR lines with Sirach parallel anchors or the published column-and-line locators are included.",
             "No missing words or verses are supplied from another witness in this asset."
         ]
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
