@@ -134,7 +134,7 @@ def validate_sirach():
     assert set(coverage["chapter_summary"]["chapters_without_known_surviving_hebrew_manuscript_text"]) == {1, 2, 17, 24, 27, 28, 29}
     witness_ids = {item["witness_id"] for item in coverage["witnesses"]}
     assert {"2Q18", "Mas1h", "11Q5", "Genizah-A", "Genizah-B", "Genizah-C", "Genizah-D", "Genizah-E", "Genizah-F"}.issubset(witness_ids)
-    assert any(item["witness_id"] == "11Q5" and "not a separate Sirach codex" in " ".join(item["limitations"]) for item in coverage["witnesses"])
+    assert any(item["witness_id"] == "11Q5" and "not a dedicated Sirach codex" in " ".join(item["limitations"]) for item in coverage["witnesses"])
     q2_path = ROOT / "corpus/sirach/2q18_hebrew_lines.jsonl"
     q2_index_path = ROOT / "corpus/sirach/2q18_index.json"
     assert q2_path.exists() and q2_index_path.exists(), "Direct 2Q18 Sirach fragment text is missing"
@@ -210,7 +210,7 @@ def validate_sirach():
             assert row["method"].startswith("Reference alignment only")
             reconstruction_count += 1
     assert reconstruction_count == reconstruction_index["record_count"]
-    print(f"Validated {count} Kahana Hebrew edition records ({bracketed} marked retroversions), {q2_count} direct 2Q18 lines, {syriac_count} Syriac Peshitta verses, and {reconstruction_count} aligned Sirach references; unresolved Hebrew gaps remain explicit.")
+    print(f"Validated {count} Kahana Hebrew edition records ({bracketed} marked retroversions), {q2_count} direct 2Q18 lines, {q11_count} direct 11Q5 lines, {syriac_count} Syriac Peshitta verses, and {reconstruction_count} aligned Sirach references; unresolved Hebrew gaps remain explicit.")
 
 def validate_dss():
     import json as json_module
