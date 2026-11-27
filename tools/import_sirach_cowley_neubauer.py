@@ -73,6 +73,7 @@ def main():
 
     rows = []
     hebrew_pages = []
+    hebrew_character_counts = {}
     for page_number in range(1, page_count + 1):
         ocr_text = ocr_by_page.get(page_number, "")
         contains_hebrew = bool(re.search(r"[\u0590-\u05FF]", ocr_text))
@@ -140,9 +141,12 @@ def main():
         f"Extracted {len(rows)} Cowley-Neubauer PDF pages with Tesseract Hebrew+English OCR; "
         f"{len(hebrew_pages)} pages contain Hebrew script; SHA256={digest}"
     )
-    for sample_page in hebrew_pages[:3]:
+    # Hebrew characters in title pages can be incidental. Report the pages with
+    # the densest Hebrew OCR so the next extraction step can target actual text.
+    best_pages = sorted(hebrew_character_counts, key=lambda number: (-hebrew_character_counts[number], number))[:8]
+    for sample_page in best_pages:
         sample = next(row for row in rows if row["pdf_page_number"] == sample_page)
-        print(f"MS B OCR sample page {sample_page}: {sample['ocr_text'][:700]!r}")
+        print(f"MS B OCR page {sample_page}: Hebrew characters={hebrew_character_counts[sample_page]}; text={sample['ocr_text'][:1000]!r}")
 
 if __name__ == "__main__":
     main()
