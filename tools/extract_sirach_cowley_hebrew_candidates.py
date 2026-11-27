@@ -27,7 +27,7 @@ def main():
             page = json.loads(raw)
             page_count += 1
             for line_number, line in enumerate(page["ocr_text"].splitlines(), start=1):
-                hebrew_count = len(re.findall(r"[\\u0590-\\u05FF]", line))
+                hebrew_count = len(re.findall(r"[\u0590-\u05FF]", line))
                 if not hebrew_count:
                     continue
                 candidates.append({
@@ -50,9 +50,9 @@ def main():
     if page_count < 40 or not candidates:
         raise SystemExit(f"Unexpected Cowley OCR candidate coverage: {page_count} pages, {len(candidates)} Hebrew-script lines")
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    with OUT.open("w", encoding="utf-8", newline="\\n") as target:
+    with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for row in candidates:
-            target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
     INDEX.write_text(json.dumps({
         "schema_version": 1,
         "record_type": "unverified_cowley_neubauer_ms_b_hebrew_script_ocr_line_candidates",
@@ -72,7 +72,7 @@ def main():
             "Printed editorial restorations and marginal variants remain to be distinguished manually.",
             "This file is not a diplomatic transcription and must not be merged into the reconstructed Hebrew text."
         ]
-    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Extracted {len(candidates)} unverified Hebrew-script OCR line candidates from {page_count} Cowley PDF pages.")
 
 
