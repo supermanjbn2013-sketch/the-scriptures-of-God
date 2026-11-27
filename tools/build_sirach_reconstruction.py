@@ -180,6 +180,7 @@ def main():
                     "verse_label":x["verse_label"],
                     "text":x["text"],
                     "editorial_status":x["editorial_status"],
+                    "chapter_source_note":x.get("chapter_source_note"),
                     "source_id":x["source_id"],
                     "source_url":x["source_url"],
                     "direct_manuscript_witness":False
