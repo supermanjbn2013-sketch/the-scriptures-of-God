@@ -17,7 +17,7 @@ import urllib.request
 ROOT = pathlib.Path("app/src/main/assets")
 OUT = ROOT / "corpus/sirach/kahana_sefaria_hebrew.jsonl"
 INDEX = ROOT / "corpus/sirach/kahana_sefaria_index.json"
-BOOK = "Ben_Sira"
+BOOK = "Ben Sira"
 VERSION_TITLE = "Ben Sira, David Kahana ed. -- Wikisource"
 VERSION_PARAMETER = "Hebrew|Ben Sira, David Kahana ed. -- Wikisource"
 TEXT_API = "https://www.sefaria.org/api/v3/texts/"
@@ -59,7 +59,8 @@ def main():
             "return_format": "default",
             "fill_in_missing_segments": "0"
         })
-        url = f"{TEXT_API}{BOOK}.{chapter}?{params}"
+        tref = urllib.parse.quote(f"{BOOK} {chapter}:1", safe=":")
+        url = f"{TEXT_API}{tref}?{params}"
         data = fetch_json(url)
         versions = data.get("versions", [])
         version_data = next(
