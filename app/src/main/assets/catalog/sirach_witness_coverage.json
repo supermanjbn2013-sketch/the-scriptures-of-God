@@ -233,9 +233,9 @@
             "modern_critical_edition": "Sirach 36:22–37:26",
             "handling": "Do not silently normalize these endpoints. The manuscript is damaged; retain physical fragment endpoints, printed-edition range, and critical-edition mapping as separately attributed claims pending direct page/facsimile collation.",
             "british_library_first_portion": "Sirach 34:12–31 (British Library TEI catalogue)",
-            "nli_first_portion": "Sirach 31:12–32:1 (NLI Hebrew catalogue note)",
+            "nli_first_portion": "Sirach 34:12–31",
             "codicological_mapping_first_portion": "Sirach 31:12–31 (modern quire-folio mapping)",
-            "first_portion_handling": "Do not silently reconcile the BL TEI catalogue's 34:12–31 with the NLI note's 31:12–32:1 or the modern codicological mapping's 31:12–31."
+            "first_portion_handling": "The NLI Hebrew catalogue record Or. 5518.1 and the British Library TEI catalogue report Sirach 34:12–31 for the first leaf; the modern codicological mapping and published article heading report Sirach 31:12–31. Preserve catalogue sub-record identity and attributed descriptions separately; do not silently reconcile them."
           }
         }
       ],
