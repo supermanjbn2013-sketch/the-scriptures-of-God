@@ -1009,6 +1009,27 @@
         "Greek, Syriac and Latin versions are printed in separate columns; do not merge them into the Hebrew witness.",
         "Coverage ends at Sirach 49:11 in this edition; it does not cover the whole book."
       ]
+    },
+    {
+      "id": "margoliouth-1899-ms-b",
+      "name": "G. Margoliouth — The Original Hebrew of Ecclesiasticus XXXI.12–31 and XXXVI.22–XXXVII.26",
+      "language": "Hebrew, with English scholarly notes",
+      "coverage": "Sirach 31:12–31 and 36:22–37:26; printed transcription of Cairo Genizah manuscript B, folio VII, with scholarly notes.",
+      "record_type": "Public-domain scholarly transcription of direct Hebrew manuscript B; not the physical manuscript",
+      "edition": "G. Margoliouth, The Original Hebrew of Ecclesiasticus XXXI.12–31 and XXXVI.22–XXXVII.26, The Jewish Quarterly Review 12, no. 1 (October 1899), pp. 1–33.",
+      "source_url": "https://www.jstor.org/stable/1450569",
+      "doi": "https://doi.org/10.2307/1450569",
+      "license": "Public domain; 1899 journal article",
+      "attribution": "G. Margoliouth, The Original Hebrew of Ecclesiasticus XXXI.12–31 and XXXVI.22–XXXVII.26, The Jewish Quarterly Review 12, no. 1 (1899), 1–33.",
+      "manuscript_basis": "Cairo Genizah manuscript B, folio VII (British Library Or. 5518 fragment record); retain its manuscript identity separately from Genizah-D.",
+      "limitations": [
+        "This is a printed scholarly transcription of manuscript B, not a diplomatic transcription newly made from the physical fragment in this project.",
+        "The article covers only Sirach 31:12–31 and 36:22–37:26; it does not fill all gaps in either chapter.",
+        "Margoliouth's transcription and notes must be preserved as an edition layer with folio and verse references; do not merge it silently with Kahana or Cowley–Neubauer.",
+        "The British Library/National Library of Israel catalogue describes Or. 5518 as two damaged paper folios with two columns and identifies its textual range as Sirach 34:12–31 and 36:24–37:24; the catalogue's scholarly note associates the fragment with manuscript B. The article's broader printed coverage includes the relevant manuscript B folio.",
+        "The separate Genizah-D manuscript remains an independent witness for overlapping Sirach 36:29–38:1a material."
+      ],
+      "institutional_catalogue_url": "https://searcharchives.bl.uk/catalog/032-003393550"
     }
   ],
   "not_yet_integrated": [
