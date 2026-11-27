@@ -45,7 +45,7 @@ def verse_number(marker, chapter):
 
 def is_sirach(label):
     normalized = re.sub(r"[^a-z]", "", str(label or "").lower())
-    return normalized in {"sirach", "ecclesiasticus", "ecclesiastic", "ecclus", "sir"}
+    return normalized.startswith("sirach") or normalized.startswith("ecclesiastic") or normalized.startswith("ecclus") or normalized == "sir"
 
 def main():
     if not INDEX.exists():
@@ -76,7 +76,8 @@ def main():
                         and item.get("attributes", {}).get("type") == "book"
                     ]
                     if book_entries:
-                        book_label = book_entries[-1].get("attributes", {}).get("n") or book_label
+                        book_attrs = book_entries[-1].get("attributes", {})
+                        book_label = book_attrs.get("n") or book_attrs.get("id") or book_label
                     if book_label:
                         book_labels.add(str(book_label))
                     if not is_sirach(book_label):
