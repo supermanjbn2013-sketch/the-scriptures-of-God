@@ -194,7 +194,6 @@ def validate_sirach():
             assert row["method"].startswith("Reference alignment only")
             reconstruction_count += 1
     assert reconstruction_count == reconstruction_index["record_count"]
-    assert counts == reconstruction_index["statistics"] | {k: reconstruction_index["statistics"].get(k,0) for k in counts} if False else True
     print(f"Validated {count} Kahana Hebrew edition records ({bracketed} marked retroversions), {q2_count} direct 2Q18 lines, {syriac_count} Syriac Peshitta verses, and {reconstruction_count} aligned Sirach references; unresolved Hebrew gaps remain explicit.")
 
 def validate_dss():
