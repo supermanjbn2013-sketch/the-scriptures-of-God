@@ -151,6 +151,22 @@ def validate_sirach():
             q2_count += 1
     assert q2_count == q2_index["line_records"] > 0
     assert "CC BY-NC 4.0" == q2_index["license"]
+    q11_path = ROOT / "corpus/sirach/11q5_sirach_51_lines.jsonl"
+    q11_index_path = ROOT / "corpus/sirach/11q5_sirach_51_index.json"
+    assert q11_path.exists() and q11_index_path.exists(), "11Q5 Sirach 51 direct line evidence is missing"
+    q11_index = json.loads(q11_index_path.read_text(encoding="utf-8"))
+    q11_count = 0
+    with q11_path.open(encoding="utf-8") as stream:
+        for raw in stream:
+            if not raw.strip():
+                continue
+            row = json.loads(raw)
+            assert row["writing_id"] == "sirach" and row["witness_id"] == "11Q5"
+            assert row["transcription_text"] and row["sirach_parallel_references"]
+            assert row["reconstruction_status"] == "preserved_line_only; no completion supplied"
+            q11_count += 1
+    assert q11_count == q11_index["line_records"] > 0
+    assert "not a dedicated Sirach codex" in " ".join(q11_index["limitations"])
     syriac_path = ROOT / "corpus/sirach/peshitta_syriac.jsonl"
     syriac_index_path = ROOT / "corpus/sirach/peshitta_syriac_index.json"
     assert syriac_path.exists() and syriac_index_path.exists(), "Syriac Peshitta Sirach import is missing"
