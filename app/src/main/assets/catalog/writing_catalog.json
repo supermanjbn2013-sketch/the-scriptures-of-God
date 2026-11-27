@@ -871,6 +871,14 @@
           "source_status": "registered for page-level verification of the incomplete Wikisource transcription; OCR text not imported due risk of Hebrew recognition errors",
           "witness_basis": "printed editorial edition based on Cairo Genizah Hebrew manuscripts and Greek/Syriac comparisons; not a single ancient manuscript",
           "license": "Public domain"
+        },
+        {
+          "source_id": "cowley-neubauer-1897-ms-b",
+          "source_name": "Cowley and Neubauer 1897, direct transcription of Genizah manuscript B",
+          "source_file": "external_reference_only; public-domain 102-page PDF; import pending",
+          "source_status": "direct MS B transcription registered; manuscript text, bracketed restorations, physical lacunae and marginal variants require separate extraction",
+          "witness_basis": "Cairo Genizah manuscript B; Sirach 39:15–49:11",
+          "license": "Public domain"
         }
       ],
       "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
