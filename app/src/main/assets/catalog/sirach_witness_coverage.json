@@ -120,20 +120,21 @@
       "passage_coverage": [
         {
           "reference": "Sirach 51:13-20",
-          "fragment": "11Q5 column XXI, lines 11-17",
-          "coverage_type": "direct Hebrew hymn text within a Psalms scroll"
+          "fragment": "11Q5 column XXI, Qumran-Digital display lines 11-18",
+          "coverage_type": "direct Hebrew hymn text within a Psalms scroll; line 18 has an uncertain 51:20b? parallel anchor"
         },
         {
           "reference": "Sirach 51:30",
-          "fragment": "11Q5 column XXII, line 1",
-          "coverage_type": "only the first two words are preserved in the published transcription"
+          "fragment": "11Q5 column XXII, Qumran-Digital display line 1",
+          "coverage_type": "only the first two words are identified as Sirach in the displayed line"
         }
       ],
       "direct_witness_status": "direct Hebrew text of a Sirach passage preserved within a Psalms manuscript; not a separate Sirach codex",
       "limitations": [
         "11Q5 is a Psalms scroll, not a dedicated Sirach codex.",
-        "The published transcription locates Sirach 51:13-20 in column XXI, lines 11-17, and the first two words of Sirach 51:30 in column XXII, line 1.",
-        "Do not treat the passage reference as evidence that every verse or word survives."
+        "Qumran-Digital display-line numbers are not asserted to be physical manuscript line numbers.",
+        "The QDR parallel references are editorial anchors, not manuscript text.",
+        "The published transcription identifies only the first two words of the Sirach 51:30 line as belonging to Sirach."
       ]
     },
     {
@@ -320,6 +321,12 @@
       "source": "Mohr Siebeck study, Versions of the Book of Ben Sira",
       "url": "https://cdn.mohrsiebeck.com/b0%2C24b4d485134a5f8c9b08e6358f2e5d.pdf",
       "supports": "Seven chapters with no Hebrew witness known and Masada manuscript dating/range."
+    },
+    {
+      "source": "Qumran-Digital, 11Q5 transcription (version 2025-03-11)",
+      "url": "https://lexicon.qumran-digital.org/transcriptions/11Q5/2025-03-11/index.html",
+      "supports": "Direct Hebrew lines of the Sirach hymn in 11Q5 columns XXI and XXII; editorial parallel references and source display-line labels.",
+      "license": "CC BY-SA 4.0"
     }
   ]
 }
