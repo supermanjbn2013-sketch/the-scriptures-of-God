@@ -215,7 +215,7 @@
           "source_id": "margoliouth-1899-ms-b",
           "source_name": "G. Margoliouth, The Original Hebrew of Ecclesiasticus XXXI.12–31 and XXXVI.22–XXXVII.26 (1899)",
           "source_url": "https://www.jstor.org/stable/1450569",
-          "coverage": "British Library Or. 5518.2 bifolio of MS B: quire folio IV recto/verso, Sirach 31:12–31; quire folio VII recto/verso, Sirach 36:22–37:26 (published/critical-edition range). The BL/NLI physical-catalogue description gives a narrower second boundary; see source record.",
+          "coverage": "British Library Or. 5518.2 bifolio of MS B: quire folio IV recto/verso, codicological mapping Sirach 31:12–31; quire folio VII recto/verso, codicological mapping Sirach 36:22–37:26. Catalogues differ on physical fragment endpoints; see attributed discrepancies in source catalog.",
           "source_type": "public-domain printed transcription of direct Hebrew manuscript B",
           "license": "Public domain",
           "status": "public-domain 1899 JSTOR Open Access article identified; shelfmark Or. 5518.2 and quire folio mapping cross-checked against the 2024 critical edition; verse-level import and direct collation still pending",
@@ -231,7 +231,11 @@
             "published_article_title": "Sirach 36:22–37:26",
             "British_Library_and_NLI_catalogue_description": "Sirach 36:24–37:24 (the NLI scholarly description also reports Margoliouth's broader printed boundary)",
             "modern_critical_edition": "Sirach 36:22–37:26",
-            "handling": "Do not silently normalize these endpoints. The manuscript is damaged; retain physical fragment endpoints, printed-edition range, and critical-edition mapping as separately attributed claims pending direct page/facsimile collation."
+            "handling": "Do not silently normalize these endpoints. The manuscript is damaged; retain physical fragment endpoints, printed-edition range, and critical-edition mapping as separately attributed claims pending direct page/facsimile collation.",
+            "british_library_first_portion": "Sirach 34:12–31 (British Library TEI catalogue)",
+            "nli_first_portion": "Sirach 31:12–32:1 (NLI Hebrew catalogue note)",
+            "codicological_mapping_first_portion": "Sirach 31:12–31 (modern quire-folio mapping)",
+            "first_portion_handling": "Do not silently reconcile the BL TEI catalogue's 34:12–31 with the NLI note's 31:12–32:1 or the modern codicological mapping's 31:12–31."
           }
         }
       ],
