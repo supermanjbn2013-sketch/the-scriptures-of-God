@@ -139,6 +139,11 @@ def main():
         for record in records:
             target.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
     chapters = sorted({r["chapter"] for r in records})
+    chapter_record_counts = {
+        str(chapter): sum(1 for record in records if record["chapter"] == chapter)
+        for chapter in chapters
+    }
+    chapters_without_online_text = sorted(set(range(1, 52)) - set(chapters))
     fully_bracketed = sum(r["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac" for r in records)
     partially_bracketed = sum(r["editorial_status"] == "kahana_edition_contains_bracketed_editorial_retroversion" for r in records)
     bracketed = fully_bracketed + partially_bracketed
@@ -149,6 +154,8 @@ def main():
         "source_url": SOURCE_URL,
         "records": len(records),
         "chapters_with_online_text": chapters,
+        "chapters_without_online_text": chapters_without_online_text,
+        "chapter_record_counts": chapter_record_counts,
         "bracketed_retroversion_records": bracketed,
         "fully_bracketed_retroversion_records": fully_bracketed,
         "partially_bracketed_retroversion_records": partially_bracketed,
@@ -162,7 +169,7 @@ def main():
             "The import preserves Kahana's Hebrew text and editorial status; it does not claim that every chapter or verse is present."
         ]
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print(f"Imported {len(records)} Kahana Hebrew verse records across {len(chapters)} chapters; {bracketed} explicitly bracketed retroversions.")
+    print(f"Imported {len(records)} Kahana Hebrew verse records across {len(chapters)} chapters; {bracketed} explicitly bracketed retroversions; online transcription has no text for chapters {chapters_without_online_text}.")
 
 
 if __name__ == "__main__":
