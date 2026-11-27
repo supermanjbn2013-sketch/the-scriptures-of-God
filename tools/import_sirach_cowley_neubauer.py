@@ -35,14 +35,40 @@ def main():
             check=True
         )
         extracted = text_path.read_text(encoding="utf-8", errors="replace")
+        pages = extracted.split("\\f")
+        ocr_by_page = {}
+        # The Wikimedia scan has no embedded Hebrew OCR layer. Run Hebrew OCR
+        # page-by-page, retaining the raw output as unverified source data.
+        for page_number in range(1, len(pages) + 1):
+            image_prefix = pathlib.Path(temp) / f"page-{page_number:03d}"
+            subprocess.run(
+                [
+                    "pdftoppm", "-f", str(page_number), "-l", str(page_number),
+                    "-r", "250", "-singlefile", "-png", str(pdf_path), str(image_prefix)
+                ],
+                check=True,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL
+            )
+            image_path = image_prefix.with_suffix(".png")
+            result = subprocess.run(
+                ["tesseract", str(image_path), "stdout", "-l", "heb", "--psm", "1"],
+                check=True,
+                capture_output=True,
+                text=True,
+                encoding="utf-8",
+                errors="replace"
+            )
+            ocr_by_page[page_number] = result.stdout
+            image_path.unlink(missing_ok=True)
 
-    pages = extracted.split("\f")
     rows = []
     hebrew_pages = []
     for page_number, page_text in enumerate(pages, start=1):
-        if not page_text.strip():
+        if not page_text.strip() and not ocr_by_page.get(page_number, "").strip():
             continue
-        contains_hebrew = bool(re.search(r"[\u0590-\u05FF]", page_text))
+        ocr_text = ocr_by_page.get(page_number, "")
+        contains_hebrew = bool(re.search(r"[\\u0590-\\u05FF]", ocr_text))
         if contains_hebrew:
             hebrew_pages.append(page_number)
         rows.append({
@@ -51,9 +77,13 @@ def main():
             "manuscript_id": "MS B",
             "edition_source_id": "cowley-neubauer-1897-ms-b",
             "pdf_page_number": page_number,
-            "text": page_text,
+            "pdf_text_layer": page_text,
+            "ocr_text": ocr_text,
             "contains_hebrew_script": contains_hebrew,
-            "text_status": "raw_PDF_OCR_text_layer_not_verse_aligned_or_verified_against_facsimile",
+            "text_status": "raw_Tesseract_Hebrew_OCR_not_verse_aligned_or_verified_against_facsimile" if contains_hebrew else "raw_pdf_page_text_and_ocr_not_verse_aligned",
+            "ocr_engine": "Tesseract",
+            "ocr_language": "heb",
+            "ocr_dpi": 250,
             "source_title": TITLE,
             "source_url": URL,
             "source_sha256": digest,
@@ -63,9 +93,10 @@ def main():
 
     if len(rows) < 40 or len(hebrew_pages) < 5:
         raise RuntimeError(
-            f"Cowley-Neubauer PDF text extraction unexpectedly sparse: "
+            f"Cowley-Neubauer Hebrew OCR unexpectedly sparse: "
             f"{len(rows)} pages, {len(hebrew_pages)} pages containing Hebrew script."
         )
+
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for row in rows:
@@ -84,25 +115,28 @@ def main():
         "license": "Public domain",
         "attribution": "A. E. Cowley and Adolf Neubauer, eds., The Original Hebrew of a Portion of Ecclesiasticus, Oxford: Clarendon Press, 1897.",
         "pdf_page_count_extracted": len(rows),
+        "ocr_engine": "Tesseract",
+        "ocr_language": "heb",
+        "ocr_dpi": 250,
         "pages_with_hebrew_script": hebrew_pages,
         "pages_with_hebrew_count": len(hebrew_pages),
         "coverage_as_printed": "Sirach 39:15–49:11",
         "asset": "corpus/sirach/cowley_neubauer_ms_b_pdf_pages.jsonl",
         "limitations": [
             "The printed edition is a scholarly transcription of direct Hebrew manuscript B, not the physical manuscript itself.",
-            "This file contains raw PDF text-layer extraction only; it is not verse-aligned and must not be displayed as a verified manuscript reading.",
+            "This file contains raw Tesseract OCR of the printed Hebrew transcription; it is not verse-aligned and must not be displayed as a verified manuscript reading.",
             "Printed brackets, dots, marginal variants, and parallel Greek/Syriac/English columns must be identified and kept separate.",
             "The PDF's OCR may contain Hebrew recognition errors; every verse-level reading must be checked against the page image or a reliable transcription.",
             "The printed edition covers only Sirach 39:15–49:11."
         ]
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(
-        f"Extracted {len(rows)} Cowley-Neubauer PDF pages; "
+        f"Extracted {len(rows)} Cowley-Neubauer PDF pages with Tesseract Hebrew OCR; "
         f"{len(hebrew_pages)} pages contain Hebrew script; SHA256={digest}"
     )
     for sample_page in hebrew_pages[:3]:
         sample = next(row for row in rows if row["pdf_page_number"] == sample_page)
-        print(f"MS B OCR sample page {sample_page}: {sample['text'][:700]!r}")
+        print(f"MS B OCR sample page {sample_page}: {sample['ocr_text'][:700]!r}")
 
 if __name__ == "__main__":
     main()
