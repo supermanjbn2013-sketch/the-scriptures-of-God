@@ -1,0 +1,318 @@
+{
+  "schema_version": 1,
+  "record_type": "sirach_hebrew_witness_passage_coverage",
+  "writing_id": "sirach",
+  "scope_note": "This is a passage-level inventory of known Hebrew witnesses, not a claim that all listed chapter ranges survive continuously or that every verse in a range is extant. Fragmentary, damaged, and restored portions remain distinct.",
+  "chapter_summary": {
+    "chapters_without_known_surviving_hebrew_manuscript_text": [
+      1,
+      2,
+      17,
+      24,
+      27,
+      28,
+      29
+    ],
+    "chapters_with_some_known_hebrew_witness_evidence": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      25,
+      26,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51
+    ],
+    "caveat": "The seven chapters listed as lacking Hebrew witnesses may still be represented by ancient Greek and Syriac versions. A chapter listed as having Hebrew evidence may contain substantial gaps."
+  },
+  "witnesses": [
+    {
+      "witness_id": "2Q18",
+      "alternate_id": "2QSir",
+      "collection": "Qumran Cave 2",
+      "language": "Hebrew",
+      "approximate_date": "Second half of the first century BCE",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 6:14-15",
+          "fragment": "Fragment 1",
+          "coverage_type": "fragmentary; only surviving words and damaged/restored traces"
+        },
+        {
+          "reference": "Sirach 6:20-31",
+          "fragment": "Fragment 2",
+          "coverage_type": "fragmentary; line-level text includes damaged and editorially restored portions"
+        }
+      ],
+      "transcription_source": "Martin G. Abegg Jr. transcription distributed through ETCBC/CACCHT and Qumran Digital Reader; Fontes presentation.",
+      "transcription_source_url": "https://fontes.page/texts/dss-minor-caves/",
+      "transcription_conventions": "Unpointed Hebrew; square brackets and grey type mark editorial restorations; dots/circlets mark damaged or uncertain letters; ellipses mark lost text; vacat marks scribal blank space.",
+      "source_license": "CC BY-NC 4.0",
+      "attribution": "Martin G. Abegg Jr.; ETCBC/CACCHT Dead Sea Scrolls corpus; Qumran Digital Reader; Fontes.",
+      "direct_witness_status": "direct Hebrew manuscript fragments of Ben Sira",
+      "limitations": [
+        "Not a complete copy of Sirach chapter 6.",
+        "Do not replace damaged text with Kahana or a versional reading without marking the supplement separately."
+      ]
+    },
+    {
+      "witness_id": "Mas1h",
+      "alternate_id": "Masada Ben Sira manuscript",
+      "collection": "Masada",
+      "language": "Hebrew",
+      "approximate_date": "Early first century BCE",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 39:27-44:17",
+          "coverage_type": "fragmentary manuscript coverage; seven columns reported"
+        }
+      ],
+      "transcription_source": "Yigael Yadin's publication of the Masada Ben Sira manuscript; compare with the Cairo Genizah and ancient versions.",
+      "source_license": "Manuscript transcription rights and edition-specific terms must be checked before importing a full transcription.",
+      "direct_witness_status": "direct Hebrew manuscript witness",
+      "limitations": [
+        "Only the preserved portion of the manuscript is evidence; it does not supply all of Sirach.",
+        "Some publications give the endpoints as 39:27b-44:17b; retain the edition's exact endpoint notation when transcribing."
+      ]
+    },
+    {
+      "witness_id": "11Q5",
+      "alternate_id": "11QPs-a; Great Psalms Scroll",
+      "collection": "Qumran Cave 11",
+      "language": "Hebrew",
+      "approximate_date": "First century CE",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 51:13-20, 30",
+          "coverage_type": "Sirach hymn embedded in a Psalms scroll"
+        }
+      ],
+      "direct_witness_status": "direct Hebrew text of a Sirach passage preserved within a Psalms manuscript; not a separate Sirach codex",
+      "limitations": [
+        "Do not catalogue 11Q5 as a dedicated Sirach manuscript.",
+        "Preserve its identity and layout as a Psalms scroll while cross-linking the Sirach passage."
+      ]
+    },
+    {
+      "witness_id": "Genizah-A",
+      "alternate_id": "Cairo Genizah manuscript A",
+      "collection": "Cairo Genizah",
+      "language": "Hebrew",
+      "approximate_date": "Medieval; manuscript-specific palaeographic dating required",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 3:6b-16:26",
+          "coverage_type": "fragmentary manuscript range; individual gaps remain"
+        }
+      ],
+      "direct_witness_status": "direct Hebrew manuscript witness",
+      "limitations": [
+        "A broad manuscript range is not proof that every verse is preserved.",
+        "A Cambridge Library record identifies T-S 12.864 (= MS A) specifically with 5:10-7:29 and 11:34-14:11; retain shelfmark-specific fragment coverage separately."
+      ]
+    },
+    {
+      "witness_id": "Genizah-B",
+      "alternate_id": "Cairo Genizah manuscript B",
+      "collection": "Cairo Genizah",
+      "language": "Hebrew",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 30:11-33:3",
+          "coverage_type": "fragmentary"
+        },
+        {
+          "reference": "Sirach 35:11-38:27b",
+          "coverage_type": "fragmentary"
+        },
+        {
+          "reference": "Sirach 39:15c-51:30",
+          "coverage_type": "fragmentary"
+        }
+      ],
+      "direct_witness_status": "direct Hebrew manuscript witness",
+      "limitations": [
+        "Preserve the reported partial verse endpoints and do not infer complete verse coverage."
+      ]
+    },
+    {
+      "witness_id": "Genizah-C",
+      "alternate_id": "Cairo Genizah manuscript C",
+      "collection": "Cairo Genizah",
+      "language": "Hebrew",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 3:14-18, 21-22",
+          "coverage_type": "scattered verses"
+        },
+        {
+          "reference": "Sirach 4:21-23, 30-31",
+          "coverage_type": "scattered verses"
+        },
+        {
+          "reference": "Sirach 5:4-7, 9-13",
+          "coverage_type": "scattered verses"
+        },
+        {
+          "reference": "Sirach 6:18b-19, 28, 35",
+          "coverage_type": "scattered verses"
+        },
+        {
+          "reference": "Sirach 7:1-2, 4, 6, 17, 20-21, 23-25",
+          "coverage_type": "scattered verses"
+        },
+        {
+          "reference": "Sirach 18:31b-19:3b",
+          "coverage_type": "fragmentary"
+        },
+        {
+          "reference": "Sirach 20:5-7, 13, 22-23",
+          "coverage_type": "scattered verses"
+        },
+        {
+          "reference": "Sirach 25:8, 13, 17-24",
+          "coverage_type": "scattered verses"
+        },
+        {
+          "reference": "Sirach 26:1-3, 13, 15-17",
+          "coverage_type": "scattered verses"
+        },
+        {
+          "reference": "Sirach 36:27-31",
+          "coverage_type": "scattered verses"
+        },
+        {
+          "reference": "Sirach 37:19, 22, 24, 26",
+          "coverage_type": "scattered verses"
+        },
+        {
+          "reference": "Sirach 41:16",
+          "coverage_type": "single verse"
+        }
+      ],
+      "direct_witness_status": "direct Hebrew manuscript witness; compilation of citations",
+      "limitations": [
+        "Do not interpolate missing verses between scattered citations."
+      ]
+    },
+    {
+      "witness_id": "Genizah-D",
+      "alternate_id": "Cairo Genizah manuscript D",
+      "collection": "Cairo Genizah",
+      "language": "Hebrew",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 36:29-38:1a",
+          "coverage_type": "fragmentary"
+        }
+      ],
+      "direct_witness_status": "direct Hebrew manuscript witness",
+      "limitations": [
+        "Preserve partial verse endpoint."
+      ]
+    },
+    {
+      "witness_id": "Genizah-E",
+      "alternate_id": "Cairo Genizah manuscript E",
+      "collection": "Cairo Genizah",
+      "language": "Hebrew",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 32:16-34:1",
+          "coverage_type": "fragmentary"
+        }
+      ],
+      "direct_witness_status": "direct Hebrew manuscript witness",
+      "limitations": [
+        "Preserve partial verse endpoint."
+      ]
+    },
+    {
+      "witness_id": "Genizah-F",
+      "alternate_id": "Cairo Genizah manuscript F",
+      "collection": "Cairo Genizah",
+      "language": "Hebrew",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 31:24-32:7",
+          "coverage_type": "fragmentary"
+        },
+        {
+          "reference": "Sirach 32:12-33:8",
+          "coverage_type": "fragmentary"
+        }
+      ],
+      "direct_witness_status": "direct Hebrew manuscript witness",
+      "limitations": [
+        "Preserve gaps and partial endpoints."
+      ]
+    }
+  ],
+  "reconstruction_rules": [
+    "For each verse, transcribe direct Hebrew witnesses first and retain each manuscript reading separately.",
+    "Use 2Q18 only for its attested fragment lines in Sirach 6; do not reconstruct the whole chapter from it.",
+    "Use Mas1h only for its preserved Sirach 39:27-44:17 portion.",
+    "Cross-link Sirach 51:13-20,30 in 11Q5 while preserving the Psalms-scroll identity.",
+    "Use Genizah A-F only at their reported passage coverage; do not fill gaps between isolated fragments by assumption.",
+    "Where Hebrew is absent, compare the earliest Greek and Syriac textual forms for the same passage; mark any Hebrew retroversion as editorial and never as an ancient Hebrew witness.",
+    "If no reliable witness supplies the missing passage, retain an explicit unresolved gap."
+  ],
+  "source_notes": [
+    {
+      "source": "Fontes, Caves 2, 3, 5, 6, 8-11: Other Hebrew Texts",
+      "url": "https://fontes.page/texts/dss-minor-caves/",
+      "supports": "2Q18 fragment labels, line transcription conventions, Abegg transcription, source attribution and CC BY-NC 4.0."
+    },
+    {
+      "source": "Lee 2019 thesis, Hebrew manuscript passage inventory",
+      "url": "https://era.ed.ac.uk/bitstream/handle/1842/35550/Lee2019.pdf?sequence=1&isAllowed=y",
+      "supports": "Cairo Genizah manuscripts A-F; 2Q18; 11QPs-a; Masada passage ranges."
+    },
+    {
+      "source": "Cambridge University Library, T-S 12.864 (= MS A)",
+      "url": "https://www.lib.cam.ac.uk/collections/departments/taylor-schechter-genizah-research-unit/fragment-month/fragment-month-14-0",
+      "supports": "Shelfmark-specific MS A passage coverage."
+    },
+    {
+      "source": "Mohr Siebeck study, Versions of the Book of Ben Sira",
+      "url": "https://cdn.mohrsiebeck.com/b0%2C24b4d485134a5f8c9b08e6358f2e5d.pdf",
+      "supports": "Seven chapters with no Hebrew witness known and Masada manuscript dating/range."
+    }
+  ]
+}
