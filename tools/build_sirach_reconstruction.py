@@ -154,7 +154,7 @@ def main():
             "hebrew":"David Kahana 1912 edition; manuscript-based and bracketed editorial retroversion statuses kept distinct",
             "greek":"Swete Septuagint Greek edition; edited text, not a diplomatic codex transcription",
             "syriac":"ETCBC Syriac Corpus 0.92 Peshitta; preliminary Ben Sira text, CC BY-NC 4.0",
-            "qumran":"2Q18 direct fragment lines are stored separately; only passage-range locators are linked here"
+            "qumran":"2Q18 and 11Q5 direct line evidence are stored separately; passage locators are linked here, with 11Q5 retained as a Psalms scroll"
         },
         "statistics":stats,
         "unresolved_hebrew_references":[r["ref"] for r in records if r["hebrew_reading_status"]=="unresolved_hebrew_gap"],
