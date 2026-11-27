@@ -62,7 +62,7 @@ def main():
         "no_kahana_text_in_current_import": 0,
         "with_greek": 0,
         "with_syriac": 0,
-        "with_2q18_passage_locator": 0
+        "with_hebrew_fragment_range_evidence": 0
     }
     for chapter, verse in sorted(keys):
         ref = f"Sirach {chapter}:{verse}"
@@ -96,7 +96,7 @@ def main():
         if chapter == 51 and verse == 30:
             q2_ranges.append({"witness":"11Q5","manuscript_identity":"11QPs-a; Great Psalms Scroll","column_and_lines":"column XXII, line 1","published_range":"Sirach 51:30","warning":"Only the first two words of Sirach 51:30 are preserved in the published transcription."})
         if q2_ranges:
-            stats["with_2q18_passage_locator"] += 1
+            stats["with_hebrew_fragment_range_evidence"] += 1
         records.append({
             "writing_id":"sirach",
             "ref":ref,
