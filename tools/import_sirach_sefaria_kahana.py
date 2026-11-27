@@ -19,8 +19,8 @@ OUT = ROOT / "corpus/sirach/kahana_sefaria_hebrew.jsonl"
 INDEX = ROOT / "corpus/sirach/kahana_sefaria_index.json"
 BOOK = "Ben_Sira"
 VERSION_TITLE = "Ben Sira, David Kahana ed. -- Wikisource"
-VHE_PARAMETER = "Ben_Sira,_David_Kahana_ed._--_Wikisource"
-TEXT_API = "https://www.sefaria.org/api/texts/"
+VERSION_PARAMETER = "Hebrew|Ben Sira, David Kahana ed. -- Wikisource"
+TEXT_API = "https://www.sefaria.org/api/v3/texts/"
 PAGE_URL = "https://www.sefaria.org/Ben_Sira.1?lang=bi&vhe=hebrew%7CBen_Sira%2C_David_Kahana_ed._--_Wikisource"
 LICENSE = "CC BY-SA (version not specified in Sefaria's version metadata)"
 UA = "TheScripturesOfGodCorpus/1.0 (source attribution and text research)"
@@ -55,24 +55,29 @@ def main():
     version_source = None
     for chapter in range(1, 52):
         params = urllib.parse.urlencode({
-            "context": "0",
-            "commentary": "0",
-            "vhe": VHE_PARAMETER
+            "version": VERSION_PARAMETER,
+            "return_format": "default",
+            "fill_in_missing_segments": "0"
         })
         url = f"{TEXT_API}{BOOK}.{chapter}?{params}"
         data = fetch_json(url)
-        returned_title = data.get("heVersionTitle") or data.get("versionTitle")
-        if returned_title:
-            normalized_title = str(returned_title).replace("hebrew|", "").replace("_", " ").strip()
-            if normalized_title != VERSION_TITLE:
-                raise RuntimeError(
-                    f"Sefaria returned a different Hebrew version for chapter {chapter}: {returned_title!r}"
-                )
+        versions = data.get("versions", [])
+        version_data = next(
+            (item for item in versions if item.get("versionTitle") == VERSION_TITLE),
+            None
+        )
+        if version_data is None:
+            returned = [
+                {"versionTitle": item.get("versionTitle"), "language": item.get("language")}
+                for item in versions
+            ]
+            raise RuntimeError(
+                f"Sefaria v3 did not return the exact Kahana version for chapter {chapter}; "
+                f"returned={returned}; warnings={data.get('warnings')}"
+            )
         if chapter == 1:
-            version_source = data.get("heVersionSource") or data.get("versionSource")
-            if returned_title is None:
-                raise RuntimeError("Sefaria did not identify the selected Hebrew version in its API response")
-        hebrew = data.get("he")
+            version_source = version_data.get("versionSource")
+        hebrew = version_data.get("text")
         if isinstance(hebrew, str):
             hebrew = [hebrew]
         if not isinstance(hebrew, list):
@@ -102,9 +107,9 @@ def main():
                 "text": text,
                 "source_markup": raw_markup,
                 "source_id": "sefaria-kahana-ben-sira",
-                "source": "Sefaria digital text",
+                "source": "Sefaria v3 digital text API",
                 "edition": VERSION_TITLE,
-                "requested_version_parameter": VHE_PARAMETER,
+                "requested_version_parameter": VERSION_PARAMETER,
                 "printed_edition": "David Kahana, Ben Sira, Warsaw: Tushiyah, 1912",
                 "version_source": version_source,
                 "source_url": PAGE_URL,
@@ -137,7 +142,7 @@ def main():
         "source_url": PAGE_URL,
         "api_source": TEXT_API + BOOK,
         "version_title": VERSION_TITLE,
-        "requested_version_parameter": VHE_PARAMETER,
+        "requested_version_parameter": VERSION_PARAMETER,
         "version_source": version_source,
         "license": LICENSE,
         "verse_record_count": len(records),
@@ -149,11 +154,15 @@ def main():
             "Kahana's edition combines Hebrew manuscript-based readings with editorial Hebrew retroversions where Hebrew manuscript text was absent.",
             "Unbracketed Kahana text is not assigned to one named Genizah manuscript without passage-level verification.",
             "The source's displayed license is CC-BY-SA without a version number; the asset retains that uncertainty.",
-            "The importer explicitly requests the named Kahana version and refuses a different/default version.",
+            "The v3 API is requested with the exact Kahana version title and fill_in_missing_segments=0; no other Hebrew version is used to fill gaps.",
             "Missing text in this digital version is not proof of an ancient manuscript lacuna."
         ]
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Imported {len(records)} Sefaria Kahana Hebrew verse records across {sum(1 for n in chapter_counts.values() if n)} chapters.")
+
+
+if __name__ == "__main__":
+    main()
 
 
 if __name__ == "__main__":
