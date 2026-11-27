@@ -29,15 +29,29 @@ def main():
                 continue
             refs = item.get("parallel_references", [])
             sirach_refs = [r for r in refs if re.search(r"Sir\w*\s*51[.,]", str(r), re.I)]
-            if not sirach_refs:
+            fragment = str(item.get("fragment", "")).strip()
+            fragment_numbers = re.findall(r"\d+", fragment)
+            column_number = int(fragment_numbers[-1]) if fragment_numbers else None
+            try:
+                line_number = int(item.get("line", ""))
+            except (TypeError, ValueError):
+                line_number = None
+            if column_number == 21 and line_number is not None and 11 <= line_number <= 17:
+                published_range = "Sirach 51:13-20"
+            elif column_number == 22 and line_number == 1:
+                published_range = "Sirach 51:30 (first two words only)"
+            else:
+                published_range = None
+            if not sirach_refs and not published_range:
                 continue
             rows.append({
                 "writing_id":"sirach",
                 "witness_id":"11Q5",
                 "manuscript_identity":"11QPs-a; Great Psalms Scroll",
-                "fragment_or_column":str(item.get("fragment", "")),
+                "fragment_or_column":fragment,
                 "line":str(item.get("line", "")),
                 "sirach_parallel_references":sirach_refs,
+                "published_passage_range":published_range,
                 "transcription_text":item.get("transcription_text", ""),
                 "normalized_text":item.get("normalized_text", ""),
                 "word_records":item.get("word_records", []),
@@ -46,7 +60,7 @@ def main():
                 "source_file":item.get("source_file"),
                 "license":item.get("license"),
                 "attribution":item.get("attribution"),
-                "source_coordinate":f"11Q5 column/fragment {item.get('fragment', '')}, line {item.get('line', '')}",
+                "source_coordinate":f"11Q5 column/fragment {fragment}, line {item.get('line', '')}",
                 "text_status":"direct_Hebrew_manuscript_line_in_Psalms_scroll",
                 "reconstruction_status":"preserved_line_only; no completion supplied",
                 "warning":"11Q5 is a Psalms scroll containing a Sirach hymn passage; it is not a dedicated Sirach codex. Parallel anchors do not prove that every word of the referenced verse survives."
@@ -58,6 +72,7 @@ def main():
         for row in rows:
             target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
     refs = sorted({r for row in rows for r in row["sirach_parallel_references"]})
+    passage_ranges = sorted({row["published_passage_range"] for row in rows if row["published_passage_range"]})
     INDEX.write_text(json.dumps({
         "schema_version":1,
         "record_type":"sirach_51_direct_11q5_psalms_scroll_evidence",
@@ -65,6 +80,7 @@ def main():
         "manuscript_identity":"11QPs-a; Great Psalms Scroll",
         "line_records":len(rows),
         "sirach_parallel_references":refs,
+        "published_passage_ranges":passage_ranges,
         "source_revision":rows[0]["source_revision"],
         "license":"CC BY-NC 4.0",
         "attribution":rows[0]["attribution"],
