@@ -84,6 +84,10 @@ jobs:
         run: python tools/build_sirach_reconstruction.py
       - name: Extract direct Sirach 51 lines preserved in the 11Q5 Psalms Scroll
         run: python tools/build_sirach_11q5_evidence.py
+      - name: Import Codex Sinaiticus manuscript transcription
+        run: python tools/import_codex_sinaiticus.py
+      - name: Extract verse-level Greek Sirach from Codex Sinaiticus
+        run: python tools/extract_sirach_sinaiticus.py
       - name: Preserve separate indirect Rhyming Paraphrase evidence
         run: python tools/build_sirach_paraphrase_evidence.py
       - name: Index every book and writing actually attested in imported DSS lines
@@ -108,10 +112,6 @@ jobs:
         run: python tools/import_papyrus_72.py
       - name: Import Papyrus 77 manuscript transcription
         run: python tools/import_papyrus_77.py
-      - name: Import Codex Sinaiticus manuscript transcription
-        run: python tools/import_codex_sinaiticus.py
-      - name: Extract verse-level Greek Sirach from Codex Sinaiticus
-        run: python tools/extract_sirach_sinaiticus.py
       - name: Build verse-level John manuscript comparison index
         run: python tools/build_john_witness_index.py
       - name: Import Greek Didache reference text
