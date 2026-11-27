@@ -28,8 +28,6 @@ jobs:
         run: python3 tools/prepare_corpus.py
       - name: Import Kahana Hebrew Sirach edition with editorial markers preserved
         run: python3 tools/import_sirach_kahana.py
-      - name: Import Sefaria's separately identified Kahana Hebrew version
-        run: python3 tools/import_sirach_sefaria_kahana.py
       - name: Prepare CACCHT Samaritan Pentateuch source
         run: |
           python3 -m pip install --disable-pip-version-check text-fabric
