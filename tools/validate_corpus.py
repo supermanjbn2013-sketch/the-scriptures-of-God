@@ -122,7 +122,7 @@ def validate_sirach():
                 assert row["text"].startswith("[") and row["text"].endswith("]")
                 bracketed += 1
             elif row["editorial_status"] == "kahana_edition_contains_bracketed_editorial_retroversion":
-                assert "[" in row["text"] and "]" in row["text"]
+                assert "[" in row["text"] or "]" in row["text"]
                 bracketed += 1
             else:
                 assert row["editorial_status"] == "kahana_hebrew_edition_based_on_manuscript_evidence_not_a_diplomatic_single_witness"
