@@ -209,7 +209,14 @@ def main():
                 "source_url":si.get("source_url"),
                 "license":si.get("license"),
                 "source_verse_marker":si.get("source_verse_marker"),
-                "source_coordinates":si.get("source_coordinates")
+                "source_coordinates":si.get("source_coordinates"),
+                "correction_readings":si.get("correction_readings"),
+                "editorial_supplied_text":si.get("editorial_supplied_text"),
+                "marginal_text":si.get("marginal_text"),
+                "note_text":si.get("note_text"),
+                "other_readings":si.get("other_readings"),
+                "text_status":si.get("text_status"),
+                "reconstruction_status":si.get("reconstruction_status")
             } if si else None,
             "hebrew_fragment_range_evidence":q2_ranges,
             "direct_2q18_line_evidence":q2_line_evidence,
