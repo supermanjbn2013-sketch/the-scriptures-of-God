@@ -775,7 +775,7 @@
         "Syriac"
       ],
       "description": "A distinct writing preserved in fragmentary Hebrew witnesses and ancient translations. Surviving Hebrew manuscript text, Greek and Syriac witnesses, and later editorial Hebrew restorations are kept as separate textual layers.",
-      "status": "source_layers_in_progress; passage_level_witness_comparison_and_reconstruction_pending",
+      "status": "source_layers_in_progress; verse_aligned_witness_comparison_built; manuscript_specific_Genizah_and_Masada_text_imports_and_remaining_coverage_gaps_pending",
       "source_editions": [
         {
           "source_id": "swete-lxx-apocrypha",
