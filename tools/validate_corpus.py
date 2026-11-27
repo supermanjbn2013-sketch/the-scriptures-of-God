@@ -121,6 +121,10 @@ def validate_sirach():
             assert row["writing_id"] == "sirach" and row["source_id"] == "kahana-ben-sira-1912"
             assert row["text"] and row["source_url"] and row["verse_number"] > 0
             assert row["direct_manuscript_witness"] is False and row["preserve_brackets"] is True
+            if row["chapter"] in (1, 2):
+                assert "first two chapters" in row["chapter_source_note"] and "Greek and Syriac" in row["chapter_source_note"]
+            if row["chapter"] == 3:
+                assert "some verses of chapter 3" in row["chapter_source_note"]
             if row["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac":
                 assert row["text"].startswith("[") and row["text"].endswith("]")
                 bracketed += 1
