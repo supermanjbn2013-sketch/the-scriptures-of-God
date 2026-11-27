@@ -847,6 +847,14 @@
           "source_status": "critical edition reference for nine direct Hebrew manuscripts plus separate medieval Rhyming Paraphrase; manuscript-specific apparatus not yet transcribed into the corpus",
           "witness_basis": "Nine direct Hebrew manuscripts: Genizah A–F, 2Q18, 11QPs-a and Masada; the edition separately includes a medieval Rhyming Paraphrase that is not a direct Ben Sira manuscript.",
           "license": "Copyrighted scholarly edition; no redistribution license identified"
+        },
+        {
+          "source_id": "joosten-2025-reymond-rey-review",
+          "source_name": "Jan Joosten, Rivista Biblica 73 (2025), review of Rey and Reymond 2024",
+          "source_file": "corpus/sirach/rhyming_paraphrase_evidence.jsonl",
+          "source_status": "one short Hebrew phrase reported from indirect medieval paraphrase; not a direct manuscript reading",
+          "witness_basis": "Rhyming Paraphrase, ENA 3053.3 verso, line 1; Sirach 23:1",
+          "license": "Copyrighted review; short attributed quotation only"
         }
       ],
       "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
