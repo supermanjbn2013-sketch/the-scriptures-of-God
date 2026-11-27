@@ -89,6 +89,10 @@ def main():
             q2_ranges.append({"witness":"2Q18","fragment":"1","published_range":"Sirach 6:14-15","warning":"Fragmentary range locator; does not assert every word in this verse survives."})
         if chapter == 6 and 20 <= verse <= 31:
             q2_ranges.append({"witness":"2Q18","fragment":"2","published_range":"Sirach 6:20-31","warning":"Fragmentary range locator; does not assert every word in this verse survives."})
+        if chapter == 51 and 13 <= verse <= 20:
+            q2_ranges.append({"witness":"11Q5","manuscript_identity":"11QPs-a; Great Psalms Scroll","column_and_lines":"column XXI, lines 11-17","published_range":"Sirach 51:13-20","warning":"The Sirach hymn is preserved within a Psalms scroll; consult the separate line transcription and do not assume every word in each verse survives."})
+        if chapter == 51 and verse == 30:
+            q2_ranges.append({"witness":"11Q5","manuscript_identity":"11QPs-a; Great Psalms Scroll","column_and_lines":"column XXII, line 1","published_range":"Sirach 51:30","warning":"Only the first two words of Sirach 51:30 are preserved in the published transcription."})
         if q2_ranges:
             stats["with_2q18_passage_locator"] += 1
         records.append({
