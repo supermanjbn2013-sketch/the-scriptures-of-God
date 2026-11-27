@@ -62,12 +62,12 @@ def main():
         url = f"{TEXT_API}{BOOK}.{chapter}?{params}"
         data = fetch_json(url)
         returned_title = data.get("heVersionTitle") or data.get("versionTitle")
-        if returned_title and "Kahana" not in str(returned_title):
-            raise RuntimeError(
-                f"Sefaria returned a different Hebrew version for chapter {chapter}: {returned_title!r}"
-            )
-        if returned_title and VERSION_TITLE not in str(returned_title) and "Kahana" not in str(returned_title):
-            raise RuntimeError(f"Sefaria version title mismatch: {returned_title!r}")
+        if returned_title:
+            normalized_title = str(returned_title).replace("hebrew|", "").replace("_", " ").strip()
+            if normalized_title != VERSION_TITLE:
+                raise RuntimeError(
+                    f"Sefaria returned a different Hebrew version for chapter {chapter}: {returned_title!r}"
+                )
         if chapter == 1:
             version_source = data.get("heVersionSource") or data.get("versionSource")
             if returned_title is None:
