@@ -194,7 +194,8 @@
         "The Bensira.org navigator reunites folios but does not make the manuscript a continuous complete copy.",
         "Do not bundle the site's transcription or images without permission from the relevant rights holders.",
         "Use manuscript-specific folio and shelfmark details; passage ranges are locators and do not prove continuous text.",
-        "The 1897 Cowley–Neubauer edition directly transcribes MS B for Sirach 39:15–49:11; it must be kept separate from Kahana's composite 1912 edition."
+        "The 1897 Cowley–Neubauer edition directly transcribes MS B for Sirach 39:15–49:11; it must be kept separate from Kahana's composite 1912 edition.",
+        "The 1899 Margoliouth transcription supplies an additional printed MS B source for Sirach 31:12–31 and 36:22–37:26; it is not a separate manuscript from MS B and must not be counted as an independent witness."
       ],
       "transcription_source": "Bensira.org manuscript navigator; transcriptions credited by the site to Martin G. Abegg and collaborators, with later readings by Shulamit Elizur and Michael Rand.",
       "source_url": "https://www.bensira.org/navigator.php?Manuscript=B&PageNum=1",
@@ -209,6 +210,15 @@
           "source_type": "public-domain printed diplomatic transcription of direct Hebrew manuscript B",
           "license": "Public domain",
           "status": "102-page public-domain PDF OCR archive and 1,483 unverified Hebrew-script line candidates generated; verse-level extraction and facsimile verification still pending"
+        },
+        {
+          "source_id": "margoliouth-1899-ms-b",
+          "source_name": "G. Margoliouth, The Original Hebrew of Ecclesiasticus XXXI.12–31 and XXXVI.22–XXXVII.26 (1899)",
+          "source_url": "https://www.jstor.org/stable/1450569",
+          "coverage": "Sirach 31:12–31 and 36:22–37:26; manuscript B, folio VII",
+          "source_type": "public-domain printed transcription of direct Hebrew manuscript B",
+          "license": "Public domain",
+          "status": "source identified and cross-checked against British Library/NLI shelfmark catalogue; verse-level transcription import and line-by-line verification pending"
         }
       ],
       "manuscript_description": {
