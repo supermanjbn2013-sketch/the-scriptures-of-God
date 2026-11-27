@@ -234,7 +234,10 @@ def validate_sirach():
     cowley_rows = [json.loads(line) for line in cowley_path.read_text(encoding="utf-8").splitlines() if line.strip()]
     assert len(cowley_rows) == cowley_index["pdf_page_count_extracted"]
     assert all(row["witness_id"] == "Genizah-B" and row["manuscript_id"] == "MS B" for row in cowley_rows)
-    assert all(row["text_status"] == "raw_PDF_OCR_text_layer_not_verse_aligned_or_verified_against_facsimile" for row in cowley_rows)
+    assert cowley_index["ocr_engine"] == "Tesseract" and cowley_index["ocr_language"] == "heb"
+    assert all(row["ocr_engine"] == "Tesseract" and row["ocr_language"] == "heb" for row in cowley_rows)
+    assert all("not_verse_aligned" in row["text_status"] for row in cowley_rows)
+    assert all(row["ocr_text"] for row in cowley_rows if row["contains_hebrew_script"])
     assert sum(row["contains_hebrew_script"] for row in cowley_rows) == cowley_index["pages_with_hebrew_count"]
     assert any(item["source_id"] == "cowley-neubauer-1897-ms-b" for item in sirach["source_editions"])
     qdr_manifest_path = ROOT / "dss/qumran_digital/source_manifest.json"
