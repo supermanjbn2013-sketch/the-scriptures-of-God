@@ -63,6 +63,32 @@
   },
   "witnesses": [
     {
+      "witness_id": "11Q5",
+      "alternate_id": "11QPs-a; Great Psalms Scroll",
+      "collection": "Qumran Cave 11",
+      "language": "Hebrew",
+      "approximate_date": "First century CE",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 51:13-20",
+          "fragment": "11Q5 column XXI, Qumran-Digital display lines 11-18",
+          "coverage_type": "direct Hebrew hymn text within a Psalms scroll; line 18 has an uncertain 51:20b? parallel anchor"
+        },
+        {
+          "reference": "Sirach 51:30",
+          "fragment": "11Q5 column XXII, Qumran-Digital display line 1",
+          "coverage_type": "only the first two words are identified as Sirach in the displayed line"
+        }
+      ],
+      "direct_witness_status": "direct Hebrew text of a Sirach passage preserved within a Psalms manuscript; not a separate Sirach codex",
+      "limitations": [
+        "11Q5 is a Psalms scroll, not a dedicated Sirach codex.",
+        "Qumran-Digital display-line numbers are not asserted to be physical manuscript line numbers.",
+        "The QDR parallel references are editorial anchors, not manuscript text.",
+        "The published transcription identifies only the first two words of the Sirach 51:30 line as belonging to Sirach."
+      ]
+    },
+    {
       "witness_id": "2Q18",
       "alternate_id": "2QSir",
       "collection": "Qumran Cave 2",
@@ -92,52 +118,29 @@
       ]
     },
     {
-      "witness_id": "Mas1h",
-      "alternate_id": "Masada Ben Sira manuscript",
-      "collection": "Masada",
-      "language": "Hebrew",
-      "approximate_date": "Early first century BCE",
+      "witness_id": "Codex-Sinaiticus",
+      "alternate_id": "Codex Sinaiticus; GA 01",
+      "collection": "Greek parchment codex; dispersed holdings",
+      "language": "Greek",
+      "witness_type": "direct Greek manuscript witness; ancient translation tradition, not a Hebrew manuscript",
       "passage_coverage": [
         {
-          "reference": "Sirach 39:27-44:17",
-          "coverage_type": "fragmentary manuscript coverage; seven columns reported"
+          "reference": "Sirach, grandson's Prologue through chapter 51",
+          "manuscript_location": "Quire 68, folio 1 recto through Quire 71, folio 2 recto",
+          "coverage_type": "Codex Sinaiticus project identifies this as the Sirach section; exact surviving verse-by-verse coverage and lacunae must be derived from the pinned TEI transcription"
         }
       ],
-      "transcription_source": "Eric D. Reymond transcription hosted by Bensira.org; direct Hebrew text is available by manuscript section through the site's navigator.",
-      "source_license": "Permission-based access; no explicit redistribution license identified for the transcription. External reference only.",
-      "direct_witness_status": "direct Hebrew manuscript witness",
+      "source": "Codex Sinaiticus Project electronic transcription, XML v1.95, ITSEE University of Birmingham",
+      "source_revision": "af1633b5102cbe6200e79053cc618ac447e1bb16",
+      "source_url": "https://github.com/itsee-birmingham/codex-sinaiticus",
+      "license": "CC BY-NC-SA 3.0 Unported; non-commercial, share-alike",
+      "direct_witness_status": "direct Greek manuscript witness to the Greek version of Ben Sira; not direct Hebrew wording",
+      "transcription_status": "whole-codex page/column/line importer exists; Sirach-specific verse extraction and coverage audit pending",
       "limitations": [
-        "Only the preserved portions of the Masada scroll are evidence; it does not supply all of Sirach.",
-        "The Bensira.org site provides manuscript images and a transcription by Eric D. Reymond, but the transcription is not bundled here because redistribution permission is not explicit.",
-        "A Cambridge repository study reports that the fragment containing Sirach 44:17 was no longer extant as of April 2015; the earlier published transcription remains a historical record.",
-        "Do not infer missing lines from adjacent columns or from the Kahana edition."
-      ],
-      "source_url": "https://www.bensira.org/navigator.php?Manuscript=Masada&PageNum=1"
-    },
-    {
-      "witness_id": "11Q5",
-      "alternate_id": "11QPs-a; Great Psalms Scroll",
-      "collection": "Qumran Cave 11",
-      "language": "Hebrew",
-      "approximate_date": "First century CE",
-      "passage_coverage": [
-        {
-          "reference": "Sirach 51:13-20",
-          "fragment": "11Q5 column XXI, Qumran-Digital display lines 11-18",
-          "coverage_type": "direct Hebrew hymn text within a Psalms scroll; line 18 has an uncertain 51:20b? parallel anchor"
-        },
-        {
-          "reference": "Sirach 51:30",
-          "fragment": "11Q5 column XXII, Qumran-Digital display line 1",
-          "coverage_type": "only the first two words are identified as Sirach in the displayed line"
-        }
-      ],
-      "direct_witness_status": "direct Hebrew text of a Sirach passage preserved within a Psalms manuscript; not a separate Sirach codex",
-      "limitations": [
-        "11Q5 is a Psalms scroll, not a dedicated Sirach codex.",
-        "Qumran-Digital display-line numbers are not asserted to be physical manuscript line numbers.",
-        "The QDR parallel references are editorial anchors, not manuscript text.",
-        "The published transcription identifies only the first two words of the Sirach 51:30 line as belonging to Sirach."
+        "Keep the Sinaiticus Greek text separate from the Hebrew witnesses and the Swete Greek edition.",
+        "The cited quire range is a section locator, not proof that every verse is extant without loss.",
+        "The TEI transcription preserves manuscript layout and corrections; use its original coordinates and correction layers.",
+        "CC BY-NC-SA 3.0 applies to the transcription; commercial redistribution is not permitted without separate permission."
       ]
     },
     {
@@ -293,6 +296,29 @@
       "limitations": [
         "Preserve gaps and partial endpoints."
       ]
+    },
+    {
+      "witness_id": "Mas1h",
+      "alternate_id": "Masada Ben Sira manuscript",
+      "collection": "Masada",
+      "language": "Hebrew",
+      "approximate_date": "Early first century BCE",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 39:27-44:17",
+          "coverage_type": "fragmentary manuscript coverage; seven columns reported"
+        }
+      ],
+      "transcription_source": "Eric D. Reymond transcription hosted by Bensira.org; direct Hebrew text is available by manuscript section through the site's navigator.",
+      "source_license": "Permission-based access; no explicit redistribution license identified for the transcription. External reference only.",
+      "direct_witness_status": "direct Hebrew manuscript witness",
+      "limitations": [
+        "Only the preserved portions of the Masada scroll are evidence; it does not supply all of Sirach.",
+        "The Bensira.org site provides manuscript images and a transcription by Eric D. Reymond, but the transcription is not bundled here because redistribution permission is not explicit.",
+        "A Cambridge repository study reports that the fragment containing Sirach 44:17 was no longer extant as of April 2015; the earlier published transcription remains a historical record.",
+        "Do not infer missing lines from adjacent columns or from the Kahana edition."
+      ],
+      "source_url": "https://www.bensira.org/navigator.php?Manuscript=Masada&PageNum=1"
     },
     {
       "witness_id": "Rhyming-Paraphrase",
