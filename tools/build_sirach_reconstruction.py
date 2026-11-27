@@ -69,11 +69,11 @@ def main():
         kh = sorted(kahana.get((chapter, verse), []), key=lambda x: x["verse_label"])
         gr = greek.get(ref)
         sy = syriac.get(ref)
-        stats["kahana_retroversion_readings"] += sum(1 for item in kh if item["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac")
+        stats["kahana_retroversion_readings"] += sum(1 for item in kh if item["editorial_status"] in ("bracketed_hebrew_retroversion_from_greek_and_or_syriac", "kahana_edition_contains_bracketed_editorial_retroversion"))
         if len(kh) > 1:
             status = "kahana_multiple_readings_preserved"
             stats["kahana_multiple_readings"] += 1
-        elif kh and kh[0]["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac":
+        elif kh and kh[0]["editorial_status"] in ("bracketed_hebrew_retroversion_from_greek_and_or_syriac", "kahana_edition_contains_bracketed_editorial_retroversion"):
             status = "editorial_hebrew_retroversion"
             stats["kahana_editorial_retroversion"] += 1
         elif kh:
