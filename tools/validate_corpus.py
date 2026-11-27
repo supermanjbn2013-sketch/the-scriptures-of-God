@@ -180,7 +180,7 @@ def validate_sirach():
             assert row["text"] and row["editorial_parallel_references"]
             assert row["source_url"] == "https://lexicon.qumran-digital.org/transcriptions/11Q5/2025-03-11/index.html"
             assert row["source_license"] == "CC BY-SA 4.0"
-            assert row["reconstruction_status"] == "preserved_main_reading_only; no_missing_words_supplied"
+            assert row["reconstruction_status"] == "preserved_text_only; no missing words supplied"
             q11_count += 1
     assert q11_count == q11_index["line_records"] == 9
     assert q11_index["license"] == "CC BY-SA 4.0"
