@@ -802,6 +802,16 @@
           "witness_basis": "2Q18 (2QSir), Qumran Cave 2",
           "transcription_type": "unpointed fragmentary Hebrew transcription; damaged and restored letters retain source notation",
           "license": "CC BY-NC 4.0"
+        },
+        {
+          "source_id": "etcbc-syriac-peshitta-sirach",
+          "source_name": "ETCBC Syriac Corpus 0.92 — Peshitta Ben Sira",
+          "source_file": "corpus/sirach/peshitta_syriac.jsonl",
+          "source_status": "pinned Syriac Peshitta text; import and verse comparison pending",
+          "witness_basis": "Syriac Peshitta textual tradition",
+          "transcription_type": "Syriac versional text; not a Hebrew manuscript",
+          "source_revision": "0b6ded2b369c7d81589a98c92325290e24b20af6",
+          "license": "CC BY-NC 4.0"
         }
       ],
       "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
