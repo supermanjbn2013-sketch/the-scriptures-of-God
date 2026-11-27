@@ -119,14 +119,21 @@
       "approximate_date": "First century CE",
       "passage_coverage": [
         {
-          "reference": "Sirach 51:13-20, 30",
-          "coverage_type": "Sirach hymn embedded in a Psalms scroll"
+          "reference": "Sirach 51:13-20",
+          "fragment": "11Q5 column XXI, lines 11-17",
+          "coverage_type": "direct Hebrew hymn text within a Psalms scroll"
+        },
+        {
+          "reference": "Sirach 51:30",
+          "fragment": "11Q5 column XXII, line 1",
+          "coverage_type": "only the first two words are preserved in the published transcription"
         }
       ],
       "direct_witness_status": "direct Hebrew text of a Sirach passage preserved within a Psalms manuscript; not a separate Sirach codex",
       "limitations": [
-        "Do not catalogue 11Q5 as a dedicated Sirach manuscript.",
-        "Preserve its identity and layout as a Psalms scroll while cross-linking the Sirach passage."
+        "11Q5 is a Psalms scroll, not a dedicated Sirach codex.",
+        "The published transcription locates Sirach 51:13-20 in column XXI, lines 11-17, and the first two words of Sirach 51:30 in column XXII, line 1.",
+        "Do not treat the passage reference as evidence that every verse or word survives."
       ]
     },
     {
