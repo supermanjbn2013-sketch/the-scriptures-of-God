@@ -9,10 +9,8 @@ The source page is marked incomplete, so this importer never claims full coverag
 import json
 import pathlib
 import re
-import time
 import urllib.parse
 import urllib.request
-import xml.etree.ElementTree as ET
 
 OUT = pathlib.Path("app/src/main/assets/corpus/sirach/kahana_1912_hebrew.jsonl")
 INDEX = pathlib.Path("app/src/main/assets/corpus/sirach/kahana_1912_index.json")
@@ -36,10 +34,6 @@ def fetch_page():
     return html
 
 
-class ParagraphExtractor(ET.XMLParser if False else object):
-    pass
-
-
 from html.parser import HTMLParser
 
 
@@ -61,7 +55,7 @@ class Blocks(HTMLParser):
                 self.blocks.append(self.current.strip())
             self.current = ""
         elif tag == "br" and self.current is not None:
-            self.current += "\\n"
+            self.current += "\n"
 
     def handle_endtag(self, tag):
         if tag in ("script", "style", "sup") and self.skip:
@@ -92,7 +86,7 @@ def gematria(value):
     return sum(HEBREW_NUMERALS.get(ch, 0) for ch in value)
 
 
-VERSE = re.compile(r"(?<!\\S)\\(\\*?([א-ת][א-ת׳״']*)\\)\\s*")
+VERSE = re.compile(r"(?<!\S)\(\*?([א-ת][א-ת׳״']*)\)\s*")
 
 
 def main():
@@ -101,7 +95,7 @@ def main():
     chapter = None
     records = []
     for block in parser.blocks:
-        heading = re.search(r"פרק\\s+([א-ת׳״']+)", block)
+        heading = re.search(r"פרק\s+([א-ת׳״']+)", block)
         if heading:
             chapter = gematria(heading.group(1))
             continue
@@ -112,7 +106,7 @@ def main():
             continue
         for i, match in enumerate(matches):
             raw = block[match.end():matches[i+1].start() if i+1 < len(matches) else len(block)].strip()
-            raw = re.sub(r"\\s+", " ", raw).strip()
+            raw = re.sub(r"\s+", " ", raw).strip()
             if not raw:
                 continue
             bracketed = raw.startswith("[") and raw.endswith("]")
@@ -140,7 +134,7 @@ def main():
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", encoding="utf-8") as target:
         for record in records:
-            target.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            target.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
     chapters = sorted({r["chapter"] for r in records})
     bracketed = sum(r["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac" for r in records)
     INDEX.write_text(json.dumps({
@@ -160,7 +154,7 @@ def main():
             "Absence from the online transcription is not proof of an ancient manuscript lacuna.",
             "The import preserves Kahana's Hebrew text and editorial status; it does not claim that every chapter or verse is present."
         ]
-    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Imported {len(records)} Kahana Hebrew verse records across {len(chapters)} chapters; {bracketed} explicitly bracketed retroversions.")
 
 
