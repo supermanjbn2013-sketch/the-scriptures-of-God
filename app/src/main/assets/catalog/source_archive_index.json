@@ -11,6 +11,8 @@
       "writing_record": "catalog/writing_catalog.json#sirach",
       "direct_hebrew_witness_assets": [
         "corpus/sirach/2q18_hebrew_lines.jsonl",
+        "corpus/sirach/11q5_sirach_51_lines.jsonl",
+        "corpus/sirach/2q18_hebrew_lines.jsonl",
         "corpus/sirach/11q5_sirach_51_lines.jsonl"
       ],
       "edition_and_version_assets": [
@@ -20,13 +22,17 @@
       ],
       "indirect_paraphrase_asset": "corpus/sirach/rhyming_paraphrase_evidence.jsonl",
       "comparison_asset": "corpus/sirach/reconstructed_hebrew_comparison.jsonl",
-      "coverage_rule": "Every direct Hebrew manuscript remains separate. Kahana's 1912 edition is an editorial edition, not one ancient manuscript. The Rhyming Paraphrase is indirect evidence only. Greek and Syriac remain in their own languages and are never silently retroverted into Hebrew. A passage range does not prove every word survives.",
+      "coverage_rule": "Every direct Hebrew manuscript remains separate. Kahana's 1912 edition is an editorial edition, not one ancient manuscript. The Rhyming Paraphrase is indirect evidence only. Greek and Syriac remain in their own languages and are never silently retroverted into Hebrew. A passage range does not prove every word survives. Cowley–Neubauer MS B OCR pages remain an unverified raw extraction until verse-aligned and checked against the printed page; they are not yet part of the selected reconstructed text.",
       "completion_status": "in progress; passage-level manuscript comparison, Genizah and Masada transcription permissions, and remaining gaps still require work",
       "sources": [
         "https://www.bensira.org/",
         "https://www.nli.org.il/en/books/NNL_ALEPH997012945170405171/NLI",
         "https://github.com/ETCBC/syriac",
-        "https://github.com/itsee-birmingham/codex-sinaiticus"
+        "https://github.com/itsee-birmingham/codex-sinaiticus",
+        "https://upload.wikimedia.org/wikipedia/commons/8/8d/California_Digital_Library_%28IA_originalhebrewof00cowlrich%29.pdf"
+      ],
+      "unverified_ocr_assets": [
+        "corpus/sirach/cowley_neubauer_ms_b_pdf_pages.jsonl"
       ]
     },
     {
