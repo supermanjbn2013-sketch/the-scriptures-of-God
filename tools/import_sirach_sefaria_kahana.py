@@ -54,9 +54,15 @@ def main():
         raise RuntimeError("Sefaria versions API returned an unexpected structure")
     version = next((item for item in versions
                     if item.get("versionTitle") == VERSION_TITLE
-                    and item.get("language") == "he"), None)
+                    and item.get("language") in ("he", "hebrew")), None)
     if version is None:
-        raise RuntimeError(f"Exact Sefaria Hebrew version not found: {VERSION_TITLE}")
+        candidates = [
+            {"versionTitle": item.get("versionTitle"), "language": item.get("language")}
+            for item in versions
+            if "kahana" in str(item.get("versionTitle", "")).lower()
+            or "ben sira" in str(item.get("versionTitle", "")).lower()
+        ]
+        raise RuntimeError(f"Exact Sefaria Hebrew version not found: {VERSION_TITLE}; candidates={candidates}")
 
     records = []
     chapter_counts = {}
