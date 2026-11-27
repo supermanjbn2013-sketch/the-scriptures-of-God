@@ -844,8 +844,8 @@
           "source_id": "reymond-rey-2024-critical-hebrew-manuscripts",
           "source_name": "Rey and Reymond, A Critical Edition of the Hebrew Manuscripts of Ben Sira (2024)",
           "source_file": "bibliographic_reference_only; copyrighted edition not bundled",
-          "source_status": "critical edition reference for all nine Hebrew manuscripts; manuscript-specific apparatus not yet transcribed into the corpus",
-          "witness_basis": "Genizah A–F, Rhyming Paraphrase, 2Q18, 11QPs-a and Masada",
+          "source_status": "critical edition reference for nine direct Hebrew manuscripts plus separate medieval Rhyming Paraphrase; manuscript-specific apparatus not yet transcribed into the corpus",
+          "witness_basis": "Nine direct Hebrew manuscripts: Genizah A–F, 2Q18, 11QPs-a and Masada; the edition separately includes a medieval Rhyming Paraphrase that is not a direct Ben Sira manuscript.",
           "license": "Copyrighted scholarly edition; no redistribution license identified"
         }
       ],
