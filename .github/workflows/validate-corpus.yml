@@ -28,6 +28,7 @@ on:
       - "tools/import_enoch_geez.py"
       - "tools/import_ascension_isaiah.py"
       - "tools/import_sirach_kahana.py"
+      - "tools/import_sirach_cowley_neubauer.py"
       - "tools/import_sirach_syriac.py"
       - "tools/build_sirach_reconstruction.py"
       - "tools/build_sirach_qdr_evidence.py"
@@ -59,10 +60,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Install PDF text extraction utility
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
       - name: Fetch and prepare licensed source texts
         run: python tools/prepare_corpus.py
       - name: Import Kahana Hebrew Sirach edition with editorial markers preserved
         run: python tools/import_sirach_kahana.py
+      - name: Import Cowley-Neubauer public-domain MS B scan text layer (unverified OCR)
+        run: python tools/import_sirach_cowley_neubauer.py
       - name: Prepare CACCHT Samaritan Pentateuch source
         run: |
           python -m pip install --disable-pip-version-check text-fabric
