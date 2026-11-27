@@ -187,6 +187,26 @@ def validate_sirach():
     locator = next(row for row in paraphrase_rows if row["ref"] == "Sirach 22:22-26")
     assert locator["text"] is None and locator["text_status"] == "passage_locator_only; no text copied"
     assert all(row["witness_type"] == "medieval_indirect_paraphrase_not_direct_Ben_Sira_manuscript" for row in paraphrase_rows)
+    sinaiticus_path = ROOT / "corpus/sirach/codex_sinaiticus_greek.jsonl"
+    sinaiticus_index_path = ROOT / "corpus/sirach/codex_sinaiticus_greek_index.json"
+    assert sinaiticus_path.exists() and sinaiticus_index_path.exists(), "Codex Sinaiticus Greek Sirach extraction is missing"
+    sinaiticus_index = json.loads(sinaiticus_index_path.read_text(encoding="utf-8"))
+    assert sinaiticus_index["source_revision"] == "af1633b5102cbe6200e79053cc618ac447e1bb16"
+    assert sinaiticus_index["license"] == "CC BY-NC-SA 3.0 Unported"
+    sinaiticus_count = 0
+    with sinaiticus_path.open(encoding="utf-8") as stream:
+        for raw in stream:
+            if not raw.strip():
+                continue
+            row = json.loads(raw)
+            assert row["writing_id"] == "sirach" and row["witness_id"] == "Codex Sinaiticus"
+            assert row["manuscript_id"] == "GA 01" and row["language"] == "grc"
+            assert row["text"] and row["source_coordinates"]
+            assert row["text_status"].startswith("direct_Greek_manuscript_transcription")
+            assert row["reconstruction_status"] == "preserved_manuscript_text_only; no_missing_words_supplied"
+            sinaiticus_count += 1
+    assert sinaiticus_count == sinaiticus_index["verse_record_count"] > 0
+    assert any(item["source_id"] == "codex-sinaiticus-sirach" for item in sirach["source_editions"])
     qdr_manifest_path = ROOT / "dss/qumran_digital/source_manifest.json"
     assert qdr_manifest_path.exists()
     qdr_manifest = json.loads(qdr_manifest_path.read_text(encoding="utf-8"))
