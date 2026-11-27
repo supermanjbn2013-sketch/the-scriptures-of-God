@@ -57,8 +57,8 @@ def main():
             if int(chapter_part) != chapter:
                 return False
             first, last = verse_part.split("-") if "-" in verse_part else (verse_part, verse_part)
-            first_match = __import__("re").match(r"\\d+", first)
-            last_match = __import__("re").match(r"\\d+", last)
+            first_match = __import__("re").match(r"\d+", first)
+            last_match = __import__("re").match(r"\d+", last)
             if not first_match:
                 return False
             first_number = int(first_match.group())
