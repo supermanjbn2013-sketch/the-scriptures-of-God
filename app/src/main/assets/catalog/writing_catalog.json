@@ -855,6 +855,14 @@
           "source_status": "one short Hebrew phrase reported from indirect medieval paraphrase; not a direct manuscript reading",
           "witness_basis": "Rhyming Paraphrase, ENA 3053.3 verso, line 1; Sirach 23:1",
           "license": "Copyrighted review; short attributed quotation only"
+        },
+        {
+          "source_id": "codex-sinaiticus-sirach",
+          "source_name": "Codex Sinaiticus (GA 01), Greek Sirach section",
+          "source_file": "sinaiticus/pages/*.jsonl.gz; Sirach-specific extraction pending",
+          "source_status": "whole-codex diplomatic transcription importer exists; passage-level Sirach text and lacuna mapping not yet extracted",
+          "witness_basis": "Quire 68 folio 1r through Quire 71 folio 2r; direct Greek manuscript witness",
+          "license": "CC BY-NC-SA 3.0 Unported; non-commercial, share-alike"
         }
       ],
       "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
