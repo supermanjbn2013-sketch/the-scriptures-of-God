@@ -775,7 +775,7 @@
         "Syriac"
       ],
       "description": "A distinct writing preserved in fragmentary Hebrew witnesses and ancient translations. Surviving Hebrew manuscript text, Greek and Syriac witnesses, and later editorial Hebrew restorations are kept as separate textual layers.",
-      "status": "source_layers_in_progress; Kahana_edition_and_Greek_Syriac_comparison_built; direct_2Q18_and_11Q5_lines_attached_to_verse_records; six_Genizah_witnesses_and_Masada_catalogued; manuscript_specific_textual_apparatus_pending",
+      "status": "source_layers_in_progress; Kahana_Hebrew_edition_and_Greek_Syriac_comparison_built; direct_2Q18_and_11Q5_lines_attached; Codex_Sinaiticus_Greek_extractor_implemented_pending_validation; six_Genizah_witnesses_and_Masada_catalogued; manuscript_specific_textual_apparatus_and_remaining_coverage_gaps_pending",
       "source_editions": [
         {
           "source_id": "swete-lxx-apocrypha",
@@ -860,7 +860,7 @@
           "source_id": "codex-sinaiticus-sirach",
           "source_name": "Codex Sinaiticus (GA 01), Greek Sirach section",
           "source_file": "sinaiticus/pages/*.jsonl.gz; Sirach-specific extraction pending",
-          "source_status": "whole-codex diplomatic transcription importer exists; passage-level Sirach text and lacuna mapping not yet extracted",
+          "source_status": "whole-codex diplomatic transcription imported by validation workflow; Sirach verse-level extractor implemented; generated records and exact coverage audit pending validation",
           "witness_basis": "Quire 68 folio 1r through Quire 71 folio 2r; direct Greek manuscript witness",
           "license": "CC BY-NC-SA 3.0 Unported; non-commercial, share-alike"
         }
