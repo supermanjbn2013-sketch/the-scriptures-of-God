@@ -290,6 +290,12 @@ def validate_sirach():
             reconstruction_count += 1
     assert reconstruction_count == reconstruction_index["record_count"]
     assert sinaiticus_aligned_count == reconstruction_index["statistics"]["with_sinaiticus"] > 0
+    archive_index = json.loads((ROOT / "catalog/source_archive_index.json").read_text(encoding="utf-8"))
+    sirach_archive = next(item for item in archive_index["archives"] if item["id"] == "ben_sira_manuscripts")
+    assert sirach_archive["metadata_file"] == "catalog/sirach_witness_coverage.json"
+    assert sirach_archive["comparison_asset"] == "corpus/sirach/reconstructed_hebrew_comparison.jsonl"
+    assert "corpus/sirach/codex_sinaiticus_greek.jsonl" in sirach_archive["edition_and_version_assets"]
+    assert sirach_archive["completion_status"].startswith("in progress")
     print(f"Validated {count} Kahana Hebrew edition records ({bracketed} marked retroversions), {q2_count} direct 2Q18 lines, {q11_count} direct 11Q5 lines, {syriac_count} Syriac Peshitta verses, and {reconstruction_count} aligned Sirach references; unresolved Hebrew gaps remain explicit.")
 
 def validate_dss():
