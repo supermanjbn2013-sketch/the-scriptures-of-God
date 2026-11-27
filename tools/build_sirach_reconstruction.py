@@ -14,6 +14,7 @@ ROOT = pathlib.Path("app/src/main/assets")
 GREEK = ROOT / "corpus/verses.jsonl"
 KAHANA = ROOT / "corpus/sirach/kahana_1912_hebrew.jsonl"
 SYRIAC = ROOT / "corpus/sirach/peshitta_syriac.jsonl"
+SINAITICUS = ROOT / "corpus/sirach/codex_sinaiticus_greek.jsonl"
 Q2_INDEX = ROOT / "corpus/sirach/2q18_index.json"
 OUT = ROOT / "corpus/sirach/reconstructed_hebrew_comparison.jsonl"
 INDEX = ROOT / "corpus/sirach/reconstructed_hebrew_comparison_index.json"
@@ -43,6 +44,10 @@ def main():
     for row in read_jsonl(SYRIAC):
         syriac[row["ref"]] = row
 
+    sinaiticus = {}
+    for row in read_jsonl(SINAITICUS):
+        sinaiticus[row["ref"]] = row
+
     q2_index = json.loads(Q2_INDEX.read_text(encoding="utf-8")) if Q2_INDEX.exists() else {}
     q2_lines_path = ROOT / "corpus/sirach/2q18_hebrew_lines.jsonl"
     q11_lines_path = ROOT / "corpus/sirach/11q5_sirach_51_lines.jsonl"
@@ -68,7 +73,7 @@ def main():
             return False
 
     keys = set(kahana)
-    for ref in set(greek) | set(syriac):
+    for ref in set(greek) | set(syriac) | set(sinaiticus):
         parts = ref.rsplit(" ", 1)[-1].split(":")
         if len(parts) == 2:
             try:
@@ -85,6 +90,7 @@ def main():
         "no_kahana_text_in_current_import": 0,
         "with_greek": 0,
         "with_syriac": 0,
+        "with_sinaiticus": 0,
         "with_hebrew_fragment_range_evidence": 0,
         "with_direct_2q18_line_evidence": 0,
         "with_direct_11q5_line_evidence": 0
@@ -94,6 +100,7 @@ def main():
         kh = sorted(kahana.get((chapter, verse), []), key=lambda x: x["verse_label"])
         gr = greek.get(ref)
         sy = syriac.get(ref)
+        si = sinaiticus.get(ref)
         stats["kahana_retroversion_readings"] += sum(1 for item in kh if item["editorial_status"] in ("bracketed_hebrew_retroversion_from_greek_and_or_syriac", "kahana_edition_contains_bracketed_editorial_retroversion"))
         if len(kh) > 1:
             status = "kahana_multiple_readings_preserved"
@@ -111,6 +118,8 @@ def main():
             stats["with_greek"] += 1
         if sy:
             stats["with_syriac"] += 1
+        if si:
+            stats["with_sinaiticus"] += 1
         q2_ranges = []
         if chapter == 6 and 14 <= verse <= 15:
             q2_ranges.append({"witness":"2Q18","fragment":"1","published_range":"Sirach 6:14-15","warning":"Fragmentary range locator; does not assert every word in this verse survives."})
@@ -192,6 +201,16 @@ def main():
                 "source_url":sy.get("source_url"),
                 "license":sy.get("license")
             } if sy else None,
+            "sinaiticus_greek_text":si.get("text") if si else None,
+            "sinaiticus_source":{
+                "witness_id":si.get("witness_id"),
+                "manuscript_id":si.get("manuscript_id"),
+                "source_revision":si.get("source_revision"),
+                "source_url":si.get("source_url"),
+                "license":si.get("license"),
+                "source_verse_marker":si.get("source_verse_marker"),
+                "source_coordinates":si.get("source_coordinates")
+            } if si else None,
             "hebrew_fragment_range_evidence":q2_ranges,
             "direct_2q18_line_evidence":q2_line_evidence,
             "direct_11q5_line_evidence":q11_line_evidence,
@@ -220,6 +239,7 @@ def main():
             "hebrew":"David Kahana 1912 edition; manuscript-based and bracketed editorial retroversion statuses kept distinct",
             "greek":"Swete Septuagint Greek edition; edited text, not a diplomatic codex transcription",
             "syriac":"ETCBC Syriac Corpus 0.92 Peshitta; preliminary Ben Sira text, CC BY-NC 4.0",
+            "sinaiticus":"Codex Sinaiticus Project TEI v1.95; direct Greek manuscript transcription, CC BY-NC-SA 3.0",
             "qumran":"2Q18 and 11Q5 direct line evidence are stored separately; passage locators are linked here, with 11Q5 retained as a Psalms scroll"
         },
         "statistics":stats,
@@ -231,7 +251,8 @@ def main():
             "Greek and Syriac are retained in their own languages and are never mechanically translated back into Hebrew.",
             "Direct 2Q18 and 11Q5 transcription lines are attached as separate evidence arrays to aligned passage records; their text is never merged into the Kahana Hebrew reading.",
             "QDR passage references remain editorial anchors; display-line numbers are not manuscript physical line numbers.",
-            "The online Kahana transcription is marked incomplete; missing online verses are not automatically ancient manuscript lacunae."
+            "The online Kahana transcription is marked incomplete; missing online verses are not automatically ancient manuscript lacunae.",
+            "Codex Sinaiticus is a separate Greek manuscript witness; its text is not merged with Swete or the Syriac Peshitta."
         ],
         "asset":"corpus/sirach/reconstructed_hebrew_comparison.jsonl"
     }
