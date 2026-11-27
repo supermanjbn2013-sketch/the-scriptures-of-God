@@ -19,7 +19,7 @@ OUT = ROOT / "corpus/sirach/kahana_sefaria_hebrew.jsonl"
 INDEX = ROOT / "corpus/sirach/kahana_sefaria_index.json"
 BOOK = "Ben_Sira"
 VERSION_TITLE = "Ben Sira, David Kahana ed. -- Wikisource"
-VERSIONS_API = "https://www.sefaria.org/api/texts/versions/" + BOOK
+VHE_PARAMETER = "hebrew|Ben_Sira,_David_Kahana_ed._--_Wikisource"
 TEXT_API = "https://www.sefaria.org/api/texts/"
 PAGE_URL = "https://www.sefaria.org/Ben_Sira.1?lang=bi&vhe=hebrew%7CBen_Sira%2C_David_Kahana_ed._--_Wikisource"
 LICENSE = "CC BY-SA (version not specified in Sefaria's version metadata)"
@@ -49,37 +49,29 @@ def flatten_segments(value):
 
 
 def main():
-    versions = fetch_json(VERSIONS_API)
-    if not isinstance(versions, list):
-        raise RuntimeError("Sefaria versions API returned an unexpected structure")
-    version = next((item for item in versions
-                    if item.get("versionTitle") == VERSION_TITLE
-                    and item.get("language") in ("he", "hebrew")), None)
-    if version is None:
-        candidates = [
-            {"versionTitle": item.get("versionTitle"), "language": item.get("language")}
-            for item in versions
-            if "kahana" in str(item.get("versionTitle", "")).lower()
-            or "ben sira" in str(item.get("versionTitle", "")).lower()
-        ]
-        raise RuntimeError(f"Exact Sefaria Hebrew version not found: {VERSION_TITLE}; candidates={candidates}")
-
     records = []
     chapter_counts = {}
     chapters_without_text = []
+    version_source = None
     for chapter in range(1, 52):
         params = urllib.parse.urlencode({
             "context": "0",
             "commentary": "0",
-            "vhe": VERSION_TITLE
+            "vhe": VHE_PARAMETER
         })
         url = f"{TEXT_API}{BOOK}.{chapter}?{params}"
         data = fetch_json(url)
         returned_title = data.get("heVersionTitle") or data.get("versionTitle")
-        if returned_title and returned_title != VERSION_TITLE:
+        if returned_title and "Kahana" not in str(returned_title):
             raise RuntimeError(
-                f"Sefaria returned {returned_title!r} instead of the requested Kahana version"
+                f"Sefaria returned a different Hebrew version for chapter {chapter}: {returned_title!r}"
             )
+        if returned_title and VERSION_TITLE not in str(returned_title) and "Kahana" not in str(returned_title):
+            raise RuntimeError(f"Sefaria version title mismatch: {returned_title!r}")
+        if chapter == 1:
+            version_source = data.get("heVersionSource") or data.get("versionSource")
+            if returned_title is None:
+                raise RuntimeError("Sefaria did not identify the selected Hebrew version in its API response")
         hebrew = data.get("he")
         if isinstance(hebrew, str):
             hebrew = [hebrew]
@@ -112,8 +104,9 @@ def main():
                 "source_id": "sefaria-kahana-ben-sira",
                 "source": "Sefaria digital text",
                 "edition": VERSION_TITLE,
+                "requested_version_parameter": VHE_PARAMETER,
                 "printed_edition": "David Kahana, Ben Sira, Warsaw: Tushiyah, 1912",
-                "version_source": version.get("versionSource"),
+                "version_source": version_source,
                 "source_url": PAGE_URL,
                 "api_source_url": url,
                 "editorial_status": editorial_status,
@@ -134,17 +127,18 @@ def main():
             f"{sum(1 for n in chapter_counts.values() if n)} chapters"
         )
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    with OUT.open("w", encoding="utf-8", newline="\n") as target:
+    with OUT.open("w", encoding="utf-8", newline="\\n") as target:
         for record in records:
-            target.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
+            target.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\\n")
     INDEX.write_text(json.dumps({
         "schema_version": 1,
         "record_type": "sirach_sefaria_kahana_hebrew_edition",
         "source_id": "sefaria-kahana-ben-sira",
         "source_url": PAGE_URL,
-        "api_source": VERSIONS_API,
+        "api_source": TEXT_API + BOOK,
         "version_title": VERSION_TITLE,
-        "version_source": version.get("versionSource"),
+        "requested_version_parameter": VHE_PARAMETER,
+        "version_source": version_source,
         "license": LICENSE,
         "verse_record_count": len(records),
         "chapter_count_with_text": sum(1 for n in chapter_counts.values() if n),
@@ -152,13 +146,18 @@ def main():
         "chapters_without_text_in_this_version": chapters_without_text,
         "limitations": [
             "This is a Sefaria digitization of David Kahana's 1912 Hebrew edition, not an ancient manuscript.",
-            "Kahana's edition combines Hebrew manuscript-based readings with explicitly bracketed editorial Hebrew retroversions where Hebrew manuscript text was absent.",
+            "Kahana's edition combines Hebrew manuscript-based readings with editorial Hebrew retroversions where Hebrew manuscript text was absent.",
             "Unbracketed Kahana text is not assigned to one named Genizah manuscript without passage-level verification.",
-            "The Sefaria source metadata states CC BY-SA but does not specify the version; the asset retains that uncertainty.",
+            "The source's displayed license is CC-BY-SA without a version number; the asset retains that uncertainty.",
+            "The importer explicitly requests the named Kahana version and refuses a different/default version.",
             "Missing text in this digital version is not proof of an ancient manuscript lacuna."
         ]
-    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
     print(f"Imported {len(records)} Sefaria Kahana Hebrew verse records across {sum(1 for n in chapter_counts.values() if n)} chapters.")
+
+
+if __name__ == "__main__":
+    main()
 
 
 if __name__ == "__main__":
