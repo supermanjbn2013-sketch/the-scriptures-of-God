@@ -990,6 +990,25 @@
         "The PDF OCR is not sufficiently reliable for automatic Hebrew text import without page-by-page verification.",
         "This scan is registered for source verification; no OCR-derived text is silently added to the corpus."
       ]
+    },
+    {
+      "id": "cowley-neubauer-1897-ms-b",
+      "name": "Cowley and Neubauer — The Original Hebrew of a Portion of Ecclesiasticus (1897)",
+      "language": "Hebrew, with separately printed Greek, Syriac, Latin and English columns",
+      "coverage": "Direct transcription of Cairo Genizah Hebrew manuscript B, Sirach 39:15–49:11, including the Cambridge leaf and the Bodleian continuation.",
+      "record_type": "Public-domain scholarly transcription of one direct Hebrew manuscript witness (MS B), with separate ancient-version columns",
+      "edition": "A. E. Cowley and Adolf Neubauer, The Original Hebrew of a Portion of Ecclesiasticus (XXXIX.15–XLIX.11), Oxford: Clarendon Press, 1897",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/8/8d/California_Digital_Library_%28IA_originalhebrewof00cowlrich%29.pdf",
+      "license": "Public domain",
+      "attribution": "A. E. Cowley and Adolf Neubauer, eds., The Original Hebrew of a Portion of Ecclesiasticus, Oxford: Clarendon Press, 1897; digitized by the Internet Archive and hosted by Wikimedia Commons.",
+      "limitations": [
+        "This is a printed transcription of one direct Hebrew manuscript witness, MS B; it is not the manuscript itself.",
+        "The editors describe the Cambridge leaf and Bodleian continuation as the same manuscript text.",
+        "The editors mark physical losses with dots and editorially supplied letters with brackets; these marks must be retained.",
+        "Marginal variants are not automatically part of the main MS B reading and must remain separately identified.",
+        "Greek, Syriac and Latin versions are printed in separate columns; do not merge them into the Hebrew witness.",
+        "Coverage ends at Sirach 49:11 in this edition; it does not cover the whole book."
+      ]
     }
   ],
   "not_yet_integrated": [
