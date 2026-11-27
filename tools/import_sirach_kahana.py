@@ -152,6 +152,8 @@ def main():
         "record_type": "sirach_kahana_1912_hebrew_edition_import",
         "source_id": "kahana-ben-sira-1912",
         "source_url": SOURCE_URL,
+        "printed_scan_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Ben-Sira-Kahana-1912.pdf",
+        "printed_scan_status": "public-domain 120-page scan registered for manual verification; OCR not imported",
         "records": len(records),
         "chapters_with_online_text": chapters,
         "chapters_without_online_text": chapters_without_online_text,
@@ -166,7 +168,8 @@ def main():
             "Square-bracketed passages are editorial Hebrew retroversions where the Hebrew manuscript original was absent.",
             "Unbracketed readings are not assigned to a named manuscript without passage-level verification.",
             "Absence from the online transcription is not proof of an ancient manuscript lacuna.",
-            "The import preserves Kahana's Hebrew text and editorial status; it does not claim that every chapter or verse is present."
+            "The import preserves Kahana's Hebrew text and editorial status; it does not claim that every chapter or verse is present.",
+            "The complete 1912 PDF scan is registered as a verification source; its OCR is not imported because Hebrew OCR errors require page-level checking."
         ]
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Imported {len(records)} Kahana Hebrew verse records across {len(chapters)} chapters; {bracketed} explicitly bracketed retroversions; online transcription has no text for chapters {chapters_without_online_text}.")
