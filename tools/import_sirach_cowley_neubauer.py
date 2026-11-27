@@ -41,7 +41,7 @@ def main():
             capture_output=True,
             text=True
         ).stdout
-        page_match = re.search(r"^Pages:\\s+(\\d+)", pdf_info, re.MULTILINE)
+        page_match = re.search(r"^Pages:\s+(\d+)", pdf_info, re.MULTILINE)
         if not page_match:
             raise RuntimeError("Could not determine the physical page count of the Cowley-Neubauer PDF.")
         page_count = int(page_match.group(1))
@@ -75,7 +75,7 @@ def main():
     hebrew_pages = []
     for page_number in range(1, page_count + 1):
         ocr_text = ocr_by_page.get(page_number, "")
-        contains_hebrew = bool(re.search(r"[\\u0590-\\u05FF]", ocr_text))
+        contains_hebrew = bool(re.search(r"[\u0590-\u05FF]", ocr_text))
         if contains_hebrew:
             hebrew_pages.append(page_number)
         rows.append({
