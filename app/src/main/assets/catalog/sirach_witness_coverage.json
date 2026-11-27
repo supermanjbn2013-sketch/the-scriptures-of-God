@@ -199,7 +199,7 @@
       "transcription_source": "Bensira.org manuscript navigator; transcriptions credited by the site to Martin G. Abegg and collaborators, with later readings by Shulamit Elizur and Michael Rand.",
       "source_url": "https://www.bensira.org/navigator.php?Manuscript=B&PageNum=1",
       "source_license": "Permission-based access; no explicit text redistribution license identified. External reference only.",
-      "transcription_status": "external manuscript transcription and image reference; not bundled pending redistribution permission",
+      "transcription_status": "Bensira.org external transcription plus Cowley–Neubauer 1897 public-domain direct MS B printed transcription; raw OCR page archive is being imported separately and is not yet verse-aligned or verified.",
       "additional_transcription_sources": [
         {
           "source_id": "cowley-neubauer-1897-ms-b",
@@ -208,7 +208,7 @@
           "coverage": "Sirach 39:15–49:11",
           "source_type": "public-domain printed diplomatic transcription of direct Hebrew manuscript B",
           "license": "Public domain",
-          "status": "import pending; preserve dots for physical lacunae, square brackets for supplied letters, and marginal variants separately"
+          "status": "raw public-domain PDF OCR importer implemented; generated pages pending validation; verse-level extraction and facsimile verification still pending"
         }
       ]
     },
