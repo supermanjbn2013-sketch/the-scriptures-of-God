@@ -250,7 +250,10 @@ def validate_sirach():
     assert any(item["source_id"] == "cowley-neubauer-1897-ms-b" for item in sirach["source_editions"])
     assert any(item["source_id"] == "margoliouth-1899-ms-b" for item in sirach["source_editions"])
     margoliouth = sources["margoliouth-1899-ms-b"]
-    assert "36:22–37:26" in margoliouth["coverage"] and "manuscript B" in margoliouth["manuscript_basis"]
+    assert "36:22–37:26" in margoliouth["coverage"] and "Or. 5518.2" in margoliouth["manuscript_basis"]
+    assert margoliouth["folio_mapping"]["quire_folio_IV_recto"] == "Sirach 31:12–21"
+    assert margoliouth["folio_mapping"]["quire_folio_VII_recto"] == "Sirach 36:22–37:9"
+    assert "Do not silently reconcile" in margoliouth["boundary_discrepancy"]["handling"]
     assert margoliouth["source_url"] == "https://www.jstor.org/stable/1450569"
     cowley_candidates_path = ROOT / "corpus/sirach/cowley_neubauer_ms_b_hebrew_line_candidates.jsonl"
     cowley_candidates_index_path = ROOT / "corpus/sirach/cowley_neubauer_ms_b_hebrew_line_candidates_index.json"
