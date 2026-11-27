@@ -1028,7 +1028,8 @@
         "The quire folio IV and VII labels are manuscript-structure foliation, not two separate witnesses.",
         "The NLI/BL catalogue's physical-text description and the article/modern edition report differing verse endpoints for the second portion; do not silently reconcile them.",
         "Margoliouth's transcription and notes must remain a distinct edition layer with page and folio references; do not merge silently with Kahana or Cowley–Neubauer.",
-        "The separate Genizah-D manuscript remains an independent witness for overlapping Sirach 36:29–38:1a material."
+        "The separate Genizah-D manuscript remains an independent witness for overlapping Sirach 36:29–38:1a material.",
+        "The first-portion boundary is also inconsistent across catalogues: British Library TEI says Sirach 34:12–31, while the NLI catalogue note says 31:12–32:1 and modern codicological mapping assigns 31:12–31. This discrepancy remains unresolved and must be retained with attribution."
       ],
       "institutional_catalogue_url": "https://searcharchives.bl.uk/catalog/032-003393550",
       "folio_mapping": {
@@ -1042,7 +1043,12 @@
         "published_article_title": "Sirach 36:22–37:26",
         "British_Library_and_NLI_catalogue_description": "Sirach 36:24–37:24 (the NLI scholarly description also reports Margoliouth's broader printed boundary)",
         "modern_critical_edition": "Sirach 36:22–37:26",
-        "handling": "Do not silently normalize these endpoints. The manuscript is damaged; retain physical fragment endpoints, printed-edition range, and critical-edition mapping as separately attributed claims pending direct page/facsimile collation."
+        "handling": "Do not silently normalize these endpoints. The manuscript is damaged; retain physical fragment endpoints, printed-edition range, and critical-edition mapping as separately attributed claims pending direct page/facsimile collation.",
+        "published_article_title_first_portion": "Sirach 31:12–31",
+        "british_library_catalogue_first_portion": "Sirach 34:12–31",
+        "nli_catalogue_first_portion": "Sirach 31:12–32:1",
+        "codicological_mapping_first_portion": "Quire folio IV recto/verso: Sirach 31:12–31",
+        "first_portion_handling": "The British Library TEI catalogue reports 34:12–31, while the NLI Hebrew catalogue note and modern codicological folio mapping report 31:12–32:1 and 31:12–31 respectively. Preserve each attributed catalogue/edition statement; do not infer that the BL 34 is a corrected reading."
       }
     }
   ],
