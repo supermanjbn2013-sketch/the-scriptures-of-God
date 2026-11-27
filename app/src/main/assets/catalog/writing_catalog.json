@@ -879,6 +879,15 @@
           "source_status": "raw public-domain PDF text layer importer implemented; OCR page records pending workflow validation; verse-level Hebrew transcription not yet parsed or checked against facsimile",
           "witness_basis": "Cairo Genizah manuscript B; Sirach 39:15–49:11",
           "license": "Public domain"
+        },
+        {
+          "source_id": "margoliouth-1899-ms-b",
+          "source_name": "G. Margoliouth 1899, direct Hebrew transcription of Genizah manuscript B, folio VII",
+          "source_file": "external_reference_only; transcription not yet imported",
+          "source_status": "public-domain transcription source identified; manuscript-specific verse extraction and verification pending",
+          "witness_basis": "Cairo Genizah manuscript B, folio VII; Sirach 31:12–31 and 36:22–37:26",
+          "transcription_type": "printed scholarly transcription of a direct Hebrew manuscript witness; separate from Kahana and Cowley–Neubauer editions",
+          "license": "Public domain"
         }
       ],
       "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
