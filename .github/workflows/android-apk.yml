@@ -37,6 +37,13 @@ jobs:
           test -f build/samaritan-sp/tf/7.4.1/otype.tf
       - name: Import Samaritan Pentateuch as a separate witness
         run: python3 tools/import_samaritan_pentateuch.py
+      - name: Prepare pinned ETCBC Syriac Peshitta source
+        run: |
+          git clone https://github.com/ETCBC/syriac.git build/syriac
+          git -C build/syriac checkout 0b6ded2b369c7d81589a98c92325290e24b20af6
+          test -f build/syriac/tf/0.92/otype.tf
+      - name: Import Syriac Peshitta Ben Sira as a separate versional witness
+        run: python3 tools/import_sirach_syriac.py
       - name: Download featured Qumran-Digital transcription source pages
         run: python3 tools/download_qumran_digital_sources.py
       - name: Import offline Dead Sea Scrolls transcriptions
