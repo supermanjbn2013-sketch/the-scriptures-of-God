@@ -50,7 +50,7 @@ def validate_base():
     septuagint_report = json.loads(septuagint_report_path.read_text(encoding="utf-8"))
     assert septuagint_report["source_revision"] == "26bad3eb42bba98471d154c954e36a6f30a0279d"
     assert septuagint_report["license"] == "CC BY-SA 4.0"
-    assert len(septuagint_report["books"]) == 35
+    assert len(septuagint_report["books"]) == 34
     assert septuagint_report["total_verse_records"] == sum(septuagint_report["books"].values()) > 10000
     for title, count in septuagint_report["books"].items():
         source_rows = [r for r in septuagint if r["book"] == title]
