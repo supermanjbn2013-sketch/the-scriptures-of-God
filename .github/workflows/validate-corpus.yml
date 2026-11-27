@@ -31,6 +31,7 @@ on:
       - "tools/build_sirach_reconstruction.py"
       - "tools/build_sirach_qdr_evidence.py"
       - "tools/build_sirach_11q5_evidence.py"
+      - "tools/download_qumran_digital_sources.py"
       - "tools/build_john_witness_index.py"
       - "tools/import_2_baruch.py"
       - "tools/import_3_baruch.py"
