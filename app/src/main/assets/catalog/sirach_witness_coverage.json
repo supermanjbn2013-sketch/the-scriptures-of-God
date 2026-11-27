@@ -158,8 +158,15 @@
       "direct_witness_status": "direct Hebrew manuscript witness",
       "limitations": [
         "A broad manuscript range is not proof that every verse is preserved.",
-        "A Cambridge Library record identifies T-S 12.864 (= MS A) specifically with 5:10-7:29 and 11:34-14:11; retain shelfmark-specific fragment coverage separately."
-      ]
+        "A Cambridge Library record identifies T-S 12.864 (= MS A) specifically with 5:10-7:29 and 11:34-14:11; retain shelfmark-specific fragment coverage separately.",
+        "The Bensira.org navigator reunites folios but does not make the manuscript a continuous complete copy.",
+        "Do not bundle the site's transcription or images without permission from the relevant rights holders.",
+        "Use manuscript-specific folio and shelfmark details; passage ranges are locators and do not prove continuous text."
+      ],
+      "transcription_source": "Bensira.org manuscript navigator; transcriptions credited by the site to Martin G. Abegg and collaborators, with later readings by Shulamit Elizur and Michael Rand.",
+      "source_url": "https://www.bensira.org/navigator.php?Manuscript=A&PageNum=1",
+      "source_license": "Permission-based access; no explicit text redistribution license identified. External reference only.",
+      "transcription_status": "external manuscript transcription and image reference; not bundled pending redistribution permission"
     },
     {
       "witness_id": "Genizah-B",
@@ -182,8 +189,15 @@
       ],
       "direct_witness_status": "direct Hebrew manuscript witness",
       "limitations": [
-        "Preserve the reported partial verse endpoints and do not infer complete verse coverage."
-      ]
+        "Preserve the reported partial verse endpoints and do not infer complete verse coverage.",
+        "The Bensira.org navigator reunites folios but does not make the manuscript a continuous complete copy.",
+        "Do not bundle the site's transcription or images without permission from the relevant rights holders.",
+        "Use manuscript-specific folio and shelfmark details; passage ranges are locators and do not prove continuous text."
+      ],
+      "transcription_source": "Bensira.org manuscript navigator; transcriptions credited by the site to Martin G. Abegg and collaborators, with later readings by Shulamit Elizur and Michael Rand.",
+      "source_url": "https://www.bensira.org/navigator.php?Manuscript=B&PageNum=1",
+      "source_license": "Permission-based access; no explicit text redistribution license identified. External reference only.",
+      "transcription_status": "external manuscript transcription and image reference; not bundled pending redistribution permission"
     },
     {
       "witness_id": "Genizah-C",
@@ -242,8 +256,15 @@
       ],
       "direct_witness_status": "direct Hebrew manuscript witness; compilation of citations",
       "limitations": [
-        "Do not interpolate missing verses between scattered citations."
-      ]
+        "Do not interpolate missing verses between scattered citations.",
+        "The Bensira.org navigator reunites folios but does not make the manuscript a continuous complete copy.",
+        "Do not bundle the site's transcription or images without permission from the relevant rights holders.",
+        "Use manuscript-specific folio and shelfmark details; passage ranges are locators and do not prove continuous text."
+      ],
+      "transcription_source": "Bensira.org manuscript navigator; transcriptions credited by the site to Martin G. Abegg and collaborators, with later readings by Shulamit Elizur and Michael Rand.",
+      "source_url": "https://www.bensira.org/navigator.php?Manuscript=C&PageNum=1",
+      "source_license": "Permission-based access; no explicit text redistribution license identified. External reference only.",
+      "transcription_status": "external manuscript transcription and image reference; not bundled pending redistribution permission"
     },
     {
       "witness_id": "Genizah-D",
@@ -258,8 +279,15 @@
       ],
       "direct_witness_status": "direct Hebrew manuscript witness",
       "limitations": [
-        "Preserve partial verse endpoint."
-      ]
+        "Preserve partial verse endpoint.",
+        "The Bensira.org navigator reunites folios but does not make the manuscript a continuous complete copy.",
+        "Do not bundle the site's transcription or images without permission from the relevant rights holders.",
+        "Use manuscript-specific folio and shelfmark details; passage ranges are locators and do not prove continuous text."
+      ],
+      "transcription_source": "Bensira.org manuscript navigator; transcriptions credited by the site to Martin G. Abegg and collaborators, with later readings by Shulamit Elizur and Michael Rand.",
+      "source_url": "https://www.bensira.org/navigator.php?Manuscript=D&PageNum=1",
+      "source_license": "Permission-based access; no explicit text redistribution license identified. External reference only.",
+      "transcription_status": "external manuscript transcription and image reference; not bundled pending redistribution permission"
     },
     {
       "witness_id": "Genizah-E",
@@ -274,8 +302,15 @@
       ],
       "direct_witness_status": "direct Hebrew manuscript witness",
       "limitations": [
-        "Preserve partial verse endpoint."
-      ]
+        "Preserve partial verse endpoint.",
+        "The Bensira.org navigator reunites folios but does not make the manuscript a continuous complete copy.",
+        "Do not bundle the site's transcription or images without permission from the relevant rights holders.",
+        "Use manuscript-specific folio and shelfmark details; passage ranges are locators and do not prove continuous text."
+      ],
+      "transcription_source": "Bensira.org manuscript navigator; transcriptions credited by the site to Martin G. Abegg and collaborators, with later readings by Shulamit Elizur and Michael Rand.",
+      "source_url": "https://www.bensira.org/navigator.php?Manuscript=E&PageNum=1",
+      "source_license": "Permission-based access; no explicit text redistribution license identified. External reference only.",
+      "transcription_status": "external manuscript transcription and image reference; not bundled pending redistribution permission"
     },
     {
       "witness_id": "Genizah-F",
@@ -294,8 +329,15 @@
       ],
       "direct_witness_status": "direct Hebrew manuscript witness",
       "limitations": [
-        "Preserve gaps and partial endpoints."
-      ]
+        "Preserve gaps and partial endpoints.",
+        "The Bensira.org navigator reunites folios but does not make the manuscript a continuous complete copy.",
+        "Do not bundle the site's transcription or images without permission from the relevant rights holders.",
+        "Use manuscript-specific folio and shelfmark details; passage ranges are locators and do not prove continuous text."
+      ],
+      "transcription_source": "Bensira.org manuscript navigator; transcriptions credited by the site to Martin G. Abegg and collaborators, with later readings by Shulamit Elizur and Michael Rand.",
+      "source_url": "https://www.bensira.org/navigator.php?Manuscript=F&PageNum=1",
+      "source_license": "Permission-based access; no explicit text redistribution license identified. External reference only.",
+      "transcription_status": "external manuscript transcription and image reference; not bundled pending redistribution permission"
     },
     {
       "witness_id": "Mas1h",
