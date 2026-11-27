@@ -162,11 +162,18 @@ def validate_sirach():
                 continue
             row = json.loads(raw)
             assert row["writing_id"] == "sirach" and row["witness_id"] == "11Q5"
-            assert row["transcription_text"] and row["sirach_parallel_references"]
-            assert row["reconstruction_status"] == "preserved_line_only; no completion supplied"
+            assert row["text"] and row["editorial_parallel_references"]
+            assert row["source_url"] == "https://lexicon.qumran-digital.org/transcriptions/11Q5/2025-03-11/index.html"
+            assert row["source_license"] == "CC BY-SA 4.0"
+            assert row["reconstruction_status"] == "preserved_text_only; no missing words supplied"
             q11_count += 1
-    assert q11_count == q11_index["line_records"] > 0
-    assert "not a dedicated Sirach codex" in " ".join(q11_index["limitations"])
+    assert q11_count == q11_index["line_records"] == 9
+    assert q11_index["license"] == "CC BY-SA 4.0"
+    assert "not a dedicated Sirach manuscript" in " ".join(q11_index["limitations"])
+    qdr_manifest_path = ROOT / "dss/qumran_digital/source_manifest.json"
+    assert qdr_manifest_path.exists()
+    qdr_manifest = json.loads(qdr_manifest_path.read_text(encoding="utf-8"))
+    assert any(item["manuscript_id"] == "11Q5" and item["version"] == "2025-03-11" for item in qdr_manifest["records"])
     syriac_path = ROOT / "corpus/sirach/peshitta_syriac.jsonl"
     syriac_index_path = ROOT / "corpus/sirach/peshitta_syriac_index.json"
     assert syriac_path.exists() and syriac_index_path.exists(), "Syriac Peshitta Sirach import is missing"
