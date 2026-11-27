@@ -103,13 +103,16 @@
           "coverage_type": "fragmentary manuscript coverage; seven columns reported"
         }
       ],
-      "transcription_source": "Yigael Yadin's publication of the Masada Ben Sira manuscript; compare with the Cairo Genizah and ancient versions.",
-      "source_license": "Manuscript transcription rights and edition-specific terms must be checked before importing a full transcription.",
+      "transcription_source": "Eric D. Reymond transcription hosted by Bensira.org; direct Hebrew text is available by manuscript section through the site's navigator.",
+      "source_license": "Permission-based access; no explicit redistribution license identified for the transcription. External reference only.",
       "direct_witness_status": "direct Hebrew manuscript witness",
       "limitations": [
-        "Only the preserved portion of the manuscript is evidence; it does not supply all of Sirach.",
-        "Some publications give the endpoints as 39:27b-44:17b; retain the edition's exact endpoint notation when transcribing."
-      ]
+        "Only the preserved portions of the Masada scroll are evidence; it does not supply all of Sirach.",
+        "The Bensira.org site provides manuscript images and a transcription by Eric D. Reymond, but the transcription is not bundled here because redistribution permission is not explicit.",
+        "A Cambridge repository study reports that the fragment containing Sirach 44:17 was no longer extant as of April 2015; the earlier published transcription remains a historical record.",
+        "Do not infer missing lines from adjacent columns or from the Kahana edition."
+      ],
+      "source_url": "https://www.bensira.org/navigator.php?Manuscript=Masada&PageNum=1"
     },
     {
       "witness_id": "11Q5",
@@ -327,6 +330,17 @@
       "url": "https://lexicon.qumran-digital.org/transcriptions/11Q5/2025-03-11/index.html",
       "supports": "Direct Hebrew lines of the Sirach hymn in 11Q5 columns XXI and XXII; editorial parallel references and source display-line labels.",
       "license": "CC BY-SA 4.0"
+    },
+    {
+      "source": "The Book of Ben Sira, Masada manuscript navigator",
+      "url": "https://www.bensira.org/navigator.php?Manuscript=Masada&PageNum=1",
+      "supports": "Masada manuscript sections, direct transcription and image access; transcription credited to Eric D. Reymond.",
+      "license": "Permission-based; external reference only"
+    },
+    {
+      "source": "Cambridge repository, Primary Texts for Sir 44:17-18",
+      "url": "https://api.repository.cam.ac.uk/server/api/core/bitstreams/f0e03bb7-d522-4156-be31-852d81408df9/content",
+      "supports": "The Sirach 44:17 Masada fragment was no longer extant as of April 2015; earlier published transcription is a historical record."
     }
   ]
 }
