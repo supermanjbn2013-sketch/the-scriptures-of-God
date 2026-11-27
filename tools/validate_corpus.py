@@ -121,11 +121,15 @@ def validate_sirach():
             if row["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac":
                 assert row["text"].startswith("[") and row["text"].endswith("]")
                 bracketed += 1
+            elif row["editorial_status"] == "kahana_edition_contains_bracketed_editorial_retroversion":
+                assert "[" in row["text"] and "]" in row["text"]
+                bracketed += 1
             else:
                 assert row["editorial_status"] == "kahana_hebrew_edition_based_on_manuscript_evidence_not_a_diplomatic_single_witness"
             count += 1
     assert count == index["records"] > 0
     assert bracketed == index["bracketed_retroversion_records"]
+    assert index["fully_bracketed_retroversion_records"] + index["partially_bracketed_retroversion_records"] == bracketed
     assert "incomplete" in index["source_page_status"].lower()
     coverage_path = ROOT / "catalog/sirach_witness_coverage.json"
     assert coverage_path.exists(), "Sirach Hebrew witness coverage inventory is missing"
