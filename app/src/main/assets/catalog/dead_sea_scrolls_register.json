@@ -4,46 +4,39 @@
   "catalog_policy": "These are metadata records, not imported transcriptions. Dates are approximate institutional descriptions, not exact calendar dates. No text is represented as a DSS reading until a manuscript passage, fragment/column, transcription edition, and reading are individually verified. Digital images remain at the rights holder's site; no image files are bundled.",
   "records": [
     {
-      "id": "1QIsa-a",
-      "name": "Great Isaiah Scroll (1QIsaᵃ)",
-      "cave": "Qumran Cave 1",
+      "id": "11Q19",
+      "name": "Temple Scroll (11Q19)",
+      "cave": "Qumran Cave 11",
       "language": "Hebrew",
       "material": "Parchment",
-      "date_estimate": "Approximately 120–100 BCE in the cited Israel Museum educational publication",
-      "date_basis": "Institutional publication's approximate dating; not an exact date",
-      "contents": "A substantially complete copy of Isaiah; the Israel Museum describes it as the only biblical scroll preserved in its entirety",
-      "condition": "Exceptionally well preserved relative to most DSS manuscripts",
+      "date_estimate": "Not assigned in this initial record; consult the manuscript edition and current institutional catalogue",
+      "date_basis": "No date copied into this record without a directly verified dating statement",
+      "contents": "A long legal-religious composition concerning the Temple and related laws; the Israel Museum identifies it as the longest Dead Sea Scroll and describes it as rewriting material from Deuteronomy",
+      "condition": "Surviving manuscript; exact fragment and column coverage must be checked in the digital catalogue",
       "holding_institution": "Israel Museum, Shrine of the Book",
-      "shelfmark": "1QIsaᵃ",
+      "shelfmark": "11Q19",
       "source_urls": [
         "https://dss.collections.imj.org.il/",
-        "https://museum.imj.org.il/pdf/dss-english.pdf",
-        "https://www.deadseascrolls.org.il/"
+        "https://www.deadseascrolls.org.il/explore-the-archive"
       ],
-      "image_access": "View images through the Israel Museum Digital Dead Sea Scrolls or the IAA Leon Levy Digital Library. Do not copy images into this app without permission.",
+      "image_access": "Use the institutional viewer. Check current reproduction rights before copying images.",
       "status": "metadata catalogued; transcription not imported",
-      "caution": "This is a manuscript witness to Isaiah, not a source for every wording in a modern edition. Any comparison must identify the exact column and line and distinguish preserved letters from reconstruction."
+      "caution": "Do not treat this composition as a manuscript copy of Deuteronomy. It is a distinct composition that reworks legal material. Exact coverage and readings require column-level verification."
     },
     {
-      "id": "1QpHab",
-      "name": "Pesher Habakkuk / Commentary on Habakkuk (1QpHab)",
-      "cave": "Qumran Cave 1",
+      "id": "11Q5",
+      "name": "Great Psalms Scroll (11QPsᵃ / 11Q5)",
+      "cave": "Qumran Cave 11",
       "language": "Hebrew",
-      "material": "Parchment",
-      "date_estimate": "Approximately 50 BCE in the cited Israel Museum educational publication",
-      "date_basis": "Institutional publication's approximate dating",
-      "contents": "A commentary on the first two chapters of Habakkuk; the Israel Museum publication describes it as the only known copy of this commentary",
-      "condition": "Relatively complete scroll compared with many fragmentary DSS witnesses",
-      "holding_institution": "Israel Museum, Shrine of the Book",
-      "shelfmark": "1QpHab",
+      "contents": "A Psalms scroll that also preserves a hymn passage cross-referenced with Sirach 51:13–20 and the first two words of Sirach 51:30.",
+      "shelfmark": "11Q5; 11QPsᵃ",
       "source_urls": [
-        "https://dss.collections.imj.org.il/",
-        "https://museum.imj.org.il/pdf/dss-english.pdf",
+        "https://lexicon.qumran-digital.org/transcriptions/11Q5/2025-03-11/index.html",
         "https://www.deadseascrolls.org.il/"
       ],
-      "image_access": "Use the institutional digital viewer; reproduction rights must be checked with the holding institution.",
-      "status": "metadata catalogued; transcription not imported",
-      "caution": "This is an ancient interpretive commentary, not a manuscript copy of the full book of Habakkuk."
+      "image_access": "Consult the Qumran-Digital transcription and the IAA Leon Levy Dead Sea Scrolls Digital Library. Image reproduction rights must be checked with the holding institution.",
+      "status": "metadata catalogued; nine Sirach-related Hebrew transcription lines imported as a separate passage layer",
+      "caution": "11Q5 is a Psalms scroll, not a dedicated Sirach manuscript. Preserve the scroll's identity and layout; cross-link only the Sirach hymn passage. QDR's parallel-reference labels and display-line numbers are editorial aids, not manuscript text or physical line coordinates."
     },
     {
       "id": "1QapGen",
@@ -67,45 +60,25 @@
       "caution": "The standard Qumran identifier is 1Q20; the descriptive abbreviation 1QapGen is also used. This is an Aramaic retelling/expansion of Genesis, not a direct copy of the book of Genesis."
     },
     {
-      "id": "1QS",
-      "name": "Community Rule (1QS)",
+      "id": "1QIsa-a",
+      "name": "Great Isaiah Scroll (1QIsaᵃ)",
       "cave": "Qumran Cave 1",
       "language": "Hebrew",
       "material": "Parchment",
-      "date_estimate": "Approximately 100–75 BCE in the cited Israel Museum educational publication",
-      "date_basis": "Institutional publication's approximate dating",
-      "contents": "A community rule text; the cited publication describes it as the most complete copy of the Community Rule",
-      "condition": "Relatively substantial surviving manuscript",
+      "date_estimate": "Approximately 120–100 BCE in the cited Israel Museum educational publication",
+      "date_basis": "Institutional publication's approximate dating; not an exact date",
+      "contents": "A substantially complete copy of Isaiah; the Israel Museum describes it as the only biblical scroll preserved in its entirety",
+      "condition": "Exceptionally well preserved relative to most DSS manuscripts",
       "holding_institution": "Israel Museum, Shrine of the Book",
-      "shelfmark": "1QS",
+      "shelfmark": "1QIsaᵃ",
       "source_urls": [
         "https://dss.collections.imj.org.il/",
         "https://museum.imj.org.il/pdf/dss-english.pdf",
         "https://www.deadseascrolls.org.il/"
       ],
-      "image_access": "Use the institutional digital viewer; reproduction rights must be checked with the holding institution.",
+      "image_access": "View images through the Israel Museum Digital Dead Sea Scrolls or the IAA Leon Levy Digital Library. Do not copy images into this app without permission.",
       "status": "metadata catalogued; transcription not imported",
-      "caution": "This is a community rule document, not a copy of one of the Hebrew Scripture books."
-    },
-    {
-      "id": "11Q19",
-      "name": "Temple Scroll (11Q19)",
-      "cave": "Qumran Cave 11",
-      "language": "Hebrew",
-      "material": "Parchment",
-      "date_estimate": "Not assigned in this initial record; consult the manuscript edition and current institutional catalogue",
-      "date_basis": "No date copied into this record without a directly verified dating statement",
-      "contents": "A long legal-religious composition concerning the Temple and related laws; the Israel Museum identifies it as the longest Dead Sea Scroll and describes it as rewriting material from Deuteronomy",
-      "condition": "Surviving manuscript; exact fragment and column coverage must be checked in the digital catalogue",
-      "holding_institution": "Israel Museum, Shrine of the Book",
-      "shelfmark": "11Q19",
-      "source_urls": [
-        "https://dss.collections.imj.org.il/",
-        "https://www.deadseascrolls.org.il/explore-the-archive"
-      ],
-      "image_access": "Use the institutional viewer. Check current reproduction rights before copying images.",
-      "status": "metadata catalogued; transcription not imported",
-      "caution": "Do not treat this composition as a manuscript copy of Deuteronomy. It is a distinct composition that reworks legal material. Exact coverage and readings require column-level verification."
+      "caution": "This is a manuscript witness to Isaiah, not a source for every wording in a modern edition. Any comparison must identify the exact column and line and distinguish preserved letters from reconstruction."
     },
     {
       "id": "1QM",
@@ -126,6 +99,48 @@
       "image_access": "Use the institutional viewer. Check current reproduction rights before copying images.",
       "status": "metadata catalogued; transcription not imported",
       "caution": "This is a sectarian composition, not a book of the Hebrew Scriptures. Do not confuse its title with a historical account of a specific war without evaluating the text."
+    },
+    {
+      "id": "1QpHab",
+      "name": "Pesher Habakkuk / Commentary on Habakkuk (1QpHab)",
+      "cave": "Qumran Cave 1",
+      "language": "Hebrew",
+      "material": "Parchment",
+      "date_estimate": "Approximately 50 BCE in the cited Israel Museum educational publication",
+      "date_basis": "Institutional publication's approximate dating",
+      "contents": "A commentary on the first two chapters of Habakkuk; the Israel Museum publication describes it as the only known copy of this commentary",
+      "condition": "Relatively complete scroll compared with many fragmentary DSS witnesses",
+      "holding_institution": "Israel Museum, Shrine of the Book",
+      "shelfmark": "1QpHab",
+      "source_urls": [
+        "https://dss.collections.imj.org.il/",
+        "https://museum.imj.org.il/pdf/dss-english.pdf",
+        "https://www.deadseascrolls.org.il/"
+      ],
+      "image_access": "Use the institutional digital viewer; reproduction rights must be checked with the holding institution.",
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "This is an ancient interpretive commentary, not a manuscript copy of the full book of Habakkuk."
+    },
+    {
+      "id": "1QS",
+      "name": "Community Rule (1QS)",
+      "cave": "Qumran Cave 1",
+      "language": "Hebrew",
+      "material": "Parchment",
+      "date_estimate": "Approximately 100–75 BCE in the cited Israel Museum educational publication",
+      "date_basis": "Institutional publication's approximate dating",
+      "contents": "A community rule text; the cited publication describes it as the most complete copy of the Community Rule",
+      "condition": "Relatively substantial surviving manuscript",
+      "holding_institution": "Israel Museum, Shrine of the Book",
+      "shelfmark": "1QS",
+      "source_urls": [
+        "https://dss.collections.imj.org.il/",
+        "https://museum.imj.org.il/pdf/dss-english.pdf",
+        "https://www.deadseascrolls.org.il/"
+      ],
+      "image_access": "Use the institutional digital viewer; reproduction rights must be checked with the holding institution.",
+      "status": "metadata catalogued; transcription not imported",
+      "caution": "This is a community rule document, not a copy of one of the Hebrew Scripture books."
     }
   ],
   "collection_sources": [
