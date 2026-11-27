@@ -24,7 +24,8 @@ def main():
             if not raw.strip():
                 continue
             item = json.loads(raw)
-            if str(item.get("scroll", "")).strip().replace(" ", "").lower() != "11q5":
+            scroll_key = re.sub(r"[^a-z0-9]", "", str(item.get("scroll", "")).lower())
+            if scroll_key not in {"11q5", "11qpsa"}:
                 continue
             refs = item.get("parallel_references", [])
             sirach_refs = [r for r in refs if re.search(r"Sir\w*\s*51[.,]", str(r), re.I)]
@@ -51,7 +52,7 @@ def main():
                 "warning":"11Q5 is a Psalms scroll containing a Sirach hymn passage; it is not a dedicated Sirach codex. Parallel anchors do not prove that every word of the referenced verse survives."
             })
     if not rows:
-        raise SystemExit("No Sirach 51 parallel lines found in 11Q5 QDR data; refusing to invent lines")
+        raise SystemExit("No Sirach 51 parallel lines found in 11Q5/11QPsa QDR data; refusing to invent lines")
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for row in rows:
