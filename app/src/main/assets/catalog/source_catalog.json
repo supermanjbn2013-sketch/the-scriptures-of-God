@@ -884,6 +884,23 @@
         "The imported source omits the critical apparatus.",
         "CC BY-NC 4.0 prohibits commercial use without separate permission."
       ]
+    },
+    {
+      "id": "bensira-masada-transcription",
+      "name": "Bensira.org — Masada Ben Sira Scroll transcription",
+      "language": "Hebrew",
+      "coverage": "Masada Ben Sira manuscript (Mas1h/MasSir), reported for portions of Sirach 39:27–44:17 across the seven Masada sections in the Bensira.org navigator.",
+      "record_type": "External manuscript transcription and image resource; text is not bundled in this corpus",
+      "edition": "Transcription by Eric D. Reymond, hosted by The Book of Ben Sira website",
+      "source_url": "https://www.bensira.org/navigator.php?Manuscript=Masada&PageNum=1",
+      "license": "Permission-based access; no explicit redistribution license identified for the transcription. Do not bundle the full transcription without permission.",
+      "attribution": "Eric D. Reymond, transcription of the Masada Ben Sira scroll, hosted by Bensira.org; manuscript images courtesy of the Israel Antiquities Authority and the Leon Levy Dead Sea Scrolls Digital Library.",
+      "limitations": [
+        "This is a direct Hebrew manuscript witness, but the site's transcription is permission-based and is not copied into the app corpus.",
+        "The Masada manuscript is fragmentary and does not supply all of Sirach.",
+        "A Cambridge repository study reports that the fragment containing Sirach 44:17 was no longer extant as of April 2015; its earlier published transcription remains a historical record.",
+        "Use the site navigator to view each Masada section and its transcription; do not infer missing lines from adjacent sections."
+      ]
     }
   ],
   "not_yet_integrated": [
