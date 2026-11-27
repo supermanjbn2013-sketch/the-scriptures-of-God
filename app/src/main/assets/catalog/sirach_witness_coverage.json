@@ -293,6 +293,35 @@
       "limitations": [
         "Preserve gaps and partial endpoints."
       ]
+    },
+    {
+      "witness_id": "Rhyming-Paraphrase",
+      "alternate_id": "Medieval Hebrew Rhyming Paraphrase of Ben Sira; includes ENA 3053.3",
+      "collection": "Medieval Hebrew manuscript tradition; the reviewed passage Sirach 22:22-26 is preserved in ENA 3053.3 verso",
+      "language": "Hebrew",
+      "witness_type": "indirect paraphrastic witness; not a direct copy of Ben Sira",
+      "passage_coverage": [
+        {
+          "reference": "Sirach 22:22-26",
+          "manuscript_location": "ENA 3053.3 verso",
+          "coverage_type": "medieval rhyming paraphrase; may preserve indirect Hebrew evidence, not Ben Sira's exact wording"
+        },
+        {
+          "reference": "Sirach 23:1",
+          "manuscript_location": "Rhyming Paraphrase; precise folio/line must be verified against the critical edition",
+          "coverage_type": "reported Hebrew paraphrase of a passage otherwise unavailable in direct Hebrew witnesses"
+        }
+      ],
+      "source_reference": "Rey and Reymond, A Critical Edition of the Hebrew Manuscripts of Ben Sira (2024), separately edited Rhyming Paraphrase; review by Jan Joosten, Rivista Biblica 73 (2025), 576–581.",
+      "source_url": "https://www.academia.edu/152613232/A_Critical_Edition_of_the_Hebrew_Manuscripts_of_Ben_Sira_With_Translations_and_Philological_Notes",
+      "direct_witness_status": "not a direct manuscript witness to Ben Sira; medieval paraphrase that may indirectly preserve Hebrew material",
+      "source_license": "Copyrighted scholarly edition; external reference only",
+      "limitations": [
+        "Never merge this paraphrase into the direct Ben Sira manuscript text.",
+        "It is not a verbatim witness and its wording may differ substantially from the source passage.",
+        "The cited Sirach 23:1 Hebrew wording is reported by a scholarly review; exact manuscript line and critical-edition apparatus must be checked before using it as a reconstruction source.",
+        "Do not use the paraphrase to silently fill a manuscript lacuna."
+      ]
     }
   ],
   "reconstruction_rules": [
