@@ -63,6 +63,7 @@ def main():
     word_ids = []
     token_markup = []
     element_stack = []
+    book_divisions = []
     word_depth = 0
     legacy_mode = False
     root_seen = False
@@ -151,6 +152,12 @@ def main():
 
             if event == "start":
                 element_stack.append({"element": tag, "attributes": dict(elem.attrib)})
+                if tag == "div" and elem.attrib.get("type") == "book":
+                    book_divisions.append({
+                        "xml_id": elem.attrib.get(XML_ID),
+                        "id": elem.attrib.get("id"),
+                        "n": elem.attrib.get("n")
+                    })
                 if tag == "pb":
                     start_page(marker_id(elem))
                 elif tag == "cb":
@@ -211,6 +218,7 @@ def main():
         "license_url": "https://creativecommons.org/licenses/by-nc-sa/3.0/",
         "text_handling": "Diplomatic transcription text is retained as supplied; no spelling normalization or verse reconstruction is performed.",
         "coordinate_policy": "Original page, column, line, and word identifiers are preserved. No chapter-and-verse references are invented.",
+        "book_divisions": book_divisions,
         "page_count": len(pages),
         "line_count": total_lines,
         "pages": pages
@@ -224,6 +232,7 @@ def main():
         encoding="utf-8"
     )
     print(f"Imported {len(pages)} pages and {total_lines} manuscript lines.")
+    print("Codex Sinaiticus book divisions: " + json.dumps(book_divisions, ensure_ascii=False))
 
 
 if __name__ == "__main__":
