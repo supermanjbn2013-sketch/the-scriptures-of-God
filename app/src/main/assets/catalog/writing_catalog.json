@@ -875,8 +875,8 @@
         {
           "source_id": "cowley-neubauer-1897-ms-b",
           "source_name": "Cowley and Neubauer 1897, direct transcription of Genizah manuscript B",
-          "source_file": "external_reference_only; public-domain 102-page PDF; import pending",
-          "source_status": "direct MS B transcription registered; manuscript text, bracketed restorations, physical lacunae and marginal variants require separate extraction",
+          "source_file": "corpus/sirach/cowley_neubauer_ms_b_pdf_pages.jsonl (raw PDF OCR page archive)",
+          "source_status": "raw public-domain PDF text layer importer implemented; OCR page records pending workflow validation; verse-level Hebrew transcription not yet parsed or checked against facsimile",
           "witness_basis": "Cairo Genizah manuscript B; Sirach 39:15–49:11",
           "license": "Public domain"
         }
