@@ -96,6 +96,39 @@ def validate_apocrypha():
     assert all(r.get("source_reference", "").startswith("28.8.") for r in prayer)
     print(f"Validated {len(REQUIRED_GREEK | REQUIRED_LATIN)} complete Apocrypha books/forms; {len(records)} text records")
 
+
+def validate_sirach():
+    path = ROOT / "corpus/sirach/kahana_1912_hebrew.jsonl"
+    index_path = ROOT / "corpus/sirach/kahana_1912_index.json"
+    assert path.exists() and index_path.exists(), "Kahana Hebrew Sirach import is missing"
+    index = json.loads(index_path.read_text(encoding="utf-8"))
+    catalog = json.loads((ROOT / "catalog/source_catalog.json").read_text(encoding="utf-8"))
+    sources = {item["id"]: item for item in catalog["datasets"]}
+    assert "kahana-ben-sira-1912" in sources
+    writings = json.loads((ROOT / "catalog/writing_catalog.json").read_text(encoding="utf-8"))
+    sirach = next(item for item in writings["records"] if item["id"] == "sirach")
+    assert any(item["source_id"] == "kahana-ben-sira-1912" for item in sirach["source_editions"])
+    count = 0
+    bracketed = 0
+    with path.open(encoding="utf-8") as stream:
+        for raw in stream:
+            if not raw.strip():
+                continue
+            row = json.loads(raw)
+            assert row["writing_id"] == "sirach" and row["source_id"] == "kahana-ben-sira-1912"
+            assert row["text"] and row["source_url"] and row["verse_number"] > 0
+            assert row["direct_manuscript_witness"] is False and row["preserve_brackets"] is True
+            if row["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac":
+                assert row["text"].startswith("[") and row["text"].endswith("]")
+                bracketed += 1
+            else:
+                assert row["editorial_status"] == "kahana_hebrew_edition_based_on_manuscript_evidence_not_a_diplomatic_single_witness"
+            count += 1
+    assert count == index["records"] > 0
+    assert bracketed == index["bracketed_retroversion_records"]
+    assert "incomplete" in index["source_page_status"].lower()
+    print(f"Validated {count} Kahana Hebrew Sirach edition records; {bracketed} marked editorial retroversions. No record is mislabelled as a direct manuscript transcription.")
+
 def validate_dss():
     import json as json_module
     dss_lines_path = ROOT / "dss/etcbc_transcriptions.jsonl"
@@ -1058,7 +1091,7 @@ def validate_samaritan():
     print(f"Validated {count} separate Samaritan Pentateuch verse records; no readings merged into DSS or WLC.")
 
 
-sections = {"samaritan": validate_samaritan, "witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "john": validate_john, "android": validate_android}
+sections = {"samaritan": validate_samaritan, "witnesses": validate_witness_registers, "reconstruction": validate_reconstruction_policy, "base": validate_base, "apocrypha": validate_apocrypha, "dss": validate_dss, "papyri": validate_papyri, "john": validate_john, "android": validate_android, "sirach": validate_sirach}
 if len(sys.argv) != 2 or sys.argv[1] not in sections:
-    raise SystemExit("Usage: python tools/validate_corpus.py samaritan|witnesses|reconstruction|base|apocrypha|dss|papyri|john|android")
+    raise SystemExit("Usage: python tools/validate_corpus.py samaritan|witnesses|reconstruction|base|apocrypha|dss|papyri|john|android|sirach")
 sections[sys.argv[1]]()
