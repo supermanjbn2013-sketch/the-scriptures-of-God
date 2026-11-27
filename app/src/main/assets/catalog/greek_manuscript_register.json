@@ -122,7 +122,7 @@
       "language": "Greek",
       "date_estimate": "Generally dated to the 4th century; a published reassessment argues a possible range from early 4th to early 5th century",
       "date_basis": "Palaeographical and codicological assessment",
-      "contents": "Extensive portions of Greek Hebrew Scriptures and Apostolic Writings; the project index lists surviving material from 2 Esdras, Esther, Tobit, Judith, 1 Maccabees, 4 Maccabees, Wisdom of Solomon, and Sirach among other books. Individual coverage is incomplete.",
+      "contents": "Extensive portions of Greek Hebrew Scriptures and Apostolic Writings. The Codex Sinaiticus Project identifies the Sirach section from the grandson's Prologue at quire 68, folio 1 recto through quire 71, folio 2 recto; individual verse coverage and lacunae require extraction from the TEI transcription.",
       "condition": "Incomplete and dispersed",
       "holding_institution": "British Library; Leipzig University Library; National Library of Russia; Saint Catherine's Monastery",
       "source_urls": [
@@ -144,6 +144,14 @@
         "repository_url": "https://github.com/itsee-birmingham/codex-sinaiticus",
         "status": "importer integrated; page/column/line text is generated and bundled during the Android APK build",
         "caution": "Non-commercial and share-alike terms apply to the transcription. Preserve the manuscript's corrections, page/column/line coordinates and editorial markup when importing. Do not treat the transcription as a modern critical edition."
+      },
+      "sirach_section": {
+        "writing": "Sirach / Ben Sira",
+        "start": "Quire 68, folio 1 recto (includes the grandson's Prologue)",
+        "end": "Quire 71, folio 2 recto",
+        "source": "Codex Sinaiticus Project, introduction",
+        "source_url": "https://www.bensira.org/introduction.html",
+        "coverage_status": "section locator recorded; exact verse-by-verse transcription and physical lacuna audit pending"
       }
     },
     {
