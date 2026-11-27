@@ -863,6 +863,14 @@
           "source_status": "whole-codex diplomatic transcription imported by validation workflow; Sirach verse-level extractor implemented; generated records and exact coverage audit pending validation",
           "witness_basis": "Quire 68 folio 1r through Quire 71 folio 2r; direct Greek manuscript witness",
           "license": "CC BY-NC-SA 3.0 Unported; non-commercial, share-alike"
+        },
+        {
+          "source_id": "kahana-ben-sira-1912-scan",
+          "source_name": "David Kahana, Ben Sira (1912), complete 120-page scan",
+          "source_file": "external_reference_only; PDF scan not bundled in app",
+          "source_status": "registered for page-level verification of the incomplete Wikisource transcription; OCR text not imported due risk of Hebrew recognition errors",
+          "witness_basis": "printed editorial edition based on Cairo Genizah Hebrew manuscripts and Greek/Syriac comparisons; not a single ancient manuscript",
+          "license": "Public domain"
         }
       ],
       "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
