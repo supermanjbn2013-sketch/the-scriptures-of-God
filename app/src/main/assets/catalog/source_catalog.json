@@ -884,24 +884,6 @@
         "The imported source omits the critical apparatus.",
         "CC BY-NC 4.0 prohibits commercial use without separate permission."
       ]
-    },
-    {
-      "id": "sefaria-kahana-ben-sira",
-      "name": "Sefaria — Ben Sira, David Kahana ed. (Wikisource digitization)",
-      "language": "Hebrew",
-      "coverage": "Sefaria's separately named Hebrew version of David Kahana's 1912 Ben Sira edition; import will verify actual chapter and verse coverage.",
-      "record_type": "Digital transcription of a printed Hebrew edition; not an ancient manuscript witness",
-      "edition": "Ben Sira, David Kahana ed. -- Wikisource; printed edition: Warsaw, Tushiyah, 1912",
-      "source_url": "https://www.sefaria.org/Ben_Sira.1?lang=bi&vhe=hebrew%7CBen_Sira%2C_David_Kahana_ed._--_Wikisource",
-      "api_url": "https://www.sefaria.org/api/texts/versions/Ben_Sira",
-      "license": "CC BY-SA (version not specified in Sefaria's version metadata)",
-      "attribution": "David Kahana, ed., Ben Sira (1912); digitization by Sefaria; source transcription credited by Sefaria to Wikisource.",
-      "limitations": [
-        "This is a digital transcription of Kahana's printed edition, not an ancient Hebrew manuscript.",
-        "Kahana's edition combines manuscript-based Hebrew readings with editorial Hebrew retroversions where Hebrew manuscript text was absent.",
-        "The source's displayed license is CC-BY-SA without a version number; the importer records that uncertainty.",
-        "Sefaria's selected version title must match exactly; the importer refuses to silently fall back to another/default Hebrew version."
-      ]
     }
   ],
   "not_yet_integrated": [
