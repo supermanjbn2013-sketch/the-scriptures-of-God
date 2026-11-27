@@ -36,7 +36,9 @@
       ],
       "image_access": "Consult the Qumran-Digital transcription and the IAA Leon Levy Dead Sea Scrolls Digital Library. Image reproduction rights must be checked with the holding institution.",
       "status": "metadata catalogued; nine Sirach-related Hebrew transcription lines imported as a separate passage layer",
-      "caution": "11Q5 is a Psalms scroll, not a dedicated Sirach manuscript. Preserve the scroll's identity and layout; cross-link only the Sirach hymn passage. QDR's parallel-reference labels and display-line numbers are editorial aids, not manuscript text or physical line coordinates."
+      "caution": "11Q5 is a Psalms scroll, not a dedicated Sirach manuscript. Preserve the scroll's identity and layout; cross-link only the Sirach hymn passage. QDR's parallel-reference labels and display-line numbers are editorial aids, not manuscript text or physical line coordinates.",
+      "date_estimate": "Not assigned in this initial record; consult the manuscript edition and current institutional catalogue",
+      "date_basis": "No date copied into this record without a directly verified dating statement"
     },
     {
       "id": "1QapGen",
