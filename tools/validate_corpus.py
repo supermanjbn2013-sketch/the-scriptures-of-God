@@ -227,8 +227,9 @@ def validate_sirach():
             assert row["writing_id"] == "sirach" and row["ref"].startswith("Sirach ")
             assert row["hebrew_reading_status"] in counts
             counts[row["hebrew_reading_status"]] += 1
-            if row["hebrew_reading_status"] == "editorial_hebrew_retroversion":
+            if row["hebrew_reading_status"] in ("editorial_hebrew_retroversion", "editorial_hebrew_retroversion_from_sefaria_kahana"):
                 assert row["hebrew_text"].startswith("[") and row["hebrew_text"].endswith("]")
+            assert row["kahana_sefaria_alignment_status"] in ("different_digital_transcriptions_of_same_printed_edition", "same_text_in_both_digital_transcriptions", "only_sefaria_digitization_available", "no_sefaria_record_for_reference")
             if row["hebrew_reading_status"] == "no_kahana_text_in_current_import":
                 assert row["hebrew_text"] is None and row["reconstruction_note"]
             assert row["greek_text"] is None or isinstance(row["greek_text"], str)
