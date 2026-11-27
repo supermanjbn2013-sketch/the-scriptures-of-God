@@ -971,6 +971,23 @@
         "Original page, column, line and verse identifiers must be preserved.",
         "CC BY-NC-SA 3.0 restrictions apply."
       ]
+    },
+    {
+      "id": "kahana-ben-sira-1912-scan",
+      "name": "David Kahana, Ben Sira (1912) — complete scanned edition",
+      "language": "Hebrew",
+      "coverage": "120-page scan of the 1912 printed Hebrew edition, including its introduction and all printed chapters; edition contains Hebrew manuscript-based readings and editorial Hebrew retroversions where manuscript text was absent.",
+      "record_type": "Public-domain scanned printed edition; reference scan, not a diplomatic manuscript witness",
+      "edition": "David Kahana, Ben Sira, Warsaw: Tushiyah, 1912",
+      "source_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Ben-Sira-Kahana-1912.pdf",
+      "license": "Public domain",
+      "attribution": "David Kahana, ed., Ben Sira, Warsaw: Tushiyah, 1912; scan hosted by Wikimedia Commons.",
+      "limitations": [
+        "The scan is a printed editorial edition, not an ancient manuscript.",
+        "Square brackets and editorial notes must be preserved when reading the scan.",
+        "The PDF OCR is not sufficiently reliable for automatic Hebrew text import without page-by-page verification.",
+        "This scan is registered for source verification; no OCR-derived text is silently added to the corpus."
+      ]
     }
   ],
   "not_yet_integrated": [
