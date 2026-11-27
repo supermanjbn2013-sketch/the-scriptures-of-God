@@ -174,6 +174,19 @@ def validate_sirach():
     assert q11_count == q11_index["line_records"] == 9
     assert q11_index["license"] == "CC BY-SA 4.0"
     assert "not a dedicated Sirach manuscript" in " ".join(q11_index["limitations"])
+    paraphrase_path = ROOT / "corpus/sirach/rhyming_paraphrase_evidence.jsonl"
+    paraphrase_index_path = ROOT / "corpus/sirach/rhyming_paraphrase_evidence_index.json"
+    assert paraphrase_path.exists() and paraphrase_index_path.exists(), "Indirect Rhyming Paraphrase evidence is missing"
+    paraphrase_index = json.loads(paraphrase_index_path.read_text(encoding="utf-8"))
+    paraphrase_rows = [json.loads(line) for line in paraphrase_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(paraphrase_rows) == paraphrase_index["record_count"] == 2
+    phrase = next(row for row in paraphrase_rows if row["ref"] == "Sirach 23:1")
+    assert phrase["text"] == "אל אבי ואדון חיי"
+    assert phrase["witness_type"] == "medieval_indirect_paraphrase_not_direct_Ben_Sira_manuscript"
+    assert phrase["text_status"] == "short_phrase_reported_in_secondary_scholarly_review; not a diplomatic transcription"
+    locator = next(row for row in paraphrase_rows if row["ref"] == "Sirach 22:22-26")
+    assert locator["text"] is None and locator["text_status"] == "passage_locator_only; no text copied"
+    assert all(row["witness_type"] == "medieval_indirect_paraphrase_not_direct_Ben_Sira_manuscript" for row in paraphrase_rows)
     qdr_manifest_path = ROOT / "dss/qumran_digital/source_manifest.json"
     assert qdr_manifest_path.exists()
     qdr_manifest = json.loads(qdr_manifest_path.read_text(encoding="utf-8"))
