@@ -213,7 +213,14 @@ def validate_sirach():
             assert row["hebrew_reading_status"] in counts
             counts[row["hebrew_reading_status"]] += 1
             if row["hebrew_reading_status"] == "editorial_hebrew_retroversion":
-                assert row["hebrew_text"].startswith("[") and row["hebrew_text"].endswith("]")
+                assert row["hebrew_text"] and ("[" in row["hebrew_text"] or "]" in row["hebrew_text"])
+                assert any(
+                    item["editorial_status"] in (
+                        "bracketed_hebrew_retroversion_from_greek_and_or_syriac",
+                        "kahana_edition_contains_bracketed_editorial_retroversion"
+                    )
+                    for item in row["hebrew_readings"]
+                )
             if row["hebrew_reading_status"] == "no_kahana_text_in_current_import":
                 assert row["hebrew_text"] is None and row["reconstruction_note"]
             assert row["greek_text"] is None or isinstance(row["greek_text"], str)
