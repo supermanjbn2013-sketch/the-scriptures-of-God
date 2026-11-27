@@ -128,6 +128,13 @@ def main():
                     if contains_bracketed_material else
                     "kahana_hebrew_edition_based_on_manuscript_evidence_not_a_diplomatic_single_witness"
                 ),
+                "chapter_source_note": (
+                    "Kahana's own 1912 preface states that the first two chapters were not preserved in the Hebrew manuscripts and that their Hebrew text was translated from Greek and Syriac by Dr. Kamenetzky."
+                    if chapter in (1, 2) else
+                    "Kahana's own 1912 preface states that some verses of chapter 3 were absent from the Hebrew manuscripts and were supplied from the ancient versions; individual bracket markers must be retained."
+                    if chapter == 3 else
+                    None
+                ),
                 "direct_manuscript_witness": False,
                 "preserve_brackets": True,
                 "license": "1912 edition public domain; Wikisource transcription CC BY-SA 4.0"
