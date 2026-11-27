@@ -110,6 +110,7 @@ def main():
             if not raw:
                 continue
             bracketed = raw.startswith("[") and raw.endswith("]")
+            contains_bracketed_material = "[" in raw or "]" in raw
             records.append({
                 "writing_id": "sirach",
                 "chapter": chapter,
@@ -123,6 +124,8 @@ def main():
                 "editorial_status": (
                     "bracketed_hebrew_retroversion_from_greek_and_or_syriac"
                     if bracketed else
+                    "kahana_edition_contains_bracketed_editorial_retroversion"
+                    if contains_bracketed_material else
                     "kahana_hebrew_edition_based_on_manuscript_evidence_not_a_diplomatic_single_witness"
                 ),
                 "direct_manuscript_witness": False,
