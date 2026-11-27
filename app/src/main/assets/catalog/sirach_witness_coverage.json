@@ -208,9 +208,19 @@
           "coverage": "Sirach 39:15–49:11",
           "source_type": "public-domain printed diplomatic transcription of direct Hebrew manuscript B",
           "license": "Public domain",
-          "status": "102-page public-domain PDF OCR archive and unverified Hebrew-script line candidates generated; verse-level extraction and facsimile verification still pending"
+          "status": "102-page public-domain PDF OCR archive and 1,483 unverified Hebrew-script line candidates generated; verse-level extraction and facsimile verification still pending"
         }
-      ]
+      ],
+      "manuscript_description": {
+        "physical_extent_reported_in_1897_edition": "Nine leaves forming the continuation of the Cambridge fragment; the Cowley–Neubauer preface identifies this as the Bodleian fragment.",
+        "material": "Oriental paper",
+        "layout": "Eighteen lines per page; lines divided into hemistichs; occasional blank lines; no chapter divisions indicated in the manuscript.",
+        "palaeographic_note": "Cowley and Neubauer describe the script as no earlier than the end of the eleventh century; this is the editors' assessment, not a modern independent palaeographic re-dating.",
+        "marginal_variants": "The manuscript's marginal notes record variants from another copy, or possibly two other copies; the editors report that these marginal variants extend through Sirach 45:8 and at Sirach 47:8–9.",
+        "damage_and_editorial_conventions": "The editors mark approximate letter loss with dots, supplied letters with square brackets, and letters considered doubtful with a horizontal stroke. These marks must remain distinct in any transcription.",
+        "source_reference": "Cowley and Neubauer, 1897, printed preface pp. xii–xiii (PDF pages 19–20), https://upload.wikimedia.org/wikipedia/commons/8/8d/California_Digital_Library_%28IA_originalhebrewof00cowlrich%29.pdf",
+        "status": "historical_description_from_the_1897_edition_preface; not independently re-dated"
+      }
     },
     {
       "witness_id": "Genizah-C",
