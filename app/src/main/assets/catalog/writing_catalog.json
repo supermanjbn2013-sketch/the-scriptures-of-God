@@ -822,6 +822,15 @@
           "transcription_type": "Hebrew scroll transcription with source damage markers and separately stored editorial parallel anchors",
           "source_revision": "Qumran-Digital transcription page 2025-03-11",
           "license": "CC BY-SA 4.0"
+        },
+        {
+          "source_id": "bensira-masada-transcription",
+          "source_name": "Bensira.org — Masada Ben Sira Scroll (Eric D. Reymond transcription)",
+          "source_file": "external_reference_only; not bundled because redistribution terms are not explicit",
+          "source_status": "direct Hebrew manuscript witness linked externally; text import withheld pending redistribution permission",
+          "witness_basis": "Mas1h / MasSir, Masada; fragmentary portions of Sirach 39:27–44:17",
+          "transcription_type": "scholarly transcription of the Masada Hebrew scroll; external source only",
+          "license": "Permission-based; no explicit redistribution license identified"
         }
       ],
       "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
