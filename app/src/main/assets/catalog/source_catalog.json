@@ -1029,7 +1029,7 @@
         "The NLI/BL catalogue's physical-text description and the article/modern edition report differing verse endpoints for the second portion; do not silently reconcile them.",
         "Margoliouth's transcription and notes must remain a distinct edition layer with page and folio references; do not merge silently with Kahana or Cowley–Neubauer.",
         "The separate Genizah-D manuscript remains an independent witness for overlapping Sirach 36:29–38:1a material.",
-        "The first-portion boundary is also inconsistent across catalogues: British Library TEI says Sirach 34:12–31, while the NLI catalogue note says 31:12–32:1 and modern codicological mapping assigns 31:12–31. This discrepancy remains unresolved and must be retained with attribution."
+        "The first-portion description is attributed separately: the British Library TEI and NLI Hebrew catalogue record Or. 5518.1 report Sirach 34:12–31, while the modern codicological mapping and published article heading report Sirach 31:12–31. The catalogue sub-record identity and folio mapping remain unresolved; do not silently reconcile them."
       ],
       "institutional_catalogue_url": "https://searcharchives.bl.uk/catalog/032-003393550",
       "folio_mapping": {
@@ -1046,9 +1046,9 @@
         "handling": "Do not silently normalize these endpoints. The manuscript is damaged; retain physical fragment endpoints, printed-edition range, and critical-edition mapping as separately attributed claims pending direct page/facsimile collation.",
         "published_article_title_first_portion": "Sirach 31:12–31",
         "british_library_catalogue_first_portion": "Sirach 34:12–31",
-        "nli_catalogue_first_portion": "Sirach 31:12–32:1",
+        "nli_catalogue_first_portion": "Sirach 34:12–31",
         "codicological_mapping_first_portion": "Quire folio IV recto/verso: Sirach 31:12–31",
-        "first_portion_handling": "The British Library TEI catalogue reports 34:12–31, while the NLI Hebrew catalogue note and modern codicological folio mapping report 31:12–32:1 and 31:12–31 respectively. Preserve each attributed catalogue/edition statement; do not infer that the BL 34 is a corrected reading."
+        "first_portion_handling": "The NLI Hebrew catalogue record for Or. 5518.1 describes the first leaf as Sirach 34:12–31. The British Library TEI catalogue also reports 34:12–31. The modern codicological mapping for the quire folio IV recto/verso is 31:12–31, matching the published article heading. Preserve the catalogue sub-record identity and attributed descriptions separately; do not infer that the two catalogue labels refer to identical folio numbering without direct reconciliation."
       }
     }
   ],
