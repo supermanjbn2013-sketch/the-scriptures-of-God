@@ -78,6 +78,13 @@ def main():
                         book_attrs = book_entries[-1].get("attributes", {})
                         book_candidates = [book_attrs.get("n"), book_attrs.get("id")]
                         book_label = next((value for value in book_candidates if is_sirach(value)), book_candidates[0] or book_candidates[1] or book_label)
+                    if not is_sirach(book_label):
+                        for item in context:
+                            attrs = item.get("attributes", {})
+                            candidate = attrs.get("n") or attrs.get("id")
+                            if is_sirach(candidate):
+                                book_label = candidate
+                                break
                     if book_label:
                         book_labels.add(str(book_label))
                     if not is_sirach(book_label):
