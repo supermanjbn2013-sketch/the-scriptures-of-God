@@ -841,6 +841,30 @@
         "Greek readings remain distinct from WLC, Samaritan Pentateuch, Dead Sea Scrolls, and codex-specific transcriptions.",
         "No missing wording is reconstructed."
       ]
+    },
+    {
+      "id": "kahana-ben-sira-1912",
+      "name": "David Kahana, חכמת שמעון בן סירא (1912)",
+      "language": "Hebrew",
+      "coverage": "Ben Sira chapters 1–51 as represented in the current Wikisource transcription; the online transcription itself is marked incomplete and must not be treated as complete coverage.",
+      "record_type": "Early printed Hebrew edition based on Cairo Genizah manuscripts, with explicitly marked editorial Hebrew retroversions where Hebrew manuscript text is absent.",
+      "edition": "David Kahana, חכמת שמעון בן סירא, Warsaw: Tushiyah, 1912; Wikisource digital transcription",
+      "license": "1912 edition public domain; Wikisource transcription CC BY-SA 4.0",
+      "repository": "https://he.wikisource.org/wiki/בן_סירא_(מהדורת_דוד_כהנא)",
+      "source_url": "https://he.wikisource.org/wiki/בן_סירא_(מהדורת_דוד_כהנא)",
+      "attribution": "David Kahana, ed., Ben Sira (Warsaw: Tushiyah, 1912); Wikisource contributors for the digital transcription.",
+      "handling": {
+        "square_brackets": "Retain exactly. The Wikisource edition uses square brackets to identify Hebrew text supplied where the Hebrew manuscript original is absent; these are editorial Hebrew retroversions, not manuscript readings.",
+        "unbracketed_text": "Treat as Kahana's Hebrew edition based on manuscript evidence, not as a diplomatic transcription of a single codex. Link to a specific Genizah, Qumran, or Masada witness only after passage-level verification.",
+        "incomplete_pages": "The Wikisource work page states that transcription is in progress and does not represent the work in full. Missing online text must not be mistaken for an ancient manuscript lacuna.",
+        "comparison": "Compare same-passage readings with Greek and Syriac witnesses independently. Never silently merge versions or translate Greek/Syriac words into Hebrew and label them as preserved Hebrew."
+      },
+      "limitations": [
+        "The edition is a printed scholarly compilation, not an original ancient manuscript.",
+        "Kahana reports that some Hebrew portions absent from the manuscripts were supplied as Hebrew translations from Greek and Syriac by Kamenetsky.",
+        "The Wikisource transcription is explicitly incomplete; it is not a complete machine-readable text.",
+        "No manuscript shelfmark, fragment, column, or line coordinate is inferred from Kahana's printed text alone."
+      ]
     }
   ],
   "not_yet_integrated": [
