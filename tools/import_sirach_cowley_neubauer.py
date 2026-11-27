@@ -68,7 +68,7 @@ def main():
         if not page_text.strip() and not ocr_by_page.get(page_number, "").strip():
             continue
         ocr_text = ocr_by_page.get(page_number, "")
-        contains_hebrew = bool(re.search(r"[\\u0590-\\u05FF]", ocr_text))
+        contains_hebrew = bool(re.search(r"[\u0590-\u05FF]", ocr_text))
         if contains_hebrew:
             hebrew_pages.append(page_number)
         rows.append({
