@@ -63,7 +63,7 @@ jobs:
       - name: Install PDF text extraction utility
         run: |
           sudo apt-get update
-          sudo apt-get install -y poppler-utils
+          sudo apt-get install -y poppler-utils tesseract-ocr tesseract-ocr-heb
       - name: Fetch and prepare licensed source texts
         run: python tools/prepare_corpus.py
       - name: Import Kahana Hebrew Sirach edition with editorial markers preserved
