@@ -139,7 +139,9 @@ def main():
         for record in records:
             target.write(json.dumps(record, ensure_ascii=False, separators=(",", ":")) + "\n")
     chapters = sorted({r["chapter"] for r in records})
-    bracketed = sum(r["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac" for r in records)
+    fully_bracketed = sum(r["editorial_status"] == "bracketed_hebrew_retroversion_from_greek_and_or_syriac" for r in records)
+    partially_bracketed = sum(r["editorial_status"] == "kahana_edition_contains_bracketed_editorial_retroversion" for r in records)
+    bracketed = fully_bracketed + partially_bracketed
     INDEX.write_text(json.dumps({
         "schema_version": 1,
         "record_type": "sirach_kahana_1912_hebrew_edition_import",
@@ -148,6 +150,8 @@ def main():
         "records": len(records),
         "chapters_with_online_text": chapters,
         "bracketed_retroversion_records": bracketed,
+        "fully_bracketed_retroversion_records": fully_bracketed,
+        "partially_bracketed_retroversion_records": partially_bracketed,
         "unbracketed_kahana_edition_records": len(records) - bracketed,
         "source_page_status": "Wikisource explicitly marks this transcription as incomplete",
         "limitations": [
