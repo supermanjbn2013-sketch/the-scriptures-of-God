@@ -240,6 +240,21 @@ def validate_sirach():
     assert all(row["ocr_text"] for row in cowley_rows if row["contains_hebrew_script"])
     assert sum(row["contains_hebrew_script"] for row in cowley_rows) == cowley_index["pages_with_hebrew_count"]
     assert any(item["source_id"] == "cowley-neubauer-1897-ms-b" for item in sirach["source_editions"])
+    cowley_candidates_path = ROOT / "corpus/sirach/cowley_neubauer_ms_b_hebrew_line_candidates.jsonl"
+    cowley_candidates_index_path = ROOT / "corpus/sirach/cowley_neubauer_ms_b_hebrew_line_candidates_index.json"
+    assert cowley_candidates_path.exists() and cowley_candidates_index_path.exists(), "Cowley Hebrew OCR candidate-line extraction is missing"
+    cowley_candidates_index = json.loads(cowley_candidates_index_path.read_text(encoding="utf-8"))
+    assert cowley_candidates_index["record_type"] == "unverified_cowley_neubauer_ms_b_hebrew_script_ocr_line_candidates"
+    assert cowley_candidates_index["source_page_count"] == cowley_index["pdf_page_count_extracted"]
+    assert cowley_candidates_index["candidate_line_count"] > 0
+    assert cowley_candidates_index["distinct_pdf_pages"] > 0
+    cowley_candidates = [json.loads(line) for line in cowley_candidates_path.read_text(encoding="utf-8").splitlines() if line.strip()]
+    assert len(cowley_candidates) == cowley_candidates_index["candidate_line_count"]
+    assert all(row["witness_id"] == "Genizah-B" and row["manuscript_id"] == "MS B" for row in cowley_candidates)
+    assert all(row["text_status"].startswith("unverified_hebrew_script_OCR_candidate") for row in cowley_candidates)
+    assert all(row["hebrew_script_character_count"] > 0 and row["raw_ocr_line"] for row in cowley_candidates)
+    assert all(row["pdf_page_number"] > 0 and row["ocr_line_number"] > 0 for row in cowley_candidates)
+    assert "not verse aligned" in cowley_candidates_index["text_status"]
     qdr_manifest_path = ROOT / "dss/qumran_digital/source_manifest.json"
     assert qdr_manifest_path.exists()
     qdr_manifest = json.loads(qdr_manifest_path.read_text(encoding="utf-8"))
