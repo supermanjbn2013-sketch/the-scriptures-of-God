@@ -150,6 +150,14 @@ def validate_sirach():
     witness_ids = {item["witness_id"] for item in coverage["witnesses"]}
     assert {"2Q18", "Mas1h", "11Q5", "Genizah-A", "Genizah-B", "Genizah-C", "Genizah-D", "Genizah-E", "Genizah-F"}.issubset(witness_ids)
     assert any(item["witness_id"] == "11Q5" and "not a dedicated Sirach codex" in " ".join(item["limitations"]) for item in coverage["witnesses"])
+    genizah_b = next(item for item in coverage["witnesses"] if item["witness_id"] == "Genizah-B")
+    ms_b_description = genizah_b["manuscript_description"]
+    assert ms_b_description["material"] == "Oriental paper"
+    assert "Eighteen lines per page" in ms_b_description["layout"]
+    assert "end of the eleventh century" in ms_b_description["palaeographic_note"]
+    assert "45:8" in ms_b_description["marginal_variants"] and "47:8–9" in ms_b_description["marginal_variants"]
+    assert "square brackets" in ms_b_description["damage_and_editorial_conventions"]
+    assert ms_b_description["status"] == "historical_description_from_the_1897_edition_preface; not independently re-dated"
     q2_path = ROOT / "corpus/sirach/2q18_hebrew_lines.jsonl"
     q2_index_path = ROOT / "corpus/sirach/2q18_index.json"
     assert q2_path.exists() and q2_index_path.exists(), "Direct 2Q18 Sirach fragment text is missing"
