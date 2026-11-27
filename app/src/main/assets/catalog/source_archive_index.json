@@ -11,8 +11,6 @@
       "writing_record": "catalog/writing_catalog.json#sirach",
       "direct_hebrew_witness_assets": [
         "corpus/sirach/2q18_hebrew_lines.jsonl",
-        "corpus/sirach/11q5_sirach_51_lines.jsonl",
-        "corpus/sirach/2q18_hebrew_lines.jsonl",
         "corpus/sirach/11q5_sirach_51_lines.jsonl"
       ],
       "edition_and_version_assets": [
