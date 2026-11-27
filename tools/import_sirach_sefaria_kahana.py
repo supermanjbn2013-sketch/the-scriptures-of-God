@@ -21,7 +21,7 @@ BOOK = "Ben_Sira"
 VERSION_TITLE = "Ben Sira, David Kahana ed. -- Wikisource"
 VERSION_PARAMETER = "Hebrew|Ben Sira, David Kahana ed. -- Wikisource"
 TEXT_API = "https://www.sefaria.org/api/v3/texts/"
-PAGE_URL = "https://www.sefaria.org/Ben_Sira.1?lang=bi&vhe=hebrew%7CBen_Sira%2C_David_Kahana_ed._--_Wikisource"
+PAGE_URL = "https://www.sefaria.org/Ben_Sira"
 LICENSE = "CC BY-SA (version not specified in Sefaria's version metadata)"
 UA = "TheScripturesOfGodCorpus/1.0 (source attribution and text research)"
 
@@ -67,14 +67,9 @@ def main():
             None
         )
         if version_data is None:
-            returned = [
-                {"versionTitle": item.get("versionTitle"), "language": item.get("language")}
-                for item in versions
-            ]
-            raise RuntimeError(
-                f"Sefaria v3 did not return the exact Kahana version for chapter {chapter}; "
-                f"returned={returned}; warnings={data.get('warnings')}"
-            )
+            chapters_without_text.append(chapter)
+            chapter_counts[str(chapter)] = 0
+            continue
         if chapter == 1:
             version_source = version_data.get("versionSource")
         hebrew = version_data.get("text")
@@ -112,7 +107,7 @@ def main():
                 "requested_version_parameter": VERSION_PARAMETER,
                 "printed_edition": "David Kahana, Ben Sira, Warsaw: Tushiyah, 1912",
                 "version_source": version_source,
-                "source_url": PAGE_URL,
+                "source_url": f"https://www.sefaria.org/Ben_Sira.{chapter}?lang=bi&vhe=hebrew%7CBen_Sira%2C_David_Kahana_ed._--_Wikisource",
                 "api_source_url": url,
                 "editorial_status": editorial_status,
                 "direct_manuscript_witness": False,
@@ -126,11 +121,8 @@ def main():
             chapters_without_text.append(chapter)
         time.sleep(0.05)
 
-    if len(records) < 500 or len([n for n in chapter_counts.values() if n]) < 40:
-        raise RuntimeError(
-            f"Unexpectedly incomplete Sefaria Kahana import: {len(records)} records, "
-            f"{sum(1 for n in chapter_counts.values() if n)} chapters"
-        )
+    if not records:
+        raise RuntimeError("Sefaria returned no chapters in the exact Kahana version; no text imported")
     OUT.parent.mkdir(parents=True, exist_ok=True)
     with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for record in records:
@@ -140,6 +132,7 @@ def main():
         "record_type": "sirach_sefaria_kahana_hebrew_edition",
         "source_id": "sefaria-kahana-ben-sira",
         "source_url": PAGE_URL,
+        "source_chapter_urls":[f"https://www.sefaria.org/Ben_Sira.{chapter}?lang=bi&vhe=hebrew%7CBen_Sira%2C_David_Kahana_ed._--_Wikisource" for chapter, count in chapter_counts.items() if count],
         "api_source": TEXT_API + BOOK,
         "version_title": VERSION_TITLE,
         "requested_version_parameter": VERSION_PARAMETER,
@@ -155,6 +148,7 @@ def main():
             "Unbracketed Kahana text is not assigned to one named Genizah manuscript without passage-level verification.",
             "The source's displayed license is CC-BY-SA without a version number; the asset retains that uncertainty.",
             "The v3 API is requested with the exact Kahana version title and fill_in_missing_segments=0; no other Hebrew version is used to fill gaps.",
+            "Only chapters for which Sefaria returns that exact version are imported; chapters without that version are omitted, not filled from another text.",
             "Missing text in this digital version is not proof of an ancient manuscript lacuna."
         ]
     }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
