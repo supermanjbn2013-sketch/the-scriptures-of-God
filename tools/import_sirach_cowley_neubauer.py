@@ -76,7 +76,9 @@ def main():
     hebrew_character_counts = {}
     for page_number in range(1, page_count + 1):
         ocr_text = ocr_by_page.get(page_number, "")
-        contains_hebrew = bool(re.search(r"[\u0590-\u05FF]", ocr_text))
+        hebrew_char_count = len(re.findall(r"[\u0590-\u05FF]", ocr_text))
+        hebrew_character_counts[page_number] = hebrew_char_count
+        contains_hebrew = hebrew_char_count > 0
         if contains_hebrew:
             hebrew_pages.append(page_number)
         rows.append({
