@@ -192,6 +192,7 @@ def validate_sirach():
             syriac_count += 1
     assert syriac_count == syriac_index["verse_record_count"] >= 500
     assert any(item["source_id"] == "etcbc-syriac-peshitta-sirach" for item in sirach["source_editions"])
+    assert any(item["source_id"] == "qumran-digital-featured-transcription-pages" for item in sirach["source_editions"])
     reconstruction_path = ROOT / "corpus/sirach/reconstructed_hebrew_comparison.jsonl"
     reconstruction_index_path = ROOT / "corpus/sirach/reconstructed_hebrew_comparison_index.json"
     assert reconstruction_path.exists() and reconstruction_index_path.exists(), "Sirach verse-aligned reconstruction layer is missing"
