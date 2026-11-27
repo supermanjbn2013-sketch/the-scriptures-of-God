@@ -151,7 +151,25 @@ def validate_sirach():
             q2_count += 1
     assert q2_count == q2_index["line_records"] > 0
     assert "CC BY-NC 4.0" == q2_index["license"]
-    print(f"Validated {count} Kahana Hebrew Sirach edition records ({bracketed} marked editorial retroversions) and {q2_count} direct 2Q18 manuscript lines; no editorial text is labelled as a direct witness.")
+    syriac_path = ROOT / "corpus/sirach/peshitta_syriac.jsonl"
+    syriac_index_path = ROOT / "corpus/sirach/peshitta_syriac_index.json"
+    assert syriac_path.exists() and syriac_index_path.exists(), "Syriac Peshitta Sirach import is missing"
+    syriac_index = json.loads(syriac_index_path.read_text(encoding="utf-8"))
+    assert syriac_index["source_revision"] == "0b6ded2b369c7d81589a98c92325290e24b20af6"
+    assert syriac_index["license"] == "CC BY-NC 4.0"
+    syriac_count = 0
+    with syriac_path.open(encoding="utf-8") as stream:
+        for raw in stream:
+            if not raw.strip():
+                continue
+            row = json.loads(raw)
+            assert row["writing_id"] == "sirach" and row["language"] == "syc"
+            assert row["text"] and row["ref"].startswith("Sirach ")
+            assert row["text_status"] == "separate_ancient_versional_witness_not_Hebrew_manuscript"
+            syriac_count += 1
+    assert syriac_count == syriac_index["verse_record_count"] >= 500
+    assert any(item["source_id"] == "etcbc-syriac-peshitta-sirach" for item in sirach["source_editions"])
+    print(f"Validated {count} Kahana Hebrew Sirach edition records ({bracketed} marked editorial retroversions), {q2_count} direct 2Q18 lines, and {syriac_count} separate Syriac Peshitta verses; no versional text is labelled as a Hebrew manuscript.")
 
 def validate_dss():
     import json as json_module
