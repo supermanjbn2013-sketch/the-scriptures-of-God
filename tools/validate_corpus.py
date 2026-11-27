@@ -248,6 +248,10 @@ def validate_sirach():
     assert all(row["ocr_text"] for row in cowley_rows if row["contains_hebrew_script"])
     assert sum(row["contains_hebrew_script"] for row in cowley_rows) == cowley_index["pages_with_hebrew_count"]
     assert any(item["source_id"] == "cowley-neubauer-1897-ms-b" for item in sirach["source_editions"])
+    assert any(item["source_id"] == "margoliouth-1899-ms-b" for item in sirach["source_editions"])
+    margoliouth = sources["margoliouth-1899-ms-b"]
+    assert "36:22–37:26" in margoliouth["coverage"] and "manuscript B" in margoliouth["manuscript_basis"]
+    assert margoliouth["source_url"] == "https://www.jstor.org/stable/1450569"
     cowley_candidates_path = ROOT / "corpus/sirach/cowley_neubauer_ms_b_hebrew_line_candidates.jsonl"
     cowley_candidates_index_path = ROOT / "corpus/sirach/cowley_neubauer_ms_b_hebrew_line_candidates_index.json"
     assert cowley_candidates_path.exists() and cowley_candidates_index_path.exists(), "Cowley Hebrew OCR candidate-line extraction is missing"
