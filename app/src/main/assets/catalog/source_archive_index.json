@@ -4,6 +4,54 @@
   "principle": "The physical source witness archives are separate from the continuous English reading archive. A manuscript witness is never confused with a complete book, a study description, or an editorial reconstruction.",
   "archives": [
     {
+      "id": "ben_sira_manuscripts",
+      "title": "Ben Sira / Sirach Manuscript and Version Archive",
+      "scope": "Independent direct Hebrew manuscript witnesses, indirect medieval paraphrase evidence, and separate Greek and Syriac versional witnesses for Sirach.",
+      "metadata_file": "catalog/sirach_witness_coverage.json",
+      "writing_record": "catalog/writing_catalog.json#sirach",
+      "direct_hebrew_witness_assets": [
+        "corpus/sirach/2q18_hebrew_lines.jsonl",
+        "corpus/sirach/11q5_sirach_51_lines.jsonl"
+      ],
+      "edition_and_version_assets": [
+        "corpus/sirach/kahana_1912_hebrew.jsonl",
+        "corpus/sirach/peshitta_syriac.jsonl",
+        "corpus/sirach/codex_sinaiticus_greek.jsonl"
+      ],
+      "indirect_paraphrase_asset": "corpus/sirach/rhyming_paraphrase_evidence.jsonl",
+      "comparison_asset": "corpus/sirach/reconstructed_hebrew_comparison.jsonl",
+      "coverage_rule": "Every direct Hebrew manuscript remains separate. Kahana's 1912 edition is an editorial edition, not one ancient manuscript. The Rhyming Paraphrase is indirect evidence only. Greek and Syriac remain in their own languages and are never silently retroverted into Hebrew. A passage range does not prove every word survives.",
+      "completion_status": "in progress; passage-level manuscript comparison, Genizah and Masada transcription permissions, and remaining gaps still require work",
+      "sources": [
+        "https://www.bensira.org/",
+        "https://www.nli.org.il/en/books/NNL_ALEPH997012945170405171/NLI",
+        "https://github.com/ETCBC/syriac",
+        "https://github.com/itsee-birmingham/codex-sinaiticus"
+      ]
+    },
+    {
+      "id": "codex_sinaiticus",
+      "title": "Codex Sinaiticus Archive",
+      "scope": "Codex Sinaiticus (GA 01) as an individual Greek parchment codex",
+      "metadata_file": "catalog/greek_manuscript_register.json",
+      "coverage_rule": "A separate witness archive; do not merge its readings into Vaticanus or papyrus transcriptions.",
+      "sources": [
+        "https://www.codexsinaiticus.org/"
+      ]
+    },
+    {
+      "id": "codex_vaticanus",
+      "title": "Codex Vaticanus Archive",
+      "scope": "Codex Vaticanus (GA 03) as an individual Greek parchment codex",
+      "metadata_file": "catalog/greek_manuscript_register.json",
+      "offline_transcription_root": "vaticanus/",
+      "coverage_rule": "Show the Vaticanus transcription independently. Missing leaves and lacunae remain missing in the witness archive; other manuscripts may supply those passages only in the separate reconstructed English reading, with source attribution.",
+      "sources": [
+        "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
+        "https://ntvmr.uni-muenster.de/"
+      ]
+    },
+    {
       "id": "dead_sea_scrolls",
       "title": "Dead Sea Scrolls Archive",
       "scope": "Qumran manuscripts and scroll witnesses",
@@ -23,6 +71,14 @@
       ]
     },
     {
+      "id": "english_readings",
+      "title": "Unified English Readings",
+      "scope": "Continuous English reading text for each writing in the Unified Apostolic and Disciple Writings collection",
+      "reading_file": "catalog/unified_readings.json",
+      "coverage_rule": "Reader contains only the actual English reading. It is distinct from study notes and manuscript archives. Missing passages are supplied only from a named, verified witness or critical edition that preserves the passage; otherwise the gap is identified, not invented.",
+      "priority": "Highest content-development priority"
+    },
+    {
       "id": "greek_papyri",
       "title": "Papyrus Archive",
       "scope": "Individual Greek papyrus manuscripts, codices, and fragments",
@@ -37,36 +93,6 @@
         "https://ntvmr.uni-muenster.de/",
         "https://manuscripts.csntm.org/"
       ]
-    },
-    {
-      "id": "codex_vaticanus",
-      "title": "Codex Vaticanus Archive",
-      "scope": "Codex Vaticanus (GA 03) as an individual Greek parchment codex",
-      "metadata_file": "catalog/greek_manuscript_register.json",
-      "offline_transcription_root": "vaticanus/",
-      "coverage_rule": "Show the Vaticanus transcription independently. Missing leaves and lacunae remain missing in the witness archive; other manuscripts may supply those passages only in the separate reconstructed English reading, with source attribution.",
-      "sources": [
-        "https://digi.vatlib.it/view/MSS_Vat.gr.1209",
-        "https://ntvmr.uni-muenster.de/"
-      ]
-    },
-    {
-      "id": "codex_sinaiticus",
-      "title": "Codex Sinaiticus Archive",
-      "scope": "Codex Sinaiticus (GA 01) as an individual Greek parchment codex",
-      "metadata_file": "catalog/greek_manuscript_register.json",
-      "coverage_rule": "A separate witness archive; do not merge its readings into Vaticanus or papyrus transcriptions.",
-      "sources": [
-        "https://www.codexsinaiticus.org/"
-      ]
-    },
-    {
-      "id": "english_readings",
-      "title": "Unified English Readings",
-      "scope": "Continuous English reading text for each writing in the Unified Apostolic and Disciple Writings collection",
-      "reading_file": "catalog/unified_readings.json",
-      "coverage_rule": "Reader contains only the actual English reading. It is distinct from study notes and manuscript archives. Missing passages are supplied only from a named, verified witness or critical edition that preserves the passage; otherwise the gap is identified, not invented.",
-      "priority": "Highest content-development priority"
     }
   ],
   "reading_workflow": [
