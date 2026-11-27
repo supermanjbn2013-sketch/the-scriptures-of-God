@@ -237,6 +237,7 @@ def validate_sirach():
     assert reconstruction_index["record_count"] >= 1000
     counts = {"editorial_hebrew_retroversion":0,"kahana_manuscript_based_edition":0,"kahana_multiple_readings_preserved":0,"no_kahana_text_in_current_import":0}
     reconstruction_count = 0
+    sinaiticus_aligned_count = 0
     with reconstruction_path.open(encoding="utf-8") as stream:
         for raw in stream:
             if not raw.strip():
@@ -266,9 +267,18 @@ def validate_sirach():
             assert all(item["witness_id"] == "11Q5" for item in row["direct_11q5_line_evidence"])
             assert row["greek_text"] is None or isinstance(row["greek_text"], str)
             assert row["syriac_text"] is None or isinstance(row["syriac_text"], str)
+            assert row["sinaiticus_greek_text"] is None or isinstance(row["sinaiticus_greek_text"], str)
+            if row["sinaiticus_greek_text"] is not None:
+                assert row["sinaiticus_source"]["witness_id"] == "Codex Sinaiticus"
+                assert row["sinaiticus_source"]["manuscript_id"] == "GA 01"
+                assert row["sinaiticus_source"]["source_coordinates"]
+                sinaiticus_aligned_count += 1
+            else:
+                assert row["sinaiticus_source"] is None
             assert row["method"].startswith("Reference alignment only")
             reconstruction_count += 1
     assert reconstruction_count == reconstruction_index["record_count"]
+    assert sinaiticus_aligned_count == reconstruction_index["statistics"]["with_sinaiticus"] > 0
     print(f"Validated {count} Kahana Hebrew edition records ({bracketed} marked retroversions), {q2_count} direct 2Q18 lines, {q11_count} direct 11Q5 lines, {syriac_count} Syriac Peshitta verses, and {reconstruction_count} aligned Sirach references; unresolved Hebrew gaps remain explicit.")
 
 def validate_dss():
