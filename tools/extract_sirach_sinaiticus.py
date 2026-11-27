@@ -53,6 +53,13 @@ def main():
     index = json.loads(INDEX.read_text(encoding="utf-8"))
     if index.get("source_revision") != SOURCE_REVISION:
         raise SystemExit("Codex Sinaiticus source revision differs from the pinned manuscript transcription.")
+    sirach_book_labels = set()
+    for division in index.get("book_divisions", []):
+        xml_id = str(division.get("xml_id") or "")
+        if xml_id.upper().endswith("-SIR") or "SIRACH" in xml_id.upper() or "ECCLUS" in xml_id.upper():
+            for value in (division.get("n"), division.get("id"), division.get("xml_id")):
+                if value is not None:
+                    sirach_book_labels.add(str(value))
     records = OrderedDict()
     book_labels = set()
     unmatched_sirach_markers = 0
@@ -91,7 +98,7 @@ def main():
                                 break
                     if book_label:
                         book_labels.add(str(book_label))
-                    if not is_sirach(book_label):
+                    if not is_sirach(book_label) and str(book_label) not in sirach_book_labels:
                         continue
 
                     chapter_entries = [
