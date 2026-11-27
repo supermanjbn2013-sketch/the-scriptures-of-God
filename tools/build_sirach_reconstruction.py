@@ -138,9 +138,9 @@ def main():
         })
 
     OUT.parent.mkdir(parents=True, exist_ok=True)
-    with OUT.open("w", encoding="utf-8", newline="\\n") as target:
+    with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for row in records:
-            target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
     summary = {
         "schema_version":1,
         "record_type":"sirach_verse_aligned_witness_comparison_and_hebrew_restoration_layer",
@@ -163,7 +163,7 @@ def main():
         ],
         "asset":"corpus/sirach/reconstructed_hebrew_comparison.jsonl"
     }
-    INDEX.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    INDEX.write_text(json.dumps(summary, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Built {len(records)} aligned Sirach references: {stats}")
 
 
