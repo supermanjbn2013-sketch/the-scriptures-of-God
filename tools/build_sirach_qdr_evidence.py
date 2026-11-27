@@ -18,7 +18,7 @@ PASSAGES = {1: "Sirach 6:14-15", 2: "Sirach 6:20-31"}
 
 
 def fragment_number(value):
-    numbers = re.findall(r"\\d+", str(value))
+    numbers = re.findall(r"\d+", str(value))
     return int(numbers[-1]) if numbers else None
 
 
@@ -58,9 +58,9 @@ def main():
             })
     if not rows:
         raise SystemExit("No 2Q18 lines found in the imported QDR corpus; refusing to fabricate a witness layer")
-    with OUT.open("w", encoding="utf-8", newline="\\n") as target:
+    with OUT.open("w", encoding="utf-8", newline="\n") as target:
         for row in rows:
-            target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\\n")
+            target.write(json.dumps(row, ensure_ascii=False, separators=(",", ":")) + "\n")
     fragments = sorted({r["fragment"] for r in rows})
     mapped = sorted({r["passage_range"] for r in rows if r["passage_range"]})
     INDEX.write_text(json.dumps({
@@ -80,7 +80,7 @@ def main():
             "A passage range is an identification aid, not proof that every word or verse in that range survives.",
             "No Kahana, Greek, or Syriac text is silently inserted into the manuscript line."
         ]
-    }, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+    }, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     print(f"Imported {len(rows)} direct 2Q18 line records from {len(fragments)} fragment(s); mapped ranges: {mapped}")
 
 
