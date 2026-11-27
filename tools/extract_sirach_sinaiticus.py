@@ -45,7 +45,7 @@ def verse_number(marker, chapter):
 
 def is_sirach(label):
     normalized = re.sub(r"[^a-z]", "", str(label or "").lower())
-    return normalized.startswith("sirach") or normalized.startswith("ecclesiastic") or normalized.startswith("ecclus") or normalized == "sir"
+    return "sirach" in normalized or "ecclesiastic" in normalized or "ecclus" in normalized or normalized == "sir"
 
 def main():
     if not INDEX.exists():
@@ -76,12 +76,16 @@ def main():
                     ]
                     if book_entries:
                         book_attrs = book_entries[-1].get("attributes", {})
-                        book_candidates = [book_attrs.get("n"), book_attrs.get("id")]
+                        book_candidates = [
+                            book_attrs.get("n"),
+                            book_attrs.get("id"),
+                            book_attrs.get("{http://www.w3.org/XML/1998/namespace}id")
+                        ]
                         book_label = next((value for value in book_candidates if is_sirach(value)), book_candidates[0] or book_candidates[1] or book_label)
                     if not is_sirach(book_label):
                         for item in context:
                             attrs = item.get("attributes", {})
-                            candidate = attrs.get("n") or attrs.get("id")
+                            candidate = attrs.get("n") or attrs.get("id") or attrs.get("{http://www.w3.org/XML/1998/namespace}id")
                             if is_sirach(candidate):
                                 book_label = candidate
                                 break
