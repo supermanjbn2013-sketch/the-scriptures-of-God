@@ -135,12 +135,13 @@
       "source_url": "https://github.com/itsee-birmingham/codex-sinaiticus",
       "license": "CC BY-NC-SA 3.0 Unported; non-commercial, share-alike",
       "direct_witness_status": "direct Greek manuscript witness to the Greek version of Ben Sira; not direct Hebrew wording",
-      "transcription_status": "whole-codex page/column/line importer exists; Sirach-specific verse extraction and coverage audit pending",
+      "transcription_status": "verse-level extractor implemented to retain original main reading, corrector readings, editorial supplied text, marginal text and page/column/line coordinates; generated records and exact coverage audit pending validation",
       "limitations": [
-        "Keep the Sinaiticus Greek text separate from the Hebrew witnesses and the Swete Greek edition.",
+        "Keep the Sinaiticus Greek text separate from the Hebrew witnesses, Swete edition and Syriac Peshitta.",
         "The cited quire range is a section locator, not proof that every verse is extant without loss.",
-        "The TEI transcription preserves manuscript layout and corrections; use its original coordinates and correction layers.",
-        "CC BY-NC-SA 3.0 applies to the transcription; commercial redistribution is not permitted without separate permission."
+        "Only the main-corr/original reading is the base text; corrector readings and editorial supplied text are stored separately.",
+        "The TEI transcription preserves manuscript corrections and physical coordinates.",
+        "CC BY-NC-SA 3.0 applies to the transcription; non-commercial and share-alike conditions apply."
       ]
     },
     {
