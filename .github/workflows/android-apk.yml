@@ -50,6 +50,8 @@ jobs:
         run: python3 tools/import_etcbc_dss.py
       - name: Extract direct 2Q18 Sirach fragment lines from QDR
         run: python3 tools/build_sirach_qdr_evidence.py
+      - name: Build verse-aligned Sirach Hebrew restoration and version comparison layer
+        run: python3 tools/build_sirach_reconstruction.py
       - name: Index every book and writing actually attested in imported DSS lines
         run: python3 tools/build_dss_book_index.py
       - name: Build inventory of all imported DSS scroll witnesses
