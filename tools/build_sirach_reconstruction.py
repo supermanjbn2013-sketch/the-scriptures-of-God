@@ -57,10 +57,13 @@ def main():
             if int(chapter_part) != chapter:
                 return False
             first, last = verse_part.split("-") if "-" in verse_part else (verse_part, verse_part)
-            first = int(first)
+            first_match = __import__("re").match(r"\\d+", first)
             last_match = __import__("re").match(r"\\d+", last)
-            last = int(last_match.group()) if last_match else first
-            return first <= verse <= last
+            if not first_match:
+                return False
+            first_number = int(first_match.group())
+            last_number = int(last_match.group()) if last_match else first_number
+            return first_number <= verse <= last_number
         except (ValueError, TypeError):
             return False
 
