@@ -775,7 +775,7 @@
         "Syriac"
       ],
       "description": "A distinct writing preserved in fragmentary Hebrew witnesses and ancient translations. Surviving Hebrew manuscript text, Greek and Syriac witnesses, and later editorial Hebrew restorations are kept as separate textual layers.",
-      "status": "source_layers_in_progress; verse_aligned_witness_comparison_built; manuscript_specific_Genizah_and_Masada_text_imports_and_remaining_coverage_gaps_pending",
+      "status": "source_layers_in_progress; Kahana_edition_and_Greek_Syriac_comparison_built; direct_2Q18_and_11Q5_lines_attached_to_verse_records; six_Genizah_witnesses_and_Masada_catalogued; manuscript_specific_textual_apparatus_pending",
       "source_editions": [
         {
           "source_id": "swete-lxx-apocrypha",
@@ -831,6 +831,22 @@
           "witness_basis": "Mas1h / MasSir, Masada; fragmentary portions of Sirach 39:27–44:17",
           "transcription_type": "scholarly transcription of the Masada Hebrew scroll; external source only",
           "license": "Permission-based; no explicit redistribution license identified"
+        },
+        {
+          "source_id": "bensira-genizah-manuscript-transcriptions",
+          "source_name": "Bensira.org — Cairo Genizah Hebrew manuscripts A–F",
+          "source_file": "external_reference_only; no transcriptions bundled pending permission",
+          "source_status": "six distinct medieval Hebrew witnesses catalogued; external folio images and transcriptions available",
+          "witness_basis": "Genizah manuscripts A, B, C, D, E and F; each manuscript must be preserved independently",
+          "license": "Permission-based; no explicit text redistribution license identified"
+        },
+        {
+          "source_id": "reymond-rey-2024-critical-hebrew-manuscripts",
+          "source_name": "Rey and Reymond, A Critical Edition of the Hebrew Manuscripts of Ben Sira (2024)",
+          "source_file": "bibliographic_reference_only; copyrighted edition not bundled",
+          "source_status": "critical edition reference for all nine Hebrew manuscripts; manuscript-specific apparatus not yet transcribed into the corpus",
+          "witness_basis": "Genizah A–F, Rhyming Paraphrase, 2Q18, 11QPs-a and Masada",
+          "license": "Copyrighted scholarly edition; no redistribution license identified"
         }
       ],
       "reconstruction_policy": "For each passage, prefer surviving Hebrew manuscript readings (Qumran, Masada, and Cairo Genizah) with exact manuscript and fragment coordinates. Where Hebrew is absent, compare the oldest available Greek and Syriac witnesses for the same passage. Any Hebrew retroversion must remain labelled as an editorial reconstruction, never as an ancient Hebrew manuscript reading. Preserve lacunae when no reliable witness supplies the wording."
